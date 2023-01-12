@@ -24,7 +24,7 @@ tags:
   - name: GH KYC
   - name: UG KYC
   - name: KE KYC
-  - name: KYC
+  - name: KYB
   - name: Authentication
   - name: Wallet
   - name: Financial
@@ -1320,7 +1320,7 @@ paths:
   /api/v1/kyc/cac/search:
     get:
       tags:
-        - KYC
+        - KYB
       summary: CAC Name Search
       security:
         - apikeyAuth: []
@@ -1348,7 +1348,7 @@ paths:
   /v1/kyc/cac:
     get:
       tags:
-        - KYC
+        - KYB
       summary: "KYC - Get CAC "
       security:
         - apikeyAuth: []
@@ -1413,7 +1413,7 @@ paths:
   /v1/kyc/cac/basic:
     get:
       tags:
-        - KYC
+        - KYB
       summary: KYB - Get CAC 2
       security:
         - apikeyAuth: []
@@ -1441,7 +1441,7 @@ paths:
   /v1/kyc/cac/advance:
     get:
       tags:
-        - KYC
+        - KYB
       summary: KYC - Get CAC Advanced
       security:
         - apikeyAuth: []
@@ -1479,7 +1479,7 @@ paths:
   /v1/kyc/tin:
     get:
       tags:
-        - KYC
+        - KYB
       summary: KYC - Fetch Tin
       security:
         - apikeyAuth: []
