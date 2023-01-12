@@ -1293,8 +1293,6 @@ paths:
       tags:
         - KYC
       summary: KYC - Document Analysis
-      requestBody:
-        content: {}
       parameters:
         - name: Authorization
           in: header
@@ -4692,8 +4690,6 @@ paths:
       tags:
         - Services
       summary: Captcha Service
-      requestBody:
-        content: {}
       parameters:
         - name: Authorization
           in: header
