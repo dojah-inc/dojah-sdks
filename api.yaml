@@ -20,22 +20,22 @@ components:
       in: header
 tags:
   - name: Services
-  - name: Services > Identity/Kyc Services
-  - name: Services > Identity/Kyc Services > GH KYC
-  - name: Services > Identity/Kyc Services > UG
-  - name: Services > Identity/Kyc Services > KE
-  - name: Services > KYB services
-  - name: Services > Real-time Authentication
-  - name: Services > Wallet Services
-  - name: Services > Financial Services
-  - name: Services > ML Services
-  - name: Services > AML
+  - name: KYC
+  - name: GH KYC
+  - name: UG KYC
+  - name: KE KYC
+  - name: KYC
+  - name: Authentication
+  - name: Wallet
+  - name: Financial
+  - name: ML
+  - name: AML
   - name: WebHooks
 paths:
   /api/v1/gh/kyc/dl:
     get:
       tags:
-        - Services > Identity/Kyc Services > GH KYC
+        - GH KYC
       summary: Driver's License
       security:
         - apikeyAuth: []
@@ -130,7 +130,7 @@ paths:
   /api/v1/gh/kyc/passport:
     get:
       tags:
-        - Services > Identity/Kyc Services > GH KYC
+        - GH KYC
       summary: Passport
       security:
         - apikeyAuth: []
@@ -239,7 +239,7 @@ paths:
   /api/v1/gh/kyc/ssnit:
     get:
       tags:
-        - Services > Identity/Kyc Services > GH KYC
+        - GH KYC
       summary: SSNIT
       security:
         - apikeyAuth: []
@@ -282,7 +282,7 @@ paths:
   /api/v1/ug/kyc/voter:
     get:
       tags:
-        - Services > Identity/Kyc Services > UG
+        - UG KYC
       summary: Voters ID
       security:
         - apikeyAuth: []
@@ -311,7 +311,7 @@ paths:
   /api/v1/ke/kyc/id:
     get:
       tags:
-        - Services > Identity/Kyc Services > KE
+        - KE KYC
       summary: KYC - National ID
       security:
         - apikeyAuth: []
@@ -354,7 +354,7 @@ paths:
   /api/v1/kyc/dl:
     get:
       tags:
-        - Services > Identity/Kyc Services
+        - KYC
       summary: KYC - Get Drivers License Info
       security:
         - apikeyAuth: []
@@ -395,7 +395,7 @@ paths:
   /api/v1/kyc/nuban:
     get:
       tags:
-        - Services > Identity/Kyc Services
+        - KYC
       summary: KYC - Get NUBAN Information
       security:
         - apikeyAuth: []
@@ -478,7 +478,7 @@ paths:
   /api/v1/kyc/bvn:
     get:
       tags:
-        - Services > Identity/Kyc Services
+        - KYC
       summary: KYC - Validate BVN
       security:
         - apikeyAuth: []
@@ -511,7 +511,7 @@ paths:
   /api/v1/kyc/bvn/basic:
     get:
       tags:
-        - Services > Identity/Kyc Services
+        - KYC
       summary: KYC - Get Basic BVN Info
       security:
         - apikeyAuth: []
@@ -540,7 +540,7 @@ paths:
   /api/v1/kyc/bvn/full:
     get:
       tags:
-        - Services > Identity/Kyc Services
+        - KYC
       summary: KYC - Lookup BVN Basic
       security:
         - apikeyAuth: []
@@ -590,7 +590,7 @@ paths:
   /api/v1/kyc/bvn/advance:
     get:
       tags:
-        - Services > Identity/Kyc Services
+        - KYC
       summary: KYC - Lookup BVN Premium
       security:
         - apikeyAuth: []
@@ -722,7 +722,7 @@ paths:
   /api/v1/kyc/vnin:
     get:
       tags:
-        - Services > Identity/Kyc Services
+        - KYC
       summary: Lookup VNIN
       security:
         - apikeyAuth: []
@@ -741,7 +741,7 @@ paths:
   /v1/kyc/phone_number/basic:
     get:
       tags:
-        - Services > Identity/Kyc Services
+        - KYC
       summary: KYC Lookup Phone Number Basic
       security:
         - apikeyAuth: []
@@ -777,7 +777,7 @@ paths:
   /api/v1/kyc/phone_number:
     get:
       tags:
-        - Services > Identity/Kyc Services
+        - KYC
       summary: KYC - Lookup Phone Number
       security:
         - apikeyAuth: []
@@ -839,7 +839,7 @@ paths:
   /v1/kyc/age_verification:
     get:
       tags:
-        - Services > Identity/Kyc Services
+        - KYC
       summary: KYC - Age Verification
       security:
         - apikeyAuth: []
@@ -924,7 +924,7 @@ paths:
   /v1/kyc/bvn/verify:
     post:
       tags:
-        - Services > Identity/Kyc Services
+        - KYC
       summary: KYV - Selfie BVN Verificatoin
       requestBody:
         content:
@@ -950,7 +950,7 @@ paths:
   /v1/kyc/nin/verify:
     post:
       tags:
-        - Services > Identity/Kyc Services
+        - KYC
       summary: KYC - Selfie NIN Verification
       requestBody:
         content:
@@ -977,7 +977,7 @@ paths:
   /api/v1/kyc/vin:
     get:
       tags:
-        - Services > Identity/Kyc Services
+        - KYC
       summary: KYC - Get VIN
       security:
         - apikeyAuth: []
@@ -1104,7 +1104,7 @@ paths:
   /v1/kyc/email:
     get:
       tags:
-        - Services > Identity/Kyc Services
+        - KYC
       summary: KYC - Get Email Reputation
       security:
         - apikeyAuth: []
@@ -1238,7 +1238,7 @@ paths:
   /v1/kyc/nuban/bvn:
     get:
       tags:
-        - Services > Identity/Kyc Services
+        - KYC
       summary: Lookup BVN from NUBAN
       security:
         - apikeyAuth: []
@@ -1266,7 +1266,7 @@ paths:
   /api/v1/kyc/passport:
     get:
       tags:
-        - Services > Identity/Kyc Services
+        - KYC
       summary: KYC - Passport
       parameters:
         - name: Authorization
@@ -1297,7 +1297,7 @@ paths:
   /api/v1/document/analysis:
     post:
       tags:
-        - Services > Identity/Kyc Services
+        - KYC
       summary: KYC - Document Analysis
       requestBody:
         content: {}
@@ -1320,7 +1320,7 @@ paths:
   /api/v1/kyc/cac/search:
     get:
       tags:
-        - Services > KYB services
+        - KYC
       summary: CAC Name Search
       security:
         - apikeyAuth: []
@@ -1348,7 +1348,7 @@ paths:
   /v1/kyc/cac:
     get:
       tags:
-        - Services > KYB services
+        - KYC
       summary: "KYC - Get CAC "
       security:
         - apikeyAuth: []
@@ -1413,7 +1413,7 @@ paths:
   /v1/kyc/cac/basic:
     get:
       tags:
-        - Services > KYB services
+        - KYC
       summary: KYB - Get CAC 2
       security:
         - apikeyAuth: []
@@ -1441,7 +1441,7 @@ paths:
   /v1/kyc/cac/advance:
     get:
       tags:
-        - Services > KYB services
+        - KYC
       summary: KYC - Get CAC Advanced
       security:
         - apikeyAuth: []
@@ -1479,7 +1479,7 @@ paths:
   /v1/kyc/tin:
     get:
       tags:
-        - Services > KYB services
+        - KYC
       summary: KYC - Fetch Tin
       security:
         - apikeyAuth: []
@@ -1543,7 +1543,7 @@ paths:
   /api/v1/messaging/sms:
     post:
       tags:
-        - Services > Real-time Authentication
+        - Authentication
       summary: Messaging - Send SMS
       requestBody:
         content:
@@ -1608,7 +1608,7 @@ paths:
   /v1/messaging/sms/get_status:
     get:
       tags:
-        - Services > Real-time Authentication
+        - Authentication
       summary: Messaging - Get SMS Status
       security:
         - apikeyAuth: []
@@ -1665,7 +1665,7 @@ paths:
   /v1/messaging/otp:
     post:
       tags:
-        - Services > Real-time Authentication
+        - Authentication
       summary: Messaging - Send OTP
       requestBody:
         content:
@@ -1772,7 +1772,7 @@ paths:
   /v1/messaging/otp/validate:
     get:
       tags:
-        - Services > Real-time Authentication
+        - Authentication
       summary: Messaging - Validate OTP
       security:
         - apikeyAuth: []
@@ -1834,7 +1834,7 @@ paths:
   /api/v1/messaging/sender_ids:
     get:
       tags:
-        - Services > Real-time Authentication
+        - Authentication
       summary: Messaging - Get Sender IDs
       security:
         - apikeyAuth: []
@@ -1897,7 +1897,7 @@ paths:
   /api/v1/messaging/sender_id:
     post:
       tags:
-        - Services > Real-time Authentication
+        - Authentication
       summary: Messaging - Request Sender ID
       requestBody:
         content:
@@ -1925,7 +1925,7 @@ paths:
   /v1/wallet/ngn/create:
     post:
       tags:
-        - Services > Wallet Services
+        - Wallet
       summary: Create NGN Wallet
       requestBody:
         content:
@@ -2007,7 +2007,7 @@ paths:
   /v1/wallet/ngn/retrieve:
     get:
       tags:
-        - Services > Wallet Services
+        - Wallet
       summary: Retrieve Wallet Details
       security:
         - apikeyAuth: []
@@ -2117,7 +2117,7 @@ paths:
   /v1/wallet/ngn/accounts:
     get:
       tags:
-        - Services > Wallet Services
+        - Wallet
       summary: Get Wallets
       security:
         - apikeyAuth: []
@@ -2230,7 +2230,7 @@ paths:
   /v1/wallet/ngn/transaction:
     get:
       tags:
-        - Services > Wallet Services
+        - Wallet
       summary: Retrieve Transaction Details
       security:
         - apikeyAuth: []
@@ -2354,7 +2354,7 @@ paths:
   /v1/wallet/ngn/transactions:
     get:
       tags:
-        - Services > Wallet Services
+        - Wallet
       summary: Fetch Wallet Transactions
       security:
         - apikeyAuth: []
@@ -2377,7 +2377,7 @@ paths:
   /v1/wallet/ngn/transfer:
     post:
       tags:
-        - Services > Wallet Services
+        - Wallet
       summary: Transfer Funds
       requestBody:
         content:
@@ -2520,7 +2520,7 @@ paths:
   /v1/wallet/ngn/transfer/internal:
     post:
       tags:
-        - Services > Wallet Services
+        - Wallet
       summary: Transfer Funds (Internal)
       requestBody:
         content:
@@ -2547,7 +2547,7 @@ paths:
   /v1/wallet/ngn/inward:
     post:
       tags:
-        - Services > Wallet Services
+        - Wallet
       summary: Credit Inward (Sandbox only)
       requestBody:
         content:
@@ -2579,7 +2579,7 @@ paths:
   /v1/wallet/ngn/debit:
     post:
       tags:
-        - Services > Wallet Services
+        - Wallet
       summary: Debit Subwallet
       requestBody:
         content:
@@ -2605,7 +2605,7 @@ paths:
   /v1/wallet/ngn/credit:
     post:
       tags:
-        - Services > Wallet Services
+        - Wallet
       summary: Credit Sub-wallet
       requestBody:
         content:
@@ -2709,7 +2709,7 @@ paths:
   /api/v1/financial/account_information/:
     get:
       tags:
-        - Services > Financial Services
+        - Financial
       summary: Get Account Information
       description: /services/@app_id/account/@account_id
       parameters:
@@ -2775,7 +2775,7 @@ paths:
   /api/v1/financial/account_transactions:
     get:
       tags:
-        - Services > Financial Services
+        - Financial
       summary: Get Account Transactions
       parameters:
         - name: Authorization
@@ -2957,7 +2957,7 @@ paths:
   /v1/financial/account_subscription:
     get:
       tags:
-        - Services > Financial Services
+        - Financial
       summary: Get Account Subscriptions
       security:
         - apikeyAuth: []
@@ -3024,7 +3024,7 @@ paths:
   /v1/financial/bvn_information/basic:
     get:
       tags:
-        - Services > Financial Services
+        - Financial
       summary: Get BVN Information Basic
       security:
         - apikeyAuth: []
@@ -3127,7 +3127,7 @@ paths:
   /v1/financial/bvn_information/full:
     get:
       tags:
-        - Services > Financial Services
+        - Financial
       summary: Get BVN Information Full
       security:
         - apikeyAuth: []
@@ -3250,7 +3250,7 @@ paths:
   /v1/financial/spending_pattern:
     get:
       tags:
-        - Services > Financial Services
+        - Financial
       summary: Get Spending Pattern
       security:
         - apikeyAuth: []
@@ -3327,7 +3327,7 @@ paths:
   /v1/financial/earning_structure:
     get:
       tags:
-        - Services > Financial Services
+        - Financial
       summary: Get Earning Structure
       security:
         - apikeyAuth: []
@@ -3392,7 +3392,7 @@ paths:
   /v1/financial/transactions:
     post:
       tags:
-        - Services > Financial Services
+        - Financial
       summary: Collect Transactions
       requestBody:
         content:
@@ -3433,7 +3433,7 @@ paths:
   /api/v1/financial/transactions/pdf:
     post:
       tags:
-        - Services > Financial Services
+        - Financial
       summary: Collect Status via PDF Statement
       requestBody:
         content:
@@ -3466,7 +3466,7 @@ paths:
   /api/v1/financial/analysis:
     get:
       tags:
-        - Services > Financial Services
+        - Financial
       summary: Get Account Analysis
       security:
         - apikeyAuth: []
@@ -3679,7 +3679,7 @@ paths:
   /v1/kyc/photoid/verify:
     post:
       tags:
-        - Services > ML Services
+        - ML
       summary: KYC - Selfie Photo ID Verification
       requestBody:
         content:
@@ -3707,7 +3707,7 @@ paths:
   /v1/ml/ocr:
     post:
       tags:
-        - Services > ML Services
+        - ML
       summary: BVN Ocr
       requestBody:
         content:
@@ -3733,7 +3733,7 @@ paths:
   /v1/ml/ocr/generic:
     post:
       tags:
-        - Services > ML Services
+        - ML
       summary: Generic OCR Service
       requestBody:
         content:
@@ -3762,7 +3762,7 @@ paths:
   /v1/document/analysis/dl:
     post:
       tags:
-        - Services > ML Services
+        - ML
       summary: Document Analysis Drivers License
       requestBody:
         content:
@@ -3864,7 +3864,7 @@ paths:
   /v1/document/analysis/passport:
     post:
       tags:
-        - Services > ML Services
+        - ML
       summary: Document Analysis Passport
       requestBody:
         content:
@@ -3893,7 +3893,7 @@ paths:
   /api/v1/aml/screening:
     post:
       tags:
-        - Services > AML
+        - AML
       summary: AML Screening
       requestBody:
         content:
@@ -3978,7 +3978,7 @@ paths:
   /v1/aml/screening/info:
     get:
       tags:
-        - Services > AML
+        - AML
       summary: Get AML Info
       parameters:
         - name: Appid
