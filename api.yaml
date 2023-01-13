@@ -37,7 +37,7 @@ paths:
       tags:
         - GH KYC
       summary: Driver's License
-      operationId: GH KYC_driversLicense
+      operationId: GHKYC_getDriversLicense
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -131,6 +131,7 @@ paths:
     get:
       tags:
         - GH KYC
+      operationId: GHKYC_getPassport
       summary: Passport
       security:
         - apikeyAuth: []
@@ -240,6 +241,7 @@ paths:
       tags:
         - GH KYC
       summary: SSNIT
+      operationId: GHKYC_getSsnit
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -282,6 +284,7 @@ paths:
       tags:
         - UG KYC
       summary: Voters ID
+      operationId: UGKYC_getVoter
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -305,12 +308,58 @@ paths:
         "200":
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                properties:
+                  entity:
+                    type: object
+                    properties:
+                      voter_number:
+                        type: string
+                      first_name:
+                        type: string
+                      last_name:
+                        type: string
+                      gender:
+                        type: string
+                      village:
+                        type: string
+                      district:
+                        type: string
+                      constituency:
+                        type: string
+                      sub_county:
+                        type: string
+                      parish:
+                        type: string
+                      polling_station:
+                        type: string
+                      is_first_name_match:
+                        type: boolean
+                      is_last_name_match:
+                        type: boolean
+                    required:
+                      - voter_number
+                      - first_name
+                      - last_name
+                      - gender
+                      - village
+                      - district
+                      - constituency
+                      - sub_county
+                      - parish
+                      - polling_station
+                      - is_first_name_match
+                      - is_last_name_match
+                required:
+                  - entity
   /api/v1/ke/kyc/id:
     get:
       tags:
         - KE KYC
       summary: KYC - National ID
+      operationId: KEKYC_getNationalId
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -354,6 +403,7 @@ paths:
       tags:
         - KYC
       summary: KYC - Get Drivers License Info
+      operationId: KYC_getDriversLicense
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -395,6 +445,7 @@ paths:
       tags:
         - KYC
       summary: KYC - Get NUBAN Information
+      operationId: KYC_getNuban
       security:
         - apikeyAuth: []
       parameters:
@@ -478,6 +529,7 @@ paths:
       tags:
         - KYC
       summary: KYC - Validate BVN
+      operationId: KYC_validateBvn
       security:
         - apikeyAuth: []
       parameters:
@@ -511,6 +563,7 @@ paths:
       tags:
         - KYC
       summary: KYC - Get Basic BVN Info
+      operationId: KYC_getBasicBvn
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -540,6 +593,7 @@ paths:
       tags:
         - KYC
       summary: KYC - Lookup BVN Basic
+      operationId: KYC_getFullBvn
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -589,6 +643,7 @@ paths:
       tags:
         - KYC
       summary: KYC - Lookup BVN Premium
+      operationId: KYC_getPremiumBvn
       security:
         - apikeyAuth: []
       parameters:
@@ -720,6 +775,7 @@ paths:
       tags:
         - KYC
       summary: Lookup VNIN
+      operationId: KYC_getVnin
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -739,6 +795,7 @@ paths:
       tags:
         - KYC
       summary: KYC Lookup Phone Number Basic
+      operationId: KYC_getBasicPhoneNumber
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -775,6 +832,7 @@ paths:
       tags:
         - KYC
       summary: KYC - Lookup Phone Number
+      operationId: KYC_getPhoneNumber
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -836,6 +894,7 @@ paths:
       tags:
         - KYC
       summary: KYC - Age Verification
+      operationId: KYC_verifyAge
       security:
         - apikeyAuth: []
       parameters:
@@ -920,7 +979,8 @@ paths:
     post:
       tags:
         - KYC
-      summary: KYV - Selfie BVN Verificatoin
+      summary: KYC - Selfie BVN Verificatoin
+      operationId: KYC_verifySelfieBvn
       requestBody:
         content:
           application/json:
@@ -928,7 +988,7 @@ paths:
               type: object
               example:
                 bvn: "22468537919"
-                selfie_image: jhjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+                selfie_image: <base64 encoded image>
       security:
         - apikeyAuth: []
       parameters:
@@ -947,6 +1007,7 @@ paths:
       tags:
         - KYC
       summary: KYC - Selfie NIN Verification
+      operationId: KYC_verifySelfieNin
       requestBody:
         content:
           application/json:
@@ -973,6 +1034,7 @@ paths:
       tags:
         - KYC
       summary: KYC - Get VIN
+      operationId: KYC_getVIN
       security:
         - apikeyAuth: []
       parameters:
@@ -1100,6 +1162,7 @@ paths:
       tags:
         - KYC
       summary: KYC - Get Email Reputation
+      operationId: KYC_getEmailReputation
       security:
         - apikeyAuth: []
       parameters:
@@ -1234,6 +1297,7 @@ paths:
       tags:
         - KYC
       summary: Lookup BVN from NUBAN
+      operationId: KYC_getBvnFromNuban
       security:
         - apikeyAuth: []
       parameters:
@@ -1262,6 +1326,7 @@ paths:
       tags:
         - KYC
       summary: KYC - Passport
+      operationId: KYC_getPassport
       parameters:
         - name: Authorization
           in: header
@@ -1293,6 +1358,7 @@ paths:
       tags:
         - KYC
       summary: KYC - Document Analysis
+      operationId: KYC_analyzeDocument
       parameters:
         - name: Authorization
           in: header
