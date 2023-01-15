@@ -1403,6 +1403,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: KYB_searchCac
   /v1/kyc/cac:
     get:
       tags:
@@ -1468,6 +1469,7 @@ paths:
                   company_name: ELTAFORD LIMITED
                   address: NO 37 ISAIAH ROAD UBEJI
                   date_of_registration: '2015-05-15'
+      operationId: KYB_getCac
   /v1/kyc/cac/basic:
     get:
       tags:
@@ -1496,6 +1498,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: KYB_getBasicCac
   /v1/kyc/cac/advance:
     get:
       tags:
@@ -1534,6 +1537,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: KYB_getAdvancedCac
   /v1/kyc/tin:
     get:
       tags:
@@ -1598,6 +1602,7 @@ paths:
                   Tax_Office: MSTO IKOYI
                   Phone_No: sundayoguntola@hotmail.com
                   Email: '07055427676'
+      operationId: KYB_getTin
   /api/v1/messaging/sms:
     post:
       tags:
@@ -1663,6 +1668,7 @@ paths:
                   mobile: '2348068810228'
                   message_id: true_2348068810228@c.us_3EB094F69064FF74BD76
                   batch_id: '90512'
+      operationId: Authentication_sendSms
   /v1/messaging/sms/get_status:
     get:
       tags:
@@ -1720,6 +1726,7 @@ paths:
               example:
                 entity:
                   status: DELIVRD
+      operationId: Authentication_getSmsStatus
   /v1/messaging/otp:
     post:
       tags:
@@ -1827,6 +1834,7 @@ paths:
                     destination: '08068810228'
                     status_id: dj_f93ec2a0-2515-49ef-97f3-e6a137c7830a
                     status: 'sms OTP sent successfully '
+      operationId: Authentication_sendOtp
   /v1/messaging/otp/validate:
     get:
       tags:
@@ -1889,6 +1897,7 @@ paths:
               example:
                 entity:
                   valid: true
+      operationId: Authentication_validateOtp
   /api/v1/messaging/sender_ids:
     get:
       tags:
@@ -1952,6 +1961,7 @@ paths:
                   - sender_id: Dojaher
                     activated: false
                     createdAt: '2020-10-30T00:53:02.348Z'
+      operationId: Authentication_getSenderId
   /api/v1/messaging/sender_id:
     post:
       tags:
@@ -1980,6 +1990,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: Authentication_requestSenderId
   /v1/wallet/ngn/create:
     post:
       tags:
@@ -2062,6 +2073,7 @@ paths:
                       wallet_amount: 0
                       account_number: '1004204891'
                       phone_number: '09059895710'
+      operationId: Wallet_createWallet
   /v1/wallet/ngn/retrieve:
     get:
       tags:
@@ -2172,6 +2184,7 @@ paths:
                   account_number: '7091821832'
                   phone_number: '08068810258'
                   bank_name: WEMA BANK
+      operationId: Wallet_getWallet
   /v1/wallet/ngn/accounts:
     get:
       tags:
@@ -2285,6 +2298,7 @@ paths:
                       account_number: '7091821832'
                       phone_number: '08068810258'
                       bank_name: WEMA BANK
+      operationId: Wallet_getWallets
   /v1/wallet/ngn/transaction:
     get:
       tags:
@@ -2409,6 +2423,7 @@ paths:
                       transaction_id: Dojah-4b0ecd96-9914-4e78-8ce9-21ebc4a34ee8
                       transaction_status: FAILED
                       date_created: '2021-07-19T11:57:38.517618Z'
+      operationId: Wallet_getTransaction
   /v1/wallet/ngn/transactions:
     get:
       tags:
@@ -2432,6 +2447,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: Wallet_getTransactions
   /v1/wallet/ngn/transfer:
     post:
       tags:
@@ -2575,6 +2591,7 @@ paths:
                       transaction_id: Dojah-404e608c-4c85-4a87-b8ed-968564cdb67f
                       transaction_status: PROCESSING
                       date_created: '2021-07-21T04:29:03.786408Z'
+      operationId: Wallet_transferFunds
   /v1/wallet/ngn/transfer/internal:
     post:
       tags:
@@ -2602,6 +2619,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: Wallet_transferFundsInternal
   /v1/wallet/ngn/inward:
     post:
       tags:
@@ -2634,6 +2652,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: Wallet_creditInward
   /v1/wallet/ngn/debit:
     post:
       tags:
@@ -2660,6 +2679,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: Wallet_debitSubwallet
   /v1/wallet/ngn/credit:
     post:
       tags:
@@ -2764,6 +2784,7 @@ paths:
                   transaction_id: Dojah-c02585e5-9a8b-4230-8c1b-11fd2869f4ce
                   transaction_status: COMPLETED
                   date_created: '2021-07-19T11:54:01.905196Z'
+      operationId: Wallet_creditSubwallet
   /api/v1/financial/account_information/:
     get:
       tags:
@@ -2830,6 +2851,7 @@ paths:
                 currency: Naira
                 account_status: Active
                 balance: 34,976.80
+      operationId: Financial_getAccount
   /api/v1/financial/account_transactions:
     get:
       tags:
@@ -3012,6 +3034,7 @@ paths:
                   next_page: 2
                   total_pages: 53
                   current_page: 1
+      operationId: Financial_getAccountTransactions
   /v1/financial/account_subscription:
     get:
       tags:
@@ -3079,6 +3102,7 @@ paths:
                   next_page: ''
                   total_pages: 1
                   current_page: 1
+      operationId: Financial_getAccountSubscriptions
   /v1/financial/bvn_information/basic:
     get:
       tags:
@@ -3182,6 +3206,7 @@ paths:
                   formatted_dob: '2000-06-28'
                   mobile: 070***28116
                   bvn: 2246***3719
+      operationId: Financial_getBasicBvn
   /v1/financial/bvn_information/full:
     get:
       tags:
@@ -3304,6 +3329,7 @@ paths:
                   state_of_residence: Kwara State
                   title: Mr
                   watch_listed: 'NO'
+      operationId: Financial_getFullBvn
   /v1/financial/spending_pattern:
     get:
       tags:
@@ -3381,6 +3407,7 @@ paths:
                       sum: 886
                       count: 27
                       percentage: 0.19788989071452615
+      operationId: Financial_getSpendingPattern
   /v1/financial/earning_structure:
     get:
       tags:
@@ -3446,6 +3473,7 @@ paths:
                   salary_earner: false
                   consistent: false
                   number_of_days: 183
+      operationId: Financial_getEarningStructure
   /v1/financial/transactions:
     post:
       tags:
@@ -3487,6 +3515,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: Financial_collectTransactions
   /api/v1/financial/transactions/pdf:
     post:
       tags:
@@ -3520,6 +3549,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: Financial_collectStatusFromPdf
   /api/v1/financial/analysis:
     get:
       tags:
@@ -3733,6 +3763,7 @@ paths:
                     percentofDebitTransactions: 0.81
                     totalAmountOfTransactions: 129
                   status: 200
+      operationId: Financial_getAccountAnalysis
   /v1/kyc/photoid/verify:
     post:
       tags:
@@ -3759,6 +3790,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: ML_verifyPhotoIdWithSelfie
   /v1/ml/ocr:
     post:
       tags:
@@ -3784,6 +3816,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: ML_getOcrText
   /v1/ml/ocr/generic:
     post:
       tags:
@@ -3812,6 +3845,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: ML_getGenericOcrText
   /v1/document/analysis/dl:
     post:
       tags:
@@ -3914,6 +3948,7 @@ paths:
                     SUFFIX: ''
                     VETERAN: ''
                     ZIP_CODE_IN_ADDRESS: '08060141707'
+      operationId: ML_getDocumentAnalysis
   /v1/document/analysis/passport:
     post:
       tags:
@@ -3942,6 +3977,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: ML_getPassportAnalysis
   /api/v1/aml/screening:
     post:
       tags:
@@ -4027,6 +4063,7 @@ paths:
                 entity:
                   reference_id: 8fd7008d-7c3d-4f49-91fd-005ba2fc7da2
                   status: PENDING
+      operationId: AML_screenAml
   /v1/aml/screening/info:
     get:
       tags:
@@ -4053,6 +4090,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: AML_getScreeningInfo
   /api/v1/balance:
     get:
       tags:
@@ -4079,6 +4117,7 @@ paths:
                 type: object
               example:
                 error: Your Secret Key is Missing
+      operationId: General_getWalletBalance
   /v1/purchase/airtime:
     post:
       tags:
@@ -4108,6 +4147,7 @@ paths:
                     - destination: '2348068810228'
                       status: Sent
                   reference_id: dj_f6139f6f-5056-4551-a4c2-089b7667a7ff
+      operationId: General_purchaseAirtime
   /v1/purchase/data:
     post:
       tags:
@@ -4129,6 +4169,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: General_purchaseData
   /v1/purchase/data/plans:
     get:
       tags:
@@ -4275,6 +4316,7 @@ paths:
                   - amount: 50000
                     description: MTN 120 GB DATA BUNDLE
                     plan: MTN_120GB
+      operationId: General_getDataPlans
   /v1/general/banks:
     get:
       tags:
@@ -4593,6 +4635,7 @@ paths:
                     slug: sparkle-microfinance-bank
                     country: Nigeria
                     currency: NGN
+      operationId: General_getBanks
   /v1/general/account:
     get:
       tags:
@@ -4652,6 +4695,7 @@ paths:
                 entity:
                   account_number: '3046507407'
                   account_name: SALIU MOSHOOD KOLAWOLE
+      operationId: General_getNuban
   /v1/general/bin:
     get:
       tags:
@@ -4682,6 +4726,7 @@ paths:
                   country_name: Nigeria
                   card_type: DEBIT
                   bank: Ecobank Nigeria
+      operationId: General_getBin
   /v1/ml/categorize_transaction:
     post:
       tags:
@@ -4751,6 +4796,7 @@ paths:
                   service_name: ''
                   label: Others
                   mode_of_payment: web/pos
+      operationId: Services_categorizeTransactions
   /api/v1/captcha:
     post:
       tags:
@@ -4772,6 +4818,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: Services_captcha
   /api/v1/fraud_decision:
     get:
       tags:
@@ -4791,6 +4838,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: Services_getFraudDecision
   /api/v1/kyc/accounts:
     get:
       tags:
@@ -4817,6 +4865,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: Services_getBankAccounts
   /api/v1/webhook/subscribe:
     post:
       tags:
@@ -4878,6 +4927,7 @@ paths:
                 entity: >-
                   Pls, confirm subscription with the subscribe_url sent to this
                   webhook
+      operationId: WebHooks_subscribeService
   /api/v1/webhook/delete:
     delete:
       tags:
@@ -4896,6 +4946,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: WebHooks_deleteWebhook
   /api/v1/webhook/fetch:
     get:
       tags:
@@ -5002,6 +5053,7 @@ paths:
                     confirmation_status: Invalid Subscription Arn
                     date_created: '2021-08-06T05:12:24.445507+01:00'
                     date_updated: '2021-08-06T05:12:24.445546+01:00'
+      operationId: WebHooks_getWebhooks
   /api/v1/webhook/notify:
     post:
       tags:
@@ -5104,3 +5156,4 @@ paths:
                 type: object
               example:
                 entity: App event created successfully
+      operationId: WebHooks_notifyWebhook
