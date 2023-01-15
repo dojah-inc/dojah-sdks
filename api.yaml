@@ -56,7 +56,7 @@ paths:
           in: query
           schema:
             type: string
-          example: 1988-09-01
+          example: "1988-09-01"
       responses:
         "200":
           description: OK
@@ -115,14 +115,14 @@ paths:
                 type: object
               example:
                 entity:
-                  certificate_date: 2010-07-19
-                  date_of_birth: 1988-09-01
-                  expiry_date: 2016-08-25
+                  certificate_date: "2010-07-19"
+                  date_of_birth: "1988-09-01"
+                  expiry_date: "2016-08-25"
                   full_name: John Doe
                   id: V0000000
                   is_date_of_birth_match: true
                   is_full_name_match: true
-                  issue_date: 2010-08-25
+                  issue_date: "2010-08-25"
                   picture: <base64 encoded image>
                   pin: DOE-310203-03-01
                   processing_center: VR3
@@ -161,7 +161,7 @@ paths:
           in: query
           schema:
             type: string
-          example: 1990-04-05
+          example: "1990-04-05"
       responses:
         "200":
           description: OK
@@ -220,8 +220,8 @@ paths:
                 type: object
               example:
                 entity:
-                  date_of_birth: 1990-04-05
-                  expiry_date: 2022-10-03
+                  date_of_birth: "1990-04-05"
+                  expiry_date: "2022-10-03"
                   first_name: John
                   gender: MALE
                   id: G0000000
@@ -229,7 +229,7 @@ paths:
                   is_first_name_match: false
                   is_last_name_match: true
                   is_middle_name_match: true
-                  issue_date: 2017-11-03
+                  issue_date: "2017-11-03"
                   last_name: Doe
                   middle_name: Jack
                   picture: <base64 encoded image>
@@ -260,7 +260,7 @@ paths:
           in: query
           schema:
             type: string
-          example: 1990-04-05
+          example: "1990-04-05"
       responses:
         "200":
           description: OK
@@ -271,7 +271,7 @@ paths:
               example:
                 entity:
                   card_serial: R1970200019702
-                  date_of_birth: 1980-02-03
+                  date_of_birth: "1980-02-03"
                   full_name: John Doe
                   gender: MALE
                   id: C000000000000
@@ -387,7 +387,7 @@ paths:
           in: query
           schema:
             type: string
-          example: 1985-12-29
+          example: "1985-12-29"
         - name: gender
           in: query
           schema:
@@ -430,15 +430,15 @@ paths:
                     gender: Male
                     birth_date: 18/05/1992
                     blood_group_id: B+
-                    facial_mark: No
-                    glasses: No
+                    facial_mark: "No"
+                    glasses: "No"
                     height: "1.7"
                     universaltax_identity_number: ""
                     nin_number: ""
                     country: Nigeria
                     state: Edo
                     lga: Etsako East
-                    is_disability: No
+                    is_disability: "No"
                     disability_reason: ""
   /api/v1/kyc/nuban:
     get:
@@ -552,7 +552,7 @@ paths:
           in: query
           schema:
             type: string
-          example: 1982-02-19
+          example: "1982-02-19"
       responses:
         "200":
           description: Successful response
@@ -585,7 +585,7 @@ paths:
                   first_name: JOSHUA
                   last_name: OLADIPO
                   dob: 28-Jun-00
-                  formatted_dob: 2000-06-28
+                  formatted_dob: "2000-06-28"
                   mobile: "07085460116"
                   bvn: "22468537919"
   /api/v1/kyc/bvn/full:
@@ -637,7 +637,7 @@ paths:
                   state_of_origin: Osun State
                   state_of_residence: Kwara State
                   title: Mr
-                  watch_listed: NO
+                  watch_listed: "NO"
   /api/v1/kyc/bvn/advance:
     get:
       tags:
@@ -708,12 +708,14 @@ paths:
             Expect-CT:
               schema:
                 type: string
-                example: max-age=604800,
+                example: >-
+                  max-age=604800,
                   report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
             Report-To:
               schema:
                 type: string
-                example: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=N8Knn6%2F6B8Y0NZm6wpjxiXsENx6u%2FlMRevPNAb0IrHo6yXQDcqqsZK%2Fx1DhZ5aX7JOLAKKizfiy3KaoTYpoOTNy0Mh5uPFuevRpB5jVualn1UmavKmNdk3YSQB0cPeVOLUQJG7E0%2BebAwg%3D%3D"}],"group":"cf-nel","max_age":604800}'
+                example: >-
+                  {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=N8Knn6%2F6B8Y0NZm6wpjxiXsENx6u%2FlMRevPNAb0IrHo6yXQDcqqsZK%2Fx1DhZ5aX7JOLAKKizfiy3KaoTYpoOTNy0Mh5uPFuevRpB5jVualn1UmavKmNdk3YSQB0cPeVOLUQJG7E0%2BebAwg%3D%3D"}],"group":"cf-nel","max_age":604800}
             NEL:
               schema:
                 type: string
@@ -733,8 +735,9 @@ paths:
             alt-svc:
               schema:
                 type: string
-                example: h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400,
-                  h3-27=":443"; ma=86400
+                example: >-
+                  h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443";
+                  ma=86400, h3-27=":443"; ma=86400
           content:
             application/json:
               schema:
@@ -765,7 +768,7 @@ paths:
                   state_of_origin: Osun State
                   state_of_residence: Kwara State
                   title: Mr
-                  watch_listed: NO
+                  watch_listed: "NO"
                   status: 200
   /api/v1/kyc/vnin:
     get:
@@ -919,7 +922,7 @@ paths:
           in: query
           schema:
             type: string
-          example: 1993-06-10
+          example: "1993-06-10"
         - name: first_name
           in: query
           schema:
@@ -970,7 +973,7 @@ paths:
                 entity:
                   first_name: MOSHOOD
                   last_name: SALIU
-                  date_of_birth: 1993-06-10
+                  date_of_birth: "1993-06-10"
                   verification: true
   /v1/kyc/bvn/verify:
     post:
@@ -1108,12 +1111,14 @@ paths:
             Expect-CT:
               schema:
                 type: string
-                example: max-age=604800,
+                example: >-
+                  max-age=604800,
                   report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
             Report-To:
               schema:
                 type: string
-                example: '{"max_age":604800,"group":"cf-nel","endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=L1%2Bm8V1sbTZHEDg%2BrFsXtRcV2iIeRuQ9Zkt%2B49L91xIYYLr4oP7HU3DZaBVLfUjM%2F03DJHObMPkO6gpfaIuY6i%2FoCS0npvp5%2FDbAQzo%3D"}]}'
+                example: >-
+                  {"max_age":604800,"group":"cf-nel","endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=L1%2Bm8V1sbTZHEDg%2BrFsXtRcV2iIeRuQ9Zkt%2B49L91xIYYLr4oP7HU3DZaBVLfUjM%2F03DJHObMPkO6gpfaIuY6i%2FoCS0npvp5%2FDbAQzo%3D"}]}
             NEL:
               schema:
                 type: string
@@ -1133,7 +1138,9 @@ paths:
             alt-svc:
               schema:
                 type: string
-                example: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+                example: >-
+                  h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443";
+                  ma=86400
           content:
             application/json:
               schema:
@@ -1144,7 +1151,7 @@ paths:
                   "voter_identification_number:": 90F5B1C5BD295355586
                   "gender:": Male
                   "occupation:": STUDENT
-                  "time_of_registration:": 2011-01-18 13:59:46
+                  "time_of_registration:": "2011-01-18 13:59:46"
                   "state:": ONDO
                   "local_government:": IDANRE
                   "registration_area_ward:": ISALU JIGBOKIN
@@ -1208,7 +1215,8 @@ paths:
             Expect-CT:
               schema:
                 type: string
-                example: max-age=604800,
+                example: >-
+                  max-age=604800,
                   report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
             X-Powered-By:
               schema:
@@ -1217,7 +1225,8 @@ paths:
             Report-To:
               schema:
                 type: string
-                example: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=XuvPXoaWVVjuT0s2pSoW3bC1PldQJXghR%2ByyYpfEKlTJMY2YZikSIKrSH8ujg7ikMaXtY4BjH1Niw1An4Jl3FKWfX1XL%2B30bj1prYkxmTYAFiMJ3iqXydDlE%2BqYyMR4%3D"}],"group":"cf-nel","max_age":604800}'
+                example: >-
+                  {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=XuvPXoaWVVjuT0s2pSoW3bC1PldQJXghR%2ByyYpfEKlTJMY2YZikSIKrSH8ujg7ikMaXtY4BjH1Niw1An4Jl3FKWfX1XL%2B30bj1prYkxmTYAFiMJ3iqXydDlE%2BqYyMR4%3D"}],"group":"cf-nel","max_age":604800}
             NEL:
               schema:
                 type: string
@@ -1237,8 +1246,9 @@ paths:
             alt-svc:
               schema:
                 type: string
-                example: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400,
-                  h3=":443"; ma=86400
+                example: >-
+                  h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443";
+                  ma=86400, h3=":443"; ma=86400
           content:
             application/json:
               schema:
@@ -1457,7 +1467,7 @@ paths:
                   rc_number: "1261103"
                   company_name: ELTAFORD LIMITED
                   address: NO 37 ISAIAH ROAD UBEJI
-                  date_of_registration: 2015-05-15
+                  date_of_registration: "2015-05-15"
   /v1/kyc/cac/basic:
     get:
       tags:
@@ -1777,12 +1787,14 @@ paths:
             Expect-CT:
               schema:
                 type: string
-                example: max-age=604800,
+                example: >-
+                  max-age=604800,
                   report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
             Report-To:
               schema:
                 type: string
-                example: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=yutdxK3QJ9sWDVJWM8%2BhTq9o8reYJNw71SINNYN0anY70dzCpDQpTX1SiDzm%2FHPZaaHPovp9RttEjeQbUfzKQSyDuj%2BXSyuRD4bUNVd%2BRrV76JDo0o1EOUgXpDUL7sbncLIx27ewTrLoBQ%3D%3D"}],"group":"cf-nel","max_age":604800}'
+                example: >-
+                  {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=yutdxK3QJ9sWDVJWM8%2BhTq9o8reYJNw71SINNYN0anY70dzCpDQpTX1SiDzm%2FHPZaaHPovp9RttEjeQbUfzKQSyDuj%2BXSyuRD4bUNVd%2BRrV76JDo0o1EOUgXpDUL7sbncLIx27ewTrLoBQ%3D%3D"}],"group":"cf-nel","max_age":604800}
             NEL:
               schema:
                 type: string
@@ -1802,8 +1814,9 @@ paths:
             alt-svc:
               schema:
                 type: string
-                example: h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400,
-                  h3-27=":443"; ma=86400
+                example: >-
+                  h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443";
+                  ma=86400, h3-27=":443"; ma=86400
           content:
             application/json:
               schema:
@@ -1929,16 +1942,16 @@ paths:
                 entity:
                   - sender_id: Dojah
                     activated: false
-                    createdAt: 2020-10-29T23:27:50.633Z
+                    createdAt: "2020-10-29T23:27:50.633Z"
                   - sender_id: Dojah
                     activated: false
-                    createdAt: 2020-10-29T23:41:34.977Z
+                    createdAt: "2020-10-29T23:41:34.977Z"
                   - sender_id: Dojah
                     activated: false
-                    createdAt: 2020-10-29T23:49:03.363Z
+                    createdAt: "2020-10-29T23:49:03.363Z"
                   - sender_id: Dojaher
                     activated: false
-                    createdAt: 2020-10-30T00:53:02.348Z
+                    createdAt: "2020-10-30T00:53:02.348Z"
   /api/v1/messaging/sender_id:
     post:
       tags:
@@ -2118,12 +2131,14 @@ paths:
             Expect-CT:
               schema:
                 type: string
-                example: max-age=604800,
+                example: >-
+                  max-age=604800,
                   report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
             Report-To:
               schema:
                 type: string
-                example: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=tQFlZ1RZ3TenWsfrZYApbkIzqoORp12TJj0%2Bc%2BCYeTCmTcIP%2FJF58UwV%2FKIXCbVT2EF8UvwrbhlLv98LmeSPpgj6cnD4dvb1Smk%2B2z6LTU8RBYpiiroHrBiVwA4n9h9chB2ZlWNzbeTQng%3D%3D"}],"group":"cf-nel","max_age":604800}'
+                example: >-
+                  {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=tQFlZ1RZ3TenWsfrZYApbkIzqoORp12TJj0%2Bc%2BCYeTCmTcIP%2FJF58UwV%2FKIXCbVT2EF8UvwrbhlLv98LmeSPpgj6cnD4dvb1Smk%2B2z6LTU8RBYpiiroHrBiVwA4n9h9chB2ZlWNzbeTQng%3D%3D"}],"group":"cf-nel","max_age":604800}
             NEL:
               schema:
                 type: string
@@ -2143,8 +2158,9 @@ paths:
             alt-svc:
               schema:
                 type: string
-                example: h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400,
-                  h3-27=":443"; ma=86400
+                example: >-
+                  h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443";
+                  ma=86400, h3-27=":443"; ma=86400
           content:
             application/json:
               schema:
@@ -2225,12 +2241,14 @@ paths:
             Expect-CT:
               schema:
                 type: string
-                example: max-age=604800,
+                example: >-
+                  max-age=604800,
                   report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
             Report-To:
               schema:
                 type: string
-                example: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=5QyNmdAMKJXgqFdf8ayW4jYnJXamkXPYW3kHZxn9Sq%2BaP5PpcUZH1GogxSVWZ9BNd4I8S8UDdjtilUg48yeqrXgIZpybl1cKQL5%2FnO1WfyJf2%2FgHWOpizQa%2FrkmqHkieHrt17DBkiX0T9g%3D%3D"}],"group":"cf-nel","max_age":604800}'
+                example: >-
+                  {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=5QyNmdAMKJXgqFdf8ayW4jYnJXamkXPYW3kHZxn9Sq%2BaP5PpcUZH1GogxSVWZ9BNd4I8S8UDdjtilUg48yeqrXgIZpybl1cKQL5%2FnO1WfyJf2%2FgHWOpizQa%2FrkmqHkieHrt17DBkiX0T9g%3D%3D"}],"group":"cf-nel","max_age":604800}
             NEL:
               schema:
                 type: string
@@ -2250,8 +2268,9 @@ paths:
             alt-svc:
               schema:
                 type: string
-                example: h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400,
-                  h3-27=":443"; ma=86400
+                example: >-
+                  h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443";
+                  ma=86400, h3-27=":443"; ma=86400
           content:
             application/json:
               schema:
@@ -2323,7 +2342,8 @@ paths:
             Expect-CT:
               schema:
                 type: string
-                example: max-age=604800,
+                example: >-
+                  max-age=604800,
                   report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
             X-Powered-By:
               schema:
@@ -2332,7 +2352,8 @@ paths:
             Report-To:
               schema:
                 type: string
-                example: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=reT%2B7xCKCI389wOJbdAQYE1Cv7WHy6MlrwdLiqf1vZzmmTLtpJn0GmptEARWR93ZBSpuiJYTdCmLKifkZw1HencupuiK7dYKdN3gEq8L9zPHJn6BHkUYzrPhRoDTjN4%3D"}],"group":"cf-nel","max_age":604800}'
+                example: >-
+                  {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=reT%2B7xCKCI389wOJbdAQYE1Cv7WHy6MlrwdLiqf1vZzmmTLtpJn0GmptEARWR93ZBSpuiJYTdCmLKifkZw1HencupuiK7dYKdN3gEq8L9zPHJn6BHkUYzrPhRoDTjN4%3D"}],"group":"cf-nel","max_age":604800}
             NEL:
               schema:
                 type: string
@@ -2352,8 +2373,9 @@ paths:
             alt-svc:
               schema:
                 type: string
-                example: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400,
-                  h3=":443"; ma=86400
+                example: >-
+                  h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443";
+                  ma=86400, h3=":443"; ma=86400
           content:
             application/json:
               schema:
@@ -2372,7 +2394,7 @@ paths:
                       transaction_reason: null
                       transaction_id: Dojah-c02585e5-9a8b-4230-8c1b-11fd2869f4ce
                       transaction_status: COMPLETED
-                      date_created: 2021-07-19T11:54:01.905196Z
+                      date_created: "2021-07-19T11:54:01.905196Z"
                 example-1:
                   summary: Retrieve Transaction Details
                   value:
@@ -2386,7 +2408,7 @@ paths:
                       transaction_reason: wallet has Insufficient balance
                       transaction_id: Dojah-4b0ecd96-9914-4e78-8ce9-21ebc4a34ee8
                       transaction_status: FAILED
-                      date_created: 2021-07-19T11:57:38.517618Z
+                      date_created: "2021-07-19T11:57:38.517618Z"
   /v1/wallet/ngn/transactions:
     get:
       tags:
@@ -2472,7 +2494,8 @@ paths:
             Expect-CT:
               schema:
                 type: string
-                example: max-age=604800,
+                example: >-
+                  max-age=604800,
                   report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
             X-Powered-By:
               schema:
@@ -2481,7 +2504,8 @@ paths:
             Report-To:
               schema:
                 type: string
-                example: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=p4C%2FwRO%2F7ofJ0xKbeJywokrw3LkWfF%2F4zMRKDs1Dtrm2ZTpnCV4K%2FyCmdxgzFuNFL9n3I7rqr%2B6YST4GuFVEI8LvrSHKdp6bP%2Fnrt6asPQA5ln1Chiadms0qjnaeV%2Bc%3D"}],"group":"cf-nel","max_age":604800}'
+                example: >-
+                  {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=p4C%2FwRO%2F7ofJ0xKbeJywokrw3LkWfF%2F4zMRKDs1Dtrm2ZTpnCV4K%2FyCmdxgzFuNFL9n3I7rqr%2B6YST4GuFVEI8LvrSHKdp6bP%2Fnrt6asPQA5ln1Chiadms0qjnaeV%2Bc%3D"}],"group":"cf-nel","max_age":604800}
             NEL:
               schema:
                 type: string
@@ -2501,8 +2525,9 @@ paths:
             alt-svc:
               schema:
                 type: string
-                example: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400,
-                  h3=":443"; ma=86400
+                example: >-
+                  h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443";
+                  ma=86400, h3=":443"; ma=86400
           content:
             application/json:
               schema:
@@ -2521,7 +2546,7 @@ paths:
                       transaction_reason: null
                       transaction_id: Dojah-6bddb625-3ca9-41c0-b0fb-13f7f11adf90
                       transaction_status: PROCESSING
-                      date_created: 2021-07-19T10:44:03.610405Z
+                      date_created: "2021-07-19T10:44:03.610405Z"
                 example-1:
                   summary: Transfer Funds
                   value:
@@ -2535,7 +2560,7 @@ paths:
                       transaction_reason: null
                       transaction_id: Dojah-4b0ecd96-9914-4e78-8ce9-21ebc4a34ee8
                       transaction_status: PROCESSING
-                      date_created: 2021-07-19T11:57:38.517618Z
+                      date_created: "2021-07-19T11:57:38.517618Z"
                 example-2:
                   summary: Transfer Funds
                   value:
@@ -2549,7 +2574,7 @@ paths:
                       transaction_reason: null
                       transaction_id: Dojah-404e608c-4c85-4a87-b8ed-968564cdb67f
                       transaction_status: PROCESSING
-                      date_created: 2021-07-21T04:29:03.786408Z
+                      date_created: "2021-07-21T04:29:03.786408Z"
   /v1/wallet/ngn/transfer/internal:
     post:
       tags:
@@ -2594,7 +2619,7 @@ paths:
                 originator_account_name: saliu moshood
                 originator_bank: "000004"
                 validate: false
-                timestamp: 2021-01-11T09:34:55.879Z
+                timestamp: "2021-01-11T09:34:55.879Z"
                 environment: sandbox
       security:
         - apikeyAuth: []
@@ -2689,7 +2714,8 @@ paths:
             Expect-CT:
               schema:
                 type: string
-                example: max-age=604800,
+                example: >-
+                  max-age=604800,
                   report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
             X-Powered-By:
               schema:
@@ -2698,7 +2724,8 @@ paths:
             Report-To:
               schema:
                 type: string
-                example: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=ZOYZrccMLtm7t9y8DYeH48V2Uentj7wq%2B2SALn6vCI8zD0fVKDYC9BqekAZ%2Fs5yjb0tSJkMkyubuWTJk0L%2BehcHjJ9o8h%2BKSL6nTvZe6YC3MnXecLijKEb52W5obXEs%3D"}],"group":"cf-nel","max_age":604800}'
+                example: >-
+                  {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=ZOYZrccMLtm7t9y8DYeH48V2Uentj7wq%2B2SALn6vCI8zD0fVKDYC9BqekAZ%2Fs5yjb0tSJkMkyubuWTJk0L%2BehcHjJ9o8h%2BKSL6nTvZe6YC3MnXecLijKEb52W5obXEs%3D"}],"group":"cf-nel","max_age":604800}
             NEL:
               schema:
                 type: string
@@ -2718,8 +2745,9 @@ paths:
             alt-svc:
               schema:
                 type: string
-                example: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400,
-                  h3=":443"; ma=86400
+                example: >-
+                  h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443";
+                  ma=86400, h3=":443"; ma=86400
           content:
             application/json:
               schema:
@@ -2735,7 +2763,7 @@ paths:
                   transaction_reason: null
                   transaction_id: Dojah-c02585e5-9a8b-4230-8c1b-11fd2869f4ce
                   transaction_status: COMPLETED
-                  date_created: 2021-07-19T11:54:01.905196Z
+                  date_created: "2021-07-19T11:54:01.905196Z"
   /api/v1/financial/account_information/:
     get:
       tags:
@@ -2868,101 +2896,117 @@ paths:
                 entity:
                   transactions:
                     - id: 1870
-                      transaction_date: 2020-09-28
-                      value_date: 2020-09-28
+                      transaction_date: "2020-09-28"
+                      value_date: "2020-09-28"
                       trans_type: debit
                       bank_name: Guaranty Trust Bank
                       amount: "1.87"
                       reference: "0"
-                      narration: VALUE ADDED TAX 000013200928140356000182528304 VAT ON NIP TRANSFER
-                        FOR 000013200928140356000182528304 via GTWORLD TO
-                        KMB/OLUWATOBILOBA OLOLADE
+                      narration: >-
+                        VALUE ADDED TAX 000013200928140356000182528304 VAT ON
+                        NIP TRANSFER FOR 000013200928140356000182528304 via
+                        GTWORLD TO KMB/OLUWATOBILOBA OLOLADE
                         ReF:GW492440265000000100002009281402
                     - id: 1871
-                      transaction_date: 2020-09-28
-                      value_date: 2020-09-28
+                      transaction_date: "2020-09-28"
+                      value_date: "2020-09-28"
                       trans_type: debit
                       bank_name: Guaranty Trust Bank
                       amount: "25.00"
                       reference: "0"
-                      narration: COMMISSION 000013200928140356000182528304 NIP TRANSFER COMMISSION FOR
-                        000013200928140356000182528304 via GTWORLD TO
-                        KMB/OLUWATOBILOBA OLOLADE
+                      narration: >-
+                        COMMISSION 000013200928140356000182528304 NIP TRANSFER
+                        COMMISSION FOR 000013200928140356000182528304 via
+                        GTWORLD TO KMB/OLUWATOBILOBA OLOLADE
                         ReF:GW492440265000000100002009281402
                     - id: 1872
-                      transaction_date: 2020-09-28
-                      value_date: 2020-09-28
+                      transaction_date: "2020-09-28"
+                      value_date: "2020-09-28"
                       trans_type: debit
                       bank_name: Guaranty Trust Bank
                       amount: "10000.00"
                       reference: "0"
-                      narration: NIBSS Instant Payment Outward 000013200928140356000182528304 via
-                        GTWORLD TO KMB/OLUWATOBILOBA OLOLADE
+                      narration: >-
+                        NIBSS Instant Payment Outward
+                        000013200928140356000182528304 via GTWORLD TO
+                        KMB/OLUWATOBILOBA OLOLADE
                         /26.875/REF:GW4924402650000001000020092814 f
                     - id: 1873
-                      transaction_date: 2020-09-28
-                      value_date: 2020-09-28
+                      transaction_date: "2020-09-28"
+                      value_date: "2020-09-28"
                       trans_type: credit
                       bank_name: Guaranty Trust Bank
                       amount: "20000.00"
                       reference: "0"
-                      narration: TRANSFER BETWEEN CUSTOMERS via GAPS 637368962161801700-1 from ELTA
-                        SOLUTIONS LIMITED to OLOLADE OLUWATOBILOBA
+                      narration: >-
+                        TRANSFER BETWEEN CUSTOMERS via GAPS 637368962161801700-1
+                        from ELTA SOLUTIONS LIMITED to OLOLADE OLUWATOBILOBA
                         REF:215824649000374669592809201323
                     - id: 1874
-                      transaction_date: 2020-09-28
-                      value_date: 2020-09-28
+                      transaction_date: "2020-09-28"
+                      value_date: "2020-09-28"
                       trans_type: debit
                       bank_name: Guaranty Trust Bank
                       amount: "500.00"
                       reference: "0"
-                      narration: Airtime Purchase USSD-101CT0000000002033042235-2348068810228
+                      narration: >-
+                        Airtime Purchase
+                        USSD-101CT0000000002033042235-2348068810228
                     - id: 1875
-                      transaction_date: 2020-09-26
-                      value_date: 2020-09-26
+                      transaction_date: "2020-09-26"
+                      value_date: "2020-09-26"
                       trans_type: debit
                       bank_name: Guaranty Trust Bank
                       amount: "50.00"
                       reference: "0"
-                      narration: STAMP DUTY CHARGE 26092020 STAMP DUTY CHARGE - 26/09/2020
+                      narration: >-
+                        STAMP DUTY CHARGE 26092020 STAMP DUTY CHARGE -
+                        26/09/2020
                     - id: 1876
-                      transaction_date: 2020-09-26
-                      value_date: 2020-09-26
+                      transaction_date: "2020-09-26"
+                      value_date: "2020-09-26"
                       trans_type: debit
                       bank_name: Guaranty Trust Bank
                       amount: "1.87"
                       reference: "0"
-                      narration: VALUE ADDED TAX 000013200926153958000180345243 VAT ON USSD NIP
-                        RECOVERY CHARGE ReF:000013200926153958000180345243
+                      narration: >-
+                        VALUE ADDED TAX 000013200926153958000180345243 VAT ON
+                        USSD NIP RECOVERY CHARGE
+                        ReF:000013200926153958000180345243
                     - id: 1877
-                      transaction_date: 2020-09-26
-                      value_date: 2020-09-26
+                      transaction_date: "2020-09-26"
+                      value_date: "2020-09-26"
                       trans_type: debit
                       bank_name: Guaranty Trust Bank
                       amount: "25.00"
                       reference: "0"
-                      narration: COMMISSION 000013200926153958000180345243 USSD NIP RECOVERY CHARGE
-                        ReF:000013200926153958000180345243
+                      narration: >-
+                        COMMISSION 000013200926153958000180345243 USSD NIP
+                        RECOVERY CHARGE ReF:000013200926153958000180345243
                     - id: 1878
-                      transaction_date: 2020-09-26
-                      value_date: 2020-09-26
+                      transaction_date: "2020-09-26"
+                      value_date: "2020-09-26"
                       trans_type: debit
                       bank_name: Guaranty Trust Bank
                       amount: "14500.00"
                       reference: "0"
-                      narration: NIBSS Instant Payment Outward 000013200926153958000180345243 USSD NIP
-                        Transfer from 08068810228 TO ZBN/OLALEKAN MOSES ADEYEMI
+                      narration: >-
+                        NIBSS Instant Payment Outward
+                        000013200926153958000180345243 USSD NIP Transfer from
+                        08068810228 TO ZBN/OLALEKAN MOSES ADEYEMI
                         /26.875/REF:000013200926153958000180345243
                     - id: 1879
-                      transaction_date: 2020-09-26
-                      value_date: 2020-09-26
+                      transaction_date: "2020-09-26"
+                      value_date: "2020-09-26"
                       trans_type: credit
                       bank_name: Guaranty Trust Bank
                       amount: "1.87"
                       reference: "0"
-                      narration: "FAILED NIBSS INSTANT PAYMENT 000013200926151310000180305048 NIP
-                        Reversal: (ZBN returned: Beneficiary Bank not available)
-                        REF:000013200926151310000180305048"
+                      narration: >-
+                        FAILED NIBSS INSTANT PAYMENT
+                        000013200926151310000180305048 NIP Reversal: (ZBN
+                        returned: Beneficiary Bank not available)
+                        REF:000013200926151310000180305048
                   total: 521
                   previous_page: ""
                   next_page: 2
@@ -3096,12 +3140,14 @@ paths:
             Expect-CT:
               schema:
                 type: string
-                example: max-age=604800,
+                example: >-
+                  max-age=604800,
                   report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
             Report-To:
               schema:
                 type: string
-                example: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=6eQEpUAJ1kexdxth2VMT1tGBMg0aHwGg5CcUCx8s5NM1%2BioB0c3G4bZbdO6b2DOmjXShH6j5eiucvmHnSa8zorrehM92zf4NwPpZs1oychk%3D"}]}'
+                example: >-
+                  {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=6eQEpUAJ1kexdxth2VMT1tGBMg0aHwGg5CcUCx8s5NM1%2BioB0c3G4bZbdO6b2DOmjXShH6j5eiucvmHnSa8zorrehM92zf4NwPpZs1oychk%3D"}]}
             NEL:
               schema:
                 type: string
@@ -3121,7 +3167,9 @@ paths:
             alt-svc:
               schema:
                 type: string
-                example: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+                example: >-
+                  h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443";
+                  ma=86400
           content:
             application/json:
               schema:
@@ -3131,7 +3179,7 @@ paths:
                   first_name: ISAAC
                   last_name: THOMPSON
                   dob: 28-Jun-00
-                  formatted_dob: 2000-06-28
+                  formatted_dob: "2000-06-28"
                   mobile: 070***28116
                   bvn: 2246***3719
   /v1/financial/bvn_information/full:
@@ -3195,12 +3243,14 @@ paths:
             Expect-CT:
               schema:
                 type: string
-                example: max-age=604800,
+                example: >-
+                  max-age=604800,
                   report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
             Report-To:
               schema:
                 type: string
-                example: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=t%2FkFrIoSYsoQNk%2BfNg1Pluqc6UKyJd2IQtS%2FnwttiaUsr22LpZaongUbSMG2rOudfOyfovtLyRvc%2Bglr2Mh2HiFpGkiF2NvpQvgXGhXJFB8%3D"}]}'
+                example: >-
+                  {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=t%2FkFrIoSYsoQNk%2BfNg1Pluqc6UKyJd2IQtS%2FnwttiaUsr22LpZaongUbSMG2rOudfOyfovtLyRvc%2Bglr2Mh2HiFpGkiF2NvpQvgXGhXJFB8%3D"}]}
             NEL:
               schema:
                 type: string
@@ -3220,7 +3270,9 @@ paths:
             alt-svc:
               schema:
                 type: string
-                example: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+                example: >-
+                  h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443";
+                  ma=86400
           content:
             application/json:
               schema:
@@ -3251,7 +3303,7 @@ paths:
                   state_of_origin: Osun State
                   state_of_residence: Kwara State
                   title: Mr
-                  watch_listed: NO
+                  watch_listed: "NO"
   /v1/financial/spending_pattern:
     get:
       tags:
@@ -3406,12 +3458,12 @@ paths:
               type: object
               example:
                 transactions:
-                  - transaction_date: 2021-04-30
+                  - transaction_date: "2021-04-30"
                     transaction_amount: "2016.4"
                     transaction_description: 0033199479:Int.Pd:01-04-2021 to 30-04-2 |
                     transaction_type: credit
                     reference_number: 12345tgfnde9000
-                  - transaction_date: 2021-05-30
+                  - transaction_date: "2021-05-30"
                     transaction_amount: "2016.4"
                     transaction_description: 0033199479:Int.Pd:01 deposit
                     transaction_type: credit
@@ -3541,7 +3593,8 @@ paths:
             Report-To:
               schema:
                 type: string
-                example: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=3uOd2U4h2dejKgswBDZs5gJ6%2FZC4va8RoddUP6aDte0AYMBFdb4qch669C85YrBnLHB5T7S7ROAHy1tS8IWv9krrt6lQRHrvOTd9v%2BvAl8jttWuYxFt6Azu1M8WJvKSYSkvBmLS2bf%2FB%2Fw%3D%3D"}],"group":"cf-nel","max_age":604800}'
+                example: >-
+                  {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=3uOd2U4h2dejKgswBDZs5gJ6%2FZC4va8RoddUP6aDte0AYMBFdb4qch669C85YrBnLHB5T7S7ROAHy1tS8IWv9krrt6lQRHrvOTd9v%2BvAl8jttWuYxFt6Azu1M8WJvKSYSkvBmLS2bf%2FB%2Fw%3D%3D"}],"group":"cf-nel","max_age":604800}
             NEL:
               schema:
                 type: string
@@ -3578,8 +3631,8 @@ paths:
                     averageWeeklyCredits: 6530.55
                     averageWeeklyDebits: 5031.04
                     closingBalance: 0
-                    firstDateInStatement: 2021-04-12
-                    lastDateInStatement: 2022-07-03
+                    firstDateInStatement: "2021-04-12"
+                    lastDateInStatement: "2022-07-03"
                     numberOfTransactingMonths: 6
                     periodInStatement: April - July
                     yearInStatement: 2021, 2022
@@ -3631,7 +3684,7 @@ paths:
                     totalRecurringExpenses: 0
                   fundsManagement:
                     accountActivity: 0.1
-                    accountSweep: No
+                    accountSweep: "No"
                     averageMonthlyLoanAmount: 0
                     averageMonthlyLoanRepaymentAmount: 0
                     gamblingRate: 0
@@ -3646,9 +3699,9 @@ paths:
                     totalLoanAmount: 0
                     totalLoanRepaymentAmount: 0
                   inflowBreakdown:
-                    AdditionalIncome: Yes
+                    AdditionalIncome: "Yes"
                     RecurringSalaryPayments: null
-                    aSalaryEarner: No
+                    aSalaryEarner: "No"
                     averageAdditionalIncome: 9166.67
                     averageGuaranteedSalary: 0
                     estimatedSalaryPaymentDay: null
@@ -3659,8 +3712,8 @@ paths:
                     totalnumberOfSalaryPayments: 0
                   transactionRoutineBreakdown:
                     MaximumExpense: 0
-                    lastCreditReceived: 2022-03-04
-                    lastDebitMade: 2022-07-03
+                    lastCreditReceived: "2022-03-04"
+                    lastDebitMade: "2022-07-03"
                     mostFrequentBalanceRange: <10000
                     mostFrequentTransactionRange: <10000
                     numberOfCardRequests: 0
@@ -3902,7 +3955,7 @@ paths:
               example:
                 first_name: "Obama "
                 last_name: " "
-                date_of_birth: 1997-08-18
+                date_of_birth: "1997-08-18"
       parameters:
         - name: Appid
           in: header
@@ -4025,7 +4078,7 @@ paths:
               schema:
                 type: object
               example:
-                error: Your Secret Key is Missing
+                error: "Your Secret Key is Missing"
   /v1/purchase/airtime:
     post:
       tags:
@@ -4640,8 +4693,9 @@ paths:
             schema:
               type: object
               example:
-                description: POS/WEB PURCHASE TRANSACTION -047608- -253842-MUNCHIES BY MOE OY
-                  OYNG
+                description: >-
+                  POS/WEB PURCHASE TRANSACTION -047608- -253842-MUNCHIES BY MOE
+                  OY OYNG
                 trans_type: debit
       security:
         - apikeyAuth: []
@@ -4821,7 +4875,9 @@ paths:
               schema:
                 type: object
               example:
-                entity: Pls, confirm subscription with the subscribe_url sent to this webhook
+                entity: >-
+                  Pls, confirm subscription with the subscribe_url sent to this
+                  webhook
   /api/v1/webhook/delete:
     delete:
       tags:
@@ -4896,12 +4952,14 @@ paths:
             Expect-CT:
               schema:
                 type: string
-                example: max-age=604800,
+                example: >-
+                  max-age=604800,
                   report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
             Report-To:
               schema:
                 type: string
-                example: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=S0evXHIXXRiYwRETMKJ%2B8yP9ogneeaQ%2BO0%2FeQdmxEKCdnFerh4Pe2HV4BraL0C9FZOUmn8%2FkixVL6pM9WI7Hmr8XbV5SqsSb9zvhm%2Fg72%2Bfiqn6qITfZEJg9faAmmpI2tsg9"}],"group":"cf-nel","max_age":604800}'
+                example: >-
+                  {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=S0evXHIXXRiYwRETMKJ%2B8yP9ogneeaQ%2BO0%2FeQdmxEKCdnFerh4Pe2HV4BraL0C9FZOUmn8%2FkixVL6pM9WI7Hmr8XbV5SqsSb9zvhm%2Fg72%2Bfiqn6qITfZEJg9faAmmpI2tsg9"}],"group":"cf-nel","max_age":604800}
             NEL:
               schema:
                 type: string
@@ -4921,8 +4979,9 @@ paths:
             alt-svc:
               schema:
                 type: string
-                example: h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400,
-                  h3-27=":443"; ma=86400
+                example: >-
+                  h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443";
+                  ma=86400, h3-27=":443"; ma=86400
           content:
             application/json:
               schema:
@@ -4934,15 +4993,15 @@ paths:
                     environment: sandbox
                     service: ngn_wallet
                     confirmation_status: Invalid Subscription Arn
-                    date_created: 2021-09-15T13:02:17.286834+01:00
-                    date_updated: 2021-09-15T13:02:17.286880+01:00
+                    date_created: "2021-09-15T13:02:17.286834+01:00"
+                    date_updated: "2021-09-15T13:02:17.286880+01:00"
                   - app_id: 60d4aebc1e90de0033ad14ad
                     endpoint: https://staging.dojah.io/webhooks/ngn_wallet
                     environment: sandbox
                     service: sms
                     confirmation_status: Invalid Subscription Arn
-                    date_created: 2021-08-06T05:12:24.445507+01:00
-                    date_updated: 2021-08-06T05:12:24.445546+01:00
+                    date_created: "2021-08-06T05:12:24.445507+01:00"
+                    date_updated: "2021-08-06T05:12:24.445546+01:00"
   /api/v1/webhook/notify:
     post:
       tags:
@@ -5011,12 +5070,14 @@ paths:
             Expect-CT:
               schema:
                 type: string
-                example: max-age=604800,
+                example: >-
+                  max-age=604800,
                   report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
             Report-To:
               schema:
                 type: string
-                example: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=elsD6JAPRBoZ5sUFKtR2pbD2NPBDV%2BtMtuOERaFq%2F5pfhYm88dbZpwD0IGCAuT4r4GYNCt55jEhurd3kE3DIeutCrDELfPpMGdZp4MVROPCy%2BoaFCwcF8gf6SJYqmnQ8ibPx8aWW"}],"group":"cf-nel","max_age":604800}'
+                example: >-
+                  {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=elsD6JAPRBoZ5sUFKtR2pbD2NPBDV%2BtMtuOERaFq%2F5pfhYm88dbZpwD0IGCAuT4r4GYNCt55jEhurd3kE3DIeutCrDELfPpMGdZp4MVROPCy%2BoaFCwcF8gf6SJYqmnQ8ibPx8aWW"}],"group":"cf-nel","max_age":604800}
             NEL:
               schema:
                 type: string
