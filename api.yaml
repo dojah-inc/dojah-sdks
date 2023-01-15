@@ -56,15 +56,15 @@ paths:
           in: query
           schema:
             type: string
-          example: "1988-09-01"
+          example: '1988-09-01'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             x-moesif-transaction-id:
               schema:
                 type: string
@@ -115,14 +115,14 @@ paths:
                 type: object
               example:
                 entity:
-                  certificate_date: "2010-07-19"
-                  date_of_birth: "1988-09-01"
-                  expiry_date: "2016-08-25"
+                  certificate_date: '2010-07-19'
+                  date_of_birth: '1988-09-01'
+                  expiry_date: '2016-08-25'
                   full_name: John Doe
                   id: V0000000
                   is_date_of_birth_match: true
                   is_full_name_match: true
-                  issue_date: "2010-08-25"
+                  issue_date: '2010-08-25'
                   picture: <base64 encoded image>
                   pin: DOE-310203-03-01
                   processing_center: VR3
@@ -161,15 +161,15 @@ paths:
           in: query
           schema:
             type: string
-          example: "1990-04-05"
+          example: '1990-04-05'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             x-moesif-transaction-id:
               schema:
                 type: string
@@ -220,8 +220,8 @@ paths:
                 type: object
               example:
                 entity:
-                  date_of_birth: "1990-04-05"
-                  expiry_date: "2022-10-03"
+                  date_of_birth: '1990-04-05'
+                  expiry_date: '2022-10-03'
                   first_name: John
                   gender: MALE
                   id: G0000000
@@ -229,7 +229,7 @@ paths:
                   is_first_name_match: false
                   is_last_name_match: true
                   is_middle_name_match: true
-                  issue_date: "2017-11-03"
+                  issue_date: '2017-11-03'
                   last_name: Doe
                   middle_name: Jack
                   picture: <base64 encoded image>
@@ -260,9 +260,9 @@ paths:
           in: query
           schema:
             type: string
-          example: "1990-04-05"
+          example: '1990-04-05'
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -271,7 +271,7 @@ paths:
               example:
                 entity:
                   card_serial: R1970200019702
-                  date_of_birth: "1980-02-03"
+                  date_of_birth: '1980-02-03'
                   full_name: John Doe
                   gender: MALE
                   id: C000000000000
@@ -293,7 +293,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: "67335751"
+          example: '67335751'
         - name: first_name
           in: query
           schema:
@@ -305,7 +305,7 @@ paths:
             type: string
           example: Christmas
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json:
@@ -368,7 +368,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: "24798402"
+          example: '24798402'
         - name: first_name
           in: query
           schema:
@@ -387,14 +387,14 @@ paths:
           in: query
           schema:
             type: string
-          example: "1985-12-29"
+          example: '1985-12-29'
         - name: gender
           in: query
           schema:
             type: string
           example: M
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -414,7 +414,7 @@ paths:
             type: string
           example: FKJ49409AB13
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -430,16 +430,16 @@ paths:
                     gender: Male
                     birth_date: 18/05/1992
                     blood_group_id: B+
-                    facial_mark: "No"
-                    glasses: "No"
-                    height: "1.7"
-                    universaltax_identity_number: ""
-                    nin_number: ""
+                    facial_mark: 'No'
+                    glasses: 'No'
+                    height: '1.7'
+                    universaltax_identity_number: ''
+                    nin_number: ''
                     country: Nigeria
                     state: Edo
                     lga: Etsako East
-                    is_disability: "No"
-                    disability_reason: ""
+                    is_disability: 'No'
+                    disability_reason: ''
   /api/v1/kyc/nuban:
     get:
       tags:
@@ -453,19 +453,19 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: bank_code
           in: query
           schema:
             type: integer
-          example: "058"
+          example: '058'
         - name: account_number
           in: query
           schema:
             type: integer
-          example: "0011223344"
+          example: '0011223344'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             X-Powered-By:
@@ -475,7 +475,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             Content-Type:
               schema:
                 type: string
@@ -483,7 +483,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "547"
+                example: '547'
             ETag:
               schema:
                 type: string
@@ -502,26 +502,26 @@ paths:
                 type: object
               example:
                 entity:
-                  account_currency: "566"
+                  account_currency: '566'
                   account_name: MOSHOOD KOLAWOLE SALIU
-                  account_number: "3046507407"
-                  account_type: "10"
+                  account_number: '3046507407'
+                  account_type: '10'
                   address_1: .
-                  address_2: ""
+                  address_2: ''
                   city: LAGOS
                   country_code: NG
                   country_of_birth: NIGERIA
                   country_of_issue: Nigeria
                   dob: 10/06/1982
-                  expiry_date: ""
+                  expiry_date: ''
                   first_name: MOSHOOD
-                  identity_number: "22271325556"
+                  identity_number: '22271325556'
                   identity_type: BVN
                   last_name: SALIU
                   nationality: OTHRS
                   other_names: KOLAWOLE
-                  phone: "2348137877844"
-                  postal_code: "234"
+                  phone: '2348137877844'
+                  postal_code: '234'
                   reference: 91b360c9-0360-44b1-978f-ef56ad8fa2a2
                   state_code: LAGOS
   /api/v1/kyc/bvn:
@@ -537,12 +537,12 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: bvn
           in: query
           schema:
             type: integer
-          example: "22250148240"
+          example: '22250148240'
         - name: first_name
           in: query
           schema:
@@ -552,9 +552,9 @@ paths:
           in: query
           schema:
             type: string
-          example: "1982-02-19"
+          example: '1982-02-19'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -572,9 +572,9 @@ paths:
           in: query
           schema:
             type: integer
-          example: "22468537919"
+          example: '22468537919'
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -585,9 +585,9 @@ paths:
                   first_name: JOSHUA
                   last_name: OLADIPO
                   dob: 28-Jun-00
-                  formatted_dob: "2000-06-28"
-                  mobile: "07085460116"
-                  bvn: "22468537919"
+                  formatted_dob: '2000-06-28'
+                  mobile: '07085460116'
+                  bvn: '22468537919'
   /api/v1/kyc/bvn/full:
     get:
       tags:
@@ -602,9 +602,9 @@ paths:
           in: query
           schema:
             type: integer
-          example: "22222222222"
+          example: '22222222222'
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -612,10 +612,10 @@ paths:
                 type: object
               example:
                 entity:
-                  bvn: "22468537919"
+                  bvn: '22468537919'
                   date_of_birth: 28-Jun-2000
                   email: OLADIPOJOSHUAOLUWATIMILEYIN@YAHOO.COM
-                  enrollment_bank: "058"
+                  enrollment_bank: '058'
                   enrollment_branch: UNILORIN
                   first_name: JOSHUA
                   gender: Male
@@ -628,16 +628,16 @@ paths:
                   middle_name: OLUWATIMILEYIN
                   name_on_card: OLADIPO, JOSHUA O
                   nationality: Nigeria
-                  nin: ""
-                  phone_number1: "07085460116"
-                  phone_number2: ""
+                  nin: ''
+                  phone_number1: '07085460116'
+                  phone_number2: ''
                   reference: 91b126d1-2467-42fc-b8d5-1cbd32257954
                   registration_date: 21-Mar-2018
                   residential_address: 24, AKATA OWODE, ILORIN
                   state_of_origin: Osun State
                   state_of_residence: Kwara State
                   title: Mr
-                  watch_listed: "NO"
+                  watch_listed: 'NO'
   /api/v1/kyc/bvn/advance:
     get:
       tags:
@@ -651,14 +651,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: bvn
           in: query
           schema:
             type: integer
-          example: "22305638508"
+          example: '22305638508'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Date:
@@ -680,7 +680,7 @@ paths:
             access-control-allow-origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             x-moesif-transaction-id:
               schema:
                 type: string
@@ -744,10 +744,10 @@ paths:
                 type: object
               example:
                 entity:
-                  bvn: "22222222222"
+                  bvn: '22222222222'
                   date_of_birth: 28-Jun-2000
                   email: ISAACTHOMPSONBROWN@YAHOO.COM
-                  enrollment_bank: "058"
+                  enrollment_bank: '058'
                   enrollment_branch: UNILORIN
                   first_name: JOSHUA
                   gender: Male
@@ -760,15 +760,15 @@ paths:
                   middle_name: THOMPSONBROWN
                   name_on_card: ISAAC, THOMPSON O
                   nationality: Nigeria
-                  nin: ""
-                  phone_number1: "07012345678"
-                  phone_number2: ""
+                  nin: ''
+                  phone_number1: '07012345678'
+                  phone_number2: ''
                   registration_date: 21-Mar-2018
                   residential_address: 24, OSHODI SURULERE, ILORIN
                   state_of_origin: Osun State
                   state_of_residence: Kwara State
                   title: Mr
-                  watch_listed: "NO"
+                  watch_listed: 'NO'
                   status: 200
   /api/v1/kyc/vnin:
     get:
@@ -786,7 +786,7 @@ paths:
             type: string
           example: AB012345678910YZ
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -804,9 +804,9 @@ paths:
           in: query
           schema:
             type: integer
-          example: "08068810228"
+          example: '08068810228'
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -814,18 +814,18 @@ paths:
                 type: object
               example:
                 entity:
-                  msisdn: "2348103100000"
+                  msisdn: '2348103100000'
                   firstName: John
                   lastName: Doe
                   email: test@test.com
                   encryptedPan: 1235246646GVDG
                   dateOfBirth: 18/08/1997
-                  bvn: "2222222222"
-                  address: " 25 Okota"
+                  bvn: '2222222222'
+                  address: ' 25 Okota'
                   address_city: Shomolu
                   address_state: Lagos
-                  account_number: "1234567897"
-                  bank_code: "054"
+                  account_number: '1234567897'
+                  bank_code: '054'
                   gender: Male
   /api/v1/kyc/phone_number:
     get:
@@ -841,9 +841,9 @@ paths:
           in: query
           schema:
             type: integer
-          example: "08011111111"
+          example: '08011111111'
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -851,7 +851,7 @@ paths:
                 type: object
               example:
                 entity:
-                  msisdn: "09011111111"
+                  msisdn: '09011111111'
                   firstName: John
                   middleName: Doe
                   lastName: Doe
@@ -876,12 +876,12 @@ paths:
                   selfOriginState: Muslim
                   state: Lagos
                   lga: Ikeja
-                  nin: "111111111111111"
+                  nin: '111111111111111'
                   title: Mr
                   height: 5 9
                   picture: <base64 encoded image>
                   status: 200
-        "404":
+        '404':
           description: Not Found
           content:
             application/json:
@@ -902,7 +902,7 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: mode
           in: query
           schema:
@@ -912,17 +912,17 @@ paths:
           in: query
           schema:
             type: integer
-          example: "3046507407"
+          example: '3046507407'
         - name: bank_code
           in: query
           schema:
             type: integer
-          example: "011"
+          example: '011'
         - name: dob
           in: query
           schema:
             type: string
-          example: "1993-06-10"
+          example: '1993-06-10'
         - name: first_name
           in: query
           schema:
@@ -934,7 +934,7 @@ paths:
             type: string
           example: Saliu
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             X-Powered-By:
@@ -944,7 +944,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             Content-Type:
               schema:
                 type: string
@@ -952,7 +952,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "104"
+                example: '104'
             ETag:
               schema:
                 type: string
@@ -973,7 +973,7 @@ paths:
                 entity:
                   first_name: MOSHOOD
                   last_name: SALIU
-                  date_of_birth: "1993-06-10"
+                  date_of_birth: '1993-06-10'
                   verification: true
   /v1/kyc/bvn/verify:
     post:
@@ -987,7 +987,7 @@ paths:
             schema:
               type: object
               example:
-                bvn: "22468537919"
+                bvn: '22468537919'
                 selfie_image: <base64 encoded image>
       security:
         - apikeyAuth: []
@@ -996,9 +996,9 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -1014,7 +1014,7 @@ paths:
             schema:
               type: object
               example:
-                nin: "79628483753"
+                nin: '79628483753'
                 selfie_image: <base64 encoded image>
       security:
         - apikeyAuth: []
@@ -1023,9 +1023,9 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -1042,7 +1042,7 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: mode
           in: query
           schema:
@@ -1062,14 +1062,14 @@ paths:
           in: query
           schema:
             type: integer
-          example: "55586"
+          example: '55586'
         - name: state
           in: query
           schema:
             type: string
           example: ondo
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Date:
@@ -1095,7 +1095,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             ETag:
               schema:
                 type: string
@@ -1148,14 +1148,14 @@ paths:
               example:
                 entity:
                   full_name: SALIU MOSHOOD KOLAWOLE
-                  "voter_identification_number:": 90F5B1C5BD295355586
-                  "gender:": Male
-                  "occupation:": STUDENT
-                  "time_of_registration:": "2011-01-18 13:59:46"
-                  "state:": ONDO
-                  "local_government:": IDANRE
-                  "registration_area_ward:": ISALU JIGBOKIN
-                  "polling_unit:": OJAJIGBOKIN, O/S IN FRONT OF ABANA I & II
+                  'voter_identification_number:': 90F5B1C5BD295355586
+                  'gender:': Male
+                  'occupation:': STUDENT
+                  'time_of_registration:': '2011-01-18 13:59:46'
+                  'state:': ONDO
+                  'local_government:': IDANRE
+                  'registration_area_ward:': ISALU JIGBOKIN
+                  'polling_unit:': OJAJIGBOKIN, O/S IN FRONT OF ABANA I & II
                   polling_unit_code: 28/08/08/005
   /v1/kyc/email:
     get:
@@ -1170,14 +1170,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: email
           in: query
           schema:
             type: string
           example: johndoe@gmail.com
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Date:
@@ -1203,7 +1203,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             ETag:
               schema:
                 type: string
@@ -1305,19 +1305,19 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: bank_code
           in: query
           schema:
             type: integer
-          example: "057"
+          example: '057'
         - name: account_number
           in: query
           schema:
             type: integer
-          example: "2174879334"
+          example: '2174879334'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -1332,24 +1332,24 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
         - name: Appid
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: passport_number
           in: query
           schema:
             type: integer
-          example: "70142502085"
+          example: '70142502085'
         - name: surname
           in: query
           schema:
             type: string
           example: ololade
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -1364,14 +1364,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
         - name: AppId
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -1387,19 +1387,19 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: Authorization
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
         - name: company_name
           in: query
           schema:
             type: string
           example: UseClink
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -1407,7 +1407,7 @@ paths:
     get:
       tags:
         - KYB
-      summary: "KYC - Get CAC "
+      summary: 'KYC - Get CAC '
       security:
         - apikeyAuth: []
       parameters:
@@ -1415,19 +1415,19 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: rc_number
           in: query
           schema:
             type: integer
-          example: "1432074"
+          example: '1432074'
         - name: company_name
           in: query
           schema:
             type: string
           example: ELTA SOLUTIONS LIMITED
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             X-Powered-By:
@@ -1437,7 +1437,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             Content-Type:
               schema:
                 type: string
@@ -1445,7 +1445,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "263"
+                example: '263'
             ETag:
               schema:
                 type: string
@@ -1464,10 +1464,10 @@ paths:
                 type: object
               example:
                 entity:
-                  rc_number: "1261103"
+                  rc_number: '1261103'
                   company_name: ELTAFORD LIMITED
                   address: NO 37 ISAIAH ROAD UBEJI
-                  date_of_registration: "2015-05-15"
+                  date_of_registration: '2015-05-15'
   /v1/kyc/cac/basic:
     get:
       tags:
@@ -1480,19 +1480,19 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: rc
           in: query
           schema:
             type: integer
-          example: "3330883"
+          example: '3330883'
         - name: type
           in: query
           schema:
             type: string
           example: bn
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -1508,17 +1508,17 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: Authorization
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
         - name: rc
           in: query
           schema:
             type: integer
-          example: "1432074"
+          example: '1432074'
         - name: type
           in: query
           schema:
@@ -1530,7 +1530,7 @@ paths:
             type: string
           example: advance
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -1546,14 +1546,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: tin
           in: query
           schema:
             type: string
           example: 21148119-0001
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             X-Powered-By:
@@ -1563,7 +1563,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             Content-Type:
               schema:
                 type: string
@@ -1571,7 +1571,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "244"
+                example: '244'
             ETag:
               schema:
                 type: string
@@ -1592,12 +1592,12 @@ paths:
                 entity:
                   Search: 21148119-0001
                   Taxpayer_Name: SMILE IDENTITY NIGERIA LIMITED LAGOS
-                  CAC_Reg_No: "1539621"
+                  CAC_Reg_No: '1539621'
                   FIRSTIN: 21148119-0001
                   JITTIN: N/A
                   Tax_Office: MSTO IKOYI
                   Phone_No: sundayoguntola@hotmail.com
-                  Email: "07055427676"
+                  Email: '07055427676'
   /api/v1/messaging/sms:
     post:
       tags:
@@ -1609,7 +1609,7 @@ paths:
             schema:
               type: object
               example:
-                destination: "08068810228"
+                destination: '08068810228'
                 message: Checking to see if you are Okay
                 channel: whatsapp
                 sender_id: Kedesa
@@ -1620,9 +1620,9 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             X-Powered-By:
@@ -1632,7 +1632,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             Content-Type:
               schema:
                 type: string
@@ -1640,7 +1640,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "130"
+                example: '130'
             ETag:
               schema:
                 type: string
@@ -1660,9 +1660,9 @@ paths:
               example:
                 entity:
                   status: true
-                  mobile: "2348068810228"
+                  mobile: '2348068810228'
                   message_id: true_2348068810228@c.us_3EB094F69064FF74BD76
-                  batch_id: "90512"
+                  batch_id: '90512'
   /v1/messaging/sms/get_status:
     get:
       tags:
@@ -1675,14 +1675,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: message_id
           in: query
           schema:
             type: string
           example: 54818c8a-4aed-4e5f-b846-8274fd4e0bbd
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             X-Powered-By:
@@ -1692,7 +1692,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             Content-Type:
               schema:
                 type: string
@@ -1700,7 +1700,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "31"
+                example: '31'
             ETag:
               schema:
                 type: string
@@ -1731,7 +1731,7 @@ paths:
             schema:
               type: object
               example:
-                destination: "08068810228"
+                destination: '08068810228'
                 length: 6
                 channel: sms
                 sender_id: Dojah
@@ -1743,9 +1743,9 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Date:
@@ -1767,7 +1767,7 @@ paths:
             access-control-allow-origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             x-moesif-transaction-id:
               schema:
                 type: string
@@ -1824,9 +1824,9 @@ paths:
               example:
                 entity:
                   - reference_id: 1cd58f6c-8729-4837-90ec-ff22949525cf
-                    destination: "08068810228"
+                    destination: '08068810228'
                     status_id: dj_f93ec2a0-2515-49ef-97f3-e6a137c7830a
-                    status: "sms OTP sent successfully "
+                    status: 'sms OTP sent successfully '
   /v1/messaging/otp/validate:
     get:
       tags:
@@ -1839,7 +1839,7 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: reference_id
           in: query
           schema:
@@ -1849,9 +1849,9 @@ paths:
           in: query
           schema:
             type: integer
-          example: "081974"
+          example: '081974'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             X-Powered-By:
@@ -1861,7 +1861,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             Content-Type:
               schema:
                 type: string
@@ -1869,7 +1869,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "25"
+                example: '25'
             ETag:
               schema:
                 type: string
@@ -1901,9 +1901,9 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             X-Powered-By:
@@ -1913,7 +1913,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             Content-Type:
               schema:
                 type: string
@@ -1921,7 +1921,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "330"
+                example: '330'
             ETag:
               schema:
                 type: string
@@ -1942,16 +1942,16 @@ paths:
                 entity:
                   - sender_id: Dojah
                     activated: false
-                    createdAt: "2020-10-29T23:27:50.633Z"
+                    createdAt: '2020-10-29T23:27:50.633Z'
                   - sender_id: Dojah
                     activated: false
-                    createdAt: "2020-10-29T23:41:34.977Z"
+                    createdAt: '2020-10-29T23:41:34.977Z'
                   - sender_id: Dojah
                     activated: false
-                    createdAt: "2020-10-29T23:49:03.363Z"
+                    createdAt: '2020-10-29T23:49:03.363Z'
                   - sender_id: Dojaher
                     activated: false
-                    createdAt: "2020-10-30T00:53:02.348Z"
+                    createdAt: '2020-10-30T00:53:02.348Z'
   /api/v1/messaging/sender_id:
     post:
       tags:
@@ -1969,14 +1969,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
         - name: AppId
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -1993,7 +1993,7 @@ paths:
               example:
                 last_name: Dojah
                 first_name: Inc
-                phone_number: "08068810258"
+                phone_number: '08068810258'
                 dob: 18-May-1992
                 route: WEMA
       security:
@@ -2003,14 +2003,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: Authorization
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             X-Powered-By:
@@ -2020,7 +2020,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             Content-Type:
               schema:
                 type: string
@@ -2028,7 +2028,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "140"
+                example: '140'
             ETag:
               schema:
                 type: string
@@ -2052,16 +2052,16 @@ paths:
                     entity:
                       wallet_id: 352a14e2-25ab-448a-86ed-8e9041540599
                       wallet_amount: 0
-                      account_number: "1000039707"
-                      phone_number: "08159090922"
+                      account_number: '1000039707'
+                      phone_number: '08159090922'
                 example-1:
                   summary: Create NGN Wallet Pelumi
                   value:
                     entity:
                       wallet_id: 867a8cae-8073-4914-8b04-d7fd096c1006
                       wallet_amount: 0
-                      account_number: "1004204891"
-                      phone_number: "09059895710"
+                      account_number: '1004204891'
+                      phone_number: '09059895710'
   /v1/wallet/ngn/retrieve:
     get:
       tags:
@@ -2074,14 +2074,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: wallet_id
           in: query
           schema:
             type: string
           example: 694a047f-fb99-46d7-8c3c-d655716a834a
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Date:
@@ -2103,7 +2103,7 @@ paths:
             access-control-allow-origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             x-moesif-transaction-id:
               schema:
                 type: string
@@ -2169,8 +2169,8 @@ paths:
                 entity:
                   wallet_id: 694a047f-fb99-46d7-8c3c-d655716a834a
                   wallet_amount: 500
-                  account_number: "7091821832"
-                  phone_number: "08068810258"
+                  account_number: '7091821832'
+                  phone_number: '08068810258'
                   bank_name: WEMA BANK
   /v1/wallet/ngn/accounts:
     get:
@@ -2184,14 +2184,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: app_id
           in: query
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Date:
@@ -2213,7 +2213,7 @@ paths:
             access-control-allow-origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             x-moesif-transaction-id:
               schema:
                 type: string
@@ -2282,8 +2282,8 @@ paths:
                   client_wallets:
                     - wallet_id: 694a047f-fb99-46d7-8c3c-d655716a834a
                       wallet_amount: 500
-                      account_number: "7091821832"
-                      phone_number: "08068810258"
+                      account_number: '7091821832'
+                      phone_number: '08068810258'
                       bank_name: WEMA BANK
   /v1/wallet/ngn/transaction:
     get:
@@ -2297,14 +2297,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: transaction_id
           in: query
           schema:
             type: string
           example: Dojah-c02585e5-9a8b-4230-8c1b-11fd2869f4ce
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Date:
@@ -2330,7 +2330,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             ETag:
               schema:
                 type: string
@@ -2388,13 +2388,13 @@ paths:
                       wallet_id: 867a8cae-8073-4914-8b04-d7fd096c1006
                       transaction_amount: 100
                       transaction_type: deposit
-                      recipient_account_number: "1004204891"
-                      sender_account_number: ""
+                      recipient_account_number: '1004204891'
+                      sender_account_number: ''
                       transaction_remarks: Dojah-wallet-credit
                       transaction_reason: null
                       transaction_id: Dojah-c02585e5-9a8b-4230-8c1b-11fd2869f4ce
                       transaction_status: COMPLETED
-                      date_created: "2021-07-19T11:54:01.905196Z"
+                      date_created: '2021-07-19T11:54:01.905196Z'
                 example-1:
                   summary: Retrieve Transaction Details
                   value:
@@ -2402,13 +2402,13 @@ paths:
                       wallet_id: 867a8cae-8073-4914-8b04-d7fd096c1006
                       transaction_amount: 50
                       transaction_type: transfer
-                      recipient_account_number: "0129531822"
-                      sender_account_number: "1004204891"
-                      transaction_remarks: ""
+                      recipient_account_number: '0129531822'
+                      sender_account_number: '1004204891'
+                      transaction_remarks: ''
                       transaction_reason: wallet has Insufficient balance
                       transaction_id: Dojah-4b0ecd96-9914-4e78-8ce9-21ebc4a34ee8
                       transaction_status: FAILED
-                      date_created: "2021-07-19T11:57:38.517618Z"
+                      date_created: '2021-07-19T11:57:38.517618Z'
   /v1/wallet/ngn/transactions:
     get:
       tags:
@@ -2421,14 +2421,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: wallet_id
           in: query
           schema:
             type: string
           example: 694a047f-fb99-46d7-8c3c-d655716a834a
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -2443,9 +2443,9 @@ paths:
             schema:
               type: object
               example:
-                amount: "50"
-                recipient_bank_code: "058"
-                recipient_account_number: "0037466959"
+                amount: '50'
+                recipient_bank_code: '058'
+                recipient_account_number: '0037466959'
                 wallet_id: 6187eb92-a4ad-420f-98cf-05a34188f467
       security:
         - apikeyAuth: []
@@ -2454,9 +2454,9 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Date:
@@ -2482,7 +2482,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             ETag:
               schema:
                 type: string
@@ -2540,13 +2540,13 @@ paths:
                       wallet_id: edb6c29e-a32c-4d38-8e66-62f0e731db0d
                       transaction_amount: 10
                       transaction_type: transfer
-                      recipient_account_number: "0129531822"
-                      sender_account_number: "1004108810"
-                      transaction_remarks: ""
+                      recipient_account_number: '0129531822'
+                      sender_account_number: '1004108810'
+                      transaction_remarks: ''
                       transaction_reason: null
                       transaction_id: Dojah-6bddb625-3ca9-41c0-b0fb-13f7f11adf90
                       transaction_status: PROCESSING
-                      date_created: "2021-07-19T10:44:03.610405Z"
+                      date_created: '2021-07-19T10:44:03.610405Z'
                 example-1:
                   summary: Transfer Funds
                   value:
@@ -2554,13 +2554,13 @@ paths:
                       wallet_id: 867a8cae-8073-4914-8b04-d7fd096c1006
                       transaction_amount: 50
                       transaction_type: transfer
-                      recipient_account_number: "0129531822"
-                      sender_account_number: "1004204891"
-                      transaction_remarks: ""
+                      recipient_account_number: '0129531822'
+                      sender_account_number: '1004204891'
+                      transaction_remarks: ''
                       transaction_reason: null
                       transaction_id: Dojah-4b0ecd96-9914-4e78-8ce9-21ebc4a34ee8
                       transaction_status: PROCESSING
-                      date_created: "2021-07-19T11:57:38.517618Z"
+                      date_created: '2021-07-19T11:57:38.517618Z'
                 example-2:
                   summary: Transfer Funds
                   value:
@@ -2568,13 +2568,13 @@ paths:
                       wallet_id: 867a8cae-8073-4914-8b04-d7fd096c1006
                       transaction_amount: 100
                       transaction_type: transfer
-                      recipient_account_number: "0129531822"
-                      sender_account_number: "1004204891"
-                      transaction_remarks: ""
+                      recipient_account_number: '0129531822'
+                      sender_account_number: '1004204891'
+                      transaction_remarks: ''
                       transaction_reason: null
                       transaction_id: Dojah-404e608c-4c85-4a87-b8ed-968564cdb67f
                       transaction_status: PROCESSING
-                      date_created: "2021-07-21T04:29:03.786408Z"
+                      date_created: '2021-07-21T04:29:03.786408Z'
   /v1/wallet/ngn/transfer/internal:
     post:
       tags:
@@ -2596,9 +2596,9 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -2613,13 +2613,13 @@ paths:
             schema:
               type: object
               example:
-                amount: "20000"
-                account_number: "1000048972"
-                originator_account_number: "1234567889"
+                amount: '20000'
+                account_number: '1000048972'
+                originator_account_number: '1234567889'
                 originator_account_name: saliu moshood
-                originator_bank: "000004"
+                originator_bank: '000004'
                 validate: false
-                timestamp: "2021-01-11T09:34:55.879Z"
+                timestamp: '2021-01-11T09:34:55.879Z'
                 environment: sandbox
       security:
         - apikeyAuth: []
@@ -2628,9 +2628,9 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -2645,7 +2645,7 @@ paths:
             schema:
               type: object
               example:
-                amount: "1"
+                amount: '1'
                 wallet_id: 1b9494d3-58a7-4e72-9a73-174b908f55b7
       security:
         - apikeyAuth: []
@@ -2654,9 +2654,9 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -2671,12 +2671,12 @@ paths:
             schema:
               type: object
               example:
-                amount: "12"
+                amount: '12'
                 wallet_id: 867a8cae-8073-4914-8b04-d7fd096c1006
       security:
         - apikeyAuth: []
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Date:
@@ -2702,7 +2702,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             ETag:
               schema:
                 type: string
@@ -2757,13 +2757,13 @@ paths:
                   wallet_id: 867a8cae-8073-4914-8b04-d7fd096c1006
                   transaction_amount: 100
                   transaction_type: deposit
-                  recipient_account_number: "1004204891"
-                  sender_account_number: ""
+                  recipient_account_number: '1004204891'
+                  sender_account_number: ''
                   transaction_remarks: Dojah-wallet-credit
                   transaction_reason: null
                   transaction_id: Dojah-c02585e5-9a8b-4230-8c1b-11fd2869f4ce
                   transaction_status: COMPLETED
-                  date_created: "2021-07-19T11:54:01.905196Z"
+                  date_created: '2021-07-19T11:54:01.905196Z'
   /api/v1/financial/account_information/:
     get:
       tags:
@@ -2775,19 +2775,19 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
         - name: AppId
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: account_id
           in: query
           schema:
             type: string
           example: d5b86083-08c5-4de2-ac19-7610a16c297d
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             X-Powered-By:
@@ -2797,7 +2797,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             Content-Type:
               schema:
                 type: string
@@ -2805,7 +2805,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "179"
+                example: '179'
             ETag:
               schema:
                 type: string
@@ -2824,8 +2824,8 @@ paths:
                 type: object
               example:
                 name: SALIU, MOSHOOD KOLAWOLE
-                account_number: "0150927834"
-                bvn: "5556"
+                account_number: '0150927834'
+                bvn: '5556'
                 account_type: GT Crea8-e-savers
                 currency: Naira
                 account_status: Active
@@ -2840,12 +2840,12 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
         - name: AppId
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: account_id
           in: query
           schema:
@@ -2855,9 +2855,9 @@ paths:
           in: query
           schema:
             type: integer
-          example: "200"
+          example: '200'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             X-Powered-By:
@@ -2867,7 +2867,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             Content-Type:
               schema:
                 type: string
@@ -2875,7 +2875,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "3148"
+                example: '3148'
             ETag:
               schema:
                 type: string
@@ -2896,119 +2896,119 @@ paths:
                 entity:
                   transactions:
                     - id: 1870
-                      transaction_date: "2020-09-28"
-                      value_date: "2020-09-28"
+                      transaction_date: '2020-09-28'
+                      value_date: '2020-09-28'
                       trans_type: debit
                       bank_name: Guaranty Trust Bank
-                      amount: "1.87"
-                      reference: "0"
+                      amount: '1.87'
+                      reference: '0'
                       narration: >-
                         VALUE ADDED TAX 000013200928140356000182528304 VAT ON
                         NIP TRANSFER FOR 000013200928140356000182528304 via
                         GTWORLD TO KMB/OLUWATOBILOBA OLOLADE
                         ReF:GW492440265000000100002009281402
                     - id: 1871
-                      transaction_date: "2020-09-28"
-                      value_date: "2020-09-28"
+                      transaction_date: '2020-09-28'
+                      value_date: '2020-09-28'
                       trans_type: debit
                       bank_name: Guaranty Trust Bank
-                      amount: "25.00"
-                      reference: "0"
+                      amount: '25.00'
+                      reference: '0'
                       narration: >-
                         COMMISSION 000013200928140356000182528304 NIP TRANSFER
                         COMMISSION FOR 000013200928140356000182528304 via
                         GTWORLD TO KMB/OLUWATOBILOBA OLOLADE
                         ReF:GW492440265000000100002009281402
                     - id: 1872
-                      transaction_date: "2020-09-28"
-                      value_date: "2020-09-28"
+                      transaction_date: '2020-09-28'
+                      value_date: '2020-09-28'
                       trans_type: debit
                       bank_name: Guaranty Trust Bank
-                      amount: "10000.00"
-                      reference: "0"
+                      amount: '10000.00'
+                      reference: '0'
                       narration: >-
                         NIBSS Instant Payment Outward
                         000013200928140356000182528304 via GTWORLD TO
                         KMB/OLUWATOBILOBA OLOLADE
                         /26.875/REF:GW4924402650000001000020092814 f
                     - id: 1873
-                      transaction_date: "2020-09-28"
-                      value_date: "2020-09-28"
+                      transaction_date: '2020-09-28'
+                      value_date: '2020-09-28'
                       trans_type: credit
                       bank_name: Guaranty Trust Bank
-                      amount: "20000.00"
-                      reference: "0"
+                      amount: '20000.00'
+                      reference: '0'
                       narration: >-
                         TRANSFER BETWEEN CUSTOMERS via GAPS 637368962161801700-1
                         from ELTA SOLUTIONS LIMITED to OLOLADE OLUWATOBILOBA
                         REF:215824649000374669592809201323
                     - id: 1874
-                      transaction_date: "2020-09-28"
-                      value_date: "2020-09-28"
+                      transaction_date: '2020-09-28'
+                      value_date: '2020-09-28'
                       trans_type: debit
                       bank_name: Guaranty Trust Bank
-                      amount: "500.00"
-                      reference: "0"
+                      amount: '500.00'
+                      reference: '0'
                       narration: >-
                         Airtime Purchase
                         USSD-101CT0000000002033042235-2348068810228
                     - id: 1875
-                      transaction_date: "2020-09-26"
-                      value_date: "2020-09-26"
+                      transaction_date: '2020-09-26'
+                      value_date: '2020-09-26'
                       trans_type: debit
                       bank_name: Guaranty Trust Bank
-                      amount: "50.00"
-                      reference: "0"
+                      amount: '50.00'
+                      reference: '0'
                       narration: >-
                         STAMP DUTY CHARGE 26092020 STAMP DUTY CHARGE -
                         26/09/2020
                     - id: 1876
-                      transaction_date: "2020-09-26"
-                      value_date: "2020-09-26"
+                      transaction_date: '2020-09-26'
+                      value_date: '2020-09-26'
                       trans_type: debit
                       bank_name: Guaranty Trust Bank
-                      amount: "1.87"
-                      reference: "0"
+                      amount: '1.87'
+                      reference: '0'
                       narration: >-
                         VALUE ADDED TAX 000013200926153958000180345243 VAT ON
                         USSD NIP RECOVERY CHARGE
                         ReF:000013200926153958000180345243
                     - id: 1877
-                      transaction_date: "2020-09-26"
-                      value_date: "2020-09-26"
+                      transaction_date: '2020-09-26'
+                      value_date: '2020-09-26'
                       trans_type: debit
                       bank_name: Guaranty Trust Bank
-                      amount: "25.00"
-                      reference: "0"
+                      amount: '25.00'
+                      reference: '0'
                       narration: >-
                         COMMISSION 000013200926153958000180345243 USSD NIP
                         RECOVERY CHARGE ReF:000013200926153958000180345243
                     - id: 1878
-                      transaction_date: "2020-09-26"
-                      value_date: "2020-09-26"
+                      transaction_date: '2020-09-26'
+                      value_date: '2020-09-26'
                       trans_type: debit
                       bank_name: Guaranty Trust Bank
-                      amount: "14500.00"
-                      reference: "0"
+                      amount: '14500.00'
+                      reference: '0'
                       narration: >-
                         NIBSS Instant Payment Outward
                         000013200926153958000180345243 USSD NIP Transfer from
                         08068810228 TO ZBN/OLALEKAN MOSES ADEYEMI
                         /26.875/REF:000013200926153958000180345243
                     - id: 1879
-                      transaction_date: "2020-09-26"
-                      value_date: "2020-09-26"
+                      transaction_date: '2020-09-26'
+                      value_date: '2020-09-26'
                       trans_type: credit
                       bank_name: Guaranty Trust Bank
-                      amount: "1.87"
-                      reference: "0"
+                      amount: '1.87'
+                      reference: '0'
                       narration: >-
                         FAILED NIBSS INSTANT PAYMENT
                         000013200926151310000180305048 NIP Reversal: (ZBN
                         returned: Beneficiary Bank not available)
                         REF:000013200926151310000180305048
                   total: 521
-                  previous_page: ""
+                  previous_page: ''
                   next_page: 2
                   total_pages: 53
                   current_page: 1
@@ -3024,19 +3024,19 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
         - name: AppId
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: account_id
           in: query
           schema:
             type: string
           example: 02f63911-a958-4025-9d72-8bd2d7da274b
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             X-Powered-By:
@@ -3046,7 +3046,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             Content-Type:
               schema:
                 type: string
@@ -3054,7 +3054,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "108"
+                example: '108'
             ETag:
               schema:
                 type: string
@@ -3075,8 +3075,8 @@ paths:
                 entity:
                   subscriptions: []
                   total: 0
-                  previous_page: ""
-                  next_page: ""
+                  previous_page: ''
+                  next_page: ''
                   total_pages: 1
                   current_page: 1
   /v1/financial/bvn_information/basic:
@@ -3091,14 +3091,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: account_id
           in: query
           schema:
             type: string
           example: 34c7a2a10b4d4050869fe6f0aa6f0a30
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Date:
@@ -3124,7 +3124,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             ETag:
               schema:
                 type: string
@@ -3179,7 +3179,7 @@ paths:
                   first_name: ISAAC
                   last_name: THOMPSON
                   dob: 28-Jun-00
-                  formatted_dob: "2000-06-28"
+                  formatted_dob: '2000-06-28'
                   mobile: 070***28116
                   bvn: 2246***3719
   /v1/financial/bvn_information/full:
@@ -3194,14 +3194,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: account_id
           in: query
           schema:
             type: string
           example: 34c7a2a10b4d4050869fe6f0aa6f0a30
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Date:
@@ -3227,7 +3227,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             ETag:
               schema:
                 type: string
@@ -3279,10 +3279,10 @@ paths:
                 type: object
               example:
                 entity:
-                  bvn: "22222222222"
+                  bvn: '22222222222'
                   date_of_birth: 28-Jun-2000
                   email: ISAACTHOMPSONBROWN@YAHOO.COM
-                  enrollment_bank: "058"
+                  enrollment_bank: '058'
                   enrollment_branch: UNILORIN
                   first_name: JOSHUA
                   gender: Male
@@ -3295,15 +3295,15 @@ paths:
                   middle_name: THOMPSONBROWN
                   name_on_card: ISAAC, THOMPSON O
                   nationality: Nigeria
-                  nin: ""
-                  phone_number1: "07012345678"
-                  phone_number2: ""
+                  nin: ''
+                  phone_number1: '07012345678'
+                  phone_number2: ''
                   registration_date: 21-Mar-2018
                   residential_address: 24, OSHODI SURULERE, ILORIN
                   state_of_origin: Osun State
                   state_of_residence: Kwara State
                   title: Mr
-                  watch_listed: "NO"
+                  watch_listed: 'NO'
   /v1/financial/spending_pattern:
     get:
       tags:
@@ -3316,14 +3316,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: account_id
           in: query
           schema:
             type: string
           example: 02f63911-a958-4025-9d72-8bd2d7da274b
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             X-Powered-By:
@@ -3333,7 +3333,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             Content-Type:
               schema:
                 type: string
@@ -3341,7 +3341,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "362"
+                example: '362'
             ETag:
               schema:
                 type: string
@@ -3393,19 +3393,19 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: Authorization
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
         - name: account_id
           in: query
           schema:
             type: string
           example: 02f63911-a958-4025-9d72-8bd2d7da274b
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             X-Powered-By:
@@ -3415,7 +3415,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             Content-Type:
               schema:
                 type: string
@@ -3423,7 +3423,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "118"
+                example: '118'
             ETag:
               schema:
                 type: string
@@ -3458,13 +3458,13 @@ paths:
               type: object
               example:
                 transactions:
-                  - transaction_date: "2021-04-30"
-                    transaction_amount: "2016.4"
+                  - transaction_date: '2021-04-30'
+                    transaction_amount: '2016.4'
                     transaction_description: 0033199479:Int.Pd:01-04-2021 to 30-04-2 |
                     transaction_type: credit
                     reference_number: 12345tgfnde9000
-                  - transaction_date: "2021-05-30"
-                    transaction_amount: "2016.4"
+                  - transaction_date: '2021-05-30'
+                    transaction_amount: '2016.4'
                     transaction_description: 0033199479:Int.Pd:01 deposit
                     transaction_type: credit
                     reference_number: 12345tgfnde98999
@@ -3476,14 +3476,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: Authorization
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -3503,20 +3503,20 @@ paths:
                   format: binary
                 bank_code:
                   type: integer
-                  example: "033"
+                  example: '033'
       parameters:
         - name: AppId
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: Authorization
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -3532,14 +3532,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
         - name: AppId
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Date:
@@ -3561,7 +3561,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             uuid:
               schema:
                 type: string
@@ -3631,8 +3631,8 @@ paths:
                     averageWeeklyCredits: 6530.55
                     averageWeeklyDebits: 5031.04
                     closingBalance: 0
-                    firstDateInStatement: "2021-04-12"
-                    lastDateInStatement: "2022-07-03"
+                    firstDateInStatement: '2021-04-12'
+                    lastDateInStatement: '2022-07-03'
                     numberOfTransactingMonths: 6
                     periodInStatement: April - July
                     yearInStatement: 2021, 2022
@@ -3684,7 +3684,7 @@ paths:
                     totalRecurringExpenses: 0
                   fundsManagement:
                     accountActivity: 0.1
-                    accountSweep: "No"
+                    accountSweep: 'No'
                     averageMonthlyLoanAmount: 0
                     averageMonthlyLoanRepaymentAmount: 0
                     gamblingRate: 0
@@ -3699,9 +3699,9 @@ paths:
                     totalLoanAmount: 0
                     totalLoanRepaymentAmount: 0
                   inflowBreakdown:
-                    AdditionalIncome: "Yes"
+                    AdditionalIncome: 'Yes'
                     RecurringSalaryPayments: null
-                    aSalaryEarner: "No"
+                    aSalaryEarner: 'No'
                     averageAdditionalIncome: 9166.67
                     averageGuaranteedSalary: 0
                     estimatedSalaryPaymentDay: null
@@ -3712,8 +3712,8 @@ paths:
                     totalnumberOfSalaryPayments: 0
                   transactionRoutineBreakdown:
                     MaximumExpense: 0
-                    lastCreditReceived: "2022-03-04"
-                    lastDebitMade: "2022-07-03"
+                    lastCreditReceived: '2022-03-04'
+                    lastDebitMade: '2022-07-03'
                     mostFrequentBalanceRange: <10000
                     mostFrequentTransactionRange: <10000
                     numberOfCardRequests: 0
@@ -3753,9 +3753,9 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -3778,9 +3778,9 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -3801,14 +3801,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: Authorization
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -3829,20 +3829,20 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: Authorization
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             x-moesif-transaction-id:
               schema:
                 type: string
@@ -3858,7 +3858,7 @@ paths:
             price:
               schema:
                 type: integer
-                example: "20"
+                example: '20'
             Content-Type:
               schema:
                 type: string
@@ -3866,7 +3866,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "487"
+                example: '487'
             ETag:
               schema:
                 type: string
@@ -3897,7 +3897,7 @@ paths:
                     ADDRESS: 25 GADO NASKO ROAD KUBAWA
                     CITY_IN_ADDRESS: ABUJA
                     CLASS: D
-                    COUNTY: ""
+                    COUNTY: ''
                     DATE_OF_BIRTH: 18-05-1992
                     DATE_OF_ISSUE: 22-01-2019
                     DOCUMENT_NUMBER: FKJ49409AB13
@@ -3907,13 +3907,13 @@ paths:
                     ID_TYPE: DRIVER LICENSE FRONT
                     LAST_NAME: OLOLADE
                     MIDDLE_NAME: OLALEKAN
-                    PLACE_OF_BIRTH: ""
-                    RESTRICTIONS: ""
-                    STATE_IN_ADDRESS: ""
-                    STATE_NAME: ""
-                    SUFFIX: ""
-                    VETERAN: ""
-                    ZIP_CODE_IN_ADDRESS: "08060141707"
+                    PLACE_OF_BIRTH: ''
+                    RESTRICTIONS: ''
+                    STATE_IN_ADDRESS: ''
+                    STATE_NAME: ''
+                    SUFFIX: ''
+                    VETERAN: ''
+                    ZIP_CODE_IN_ADDRESS: '08060141707'
   /v1/document/analysis/passport:
     post:
       tags:
@@ -3931,14 +3931,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: Authorization
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -3953,28 +3953,28 @@ paths:
             schema:
               type: object
               example:
-                first_name: "Obama "
-                last_name: " "
-                date_of_birth: "1997-08-18"
+                first_name: 'Obama '
+                last_name: ' '
+                date_of_birth: '1997-08-18'
       parameters:
         - name: Appid
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: Authorization
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             x-moesif-transaction-id:
               schema:
                 type: string
@@ -3990,7 +3990,7 @@ paths:
             price:
               schema:
                 type: integer
-                example: "100"
+                example: '100'
             Content-Type:
               schema:
                 type: string
@@ -3998,7 +3998,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "85"
+                example: '85'
             ETag:
               schema:
                 type: string
@@ -4037,19 +4037,19 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: Authorization
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
         - name: reference_id
           in: query
           schema:
             type: string
           example: c574a3c8-dc27-4013-8bbc-462e7ed87d55
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -4062,7 +4062,7 @@ paths:
         - apikeyAuth: []
         - appIdAuth: []
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -4070,15 +4070,15 @@ paths:
                 type: object
               example:
                 entity:
-                  wallet_balance: "550.50"
-        "401":
+                  wallet_balance: '550.50'
+        '401':
           description: OK
           content:
             application/json:
               schema:
                 type: object
               example:
-                error: "Your Secret Key is Missing"
+                error: Your Secret Key is Missing
   /v1/purchase/airtime:
     post:
       tags:
@@ -4093,10 +4093,10 @@ paths:
             schema:
               type: object
               example:
-                destination: "08068810228"
-                amount: "100"
+                destination: '08068810228'
+                amount: '100'
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -4105,7 +4105,7 @@ paths:
               example:
                 entity:
                   data:
-                    - destination: "2348068810228"
+                    - destination: '2348068810228'
                       status: Sent
                   reference_id: dj_f6139f6f-5056-4551-a4c2-089b7667a7ff
   /v1/purchase/data:
@@ -4120,12 +4120,12 @@ paths:
               type: object
               example:
                 plan: 9MOBILE_1.5GB
-                destination: "09090577941"
+                destination: '09090577941'
       security:
         - apikeyAuth: []
         - appIdAuth: []
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -4138,7 +4138,7 @@ paths:
         - apikeyAuth: []
         - appIdAuth: []
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -4156,19 +4156,19 @@ paths:
                     description: 9MOBILE 4GB data bundle
                     plan: 9MOBILE_4GB
                   - amount: 4000
-                    description: "9MOBILE 11.5GB data bundle "
+                    description: '9MOBILE 11.5GB data bundle '
                     plan: 9MOBILE_11.5GB
                   - amount: 5000
-                    description: "9MOBILE 15GB data bundle "
+                    description: '9MOBILE 15GB data bundle '
                     plan: 9MOBILE_15GB
                   - amount: 18000
-                    description: "9MOBILE 27.5GB data bundle "
+                    description: '9MOBILE 27.5GB data bundle '
                     plan: 9MOBILE_27.5GB
                   - amount: 27500
-                    description: "9MOBILE 30GB data bundle "
+                    description: '9MOBILE 30GB data bundle '
                     plan: 9MOBILE_30GB
                   - amount: 55000
-                    description: "9MOBILE 60GB data bundle "
+                    description: '9MOBILE 60GB data bundle '
                     plan: 9MOBILE_60GB
                   - amount: 50
                     description: AIRTEL 40 MB data bundle
@@ -4284,7 +4284,7 @@ paths:
         - apikeyAuth: []
         - appIdAuth: []
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -4293,302 +4293,302 @@ paths:
               example:
                 entity:
                   - name: First Bank of Nigeria
-                    code: "011"
-                    longcode: "011151003"
+                    code: '011'
+                    longcode: '011151003'
                     gateway: ibank
                     slug: first-bank-of-nigeria
                     country: Nigeria
                     currency: NGN
                   - name: First City Monument Bank
-                    code: "214"
-                    longcode: "214150018"
+                    code: '214'
+                    longcode: '214150018'
                     gateway: emandate
                     slug: first-city-monument-bank
                     country: Nigeria
                     currency: NGN
                   - name: Suntrust Bank
-                    code: "100"
-                    longcode: ""
+                    code: '100'
+                    longcode: ''
                     gateway: null
                     slug: suntrust-bank
                     country: Nigeria
                     currency: NGN
                   - name: CEMCS Microfinance Bank
-                    code: "50823"
-                    longcode: ""
+                    code: '50823'
+                    longcode: ''
                     gateway: null
                     slug: cemcs-microfinance-bank
                     country: Nigeria
                     currency: NGN
                   - name: FSDH Merchant Bank Limited
-                    code: "501"
-                    longcode: ""
+                    code: '501'
+                    longcode: ''
                     gateway: null
                     slug: fsdh-merchant-bank-limited
                     country: Nigeria
                     currency: NGN
                   - name: Heritage Bank
-                    code: "030"
-                    longcode: "030159992"
+                    code: '030'
+                    longcode: '030159992'
                     gateway: null
                     slug: heritage-bank
                     country: Nigeria
                     currency: NGN
                   - name: ASO Savings and Loans
-                    code: "401"
-                    longcode: ""
+                    code: '401'
+                    longcode: ''
                     gateway: null
                     slug: asosavings
                     country: Nigeria
                     currency: NGN
                   - name: Stanbic IBTC Bank
-                    code: "221"
-                    longcode: "221159522"
+                    code: '221'
+                    longcode: '221159522'
                     gateway: null
                     slug: stanbic-ibtc-bank
                     country: Nigeria
                     currency: NGN
                   - name: Fidelity Bank
-                    code: "070"
-                    longcode: "070150003"
+                    code: '070'
+                    longcode: '070150003'
                     gateway: emandate
                     slug: fidelity-bank
                     country: Nigeria
                     currency: NGN
                   - name: Providus Bank
-                    code: "101"
-                    longcode: ""
+                    code: '101'
+                    longcode: ''
                     gateway: null
                     slug: providus-bank
                     country: Nigeria
                     currency: NGN
                   - name: Unity Bank
-                    code: "215"
-                    longcode: "215154097"
+                    code: '215'
+                    longcode: '215154097'
                     gateway: emandate
                     slug: unity-bank
                     country: Nigeria
                     currency: NGN
                   - name: TCF MFB
-                    code: "51211"
-                    longcode: ""
+                    code: '51211'
+                    longcode: ''
                     gateway: null
                     slug: tcf-mfb
                     country: Nigeria
                     currency: NGN
                   - name: Polaris Bank
-                    code: "076"
-                    longcode: "076151006"
+                    code: '076'
+                    longcode: '076151006'
                     gateway: null
                     slug: polaris-bank
                     country: Nigeria
                     currency: NGN
                   - name: Titan Bank
-                    code: "102"
-                    longcode: ""
+                    code: '102'
+                    longcode: ''
                     gateway: null
                     slug: titan-bank
                     country: Nigeria
                     currency: NGN
                   - name: Guaranty Trust Bank
-                    code: "058"
-                    longcode: "058152036"
+                    code: '058'
+                    longcode: '058152036'
                     gateway: ibank
                     slug: guaranty-trust-bank
                     country: Nigeria
                     currency: NGN
                   - name: Keystone Bank
-                    code: "082"
-                    longcode: "082150017"
+                    code: '082'
+                    longcode: '082150017'
                     gateway: null
                     slug: keystone-bank
                     country: Nigeria
                     currency: NGN
                   - name: Union Bank of Nigeria
-                    code: "032"
-                    longcode: "032080474"
+                    code: '032'
+                    longcode: '032080474'
                     gateway: emandate
                     slug: union-bank-of-nigeria
                     country: Nigeria
                     currency: NGN
                   - name: Access Bank (Diamond)
-                    code: "063"
-                    longcode: "063150162"
+                    code: '063'
+                    longcode: '063150162'
                     gateway: emandate
                     slug: access-bank-diamond
                     country: Nigeria
                     currency: NGN
                   - name: Kuda Bank
-                    code: "50211"
-                    longcode: ""
+                    code: '50211'
+                    longcode: ''
                     gateway: digitalbankmandate
                     slug: kuda-bank
                     country: Nigeria
                     currency: NGN
                   - name: United Bank For Africa
-                    code: "033"
-                    longcode: "033153513"
+                    code: '033'
+                    longcode: '033153513'
                     gateway: emandate
                     slug: united-bank-for-africa
                     country: Nigeria
                     currency: NGN
                   - name: Rubies MFB
-                    code: "125"
-                    longcode: ""
+                    code: '125'
+                    longcode: ''
                     gateway: null
                     slug: rubies-mfb
                     country: Nigeria
                     currency: NGN
                   - name: Wema Bank
-                    code: "035"
-                    longcode: "035150103"
+                    code: '035'
+                    longcode: '035150103'
                     gateway: null
                     slug: wema-bank
                     country: Nigeria
                     currency: NGN
                   - name: Eyowo
-                    code: "50126"
-                    longcode: ""
+                    code: '50126'
+                    longcode: ''
                     gateway: null
                     slug: eyowo
                     country: Nigeria
                     currency: NGN
                   - name: Ecobank Nigeria
-                    code: "050"
-                    longcode: "050150010"
+                    code: '050'
+                    longcode: '050150010'
                     gateway: null
                     slug: ecobank-nigeria
                     country: Nigeria
                     currency: NGN
                   - name: ALAT by WEMA
                     code: 035A
-                    longcode: "035150103"
+                    longcode: '035150103'
                     gateway: emandate
                     slug: alat-by-wema
                     country: Nigeria
                     currency: NGN
                   - name: Jaiz Bank
-                    code: "301"
-                    longcode: "301080020"
+                    code: '301'
+                    longcode: '301080020'
                     gateway: null
                     slug: jaiz-bank
                     country: Nigeria
                     currency: NGN
                   - name: Bowen Microfinance Bank
-                    code: "50931"
-                    longcode: ""
+                    code: '50931'
+                    longcode: ''
                     gateway: null
                     slug: bowen-microfinance-bank
                     country: Nigeria
                     currency: NGN
                   - name: VFD
-                    code: "566"
-                    longcode: ""
+                    code: '566'
+                    longcode: ''
                     gateway: null
                     slug: vfd
                     country: Nigeria
                     currency: NGN
                   - name: Parallex Bank
-                    code: "526"
-                    longcode: ""
+                    code: '526'
+                    longcode: ''
                     gateway: null
                     slug: parallex-bank
                     country: Nigeria
                     currency: NGN
                   - name: Zenith Bank
-                    code: "057"
-                    longcode: "057150013"
+                    code: '057'
+                    longcode: '057150013'
                     gateway: emandate
                     slug: zenith-bank
                     country: Nigeria
                     currency: NGN
                   - name: TAJ Bank
-                    code: "302"
-                    longcode: ""
+                    code: '302'
+                    longcode: ''
                     gateway: null
                     slug: taj-bank
                     country: Nigeria
                     currency: NGN
                   - name: Parkway - ReadyCash
-                    code: "311"
-                    longcode: ""
+                    code: '311'
+                    longcode: ''
                     gateway: null
                     slug: parkway-ready-cash
                     country: Nigeria
                     currency: NGN
                   - name: Hackman Microfinance Bank
-                    code: "51251"
-                    longcode: ""
+                    code: '51251'
+                    longcode: ''
                     gateway: null
                     slug: hackman-microfinance-bank
                     country: Nigeria
                     currency: NGN
                   - name: Citibank Nigeria
-                    code: "023"
-                    longcode: "023150005"
+                    code: '023'
+                    longcode: '023150005'
                     gateway: null
                     slug: citibank-nigeria
                     country: Nigeria
                     currency: NGN
                   - name: One Finance
-                    code: "565"
-                    longcode: ""
+                    code: '565'
+                    longcode: ''
                     gateway: null
                     slug: one-finance
                     country: Nigeria
                     currency: NGN
                   - name: Sterling Bank
-                    code: "232"
-                    longcode: "232150016"
+                    code: '232'
+                    longcode: '232150016'
                     gateway: emandate
                     slug: sterling-bank
                     country: Nigeria
                     currency: NGN
                   - name: Access Bank
-                    code: "044"
-                    longcode: "044150149"
+                    code: '044'
+                    longcode: '044150149'
                     gateway: emandate
                     slug: access-bank
                     country: Nigeria
                     currency: NGN
                   - name: Ekondo Microfinance Bank
-                    code: "562"
-                    longcode: ""
+                    code: '562'
+                    longcode: ''
                     gateway: null
                     slug: ekondo-microfinance-bank
                     country: Nigeria
                     currency: NGN
                   - name: Globus Bank
-                    code: "00103"
-                    longcode: "103015001"
+                    code: '00103'
+                    longcode: '103015001'
                     gateway: null
                     slug: globus-bank
                     country: Nigeria
                     currency: NGN
                   - name: Lagos Building Investment Company Plc.
-                    code: "90052"
-                    longcode: ""
+                    code: '90052'
+                    longcode: ''
                     gateway: null
                     slug: lbic-plc
                     country: Nigeria
                     currency: NGN
                   - name: Hasal Microfinance Bank
-                    code: "50383"
-                    longcode: ""
+                    code: '50383'
+                    longcode: ''
                     gateway: null
                     slug: hasal-microfinance-bank
                     country: Nigeria
                     currency: NGN
                   - name: Standard Chartered Bank
-                    code: "068"
-                    longcode: "068150015"
+                    code: '068'
+                    longcode: '068150015'
                     gateway: null
                     slug: standard-chartered-bank
                     country: Nigeria
                     currency: NGN
                   - name: Sparkle Microfinance Bank
-                    code: "51310"
-                    longcode: ""
+                    code: '51310'
+                    longcode: ''
                     gateway: null
                     slug: sparkle-microfinance-bank
                     country: Nigeria
@@ -4606,14 +4606,14 @@ paths:
           in: query
           schema:
             type: integer
-          example: "058"
+          example: '058'
         - name: account_number
           in: query
           schema:
             type: integer
-          example: "0037466959"
+          example: '0037466959'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             X-Powered-By:
@@ -4623,7 +4623,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             Content-Type:
               schema:
                 type: string
@@ -4631,7 +4631,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "82"
+                example: '82'
             ETag:
               schema:
                 type: string
@@ -4650,7 +4650,7 @@ paths:
                 type: object
               example:
                 entity:
-                  account_number: "3046507407"
+                  account_number: '3046507407'
                   account_name: SALIU MOSHOOD KOLAWOLE
   /v1/general/bin:
     get:
@@ -4665,9 +4665,9 @@ paths:
           in: query
           schema:
             type: integer
-          example: "506118"
+          example: '506118'
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -4675,9 +4675,9 @@ paths:
                 type: object
               example:
                 entity:
-                  bin: "506118"
+                  bin: '506118'
                   brand: Verve
-                  sub_brand: ""
+                  sub_brand: ''
                   country_code: NG
                   country_name: Nigeria
                   card_type: DEBIT
@@ -4704,9 +4704,9 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             X-Powered-By:
@@ -4716,7 +4716,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             Content-Type:
               schema:
                 type: string
@@ -4724,7 +4724,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "175"
+                example: '175'
             ETag:
               schema:
                 type: string
@@ -4747,8 +4747,8 @@ paths:
                   sub_category: Others
                   service_id: 0
                   is_subscription: 0
-                  duration: ""
-                  service_name: ""
+                  duration: ''
+                  service_name: ''
                   label: Others
                   mode_of_payment: web/pos
   /api/v1/captcha:
@@ -4761,14 +4761,14 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
         - name: Appid
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -4785,9 +4785,9 @@ paths:
           in: query
           schema:
             type: integer
-          example: "87461111"
+          example: '87461111'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -4801,19 +4801,19 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
         - name: AppId
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: mobile_number
           in: query
           schema:
             type: integer
-          example: "08068810228"
+          example: '08068810228'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -4837,9 +4837,9 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             X-Powered-By:
@@ -4849,7 +4849,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             Content-Type:
               schema:
                 type: string
@@ -4857,7 +4857,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: "82"
+                example: '82'
             ETag:
               schema:
                 type: string
@@ -4890,9 +4890,9 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
@@ -4908,9 +4908,9 @@ paths:
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Date:
@@ -4932,7 +4932,7 @@ paths:
             access-control-allow-origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             x-moesif-transaction-id:
               schema:
                 type: string
@@ -4993,15 +4993,15 @@ paths:
                     environment: sandbox
                     service: ngn_wallet
                     confirmation_status: Invalid Subscription Arn
-                    date_created: "2021-09-15T13:02:17.286834+01:00"
-                    date_updated: "2021-09-15T13:02:17.286880+01:00"
+                    date_created: '2021-09-15T13:02:17.286834+01:00'
+                    date_updated: '2021-09-15T13:02:17.286880+01:00'
                   - app_id: 60d4aebc1e90de0033ad14ad
                     endpoint: https://staging.dojah.io/webhooks/ngn_wallet
                     environment: sandbox
                     service: sms
                     confirmation_status: Invalid Subscription Arn
-                    date_created: "2021-08-06T05:12:24.445507+01:00"
-                    date_updated: "2021-08-06T05:12:24.445546+01:00"
+                    date_created: '2021-08-06T05:12:24.445507+01:00'
+                    date_updated: '2021-08-06T05:12:24.445546+01:00'
   /api/v1/webhook/notify:
     post:
       tags:
@@ -5015,20 +5015,20 @@ paths:
               example:
                 subject: kyc_widget
                 data:
-                  stuff: "12345678"
+                  stuff: '12345678'
       parameters:
         - name: AppId
           in: header
           schema:
             type: string
-          example: "{{app_id}}"
+          example: '{{app_id}}'
         - name: Authorization
           in: header
           schema:
             type: string
-          example: "{{secret_key}}"
+          example: '{{secret_key}}'
       responses:
-        "200":
+        '200':
           description: OK
           headers:
             Date:
@@ -5050,7 +5050,7 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
-                example: "*"
+                example: '*'
             x-moesif-transaction-id:
               schema:
                 type: string
