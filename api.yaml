@@ -21,6 +21,7 @@ tags:
   - name: ML
   - name: AML
   - name: WebHooks
+  - name: General
 paths:
   /api/v1/gh/kyc/dl:
     get:
@@ -283,7 +284,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '67335751'
+          example: 67335751
         - name: first_name
           in: query
           schema:
@@ -358,7 +359,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '24798402'
+          example: 24798402
         - name: first_name
           in: query
           schema:
@@ -448,12 +449,12 @@ paths:
           in: query
           schema:
             type: integer
-          example: '058'
+          example: 58
         - name: account_number
           in: query
           schema:
             type: integer
-          example: '0011223344'
+          example: 11223344
       responses:
         '200':
           description: OK
@@ -473,7 +474,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '547'
+                example: 547
             ETag:
               schema:
                 type: string
@@ -532,7 +533,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '22250148240'
+          example: 22250148240
         - name: first_name
           in: query
           schema:
@@ -562,7 +563,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '22468537919'
+          example: 22468537919
       responses:
         '200':
           description: OK
@@ -592,7 +593,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '22222222222'
+          example: 22222222222
       responses:
         '200':
           description: OK
@@ -646,7 +647,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '22305638508'
+          example: 22305638508
       responses:
         '200':
           description: OK
@@ -794,7 +795,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '08068810228'
+          example: 8068810228
       responses:
         '200':
           description: OK
@@ -831,7 +832,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '08011111111'
+          example: 8011111111
       responses:
         '200':
           description: OK
@@ -902,12 +903,12 @@ paths:
           in: query
           schema:
             type: integer
-          example: '3046507407'
+          example: 3046507407
         - name: bank_code
           in: query
           schema:
             type: integer
-          example: '011'
+          example: 11
         - name: dob
           in: query
           schema:
@@ -942,7 +943,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '104'
+                example: 104
             ETag:
               schema:
                 type: string
@@ -1052,7 +1053,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '55586'
+          example: 55586
         - name: state
           in: query
           schema:
@@ -1300,12 +1301,12 @@ paths:
           in: query
           schema:
             type: integer
-          example: '057'
+          example: 57
         - name: account_number
           in: query
           schema:
             type: integer
-          example: '2174879334'
+          example: 2174879334
       responses:
         '200':
           description: Successful response
@@ -1332,7 +1333,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '70142502085'
+          example: 70142502085
         - name: surname
           in: query
           schema:
@@ -1412,7 +1413,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '1432074'
+          example: 1432074
         - name: company_name
           in: query
           schema:
@@ -1437,7 +1438,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '263'
+                example: 263
             ETag:
               schema:
                 type: string
@@ -1478,7 +1479,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '3330883'
+          example: 3330883
         - name: type
           in: query
           schema:
@@ -1512,7 +1513,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '1432074'
+          example: 1432074
         - name: type
           in: query
           schema:
@@ -1566,7 +1567,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '244'
+                example: 244
             ETag:
               schema:
                 type: string
@@ -1636,7 +1637,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '130'
+                example: 130
             ETag:
               schema:
                 type: string
@@ -1697,7 +1698,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '31'
+                example: 31
             ETag:
               schema:
                 type: string
@@ -1848,7 +1849,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '081974'
+          example: 81974
       responses:
         '200':
           description: OK
@@ -1868,7 +1869,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '25'
+                example: 25
             ETag:
               schema:
                 type: string
@@ -1921,7 +1922,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '330'
+                example: 330
             ETag:
               schema:
                 type: string
@@ -2030,7 +2031,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '140'
+                example: 140
             ETag:
               schema:
                 type: string
@@ -2816,7 +2817,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '179'
+                example: 179
             ETag:
               schema:
                 type: string
@@ -2868,7 +2869,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '200'
+          example: 200
       responses:
         '200':
           description: OK
@@ -2888,7 +2889,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '3148'
+                example: 3148
             ETag:
               schema:
                 type: string
@@ -3068,7 +3069,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '108'
+                example: 108
             ETag:
               schema:
                 type: string
@@ -3358,7 +3359,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '362'
+                example: 362
             ETag:
               schema:
                 type: string
@@ -3441,7 +3442,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '118'
+                example: 118
             ETag:
               schema:
                 type: string
@@ -3534,7 +3535,7 @@ paths:
                   format: binary
                 bank_code:
                   type: integer
-                  example: '033'
+                  example: 33
       responses:
         '200':
           description: Successful response
@@ -3883,7 +3884,7 @@ paths:
             price:
               schema:
                 type: integer
-                example: '20'
+                example: 20
             Content-Type:
               schema:
                 type: string
@@ -3891,7 +3892,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '487'
+                example: 487
             ETag:
               schema:
                 type: string
@@ -4017,7 +4018,7 @@ paths:
             price:
               schema:
                 type: integer
-                example: '100'
+                example: 100
             Content-Type:
               schema:
                 type: string
@@ -4025,7 +4026,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '85'
+                example: 85
             ETag:
               schema:
                 type: string
@@ -4640,12 +4641,12 @@ paths:
           in: query
           schema:
             type: integer
-          example: '058'
+          example: 58
         - name: account_number
           in: query
           schema:
             type: integer
-          example: '0037466959'
+          example: 37466959
       responses:
         '200':
           description: OK
@@ -4665,7 +4666,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '82'
+                example: 82
             ETag:
               schema:
                 type: string
@@ -4700,7 +4701,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '506118'
+          example: 506118
       responses:
         '200':
           description: OK
@@ -4760,7 +4761,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '175'
+                example: 175
             ETag:
               schema:
                 type: string
@@ -4823,7 +4824,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '87461111'
+          example: 87461111
       responses:
         '200':
           description: Successful response
@@ -4850,7 +4851,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '08068810228'
+          example: 8068810228
       responses:
         '200':
           description: Successful response
@@ -4897,7 +4898,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '82'
+                example: 82
             ETag:
               schema:
                 type: string
