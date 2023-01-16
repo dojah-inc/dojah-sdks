@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: DOJAH APIs
-  version: 1.0.0
   description: Use Dojah to verify, onboard and manage user identity across Africa!
+  version: 1.0.0
   x-konfig-ignore:
     no-additional-properties: true
 servers:
@@ -603,6 +603,7 @@ paths:
                 type: object
               example:
                 entity:
+                  title: Mr
                   bvn: '22468537919'
                   date_of_birth: 28-Jun-2000
                   email: OLADIPOJOSHUAOLUWATIMILEYIN@YAHOO.COM
@@ -627,7 +628,6 @@ paths:
                   residential_address: 24, AKATA OWODE, ILORIN
                   state_of_origin: Osun State
                   state_of_residence: Kwara State
-                  title: Mr
                   watch_listed: 'NO'
   /api/v1/kyc/bvn/advance:
     get:
@@ -735,6 +735,7 @@ paths:
                 type: object
               example:
                 entity:
+                  title: Mr
                   bvn: '22222222222'
                   date_of_birth: 28-Jun-2000
                   email: ISAACTHOMPSONBROWN@YAHOO.COM
@@ -758,7 +759,6 @@ paths:
                   residential_address: 24, OSHODI SURULERE, ILORIN
                   state_of_origin: Osun State
                   state_of_residence: Kwara State
-                  title: Mr
                   watch_listed: 'NO'
                   status: 200
   /api/v1/kyc/vnin:
@@ -842,6 +842,7 @@ paths:
                 type: object
               example:
                 entity:
+                  title: Mr
                   msisdn: '09011111111'
                   firstName: John
                   middleName: Doe
@@ -868,7 +869,6 @@ paths:
                   state: Lagos
                   lga: Ikeja
                   nin: '111111111111111'
-                  title: Mr
                   height: 5 9
                   picture: <base64 encoded image>
                   status: 200
@@ -2776,73 +2776,6 @@ paths:
                   transaction_id: Dojah-c02585e5-9a8b-4230-8c1b-11fd2869f4ce
                   transaction_status: COMPLETED
                   date_created: '2021-07-19T11:54:01.905196Z'
-  /api/v1/financial/account_information/:
-    get:
-      tags:
-        - Financial
-      summary: Get Account Information
-      operationId: Financial_getAccount
-      parameters:
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
-        - name: account_id
-          in: query
-          schema:
-            type: string
-          example: d5b86083-08c5-4de2-ac19-7610a16c297d
-      responses:
-        '200':
-          description: OK
-          headers:
-            X-Powered-By:
-              schema:
-                type: string
-                example: Express
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-                example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
-            Content-Length:
-              schema:
-                type: integer
-                example: 179
-            ETag:
-              schema:
-                type: string
-                example: W/"b3-poBOGU65YY7wo1Qj/QX2tYuAuhM"
-            Date:
-              schema:
-                type: string
-                example: Fri, 28 Aug 2020 15:45:37 GMT
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                name: SALIU, MOSHOOD KOLAWOLE
-                account_number: '0150927834'
-                bvn: '5556'
-                account_type: GT Crea8-e-savers
-                currency: Naira
-                account_status: Active
-                balance: 34,976.80
-      description: /services/@app_id/account/@account_id
   /api/v1/financial/account_transactions:
     get:
       tags:
@@ -3296,6 +3229,7 @@ paths:
                 type: object
               example:
                 entity:
+                  title: Mr
                   bvn: '22222222222'
                   date_of_birth: 28-Jun-2000
                   email: ISAACTHOMPSONBROWN@YAHOO.COM
@@ -3319,7 +3253,6 @@ paths:
                   residential_address: 24, OSHODI SURULERE, ILORIN
                   state_of_origin: Osun State
                   state_of_residence: Kwara State
-                  title: Mr
                   watch_listed: 'NO'
   /v1/financial/spending_pattern:
     get:
@@ -4179,134 +4112,134 @@ paths:
                 type: object
               example:
                 entity:
-                  - amount: 1000
-                    description: 9MOBILE 1.5GB data bundle
+                  - description: 9MOBILE 1.5GB data bundle
+                    amount: 1000
                     plan: 9MOBILE_1.5GB
-                  - amount: 2000
-                    description: 9MOBILE 4.5GB data bundle
+                  - description: 9MOBILE 4.5GB data bundle
+                    amount: 2000
                     plan: 9MOBILE_4.5GB
-                  - amount: 3000
-                    description: 9MOBILE 4GB data bundle
+                  - description: 9MOBILE 4GB data bundle
+                    amount: 3000
                     plan: 9MOBILE_4GB
-                  - amount: 4000
-                    description: '9MOBILE 11.5GB data bundle '
+                  - description: '9MOBILE 11.5GB data bundle '
+                    amount: 4000
                     plan: 9MOBILE_11.5GB
-                  - amount: 5000
-                    description: '9MOBILE 15GB data bundle '
+                  - description: '9MOBILE 15GB data bundle '
+                    amount: 5000
                     plan: 9MOBILE_15GB
-                  - amount: 18000
-                    description: '9MOBILE 27.5GB data bundle '
+                  - description: '9MOBILE 27.5GB data bundle '
+                    amount: 18000
                     plan: 9MOBILE_27.5GB
-                  - amount: 27500
-                    description: '9MOBILE 30GB data bundle '
+                  - description: '9MOBILE 30GB data bundle '
+                    amount: 27500
                     plan: 9MOBILE_30GB
-                  - amount: 55000
-                    description: '9MOBILE 60GB data bundle '
+                  - description: '9MOBILE 60GB data bundle '
+                    amount: 55000
                     plan: 9MOBILE_60GB
-                  - amount: 50
-                    description: AIRTEL 40 MB data bundle
+                  - description: AIRTEL 40 MB data bundle
+                    amount: 50
                     plan: AIRTEL_40MB
-                  - amount: 100
-                    description: AIRTEL 100 MB data bundle
+                  - description: AIRTEL 100 MB data bundle
+                    amount: 100
                     plan: AIRTEL_100MB
-                  - amount: 200
-                    description: AIRTEL 200 MB data bundle
+                  - description: AIRTEL 200 MB data bundle
+                    amount: 200
                     plan: AIRTEL_200MB
-                  - amount: 300
-                    description: AIRTEL 350 MB data bundle
+                  - description: AIRTEL 350 MB data bundle
+                    amount: 300
                     plan: AIRTEL_350MB
-                  - amount: 500
-                    description: AIRTEL 750 MB data bundle
+                  - description: AIRTEL 750 MB data bundle
+                    amount: 500
                     plan: AIRTEL_750MB
-                  - amount: 1000
-                    description: AIRTEL 1.5GB data bundle
+                  - description: AIRTEL 1.5GB data bundle
+                    amount: 1000
                     plan: AIRTEL_1.5GB
-                  - amount: 1500
-                    description: AIRTEL 3GB Data Bundle
+                  - description: AIRTEL 3GB Data Bundle
+                    amount: 1500
                     plan: AIRTEL_3GB
-                  - amount: 2500
-                    description: AIRTEL 6GB Data Bundle
+                  - description: AIRTEL 6GB Data Bundle
+                    amount: 2500
                     plan: AIRTEL_6GB
-                  - amount: 3000
-                    description: AIRTEL 8GB Data Bundle
+                  - description: AIRTEL 8GB Data Bundle
+                    amount: 3000
                     plan: AIRTEL_8GB
-                  - amount: 4000
-                    description: AIRTEL 11GB Data Bundle
+                  - description: AIRTEL 11GB Data Bundle
+                    amount: 4000
                     plan: AIRTEL_11GB
-                  - amount: 5000
-                    description: AIRTEL 15GB Data Bundle
+                  - description: AIRTEL 15GB Data Bundle
+                    amount: 5000
                     plan: AIRTEL_15GB
-                  - amount: 10000
-                    description: AIRTEL 40GB Data Bundle
+                  - description: AIRTEL 40GB Data Bundle
+                    amount: 10000
                     plan: AIRTEL_40GB
-                  - amount: 15000
-                    description: AIRTEL 75GB Data Bundle
+                  - description: AIRTEL 75GB Data Bundle
+                    amount: 15000
                     plan: AIRTEL_75GB
-                  - amount: 100
-                    description: GLO 35 MB data bundle
+                  - description: GLO 35 MB data bundle
+                    amount: 100
                     plan: GLO_35MB
-                  - amount: 200
-                    description: GLO 100 MB DATA BUNDLE
+                  - description: GLO 100 MB DATA BUNDLE
+                    amount: 200
                     plan: GLO_100MB
-                  - amount: 500
-                    description: GLO 920 MB DATA BUNDLE
+                  - description: GLO 920 MB DATA BUNDLE
+                    amount: 500
                     plan: GLO_920MB
-                  - amount: 1000
-                    description: GLO 1.8GB data purchase
+                  - description: GLO 1.8GB data purchase
+                    amount: 1000
                     plan: GLO_1.8GB
-                  - amount: 2000
-                    description: GLO 4.5GB data bundle
+                  - description: GLO 4.5GB data bundle
+                    amount: 2000
                     plan: GLO_4.5GB
-                  - amount: 2500
-                    description: GLO 7.2GB data bundle
+                  - description: GLO 7.2GB data bundle
+                    amount: 2500
                     plan: GLO_7.2GB
-                  - amount: 3000
-                    description: GLO 8.75GB DATA BUNDLE
+                  - description: GLO 8.75GB DATA BUNDLE
+                    amount: 3000
                     plan: GLO_8.75GB
-                  - amount: 4000
-                    description: GLO 12.5GB DATA BUNDLE
+                  - description: GLO 12.5GB DATA BUNDLE
+                    amount: 4000
                     plan: GLO_12.5GB
-                  - amount: 5000
-                    description: GLO 15.6GB DATA BUNDLE
+                  - description: GLO 15.6GB DATA BUNDLE
+                    amount: 5000
                     plan: GLO_15.6GB
-                  - amount: 8000
-                    description: GLO 25GB DATA BUNDLE
+                  - description: GLO 25GB DATA BUNDLE
+                    amount: 8000
                     plan: GLO_25GB
-                  - amount: 10000
-                    description: GLO 32.5GB DATA BUNDLE
+                  - description: GLO 32.5GB DATA BUNDLE
+                    amount: 10000
                     plan: GLO_32.5GB
-                  - amount: 15000
-                    description: GLO 52.5GB DATA BUNDLE
+                  - description: GLO 52.5GB DATA BUNDLE
+                    amount: 15000
                     plan: GLO_52.5GB
-                  - amount: 18000
-                    description: GLO 62.5GB DATA BUNDLE
+                  - description: GLO 62.5GB DATA BUNDLE
+                    amount: 18000
                     plan: GLO_62.5GB
-                  - amount: 200
-                    description: MTN 200 MB DATA BUNDLE
+                  - description: MTN 200 MB DATA BUNDLE
+                    amount: 200
                     plan: MTN_200MB
-                  - amount: 500
-                    description: MTN 750MB data top-up service
+                  - description: MTN 750MB data top-up service
+                    amount: 500
                     plan: MTN_750MB
-                  - amount: 1000
-                    description: MTN 1.5 GB DATA BUNDLE
+                  - description: MTN 1.5 GB DATA BUNDLE
+                    amount: 1000
                     plan: MTN_1.5GB
-                  - amount: 2000
-                    description: MTN 4.5 GB DATA BUNDLE
+                  - description: MTN 4.5 GB DATA BUNDLE
+                    amount: 2000
                     plan: MTN_4.5GB
-                  - amount: 3500
-                    description: MTN 10 GB DATA BUNDLE
+                  - description: MTN 10 GB DATA BUNDLE
+                    amount: 3500
                     plan: MTN_10GB
-                  - amount: 5000
-                    description: MTN 15 GB DATA BUNDLE
+                  - description: MTN 15 GB DATA BUNDLE
+                    amount: 5000
                     plan: MTN_15GB
-                  - amount: 10000
-                    description: MTN 40 GB DATA BUNDLE
+                  - description: MTN 40 GB DATA BUNDLE
+                    amount: 10000
                     plan: MTN_40GB
-                  - amount: 20000
-                    description: MTN 75 GB DATA BUNDLE
+                  - description: MTN 75 GB DATA BUNDLE
+                    amount: 20000
                     plan: MTN_75GB
-                  - amount: 50000
-                    description: MTN 120 GB DATA BUNDLE
+                  - description: MTN 120 GB DATA BUNDLE
+                    amount: 50000
                     plan: MTN_120GB
   /v1/general/banks:
     get:
@@ -5148,6 +5081,73 @@ paths:
                 type: object
               example:
                 entity: App event created successfully
+  /api/v1/financial/account_information:
+    get:
+      tags:
+        - Financial
+      summary: Get Account Information
+      operationId: Financial_getAccount
+      description: /services/@app_id/account/@account_id
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: '{{secret_key}}'
+        - name: AppId
+          in: header
+          schema:
+            type: string
+          example: '{{app_id}}'
+        - name: account_id
+          in: query
+          schema:
+            type: string
+          example: d5b86083-08c5-4de2-ac19-7610a16c297d
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: 179
+            ETag:
+              schema:
+                type: string
+                example: W/"b3-poBOGU65YY7wo1Qj/QX2tYuAuhM"
+            Date:
+              schema:
+                type: string
+                example: Fri, 28 Aug 2020 15:45:37 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                name: SALIU, MOSHOOD KOLAWOLE
+                account_number: '0150927834'
+                bvn: '5556'
+                account_type: GT Crea8-e-savers
+                currency: Naira
+                account_status: Active
+                balance: 34,976.80
 components:
   securitySchemes:
     apikeyAuth:
