@@ -8,16 +8,6 @@ info:
 servers:
   - url: https://api.dojah.io
   - url: https://sandbox.dojah.io
-components:
-  securitySchemes:
-    apikeyAuth:
-      type: apiKey
-      name: Authorization
-      in: header
-    appIdAuth:
-      type: apiKey
-      name: AppId
-      in: header
 tags:
   - name: Services
   - name: KYC
@@ -131,8 +121,8 @@ paths:
     get:
       tags:
         - GH KYC
-      operationId: GHKYC_getPassport
       summary: Passport
+      operationId: GHKYC_getPassport
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -981,14 +971,6 @@ paths:
         - KYC
       summary: KYC - Selfie BVN Verificatoin
       operationId: KYC_verifySelfieBvn
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                bvn: '22468537919'
-                selfie_image: <base64 encoded image>
       security:
         - apikeyAuth: []
       parameters:
@@ -997,6 +979,14 @@ paths:
           schema:
             type: string
           example: '{{app_id}}'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                bvn: '22468537919'
+                selfie_image: <base64 encoded image>
       responses:
         '200':
           description: Successful response
@@ -1008,14 +998,6 @@ paths:
         - KYC
       summary: KYC - Selfie NIN Verification
       operationId: KYC_verifySelfieNin
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                nin: '79628483753'
-                selfie_image: <base64 encoded image>
       security:
         - apikeyAuth: []
       parameters:
@@ -1024,6 +1006,14 @@ paths:
           schema:
             type: string
           example: '{{app_id}}'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                nin: '79628483753'
+                selfie_image: <base64 encoded image>
       responses:
         '200':
           description: Successful response
@@ -1380,6 +1370,7 @@ paths:
       tags:
         - KYB
       summary: CAC Name Search
+      operationId: KYB_searchCac
       security:
         - apikeyAuth: []
       parameters:
@@ -1403,12 +1394,12 @@ paths:
           description: Successful response
           content:
             application/json: {}
-      operationId: KYB_searchCac
   /v1/kyc/cac:
     get:
       tags:
         - KYB
       summary: 'KYC - Get CAC '
+      operationId: KYB_getCac
       security:
         - apikeyAuth: []
       parameters:
@@ -1469,12 +1460,12 @@ paths:
                   company_name: ELTAFORD LIMITED
                   address: NO 37 ISAIAH ROAD UBEJI
                   date_of_registration: '2015-05-15'
-      operationId: KYB_getCac
   /v1/kyc/cac/basic:
     get:
       tags:
         - KYB
       summary: KYB - Get CAC 2
+      operationId: KYB_getBasicCac
       security:
         - apikeyAuth: []
       parameters:
@@ -1498,12 +1489,12 @@ paths:
           description: Successful response
           content:
             application/json: {}
-      operationId: KYB_getBasicCac
   /v1/kyc/cac/advance:
     get:
       tags:
         - KYB
       summary: KYC - Get CAC Advanced
+      operationId: KYB_getAdvancedCac
       security:
         - apikeyAuth: []
       parameters:
@@ -1537,12 +1528,12 @@ paths:
           description: Successful response
           content:
             application/json: {}
-      operationId: KYB_getAdvancedCac
   /v1/kyc/tin:
     get:
       tags:
         - KYB
       summary: KYC - Fetch Tin
+      operationId: KYB_getTin
       security:
         - apikeyAuth: []
       parameters:
@@ -1602,12 +1593,20 @@ paths:
                   Tax_Office: MSTO IKOYI
                   Phone_No: sundayoguntola@hotmail.com
                   Email: '07055427676'
-      operationId: KYB_getTin
   /api/v1/messaging/sms:
     post:
       tags:
         - Authentication
       summary: Messaging - Send SMS
+      operationId: Authentication_sendSms
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: AppId
+          in: header
+          schema:
+            type: string
+          example: '{{app_id}}'
       requestBody:
         content:
           application/json:
@@ -1618,14 +1617,6 @@ paths:
                 message: Checking to see if you are Okay
                 channel: whatsapp
                 sender_id: Kedesa
-      security:
-        - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
       responses:
         '200':
           description: OK
@@ -1668,12 +1659,12 @@ paths:
                   mobile: '2348068810228'
                   message_id: true_2348068810228@c.us_3EB094F69064FF74BD76
                   batch_id: '90512'
-      operationId: Authentication_sendSms
   /v1/messaging/sms/get_status:
     get:
       tags:
         - Authentication
       summary: Messaging - Get SMS Status
+      operationId: Authentication_getSmsStatus
       security:
         - apikeyAuth: []
       parameters:
@@ -1726,12 +1717,20 @@ paths:
               example:
                 entity:
                   status: DELIVRD
-      operationId: Authentication_getSmsStatus
   /v1/messaging/otp:
     post:
       tags:
         - Authentication
       summary: Messaging - Send OTP
+      operationId: Authentication_sendOtp
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: AppId
+          in: header
+          schema:
+            type: string
+          example: '{{app_id}}'
       requestBody:
         content:
           application/json:
@@ -1743,14 +1742,6 @@ paths:
                 channel: sms
                 sender_id: Dojah
                 priority: true
-      security:
-        - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
       responses:
         '200':
           description: OK
@@ -1834,12 +1825,12 @@ paths:
                     destination: '08068810228'
                     status_id: dj_f93ec2a0-2515-49ef-97f3-e6a137c7830a
                     status: 'sms OTP sent successfully '
-      operationId: Authentication_sendOtp
   /v1/messaging/otp/validate:
     get:
       tags:
         - Authentication
       summary: Messaging - Validate OTP
+      operationId: Authentication_validateOtp
       security:
         - apikeyAuth: []
       parameters:
@@ -1897,12 +1888,12 @@ paths:
               example:
                 entity:
                   valid: true
-      operationId: Authentication_validateOtp
   /api/v1/messaging/sender_ids:
     get:
       tags:
         - Authentication
       summary: Messaging - Get Sender IDs
+      operationId: Authentication_getSenderId
       security:
         - apikeyAuth: []
       parameters:
@@ -1961,19 +1952,12 @@ paths:
                   - sender_id: Dojaher
                     activated: false
                     createdAt: '2020-10-30T00:53:02.348Z'
-      operationId: Authentication_getSenderId
   /api/v1/messaging/sender_id:
     post:
       tags:
         - Authentication
       summary: Messaging - Request Sender ID
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                sender_id: Dojah
+      operationId: Authentication_requestSenderId
       parameters:
         - name: Authorization
           in: header
@@ -1985,28 +1969,24 @@ paths:
           schema:
             type: string
           example: '{{app_id}}'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-      operationId: Authentication_requestSenderId
-  /v1/wallet/ngn/create:
-    post:
-      tags:
-        - Wallet
-      summary: Create NGN Wallet
       requestBody:
         content:
           application/json:
             schema:
               type: object
               example:
-                last_name: Dojah
-                first_name: Inc
-                phone_number: '08068810258'
-                dob: 18-May-1992
-                route: WEMA
+                sender_id: Dojah
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /v1/wallet/ngn/create:
+    post:
+      tags:
+        - Wallet
+      summary: Create NGN Wallet
+      operationId: Wallet_createWallet
       security:
         - apikeyAuth: []
       parameters:
@@ -2020,6 +2000,17 @@ paths:
           schema:
             type: string
           example: '{{secret_key}}'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                last_name: Dojah
+                first_name: Inc
+                phone_number: '08068810258'
+                dob: 18-May-1992
+                route: WEMA
       responses:
         '200':
           description: OK
@@ -2073,12 +2064,12 @@ paths:
                       wallet_amount: 0
                       account_number: '1004204891'
                       phone_number: '09059895710'
-      operationId: Wallet_createWallet
   /v1/wallet/ngn/retrieve:
     get:
       tags:
         - Wallet
       summary: Retrieve Wallet Details
+      operationId: Wallet_getWallet
       security:
         - apikeyAuth: []
       parameters:
@@ -2184,12 +2175,12 @@ paths:
                   account_number: '7091821832'
                   phone_number: '08068810258'
                   bank_name: WEMA BANK
-      operationId: Wallet_getWallet
   /v1/wallet/ngn/accounts:
     get:
       tags:
         - Wallet
       summary: Get Wallets
+      operationId: Wallet_getWallets
       security:
         - apikeyAuth: []
       parameters:
@@ -2298,12 +2289,12 @@ paths:
                       account_number: '7091821832'
                       phone_number: '08068810258'
                       bank_name: WEMA BANK
-      operationId: Wallet_getWallets
   /v1/wallet/ngn/transaction:
     get:
       tags:
         - Wallet
       summary: Retrieve Transaction Details
+      operationId: Wallet_getTransaction
       security:
         - apikeyAuth: []
       parameters:
@@ -2423,12 +2414,12 @@ paths:
                       transaction_id: Dojah-4b0ecd96-9914-4e78-8ce9-21ebc4a34ee8
                       transaction_status: FAILED
                       date_created: '2021-07-19T11:57:38.517618Z'
-      operationId: Wallet_getTransaction
   /v1/wallet/ngn/transactions:
     get:
       tags:
         - Wallet
       summary: Fetch Wallet Transactions
+      operationId: Wallet_getTransactions
       security:
         - apikeyAuth: []
       parameters:
@@ -2447,12 +2438,20 @@ paths:
           description: Successful response
           content:
             application/json: {}
-      operationId: Wallet_getTransactions
   /v1/wallet/ngn/transfer:
     post:
       tags:
         - Wallet
       summary: Transfer Funds
+      operationId: Wallet_transferFunds
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: AppId
+          in: header
+          schema:
+            type: string
+          example: '{{app_id}}'
       requestBody:
         content:
           application/json:
@@ -2463,14 +2462,6 @@ paths:
                 recipient_bank_code: '058'
                 recipient_account_number: '0037466959'
                 wallet_id: 6187eb92-a4ad-420f-98cf-05a34188f467
-      security:
-        - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
       responses:
         '200':
           description: OK
@@ -2591,12 +2582,20 @@ paths:
                       transaction_id: Dojah-404e608c-4c85-4a87-b8ed-968564cdb67f
                       transaction_status: PROCESSING
                       date_created: '2021-07-21T04:29:03.786408Z'
-      operationId: Wallet_transferFunds
   /v1/wallet/ngn/transfer/internal:
     post:
       tags:
         - Wallet
       summary: Transfer Funds (Internal)
+      operationId: Wallet_transferFundsInternal
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: AppId
+          in: header
+          schema:
+            type: string
+          example: '{{app_id}}'
       requestBody:
         content:
           application/json:
@@ -2606,6 +2605,17 @@ paths:
                 amount: 5
                 recipient_wallet_id: 619de017-5bf8-401d-b34c-9ca69d0bf7e7
                 sender_wallet_id: 1b9494d3-58a7-4e72-9a73-174b908f55b7
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /v1/wallet/ngn/inward:
+    post:
+      tags:
+        - Wallet
+      summary: Credit Inward (Sandbox only)
+      operationId: Wallet_creditInward
       security:
         - apikeyAuth: []
       parameters:
@@ -2614,17 +2624,6 @@ paths:
           schema:
             type: string
           example: '{{app_id}}'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-      operationId: Wallet_transferFundsInternal
-  /v1/wallet/ngn/inward:
-    post:
-      tags:
-        - Wallet
-      summary: Credit Inward (Sandbox only)
       requestBody:
         content:
           application/json:
@@ -2639,6 +2638,17 @@ paths:
                 validate: false
                 timestamp: '2021-01-11T09:34:55.879Z'
                 environment: sandbox
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /v1/wallet/ngn/debit:
+    post:
+      tags:
+        - Wallet
+      summary: Debit Subwallet
+      operationId: Wallet_debitSubwallet
       security:
         - apikeyAuth: []
       parameters:
@@ -2647,17 +2657,6 @@ paths:
           schema:
             type: string
           example: '{{app_id}}'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-      operationId: Wallet_creditInward
-  /v1/wallet/ngn/debit:
-    post:
-      tags:
-        - Wallet
-      summary: Debit Subwallet
       requestBody:
         content:
           application/json:
@@ -2666,25 +2665,19 @@ paths:
               example:
                 amount: '1'
                 wallet_id: 1b9494d3-58a7-4e72-9a73-174b908f55b7
-      security:
-        - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
-      operationId: Wallet_debitSubwallet
   /v1/wallet/ngn/credit:
     post:
       tags:
         - Wallet
       summary: Credit Sub-wallet
+      operationId: Wallet_creditSubwallet
+      security:
+        - apikeyAuth: []
       requestBody:
         content:
           application/json:
@@ -2693,8 +2686,6 @@ paths:
               example:
                 amount: '12'
                 wallet_id: 867a8cae-8073-4914-8b04-d7fd096c1006
-      security:
-        - apikeyAuth: []
       responses:
         '200':
           description: OK
@@ -2784,13 +2775,12 @@ paths:
                   transaction_id: Dojah-c02585e5-9a8b-4230-8c1b-11fd2869f4ce
                   transaction_status: COMPLETED
                   date_created: '2021-07-19T11:54:01.905196Z'
-      operationId: Wallet_creditSubwallet
   /api/v1/financial/account_information/:
     get:
       tags:
         - Financial
       summary: Get Account Information
-      description: /services/@app_id/account/@account_id
+      operationId: Financial_getAccount
       parameters:
         - name: Authorization
           in: header
@@ -2851,12 +2841,13 @@ paths:
                 currency: Naira
                 account_status: Active
                 balance: 34,976.80
-      operationId: Financial_getAccount
+      description: /services/@app_id/account/@account_id
   /api/v1/financial/account_transactions:
     get:
       tags:
         - Financial
       summary: Get Account Transactions
+      operationId: Financial_getAccountTransactions
       parameters:
         - name: Authorization
           in: header
@@ -3034,12 +3025,12 @@ paths:
                   next_page: 2
                   total_pages: 53
                   current_page: 1
-      operationId: Financial_getAccountTransactions
   /v1/financial/account_subscription:
     get:
       tags:
         - Financial
       summary: Get Account Subscriptions
+      operationId: Financial_getAccountSubscriptions
       security:
         - apikeyAuth: []
       parameters:
@@ -3102,12 +3093,12 @@ paths:
                   next_page: ''
                   total_pages: 1
                   current_page: 1
-      operationId: Financial_getAccountSubscriptions
   /v1/financial/bvn_information/basic:
     get:
       tags:
         - Financial
       summary: Get BVN Information Basic
+      operationId: Financial_getBasicBvn
       security:
         - apikeyAuth: []
       parameters:
@@ -3206,12 +3197,12 @@ paths:
                   formatted_dob: '2000-06-28'
                   mobile: 070***28116
                   bvn: 2246***3719
-      operationId: Financial_getBasicBvn
   /v1/financial/bvn_information/full:
     get:
       tags:
         - Financial
       summary: Get BVN Information Full
+      operationId: Financial_getFullBvn
       security:
         - apikeyAuth: []
       parameters:
@@ -3329,12 +3320,12 @@ paths:
                   state_of_residence: Kwara State
                   title: Mr
                   watch_listed: 'NO'
-      operationId: Financial_getFullBvn
   /v1/financial/spending_pattern:
     get:
       tags:
         - Financial
       summary: Get Spending Pattern
+      operationId: Financial_getSpendingPattern
       security:
         - apikeyAuth: []
       parameters:
@@ -3407,12 +3398,12 @@ paths:
                       sum: 886
                       count: 27
                       percentage: 0.19788989071452615
-      operationId: Financial_getSpendingPattern
   /v1/financial/earning_structure:
     get:
       tags:
         - Financial
       summary: Get Earning Structure
+      operationId: Financial_getEarningStructure
       security:
         - apikeyAuth: []
       parameters:
@@ -3473,12 +3464,25 @@ paths:
                   salary_earner: false
                   consistent: false
                   number_of_days: 183
-      operationId: Financial_getEarningStructure
   /v1/financial/transactions:
     post:
       tags:
         - Financial
       summary: Collect Transactions
+      operationId: Financial_collectTransactions
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: AppId
+          in: header
+          schema:
+            type: string
+          example: '{{app_id}}'
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: '{{secret_key}}'
       requestBody:
         content:
           application/json:
@@ -3497,8 +3501,17 @@ paths:
                     transaction_type: credit
                     reference_number: 12345tgfnde98999
                 app_id: 6138a052147a0100341ca124
-      security:
-        - apikeyAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/financial/transactions/pdf:
+    post:
+      tags:
+        - Financial
+      summary: Collect Status via PDF Statement
+      operationId: Financial_collectStatusFromPdf
       parameters:
         - name: AppId
           in: header
@@ -3510,17 +3523,6 @@ paths:
           schema:
             type: string
           example: '{{secret_key}}'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-      operationId: Financial_collectTransactions
-  /api/v1/financial/transactions/pdf:
-    post:
-      tags:
-        - Financial
-      summary: Collect Status via PDF Statement
       requestBody:
         content:
           multipart/form-data:
@@ -3533,28 +3535,17 @@ paths:
                 bank_code:
                   type: integer
                   example: '033'
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
-      operationId: Financial_collectStatusFromPdf
   /api/v1/financial/analysis:
     get:
       tags:
         - Financial
       summary: Get Account Analysis
+      operationId: Financial_getAccountAnalysis
       security:
         - apikeyAuth: []
       parameters:
@@ -3763,12 +3754,20 @@ paths:
                     percentofDebitTransactions: 0.81
                     totalAmountOfTransactions: 129
                   status: 200
-      operationId: Financial_getAccountAnalysis
   /v1/kyc/photoid/verify:
     post:
       tags:
         - ML
       summary: KYC - Selfie Photo ID Verification
+      operationId: ML_verifyPhotoIdWithSelfie
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: AppId
+          in: header
+          schema:
+            type: string
+          example: '{{app_id}}'
       requestBody:
         content:
           application/json:
@@ -3777,6 +3776,17 @@ paths:
               example:
                 selfie_image: <base64 encoded image>
                 photoid_image: <base64 encoded image>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /v1/ml/ocr:
+    post:
+      tags:
+        - ML
+      summary: BVN Ocr
+      operationId: ML_getOcrText
       security:
         - apikeyAuth: []
       parameters:
@@ -3785,17 +3795,6 @@ paths:
           schema:
             type: string
           example: '{{app_id}}'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-      operationId: ML_verifyPhotoIdWithSelfie
-  /v1/ml/ocr:
-    post:
-      tags:
-        - ML
-      summary: BVN Ocr
       requestBody:
         content:
           application/json:
@@ -3803,32 +3802,17 @@ paths:
               type: object
               example:
                 image: <base64 encoded image>
-      security:
-        - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
-      operationId: ML_getOcrText
   /v1/ml/ocr/generic:
     post:
       tags:
         - ML
       summary: Generic OCR Service
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                img: <base64 encoded image>
+      operationId: ML_getGenericOcrText
       parameters:
         - name: AppId
           in: header
@@ -3840,17 +3824,6 @@ paths:
           schema:
             type: string
           example: '{{secret_key}}'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-      operationId: ML_getGenericOcrText
-  /v1/document/analysis/dl:
-    post:
-      tags:
-        - ML
-      summary: Document Analysis Drivers License
       requestBody:
         content:
           application/json:
@@ -3858,6 +3831,17 @@ paths:
               type: object
               example:
                 img: <base64 encoded image>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /v1/document/analysis/dl:
+    post:
+      tags:
+        - ML
+      summary: Document Analysis Drivers License
+      operationId: ML_getDocumentAnalysis
       parameters:
         - name: Appid
           in: header
@@ -3869,6 +3853,13 @@ paths:
           schema:
             type: string
           example: '{{secret_key}}'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                img: <base64 encoded image>
       responses:
         '200':
           description: OK
@@ -3948,19 +3939,12 @@ paths:
                     SUFFIX: ''
                     VETERAN: ''
                     ZIP_CODE_IN_ADDRESS: '08060141707'
-      operationId: ML_getDocumentAnalysis
   /v1/document/analysis/passport:
     post:
       tags:
         - ML
       summary: Document Analysis Passport
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                img: <base64 encoded image>
+      operationId: ML_getPassportAnalysis
       parameters:
         - name: Appid
           in: header
@@ -3972,17 +3956,35 @@ paths:
           schema:
             type: string
           example: '{{secret_key}}'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                img: <base64 encoded image>
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
-      operationId: ML_getPassportAnalysis
   /api/v1/aml/screening:
     post:
       tags:
         - AML
       summary: AML Screening
+      operationId: AML_screenAml
+      parameters:
+        - name: Appid
+          in: header
+          schema:
+            type: string
+          example: '{{app_id}}'
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: '{{secret_key}}'
       requestBody:
         content:
           application/json:
@@ -3992,17 +3994,6 @@ paths:
                 first_name: 'Obama '
                 last_name: ' '
                 date_of_birth: '1997-08-18'
-      parameters:
-        - name: Appid
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
       responses:
         '200':
           description: OK
@@ -4063,12 +4054,12 @@ paths:
                 entity:
                   reference_id: 8fd7008d-7c3d-4f49-91fd-005ba2fc7da2
                   status: PENDING
-      operationId: AML_screenAml
   /v1/aml/screening/info:
     get:
       tags:
         - AML
       summary: Get AML Info
+      operationId: AML_getScreeningInfo
       parameters:
         - name: Appid
           in: header
@@ -4090,12 +4081,12 @@ paths:
           description: Successful response
           content:
             application/json: {}
-      operationId: AML_getScreeningInfo
   /api/v1/balance:
     get:
       tags:
         - General
       summary: Get Dojah Wallet Balance
+      operationId: General_getWalletBalance
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -4117,12 +4108,12 @@ paths:
                 type: object
               example:
                 error: Your Secret Key is Missing
-      operationId: General_getWalletBalance
   /v1/purchase/airtime:
     post:
       tags:
         - General
       summary: Purchase - Send Airtime
+      operationId: General_purchaseAirtime
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -4147,12 +4138,15 @@ paths:
                     - destination: '2348068810228'
                       status: Sent
                   reference_id: dj_f6139f6f-5056-4551-a4c2-089b7667a7ff
-      operationId: General_purchaseAirtime
   /v1/purchase/data:
     post:
       tags:
         - General
       summary: Purchase - Buy Data
+      operationId: General_purchaseData
+      security:
+        - apikeyAuth: []
+        - appIdAuth: []
       requestBody:
         content:
           application/json:
@@ -4161,20 +4155,17 @@ paths:
               example:
                 plan: 9MOBILE_1.5GB
                 destination: '09090577941'
-      security:
-        - apikeyAuth: []
-        - appIdAuth: []
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
-      operationId: General_purchaseData
   /v1/purchase/data/plans:
     get:
       tags:
         - General
       summary: Purchase - Get Data Plans
+      operationId: General_getDataPlans
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -4316,12 +4307,12 @@ paths:
                   - amount: 50000
                     description: MTN 120 GB DATA BUNDLE
                     plan: MTN_120GB
-      operationId: General_getDataPlans
   /v1/general/banks:
     get:
       tags:
         - General
       summary: General - Get Banks
+      operationId: General_getBanks
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -4635,12 +4626,12 @@ paths:
                     slug: sparkle-microfinance-bank
                     country: Nigeria
                     currency: NGN
-      operationId: General_getBanks
   /v1/general/account:
     get:
       tags:
         - General
       summary: General Resolve NUBAN
+      operationId: General_getNuban
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -4695,12 +4686,12 @@ paths:
                 entity:
                   account_number: '3046507407'
                   account_name: SALIU MOSHOOD KOLAWOLE
-      operationId: General_getNuban
   /v1/general/bin:
     get:
       tags:
         - General
       summary: General Resolve BIN
+      operationId: General_getBin
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -4726,12 +4717,20 @@ paths:
                   country_name: Nigeria
                   card_type: DEBIT
                   bank: Ecobank Nigeria
-      operationId: General_getBin
   /v1/ml/categorize_transaction:
     post:
       tags:
         - Services
       summary: Categorize Transactions
+      operationId: Services_categorizeTransactions
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: AppId
+          in: header
+          schema:
+            type: string
+          example: '{{app_id}}'
       requestBody:
         content:
           application/json:
@@ -4742,14 +4741,6 @@ paths:
                   POS/WEB PURCHASE TRANSACTION -047608- -253842-MUNCHIES BY MOE
                   OY OYNG
                 trans_type: debit
-      security:
-        - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
       responses:
         '200':
           description: OK
@@ -4796,12 +4787,12 @@ paths:
                   service_name: ''
                   label: Others
                   mode_of_payment: web/pos
-      operationId: Services_categorizeTransactions
   /api/v1/captcha:
     post:
       tags:
         - Services
       summary: Captcha Service
+      operationId: Services_captcha
       parameters:
         - name: Authorization
           in: header
@@ -4818,12 +4809,12 @@ paths:
           description: Successful response
           content:
             application/json: {}
-      operationId: Services_captcha
   /api/v1/fraud_decision:
     get:
       tags:
         - Services
       summary: Fraud Decision
+      operationId: Services_getFraudDecision
       security:
         - apikeyAuth: []
         - appIdAuth: []
@@ -4838,12 +4829,12 @@ paths:
           description: Successful response
           content:
             application/json: {}
-      operationId: Services_getFraudDecision
   /api/v1/kyc/accounts:
     get:
       tags:
         - Services
       summary: Fetch Bank Accounts
+      operationId: Services_getBankAccounts
       parameters:
         - name: Authorization
           in: header
@@ -4865,20 +4856,12 @@ paths:
           description: Successful response
           content:
             application/json: {}
-      operationId: Services_getBankAccounts
   /api/v1/webhook/subscribe:
     post:
       tags:
         - WebHooks
       summary: Subscribe to service
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                webhook: https://webhook.site/c587711d-d9f2-4982-9107-b1f9789a5dfe
-                service: kyc_widget
+      operationId: WebHooks_subscribeService
       security:
         - apikeyAuth: []
       parameters:
@@ -4887,6 +4870,14 @@ paths:
           schema:
             type: string
           example: '{{app_id}}'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                webhook: https://webhook.site/c587711d-d9f2-4982-9107-b1f9789a5dfe
+                service: kyc_widget
       responses:
         '200':
           description: OK
@@ -4927,12 +4918,12 @@ paths:
                 entity: >-
                   Pls, confirm subscription with the subscribe_url sent to this
                   webhook
-      operationId: WebHooks_subscribeService
   /api/v1/webhook/delete:
     delete:
       tags:
         - WebHooks
       summary: Delete Webhook
+      operationId: WebHooks_deleteWebhook
       security:
         - apikeyAuth: []
       parameters:
@@ -4946,12 +4937,12 @@ paths:
           description: Successful response
           content:
             application/json: {}
-      operationId: WebHooks_deleteWebhook
   /api/v1/webhook/fetch:
     get:
       tags:
         - WebHooks
       summary: Fetch All Webhooks
+      operationId: WebHooks_getWebhooks
       security:
         - apikeyAuth: []
       parameters:
@@ -5053,21 +5044,12 @@ paths:
                     confirmation_status: Invalid Subscription Arn
                     date_created: '2021-08-06T05:12:24.445507+01:00'
                     date_updated: '2021-08-06T05:12:24.445546+01:00'
-      operationId: WebHooks_getWebhooks
   /api/v1/webhook/notify:
     post:
       tags:
         - WebHooks
       summary: Post Hook
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                subject: kyc_widget
-                data:
-                  stuff: '12345678'
+      operationId: WebHooks_notifyWebhook
       parameters:
         - name: AppId
           in: header
@@ -5079,6 +5061,15 @@ paths:
           schema:
             type: string
           example: '{{secret_key}}'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                subject: kyc_widget
+                data:
+                  stuff: '12345678'
       responses:
         '200':
           description: OK
@@ -5156,4 +5147,13 @@ paths:
                 type: object
               example:
                 entity: App event created successfully
-      operationId: WebHooks_notifyWebhook
+components:
+  securitySchemes:
+    apikeyAuth:
+      type: apiKey
+      name: Authorization
+      in: header
+    appIdAuth:
+      type: apiKey
+      name: AppId
+      in: header
