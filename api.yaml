@@ -1380,11 +1380,6 @@ paths:
           schema:
             type: string
           example: '{{app_id}}'
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
         - name: company_name
           in: query
           schema:
@@ -1504,11 +1499,6 @@ paths:
           schema:
             type: string
           example: '{{app_id}}'
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
         - name: rc
           in: query
           schema:
@@ -1996,11 +1986,6 @@ paths:
           schema:
             type: string
           example: '{{app_id}}'
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
       requestBody:
         content:
           application/json:
@@ -2968,11 +2953,6 @@ paths:
       security:
         - apikeyAuth: []
       parameters:
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
         - name: AppId
           in: header
           schema:
@@ -3346,11 +3326,6 @@ paths:
           schema:
             type: string
           example: '{{app_id}}'
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
         - name: account_id
           in: query
           schema:
@@ -3412,11 +3387,6 @@ paths:
           schema:
             type: string
           example: '{{app_id}}'
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
       requestBody:
         content:
           application/json:
@@ -3483,11 +3453,6 @@ paths:
       security:
         - apikeyAuth: []
       parameters:
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
         - name: AppId
           in: header
           schema:
