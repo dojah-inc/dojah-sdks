@@ -439,12 +439,8 @@ paths:
       operationId: KYC_getNuban
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: bank_code
           in: query
           schema:
@@ -523,12 +519,8 @@ paths:
       operationId: KYC_validateBvn
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: bvn
           in: query
           schema:
@@ -637,12 +629,8 @@ paths:
       operationId: KYC_getPremiumBvn
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: bvn
           in: query
           schema:
@@ -888,12 +876,8 @@ paths:
       operationId: KYC_verifyAge
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: mode
           in: query
           schema:
@@ -974,12 +958,8 @@ paths:
       operationId: KYC_verifySelfieBvn
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -1001,12 +981,8 @@ paths:
       operationId: KYC_verifySelfieNin
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -1028,12 +1004,8 @@ paths:
       operationId: KYC_getVIN
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: mode
           in: query
           schema:
@@ -1156,12 +1128,8 @@ paths:
       operationId: KYC_getEmailReputation
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: email
           in: query
           schema:
@@ -1291,12 +1259,8 @@ paths:
       operationId: KYC_getBvnFromNuban
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: bank_code
           in: query
           schema:
@@ -1318,17 +1282,10 @@ paths:
         - KYC
       summary: KYC - Passport
       operationId: KYC_getPassport
+      security:
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
-        - name: Appid
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: passport_number
           in: query
           schema:
@@ -1350,17 +1307,10 @@ paths:
         - KYC
       summary: KYC - Document Analysis
       operationId: KYC_analyzeDocument
-      parameters:
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+      security:
+        - apikeyAuth: []
+          appIdAuth: []
+      parameters: []
       responses:
         '200':
           description: Successful response
@@ -1374,12 +1324,8 @@ paths:
       operationId: KYB_searchCac
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: company_name
           in: query
           schema:
@@ -1398,12 +1344,8 @@ paths:
       operationId: KYB_getCac
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: rc_number
           in: query
           schema:
@@ -1464,12 +1406,8 @@ paths:
       operationId: KYB_getBasicCac
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: rc
           in: query
           schema:
@@ -1493,12 +1431,8 @@ paths:
       operationId: KYB_getAdvancedCac
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: rc
           in: query
           schema:
@@ -1527,12 +1461,8 @@ paths:
       operationId: KYB_getTin
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: tin
           in: query
           schema:
@@ -1592,12 +1522,8 @@ paths:
       operationId: Authentication_sendSms
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -1658,12 +1584,8 @@ paths:
       operationId: Authentication_getSmsStatus
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: message_id
           in: query
           schema:
@@ -1716,12 +1638,8 @@ paths:
       operationId: Authentication_sendOtp
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -1824,12 +1742,8 @@ paths:
       operationId: Authentication_validateOtp
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: reference_id
           in: query
           schema:
@@ -1887,12 +1801,8 @@ paths:
       operationId: Authentication_getSenderId
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       responses:
         '200':
           description: OK
@@ -1949,17 +1859,10 @@ paths:
         - Authentication
       summary: Messaging - Request Sender ID
       operationId: Authentication_requestSenderId
-      parameters:
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+      security:
+        - apikeyAuth: []
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -1980,12 +1883,8 @@ paths:
       operationId: Wallet_createWallet
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -2058,12 +1957,8 @@ paths:
       operationId: Wallet_getWallet
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: wallet_id
           in: query
           schema:
@@ -2169,12 +2064,8 @@ paths:
       operationId: Wallet_getWallets
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: app_id
           in: query
           schema:
@@ -2283,12 +2174,8 @@ paths:
       operationId: Wallet_getTransaction
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: transaction_id
           in: query
           schema:
@@ -2408,12 +2295,8 @@ paths:
       operationId: Wallet_getTransactions
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: wallet_id
           in: query
           schema:
@@ -2432,12 +2315,8 @@ paths:
       operationId: Wallet_transferFunds
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -2576,12 +2455,8 @@ paths:
       operationId: Wallet_transferFundsInternal
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -2604,12 +2479,8 @@ paths:
       operationId: Wallet_creditInward
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -2637,12 +2508,8 @@ paths:
       operationId: Wallet_debitSubwallet
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -2767,17 +2634,10 @@ paths:
         - Financial
       summary: Get Account Transactions
       operationId: Financial_getAccountTransactions
+      security:
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: account_id
           in: query
           schema:
@@ -2952,12 +2812,8 @@ paths:
       operationId: Financial_getAccountSubscriptions
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: account_id
           in: query
           schema:
@@ -3015,12 +2871,8 @@ paths:
       operationId: Financial_getBasicBvn
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: account_id
           in: query
           schema:
@@ -3119,12 +2971,8 @@ paths:
       operationId: Financial_getFullBvn
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: account_id
           in: query
           schema:
@@ -3242,12 +3090,8 @@ paths:
       operationId: Financial_getSpendingPattern
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: account_id
           in: query
           schema:
@@ -3320,12 +3164,8 @@ paths:
       operationId: Financial_getEarningStructure
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: account_id
           in: query
           schema:
@@ -3381,12 +3221,8 @@ paths:
       operationId: Financial_collectTransactions
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -3416,17 +3252,10 @@ paths:
         - Financial
       summary: Collect Status via PDF Statement
       operationId: Financial_collectStatusFromPdf
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
+      security:
+        - apikeyAuth: []
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           multipart/form-data:
@@ -3452,12 +3281,8 @@ paths:
       operationId: Financial_getAccountAnalysis
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       responses:
         '200':
           description: OK
@@ -3661,12 +3486,8 @@ paths:
       operationId: ML_verifyPhotoIdWithSelfie
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -3688,12 +3509,8 @@ paths:
       operationId: ML_getOcrText
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -3712,17 +3529,10 @@ paths:
         - ML
       summary: Generic OCR Service
       operationId: ML_getGenericOcrText
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
+      security:
+        - apikeyAuth: []
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -3741,17 +3551,10 @@ paths:
         - ML
       summary: Document Analysis Drivers License
       operationId: ML_getDocumentAnalysis
-      parameters:
-        - name: Appid
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
+      security:
+        - apikeyAuth: []
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -3844,17 +3647,10 @@ paths:
         - ML
       summary: Document Analysis Passport
       operationId: ML_getPassportAnalysis
-      parameters:
-        - name: Appid
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
+      security:
+        - apikeyAuth: []
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -3873,17 +3669,10 @@ paths:
         - AML
       summary: AML Screening
       operationId: AML_screenAml
-      parameters:
-        - name: Appid
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
+      security:
+        - apikeyAuth: []
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -3959,17 +3748,10 @@ paths:
         - AML
       summary: Get AML Info
       operationId: AML_getScreeningInfo
+      security:
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: Appid
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
         - name: reference_id
           in: query
           schema:
@@ -4624,12 +4406,8 @@ paths:
       operationId: Services_categorizeTransactions
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -4692,17 +4470,10 @@ paths:
         - Services
       summary: Captcha Service
       operationId: Services_captcha
-      parameters:
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
-        - name: Appid
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+      security:
+        - apikeyAuth: []
+          appIdAuth: []
+      parameters: []
       responses:
         '200':
           description: Successful response
@@ -4734,17 +4505,10 @@ paths:
         - Services
       summary: Fetch Bank Accounts
       operationId: Services_getBankAccounts
+      security:
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: mobile_number
           in: query
           schema:
@@ -4763,12 +4527,8 @@ paths:
       operationId: WebHooks_subscribeService
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -4825,12 +4585,8 @@ paths:
       operationId: WebHooks_deleteWebhook
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       responses:
         '200':
           description: Successful response
@@ -4844,12 +4600,8 @@ paths:
       operationId: WebHooks_getWebhooks
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       responses:
         '200':
           description: OK
@@ -4949,17 +4701,10 @@ paths:
         - WebHooks
       summary: Post Hook
       operationId: WebHooks_notifyWebhook
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
+      security:
+        - apikeyAuth: []
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -5052,18 +4797,11 @@ paths:
         - Financial
       summary: Get Account Information
       operationId: Financial_getAccount
+      security:
+        - apikeyAuth: []
+          appIdAuth: []
       description: /services/@app_id/account/@account_id
       parameters:
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: '{{secret_key}}'
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: account_id
           in: query
           schema:
