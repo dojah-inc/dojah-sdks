@@ -31,7 +31,7 @@ paths:
       operationId: GHKYC_getDriversLicense
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       parameters:
         - name: id
           in: query
@@ -126,7 +126,7 @@ paths:
       operationId: GHKYC_getPassport
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       parameters:
         - name: id
           in: query
@@ -235,7 +235,7 @@ paths:
       operationId: GHKYC_getSsnit
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       parameters:
         - name: id
           in: query
@@ -278,7 +278,7 @@ paths:
       operationId: UGKYC_getVoter
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       parameters:
         - name: id
           in: query
@@ -353,7 +353,7 @@ paths:
       operationId: KEKYC_getNationalId
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       parameters:
         - name: id
           in: query
@@ -397,7 +397,7 @@ paths:
       operationId: KYC_getDriversLicense
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       parameters:
         - name: license_number
           in: query
@@ -549,7 +549,7 @@ paths:
       operationId: KYC_getBasicBvn
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       parameters:
         - name: bvn
           in: query
@@ -579,7 +579,7 @@ paths:
       operationId: KYC_getFullBvn
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       parameters:
         - name: bvn
           in: query
@@ -757,7 +757,7 @@ paths:
       operationId: KYC_getVnin
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       parameters:
         - name: vnin
           in: query
@@ -777,7 +777,7 @@ paths:
       operationId: KYC_getBasicPhoneNumber
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       parameters:
         - name: phone_number
           in: query
@@ -814,7 +814,7 @@ paths:
       operationId: KYC_getPhoneNumber
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       parameters:
         - name: phone_number
           in: query
@@ -3770,7 +3770,7 @@ paths:
       operationId: General_getWalletBalance
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       responses:
         '200':
           description: OK
@@ -3797,7 +3797,7 @@ paths:
       operationId: General_purchaseAirtime
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       requestBody:
         content:
           application/json:
@@ -3827,7 +3827,7 @@ paths:
       operationId: General_purchaseData
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       requestBody:
         content:
           application/json:
@@ -3849,7 +3849,7 @@ paths:
       operationId: General_getDataPlans
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       responses:
         '200':
           description: OK
@@ -3996,7 +3996,7 @@ paths:
       operationId: General_getBanks
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       responses:
         '200':
           description: OK
@@ -4315,7 +4315,7 @@ paths:
       operationId: General_getNuban
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       parameters:
         - name: bank_code
           in: query
@@ -4375,7 +4375,7 @@ paths:
       operationId: General_getBin
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       parameters:
         - name: card_bin
           in: query
@@ -4487,7 +4487,7 @@ paths:
       operationId: Services_getFraudDecision
       security:
         - apikeyAuth: []
-        - appIdAuth: []
+          appIdAuth: []
       parameters:
         - name: verification_id
           in: query
