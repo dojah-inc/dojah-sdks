@@ -2,6 +2,7 @@ outputDirectory: /tmp/dojah-sdks-out
 specPath: api.yaml
 generators:
   java:
+    disabled: true
     version: 1.0.0
     groupId: io.dojah
     artifactId: dojah-java-sdk
