@@ -16,4 +16,4 @@ generators:
     outputDirectory: typescript
     git:
       userId: konfig-dev
-      repoId: dojah-sdks/tree/main/java
+      repoId: dojah-sdks/tree/main/typescript

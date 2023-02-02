@@ -5,7 +5,7 @@
   "author": "Konfig",
   "repository": {
     "type": "git",
-    "url": "https://github.com/konfig-dev/dojah-sdks/tree/main/java"
+    "url": "https://github.com/konfig-dev/dojah-sdks/tree/main/typescript"
   },
   "keywords": [
     "axios",
