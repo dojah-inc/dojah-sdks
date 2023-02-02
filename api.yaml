@@ -2242,26 +2242,6 @@ paths:
                       transaction_id: Dojah-4b0ecd96-9914-4e78-8ce9-21ebc4a34ee8
                       transaction_status: FAILED
                       date_created: '2021-07-19T11:57:38.517618Z'
-  /v1/wallet/ngn/transactions:
-    get:
-      tags:
-        - Wallet
-      summary: Fetch Wallet Transactions
-      operationId: Wallet_getTransactions
-      security:
-        - apikeyAuth: []
-          appIdAuth: []
-      parameters:
-        - name: wallet_id
-          in: query
-          schema:
-            type: string
-          example: 694a047f-fb99-46d7-8c3c-d655716a834a
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /v1/wallet/ngn/transfer:
     post:
       tags:
@@ -2402,82 +2382,6 @@ paths:
                       transaction_id: Dojah-404e608c-4c85-4a87-b8ed-968564cdb67f
                       transaction_status: PROCESSING
                       date_created: '2021-07-21T04:29:03.786408Z'
-  /v1/wallet/ngn/transfer/internal:
-    post:
-      tags:
-        - Wallet
-      summary: Transfer Funds (Internal)
-      operationId: Wallet_transferFundsInternal
-      security:
-        - apikeyAuth: []
-          appIdAuth: []
-      parameters: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                amount: 5
-                recipient_wallet_id: 619de017-5bf8-401d-b34c-9ca69d0bf7e7
-                sender_wallet_id: 1b9494d3-58a7-4e72-9a73-174b908f55b7
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /v1/wallet/ngn/inward:
-    post:
-      tags:
-        - Wallet
-      summary: Credit Inward (Sandbox only)
-      operationId: Wallet_creditInward
-      security:
-        - apikeyAuth: []
-          appIdAuth: []
-      parameters: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                amount: '20000'
-                account_number: '1000048972'
-                originator_account_number: '1234567889'
-                originator_account_name: saliu moshood
-                originator_bank: '000004'
-                validate: false
-                timestamp: '2021-01-11T09:34:55.879Z'
-                environment: sandbox
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /v1/wallet/ngn/debit:
-    post:
-      tags:
-        - Wallet
-      summary: Debit Subwallet
-      operationId: Wallet_debitSubwallet
-      security:
-        - apikeyAuth: []
-          appIdAuth: []
-      parameters: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                amount: '1'
-                wallet_id: 1b9494d3-58a7-4e72-9a73-174b908f55b7
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /v1/wallet/ngn/credit:
     post:
       tags:
@@ -3596,28 +3500,6 @@ paths:
                     SUFFIX: ''
                     VETERAN: ''
                     ZIP_CODE_IN_ADDRESS: '08060141707'
-  /v1/document/analysis/passport:
-    post:
-      tags:
-        - ML
-      summary: Document Analysis Passport
-      operationId: ML_getPassportAnalysis
-      security:
-        - apikeyAuth: []
-          appIdAuth: []
-      parameters: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                img: <base64 encoded image>
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /api/v1/aml/screening:
     post:
       tags:
@@ -4419,61 +4301,6 @@ paths:
                   service_name: ''
                   label: Others
                   mode_of_payment: web/pos
-  /api/v1/captcha:
-    post:
-      tags:
-        - Services
-      summary: Captcha Service
-      operationId: Services_captcha
-      security:
-        - apikeyAuth: []
-          appIdAuth: []
-      parameters: []
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api/v1/fraud_decision:
-    get:
-      tags:
-        - Services
-      summary: Fraud Decision
-      operationId: Services_getFraudDecision
-      security:
-        - apikeyAuth: []
-          appIdAuth: []
-      parameters:
-        - name: verification_id
-          in: query
-          schema:
-            type: integer
-          example: 87461111
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api/v1/kyc/accounts:
-    get:
-      tags:
-        - Services
-      summary: Fetch Bank Accounts
-      operationId: Services_getBankAccounts
-      security:
-        - apikeyAuth: []
-          appIdAuth: []
-      parameters:
-        - name: mobile_number
-          in: query
-          schema:
-            type: integer
-          example: 8068810228
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /api/v1/webhook/subscribe:
     post:
       tags:
