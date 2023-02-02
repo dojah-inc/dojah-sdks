@@ -1,0 +1,2028 @@
+ignoreObjectsWithNoProperties: true
+operationIds: {}
+renameTags: {}
+operationTags: {}
+examples: {}
+securityParameters:
+  id:
+    query: false
+  full_name:
+    query: false
+  date_of_birth:
+    query: false
+  first_name:
+    query: false
+  last_name:
+    query: false
+  middle_name:
+    query: false
+  gender:
+    query: false
+  license_number:
+    query: false
+  bank_code:
+    query: false
+  account_number:
+    query: false
+  bvn:
+    query: false
+  dob:
+    query: false
+  vnin:
+    query: false
+  phone_number:
+    query: false
+  mode:
+    query: false
+  firstname:
+    query: false
+  lastname:
+    query: false
+  vin:
+    query: false
+  state:
+    query: false
+  email:
+    query: false
+  passport_number:
+    query: false
+  surname:
+    query: false
+  company_name:
+    query: false
+  rc_number:
+    query: false
+  rc:
+    query: false
+  type:
+    query: false
+  class:
+    query: false
+  tin:
+    query: false
+  message_id:
+    query: false
+  reference_id:
+    query: false
+  code:
+    query: false
+  wallet_id:
+    query: false
+  app_id:
+    query: false
+  transaction_id:
+    query: false
+  account_id:
+    query: false
+  length:
+    query: false
+  card_bin:
+    query: false
+  verification_id:
+    query: false
+  mobile_number:
+    query: false
+examples_2:
+  /api/v1/gh/kyc/dl:
+    get:
+      entity:
+        certificate_date: "2010-07-19"
+        date_of_birth: "1988-09-01"
+        expiry_date: "2016-08-25"
+        full_name: John Doe
+        id: V0000000
+        is_date_of_birth_match: true
+        is_full_name_match: true
+        issue_date: "2010-08-25"
+        picture: <base64 encoded image>
+        pin: DOE-310203-03-01
+        processing_center: VR3
+        status: 200
+  /api/v1/gh/kyc/passport:
+    get:
+      entity:
+        date_of_birth: "1990-04-05"
+        expiry_date: "2022-10-03"
+        first_name: John
+        gender: MALE
+        id: G0000000
+        is_date_of_birth_match: true
+        is_first_name_match: false
+        is_last_name_match: true
+        is_middle_name_match: true
+        issue_date: "2017-11-03"
+        last_name: Doe
+        middle_name: Jack
+        picture: <base64 encoded image>
+        place_of_birth: TEMA
+        place_of_issue: ACCRA
+        status: 200
+  /api/v1/gh/kyc/ssnit:
+    get:
+      entity:
+        card_serial: R1970200019702
+        date_of_birth: "1980-02-03"
+        full_name: John Doe
+        gender: MALE
+        id: C000000000000
+        is_date_of_birth_match: true
+        is_full_name_match: true
+        picture: <base64 encoded image>
+        status: 200
+  /api/v1/ke/kyc/id:
+    get:
+      entity:
+        date_of_birth: "1996-02-21"
+        first_name: John
+        gender: M
+        id: "4812640614"
+        is_date_of_birth_match: true
+        is_first_name_match: true
+        is_gender_match: true
+        is_last_name_match: true
+        is_middle_name_match: true
+        last_name: Doe
+        middle_name: Donald
+  /api/v1/kyc/dl:
+    get:
+      entity:
+        personal_details:
+          firstname: TOBI
+          othername: OLALEKAN
+          surname: OLOLADE
+          mother_maiden_name: OGUNSOLA
+          gender: Male
+          birth_date: 18/05/1992
+          blood_group_id: B+
+          facial_mark: "No"
+          glasses: "No"
+          height: "1.7"
+          universaltax_identity_number: ""
+          nin_number: ""
+          country: Nigeria
+          state: Edo
+          lga: Etsako East
+          is_disability: "No"
+          disability_reason: ""
+  /api/v1/kyc/nuban:
+    get:
+      entity:
+        account_currency: "566"
+        account_name: MOSHOOD KOLAWOLE SALIU
+        account_number: "3046507407"
+        account_type: "10"
+        address_1: .
+        address_2: ""
+        city: LAGOS
+        country_code: NG
+        country_of_birth: NIGERIA
+        country_of_issue: Nigeria
+        dob: 10/06/1982
+        expiry_date: ""
+        first_name: MOSHOOD
+        identity_number: "22271325556"
+        identity_type: BVN
+        last_name: SALIU
+        nationality: OTHRS
+        other_names: KOLAWOLE
+        phone: "2348137877844"
+        postal_code: "234"
+        reference: 91b360c9-0360-44b1-978f-ef56ad8fa2a2
+        state_code: LAGOS
+  /api/v1/kyc/bvn:
+    get:
+      entity:
+        bvn:
+          value: "23456789012"
+          status: true
+        first_name:
+          confidence_value: 100
+          status: true
+  /api/v1/kyc/bvn/basic:
+    get:
+      entity:
+        first_name: JOSHUA
+        last_name: OLADIPO
+        dob: 28-Jun-00
+        formatted_dob: "2000-06-28"
+        mobile: "07085460116"
+        bvn: "22468537919"
+  /api/v1/kyc/bvn/full:
+    get:
+      entity:
+        title: Mr
+        bvn: "22468537919"
+        date_of_birth: 28-Jun-2000
+        email: OLADIPOJOSHUAOLUWATIMILEYIN@YAHOO.COM
+        enrollment_bank: "058"
+        enrollment_branch: UNILORIN
+        first_name: JOSHUA
+        gender: Male
+        image: <base64 encoded image>
+        last_name: OLADIPO
+        level_of_account: Level 2 - Medium Level Accounts
+        lga_of_origin: Odo Otin
+        lga_of_residence: Ilorin South
+        marital_status: Single
+        middle_name: OLUWATIMILEYIN
+        name_on_card: OLADIPO, JOSHUA O
+        nationality: Nigeria
+        nin: ""
+        phone_number1: "07085460116"
+        phone_number2: ""
+        reference: 91b126d1-2467-42fc-b8d5-1cbd32257954
+        registration_date: 21-Mar-2018
+        residential_address: 24, AKATA OWODE, ILORIN
+        state_of_origin: Osun State
+        state_of_residence: Kwara State
+        watch_listed: "NO"
+  /api/v1/kyc/bvn/advance:
+    get:
+      entity:
+        title: Mr
+        bvn: "22222222222"
+        date_of_birth: 28-Jun-2000
+        email: ISAACTHOMPSONBROWN@YAHOO.COM
+        enrollment_bank: "058"
+        enrollment_branch: UNILORIN
+        first_name: JOSHUA
+        gender: Male
+        image: <base64 encoded image>
+        last_name: ISAAC
+        level_of_account: Level 2 - Medium Level Accounts
+        lga_of_origin: Odo Otin
+        lga_of_residence: Ilorin South
+        marital_status: Single
+        middle_name: THOMPSONBROWN
+        name_on_card: ISAAC, THOMPSON O
+        nationality: Nigeria
+        nin: ""
+        phone_number1: "07012345678"
+        phone_number2: ""
+        registration_date: 21-Mar-2018
+        residential_address: 24, OSHODI SURULERE, ILORIN
+        state_of_origin: Osun State
+        state_of_residence: Kwara State
+        watch_listed: "NO"
+        status: 200
+  /api/v1/kyc/vnin:
+    get:
+      entity:
+        vnin: AB012345678910YZ
+        firstname: John
+        middlename: Doe
+        surname: Alamutu
+        user_id: WXABCD-1234
+        gender: M
+        mobile: "08012345678"
+        dateOfBirth: 01-01-1982
+        photo: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
+  /v1/kyc/phone_number/basic:
+    get:
+      entity:
+        msisdn: "2348103100000"
+        firstName: John
+        lastName: Doe
+        email: test@test.com
+        encryptedPan: 1235246646GVDG
+        dateOfBirth: 18/08/1997
+        bvn: "2222222222"
+        address: " 25 Okota"
+        address_city: Shomolu
+        address_state: Lagos
+        account_number: "1234567897"
+        bank_code: "054"
+        gender: Male
+  /api/v1/kyc/phone_number:
+    get:
+      entity:
+        title: Mr
+        msisdn: "09011111111"
+        firstName: John
+        middleName: Doe
+        lastName: Doe
+        maritalStatus: Married
+        gender: Male
+        birthDate: 11-11-1972
+        birthLga: Ikeja
+        birthState: Lagos
+        educationalLevel: Higher
+        emplymentStatus: 25 ikeja
+        nspokenLang: English
+        ospokenlang: Yoruba
+        profession: Tailor
+        religion: Muslim
+        residenceAddressLine1: 25 Agege motor ways
+        residenceTown: Oshogbo
+        residenceLga: Ikeja
+        residenceState: Lagos
+        residenceStatus: Occupant
+        selfOriginLga: Lagos Island
+        selfOriginPlace: Yaba
+        selfOriginState: Muslim
+        state: Lagos
+        lga: Ikeja
+        nin: "111111111111111"
+        height: 5 9
+        picture: <base64 encoded image>
+        status: 200
+  /v1/kyc/age_verification:
+    get:
+      entity:
+        first_name: MOSHOOD
+        last_name: SALIU
+        date_of_birth: "1993-06-10"
+        verification: true
+  /v1/kyc/bvn/verify:
+    post:
+      entity:
+        bvn: "22156341123"
+        first_name: ADEYEMO
+        middle_name: ADELEKE
+        last_name: AKIN
+        date_of_birth: 15-Apr-1985
+        phone_number1: "08134720263"
+        phone_number2: ""
+        gender: Male
+        enrollment_bank: "044"
+        enrollment_branch: BBA LAGOS,BANK PLAZA
+        email: adelek@yahoo.com
+        lga_of_origin: Obafemi Owode
+        lga_of_residence: Ojo
+        marital_status: Single
+        nin: "76221462632"
+        name_on_card: ADEYEMO ADELEKE AKIN
+        residential_address: 1, OMOLOLA CLOSE CASSIDY BUS STOP OKOKOMAIKO.
+        state_of_origin: Ogun State
+        state_of_residence: Lagos State
+        watch_listed: "NO"
+        level_of_account: Level 2 - Medium Level Accounts
+        registration_date: ""
+        image: base64 image
+        selfie_verification:
+          confidence_value: 99.99803924560547
+          match: true
+  /v1/kyc/nin/verify:
+    post:
+      entity:
+        nin: "75638483753"
+        firstname: ADELEKE
+        middlename: ABIODUN
+        surname: WALE
+        maidenname: ""
+        telephoneno: "08137872843"
+        state: Ondo
+        place: IDANRE
+        profession: STUDENT
+        title: mr
+        height: "****"
+        email: ""
+        birthdate: 10-06-1983
+        birthstate: Ondo
+        birthcountry: nigeria
+        centralID: "6331371"
+        documentno: ""
+        educationallevel: ""
+        employmentstatus: ""
+        nok_firstname: KEMI
+        nok_lastname: WALE
+        nok_middlename: ""
+        nok_address1: NO 32 BROAD STREET ISALU QUARTERS II ODODE IDANRE
+        nok_address2: ""
+        nok_lga: Idanre
+        nok_state: Ondo
+        nok_town: IDANRE
+        nok_postalcode: ""
+        othername: ""
+        pfirstname: ""
+        photo: base64 image
+        pmiddlename: ""
+        psurname: ""
+        nspokenlang: YORUBA
+        ospokenlang: ""
+        religion: islam
+        residence_Town: IDANRE
+        residence_lga: Idanre
+        residence_state: Ondo
+        residencestatus: birth
+        residence_AddressLine1: NO 32 BROAD STREET ISALU QUARTERS II ODODE IDANRE
+        residence_AddressLine2: NO 32 BROAD STREET ISALU QUARTERS II ODODE IDANRE
+        self_origin_lga: Idanre
+        self_origin_place: ""
+        self_origin_state: Ondo
+        signature: base64 image
+        nationality: ""
+        gender: m
+        trackingId: S7Y0T0GU30003HL
+        selfie_verification:
+          confidence_value: 0
+          match: false
+  /api/v1/kyc/vin:
+    get:
+      entity:
+        full_name: SALIU MOSHOOD KOLAWOLE
+        "voter_identification_number:": 90F5B1C5BD295355586
+        "gender:": Male
+        "occupation:": STUDENT
+        "time_of_registration:": "2011-01-18 13:59:46"
+        "state:": ONDO
+        "local_government:": IDANRE
+        "registration_area_ward:": ISALU JIGBOKIN
+        "polling_unit:": OJAJIGBOKIN, O/S IN FRONT OF ABANA I & II
+        polling_unit_code: 28/08/08/005
+  /v1/kyc/email:
+    get:
+      entity:
+        email: johndoe@gmail.com
+        reputation: high
+        suspicious: false
+        references: 178
+        details:
+          blacklisted: false
+          malicious_activity: false
+          malicious_activity_recent: false
+          credentials_leaked: true
+          credentials_leaked_recent: false
+          data_breach: true
+          first_seen: 07/01/2008
+          last_seen: 03/22/2021
+          domain_exists: true
+          domain_reputation: n/a
+          new_domain: false
+          days_since_domain_creation: 9474
+          suspicious_tld: false
+          spam: false
+          free_provider: true
+          disposable: false
+          deliverable: true
+          accept_all: false
+          valid_mx: true
+          primary_mx: gmail-smtp-in.l.google.com
+          spoofable: true
+          spf_strict: true
+          dmarc_enforced: false
+          profiles:
+            - aboutme
+            - flickr
+            - angellist
+            - foursquare
+            - myspace
+            - twitter
+            - vimeo
+            - linkedin
+  /api/v1/kyc/passport:
+    get:
+      entity:
+        passport_number: A00123456
+        date_of_issue: 01/02/2000
+        expiry_date: 01/02/2000
+        document_type: Standard Passport
+        issue_place: LAGOS
+        surname: JOHN
+        first_name: DOE
+        other_names: MOSES
+        date_of_birth: 10/06/1993
+        gender: Undecided
+        photo: /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBA
+  /api/v1/document/analysis:
+    post:
+      entity:
+        status:
+          overall_status: 0
+          document_images: "Yes"
+          text: "Yes"
+          document_type: "Yes"
+          expiry: "No"
+        document_type:
+          document_name: United States - Permanent Resident Card (2010)
+          document_country_name: United States
+          document_country_code: USA
+          document_type_id: 173
+          document_year: "2010"
+        document_images:
+          Portrait: base64 image
+          Fingerprint: base64 image
+          Document front side: base64 image
+        text_data:
+          - field_name: Date of Expiry
+            field_type: 3
+            status: 0
+            value: "2007-08-21"
+          - field_name: Date of Issue
+            field_type: 4
+            status: 0
+            value: "2007-08-21"
+          - field_name: Given Names
+            field_type: 9
+            status: 0
+            value: TEST V
+          - field_name: Surname
+            field_type: 8
+            status: 0
+            value: SPECIMEN
+          - field_name: Years Since Issue
+            field_type: 523
+            status: 0
+            value: "15"
+          - field_name: RemainderTerm
+            field_type: 364
+            status: 0
+            value: "0"
+          - field_name: Surname And Given Names
+            field_type: 25
+            status: 0
+            value: SPECIMEN TEST V
+          - field_name: Category
+            field_type: 286
+            status: 2
+            value: RE8
+          - field_name: USCIS
+            field_type: 285
+            status: 2
+            value: 000-000-001
+          - field_name: Place of Birth
+            field_type: 6
+            status: 2
+            value: Utopia
+          - field_name: Sex
+            field_type: 12
+            status: 2
+            value: F
+          - field_name: Date of Birth
+            field_type: 5
+            status: 2
+            value: "1920-01-01"
+          - field_name: Age
+            field_type: 185
+            status: 2
+            value: "102"
+          - field_name: Age at Issue
+            field_type: 522
+            status: 2
+            value: "87"
+          - field_name: Issuing State Code
+            field_type: 1
+            status: 2
+            value: USA
+          - field_name: Issuing State Name
+            field_type: 38
+            status: 2
+            value: United States
+  /v1/kyc/cac:
+    get:
+      entity:
+        rc_number: "1261103"
+        company_name: ELTAFORD LIMITED
+        address: NO 37 ISAIAH ROAD UBEJI
+        date_of_registration: "2015-05-15"
+  /v1/kyc/cac/basic:
+    get:
+      entity:
+        rc_number: "1261103"
+        company_name: ADAFRUIT LIMITED
+        address: NO 37 GIBSON ROAD UBEJI
+        date_of_registration: "2015-05-15"
+        type_of_company: COMPANY
+  /v1/kyc/cac/advance:
+    get:
+      entity:
+        rc_number: "1261103"
+        company_name: ADAFRUIT LIMITED
+        address: NO 37 GIBSON ROAD UBEJI
+        date_of_registration: "2015-05-15"
+        type_of_company: COMPANY
+  /v1/kyc/tin:
+    get:
+      entity:
+        Search: 21148119-0001
+        Taxpayer_Name: SMILE IDENTITY NIGERIA LIMITED LAGOS
+        CAC_Reg_No: "1539621"
+        FIRSTIN: 21148119-0001
+        JITTIN: N/A
+        Tax_Office: MSTO IKOYI
+        Phone_No: sundayoguntola@hotmail.com
+        Email: "07055427676"
+  /api/v1/messaging/sms:
+    post:
+      entity:
+        status: true
+        mobile: "2348068810228"
+        message_id: true_2348068810228@c.us_3EB094F69064FF74BD76
+        batch_id: "90512"
+  /v1/messaging/sms/get_status:
+    get:
+      entity:
+        status: DELIVRD
+  /v1/messaging/otp:
+    post:
+      entity:
+        - reference_id: 1cd58f6c-8729-4837-90ec-ff22949525cf
+          destination: "08068810228"
+          status_id: dj_f93ec2a0-2515-49ef-97f3-e6a137c7830a
+          status: "sms OTP sent successfully "
+  /v1/messaging/otp/validate:
+    get:
+      entity:
+        valid: true
+  /api/v1/messaging/sender_ids:
+    get:
+      entity:
+        - sender_id: Dojah
+          activated: false
+          createdAt: "2020-10-29T23:27:50.633Z"
+        - sender_id: Dojah
+          activated: false
+          createdAt: "2020-10-29T23:41:34.977Z"
+        - sender_id: Dojah
+          activated: false
+          createdAt: "2020-10-29T23:49:03.363Z"
+        - sender_id: Dojaher
+          activated: false
+          createdAt: "2020-10-30T00:53:02.348Z"
+  /api/v1/messaging/sender_id:
+    post:
+      entity:
+        - sender_id: Dojah
+          activated: true
+          createdAt: "2020-10-30T09:54:17.145Z"
+  /v1/wallet/ngn/create:
+    post:
+      entity:
+        wallet_id: 867a8cae-8073-4914-8b04-d7fd096c1006
+        wallet_amount: 0
+        account_number: "1004204891"
+        phone_number: "09059895710"
+  /v1/wallet/ngn/retrieve:
+    get:
+      entity:
+        wallet_id: 694a047f-fb99-46d7-8c3c-d655716a834a
+        wallet_amount: 500
+        account_number: "7091821832"
+        phone_number: "08068810258"
+        bank_name: WEMA BANK
+  /v1/wallet/ngn/accounts:
+    get:
+      entity:
+        app_id: 5f3a4c693a7ea9003e4067e6
+        total_amount: 500
+        client_wallets:
+          - wallet_id: 694a047f-fb99-46d7-8c3c-d655716a834a
+            wallet_amount: 500
+            account_number: "7091821832"
+            phone_number: "08068810258"
+            bank_name: WEMA BANK
+  /v1/wallet/ngn/transaction:
+    get:
+      entity:
+        wallet_id: 867a8cae-8073-4914-8b04-d7fd096c1006
+        transaction_amount: 50
+        transaction_type: transfer
+        recipient_account_number: "0129531822"
+        sender_account_number: "1004204891"
+        transaction_remarks: ""
+        transaction_reason: wallet has Insufficient balance
+        transaction_id: Dojah-4b0ecd96-9914-4e78-8ce9-21ebc4a34ee8
+        transaction_status: FAILED
+        date_created: "2021-07-19T11:57:38.517618Z"
+  /v1/wallet/ngn/transfer:
+    post:
+      entity:
+        wallet_id: 867a8cae-8073-4914-8b04-d7fd096c1006
+        transaction_amount: 100
+        transaction_type: transfer
+        recipient_account_number: "0129531822"
+        sender_account_number: "1004204891"
+        transaction_remarks: ""
+        transaction_reason: null
+        transaction_id: Dojah-404e608c-4c85-4a87-b8ed-968564cdb67f
+        transaction_status: PROCESSING
+        date_created: "2021-07-21T04:29:03.786408Z"
+  /v1/wallet/ngn/credit:
+    post:
+      entity:
+        wallet_id: 867a8cae-8073-4914-8b04-d7fd096c1006
+        transaction_amount: 100
+        transaction_type: deposit
+        recipient_account_number: "1004204891"
+        sender_account_number: ""
+        transaction_remarks: Dojah-wallet-credit
+        transaction_reason: null
+        transaction_id: Dojah-c02585e5-9a8b-4230-8c1b-11fd2869f4ce
+        transaction_status: COMPLETED
+        date_created: "2021-07-19T11:54:01.905196Z"
+  /api/v1/financial/account_transactions:
+    get:
+      entity:
+        transactions:
+          - id: 1870
+            transaction_date: "2020-09-28"
+            value_date: "2020-09-28"
+            trans_type: debit
+            bank_name: Guaranty Trust Bank
+            amount: "1.87"
+            reference: "0"
+            narration: >-
+              VALUE ADDED TAX 000013200928140356000182528304 VAT ON NIP TRANSFER
+              FOR 000013200928140356000182528304 via GTWORLD TO
+              KMB/OLUWATOBILOBA OLOLADE ReF:GW492440265000000100002009281402
+          - id: 1871
+            transaction_date: "2020-09-28"
+            value_date: "2020-09-28"
+            trans_type: debit
+            bank_name: Guaranty Trust Bank
+            amount: "25.00"
+            reference: "0"
+            narration: >-
+              COMMISSION 000013200928140356000182528304 NIP TRANSFER COMMISSION
+              FOR 000013200928140356000182528304 via GTWORLD TO
+              KMB/OLUWATOBILOBA OLOLADE ReF:GW492440265000000100002009281402
+          - id: 1872
+            transaction_date: "2020-09-28"
+            value_date: "2020-09-28"
+            trans_type: debit
+            bank_name: Guaranty Trust Bank
+            amount: "10000.00"
+            reference: "0"
+            narration: >-
+              NIBSS Instant Payment Outward 000013200928140356000182528304 via
+              GTWORLD TO KMB/OLUWATOBILOBA OLOLADE
+              /26.875/REF:GW4924402650000001000020092814 f
+          - id: 1873
+            transaction_date: "2020-09-28"
+            value_date: "2020-09-28"
+            trans_type: credit
+            bank_name: Guaranty Trust Bank
+            amount: "20000.00"
+            reference: "0"
+            narration: >-
+              TRANSFER BETWEEN CUSTOMERS via GAPS 637368962161801700-1 from ELTA
+              SOLUTIONS LIMITED to OLOLADE OLUWATOBILOBA
+              REF:215824649000374669592809201323
+          - id: 1874
+            transaction_date: "2020-09-28"
+            value_date: "2020-09-28"
+            trans_type: debit
+            bank_name: Guaranty Trust Bank
+            amount: "500.00"
+            reference: "0"
+            narration: Airtime Purchase USSD-101CT0000000002033042235-2348068810228
+          - id: 1875
+            transaction_date: "2020-09-26"
+            value_date: "2020-09-26"
+            trans_type: debit
+            bank_name: Guaranty Trust Bank
+            amount: "50.00"
+            reference: "0"
+            narration: STAMP DUTY CHARGE 26092020 STAMP DUTY CHARGE - 26/09/2020
+          - id: 1876
+            transaction_date: "2020-09-26"
+            value_date: "2020-09-26"
+            trans_type: debit
+            bank_name: Guaranty Trust Bank
+            amount: "1.87"
+            reference: "0"
+            narration: >-
+              VALUE ADDED TAX 000013200926153958000180345243 VAT ON USSD NIP
+              RECOVERY CHARGE ReF:000013200926153958000180345243
+          - id: 1877
+            transaction_date: "2020-09-26"
+            value_date: "2020-09-26"
+            trans_type: debit
+            bank_name: Guaranty Trust Bank
+            amount: "25.00"
+            reference: "0"
+            narration: >-
+              COMMISSION 000013200926153958000180345243 USSD NIP RECOVERY CHARGE
+              ReF:000013200926153958000180345243
+          - id: 1878
+            transaction_date: "2020-09-26"
+            value_date: "2020-09-26"
+            trans_type: debit
+            bank_name: Guaranty Trust Bank
+            amount: "14500.00"
+            reference: "0"
+            narration: >-
+              NIBSS Instant Payment Outward 000013200926153958000180345243 USSD
+              NIP Transfer from 08068810228 TO ZBN/OLALEKAN MOSES ADEYEMI
+              /26.875/REF:000013200926153958000180345243
+          - id: 1879
+            transaction_date: "2020-09-26"
+            value_date: "2020-09-26"
+            trans_type: credit
+            bank_name: Guaranty Trust Bank
+            amount: "1.87"
+            reference: "0"
+            narration: >-
+              FAILED NIBSS INSTANT PAYMENT 000013200926151310000180305048 NIP
+              Reversal: (ZBN returned: Beneficiary Bank not available)
+              REF:000013200926151310000180305048
+        total: 521
+        previous_page: ""
+        next_page: 2
+        total_pages: 53
+        current_page: 1
+  /v1/financial/account_subscription:
+    get:
+      entity:
+        subscriptions: []
+        total: 0
+        previous_page: ""
+        next_page: ""
+        total_pages: 1
+        current_page: 1
+  /v1/financial/bvn_information/basic:
+    get:
+      entity:
+        first_name: ISAAC
+        last_name: THOMPSON
+        dob: 28-Jun-00
+        formatted_dob: "2000-06-28"
+        mobile: 070***28116
+        bvn: 2246***3719
+  /v1/financial/bvn_information/full:
+    get:
+      entity:
+        title: Mr
+        bvn: "22222222222"
+        date_of_birth: 28-Jun-2000
+        email: ISAACTHOMPSONBROWN@YAHOO.COM
+        enrollment_bank: "058"
+        enrollment_branch: UNILORIN
+        first_name: JOSHUA
+        gender: Male
+        image: <base64 encoded image>
+        last_name: ISAAC
+        level_of_account: Level 2 - Medium Level Accounts
+        lga_of_origin: Odo Otin
+        lga_of_residence: Ilorin South
+        marital_status: Single
+        middle_name: THOMPSONBROWN
+        name_on_card: ISAAC, THOMPSON O
+        nationality: Nigeria
+        nin: ""
+        phone_number1: "07012345678"
+        phone_number2: ""
+        registration_date: 21-Mar-2018
+        residential_address: 24, OSHODI SURULERE, ILORIN
+        state_of_origin: Osun State
+        state_of_residence: Kwara State
+        watch_listed: "NO"
+  /v1/financial/spending_pattern:
+    get:
+      entity:
+        pattern:
+          Others:
+            sum: 398924.72
+            count: 43
+            percentage: 89.1006424877234
+          Food:
+            sum: 20000
+            count: 1
+            percentage: 4.4670404224498
+          Airtime/Data:
+            sum: 14598.01
+            count: 25
+            percentage: 3.26049503786632
+          Bank Transfer:
+            sum: 13315
+            count: 3
+            percentage: 2.973932161245954
+          Charges:
+            sum: 886
+            count: 27
+            percentage: 0.19788989071452615
+  /v1/financial/earning_structure:
+    get:
+      entity:
+        average_monthly_income: 1070300.0383333336
+        salary_earner: false
+        consistent: false
+        number_of_days: 183
+  /v1/financial/transactions:
+    post:
+      message: Account Created Successfully
+      entity:
+        account_id: 7364e849-66ee-46a3-a5b5-5d7ed626b835
+  /api/v1/financial/transactions/pdf:
+    post:
+      entity:
+        account_id: 7364e849-66ee-46a3-a5b5-5d7ed626b835
+  /api/v1/financial/analysis:
+    get:
+      entity:
+        accountBreakdown:
+          TotalCreditEntry: 306935.75
+          TotalDebitMade: 321986.57
+          averageMonthlyBalance: 0
+          averageMonthlyCredits: 25577.98
+          averageMonthlyDebits: 20124.16
+          averageWeeklyBalance: 0
+          averageWeeklyCredits: 6530.55
+          averageWeeklyDebits: 5031.04
+          closingBalance: 0
+          firstDateInStatement: "2021-04-12"
+          lastDateInStatement: "2022-07-03"
+          numberOfTransactingMonths: 6
+          periodInStatement: April - July
+          yearInStatement: 2021, 2022
+        expenseBreakdown:
+          MaximumExpense: pos web pmt oluwafunmilola b aso l00ng
+          atmLocations:
+            - lagos
+            - yabatech
+            - yaba
+          averageMonthlyExpenseOnAirtimeandData: 2200
+          averageMonthlyExpenseOnAtmAndPOS: 39663.05
+          averageMonthlyExpenseOnChargesAndStampDuty: 108.88
+          averageMonthlyExpenseOnEntertainment: 168.46
+          averageMonthlyExpenseOnGambling: 0
+          averageMonthlyExpenseOnHealth: 91.67
+          averageMonthlyExpenseOnHospitalityandFood: 0
+          averageMonthlyExpenseOnInsurance: 0
+          averageMonthlyExpenseOnInternationalTransactions: 0
+          averageMonthlyExpenseOnOnlineandWeb: 24955.55
+          averageMonthlyExpenseOnRent: 0
+          averageMonthlyExpenseOnSavingsAndInvestments: 0
+          averageMonthlyExpenseOnTransfer: 11692.5
+          averageMonthlyExpenseOnTransportation: 0
+          averageMonthlyExpenseOnUSSD: 333.33
+          averageMonthlyExpenseOnUtilities: 0
+          averageMonthlyExpenseonTravel: 0
+          averageMonthlyRecurringExpenses: 0
+          averageMonthlyTotalExpenses: 53555.55
+          minimumSalary: 653.25
+          monthWithmaximumExpense: 2/2022
+          mostFrequentExpense: atm_and_pos_transactions
+          mostFrequentExpenseCategory: atm_and_pos_transactions
+          totalExpenseOnAirtimeAndData: 13200
+          totalExpenseOnInternationalTransactions: 0
+          totalExpenseOnSavingsAndInvestments: 0
+          totalExpenseOnTransfer: 70155.02
+          totalExpenseOnTransportation: 0
+          totalExpenseOnTravel: 0
+          totalExpenseOnUSSD: 2000
+          totalExpenseOnUtilities: 0
+          totalExpenseonChargesAndStampDuty: 237978.3
+          totalExpenseonEntertainment: 1010.75
+          totalExpenseonGambling: 0
+          totalExpenseonHealth: 550
+          totalExpenseonHospitalityandFood: 0
+          totalExpenseonInsurance: 0
+          totalExpenseonOnlineandWeb: 149733.3
+          totalMonthlyExpenses: 321333.32
+          totalRecurringExpenses: 0
+        fundsManagement:
+          accountActivity: 0.1
+          accountSweep: "No"
+          averageMonthlyLoanAmount: 0
+          averageMonthlyLoanRepaymentAmount: 0
+          gamblingRate: 0
+          gamblingStatus: No Gambling Transactions Found
+          loanInflowAmount: null
+          loanRepaymentToInflowAmount: 0
+          monthToMonthInflowToOutflowAmount: Positive Cash Flow
+          numberOfCreditLoanTransactions: null
+          numberOfDebitRepaymentTransactions: null
+          overallInflowToOutflowAmount: Negative Cash Flow
+          percentOfInflowIrregularity: 0
+          totalLoanAmount: 0
+          totalLoanRepaymentAmount: 0
+        inflowBreakdown:
+          AdditionalIncome: "Yes"
+          RecurringSalaryPayments: null
+          aSalaryEarner: "No"
+          averageAdditionalIncome: 9166.67
+          averageGuaranteedSalary: 0
+          estimatedSalaryPaymentDay: null
+          lastDateOfSalaryPayment: null
+          minimumSalary: 0
+          netAverageMonthlySalary: 0
+          numberOfAdditionalIncomePayments: 2
+          totalnumberOfSalaryPayments: 0
+        transactionRoutineBreakdown:
+          MaximumExpense: 0
+          lastCreditReceived: "2022-03-04"
+          lastDebitMade: "2022-07-03"
+          mostFrequentBalanceRange: <10000
+          mostFrequentTransactionRange: <10000
+          numberOfCardRequests: 0
+          percentNumberOfDaysBalanceWasLessThan10ThousandNaira: 1
+          percentNumberOfDaysTransactionsWasLessThan10ThousandNaira: 0.96
+          percentOfBalancesBetween100ThousandTo500ThousandNaira: 0
+          percentOfBalancesBetween10ThousandTo100ThousandNaira: 0
+          percentOfBalancesBetween500ThousandToOneMillionNaira: 0
+          percentOfBalancesGreaterThanOneMillionNaira: 0
+          percentOfBalancesLessThan10ThousandNaira: 1
+          percentOfTransactionsBetween100ThousandTo500ThousandNaira: 0
+          percentOfTransactionsBetween10ThousandTo100ThousandNaira: 0.12
+          percentOfTransactionsBetween500ThousandToOneMillionNaira: 0
+          percentOfTransactionsGreaterThanOneMillionNaira: 0
+          percentOfTransactionsLessThan10ThousandNaira: 0.88
+          percentofCreditTransactions: 0.19
+          percentofDebitTransactions: 0.81
+          totalAmountOfTransactions: 129
+        status: 200
+  /v1/kyc/photoid/verify:
+    post:
+      entity:
+        selfie:
+          confidence_value: 90
+          match: true
+          photoId_image_blurry: false
+          selfie_image_blurry: false
+          selfie_glare: true
+          photoId_glare: true
+          age_range: 25-35 years
+          sunglasses: false
+  /v1/ml/ocr:
+    post:
+      entity:
+        data:
+          - National Identity Management System
+          - Nimc
+          - Federal Republic of Nigeria
+          - National Identification Number Slip (NINS)
+          - "Address:"
+          - "Tracking ID:"
+          - S7Y0NYFD7890123
+          - "Surname:"
+          - John
+          - 26 JOHNSON STREET AGODO AREA
+          - "NIN:"
+          - "70142123456"
+          - "First Name:"
+          - Doe
+          - "Issue Date:"
+          - 26/08/2014
+          - "Middle Name: OLA-Doe"
+          - IKOTUN EGBE
+          - "Gender:"
+          - M
+          - Lagos
+          - >-
+            Note: The National Identification Number (NIN) is your identity. It
+            is confidential and may only be released for legitimate
+            transactions.
+          - >-
+            You will be notified when your National Identity Card is ready (for
+            any enquiries please contact)
+          - 07040144452, 07040144453,
+          - National Identity Management Commission
+          - helpdesk@nimc.gov.ng
+          - www.nimc.gov.ng
+          - "07040144454"
+          - 11. Sokode Crescent, Off Dalaba Street, Zone 5 Wuse, Abuja Nigeria
+  /v1/ml/ocr/generic:
+    post:
+      entity:
+        data:
+          - National Identity Management System
+          - Nimc
+          - Federal Republic of Nigeria
+          - National Identification Number Slip (NINS)
+          - "Address:"
+          - "Tracking ID:"
+          - S7Y0NYFD7890123
+          - "Surname:"
+          - John
+          - 26 JOHNSON STREET AGODO AREA
+          - "NIN:"
+          - "70142123456"
+          - "First Name:"
+          - Doe
+          - "Issue Date:"
+          - 26/08/2014
+          - "Middle Name: OLA-Doe"
+          - IKOTUN EGBE
+          - "Gender:"
+          - M
+          - Lagos
+          - >-
+            Note: The National Identification Number (NIN) is your identity. It
+            is confidential and may only be released for legitimate
+            transactions.
+          - >-
+            You will be notified when your National Identity Card is ready (for
+            any enquiries please contact)
+          - 07040144452, 07040144453,
+          - National Identity Management Commission
+          - helpdesk@nimc.gov.ng
+          - www.nimc.gov.ng
+          - "07040144454"
+          - 11. Sokode Crescent, Off Dalaba Street, Zone 5 Wuse, Abuja Nigeria
+  /v1/document/analysis/dl:
+    post:
+      entity:
+        data:
+          ADDRESS: 25 GADO NASKO ROAD KUBAWA
+          CITY_IN_ADDRESS: ABUJA
+          CLASS: D
+          COUNTY: ""
+          DATE_OF_BIRTH: 18-05-1992
+          DATE_OF_ISSUE: 22-01-2019
+          DOCUMENT_NUMBER: FKJ49409AB13
+          ENDORSEMENTS: P
+          EXPIRATION_DATE: 18-05-2024
+          FIRST_NAME: TOBI
+          ID_TYPE: DRIVER LICENSE FRONT
+          LAST_NAME: OLOLADE
+          MIDDLE_NAME: OLALEKAN
+          PLACE_OF_BIRTH: ""
+          RESTRICTIONS: ""
+          STATE_IN_ADDRESS: ""
+          STATE_NAME: ""
+          SUFFIX: ""
+          VETERAN: ""
+          ZIP_CODE_IN_ADDRESS: "08060141707"
+  /api/v1/aml/screening:
+    post:
+      entity:
+        reference_id: 8fd7008d-7c3d-4f49-91fd-005ba2fc7da2
+        status: PENDING
+  /v1/aml/screening/info:
+    get:
+      entity:
+        result:
+          addresses: []
+          aka: ""
+          aliases: []
+          countryName: Nigeria
+          dob: ""
+          dob2: ""
+          effectiveDate: ""
+          entryCategory: Enforcement
+          entryDesc: Individual
+          firstName: Doe
+          govDesignation: ""
+          lastName: John
+          levelDesc: N/A
+          masterId: 0
+          name: Doe, John
+          nationalId: ""
+          otherId: ""
+          passportId: ""
+          pob: ""
+          positions: Arrested on suspicion of internet fraud - March 12, 2020.
+          prefix: ""
+          primaryName: ""
+          relatedId: 0
+          relationships: []
+          remarks: >-
+            According to NG-Economic and Financial Crimes Commission (EFCC);
+            March 12, 2020: On March 12, 2020,  Doe John and other suspects were
+            arrested for  their alleged involvement in internet-related crimes.
+            Raid also led to recovery of valuable items, including three exotic
+            cars, mobile phones, laptops, and SIM cards, from the suspects.
+          sourceName: NG-Economic and Financial Crimes Commission (EFCC)
+          sourceWebLinks: >-
+            https://www.newtelegraphng.com/48-arrested-for-internet-fraud-in-ogun/;https://www.vanguardngr.com/2020/03/efcc-arrests-48-suspected-internet-fraudsters-in-ogun/;https://efccnigeria.org/efcc/news/5611-efcc-arrests-48-internet-fraud-suspects-in-ogun
+          subCatDesc: Cybercrime
+          suffix: ""
+          touchDate: "2021-08-24T09:02:12.79"
+          watch: false
+        uuid: 22777c34-b48e-416c-87dd-6d7d6b2d725f
+  /api/v1/balance:
+    get:
+      entity:
+        wallet_balance: "550.50"
+  /v1/purchase/airtime:
+    post:
+      entity:
+        data:
+          - destination: "2348068810228"
+            status: Sent
+        reference_id: dj_f6139f6f-5056-4551-a4c2-089b7667a7ff
+  /v1/purchase/data:
+    post:
+      entity:
+        - amount: 1000
+          description: 9MOBILE 1.5GB data bundle
+          plan: 9MOBILE_1.5GB
+        - amount: 2000
+          description: 9MOBILE 4.5GB data bundle
+          plan: 9MOBILE_4.5GB
+  /v1/purchase/data/plans:
+    get:
+      entity:
+        - description: 9MOBILE 1.5GB data bundle
+          amount: 1000
+          plan: 9MOBILE_1.5GB
+        - description: 9MOBILE 4.5GB data bundle
+          amount: 2000
+          plan: 9MOBILE_4.5GB
+        - description: 9MOBILE 4GB data bundle
+          amount: 3000
+          plan: 9MOBILE_4GB
+        - description: "9MOBILE 11.5GB data bundle "
+          amount: 4000
+          plan: 9MOBILE_11.5GB
+        - description: "9MOBILE 15GB data bundle "
+          amount: 5000
+          plan: 9MOBILE_15GB
+        - description: "9MOBILE 27.5GB data bundle "
+          amount: 18000
+          plan: 9MOBILE_27.5GB
+        - description: "9MOBILE 30GB data bundle "
+          amount: 27500
+          plan: 9MOBILE_30GB
+        - description: "9MOBILE 60GB data bundle "
+          amount: 55000
+          plan: 9MOBILE_60GB
+        - description: AIRTEL 40 MB data bundle
+          amount: 50
+          plan: AIRTEL_40MB
+        - description: AIRTEL 100 MB data bundle
+          amount: 100
+          plan: AIRTEL_100MB
+        - description: AIRTEL 200 MB data bundle
+          amount: 200
+          plan: AIRTEL_200MB
+        - description: AIRTEL 350 MB data bundle
+          amount: 300
+          plan: AIRTEL_350MB
+        - description: AIRTEL 750 MB data bundle
+          amount: 500
+          plan: AIRTEL_750MB
+        - description: AIRTEL 1.5GB data bundle
+          amount: 1000
+          plan: AIRTEL_1.5GB
+        - description: AIRTEL 3GB Data Bundle
+          amount: 1500
+          plan: AIRTEL_3GB
+        - description: AIRTEL 6GB Data Bundle
+          amount: 2500
+          plan: AIRTEL_6GB
+        - description: AIRTEL 8GB Data Bundle
+          amount: 3000
+          plan: AIRTEL_8GB
+        - description: AIRTEL 11GB Data Bundle
+          amount: 4000
+          plan: AIRTEL_11GB
+        - description: AIRTEL 15GB Data Bundle
+          amount: 5000
+          plan: AIRTEL_15GB
+        - description: AIRTEL 40GB Data Bundle
+          amount: 10000
+          plan: AIRTEL_40GB
+        - description: AIRTEL 75GB Data Bundle
+          amount: 15000
+          plan: AIRTEL_75GB
+        - description: GLO 35 MB data bundle
+          amount: 100
+          plan: GLO_35MB
+        - description: GLO 100 MB DATA BUNDLE
+          amount: 200
+          plan: GLO_100MB
+        - description: GLO 920 MB DATA BUNDLE
+          amount: 500
+          plan: GLO_920MB
+        - description: GLO 1.8GB data purchase
+          amount: 1000
+          plan: GLO_1.8GB
+        - description: GLO 4.5GB data bundle
+          amount: 2000
+          plan: GLO_4.5GB
+        - description: GLO 7.2GB data bundle
+          amount: 2500
+          plan: GLO_7.2GB
+        - description: GLO 8.75GB DATA BUNDLE
+          amount: 3000
+          plan: GLO_8.75GB
+        - description: GLO 12.5GB DATA BUNDLE
+          amount: 4000
+          plan: GLO_12.5GB
+        - description: GLO 15.6GB DATA BUNDLE
+          amount: 5000
+          plan: GLO_15.6GB
+        - description: GLO 25GB DATA BUNDLE
+          amount: 8000
+          plan: GLO_25GB
+        - description: GLO 32.5GB DATA BUNDLE
+          amount: 10000
+          plan: GLO_32.5GB
+        - description: GLO 52.5GB DATA BUNDLE
+          amount: 15000
+          plan: GLO_52.5GB
+        - description: GLO 62.5GB DATA BUNDLE
+          amount: 18000
+          plan: GLO_62.5GB
+        - description: MTN 200 MB DATA BUNDLE
+          amount: 200
+          plan: MTN_200MB
+        - description: MTN 750MB data top-up service
+          amount: 500
+          plan: MTN_750MB
+        - description: MTN 1.5 GB DATA BUNDLE
+          amount: 1000
+          plan: MTN_1.5GB
+        - description: MTN 4.5 GB DATA BUNDLE
+          amount: 2000
+          plan: MTN_4.5GB
+        - description: MTN 10 GB DATA BUNDLE
+          amount: 3500
+          plan: MTN_10GB
+        - description: MTN 15 GB DATA BUNDLE
+          amount: 5000
+          plan: MTN_15GB
+        - description: MTN 40 GB DATA BUNDLE
+          amount: 10000
+          plan: MTN_40GB
+        - description: MTN 75 GB DATA BUNDLE
+          amount: 20000
+          plan: MTN_75GB
+        - description: MTN 120 GB DATA BUNDLE
+          amount: 50000
+          plan: MTN_120GB
+  /v1/general/banks:
+    get:
+      entity:
+        - name: First Bank of Nigeria
+          code: "011"
+          longcode: "011151003"
+          gateway: ibank
+          slug: first-bank-of-nigeria
+          country: Nigeria
+          currency: NGN
+        - name: First City Monument Bank
+          code: "214"
+          longcode: "214150018"
+          gateway: emandate
+          slug: first-city-monument-bank
+          country: Nigeria
+          currency: NGN
+        - name: Suntrust Bank
+          code: "100"
+          longcode: ""
+          gateway: null
+          slug: suntrust-bank
+          country: Nigeria
+          currency: NGN
+        - name: CEMCS Microfinance Bank
+          code: "50823"
+          longcode: ""
+          gateway: null
+          slug: cemcs-microfinance-bank
+          country: Nigeria
+          currency: NGN
+        - name: FSDH Merchant Bank Limited
+          code: "501"
+          longcode: ""
+          gateway: null
+          slug: fsdh-merchant-bank-limited
+          country: Nigeria
+          currency: NGN
+        - name: Heritage Bank
+          code: "030"
+          longcode: "030159992"
+          gateway: null
+          slug: heritage-bank
+          country: Nigeria
+          currency: NGN
+        - name: ASO Savings and Loans
+          code: "401"
+          longcode: ""
+          gateway: null
+          slug: asosavings
+          country: Nigeria
+          currency: NGN
+        - name: Stanbic IBTC Bank
+          code: "221"
+          longcode: "221159522"
+          gateway: null
+          slug: stanbic-ibtc-bank
+          country: Nigeria
+          currency: NGN
+        - name: Fidelity Bank
+          code: "070"
+          longcode: "070150003"
+          gateway: emandate
+          slug: fidelity-bank
+          country: Nigeria
+          currency: NGN
+        - name: Providus Bank
+          code: "101"
+          longcode: ""
+          gateway: null
+          slug: providus-bank
+          country: Nigeria
+          currency: NGN
+        - name: Unity Bank
+          code: "215"
+          longcode: "215154097"
+          gateway: emandate
+          slug: unity-bank
+          country: Nigeria
+          currency: NGN
+        - name: TCF MFB
+          code: "51211"
+          longcode: ""
+          gateway: null
+          slug: tcf-mfb
+          country: Nigeria
+          currency: NGN
+        - name: Polaris Bank
+          code: "076"
+          longcode: "076151006"
+          gateway: null
+          slug: polaris-bank
+          country: Nigeria
+          currency: NGN
+        - name: Titan Bank
+          code: "102"
+          longcode: ""
+          gateway: null
+          slug: titan-bank
+          country: Nigeria
+          currency: NGN
+        - name: Guaranty Trust Bank
+          code: "058"
+          longcode: "058152036"
+          gateway: ibank
+          slug: guaranty-trust-bank
+          country: Nigeria
+          currency: NGN
+        - name: Keystone Bank
+          code: "082"
+          longcode: "082150017"
+          gateway: null
+          slug: keystone-bank
+          country: Nigeria
+          currency: NGN
+        - name: Union Bank of Nigeria
+          code: "032"
+          longcode: "032080474"
+          gateway: emandate
+          slug: union-bank-of-nigeria
+          country: Nigeria
+          currency: NGN
+        - name: Access Bank (Diamond)
+          code: "063"
+          longcode: "063150162"
+          gateway: emandate
+          slug: access-bank-diamond
+          country: Nigeria
+          currency: NGN
+        - name: Kuda Bank
+          code: "50211"
+          longcode: ""
+          gateway: digitalbankmandate
+          slug: kuda-bank
+          country: Nigeria
+          currency: NGN
+        - name: United Bank For Africa
+          code: "033"
+          longcode: "033153513"
+          gateway: emandate
+          slug: united-bank-for-africa
+          country: Nigeria
+          currency: NGN
+        - name: Rubies MFB
+          code: "125"
+          longcode: ""
+          gateway: null
+          slug: rubies-mfb
+          country: Nigeria
+          currency: NGN
+        - name: Wema Bank
+          code: "035"
+          longcode: "035150103"
+          gateway: null
+          slug: wema-bank
+          country: Nigeria
+          currency: NGN
+        - name: Eyowo
+          code: "50126"
+          longcode: ""
+          gateway: null
+          slug: eyowo
+          country: Nigeria
+          currency: NGN
+        - name: Ecobank Nigeria
+          code: "050"
+          longcode: "050150010"
+          gateway: null
+          slug: ecobank-nigeria
+          country: Nigeria
+          currency: NGN
+        - name: ALAT by WEMA
+          code: 035A
+          longcode: "035150103"
+          gateway: emandate
+          slug: alat-by-wema
+          country: Nigeria
+          currency: NGN
+        - name: Jaiz Bank
+          code: "301"
+          longcode: "301080020"
+          gateway: null
+          slug: jaiz-bank
+          country: Nigeria
+          currency: NGN
+        - name: Bowen Microfinance Bank
+          code: "50931"
+          longcode: ""
+          gateway: null
+          slug: bowen-microfinance-bank
+          country: Nigeria
+          currency: NGN
+        - name: VFD
+          code: "566"
+          longcode: ""
+          gateway: null
+          slug: vfd
+          country: Nigeria
+          currency: NGN
+        - name: Parallex Bank
+          code: "526"
+          longcode: ""
+          gateway: null
+          slug: parallex-bank
+          country: Nigeria
+          currency: NGN
+        - name: Zenith Bank
+          code: "057"
+          longcode: "057150013"
+          gateway: emandate
+          slug: zenith-bank
+          country: Nigeria
+          currency: NGN
+        - name: TAJ Bank
+          code: "302"
+          longcode: ""
+          gateway: null
+          slug: taj-bank
+          country: Nigeria
+          currency: NGN
+        - name: Parkway - ReadyCash
+          code: "311"
+          longcode: ""
+          gateway: null
+          slug: parkway-ready-cash
+          country: Nigeria
+          currency: NGN
+        - name: Hackman Microfinance Bank
+          code: "51251"
+          longcode: ""
+          gateway: null
+          slug: hackman-microfinance-bank
+          country: Nigeria
+          currency: NGN
+        - name: Citibank Nigeria
+          code: "023"
+          longcode: "023150005"
+          gateway: null
+          slug: citibank-nigeria
+          country: Nigeria
+          currency: NGN
+        - name: One Finance
+          code: "565"
+          longcode: ""
+          gateway: null
+          slug: one-finance
+          country: Nigeria
+          currency: NGN
+        - name: Sterling Bank
+          code: "232"
+          longcode: "232150016"
+          gateway: emandate
+          slug: sterling-bank
+          country: Nigeria
+          currency: NGN
+        - name: Access Bank
+          code: "044"
+          longcode: "044150149"
+          gateway: emandate
+          slug: access-bank
+          country: Nigeria
+          currency: NGN
+        - name: Ekondo Microfinance Bank
+          code: "562"
+          longcode: ""
+          gateway: null
+          slug: ekondo-microfinance-bank
+          country: Nigeria
+          currency: NGN
+        - name: Globus Bank
+          code: "00103"
+          longcode: "103015001"
+          gateway: null
+          slug: globus-bank
+          country: Nigeria
+          currency: NGN
+        - name: Lagos Building Investment Company Plc.
+          code: "90052"
+          longcode: ""
+          gateway: null
+          slug: lbic-plc
+          country: Nigeria
+          currency: NGN
+        - name: Hasal Microfinance Bank
+          code: "50383"
+          longcode: ""
+          gateway: null
+          slug: hasal-microfinance-bank
+          country: Nigeria
+          currency: NGN
+        - name: Standard Chartered Bank
+          code: "068"
+          longcode: "068150015"
+          gateway: null
+          slug: standard-chartered-bank
+          country: Nigeria
+          currency: NGN
+        - name: Sparkle Microfinance Bank
+          code: "51310"
+          longcode: ""
+          gateway: null
+          slug: sparkle-microfinance-bank
+          country: Nigeria
+          currency: NGN
+  /v1/general/account:
+    get:
+      entity:
+        account_number: "3046507407"
+        account_name: SALIU MOSHOOD KOLAWOLE
+  /v1/general/bin:
+    get:
+      entity:
+        bin: "506118"
+        brand: Verve
+        sub_brand: ""
+        country_code: NG
+        country_name: Nigeria
+        card_type: DEBIT
+        bank: Ecobank Nigeria
+  /v1/ml/categorize_transaction:
+    post:
+      entity:
+        category: Bill Payments
+        sub_category: Others
+        service_id: 0
+        is_subscription: 0
+        duration: ""
+        service_name: ""
+        label: Others
+        mode_of_payment: web/pos
+  /api/v1/webhook/subscribe:
+    post:
+      entity: Pls, confirm subscription with the subscribe_url sent to this webhook
+  /api/v1/webhook/delete:
+    delete:
+      entity: webhook deleted successfully
+  /api/v1/webhook/fetch:
+    get:
+      entity:
+        - app_id: 60d4aebc1e90de0033ad14ad
+          endpoint: https://staging.dojah.io/webhooks/ngn_wallet
+          environment: sandbox
+          service: ngn_wallet
+          confirmation_status: Invalid Subscription Arn
+          date_created: "2021-09-15T13:02:17.286834+01:00"
+          date_updated: "2021-09-15T13:02:17.286880+01:00"
+        - app_id: 60d4aebc1e90de0033ad14ad
+          endpoint: https://staging.dojah.io/webhooks/ngn_wallet
+          environment: sandbox
+          service: sms
+          confirmation_status: Invalid Subscription Arn
+          date_created: "2021-08-06T05:12:24.445507+01:00"
+          date_updated: "2021-08-06T05:12:24.445546+01:00"
+  /api/v1/webhook/notify:
+    post:
+      entity: App event created successfully
+  /api/v1/financial/account_information:
+    get:
+      name: SALIU, MOSHOOD KOLAWOLE
+      account_number: "0150927834"
+      bvn: "5556"
+      account_type: GT Crea8-e-savers
+      currency: Naira
+      account_status: Active
+      balance: 34,976.80
+requestSchemaNames:
+  /v1/kyc/bvn/verify:
+    post:
+      application/json: VerifySelfieBvnRequest
+  /v1/kyc/nin/verify:
+    post:
+      application/json: VerifySelfieNinRequest
+  /api/v1/messaging/sms:
+    post:
+      application/json: SendSmsRequest
+  /v1/messaging/otp:
+    post:
+      application/json: SendOtpRequest
+  /api/v1/messaging/sender_id:
+    post:
+      application/json: RequestSenderIdRequest
+  /v1/wallet/ngn/create:
+    post:
+      application/json: CreateWalletRequest
+  /v1/wallet/ngn/transfer:
+    post:
+      application/json: TransferFundsRequest
+  /v1/wallet/ngn/credit:
+    post:
+      application/json: CreditSubwalletRequest
+  /v1/financial/transactions:
+    post:
+      application/json: CollectTransactionsRequest
+  /api/v1/financial/transactions/pdf:
+    post:
+      multipart/form-data: CollectStatusFromPdfRequest
+  /v1/kyc/photoid/verify:
+    post:
+      application/json: VerifyPhotoIdWithSelfieRequest
+  /v1/ml/ocr:
+    post:
+      application/json: GetOcrTextRequest
+  /v1/ml/ocr/generic:
+    post:
+      application/json: GetGenericOcrTextRequest
+  /v1/document/analysis/dl:
+    post:
+      application/json: GetDocumentAnalysisRequest
+  /api/v1/aml/screening:
+    post:
+      application/json: ScreenAmlRequest
+  /v1/purchase/airtime:
+    post:
+      application/json: PurchaseAirtimeRequest
+  /v1/purchase/data:
+    post:
+      application/json: PurchaseDataRequest
+  /v1/ml/categorize_transaction:
+    post:
+      application/json: CategorizeTransactionsRequest
+  /api/v1/webhook/subscribe:
+    post:
+      application/json: SubscribeServiceRequest
+  /api/v1/webhook/notify:
+    post:
+      application/json: NotifyWebhookRequest
+responseSchemaNames:
+  /api/v1/gh/kyc/dl:
+    get:
+      "200":
+        application/json: GetDriversLicenseResponse
+  /api/v1/gh/kyc/passport:
+    get:
+      "200":
+        application/json: GetPassportResponse
+  /api/v1/gh/kyc/ssnit:
+    get:
+      "200":
+        application/json: GetSsnitResponse
+  /api/v1/ug/kyc/voter:
+    get:
+      "200":
+        application/json: GetVoterResponse
+  /api/v1/ke/kyc/id:
+    get:
+      "200":
+        application/json: GetNationalIdResponse
+  /api/v1/kyc/dl:
+    get:
+      "200":
+        application/json: GetKycDriversLicenseResponse
+  /api/v1/kyc/nuban:
+    get:
+      "200":
+        application/json: GetNubanResponse
+  /api/v1/kyc/bvn:
+    get:
+      "200":
+        application/json: ValidateBvnResponse
+  /api/v1/kyc/bvn/basic:
+    get:
+      "200":
+        application/json: GetBasicBvnResponse
+  /api/v1/kyc/bvn/full:
+    get:
+      "200":
+        application/json: GetFullBvnResponse
+  /api/v1/kyc/bvn/advance:
+    get:
+      "200":
+        application/json: GetPremiumBvnResponse
+  /api/v1/kyc/vnin:
+    get:
+      "200":
+        application/json: GetVninResponse
+  /v1/kyc/phone_number/basic:
+    get:
+      "200":
+        application/json: GetBasicPhoneNumberResponse
+  /api/v1/kyc/phone_number:
+    get:
+      "200":
+        application/json: GetPhoneNumberResponse
+      "404":
+        application/json: GetPhoneNumber404Response
+  /v1/kyc/age_verification:
+    get:
+      "200":
+        application/json: VerifyAgeResponse
+  /v1/kyc/bvn/verify:
+    post:
+      "200":
+        application/json: VerifySelfieBvnResponse
+  /v1/kyc/nin/verify:
+    post:
+      "200":
+        application/json: VerifySelfieNinResponse
+  /api/v1/kyc/vin:
+    get:
+      "200":
+        application/json: GetVinResponse
+  /v1/kyc/email:
+    get:
+      "200":
+        application/json: GetEmailReputationResponse
+  /api/v1/kyc/passport:
+    get:
+      "200":
+        application/json: GetKycPassportResponse
+  /api/v1/document/analysis:
+    post:
+      "200":
+        application/json: AnalyzeDocumentResponse
+  /v1/kyc/cac:
+    get:
+      "200":
+        application/json: GetCacResponse
+  /v1/kyc/cac/basic:
+    get:
+      "200":
+        application/json: GetBasicCacResponse
+  /v1/kyc/cac/advance:
+    get:
+      "200":
+        application/json: GetAdvancedCacResponse
+  /v1/kyc/tin:
+    get:
+      "200":
+        application/json: GetTinResponse
+  /api/v1/messaging/sms:
+    post:
+      "200":
+        application/json: SendSmsResponse
+  /v1/messaging/sms/get_status:
+    get:
+      "200":
+        application/json: GetSmsStatusResponse
+  /v1/messaging/otp:
+    post:
+      "200":
+        application/json: SendOtpResponse
+  /v1/messaging/otp/validate:
+    get:
+      "200":
+        application/json: ValidateOtpResponse
+  /api/v1/messaging/sender_ids:
+    get:
+      "200":
+        application/json: GetSenderIdResponse
+  /api/v1/messaging/sender_id:
+    post:
+      "200":
+        application/json: RequestSenderIdResponse
+  /v1/wallet/ngn/create:
+    post:
+      "200":
+        application/json: CreateWalletResponse
+  /v1/wallet/ngn/retrieve:
+    get:
+      "200":
+        application/json: GetWalletResponse
+  /v1/wallet/ngn/accounts:
+    get:
+      "200":
+        application/json: GetWalletsResponse
+  /v1/wallet/ngn/transaction:
+    get:
+      "200":
+        application/json: GetTransactionResponse
+  /v1/wallet/ngn/transfer:
+    post:
+      "200":
+        application/json: TransferFundsResponse
+  /v1/wallet/ngn/credit:
+    post:
+      "200":
+        application/json: CreditSubwalletResponse
+  /api/v1/financial/account_transactions:
+    get:
+      "200":
+        application/json: GetAccountTransactionsResponse
+  /v1/financial/account_subscription:
+    get:
+      "200":
+        application/json: GetAccountSubscriptionsResponse
+  /v1/financial/bvn_information/basic:
+    get:
+      "200":
+        application/json: FinancialGetBasicBvnResponse
+  /v1/financial/bvn_information/full:
+    get:
+      "200":
+        application/json: FinancialGetFullBvnResponse
+  /v1/financial/spending_pattern:
+    get:
+      "200":
+        application/json: GetSpendingPatternResponse
+  /v1/financial/earning_structure:
+    get:
+      "200":
+        application/json: GetEarningStructureResponse
+  /v1/financial/transactions:
+    post:
+      "200":
+        application/json: CollectTransactionsResponse
+  /api/v1/financial/transactions/pdf:
+    post:
+      "200":
+        application/json: CollectStatusFromPdfResponse
+  /api/v1/financial/analysis:
+    get:
+      "200":
+        application/json: GetAccountAnalysisResponse
+  /v1/kyc/photoid/verify:
+    post:
+      "200":
+        application/json: VerifyPhotoIdWithSelfieResponse
+  /v1/ml/ocr:
+    post:
+      "200":
+        application/json: GetOcrTextResponse
+  /v1/ml/ocr/generic:
+    post:
+      "200":
+        application/json: GetGenericOcrTextResponse
+  /v1/document/analysis/dl:
+    post:
+      "200":
+        application/json: GetDocumentAnalysisResponse
+  /api/v1/aml/screening:
+    post:
+      "200":
+        application/json: ScreenAmlResponse
+  /v1/aml/screening/info:
+    get:
+      "200":
+        application/json: GetScreeningInfoResponse
+  /api/v1/balance:
+    get:
+      "200":
+        application/json: GetWalletBalanceResponse
+      "401":
+        application/json: GeneralGetWalletBalanceResponse
+  /v1/purchase/airtime:
+    post:
+      "200":
+        application/json: PurchaseAirtimeResponse
+  /v1/purchase/data:
+    post:
+      "200":
+        application/json: PurchaseDataResponse
+  /v1/purchase/data/plans:
+    get:
+      "200":
+        application/json: GetDataPlansResponse
+  /v1/general/banks:
+    get:
+      "200":
+        application/json: GetBanksResponse
+  /v1/general/account:
+    get:
+      "200":
+        application/json: GeneralGetNubanResponse
+  /v1/general/bin:
+    get:
+      "200":
+        application/json: GetBinResponse
+  /v1/ml/categorize_transaction:
+    post:
+      "200":
+        application/json: CategorizeTransactionsResponse
+  /api/v1/webhook/subscribe:
+    post:
+      "200":
+        application/json: SubscribeServiceResponse
+  /api/v1/webhook/delete:
+    delete:
+      "200":
+        application/json: DeleteWebhookResponse
+  /api/v1/webhook/fetch:
+    get:
+      "200":
+        application/json: GetWebhooksResponse
+  /api/v1/webhook/notify:
+    post:
+      "200":
+        application/json: NotifyWebhookResponse
+  /api/v1/financial/account_information:
+    get:
+      "200":
+        application/json: GetAccountResponse
+responseDescriptions: {}
+ignorePotentialIncorrectType: true
