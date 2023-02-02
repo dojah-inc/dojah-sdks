@@ -1251,31 +1251,6 @@ paths:
                       - twitter
                       - vimeo
                       - linkedin
-  /v1/kyc/nuban/bvn:
-    get:
-      tags:
-        - KYC
-      summary: Lookup BVN from NUBAN
-      operationId: KYC_getBvnFromNuban
-      security:
-        - apikeyAuth: []
-          appIdAuth: []
-      parameters:
-        - name: bank_code
-          in: query
-          schema:
-            type: integer
-          example: 57
-        - name: account_number
-          in: query
-          schema:
-            type: integer
-          example: 2174879334
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /api/v1/kyc/passport:
     get:
       tags:
@@ -1311,26 +1286,6 @@ paths:
         - apikeyAuth: []
           appIdAuth: []
       parameters: []
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api/v1/kyc/cac/search:
-    get:
-      tags:
-        - KYB
-      summary: CAC Name Search
-      operationId: KYB_searchCac
-      security:
-        - apikeyAuth: []
-          appIdAuth: []
-      parameters:
-        - name: company_name
-          in: query
-          schema:
-            type: string
-          example: UseClink
       responses:
         '200':
           description: Successful response
