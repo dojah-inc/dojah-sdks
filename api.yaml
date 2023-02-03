@@ -2155,57 +2155,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetAccountTransactionsResponse'
-  /v1/financial/account_subscription:
-    get:
-      tags:
-        - Financial
-      summary: Get Account Subscriptions
-      operationId: Financial_getAccountSubscriptions
-      security:
-        - apikeyAuth: []
-          appIdAuth: []
-      parameters:
-        - name: account_id
-          in: query
-          schema:
-            type: string
-          example: 02f63911-a958-4025-9d72-8bd2d7da274b
-      responses:
-        '200':
-          description: OK
-          headers:
-            X-Powered-By:
-              schema:
-                type: string
-                example: Express
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-                example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
-            Content-Length:
-              schema:
-                type: integer
-                example: 108
-            ETag:
-              schema:
-                type: string
-                example: W/"6c-a/jqufcJ1VX0CWOqBzUEbCc4UEA"
-            Date:
-              schema:
-                type: string
-                example: Tue, 06 Oct 2020 14:56:13 GMT
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetAccountSubscriptionsResponse'
   /v1/financial/bvn_information/basic:
     get:
       tags:
@@ -5993,41 +5942,6 @@ components:
           previous_page: ''
           next_page: 2
           total_pages: 53
-          current_page: 1
-    GetAccountSubscriptionsResponse:
-      type: object
-      properties:
-        entity:
-          type: object
-          properties:
-            subscriptions:
-              type: array
-              items:
-                oneOf:
-                  - type: string
-                  - type: number
-            total:
-              type: number
-              example: 0
-            previous_page:
-              type: string
-              example: ''
-            next_page:
-              type: string
-              example: ''
-            total_pages:
-              type: number
-              example: 1
-            current_page:
-              type: number
-              example: 1
-      example:
-        entity:
-          subscriptions: []
-          total: 0
-          previous_page: ''
-          next_page: ''
-          total_pages: 1
           current_page: 1
     FinancialGetBasicBvnResponse:
       type: object
