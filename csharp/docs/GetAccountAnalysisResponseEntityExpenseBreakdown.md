@@ -1,0 +1,51 @@
+# Dojah.Net.Model.GetAccountAnalysisResponseEntityExpenseBreakdown
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**MaximumExpense** | **string** |  | [optional] 
+**AtmLocations** | **List&lt;string&gt;** |  | [optional] 
+**AverageMonthlyExpenseOnAirtimeandData** | **decimal** |  | [optional] 
+**AverageMonthlyExpenseOnAtmAndPOS** | **decimal** |  | [optional] 
+**AverageMonthlyExpenseOnChargesAndStampDuty** | **decimal** |  | [optional] 
+**AverageMonthlyExpenseOnEntertainment** | **decimal** |  | [optional] 
+**AverageMonthlyExpenseOnGambling** | **decimal** |  | [optional] 
+**AverageMonthlyExpenseOnHealth** | **decimal** |  | [optional] 
+**AverageMonthlyExpenseOnHospitalityandFood** | **decimal** |  | [optional] 
+**AverageMonthlyExpenseOnInsurance** | **decimal** |  | [optional] 
+**AverageMonthlyExpenseOnInternationalTransactions** | **decimal** |  | [optional] 
+**AverageMonthlyExpenseOnOnlineandWeb** | **decimal** |  | [optional] 
+**AverageMonthlyExpenseOnRent** | **decimal** |  | [optional] 
+**AverageMonthlyExpenseOnSavingsAndInvestments** | **decimal** |  | [optional] 
+**AverageMonthlyExpenseOnTransfer** | **decimal** |  | [optional] 
+**AverageMonthlyExpenseOnTransportation** | **decimal** |  | [optional] 
+**AverageMonthlyExpenseOnUSSD** | **decimal** |  | [optional] 
+**AverageMonthlyExpenseOnUtilities** | **decimal** |  | [optional] 
+**AverageMonthlyExpenseonTravel** | **decimal** |  | [optional] 
+**AverageMonthlyRecurringExpenses** | **decimal** |  | [optional] 
+**AverageMonthlyTotalExpenses** | **decimal** |  | [optional] 
+**MinimumSalary** | **decimal** |  | [optional] 
+**MonthWithmaximumExpense** | **string** |  | [optional] 
+**MostFrequentExpense** | **string** |  | [optional] 
+**MostFrequentExpenseCategory** | **string** |  | [optional] 
+**TotalExpenseOnAirtimeAndData** | **decimal** |  | [optional] 
+**TotalExpenseOnInternationalTransactions** | **decimal** |  | [optional] 
+**TotalExpenseOnSavingsAndInvestments** | **decimal** |  | [optional] 
+**TotalExpenseOnTransfer** | **decimal** |  | [optional] 
+**TotalExpenseOnTransportation** | **decimal** |  | [optional] 
+**TotalExpenseOnTravel** | **decimal** |  | [optional] 
+**TotalExpenseOnUSSD** | **decimal** |  | [optional] 
+**TotalExpenseOnUtilities** | **decimal** |  | [optional] 
+**TotalExpenseonChargesAndStampDuty** | **decimal** |  | [optional] 
+**TotalExpenseonEntertainment** | **decimal** |  | [optional] 
+**TotalExpenseonGambling** | **decimal** |  | [optional] 
+**TotalExpenseonHealth** | **decimal** |  | [optional] 
+**TotalExpenseonHospitalityandFood** | **decimal** |  | [optional] 
+**TotalExpenseonInsurance** | **decimal** |  | [optional] 
+**TotalExpenseonOnlineandWeb** | **decimal** |  | [optional] 
+**TotalMonthlyExpenses** | **decimal** |  | [optional] 
+**TotalRecurringExpenses** | **decimal** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

@@ -1,0 +1,10 @@
+# Dojah.Net.Model.SendSmsResponse
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Entity** | [**SendSmsResponseEntity**](SendSmsResponseEntity.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

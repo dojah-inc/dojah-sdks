@@ -1,0 +1,598 @@
+# Dojah.Net.Api.AuthenticationApi
+
+All URIs are relative to *https://api.dojah.io*
+
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**GetSenderId**](AuthenticationApi.md#getsenderid) | **GET** /api/v1/messaging/sender_ids | Messaging - Get Sender IDs |
+| [**GetSmsStatus**](AuthenticationApi.md#getsmsstatus) | **GET** /v1/messaging/sms/get_status | Messaging - Get SMS Status |
+| [**RequestSenderId**](AuthenticationApi.md#requestsenderid) | **POST** /api/v1/messaging/sender_id | Messaging - Request Sender ID |
+| [**SendOtp**](AuthenticationApi.md#sendotp) | **POST** /v1/messaging/otp | Messaging - Send OTP |
+| [**SendSms**](AuthenticationApi.md#sendsms) | **POST** /api/v1/messaging/sms | Messaging - Send SMS |
+| [**ValidateOtp**](AuthenticationApi.md#validateotp) | **GET** /v1/messaging/otp/validate | Messaging - Validate OTP |
+
+<a name="getsenderid"></a>
+# **GetSenderId**
+> GetSenderIdResponse GetSenderId ()
+
+Messaging - Get Sender IDs
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Dojah.Net.Api;
+using Dojah.Net.Client;
+using Dojah.Net.Model;
+
+namespace Example
+{
+    public class GetSenderIdExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.dojah.io";
+            // Configure API key authorization: apikeyAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: appIdAuth
+            config.AddApiKey("AppId", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("AppId", "Bearer");
+
+            var apiInstance = new AuthenticationApi(config);
+
+            try
+            {
+                // Messaging - Get Sender IDs
+                GetSenderIdResponse result = apiInstance.GetSenderId();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AuthenticationApi.GetSenderId: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetSenderIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Messaging - Get Sender IDs
+    ApiResponse<GetSenderIdResponse> response = apiInstance.GetSenderIdWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AuthenticationApi.GetSenderIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+[**GetSenderIdResponse**](GetSenderIdResponse.md)
+
+### Authorization
+
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getsmsstatus"></a>
+# **GetSmsStatus**
+> GetSmsStatusResponse GetSmsStatus (string messageId = null)
+
+Messaging - Get SMS Status
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Dojah.Net.Api;
+using Dojah.Net.Client;
+using Dojah.Net.Model;
+
+namespace Example
+{
+    public class GetSmsStatusExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.dojah.io";
+            // Configure API key authorization: apikeyAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: appIdAuth
+            config.AddApiKey("AppId", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("AppId", "Bearer");
+
+            var apiInstance = new AuthenticationApi(config);
+            var messageId = 54818c8a-4aed-4e5f-b846-8274fd4e0bbd;  // string |  (optional) 
+
+            try
+            {
+                // Messaging - Get SMS Status
+                GetSmsStatusResponse result = apiInstance.GetSmsStatus(messageId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AuthenticationApi.GetSmsStatus: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetSmsStatusWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Messaging - Get SMS Status
+    ApiResponse<GetSmsStatusResponse> response = apiInstance.GetSmsStatusWithHttpInfo(messageId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AuthenticationApi.GetSmsStatusWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **messageId** | **string** |  | [optional]  |
+
+### Return type
+
+[**GetSmsStatusResponse**](GetSmsStatusResponse.md)
+
+### Authorization
+
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="requestsenderid"></a>
+# **RequestSenderId**
+> RequestSenderIdResponse RequestSenderId (Object body = null)
+
+Messaging - Request Sender ID
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Dojah.Net.Api;
+using Dojah.Net.Client;
+using Dojah.Net.Model;
+
+namespace Example
+{
+    public class RequestSenderIdExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.dojah.io";
+            // Configure API key authorization: apikeyAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: appIdAuth
+            config.AddApiKey("AppId", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("AppId", "Bearer");
+
+            var apiInstance = new AuthenticationApi(config);
+            var body = null;  // Object |  (optional) 
+
+            try
+            {
+                // Messaging - Request Sender ID
+                RequestSenderIdResponse result = apiInstance.RequestSenderId(body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AuthenticationApi.RequestSenderId: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RequestSenderIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Messaging - Request Sender ID
+    ApiResponse<RequestSenderIdResponse> response = apiInstance.RequestSenderIdWithHttpInfo(body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AuthenticationApi.RequestSenderIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **body** | **Object** |  | [optional]  |
+
+### Return type
+
+[**RequestSenderIdResponse**](RequestSenderIdResponse.md)
+
+### Authorization
+
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="sendotp"></a>
+# **SendOtp**
+> SendOtpResponse SendOtp (Object body = null)
+
+Messaging - Send OTP
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Dojah.Net.Api;
+using Dojah.Net.Client;
+using Dojah.Net.Model;
+
+namespace Example
+{
+    public class SendOtpExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.dojah.io";
+            // Configure API key authorization: apikeyAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: appIdAuth
+            config.AddApiKey("AppId", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("AppId", "Bearer");
+
+            var apiInstance = new AuthenticationApi(config);
+            var body = null;  // Object |  (optional) 
+
+            try
+            {
+                // Messaging - Send OTP
+                SendOtpResponse result = apiInstance.SendOtp(body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AuthenticationApi.SendOtp: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SendOtpWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Messaging - Send OTP
+    ApiResponse<SendOtpResponse> response = apiInstance.SendOtpWithHttpInfo(body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AuthenticationApi.SendOtpWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **body** | **Object** |  | [optional]  |
+
+### Return type
+
+[**SendOtpResponse**](SendOtpResponse.md)
+
+### Authorization
+
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="sendsms"></a>
+# **SendSms**
+> SendSmsResponse SendSms (Object body = null)
+
+Messaging - Send SMS
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Dojah.Net.Api;
+using Dojah.Net.Client;
+using Dojah.Net.Model;
+
+namespace Example
+{
+    public class SendSmsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.dojah.io";
+            // Configure API key authorization: apikeyAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: appIdAuth
+            config.AddApiKey("AppId", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("AppId", "Bearer");
+
+            var apiInstance = new AuthenticationApi(config);
+            var body = null;  // Object |  (optional) 
+
+            try
+            {
+                // Messaging - Send SMS
+                SendSmsResponse result = apiInstance.SendSms(body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AuthenticationApi.SendSms: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SendSmsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Messaging - Send SMS
+    ApiResponse<SendSmsResponse> response = apiInstance.SendSmsWithHttpInfo(body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AuthenticationApi.SendSmsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **body** | **Object** |  | [optional]  |
+
+### Return type
+
+[**SendSmsResponse**](SendSmsResponse.md)
+
+### Authorization
+
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="validateotp"></a>
+# **ValidateOtp**
+> ValidateOtpResponse ValidateOtp (string referenceId = null, int? code = null)
+
+Messaging - Validate OTP
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Dojah.Net.Api;
+using Dojah.Net.Client;
+using Dojah.Net.Model;
+
+namespace Example
+{
+    public class ValidateOtpExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.dojah.io";
+            // Configure API key authorization: apikeyAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: appIdAuth
+            config.AddApiKey("AppId", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("AppId", "Bearer");
+
+            var apiInstance = new AuthenticationApi(config);
+            var referenceId = a89e4b64-367f-414f-a189-1800bc364b05;  // string |  (optional) 
+            var code = 81974;  // int? |  (optional) 
+
+            try
+            {
+                // Messaging - Validate OTP
+                ValidateOtpResponse result = apiInstance.ValidateOtp(referenceId, code);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AuthenticationApi.ValidateOtp: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ValidateOtpWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Messaging - Validate OTP
+    ApiResponse<ValidateOtpResponse> response = apiInstance.ValidateOtpWithHttpInfo(referenceId, code);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AuthenticationApi.ValidateOtpWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **referenceId** | **string** |  | [optional]  |
+| **code** | **int?** |  | [optional]  |
+
+### Return type
+
+[**ValidateOtpResponse**](ValidateOtpResponse.md)
+
+### Authorization
+
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
