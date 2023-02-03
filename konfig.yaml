@@ -18,7 +18,6 @@ generators:
       userId: konfig-dev
       repoId: dojah-sdks/tree/main/typescript
   python:
-    disabled: true
     version: 1.0.0
     packageName: dojah_client
     projectName: dojah-python-sdk
@@ -27,7 +26,6 @@ generators:
       userId: konfig-dev
       repoId: dojah-sdks/tree/main/python
   csharp:
-    disabled: true
     version: 1.0.0
     packageName: Dojah.Net
     outputDirectory: csharp
@@ -36,7 +34,6 @@ generators:
       userId: konfig-dev
       repoId: dojah-sdks/tree/main/csharp
   go:
-    disabled: true
     version: 1.0.0
     packageName: dojah
     outputDirectory: go
