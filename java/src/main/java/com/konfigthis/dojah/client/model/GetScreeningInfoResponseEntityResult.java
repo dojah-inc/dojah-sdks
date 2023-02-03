@@ -19,7 +19,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.konfigthis.dojah.client.model.GetAccountSubscriptionsResponseEntitySubscriptionsInner;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -55,7 +54,7 @@ import com.konfigthis.dojah.client.JSON;
 public class GetScreeningInfoResponseEntityResult {
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
-  private List<GetAccountSubscriptionsResponseEntitySubscriptionsInner> addresses = null;
+  private List<String> addresses = null;
 
   public static final String SERIALIZED_NAME_AKA = "aka";
   @SerializedName(SERIALIZED_NAME_AKA)
@@ -63,7 +62,7 @@ public class GetScreeningInfoResponseEntityResult {
 
   public static final String SERIALIZED_NAME_ALIASES = "aliases";
   @SerializedName(SERIALIZED_NAME_ALIASES)
-  private List<GetAccountSubscriptionsResponseEntitySubscriptionsInner> aliases = null;
+  private List<String> aliases = null;
 
   public static final String SERIALIZED_NAME_COUNTRY_NAME = "countryName";
   @SerializedName(SERIALIZED_NAME_COUNTRY_NAME)
@@ -147,7 +146,7 @@ public class GetScreeningInfoResponseEntityResult {
 
   public static final String SERIALIZED_NAME_RELATIONSHIPS = "relationships";
   @SerializedName(SERIALIZED_NAME_RELATIONSHIPS)
-  private List<GetAccountSubscriptionsResponseEntitySubscriptionsInner> relationships = null;
+  private List<String> relationships = null;
 
   public static final String SERIALIZED_NAME_REMARKS = "remarks";
   @SerializedName(SERIALIZED_NAME_REMARKS)
@@ -180,13 +179,13 @@ public class GetScreeningInfoResponseEntityResult {
   public GetScreeningInfoResponseEntityResult() {
   }
 
-  public GetScreeningInfoResponseEntityResult addresses(List<GetAccountSubscriptionsResponseEntitySubscriptionsInner> addresses) {
+  public GetScreeningInfoResponseEntityResult addresses(List<String> addresses) {
     
     this.addresses = addresses;
     return this;
   }
 
-  public GetScreeningInfoResponseEntityResult addAddressesItem(GetAccountSubscriptionsResponseEntitySubscriptionsInner addressesItem) {
+  public GetScreeningInfoResponseEntityResult addAddressesItem(String addressesItem) {
     if (this.addresses == null) {
       this.addresses = new ArrayList<>();
     }
@@ -201,12 +200,12 @@ public class GetScreeningInfoResponseEntityResult {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<GetAccountSubscriptionsResponseEntitySubscriptionsInner> getAddresses() {
+  public List<String> getAddresses() {
     return addresses;
   }
 
 
-  public void setAddresses(List<GetAccountSubscriptionsResponseEntitySubscriptionsInner> addresses) {
+  public void setAddresses(List<String> addresses) {
     this.addresses = addresses;
   }
 
@@ -234,13 +233,13 @@ public class GetScreeningInfoResponseEntityResult {
   }
 
 
-  public GetScreeningInfoResponseEntityResult aliases(List<GetAccountSubscriptionsResponseEntitySubscriptionsInner> aliases) {
+  public GetScreeningInfoResponseEntityResult aliases(List<String> aliases) {
     
     this.aliases = aliases;
     return this;
   }
 
-  public GetScreeningInfoResponseEntityResult addAliasesItem(GetAccountSubscriptionsResponseEntitySubscriptionsInner aliasesItem) {
+  public GetScreeningInfoResponseEntityResult addAliasesItem(String aliasesItem) {
     if (this.aliases == null) {
       this.aliases = new ArrayList<>();
     }
@@ -255,12 +254,12 @@ public class GetScreeningInfoResponseEntityResult {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<GetAccountSubscriptionsResponseEntitySubscriptionsInner> getAliases() {
+  public List<String> getAliases() {
     return aliases;
   }
 
 
-  public void setAliases(List<GetAccountSubscriptionsResponseEntitySubscriptionsInner> aliases) {
+  public void setAliases(List<String> aliases) {
     this.aliases = aliases;
   }
 
@@ -725,13 +724,13 @@ public class GetScreeningInfoResponseEntityResult {
   }
 
 
-  public GetScreeningInfoResponseEntityResult relationships(List<GetAccountSubscriptionsResponseEntitySubscriptionsInner> relationships) {
+  public GetScreeningInfoResponseEntityResult relationships(List<String> relationships) {
     
     this.relationships = relationships;
     return this;
   }
 
-  public GetScreeningInfoResponseEntityResult addRelationshipsItem(GetAccountSubscriptionsResponseEntitySubscriptionsInner relationshipsItem) {
+  public GetScreeningInfoResponseEntityResult addRelationshipsItem(String relationshipsItem) {
     if (this.relationships == null) {
       this.relationships = new ArrayList<>();
     }
@@ -746,12 +745,12 @@ public class GetScreeningInfoResponseEntityResult {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<GetAccountSubscriptionsResponseEntitySubscriptionsInner> getRelationships() {
+  public List<String> getRelationships() {
     return relationships;
   }
 
 
-  public void setRelationships(List<GetAccountSubscriptionsResponseEntitySubscriptionsInner> relationships) {
+  public void setRelationships(List<String> relationships) {
     this.relationships = relationships;
   }
 
@@ -1116,36 +1115,16 @@ public class GetScreeningInfoResponseEntityResult {
           throw new IllegalArgumentException(String.format("The required field(s) %s in GetScreeningInfoResponseEntityResult is not found in the empty JSON string", GetScreeningInfoResponseEntityResult.openapiRequiredFields.toString()));
         }
       }
-      if (jsonObj.get("addresses") != null && !jsonObj.get("addresses").isJsonNull()) {
-        JsonArray jsonArrayaddresses = jsonObj.getAsJsonArray("addresses");
-        if (jsonArrayaddresses != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("addresses").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `addresses` to be an array in the JSON string but got `%s`", jsonObj.get("addresses").toString()));
-          }
-
-          // validate the optional field `addresses` (array)
-          for (int i = 0; i < jsonArrayaddresses.size(); i++) {
-            GetAccountSubscriptionsResponseEntitySubscriptionsInner.validateJsonObject(jsonArrayaddresses.get(i).getAsJsonObject());
-          };
-        }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("addresses") != null && !jsonObj.get("addresses").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `addresses` to be an array in the JSON string but got `%s`", jsonObj.get("addresses").toString()));
       }
       if ((jsonObj.get("aka") != null && !jsonObj.get("aka").isJsonNull()) && !jsonObj.get("aka").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `aka` to be a primitive type in the JSON string but got `%s`", jsonObj.get("aka").toString()));
       }
-      if (jsonObj.get("aliases") != null && !jsonObj.get("aliases").isJsonNull()) {
-        JsonArray jsonArrayaliases = jsonObj.getAsJsonArray("aliases");
-        if (jsonArrayaliases != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("aliases").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `aliases` to be an array in the JSON string but got `%s`", jsonObj.get("aliases").toString()));
-          }
-
-          // validate the optional field `aliases` (array)
-          for (int i = 0; i < jsonArrayaliases.size(); i++) {
-            GetAccountSubscriptionsResponseEntitySubscriptionsInner.validateJsonObject(jsonArrayaliases.get(i).getAsJsonObject());
-          };
-        }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("aliases") != null && !jsonObj.get("aliases").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `aliases` to be an array in the JSON string but got `%s`", jsonObj.get("aliases").toString()));
       }
       if ((jsonObj.get("countryName") != null && !jsonObj.get("countryName").isJsonNull()) && !jsonObj.get("countryName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `countryName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("countryName").toString()));
@@ -1201,19 +1180,9 @@ public class GetScreeningInfoResponseEntityResult {
       if ((jsonObj.get("primaryName") != null && !jsonObj.get("primaryName").isJsonNull()) && !jsonObj.get("primaryName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `primaryName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primaryName").toString()));
       }
-      if (jsonObj.get("relationships") != null && !jsonObj.get("relationships").isJsonNull()) {
-        JsonArray jsonArrayrelationships = jsonObj.getAsJsonArray("relationships");
-        if (jsonArrayrelationships != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("relationships").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `relationships` to be an array in the JSON string but got `%s`", jsonObj.get("relationships").toString()));
-          }
-
-          // validate the optional field `relationships` (array)
-          for (int i = 0; i < jsonArrayrelationships.size(); i++) {
-            GetAccountSubscriptionsResponseEntitySubscriptionsInner.validateJsonObject(jsonArrayrelationships.get(i).getAsJsonObject());
-          };
-        }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("relationships") != null && !jsonObj.get("relationships").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `relationships` to be an array in the JSON string but got `%s`", jsonObj.get("relationships").toString()));
       }
       if ((jsonObj.get("remarks") != null && !jsonObj.get("remarks").isJsonNull()) && !jsonObj.get("remarks").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `remarks` to be a primitive type in the JSON string but got `%s`", jsonObj.get("remarks").toString()));

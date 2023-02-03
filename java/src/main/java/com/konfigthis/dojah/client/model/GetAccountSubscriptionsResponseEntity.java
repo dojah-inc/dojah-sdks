@@ -19,7 +19,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.konfigthis.dojah.client.model.GetAccountSubscriptionsResponseEntitySubscriptionsInner;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -55,7 +54,7 @@ import com.konfigthis.dojah.client.JSON;
 public class GetAccountSubscriptionsResponseEntity {
   public static final String SERIALIZED_NAME_SUBSCRIPTIONS = "subscriptions";
   @SerializedName(SERIALIZED_NAME_SUBSCRIPTIONS)
-  private List<GetAccountSubscriptionsResponseEntitySubscriptionsInner> subscriptions = null;
+  private List<String> subscriptions = null;
 
   public static final String SERIALIZED_NAME_TOTAL = "total";
   @SerializedName(SERIALIZED_NAME_TOTAL)
@@ -80,13 +79,13 @@ public class GetAccountSubscriptionsResponseEntity {
   public GetAccountSubscriptionsResponseEntity() {
   }
 
-  public GetAccountSubscriptionsResponseEntity subscriptions(List<GetAccountSubscriptionsResponseEntitySubscriptionsInner> subscriptions) {
+  public GetAccountSubscriptionsResponseEntity subscriptions(List<String> subscriptions) {
     
     this.subscriptions = subscriptions;
     return this;
   }
 
-  public GetAccountSubscriptionsResponseEntity addSubscriptionsItem(GetAccountSubscriptionsResponseEntitySubscriptionsInner subscriptionsItem) {
+  public GetAccountSubscriptionsResponseEntity addSubscriptionsItem(String subscriptionsItem) {
     if (this.subscriptions == null) {
       this.subscriptions = new ArrayList<>();
     }
@@ -101,12 +100,12 @@ public class GetAccountSubscriptionsResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<GetAccountSubscriptionsResponseEntitySubscriptionsInner> getSubscriptions() {
+  public List<String> getSubscriptions() {
     return subscriptions;
   }
 
 
-  public void setSubscriptions(List<GetAccountSubscriptionsResponseEntitySubscriptionsInner> subscriptions) {
+  public void setSubscriptions(List<String> subscriptions) {
     this.subscriptions = subscriptions;
   }
 
@@ -350,19 +349,9 @@ public class GetAccountSubscriptionsResponseEntity {
           throw new IllegalArgumentException(String.format("The required field(s) %s in GetAccountSubscriptionsResponseEntity is not found in the empty JSON string", GetAccountSubscriptionsResponseEntity.openapiRequiredFields.toString()));
         }
       }
-      if (jsonObj.get("subscriptions") != null && !jsonObj.get("subscriptions").isJsonNull()) {
-        JsonArray jsonArraysubscriptions = jsonObj.getAsJsonArray("subscriptions");
-        if (jsonArraysubscriptions != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("subscriptions").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `subscriptions` to be an array in the JSON string but got `%s`", jsonObj.get("subscriptions").toString()));
-          }
-
-          // validate the optional field `subscriptions` (array)
-          for (int i = 0; i < jsonArraysubscriptions.size(); i++) {
-            GetAccountSubscriptionsResponseEntitySubscriptionsInner.validateJsonObject(jsonArraysubscriptions.get(i).getAsJsonObject());
-          };
-        }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("subscriptions") != null && !jsonObj.get("subscriptions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `subscriptions` to be an array in the JSON string but got `%s`", jsonObj.get("subscriptions").toString()));
       }
       if ((jsonObj.get("previous_page") != null && !jsonObj.get("previous_page").isJsonNull()) && !jsonObj.get("previous_page").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `previous_page` to be a primitive type in the JSON string but got `%s`", jsonObj.get("previous_page").toString()));

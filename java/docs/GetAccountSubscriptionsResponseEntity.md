@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**subscriptions** | [**List&lt;GetAccountSubscriptionsResponseEntitySubscriptionsInner&gt;**](GetAccountSubscriptionsResponseEntitySubscriptionsInner.md) |  |  [optional] |
+|**subscriptions** | **List&lt;String&gt;** |  |  [optional] |
 |**total** | **BigDecimal** |  |  [optional] |
 |**previousPage** | **String** |  |  [optional] |
 |**nextPage** | **String** |  |  [optional] |

@@ -5419,7 +5419,7 @@ components:
           date_created: 2021-07-19T11:54:01.905196Z
       properties:
         entity:
-          $ref: '#/components/schemas/GetTransactionResponse_entity'
+          $ref: '#/components/schemas/CreditSubwalletResponse_entity'
       type: object
     GetAccountTransactionsResponse:
       example:
@@ -7945,6 +7945,7 @@ components:
           example: Dojah-wallet-credit
           type: string
         transaction_reason:
+          example: wallet has Insufficient balance
           nullable: true
           type: string
         transaction_id:
@@ -7988,6 +7989,39 @@ components:
           type: string
         date_created:
           example: 2021-07-19T10:44:03.610405Z
+          type: string
+      type: object
+    CreditSubwalletResponse_entity:
+      properties:
+        wallet_id:
+          example: 867a8cae-8073-4914-8b04-d7fd096c1006
+          type: string
+        transaction_amount:
+          example: 100
+          type: number
+        transaction_type:
+          example: deposit
+          type: string
+        recipient_account_number:
+          example: "1004204891"
+          type: string
+        sender_account_number:
+          example: ""
+          type: string
+        transaction_remarks:
+          example: Dojah-wallet-credit
+          type: string
+        transaction_reason:
+          nullable: true
+          type: string
+        transaction_id:
+          example: Dojah-c02585e5-9a8b-4230-8c1b-11fd2869f4ce
+          type: string
+        transaction_status:
+          example: COMPLETED
+          type: string
+        date_created:
+          example: 2021-07-19T11:54:01.905196Z
           type: string
       type: object
     GetAccountTransactionsResponse_entity_transactions_inner:
@@ -8041,15 +8075,11 @@ components:
           example: 1
           type: number
       type: object
-    GetAccountSubscriptionsResponse_entity_subscriptions_inner:
-      oneOf:
-      - type: string
-      - type: number
     GetAccountSubscriptionsResponse_entity:
       properties:
         subscriptions:
           items:
-            $ref: '#/components/schemas/GetAccountSubscriptionsResponse_entity_subscriptions_inner'
+            type: string
           type: array
         total:
           example: 0
@@ -8728,14 +8758,14 @@ components:
       properties:
         addresses:
           items:
-            $ref: '#/components/schemas/GetAccountSubscriptionsResponse_entity_subscriptions_inner'
+            type: string
           type: array
         aka:
           example: ""
           type: string
         aliases:
           items:
-            $ref: '#/components/schemas/GetAccountSubscriptionsResponse_entity_subscriptions_inner'
+            type: string
           type: array
         countryName:
           example: Nigeria
@@ -8799,7 +8829,7 @@ components:
           type: number
         relationships:
           items:
-            $ref: '#/components/schemas/GetAccountSubscriptionsResponse_entity_subscriptions_inner'
+            type: string
           type: array
         remarks:
           example: "According to NG-Economic and Financial Crimes Commission (EFCC);\

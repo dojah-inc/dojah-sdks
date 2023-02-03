@@ -360,10 +360,77 @@ export interface CreateWalletResponseEntity {
 export interface CreditSubwalletResponse {
     /**
      * 
-     * @type {GetTransactionResponseEntity}
+     * @type {CreditSubwalletResponseEntity}
      * @memberof CreditSubwalletResponse
      */
-    'entity'?: GetTransactionResponseEntity;
+    'entity'?: CreditSubwalletResponseEntity;
+}
+/**
+ * 
+ * @export
+ * @interface CreditSubwalletResponseEntity
+ */
+export interface CreditSubwalletResponseEntity {
+    /**
+     * 
+     * @type {string}
+     * @memberof CreditSubwalletResponseEntity
+     */
+    'wallet_id'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof CreditSubwalletResponseEntity
+     */
+    'transaction_amount'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreditSubwalletResponseEntity
+     */
+    'transaction_type'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreditSubwalletResponseEntity
+     */
+    'recipient_account_number'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreditSubwalletResponseEntity
+     */
+    'sender_account_number'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreditSubwalletResponseEntity
+     */
+    'transaction_remarks'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreditSubwalletResponseEntity
+     */
+    'transaction_reason'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreditSubwalletResponseEntity
+     */
+    'transaction_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreditSubwalletResponseEntity
+     */
+    'transaction_status'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreditSubwalletResponseEntity
+     */
+    'date_created'?: string;
 }
 /**
  * 
@@ -1428,10 +1495,10 @@ export interface GetAccountSubscriptionsResponse {
 export interface GetAccountSubscriptionsResponseEntity {
     /**
      * 
-     * @type {Array<GetAccountSubscriptionsResponseEntitySubscriptionsInner>}
+     * @type {Array<string>}
      * @memberof GetAccountSubscriptionsResponseEntity
      */
-    'subscriptions'?: Array<GetAccountSubscriptionsResponseEntitySubscriptionsInner>;
+    'subscriptions'?: Array<string>;
     /**
      * 
      * @type {number}
@@ -1463,12 +1530,6 @@ export interface GetAccountSubscriptionsResponseEntity {
      */
     'current_page'?: number;
 }
-/**
- * @type GetAccountSubscriptionsResponseEntitySubscriptionsInner
- * @export
- */
-export type GetAccountSubscriptionsResponseEntitySubscriptionsInner = number | string;
-
 /**
  * 
  * @export
@@ -3687,10 +3748,10 @@ export interface GetScreeningInfoResponseEntity {
 export interface GetScreeningInfoResponseEntityResult {
     /**
      * 
-     * @type {Array<GetAccountSubscriptionsResponseEntitySubscriptionsInner>}
+     * @type {Array<string>}
      * @memberof GetScreeningInfoResponseEntityResult
      */
-    'addresses'?: Array<GetAccountSubscriptionsResponseEntitySubscriptionsInner>;
+    'addresses'?: Array<string>;
     /**
      * 
      * @type {string}
@@ -3699,10 +3760,10 @@ export interface GetScreeningInfoResponseEntityResult {
     'aka'?: string;
     /**
      * 
-     * @type {Array<GetAccountSubscriptionsResponseEntitySubscriptionsInner>}
+     * @type {Array<string>}
      * @memberof GetScreeningInfoResponseEntityResult
      */
-    'aliases'?: Array<GetAccountSubscriptionsResponseEntitySubscriptionsInner>;
+    'aliases'?: Array<string>;
     /**
      * 
      * @type {string}
@@ -3825,10 +3886,10 @@ export interface GetScreeningInfoResponseEntityResult {
     'relatedId'?: number;
     /**
      * 
-     * @type {Array<GetAccountSubscriptionsResponseEntitySubscriptionsInner>}
+     * @type {Array<string>}
      * @memberof GetScreeningInfoResponseEntityResult
      */
-    'relationships'?: Array<GetAccountSubscriptionsResponseEntitySubscriptionsInner>;
+    'relationships'?: Array<string>;
     /**
      * 
      * @type {string}

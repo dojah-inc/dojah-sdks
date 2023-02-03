@@ -10,7 +10,7 @@ generators:
       userId: konfig-dev
       repoId: dojah-sdks/tree/main/java
   typescript:
-    version: 1.1.0
+    version: 1.2.0
     npmName: dojah-typescript-sdk
     readmeSnippet: snippets/typescript.ts
     outputDirectory: typescript

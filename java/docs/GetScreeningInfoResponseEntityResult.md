@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**addresses** | [**List&lt;GetAccountSubscriptionsResponseEntitySubscriptionsInner&gt;**](GetAccountSubscriptionsResponseEntitySubscriptionsInner.md) |  |  [optional] |
+|**addresses** | **List&lt;String&gt;** |  |  [optional] |
 |**aka** | **String** |  |  [optional] |
-|**aliases** | [**List&lt;GetAccountSubscriptionsResponseEntitySubscriptionsInner&gt;**](GetAccountSubscriptionsResponseEntitySubscriptionsInner.md) |  |  [optional] |
+|**aliases** | **List&lt;String&gt;** |  |  [optional] |
 |**countryName** | **String** |  |  [optional] |
 |**dob** | **String** |  |  [optional] |
 |**dob2** | **String** |  |  [optional] |
@@ -30,7 +30,7 @@
 |**prefix** | **String** |  |  [optional] |
 |**primaryName** | **String** |  |  [optional] |
 |**relatedId** | **BigDecimal** |  |  [optional] |
-|**relationships** | [**List&lt;GetAccountSubscriptionsResponseEntitySubscriptionsInner&gt;**](GetAccountSubscriptionsResponseEntitySubscriptionsInner.md) |  |  [optional] |
+|**relationships** | **List&lt;String&gt;** |  |  [optional] |
 |**remarks** | **String** |  |  [optional] |
 |**sourceName** | **String** |  |  [optional] |
 |**sourceWebLinks** | **String** |  |  [optional] |

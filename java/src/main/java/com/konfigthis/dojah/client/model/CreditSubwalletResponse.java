@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.konfigthis.dojah.client.model.GetTransactionResponseEntity;
+import com.konfigthis.dojah.client.model.CreditSubwalletResponseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -52,12 +52,12 @@ import com.konfigthis.dojah.client.JSON;
 public class CreditSubwalletResponse {
   public static final String SERIALIZED_NAME_ENTITY = "entity";
   @SerializedName(SERIALIZED_NAME_ENTITY)
-  private GetTransactionResponseEntity entity;
+  private CreditSubwalletResponseEntity entity;
 
   public CreditSubwalletResponse() {
   }
 
-  public CreditSubwalletResponse entity(GetTransactionResponseEntity entity) {
+  public CreditSubwalletResponse entity(CreditSubwalletResponseEntity entity) {
     
     this.entity = entity;
     return this;
@@ -70,12 +70,12 @@ public class CreditSubwalletResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public GetTransactionResponseEntity getEntity() {
+  public CreditSubwalletResponseEntity getEntity() {
     return entity;
   }
 
 
-  public void setEntity(GetTransactionResponseEntity entity) {
+  public void setEntity(CreditSubwalletResponseEntity entity) {
     this.entity = entity;
   }
 
@@ -191,7 +191,7 @@ public class CreditSubwalletResponse {
       }
       // validate the optional field `entity`
       if (jsonObj.get("entity") != null && !jsonObj.get("entity").isJsonNull()) {
-        GetTransactionResponseEntity.validateJsonObject(jsonObj.getAsJsonObject("entity"));
+        CreditSubwalletResponseEntity.validateJsonObject(jsonObj.getAsJsonObject("entity"));
       }
   }
 

@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**entity** | [**GetTransactionResponseEntity**](GetTransactionResponseEntity.md) |  |  [optional] |
+|**entity** | [**CreditSubwalletResponseEntity**](CreditSubwalletResponseEntity.md) |  |  [optional] |
 
 
 

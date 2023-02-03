@@ -106,6 +106,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.CreateWalletResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.CreateWalletResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.CreditSubwalletResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.CreditSubwalletResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.DeleteWebhookResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.FinancialGetBasicBvnResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.FinancialGetBasicBvnResponseEntity.CustomTypeAdapterFactory());
@@ -124,7 +125,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetAccountResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetAccountSubscriptionsResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetAccountSubscriptionsResponseEntity.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetAccountSubscriptionsResponseEntitySubscriptionsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetAccountTransactionsResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetAccountTransactionsResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetAccountTransactionsResponseEntityTransactionsInner.CustomTypeAdapterFactory());
