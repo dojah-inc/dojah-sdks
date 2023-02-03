@@ -8,17 +8,26 @@
 """
 
 
+import os
 import unittest
 
 import dojah_client
-from dojah_client.api.ghkyc_api import GHKYCApi  # noqa: E501
+from dojah_client.api.ghkyc_api import GHKYCApi
+from python.dojah_client.api_client import ApiClient
+from python.dojah_client.configuration import Configuration  # noqa: E501
 
 
 class TestGHKYCApi(unittest.TestCase):
     """GHKYCApi unit test stubs"""
 
     def setUp(self):
-        self.api = GHKYCApi()  # noqa: E501
+        configuration = Configuration(api_key={
+            'apikeyAuth': os.environ["DOJAH_API_KEY"],
+            'appIdAuth': os.environ["DOJAH_APP_ID"]
+        })
+        configuration.server_index = 1
+        api_client = ApiClient(configuration)
+        self.api = GHKYCApi(api_client)  # noqa: E501
 
     def tearDown(self):
         pass
@@ -28,14 +37,18 @@ class TestGHKYCApi(unittest.TestCase):
 
         Driver's License  # noqa: E501
         """
-        pass
+        response = self.api.get_drivers_license(
+            id="V0000", full_name="John Doe", date_of_birth="1988-09-01")
+        assert response is not None, "Received null response"
 
     def test_get_passport(self):
         """Test case for get_passport
 
         Passport  # noqa: E501
         """
-        pass
+        response = self.api.get_passport(id="V0000", first_name="John",
+                                         last_name="Doe", middle_name="", date_of_birth="1988-09-01")
+        assert response is not None, "Received null response"
 
     def test_get_ssnit(self):
         """Test case for get_ssnit

@@ -18,6 +18,7 @@ using Xunit;
 
 using Dojah.Net.Client;
 using Dojah.Net.Api;
+using Dojah.Net.Model;
 // uncomment below to import models
 //using Dojah.Net.Model;
 
@@ -36,7 +37,13 @@ namespace Dojah.Net.Test.Api
 
         public GHKYCApiTests()
         {
-            instance = new GHKYCApi();
+            Configuration config = new Configuration();
+            string apiKey = System.Environment.GetEnvironmentVariable("DOJAH_API_KEY");
+            string appId = System.Environment.GetEnvironmentVariable("DOJAH_APP_ID");
+            config.ApiKey.Add("Authorization", apiKey);
+            config.ApiKey.Add("AppId", appId);
+            config.BasePath = "https://sandbox.dojah.io";
+            instance = new GHKYCApi(config);
         }
 
         public void Dispose()
@@ -60,12 +67,11 @@ namespace Dojah.Net.Test.Api
         [Fact]
         public void GetDriversLicenseTest()
         {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string id = null;
-            //string fullName = null;
-            //string dateOfBirth = null;
-            //var response = instance.GetDriversLicense(id, fullName, dateOfBirth);
-            //Assert.IsType<GetDriversLicenseResponse>(response);
+            string id = "V0000";
+            string fullName = "John Doe";
+            string dateOfBirth = "1988-09-01";
+            var response = instance.GetDriversLicense(id, fullName, dateOfBirth);
+            Assert.IsType<GetDriversLicenseResponse>(response);
         }
 
         /// <summary>
@@ -74,14 +80,13 @@ namespace Dojah.Net.Test.Api
         [Fact]
         public void GetPassportTest()
         {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string id = null;
-            //string firstName = null;
-            //string lastName = null;
-            //string middleName = null;
-            //string dateOfBirth = null;
-            //var response = instance.GetPassport(id, firstName, lastName, middleName, dateOfBirth);
-            //Assert.IsType<GetPassportResponse>(response);
+            string id = "V0000";
+            string firstName = "John";
+            string lastName = "Doe";
+            string middleName = "";
+            string dateOfBirth = "1988-09-01";
+            var response = instance.GetPassport(id, firstName, lastName, middleName, dateOfBirth);
+            Assert.IsType<GetPassportResponse>(response);
         }
 
         /// <summary>
