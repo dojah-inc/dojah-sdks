@@ -36,19 +36,19 @@ npm install dojah-typescript-sdk@1.0.0 --save
 ### Getting Started
 
 ```typescript
-
-import { Configuration, AMLApi, GetScreeningInfoResponse } from "dojah-typescript-sdk";
-
-const apiKey = process.env.API_KEY;
-const config = new Configuration({ apiKey });
-
-const api = new AMLApi(config);
-
-const referenceId: string = "c574a3c8-dc27-4013-8bbc-462e7ed87d55";
-
-const request = api.getScreeningInfo(referenceId);
-request.then(result => {
-    console.log(result)
-})
+import { Configuration, GHKYCApi } from "dojah-typescript-sdk";
+const configuration = new Configuration({
+  apiKey: (name) => {
+    if (name === "Authorization") return process.env.DOJAH_API_KEY;
+    if (name === "AppId") return process.env.DOJAH_APP_ID;
+    throw Error();
+  },
+  basePath: "https://api.dojah.io",
+});
+const api = new GHKYCApi(configuration);
+const request = api.getDriversLicense("V0000000", "John Doe", "1988-09-01");
+request.then((result) => {
+  console.log(result);
+});
 
 ```
