@@ -9,28 +9,39 @@
  * Do not edit the class manually.
  */
 
-
 package com.konfigthis.dojah.client.api;
 
+import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.ApiKeyAuth;
 import com.konfigthis.dojah.client.model.GetDriversLicenseResponse;
 import com.konfigthis.dojah.client.model.GetPassportResponse;
 import com.konfigthis.dojah.client.model.GetSsnitResponse;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.junit.BeforeClass;
+import org.junit.jupiter.api.Disabled;
+import org.junit.Test;
 
 /**
  * API tests for GhKycApi
  */
-@Disabled
 public class GhKycApiTest {
 
-    private final GhKycApi api = new GhKycApi();
+    private static GhKycApi api;
+
+    @BeforeClass
+    public static void beforeClass() {
+        ApiClient apiClient = Configuration.getDefaultApiClient();
+        ApiKeyAuth apiKey = (ApiKeyAuth) apiClient.getAuthentication("apikeyAuth");
+        ApiKeyAuth appId = (ApiKeyAuth) apiClient.getAuthentication("appIdAuth");
+        apiClient.setBasePath("https://sandbox.dojah.io");
+        apiKey.setApiKey(System.getenv("DOJAH_API_KEY"));
+        appId.setApiKey(System.getenv("DOJAH_APP_ID"));
+        api = new GhKycApi(apiClient);
+    }
 
     /**
      * Driver&#39;s License
@@ -39,11 +50,11 @@ public class GhKycApiTest {
      */
     @Test
     public void getDriversLicenseTest() throws ApiException {
-        String id = null;
-        String fullName = null;
-        String dateOfBirth = null;
+        String id = "V0000";
+        String fullName = "John Doe";
+        String dateOfBirth = "1988-09-01";
         GetDriversLicenseResponse response = api.getDriversLicense(id, fullName, dateOfBirth);
-        // TODO: test validations
+        assertNotNull(response, "Response is null");
     }
 
     /**
@@ -53,13 +64,13 @@ public class GhKycApiTest {
      */
     @Test
     public void getPassportTest() throws ApiException {
-        String id = null;
-        String firstName = null;
-        String lastName = null;
-        String middleName = null;
-        String dateOfBirth = null;
+        String id = "V0000";
+        String firstName = "John";
+        String lastName = "Doe";
+        String middleName = "";
+        String dateOfBirth = "1988-09-01";
         GetPassportResponse response = api.getPassport(id, firstName, lastName, middleName, dateOfBirth);
-        // TODO: test validations
+        assertNotNull(response, "Response is null");
     }
 
     /**
@@ -67,6 +78,7 @@ public class GhKycApiTest {
      *
      * @throws ApiException if the Api call fails
      */
+    @Disabled
     @Test
     public void getSsnitTest() throws ApiException {
         String id = null;
