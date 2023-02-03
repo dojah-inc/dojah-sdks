@@ -37,6 +37,11 @@ from pprint import pprint
 from dojah_client.api import aml_api
 from dojah_client.model.get_screening_info_response import GetScreeningInfoResponse
 from dojah_client.model.screen_aml_response import ScreenAmlResponse
+
+# Configure base path by assigning "server_index"
+# configuration.server_index = 0 # https://api.dojah.io
+# configuration.server_index = 1 # https://sandbox.dojah.io
+
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
