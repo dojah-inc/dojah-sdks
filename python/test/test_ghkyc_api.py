@@ -13,8 +13,8 @@ import unittest
 
 import dojah_client
 from dojah_client.api.ghkyc_api import GHKYCApi
-from python.dojah_client.api_client import ApiClient
-from python.dojah_client.configuration import Configuration  # noqa: E501
+from dojah_client.api_client import ApiClient
+from dojah_client.configuration import Configuration  # noqa: E501
 
 
 class TestGHKYCApi(unittest.TestCase):
