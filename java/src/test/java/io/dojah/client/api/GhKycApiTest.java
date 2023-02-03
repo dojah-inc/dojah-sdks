@@ -9,20 +9,18 @@
  * Do not edit the class manually.
  */
 
-
 package io.dojah.client.api;
 
+import io.dojah.client.ApiClient;
 import io.dojah.client.ApiException;
+import io.dojah.client.Configuration;
+import io.dojah.client.auth.ApiKeyAuth;
 import io.dojah.client.model.GetDriversLicenseResponse;
 import io.dojah.client.model.GetPassportResponse;
 import io.dojah.client.model.GetSsnitResponse;
 import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 /**
  * API tests for GhKycApi
@@ -30,7 +28,17 @@ import java.util.Map;
 @Disabled
 public class GhKycApiTest {
 
-    private final GhKycApi api = new GhKycApi();
+    private static GhKycApi api;
+
+    @BeforeClass
+    public static void beforeClass() {
+        ApiClient apiClient = Configuration.getDefaultApiClient();
+        ApiKeyAuth apiKey = (ApiKeyAuth) apiClient.getAuthentication("apikeyAuth");
+        ApiKeyAuth appId = (ApiKeyAuth) apiClient.getAuthentication("appIdAuth");
+        apiKey.setApiKey(System.getenv("DOJAH_API_KEY"));
+        appId.setApiKey(System.getenv("DOJAH_APP_ID"));
+        api = new GhKycApi(apiClient);
+    }
 
     /**
      * Driver&#39;s License
