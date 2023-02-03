@@ -1,4 +1,4 @@
-## dojah-typescript-sdk@1.0.0
+## dojah-typescript-sdk@1.1.0
 
 This generator creates TypeScript/JavaScript client that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
 
@@ -30,7 +30,7 @@ npm run build
 navigate to the folder of your consuming project and run the following command.
 
 ```
-npm install dojah-typescript-sdk@1.0.0 --save
+npm install dojah-typescript-sdk@1.1.0 --save
 ```
 
 ### Getting Started
@@ -43,7 +43,8 @@ const configuration = new Configuration({
     if (name === "AppId") return process.env.DOJAH_APP_ID;
     throw Error();
   },
-  basePath: "https://api.dojah.io",
+  // Uncomment the below configuration to use sandbox environment
+  // basePath: "https://sandbox.dojah.io",
 });
 const api = new GHKYCApi(configuration);
 const request = api.getDriversLicense("V0000000", "John Doe", "1988-09-01");

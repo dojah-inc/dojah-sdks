@@ -5,7 +5,8 @@ const configuration = new Configuration({
     if (name === "AppId") return process.env.DOJAH_APP_ID;
     throw Error();
   },
-  basePath: "https://api.dojah.io",
+  // Uncomment the below configuration to use sandbox environment
+  // basePath: "https://sandbox.dojah.io",
 });
 const api = new GHKYCApi(configuration);
 const request = api.getDriversLicense("V0000000", "John Doe", "1988-09-01");
