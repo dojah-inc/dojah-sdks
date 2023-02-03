@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>io.dojah</groupId>
+  <groupId>com.konfigthis.dojah</groupId>
   <artifactId>dojah-java-sdk</artifactId>
   <version>1.0.0</version>
   <scope>compile</scope>
@@ -55,7 +55,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "io.dojah:dojah-java-sdk:1.0.0"
+     implementation "com.konfigthis.dojah:dojah-java-sdk:1.0.0"
   }
 ```
 
@@ -79,12 +79,12 @@ Please follow the [installation](#installation) instruction and execute the foll
 ```java
 
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.AmlApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.AmlApi;
 
 public class Example {
   public static void main(String[] args) {

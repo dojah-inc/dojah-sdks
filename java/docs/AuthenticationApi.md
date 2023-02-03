@@ -21,12 +21,12 @@ Messaging - Get Sender IDs
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.AuthenticationApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.AuthenticationApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -90,12 +90,12 @@ Messaging - Get SMS Status
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.AuthenticationApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.AuthenticationApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -163,12 +163,12 @@ Messaging - Request Sender ID
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.AuthenticationApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.AuthenticationApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -236,12 +236,12 @@ Messaging - Send OTP
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.AuthenticationApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.AuthenticationApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -309,12 +309,12 @@ Messaging - Send SMS
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.AuthenticationApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.AuthenticationApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -382,12 +382,12 @@ Messaging - Validate OTP
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.AuthenticationApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.AuthenticationApi;
 
 public class Example {
   public static void main(String[] args) {

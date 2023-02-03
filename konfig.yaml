@@ -3,7 +3,7 @@ specPath: api.yaml
 generators:
   java:
     version: 1.0.0
-    groupId: io.dojah
+    groupId: com.konfigthis.dojah
     artifactId: dojah-java-sdk
     outputDirectory: java
     git:

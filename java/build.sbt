@@ -1,6 +1,6 @@
 lazy val root = (project in file(".")).
   settings(
-    organization := "io.dojah",
+    organization := "com.konfigthis.dojah",
     name := "dojah-java-sdk",
     version := "1.0.0",
     scalaVersion := "2.11.4",

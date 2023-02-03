@@ -21,12 +21,12 @@ Create NGN Wallet
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.WalletApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.WalletApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -94,12 +94,12 @@ Credit Sub-wallet
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.WalletApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.WalletApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -161,12 +161,12 @@ Retrieve Transaction Details
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.WalletApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.WalletApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -234,12 +234,12 @@ Retrieve Wallet Details
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.WalletApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.WalletApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -307,12 +307,12 @@ Get Wallets
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.WalletApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.WalletApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -380,12 +380,12 @@ Transfer Funds
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.WalletApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.WalletApi;
 
 public class Example {
   public static void main(String[] args) {

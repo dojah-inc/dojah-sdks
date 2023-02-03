@@ -1,2 +1,2 @@
-src/test/java/io/dojah/client/api/GhKycApiTest.java
-src/test/java/io/dojah/client/api/KycApiTest.java
+src/test/java/com/konfigthis/dojah/client/api/GhKycApiTest.java
+src/test/java/com/konfigthis/dojah/client/api/KycApiTest.java

@@ -31,12 +31,12 @@ KYC - Document Analysis
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.KycApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.KycApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -100,12 +100,12 @@ KYC - Get Basic BVN Info
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.KycApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.KycApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -173,12 +173,12 @@ KYC Lookup Phone Number Basic
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.KycApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.KycApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -246,12 +246,12 @@ KYC - Get Drivers License Info
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.KycApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.KycApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -319,12 +319,12 @@ KYC - Get Email Reputation
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.KycApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.KycApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -392,12 +392,12 @@ KYC - Lookup BVN Basic
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.KycApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.KycApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -465,12 +465,12 @@ KYC - Get NUBAN Information
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.KycApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.KycApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -540,12 +540,12 @@ KYC - Passport
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.KycApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.KycApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -615,12 +615,12 @@ KYC - Lookup Phone Number
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.KycApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.KycApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -689,12 +689,12 @@ KYC - Lookup BVN Premium
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.KycApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.KycApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -762,12 +762,12 @@ KYC - Get VIN
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.KycApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.KycApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -843,12 +843,12 @@ Lookup VNIN
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.KycApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.KycApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -916,12 +916,12 @@ KYC - Validate BVN
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.KycApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.KycApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -993,12 +993,12 @@ KYC - Age Verification
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.KycApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.KycApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1076,12 +1076,12 @@ KYC - Selfie BVN Verificatoin
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.KycApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.KycApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1149,12 +1149,12 @@ KYC - Selfie NIN Verification
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.KycApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.KycApi;
 
 public class Example {
   public static void main(String[] args) {

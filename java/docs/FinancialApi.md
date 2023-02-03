@@ -25,12 +25,12 @@ Collect Status via PDF Statement
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.FinancialApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.FinancialApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -100,12 +100,12 @@ Collect Transactions
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.FinancialApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.FinancialApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -175,12 +175,12 @@ Get Account Information
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.FinancialApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.FinancialApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -248,12 +248,12 @@ Get Account Analysis
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.FinancialApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.FinancialApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -317,12 +317,12 @@ Get Account Subscriptions
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.FinancialApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.FinancialApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -390,12 +390,12 @@ Get Account Transactions
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.FinancialApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.FinancialApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -465,12 +465,12 @@ Get BVN Information Basic
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.FinancialApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.FinancialApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -538,12 +538,12 @@ Get Earning Structure
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.FinancialApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.FinancialApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -611,12 +611,12 @@ Get BVN Information Full
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.FinancialApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.FinancialApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -684,12 +684,12 @@ Get Spending Pattern
 ### Example
 ```java
 // Import classes:
-import io.dojah.client.ApiClient;
-import io.dojah.client.ApiException;
-import io.dojah.client.Configuration;
-import io.dojah.client.auth.*;
-import io.dojah.client.model.*;
-import io.dojah.client.api.FinancialApi;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
+import com.konfigthis.dojah.client.model.*;
+import com.konfigthis.dojah.client.api.FinancialApi;
 
 public class Example {
   public static void main(String[] args) {
