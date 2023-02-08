@@ -5,25 +5,25 @@ info:
   version: 1.0.0
   x-konfig-ignore:
     no-additional-properties: true
-    object-with-no-properties: true
     potential-incorrect-type: true
+    object-with-no-properties: true
 servers:
   - url: https://api.dojah.io
   - url: https://sandbox.dojah.io
 tags:
-  - name: Services
   - name: KYC
-  - name: GH KYC
-  - name: UG KYC
-  - name: KE KYC
-  - name: KYB
+  - name: Financial
+  - name: General
   - name: Authentication
   - name: Wallet
-  - name: Financial
+  - name: KYB
   - name: ML
-  - name: AML
   - name: WebHooks
-  - name: General
+  - name: GH KYC
+  - name: AML
+  - name: Services
+  - name: UG KYC
+  - name: KE KYC
 paths:
   /api/v1/gh/kyc/dl:
     get:
@@ -3395,11 +3395,25 @@ components:
       example:
         bvn: '22468537919'
         selfie_image: <base64 encoded image>
+      properties:
+        bvn:
+          type: string
+          example: '22468537919'
+        selfie_image:
+          type: string
+          example: <base64 encoded image>
     VerifySelfieNinRequest:
       type: object
       example:
         nin: '79628483753'
         selfie_image: <base64 encoded image>
+      properties:
+        nin:
+          type: string
+          example: '79628483753'
+        selfie_image:
+          type: string
+          example: <base64 encoded image>
     SendSmsRequest:
       type: object
       example:
@@ -3407,6 +3421,19 @@ components:
         message: Checking to see if you are Okay
         channel: whatsapp
         sender_id: Kedesa
+      properties:
+        destination:
+          type: string
+          example: '08068810228'
+        message:
+          type: string
+          example: Checking to see if you are Okay
+        channel:
+          type: string
+          example: whatsapp
+        sender_id:
+          type: string
+          example: Kedesa
     SendOtpRequest:
       type: object
       example:
@@ -3415,10 +3442,30 @@ components:
         channel: sms
         sender_id: Dojah
         priority: true
+      properties:
+        destination:
+          type: string
+          example: '08068810228'
+        length:
+          type: number
+          example: 6
+        channel:
+          type: string
+          example: sms
+        sender_id:
+          type: string
+          example: Dojah
+        priority:
+          type: boolean
+          example: true
     RequestSenderIdRequest:
       type: object
       example:
         sender_id: Dojah
+      properties:
+        sender_id:
+          type: string
+          example: Dojah
     CreateWalletRequest:
       type: object
       example:
@@ -3427,6 +3474,22 @@ components:
         phone_number: '08068810258'
         dob: 18-May-1992
         route: WEMA
+      properties:
+        last_name:
+          type: string
+          example: Dojah
+        first_name:
+          type: string
+          example: Inc
+        phone_number:
+          type: string
+          example: '08068810258'
+        dob:
+          type: string
+          example: 18-May-1992
+        route:
+          type: string
+          example: WEMA
     TransferFundsRequest:
       type: object
       example:
@@ -3434,11 +3497,31 @@ components:
         recipient_bank_code: '058'
         recipient_account_number: '0037466959'
         wallet_id: 6187eb92-a4ad-420f-98cf-05a34188f467
+      properties:
+        amount:
+          type: string
+          example: '50'
+        recipient_bank_code:
+          type: string
+          example: '058'
+        recipient_account_number:
+          type: string
+          example: '0037466959'
+        wallet_id:
+          type: string
+          example: 6187eb92-a4ad-420f-98cf-05a34188f467
     CreditSubwalletRequest:
       type: object
       example:
         amount: '12'
         wallet_id: 867a8cae-8073-4914-8b04-d7fd096c1006
+      properties:
+        amount:
+          type: string
+          example: '12'
+        wallet_id:
+          type: string
+          example: 867a8cae-8073-4914-8b04-d7fd096c1006
     CollectTransactionsRequest:
       type: object
       example:
@@ -3454,6 +3537,30 @@ components:
             transaction_type: credit
             reference_number: 12345tgfnde98999
         app_id: 6138a052147a0100341ca124
+      properties:
+        transactions:
+          type: array
+          items:
+            type: object
+            properties:
+              transaction_date:
+                type: string
+                example: '2021-04-30'
+              transaction_amount:
+                type: string
+                example: '2016.4'
+              transaction_description:
+                type: string
+                example: 0033199479:Int.Pd:01-04-2021 to 30-04-2 |
+              transaction_type:
+                type: string
+                example: credit
+              reference_number:
+                type: string
+                example: 12345tgfnde9000
+        app_id:
+          type: string
+          example: 6138a052147a0100341ca124
     CollectStatusFromPdfRequest:
       type: object
       properties:
@@ -3468,50 +3575,119 @@ components:
       example:
         selfie_image: <base64 encoded image>
         photoid_image: <base64 encoded image>
+      properties:
+        selfie_image:
+          type: string
+          example: <base64 encoded image>
+        photoid_image:
+          type: string
+          example: <base64 encoded image>
     GetOcrTextRequest:
       type: object
       example:
         image: <base64 encoded image>
+      properties:
+        image:
+          type: string
+          example: <base64 encoded image>
     GetGenericOcrTextRequest:
       type: object
       example:
         img: <base64 encoded image>
+      properties:
+        img:
+          type: string
+          example: <base64 encoded image>
     GetDocumentAnalysisRequest:
       type: object
       example:
         img: <base64 encoded image>
+      properties:
+        img:
+          type: string
+          example: <base64 encoded image>
     ScreenAmlRequest:
       type: object
       example:
         first_name: 'Obama '
         last_name: ' '
         date_of_birth: '1997-08-18'
+      properties:
+        first_name:
+          type: string
+          example: 'Obama '
+        last_name:
+          type: string
+          example: ' '
+        date_of_birth:
+          type: string
+          example: '1997-08-18'
     PurchaseAirtimeRequest:
       type: object
       example:
         destination: '08068810228'
         amount: '100'
+      properties:
+        destination:
+          type: string
+          example: '08068810228'
+        amount:
+          type: string
+          example: '100'
     PurchaseDataRequest:
       type: object
       example:
         plan: 9MOBILE_1.5GB
         destination: '09090577941'
+      properties:
+        plan:
+          type: string
+          example: 9MOBILE_1.5GB
+        destination:
+          type: string
+          example: '09090577941'
     CategorizeTransactionsRequest:
       type: object
       example:
         description: POS/WEB PURCHASE TRANSACTION -047608- -253842-MUNCHIES BY MOE OY OYNG
         trans_type: debit
+      properties:
+        description:
+          type: string
+          example: >-
+            POS/WEB PURCHASE TRANSACTION -047608- -253842-MUNCHIES BY MOE OY
+            OYNG
+        trans_type:
+          type: string
+          example: debit
     SubscribeServiceRequest:
       type: object
       example:
         webhook: https://webhook.site/c587711d-d9f2-4982-9107-b1f9789a5dfe
         service: kyc_widget
+      properties:
+        webhook:
+          type: string
+          example: https://webhook.site/c587711d-d9f2-4982-9107-b1f9789a5dfe
+        service:
+          type: string
+          example: kyc_widget
     NotifyWebhookRequest:
       type: object
       example:
         subject: kyc_widget
         data:
           stuff: '12345678'
+      properties:
+        subject:
+          type: string
+          example: kyc_widget
+        data:
+          type: object
+          properties:
+            stuff:
+              type: string
+              example: '12345678'
     GetDriversLicenseResponse:
       type: object
       properties:
