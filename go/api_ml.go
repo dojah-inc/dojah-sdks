@@ -25,11 +25,11 @@ type MLApiService service
 type MLApiGetDocumentAnalysisRequest struct {
 	ctx context.Context
 	ApiService *MLApiService
-	body *map[string]interface{}
+	getDocumentAnalysisRequest *GetDocumentAnalysisRequest
 }
 
-func (r MLApiGetDocumentAnalysisRequest) Body(body map[string]interface{}) MLApiGetDocumentAnalysisRequest {
-	r.body = &body
+func (r MLApiGetDocumentAnalysisRequest) GetDocumentAnalysisRequest(getDocumentAnalysisRequest GetDocumentAnalysisRequest) MLApiGetDocumentAnalysisRequest {
+	r.getDocumentAnalysisRequest = &getDocumentAnalysisRequest
 	return r
 }
 
@@ -89,7 +89,7 @@ func (a *MLApiService) GetDocumentAnalysisExecute(r MLApiGetDocumentAnalysisRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.getDocumentAnalysisRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -158,11 +158,11 @@ func (a *MLApiService) GetDocumentAnalysisExecute(r MLApiGetDocumentAnalysisRequ
 type MLApiGetGenericOcrTextRequest struct {
 	ctx context.Context
 	ApiService *MLApiService
-	body *map[string]interface{}
+	getGenericOcrTextRequest *GetGenericOcrTextRequest
 }
 
-func (r MLApiGetGenericOcrTextRequest) Body(body map[string]interface{}) MLApiGetGenericOcrTextRequest {
-	r.body = &body
+func (r MLApiGetGenericOcrTextRequest) GetGenericOcrTextRequest(getGenericOcrTextRequest GetGenericOcrTextRequest) MLApiGetGenericOcrTextRequest {
+	r.getGenericOcrTextRequest = &getGenericOcrTextRequest
 	return r
 }
 
@@ -222,7 +222,7 @@ func (a *MLApiService) GetGenericOcrTextExecute(r MLApiGetGenericOcrTextRequest)
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.getGenericOcrTextRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -291,11 +291,11 @@ func (a *MLApiService) GetGenericOcrTextExecute(r MLApiGetGenericOcrTextRequest)
 type MLApiGetOcrTextRequest struct {
 	ctx context.Context
 	ApiService *MLApiService
-	body *map[string]interface{}
+	getOcrTextRequest *GetOcrTextRequest
 }
 
-func (r MLApiGetOcrTextRequest) Body(body map[string]interface{}) MLApiGetOcrTextRequest {
-	r.body = &body
+func (r MLApiGetOcrTextRequest) GetOcrTextRequest(getOcrTextRequest GetOcrTextRequest) MLApiGetOcrTextRequest {
+	r.getOcrTextRequest = &getOcrTextRequest
 	return r
 }
 
@@ -355,7 +355,7 @@ func (a *MLApiService) GetOcrTextExecute(r MLApiGetOcrTextRequest) (*GetOcrTextR
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.getOcrTextRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -424,11 +424,11 @@ func (a *MLApiService) GetOcrTextExecute(r MLApiGetOcrTextRequest) (*GetOcrTextR
 type MLApiVerifyPhotoIdWithSelfieRequest struct {
 	ctx context.Context
 	ApiService *MLApiService
-	body *map[string]interface{}
+	verifyPhotoIdWithSelfieRequest *VerifyPhotoIdWithSelfieRequest
 }
 
-func (r MLApiVerifyPhotoIdWithSelfieRequest) Body(body map[string]interface{}) MLApiVerifyPhotoIdWithSelfieRequest {
-	r.body = &body
+func (r MLApiVerifyPhotoIdWithSelfieRequest) VerifyPhotoIdWithSelfieRequest(verifyPhotoIdWithSelfieRequest VerifyPhotoIdWithSelfieRequest) MLApiVerifyPhotoIdWithSelfieRequest {
+	r.verifyPhotoIdWithSelfieRequest = &verifyPhotoIdWithSelfieRequest
 	return r
 }
 
@@ -488,7 +488,7 @@ func (a *MLApiService) VerifyPhotoIdWithSelfieExecute(r MLApiVerifyPhotoIdWithSe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.verifyPhotoIdWithSelfieRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

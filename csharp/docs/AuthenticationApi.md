@@ -204,7 +204,7 @@ catch (ApiException e)
 
 <a name="requestsenderid"></a>
 # **RequestSenderId**
-> RequestSenderIdResponse RequestSenderId (Object body = null)
+> RequestSenderIdResponse RequestSenderId (RequestSenderIdRequest requestSenderIdRequest = null)
 
 Messaging - Request Sender ID
 
@@ -234,12 +234,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new AuthenticationApi(config);
-            var body = null;  // Object |  (optional) 
+            var requestSenderIdRequest = new RequestSenderIdRequest(); // RequestSenderIdRequest |  (optional) 
 
             try
             {
                 // Messaging - Request Sender ID
-                RequestSenderIdResponse result = apiInstance.RequestSenderId(body);
+                RequestSenderIdResponse result = apiInstance.RequestSenderId(requestSenderIdRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -260,7 +260,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Messaging - Request Sender ID
-    ApiResponse<RequestSenderIdResponse> response = apiInstance.RequestSenderIdWithHttpInfo(body);
+    ApiResponse<RequestSenderIdResponse> response = apiInstance.RequestSenderIdWithHttpInfo(requestSenderIdRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -277,7 +277,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **requestSenderIdRequest** | [**RequestSenderIdRequest**](RequestSenderIdRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -302,7 +302,7 @@ catch (ApiException e)
 
 <a name="sendotp"></a>
 # **SendOtp**
-> SendOtpResponse SendOtp (Object body = null)
+> SendOtpResponse SendOtp (SendOtpRequest sendOtpRequest = null)
 
 Messaging - Send OTP
 
@@ -332,12 +332,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new AuthenticationApi(config);
-            var body = null;  // Object |  (optional) 
+            var sendOtpRequest = new SendOtpRequest(); // SendOtpRequest |  (optional) 
 
             try
             {
                 // Messaging - Send OTP
-                SendOtpResponse result = apiInstance.SendOtp(body);
+                SendOtpResponse result = apiInstance.SendOtp(sendOtpRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -358,7 +358,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Messaging - Send OTP
-    ApiResponse<SendOtpResponse> response = apiInstance.SendOtpWithHttpInfo(body);
+    ApiResponse<SendOtpResponse> response = apiInstance.SendOtpWithHttpInfo(sendOtpRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -375,7 +375,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **sendOtpRequest** | [**SendOtpRequest**](SendOtpRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -400,7 +400,7 @@ catch (ApiException e)
 
 <a name="sendsms"></a>
 # **SendSms**
-> SendSmsResponse SendSms (Object body = null)
+> SendSmsResponse SendSms (SendSmsRequest sendSmsRequest = null)
 
 Messaging - Send SMS
 
@@ -430,12 +430,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new AuthenticationApi(config);
-            var body = null;  // Object |  (optional) 
+            var sendSmsRequest = new SendSmsRequest(); // SendSmsRequest |  (optional) 
 
             try
             {
                 // Messaging - Send SMS
-                SendSmsResponse result = apiInstance.SendSms(body);
+                SendSmsResponse result = apiInstance.SendSms(sendSmsRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -456,7 +456,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Messaging - Send SMS
-    ApiResponse<SendSmsResponse> response = apiInstance.SendSmsWithHttpInfo(body);
+    ApiResponse<SendSmsResponse> response = apiInstance.SendSmsWithHttpInfo(sendSmsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -473,7 +473,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **sendSmsRequest** | [**SendSmsRequest**](SendSmsRequest.md) |  | [optional]  |
 
 ### Return type
 

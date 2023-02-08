@@ -407,6 +407,7 @@ import time
 import dojah_client
 from dojah_client.api import general_api
 from dojah_client.model.purchase_airtime_response import PurchaseAirtimeResponse
+from dojah_client.model.purchase_airtime_request import PurchaseAirtimeRequest
 from pprint import pprint
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
@@ -429,13 +430,16 @@ configuration.api_key['appIdAuth'] = 'YOUR_API_KEY'
 with dojah_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = general_api.GeneralApi(api_client)
-    body = {} # {str: (bool, dict, float, int, list, str, none_type)} |  (optional)
+    purchase_airtime_request = PurchaseAirtimeRequest(
+        destination="08068810228",
+        amount="100",
+    ) # PurchaseAirtimeRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Purchase - Send Airtime
-        api_response = api_instance.purchase_airtime(body=body)
+        api_response = api_instance.purchase_airtime(purchase_airtime_request=purchase_airtime_request)
         pprint(api_response)
     except dojah_client.ApiException as e:
         print("Exception when calling GeneralApi->purchase_airtime: %s\n" % e)
@@ -446,7 +450,7 @@ with dojah_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **{str: (bool, dict, float, int, list, str, none_type)}**|  | [optional]
+ **purchase_airtime_request** | [**PurchaseAirtimeRequest**](PurchaseAirtimeRequest.md)|  | [optional]
 
 ### Return type
 
@@ -484,6 +488,7 @@ Purchase - Buy Data
 import time
 import dojah_client
 from dojah_client.api import general_api
+from dojah_client.model.purchase_data_request import PurchaseDataRequest
 from dojah_client.model.purchase_data_response import PurchaseDataResponse
 from pprint import pprint
 # The client must configure the authentication and authorization parameters
@@ -507,13 +512,16 @@ configuration.api_key['appIdAuth'] = 'YOUR_API_KEY'
 with dojah_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = general_api.GeneralApi(api_client)
-    body = {} # {str: (bool, dict, float, int, list, str, none_type)} |  (optional)
+    purchase_data_request = PurchaseDataRequest(
+        plan="9MOBILE_1.5GB",
+        destination="09090577941",
+    ) # PurchaseDataRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Purchase - Buy Data
-        api_response = api_instance.purchase_data(body=body)
+        api_response = api_instance.purchase_data(purchase_data_request=purchase_data_request)
         pprint(api_response)
     except dojah_client.ApiException as e:
         print("Exception when calling GeneralApi->purchase_data: %s\n" % e)
@@ -524,7 +532,7 @@ with dojah_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **{str: (bool, dict, float, int, list, str, none_type)}**|  | [optional]
+ **purchase_data_request** | [**PurchaseDataRequest**](PurchaseDataRequest.md)|  | [optional]
 
 ### Return type
 

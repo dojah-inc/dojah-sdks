@@ -131,7 +131,7 @@ Other parameters are passed through a pointer to a apiGetWebhooksRequest struct 
 
 ## NotifyWebhook
 
-> NotifyWebhookResponse NotifyWebhook(ctx).Body(body).Execute()
+> NotifyWebhookResponse NotifyWebhook(ctx).NotifyWebhookRequest(notifyWebhookRequest).Execute()
 
 Post Hook
 
@@ -148,11 +148,11 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+    notifyWebhookRequest := *dojah.NewNotifyWebhookRequest() // NotifyWebhookRequest |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebHooksApi.NotifyWebhook(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.WebHooksApi.NotifyWebhook(context.Background()).NotifyWebhookRequest(notifyWebhookRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebHooksApi.NotifyWebhook``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -173,7 +173,7 @@ Other parameters are passed through a pointer to a apiNotifyWebhookRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **notifyWebhookRequest** | [**NotifyWebhookRequest**](NotifyWebhookRequest.md) |  | 
 
 ### Return type
 
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ## SubscribeService
 
-> SubscribeServiceResponse SubscribeService(ctx).Body(body).Execute()
+> SubscribeServiceResponse SubscribeService(ctx).SubscribeServiceRequest(subscribeServiceRequest).Execute()
 
 Subscribe to service
 
@@ -212,11 +212,11 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+    subscribeServiceRequest := *dojah.NewSubscribeServiceRequest() // SubscribeServiceRequest |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebHooksApi.SubscribeService(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.WebHooksApi.SubscribeService(context.Background()).SubscribeServiceRequest(subscribeServiceRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebHooksApi.SubscribeService``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -237,7 +237,7 @@ Other parameters are passed through a pointer to a apiSubscribeServiceRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **subscribeServiceRequest** | [**SubscribeServiceRequest**](SubscribeServiceRequest.md) |  | 
 
 ### Return type
 

@@ -83,8 +83,8 @@ namespace Dojah.Net.Test.Api
         public void NotifyWebhookTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.NotifyWebhook(body);
+            //NotifyWebhookRequest notifyWebhookRequest = null;
+            //var response = instance.NotifyWebhook(notifyWebhookRequest);
             //Assert.IsType<NotifyWebhookResponse>(response);
         }
 
@@ -95,8 +95,8 @@ namespace Dojah.Net.Test.Api
         public void SubscribeServiceTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.SubscribeService(body);
+            //SubscribeServiceRequest subscribeServiceRequest = null;
+            //var response = instance.SubscribeService(subscribeServiceRequest);
             //Assert.IsType<SubscribeServiceResponse>(response);
         }
     }

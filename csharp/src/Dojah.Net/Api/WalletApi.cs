@@ -30,10 +30,10 @@ namespace Dojah.Net.Api
         /// Create NGN Wallet
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="createWalletRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreateWalletResponse</returns>
-        CreateWalletResponse CreateWallet(Object body = default(Object), int operationIndex = 0);
+        CreateWalletResponse CreateWallet(CreateWalletRequest createWalletRequest = default(CreateWalletRequest), int operationIndex = 0);
 
         /// <summary>
         /// Create NGN Wallet
@@ -42,18 +42,18 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="createWalletRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreateWalletResponse</returns>
-        ApiResponse<CreateWalletResponse> CreateWalletWithHttpInfo(Object body = default(Object), int operationIndex = 0);
+        ApiResponse<CreateWalletResponse> CreateWalletWithHttpInfo(CreateWalletRequest createWalletRequest = default(CreateWalletRequest), int operationIndex = 0);
         /// <summary>
         /// Credit Sub-wallet
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="creditSubwalletRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreditSubwalletResponse</returns>
-        CreditSubwalletResponse CreditSubwallet(Object body = default(Object), int operationIndex = 0);
+        CreditSubwalletResponse CreditSubwallet(CreditSubwalletRequest creditSubwalletRequest = default(CreditSubwalletRequest), int operationIndex = 0);
 
         /// <summary>
         /// Credit Sub-wallet
@@ -62,10 +62,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="creditSubwalletRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreditSubwalletResponse</returns>
-        ApiResponse<CreditSubwalletResponse> CreditSubwalletWithHttpInfo(Object body = default(Object), int operationIndex = 0);
+        ApiResponse<CreditSubwalletResponse> CreditSubwalletWithHttpInfo(CreditSubwalletRequest creditSubwalletRequest = default(CreditSubwalletRequest), int operationIndex = 0);
         /// <summary>
         /// Retrieve Transaction Details
         /// </summary>
@@ -130,10 +130,10 @@ namespace Dojah.Net.Api
         /// Transfer Funds
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="transferFundsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TransferFundsResponse</returns>
-        TransferFundsResponse TransferFunds(Object body = default(Object), int operationIndex = 0);
+        TransferFundsResponse TransferFunds(TransferFundsRequest transferFundsRequest = default(TransferFundsRequest), int operationIndex = 0);
 
         /// <summary>
         /// Transfer Funds
@@ -142,10 +142,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="transferFundsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TransferFundsResponse</returns>
-        ApiResponse<TransferFundsResponse> TransferFundsWithHttpInfo(Object body = default(Object), int operationIndex = 0);
+        ApiResponse<TransferFundsResponse> TransferFundsWithHttpInfo(TransferFundsRequest transferFundsRequest = default(TransferFundsRequest), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -162,11 +162,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="createWalletRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateWalletResponse</returns>
-        System.Threading.Tasks.Task<CreateWalletResponse> CreateWalletAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CreateWalletResponse> CreateWalletAsync(CreateWalletRequest createWalletRequest = default(CreateWalletRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create NGN Wallet
@@ -175,11 +175,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="createWalletRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateWalletResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateWalletResponse>> CreateWalletWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CreateWalletResponse>> CreateWalletWithHttpInfoAsync(CreateWalletRequest createWalletRequest = default(CreateWalletRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Credit Sub-wallet
         /// </summary>
@@ -187,11 +187,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="creditSubwalletRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreditSubwalletResponse</returns>
-        System.Threading.Tasks.Task<CreditSubwalletResponse> CreditSubwalletAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CreditSubwalletResponse> CreditSubwalletAsync(CreditSubwalletRequest creditSubwalletRequest = default(CreditSubwalletRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Credit Sub-wallet
@@ -200,11 +200,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="creditSubwalletRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreditSubwalletResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreditSubwalletResponse>> CreditSubwalletWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CreditSubwalletResponse>> CreditSubwalletWithHttpInfoAsync(CreditSubwalletRequest creditSubwalletRequest = default(CreditSubwalletRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Retrieve Transaction Details
         /// </summary>
@@ -287,11 +287,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="transferFundsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransferFundsResponse</returns>
-        System.Threading.Tasks.Task<TransferFundsResponse> TransferFundsAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TransferFundsResponse> TransferFundsAsync(TransferFundsRequest transferFundsRequest = default(TransferFundsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Transfer Funds
@@ -300,11 +300,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="transferFundsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransferFundsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransferFundsResponse>> TransferFundsWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TransferFundsResponse>> TransferFundsWithHttpInfoAsync(TransferFundsRequest transferFundsRequest = default(TransferFundsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -429,12 +429,12 @@ namespace Dojah.Net.Api
         /// Create NGN Wallet 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="createWalletRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreateWalletResponse</returns>
-        public CreateWalletResponse CreateWallet(Object body = default(Object), int operationIndex = 0)
+        public CreateWalletResponse CreateWallet(CreateWalletRequest createWalletRequest = default(CreateWalletRequest), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<CreateWalletResponse> localVarResponse = CreateWalletWithHttpInfo(body);
+            Dojah.Net.Client.ApiResponse<CreateWalletResponse> localVarResponse = CreateWalletWithHttpInfo(createWalletRequest);
             return localVarResponse.Data;
         }
 
@@ -442,10 +442,10 @@ namespace Dojah.Net.Api
         /// Create NGN Wallet 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="createWalletRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreateWalletResponse</returns>
-        public Dojah.Net.Client.ApiResponse<CreateWalletResponse> CreateWalletWithHttpInfo(Object body = default(Object), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<CreateWalletResponse> CreateWalletWithHttpInfo(CreateWalletRequest createWalletRequest = default(CreateWalletRequest), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -470,7 +470,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = createWalletRequest;
 
             localVarRequestOptions.Operation = "WalletApi.CreateWallet";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -504,13 +504,13 @@ namespace Dojah.Net.Api
         /// Create NGN Wallet 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="createWalletRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateWalletResponse</returns>
-        public async System.Threading.Tasks.Task<CreateWalletResponse> CreateWalletAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CreateWalletResponse> CreateWalletAsync(CreateWalletRequest createWalletRequest = default(CreateWalletRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<CreateWalletResponse> localVarResponse = await CreateWalletWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<CreateWalletResponse> localVarResponse = await CreateWalletWithHttpInfoAsync(createWalletRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -518,11 +518,11 @@ namespace Dojah.Net.Api
         /// Create NGN Wallet 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="createWalletRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateWalletResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<CreateWalletResponse>> CreateWalletWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<CreateWalletResponse>> CreateWalletWithHttpInfoAsync(CreateWalletRequest createWalletRequest = default(CreateWalletRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -548,7 +548,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = createWalletRequest;
 
             localVarRequestOptions.Operation = "WalletApi.CreateWallet";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -583,12 +583,12 @@ namespace Dojah.Net.Api
         /// Credit Sub-wallet 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="creditSubwalletRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreditSubwalletResponse</returns>
-        public CreditSubwalletResponse CreditSubwallet(Object body = default(Object), int operationIndex = 0)
+        public CreditSubwalletResponse CreditSubwallet(CreditSubwalletRequest creditSubwalletRequest = default(CreditSubwalletRequest), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<CreditSubwalletResponse> localVarResponse = CreditSubwalletWithHttpInfo(body);
+            Dojah.Net.Client.ApiResponse<CreditSubwalletResponse> localVarResponse = CreditSubwalletWithHttpInfo(creditSubwalletRequest);
             return localVarResponse.Data;
         }
 
@@ -596,10 +596,10 @@ namespace Dojah.Net.Api
         /// Credit Sub-wallet 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="creditSubwalletRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreditSubwalletResponse</returns>
-        public Dojah.Net.Client.ApiResponse<CreditSubwalletResponse> CreditSubwalletWithHttpInfo(Object body = default(Object), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<CreditSubwalletResponse> CreditSubwalletWithHttpInfo(CreditSubwalletRequest creditSubwalletRequest = default(CreditSubwalletRequest), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -624,7 +624,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = creditSubwalletRequest;
 
             localVarRequestOptions.Operation = "WalletApi.CreditSubwallet";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -653,13 +653,13 @@ namespace Dojah.Net.Api
         /// Credit Sub-wallet 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="creditSubwalletRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreditSubwalletResponse</returns>
-        public async System.Threading.Tasks.Task<CreditSubwalletResponse> CreditSubwalletAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CreditSubwalletResponse> CreditSubwalletAsync(CreditSubwalletRequest creditSubwalletRequest = default(CreditSubwalletRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<CreditSubwalletResponse> localVarResponse = await CreditSubwalletWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<CreditSubwalletResponse> localVarResponse = await CreditSubwalletWithHttpInfoAsync(creditSubwalletRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -667,11 +667,11 @@ namespace Dojah.Net.Api
         /// Credit Sub-wallet 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="creditSubwalletRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreditSubwalletResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<CreditSubwalletResponse>> CreditSubwalletWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<CreditSubwalletResponse>> CreditSubwalletWithHttpInfoAsync(CreditSubwalletRequest creditSubwalletRequest = default(CreditSubwalletRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -697,7 +697,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = creditSubwalletRequest;
 
             localVarRequestOptions.Operation = "WalletApi.CreditSubwallet";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1201,12 +1201,12 @@ namespace Dojah.Net.Api
         /// Transfer Funds 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="transferFundsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TransferFundsResponse</returns>
-        public TransferFundsResponse TransferFunds(Object body = default(Object), int operationIndex = 0)
+        public TransferFundsResponse TransferFunds(TransferFundsRequest transferFundsRequest = default(TransferFundsRequest), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<TransferFundsResponse> localVarResponse = TransferFundsWithHttpInfo(body);
+            Dojah.Net.Client.ApiResponse<TransferFundsResponse> localVarResponse = TransferFundsWithHttpInfo(transferFundsRequest);
             return localVarResponse.Data;
         }
 
@@ -1214,10 +1214,10 @@ namespace Dojah.Net.Api
         /// Transfer Funds 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="transferFundsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TransferFundsResponse</returns>
-        public Dojah.Net.Client.ApiResponse<TransferFundsResponse> TransferFundsWithHttpInfo(Object body = default(Object), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<TransferFundsResponse> TransferFundsWithHttpInfo(TransferFundsRequest transferFundsRequest = default(TransferFundsRequest), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -1242,7 +1242,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = transferFundsRequest;
 
             localVarRequestOptions.Operation = "WalletApi.TransferFunds";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1276,13 +1276,13 @@ namespace Dojah.Net.Api
         /// Transfer Funds 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="transferFundsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransferFundsResponse</returns>
-        public async System.Threading.Tasks.Task<TransferFundsResponse> TransferFundsAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TransferFundsResponse> TransferFundsAsync(TransferFundsRequest transferFundsRequest = default(TransferFundsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<TransferFundsResponse> localVarResponse = await TransferFundsWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<TransferFundsResponse> localVarResponse = await TransferFundsWithHttpInfoAsync(transferFundsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1290,11 +1290,11 @@ namespace Dojah.Net.Api
         /// Transfer Funds 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="transferFundsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransferFundsResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<TransferFundsResponse>> TransferFundsWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<TransferFundsResponse>> TransferFundsWithHttpInfoAsync(TransferFundsRequest transferFundsRequest = default(TransferFundsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -1320,7 +1320,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = transferFundsRequest;
 
             localVarRequestOptions.Operation = "WalletApi.TransferFunds";
             localVarRequestOptions.OperationIndex = operationIndex;

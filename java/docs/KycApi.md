@@ -1069,7 +1069,7 @@ public class Example {
 
 <a name="verifySelfieBvn"></a>
 # **verifySelfieBvn**
-> VerifySelfieBvnResponse verifySelfieBvn(body)
+> VerifySelfieBvnResponse verifySelfieBvn(verifySelfieBvnRequest)
 
 KYC - Selfie BVN Verificatoin
 
@@ -1101,9 +1101,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     KycApi apiInstance = new KycApi(defaultClient);
-    Object body = null; // Object | 
+    VerifySelfieBvnRequest verifySelfieBvnRequest = new VerifySelfieBvnRequest(); // VerifySelfieBvnRequest | 
     try {
-      VerifySelfieBvnResponse result = apiInstance.verifySelfieBvn(body);
+      VerifySelfieBvnResponse result = apiInstance.verifySelfieBvn(verifySelfieBvnRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling KycApi#verifySelfieBvn");
@@ -1120,7 +1120,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **verifySelfieBvnRequest** | [**VerifySelfieBvnRequest**](VerifySelfieBvnRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -1142,7 +1142,7 @@ public class Example {
 
 <a name="verifySelfieNin"></a>
 # **verifySelfieNin**
-> VerifySelfieNinResponse verifySelfieNin(body)
+> VerifySelfieNinResponse verifySelfieNin(verifySelfieNinRequest)
 
 KYC - Selfie NIN Verification
 
@@ -1174,9 +1174,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     KycApi apiInstance = new KycApi(defaultClient);
-    Object body = null; // Object | 
+    VerifySelfieNinRequest verifySelfieNinRequest = new VerifySelfieNinRequest(); // VerifySelfieNinRequest | 
     try {
-      VerifySelfieNinResponse result = apiInstance.verifySelfieNin(body);
+      VerifySelfieNinResponse result = apiInstance.verifySelfieNin(verifySelfieNinRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling KycApi#verifySelfieNin");
@@ -1193,7 +1193,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **verifySelfieNinRequest** | [**VerifySelfieNinRequest**](VerifySelfieNinRequest.md)|  | [optional] |
 
 ### Return type
 

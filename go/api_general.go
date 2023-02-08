@@ -687,11 +687,11 @@ func (a *GeneralApiService) GetWalletBalanceExecute(r GeneralApiGetWalletBalance
 type GeneralApiPurchaseAirtimeRequest struct {
 	ctx context.Context
 	ApiService *GeneralApiService
-	body *map[string]interface{}
+	purchaseAirtimeRequest *PurchaseAirtimeRequest
 }
 
-func (r GeneralApiPurchaseAirtimeRequest) Body(body map[string]interface{}) GeneralApiPurchaseAirtimeRequest {
-	r.body = &body
+func (r GeneralApiPurchaseAirtimeRequest) PurchaseAirtimeRequest(purchaseAirtimeRequest PurchaseAirtimeRequest) GeneralApiPurchaseAirtimeRequest {
+	r.purchaseAirtimeRequest = &purchaseAirtimeRequest
 	return r
 }
 
@@ -751,7 +751,7 @@ func (a *GeneralApiService) PurchaseAirtimeExecute(r GeneralApiPurchaseAirtimeRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.purchaseAirtimeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -820,11 +820,11 @@ func (a *GeneralApiService) PurchaseAirtimeExecute(r GeneralApiPurchaseAirtimeRe
 type GeneralApiPurchaseDataRequest struct {
 	ctx context.Context
 	ApiService *GeneralApiService
-	body *map[string]interface{}
+	purchaseDataRequest *PurchaseDataRequest
 }
 
-func (r GeneralApiPurchaseDataRequest) Body(body map[string]interface{}) GeneralApiPurchaseDataRequest {
-	r.body = &body
+func (r GeneralApiPurchaseDataRequest) PurchaseDataRequest(purchaseDataRequest PurchaseDataRequest) GeneralApiPurchaseDataRequest {
+	r.purchaseDataRequest = &purchaseDataRequest
 	return r
 }
 
@@ -884,7 +884,7 @@ func (a *GeneralApiService) PurchaseDataExecute(r GeneralApiPurchaseDataRequest)
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.purchaseDataRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

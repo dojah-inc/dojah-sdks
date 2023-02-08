@@ -27,6 +27,7 @@ import time
 import dojah_client
 from dojah_client.api import wallet_api
 from dojah_client.model.create_wallet_response import CreateWalletResponse
+from dojah_client.model.create_wallet_request import CreateWalletRequest
 from pprint import pprint
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
@@ -49,13 +50,19 @@ configuration.api_key['appIdAuth'] = 'YOUR_API_KEY'
 with dojah_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet_api.WalletApi(api_client)
-    body = {} # {str: (bool, dict, float, int, list, str, none_type)} |  (optional)
+    create_wallet_request = CreateWalletRequest(
+        last_name="Dojah",
+        first_name="Inc",
+        phone_number="08068810258",
+        dob="18-May-1992",
+        route="WEMA",
+    ) # CreateWalletRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Create NGN Wallet
-        api_response = api_instance.create_wallet(body=body)
+        api_response = api_instance.create_wallet(create_wallet_request=create_wallet_request)
         pprint(api_response)
     except dojah_client.ApiException as e:
         print("Exception when calling WalletApi->create_wallet: %s\n" % e)
@@ -66,7 +73,7 @@ with dojah_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **{str: (bool, dict, float, int, list, str, none_type)}**|  | [optional]
+ **create_wallet_request** | [**CreateWalletRequest**](CreateWalletRequest.md)|  | [optional]
 
 ### Return type
 
@@ -104,6 +111,7 @@ import time
 import dojah_client
 from dojah_client.api import wallet_api
 from dojah_client.model.credit_subwallet_response import CreditSubwalletResponse
+from dojah_client.model.credit_subwallet_request import CreditSubwalletRequest
 from pprint import pprint
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
@@ -120,13 +128,16 @@ configuration = dojah_client.Configuration(api_key={'apikeyAuth': 'YOUR_API_KEY'
 with dojah_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet_api.WalletApi(api_client)
-    body = {} # {str: (bool, dict, float, int, list, str, none_type)} |  (optional)
+    credit_subwallet_request = CreditSubwalletRequest(
+        amount="12",
+        wallet_id="867a8cae-8073-4914-8b04-d7fd096c1006",
+    ) # CreditSubwalletRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Credit Sub-wallet
-        api_response = api_instance.credit_subwallet(body=body)
+        api_response = api_instance.credit_subwallet(credit_subwallet_request=credit_subwallet_request)
         pprint(api_response)
     except dojah_client.ApiException as e:
         print("Exception when calling WalletApi->credit_subwallet: %s\n" % e)
@@ -137,7 +148,7 @@ with dojah_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **{str: (bool, dict, float, int, list, str, none_type)}**|  | [optional]
+ **credit_subwallet_request** | [**CreditSubwalletRequest**](CreditSubwalletRequest.md)|  | [optional]
 
 ### Return type
 
@@ -410,6 +421,7 @@ import time
 import dojah_client
 from dojah_client.api import wallet_api
 from dojah_client.model.transfer_funds_response import TransferFundsResponse
+from dojah_client.model.transfer_funds_request import TransferFundsRequest
 from pprint import pprint
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
@@ -432,13 +444,18 @@ configuration.api_key['appIdAuth'] = 'YOUR_API_KEY'
 with dojah_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet_api.WalletApi(api_client)
-    body = {} # {str: (bool, dict, float, int, list, str, none_type)} |  (optional)
+    transfer_funds_request = TransferFundsRequest(
+        amount="50",
+        recipient_bank_code="058",
+        recipient_account_number="0037466959",
+        wallet_id="6187eb92-a4ad-420f-98cf-05a34188f467",
+    ) # TransferFundsRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Transfer Funds
-        api_response = api_instance.transfer_funds(body=body)
+        api_response = api_instance.transfer_funds(transfer_funds_request=transfer_funds_request)
         pprint(api_response)
     except dojah_client.ApiException as e:
         print("Exception when calling WalletApi->transfer_funds: %s\n" % e)
@@ -449,7 +466,7 @@ with dojah_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **{str: (bool, dict, float, int, list, str, none_type)}**|  | [optional]
+ **transfer_funds_request** | [**TransferFundsRequest**](TransferFundsRequest.md)|  | [optional]
 
 ### Return type
 

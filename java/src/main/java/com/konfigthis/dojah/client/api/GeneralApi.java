@@ -32,7 +32,9 @@ import com.konfigthis.dojah.client.model.GetBanksResponse;
 import com.konfigthis.dojah.client.model.GetBinResponse;
 import com.konfigthis.dojah.client.model.GetDataPlansResponse;
 import com.konfigthis.dojah.client.model.GetWalletBalanceResponse;
+import com.konfigthis.dojah.client.model.PurchaseAirtimeRequest;
 import com.konfigthis.dojah.client.model.PurchaseAirtimeResponse;
+import com.konfigthis.dojah.client.model.PurchaseDataRequest;
 import com.konfigthis.dojah.client.model.PurchaseDataResponse;
 
 import java.lang.reflect.Type;
@@ -674,7 +676,7 @@ public class GeneralApi {
     }
     /**
      * Build call for purchaseAirtime
-     * @param body  (optional)
+     * @param purchaseAirtimeRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -684,7 +686,7 @@ public class GeneralApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call purchaseAirtimeCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call purchaseAirtimeCall(PurchaseAirtimeRequest purchaseAirtimeRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -698,7 +700,7 @@ public class GeneralApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = purchaseAirtimeRequest;
 
         // create path and map variables
         String localVarPath = "/v1/purchase/airtime";
@@ -730,15 +732,15 @@ public class GeneralApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call purchaseAirtimeValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return purchaseAirtimeCall(body, _callback);
+    private okhttp3.Call purchaseAirtimeValidateBeforeCall(PurchaseAirtimeRequest purchaseAirtimeRequest, final ApiCallback _callback) throws ApiException {
+        return purchaseAirtimeCall(purchaseAirtimeRequest, _callback);
 
     }
 
     /**
      * Purchase - Send Airtime
      * 
-     * @param body  (optional)
+     * @param purchaseAirtimeRequest  (optional)
      * @return PurchaseAirtimeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -747,15 +749,15 @@ public class GeneralApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public PurchaseAirtimeResponse purchaseAirtime(Object body) throws ApiException {
-        ApiResponse<PurchaseAirtimeResponse> localVarResp = purchaseAirtimeWithHttpInfo(body);
+    public PurchaseAirtimeResponse purchaseAirtime(PurchaseAirtimeRequest purchaseAirtimeRequest) throws ApiException {
+        ApiResponse<PurchaseAirtimeResponse> localVarResp = purchaseAirtimeWithHttpInfo(purchaseAirtimeRequest);
         return localVarResp.getData();
     }
 
     /**
      * Purchase - Send Airtime
      * 
-     * @param body  (optional)
+     * @param purchaseAirtimeRequest  (optional)
      * @return ApiResponse&lt;PurchaseAirtimeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -764,8 +766,8 @@ public class GeneralApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PurchaseAirtimeResponse> purchaseAirtimeWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = purchaseAirtimeValidateBeforeCall(body, null);
+    public ApiResponse<PurchaseAirtimeResponse> purchaseAirtimeWithHttpInfo(PurchaseAirtimeRequest purchaseAirtimeRequest) throws ApiException {
+        okhttp3.Call localVarCall = purchaseAirtimeValidateBeforeCall(purchaseAirtimeRequest, null);
         Type localVarReturnType = new TypeToken<PurchaseAirtimeResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -773,7 +775,7 @@ public class GeneralApi {
     /**
      * Purchase - Send Airtime (asynchronously)
      * 
-     * @param body  (optional)
+     * @param purchaseAirtimeRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -783,16 +785,16 @@ public class GeneralApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call purchaseAirtimeAsync(Object body, final ApiCallback<PurchaseAirtimeResponse> _callback) throws ApiException {
+    public okhttp3.Call purchaseAirtimeAsync(PurchaseAirtimeRequest purchaseAirtimeRequest, final ApiCallback<PurchaseAirtimeResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = purchaseAirtimeValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = purchaseAirtimeValidateBeforeCall(purchaseAirtimeRequest, _callback);
         Type localVarReturnType = new TypeToken<PurchaseAirtimeResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for purchaseData
-     * @param body  (optional)
+     * @param purchaseDataRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -802,7 +804,7 @@ public class GeneralApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call purchaseDataCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call purchaseDataCall(PurchaseDataRequest purchaseDataRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -816,7 +818,7 @@ public class GeneralApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = purchaseDataRequest;
 
         // create path and map variables
         String localVarPath = "/v1/purchase/data";
@@ -848,15 +850,15 @@ public class GeneralApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call purchaseDataValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return purchaseDataCall(body, _callback);
+    private okhttp3.Call purchaseDataValidateBeforeCall(PurchaseDataRequest purchaseDataRequest, final ApiCallback _callback) throws ApiException {
+        return purchaseDataCall(purchaseDataRequest, _callback);
 
     }
 
     /**
      * Purchase - Buy Data
      * 
-     * @param body  (optional)
+     * @param purchaseDataRequest  (optional)
      * @return PurchaseDataResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -865,15 +867,15 @@ public class GeneralApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public PurchaseDataResponse purchaseData(Object body) throws ApiException {
-        ApiResponse<PurchaseDataResponse> localVarResp = purchaseDataWithHttpInfo(body);
+    public PurchaseDataResponse purchaseData(PurchaseDataRequest purchaseDataRequest) throws ApiException {
+        ApiResponse<PurchaseDataResponse> localVarResp = purchaseDataWithHttpInfo(purchaseDataRequest);
         return localVarResp.getData();
     }
 
     /**
      * Purchase - Buy Data
      * 
-     * @param body  (optional)
+     * @param purchaseDataRequest  (optional)
      * @return ApiResponse&lt;PurchaseDataResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -882,8 +884,8 @@ public class GeneralApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PurchaseDataResponse> purchaseDataWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = purchaseDataValidateBeforeCall(body, null);
+    public ApiResponse<PurchaseDataResponse> purchaseDataWithHttpInfo(PurchaseDataRequest purchaseDataRequest) throws ApiException {
+        okhttp3.Call localVarCall = purchaseDataValidateBeforeCall(purchaseDataRequest, null);
         Type localVarReturnType = new TypeToken<PurchaseDataResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -891,7 +893,7 @@ public class GeneralApi {
     /**
      * Purchase - Buy Data (asynchronously)
      * 
-     * @param body  (optional)
+     * @param purchaseDataRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -901,9 +903,9 @@ public class GeneralApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call purchaseDataAsync(Object body, final ApiCallback<PurchaseDataResponse> _callback) throws ApiException {
+    public okhttp3.Call purchaseDataAsync(PurchaseDataRequest purchaseDataRequest, final ApiCallback<PurchaseDataResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = purchaseDataValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = purchaseDataValidateBeforeCall(purchaseDataRequest, _callback);
         Type localVarReturnType = new TypeToken<PurchaseDataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

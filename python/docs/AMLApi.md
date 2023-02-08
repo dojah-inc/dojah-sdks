@@ -101,6 +101,7 @@ import time
 import dojah_client
 from dojah_client.api import aml_api
 from dojah_client.model.screen_aml_response import ScreenAmlResponse
+from dojah_client.model.screen_aml_request import ScreenAmlRequest
 from pprint import pprint
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
@@ -123,13 +124,17 @@ configuration.api_key['appIdAuth'] = 'YOUR_API_KEY'
 with dojah_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aml_api.AMLApi(api_client)
-    body = {} # {str: (bool, dict, float, int, list, str, none_type)} |  (optional)
+    screen_aml_request = ScreenAmlRequest(
+        first_name="Obama ",
+        last_name=" ",
+        date_of_birth="1997-08-18",
+    ) # ScreenAmlRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # AML Screening
-        api_response = api_instance.screen_aml(body=body)
+        api_response = api_instance.screen_aml(screen_aml_request=screen_aml_request)
         pprint(api_response)
     except dojah_client.ApiException as e:
         print("Exception when calling AMLApi->screen_aml: %s\n" % e)
@@ -140,7 +145,7 @@ with dojah_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **{str: (bool, dict, float, int, list, str, none_type)}**|  | [optional]
+ **screen_aml_request** | [**ScreenAmlRequest**](ScreenAmlRequest.md)|  | [optional]
 
 ### Return type
 

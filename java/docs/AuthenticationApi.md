@@ -156,7 +156,7 @@ public class Example {
 
 <a name="requestSenderId"></a>
 # **requestSenderId**
-> RequestSenderIdResponse requestSenderId(body)
+> RequestSenderIdResponse requestSenderId(requestSenderIdRequest)
 
 Messaging - Request Sender ID
 
@@ -188,9 +188,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
-    Object body = null; // Object | 
+    RequestSenderIdRequest requestSenderIdRequest = new RequestSenderIdRequest(); // RequestSenderIdRequest | 
     try {
-      RequestSenderIdResponse result = apiInstance.requestSenderId(body);
+      RequestSenderIdResponse result = apiInstance.requestSenderId(requestSenderIdRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#requestSenderId");
@@ -207,7 +207,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **requestSenderIdRequest** | [**RequestSenderIdRequest**](RequestSenderIdRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -229,7 +229,7 @@ public class Example {
 
 <a name="sendOtp"></a>
 # **sendOtp**
-> SendOtpResponse sendOtp(body)
+> SendOtpResponse sendOtp(sendOtpRequest)
 
 Messaging - Send OTP
 
@@ -261,9 +261,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
-    Object body = null; // Object | 
+    SendOtpRequest sendOtpRequest = new SendOtpRequest(); // SendOtpRequest | 
     try {
-      SendOtpResponse result = apiInstance.sendOtp(body);
+      SendOtpResponse result = apiInstance.sendOtp(sendOtpRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#sendOtp");
@@ -280,7 +280,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **sendOtpRequest** | [**SendOtpRequest**](SendOtpRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -302,7 +302,7 @@ public class Example {
 
 <a name="sendSms"></a>
 # **sendSms**
-> SendSmsResponse sendSms(body)
+> SendSmsResponse sendSms(sendSmsRequest)
 
 Messaging - Send SMS
 
@@ -334,9 +334,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
-    Object body = null; // Object | 
+    SendSmsRequest sendSmsRequest = new SendSmsRequest(); // SendSmsRequest | 
     try {
-      SendSmsResponse result = apiInstance.sendSms(body);
+      SendSmsResponse result = apiInstance.sendSms(sendSmsRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#sendSms");
@@ -353,7 +353,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **sendSmsRequest** | [**SendSmsRequest**](SendSmsRequest.md)|  | [optional] |
 
 ### Return type
 

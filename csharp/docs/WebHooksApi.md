@@ -197,7 +197,7 @@ This endpoint does not need any parameter.
 
 <a name="notifywebhook"></a>
 # **NotifyWebhook**
-> NotifyWebhookResponse NotifyWebhook (Object body = null)
+> NotifyWebhookResponse NotifyWebhook (NotifyWebhookRequest notifyWebhookRequest = null)
 
 Post Hook
 
@@ -227,12 +227,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new WebHooksApi(config);
-            var body = null;  // Object |  (optional) 
+            var notifyWebhookRequest = new NotifyWebhookRequest(); // NotifyWebhookRequest |  (optional) 
 
             try
             {
                 // Post Hook
-                NotifyWebhookResponse result = apiInstance.NotifyWebhook(body);
+                NotifyWebhookResponse result = apiInstance.NotifyWebhook(notifyWebhookRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -253,7 +253,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Post Hook
-    ApiResponse<NotifyWebhookResponse> response = apiInstance.NotifyWebhookWithHttpInfo(body);
+    ApiResponse<NotifyWebhookResponse> response = apiInstance.NotifyWebhookWithHttpInfo(notifyWebhookRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -270,7 +270,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **notifyWebhookRequest** | [**NotifyWebhookRequest**](NotifyWebhookRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -295,7 +295,7 @@ catch (ApiException e)
 
 <a name="subscribeservice"></a>
 # **SubscribeService**
-> SubscribeServiceResponse SubscribeService (Object body = null)
+> SubscribeServiceResponse SubscribeService (SubscribeServiceRequest subscribeServiceRequest = null)
 
 Subscribe to service
 
@@ -325,12 +325,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new WebHooksApi(config);
-            var body = null;  // Object |  (optional) 
+            var subscribeServiceRequest = new SubscribeServiceRequest(); // SubscribeServiceRequest |  (optional) 
 
             try
             {
                 // Subscribe to service
-                SubscribeServiceResponse result = apiInstance.SubscribeService(body);
+                SubscribeServiceResponse result = apiInstance.SubscribeService(subscribeServiceRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -351,7 +351,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Subscribe to service
-    ApiResponse<SubscribeServiceResponse> response = apiInstance.SubscribeServiceWithHttpInfo(body);
+    ApiResponse<SubscribeServiceResponse> response = apiInstance.SubscribeServiceWithHttpInfo(subscribeServiceRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -368,7 +368,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **subscribeServiceRequest** | [**SubscribeServiceRequest**](SubscribeServiceRequest.md) |  | [optional]  |
 
 ### Return type
 

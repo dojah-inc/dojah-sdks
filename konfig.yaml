@@ -2,7 +2,7 @@ outputDirectory: /tmp/dojah-sdks-out
 specPath: api.yaml
 generators:
   java:
-    version: 1.0.0
+    version: 2.0.0
     groupId: com.konfigthis.dojah
     artifactId: dojah-java-sdk
     outputDirectory: java
@@ -10,7 +10,7 @@ generators:
       userId: konfig-dev
       repoId: dojah-sdks/tree/main/java
   typescript:
-    version: 1.2.0
+    version: 2.0.0
     npmName: dojah-typescript-sdk
     readmeSnippet: snippets/typescript.ts
     outputDirectory: typescript
@@ -18,7 +18,7 @@ generators:
       userId: konfig-dev
       repoId: dojah-sdks/tree/main/typescript
   python:
-    version: 1.0.0
+    version: 2.0.0
     packageName: dojah_client
     projectName: dojah-python-sdk
     outputDirectory: python
@@ -26,7 +26,7 @@ generators:
       userId: konfig-dev
       repoId: dojah-sdks/tree/main/python
   csharp:
-    version: 1.0.0
+    version: 2.0.0
     packageName: Dojah.Net
     outputDirectory: csharp
     logoPath: logo.png
@@ -34,7 +34,7 @@ generators:
       userId: konfig-dev
       repoId: dojah-sdks/tree/main/csharp
   go:
-    version: 1.0.0
+    version: 2.0.0
     packageName: dojah
     outputDirectory: go
     git:

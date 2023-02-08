@@ -198,6 +198,25 @@ export interface AnalyzeDocumentResponseEntityTextDataInner {
 /**
  * 
  * @export
+ * @interface CategorizeTransactionsRequest
+ */
+export interface CategorizeTransactionsRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof CategorizeTransactionsRequest
+     */
+    'description'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CategorizeTransactionsRequest
+     */
+    'trans_type'?: string;
+}
+/**
+ * 
+ * @export
  * @interface CategorizeTransactionsResponse
  */
 export interface CategorizeTransactionsResponse {
@@ -279,6 +298,62 @@ export interface CollectStatusFromPdfResponse {
 /**
  * 
  * @export
+ * @interface CollectTransactionsRequest
+ */
+export interface CollectTransactionsRequest {
+    /**
+     * 
+     * @type {Array<CollectTransactionsRequestTransactionsInner>}
+     * @memberof CollectTransactionsRequest
+     */
+    'transactions'?: Array<CollectTransactionsRequestTransactionsInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof CollectTransactionsRequest
+     */
+    'app_id'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface CollectTransactionsRequestTransactionsInner
+ */
+export interface CollectTransactionsRequestTransactionsInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof CollectTransactionsRequestTransactionsInner
+     */
+    'transaction_date'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CollectTransactionsRequestTransactionsInner
+     */
+    'transaction_amount'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CollectTransactionsRequestTransactionsInner
+     */
+    'transaction_description'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CollectTransactionsRequestTransactionsInner
+     */
+    'transaction_type'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CollectTransactionsRequestTransactionsInner
+     */
+    'reference_number'?: string;
+}
+/**
+ * 
+ * @export
  * @interface CollectTransactionsResponse
  */
 export interface CollectTransactionsResponse {
@@ -307,6 +382,43 @@ export interface CollectTransactionsResponseEntity {
      * @memberof CollectTransactionsResponseEntity
      */
     'account_id'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface CreateWalletRequest
+ */
+export interface CreateWalletRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateWalletRequest
+     */
+    'last_name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateWalletRequest
+     */
+    'first_name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateWalletRequest
+     */
+    'phone_number'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateWalletRequest
+     */
+    'dob'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateWalletRequest
+     */
+    'route'?: string;
 }
 /**
  * 
@@ -351,6 +463,25 @@ export interface CreateWalletResponseEntity {
      * @memberof CreateWalletResponseEntity
      */
     'phone_number'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface CreditSubwalletRequest
+ */
+export interface CreditSubwalletRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof CreditSubwalletRequest
+     */
+    'amount'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreditSubwalletRequest
+     */
+    'wallet_id'?: string;
 }
 /**
  * 
@@ -2042,6 +2173,19 @@ export interface GetDataPlansResponse {
 /**
  * 
  * @export
+ * @interface GetDocumentAnalysisRequest
+ */
+export interface GetDocumentAnalysisRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof GetDocumentAnalysisRequest
+     */
+    'img'?: string;
+}
+/**
+ * 
+ * @export
  * @interface GetDocumentAnalysisResponse
  */
 export interface GetDocumentAnalysisResponse {
@@ -2708,6 +2852,19 @@ export interface GetFullBvnResponseEntity {
 /**
  * 
  * @export
+ * @interface GetGenericOcrTextRequest
+ */
+export interface GetGenericOcrTextRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof GetGenericOcrTextRequest
+     */
+    'img'?: string;
+}
+/**
+ * 
+ * @export
  * @interface GetGenericOcrTextResponse
  */
 export interface GetGenericOcrTextResponse {
@@ -3176,6 +3333,19 @@ export interface GetNubanResponseEntity {
      * @memberof GetNubanResponseEntity
      */
     'state_code'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface GetOcrTextRequest
+ */
+export interface GetOcrTextRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof GetOcrTextRequest
+     */
+    'image'?: string;
 }
 /**
  * 
@@ -4832,6 +5002,38 @@ export interface GetWebhooksResponseEntityInner {
 /**
  * 
  * @export
+ * @interface NotifyWebhookRequest
+ */
+export interface NotifyWebhookRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof NotifyWebhookRequest
+     */
+    'subject'?: string;
+    /**
+     * 
+     * @type {NotifyWebhookRequestData}
+     * @memberof NotifyWebhookRequest
+     */
+    'data'?: NotifyWebhookRequestData;
+}
+/**
+ * 
+ * @export
+ * @interface NotifyWebhookRequestData
+ */
+export interface NotifyWebhookRequestData {
+    /**
+     * 
+     * @type {string}
+     * @memberof NotifyWebhookRequestData
+     */
+    'stuff'?: string;
+}
+/**
+ * 
+ * @export
  * @interface NotifyWebhookResponse
  */
 export interface NotifyWebhookResponse {
@@ -4841,6 +5043,25 @@ export interface NotifyWebhookResponse {
      * @memberof NotifyWebhookResponse
      */
     'entity'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface PurchaseAirtimeRequest
+ */
+export interface PurchaseAirtimeRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof PurchaseAirtimeRequest
+     */
+    'destination'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PurchaseAirtimeRequest
+     */
+    'amount'?: string;
 }
 /**
  * 
@@ -4896,6 +5117,25 @@ export interface PurchaseAirtimeResponseEntityDataInner {
 /**
  * 
  * @export
+ * @interface PurchaseDataRequest
+ */
+export interface PurchaseDataRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof PurchaseDataRequest
+     */
+    'plan'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PurchaseDataRequest
+     */
+    'destination'?: string;
+}
+/**
+ * 
+ * @export
  * @interface PurchaseDataResponse
  */
 export interface PurchaseDataResponse {
@@ -4930,6 +5170,19 @@ export interface PurchaseDataResponseEntityInner {
      * @memberof PurchaseDataResponseEntityInner
      */
     'plan'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface RequestSenderIdRequest
+ */
+export interface RequestSenderIdRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof RequestSenderIdRequest
+     */
+    'sender_id'?: string;
 }
 /**
  * 
@@ -4972,6 +5225,31 @@ export interface RequestSenderIdResponseEntityInner {
 /**
  * 
  * @export
+ * @interface ScreenAmlRequest
+ */
+export interface ScreenAmlRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof ScreenAmlRequest
+     */
+    'first_name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ScreenAmlRequest
+     */
+    'last_name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ScreenAmlRequest
+     */
+    'date_of_birth'?: string;
+}
+/**
+ * 
+ * @export
  * @interface ScreenAmlResponse
  */
 export interface ScreenAmlResponse {
@@ -5000,6 +5278,43 @@ export interface ScreenAmlResponseEntity {
      * @memberof ScreenAmlResponseEntity
      */
     'status'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface SendOtpRequest
+ */
+export interface SendOtpRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof SendOtpRequest
+     */
+    'destination'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof SendOtpRequest
+     */
+    'length'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendOtpRequest
+     */
+    'channel'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendOtpRequest
+     */
+    'sender_id'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SendOtpRequest
+     */
+    'priority'?: boolean;
 }
 /**
  * 
@@ -5048,6 +5363,37 @@ export interface SendOtpResponseEntityInner {
 /**
  * 
  * @export
+ * @interface SendSmsRequest
+ */
+export interface SendSmsRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof SendSmsRequest
+     */
+    'destination'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendSmsRequest
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendSmsRequest
+     */
+    'channel'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendSmsRequest
+     */
+    'sender_id'?: string;
+}
+/**
+ * 
+ * @export
  * @interface SendSmsResponse
  */
 export interface SendSmsResponse {
@@ -5092,6 +5438,25 @@ export interface SendSmsResponseEntity {
 /**
  * 
  * @export
+ * @interface SubscribeServiceRequest
+ */
+export interface SubscribeServiceRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof SubscribeServiceRequest
+     */
+    'webhook'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SubscribeServiceRequest
+     */
+    'service'?: string;
+}
+/**
+ * 
+ * @export
  * @interface SubscribeServiceResponse
  */
 export interface SubscribeServiceResponse {
@@ -5101,6 +5466,37 @@ export interface SubscribeServiceResponse {
      * @memberof SubscribeServiceResponse
      */
     'entity'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface TransferFundsRequest
+ */
+export interface TransferFundsRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof TransferFundsRequest
+     */
+    'amount'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TransferFundsRequest
+     */
+    'recipient_bank_code'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TransferFundsRequest
+     */
+    'recipient_account_number'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TransferFundsRequest
+     */
+    'wallet_id'?: string;
 }
 /**
  * 
@@ -5325,6 +5721,25 @@ export interface VerifyAgeResponseEntity {
 /**
  * 
  * @export
+ * @interface VerifyPhotoIdWithSelfieRequest
+ */
+export interface VerifyPhotoIdWithSelfieRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifyPhotoIdWithSelfieRequest
+     */
+    'selfie_image'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifyPhotoIdWithSelfieRequest
+     */
+    'photoid_image'?: string;
+}
+/**
+ * 
+ * @export
  * @interface VerifyPhotoIdWithSelfieResponse
  */
 export interface VerifyPhotoIdWithSelfieResponse {
@@ -5402,6 +5817,25 @@ export interface VerifyPhotoIdWithSelfieResponseEntitySelfie {
      * @memberof VerifyPhotoIdWithSelfieResponseEntitySelfie
      */
     'sunglasses'?: boolean;
+}
+/**
+ * 
+ * @export
+ * @interface VerifySelfieBvnRequest
+ */
+export interface VerifySelfieBvnRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifySelfieBvnRequest
+     */
+    'bvn'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifySelfieBvnRequest
+     */
+    'selfie_image'?: string;
 }
 /**
  * 
@@ -5585,6 +6019,25 @@ export interface VerifySelfieBvnResponseEntitySelfieVerification {
      * @memberof VerifySelfieBvnResponseEntitySelfieVerification
      */
     'match'?: boolean;
+}
+/**
+ * 
+ * @export
+ * @interface VerifySelfieNinRequest
+ */
+export interface VerifySelfieNinRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifySelfieNinRequest
+     */
+    'nin'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifySelfieNinRequest
+     */
+    'selfie_image'?: string;
 }
 /**
  * 
@@ -5976,11 +6429,11 @@ export const AMLApiAxiosParamCreator = function (configuration?: Configuration) 
         /**
          * 
          * @summary AML Screening
-         * @param {object} [body] 
+         * @param {ScreenAmlRequest} [screenAmlRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        screenAml: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        screenAml: async (screenAmlRequest?: ScreenAmlRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/aml/screening`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -6006,7 +6459,7 @@ export const AMLApiAxiosParamCreator = function (configuration?: Configuration) 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(screenAmlRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -6037,12 +6490,12 @@ export const AMLApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary AML Screening
-         * @param {object} [body] 
+         * @param {ScreenAmlRequest} [screenAmlRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async screenAml(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ScreenAmlResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.screenAml(body, options);
+        async screenAml(screenAmlRequest?: ScreenAmlRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ScreenAmlResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.screenAml(screenAmlRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -6068,12 +6521,12 @@ export const AMLApiFactory = function (configuration?: Configuration, basePath?:
         /**
          * 
          * @summary AML Screening
-         * @param {object} [body] 
+         * @param {ScreenAmlRequest} [screenAmlRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        screenAml(body?: object, options?: any): AxiosPromise<ScreenAmlResponse> {
-            return localVarFp.screenAml(body, options).then((request) => request(axios, basePath));
+        screenAml(screenAmlRequest?: ScreenAmlRequest, options?: any): AxiosPromise<ScreenAmlResponse> {
+            return localVarFp.screenAml(screenAmlRequest, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -6100,13 +6553,13 @@ export class AMLApi extends BaseAPI {
     /**
      * 
      * @summary AML Screening
-     * @param {object} [body] 
+     * @param {ScreenAmlRequest} [screenAmlRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AMLApi
      */
-    public screenAml(body?: object, options?: AxiosRequestConfig) {
-        return AMLApiFp(this.configuration).screenAml(body, options).then((request) => request(this.axios, this.basePath));
+    public screenAml(screenAmlRequest?: ScreenAmlRequest, options?: AxiosRequestConfig) {
+        return AMLApiFp(this.configuration).screenAml(screenAmlRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -6197,11 +6650,11 @@ export const AuthenticationApiAxiosParamCreator = function (configuration?: Conf
         /**
          * 
          * @summary Messaging - Request Sender ID
-         * @param {object} [body] 
+         * @param {RequestSenderIdRequest} [requestSenderIdRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        requestSenderId: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        requestSenderId: async (requestSenderIdRequest?: RequestSenderIdRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/messaging/sender_id`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -6227,7 +6680,7 @@ export const AuthenticationApiAxiosParamCreator = function (configuration?: Conf
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(requestSenderIdRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -6237,11 +6690,11 @@ export const AuthenticationApiAxiosParamCreator = function (configuration?: Conf
         /**
          * 
          * @summary Messaging - Send OTP
-         * @param {object} [body] 
+         * @param {SendOtpRequest} [sendOtpRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        sendOtp: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        sendOtp: async (sendOtpRequest?: SendOtpRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/messaging/otp`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -6267,7 +6720,7 @@ export const AuthenticationApiAxiosParamCreator = function (configuration?: Conf
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(sendOtpRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -6277,11 +6730,11 @@ export const AuthenticationApiAxiosParamCreator = function (configuration?: Conf
         /**
          * 
          * @summary Messaging - Send SMS
-         * @param {object} [body] 
+         * @param {SendSmsRequest} [sendSmsRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        sendSms: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        sendSms: async (sendSmsRequest?: SendSmsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/messaging/sms`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -6307,7 +6760,7 @@ export const AuthenticationApiAxiosParamCreator = function (configuration?: Conf
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(sendSmsRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -6394,34 +6847,34 @@ export const AuthenticationApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Messaging - Request Sender ID
-         * @param {object} [body] 
+         * @param {RequestSenderIdRequest} [requestSenderIdRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async requestSenderId(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RequestSenderIdResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.requestSenderId(body, options);
+        async requestSenderId(requestSenderIdRequest?: RequestSenderIdRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RequestSenderIdResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.requestSenderId(requestSenderIdRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Messaging - Send OTP
-         * @param {object} [body] 
+         * @param {SendOtpRequest} [sendOtpRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async sendOtp(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SendOtpResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.sendOtp(body, options);
+        async sendOtp(sendOtpRequest?: SendOtpRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SendOtpResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.sendOtp(sendOtpRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Messaging - Send SMS
-         * @param {object} [body] 
+         * @param {SendSmsRequest} [sendSmsRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async sendSms(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SendSmsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.sendSms(body, options);
+        async sendSms(sendSmsRequest?: SendSmsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SendSmsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.sendSms(sendSmsRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -6468,32 +6921,32 @@ export const AuthenticationApiFactory = function (configuration?: Configuration,
         /**
          * 
          * @summary Messaging - Request Sender ID
-         * @param {object} [body] 
+         * @param {RequestSenderIdRequest} [requestSenderIdRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        requestSenderId(body?: object, options?: any): AxiosPromise<RequestSenderIdResponse> {
-            return localVarFp.requestSenderId(body, options).then((request) => request(axios, basePath));
+        requestSenderId(requestSenderIdRequest?: RequestSenderIdRequest, options?: any): AxiosPromise<RequestSenderIdResponse> {
+            return localVarFp.requestSenderId(requestSenderIdRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Messaging - Send OTP
-         * @param {object} [body] 
+         * @param {SendOtpRequest} [sendOtpRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        sendOtp(body?: object, options?: any): AxiosPromise<SendOtpResponse> {
-            return localVarFp.sendOtp(body, options).then((request) => request(axios, basePath));
+        sendOtp(sendOtpRequest?: SendOtpRequest, options?: any): AxiosPromise<SendOtpResponse> {
+            return localVarFp.sendOtp(sendOtpRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Messaging - Send SMS
-         * @param {object} [body] 
+         * @param {SendSmsRequest} [sendSmsRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        sendSms(body?: object, options?: any): AxiosPromise<SendSmsResponse> {
-            return localVarFp.sendSms(body, options).then((request) => request(axios, basePath));
+        sendSms(sendSmsRequest?: SendSmsRequest, options?: any): AxiosPromise<SendSmsResponse> {
+            return localVarFp.sendSms(sendSmsRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -6542,37 +6995,37 @@ export class AuthenticationApi extends BaseAPI {
     /**
      * 
      * @summary Messaging - Request Sender ID
-     * @param {object} [body] 
+     * @param {RequestSenderIdRequest} [requestSenderIdRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AuthenticationApi
      */
-    public requestSenderId(body?: object, options?: AxiosRequestConfig) {
-        return AuthenticationApiFp(this.configuration).requestSenderId(body, options).then((request) => request(this.axios, this.basePath));
+    public requestSenderId(requestSenderIdRequest?: RequestSenderIdRequest, options?: AxiosRequestConfig) {
+        return AuthenticationApiFp(this.configuration).requestSenderId(requestSenderIdRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Messaging - Send OTP
-     * @param {object} [body] 
+     * @param {SendOtpRequest} [sendOtpRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AuthenticationApi
      */
-    public sendOtp(body?: object, options?: AxiosRequestConfig) {
-        return AuthenticationApiFp(this.configuration).sendOtp(body, options).then((request) => request(this.axios, this.basePath));
+    public sendOtp(sendOtpRequest?: SendOtpRequest, options?: AxiosRequestConfig) {
+        return AuthenticationApiFp(this.configuration).sendOtp(sendOtpRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Messaging - Send SMS
-     * @param {object} [body] 
+     * @param {SendSmsRequest} [sendSmsRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AuthenticationApi
      */
-    public sendSms(body?: object, options?: AxiosRequestConfig) {
-        return AuthenticationApiFp(this.configuration).sendSms(body, options).then((request) => request(this.axios, this.basePath));
+    public sendSms(sendSmsRequest?: SendSmsRequest, options?: AxiosRequestConfig) {
+        return AuthenticationApiFp(this.configuration).sendSms(sendSmsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6649,11 +7102,11 @@ export const FinancialApiAxiosParamCreator = function (configuration?: Configura
         /**
          * 
          * @summary Collect Transactions
-         * @param {object} [body] 
+         * @param {CollectTransactionsRequest} [collectTransactionsRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        collectTransactions: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        collectTransactions: async (collectTransactionsRequest?: CollectTransactionsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/financial/transactions`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -6679,7 +7132,7 @@ export const FinancialApiAxiosParamCreator = function (configuration?: Configura
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(collectTransactionsRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -7039,12 +7492,12 @@ export const FinancialApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Collect Transactions
-         * @param {object} [body] 
+         * @param {CollectTransactionsRequest} [collectTransactionsRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async collectTransactions(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CollectTransactionsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.collectTransactions(body, options);
+        async collectTransactions(collectTransactionsRequest?: CollectTransactionsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CollectTransactionsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.collectTransactions(collectTransactionsRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -7159,12 +7612,12 @@ export const FinancialApiFactory = function (configuration?: Configuration, base
         /**
          * 
          * @summary Collect Transactions
-         * @param {object} [body] 
+         * @param {CollectTransactionsRequest} [collectTransactionsRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        collectTransactions(body?: object, options?: any): AxiosPromise<CollectTransactionsResponse> {
-            return localVarFp.collectTransactions(body, options).then((request) => request(axios, basePath));
+        collectTransactions(collectTransactionsRequest?: CollectTransactionsRequest, options?: any): AxiosPromise<CollectTransactionsResponse> {
+            return localVarFp.collectTransactions(collectTransactionsRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * /services/@app_id/account/@account_id
@@ -7272,13 +7725,13 @@ export class FinancialApi extends BaseAPI {
     /**
      * 
      * @summary Collect Transactions
-     * @param {object} [body] 
+     * @param {CollectTransactionsRequest} [collectTransactionsRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FinancialApi
      */
-    public collectTransactions(body?: object, options?: AxiosRequestConfig) {
-        return FinancialApiFp(this.configuration).collectTransactions(body, options).then((request) => request(this.axios, this.basePath));
+    public collectTransactions(collectTransactionsRequest?: CollectTransactionsRequest, options?: AxiosRequestConfig) {
+        return FinancialApiFp(this.configuration).collectTransactions(collectTransactionsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -7907,11 +8360,11 @@ export const GeneralApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * 
          * @summary Purchase - Send Airtime
-         * @param {object} [body] 
+         * @param {PurchaseAirtimeRequest} [purchaseAirtimeRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        purchaseAirtime: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        purchaseAirtime: async (purchaseAirtimeRequest?: PurchaseAirtimeRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/purchase/airtime`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -7937,7 +8390,7 @@ export const GeneralApiAxiosParamCreator = function (configuration?: Configurati
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(purchaseAirtimeRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -7947,11 +8400,11 @@ export const GeneralApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * 
          * @summary Purchase - Buy Data
-         * @param {object} [body] 
+         * @param {PurchaseDataRequest} [purchaseDataRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        purchaseData: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        purchaseData: async (purchaseDataRequest?: PurchaseDataRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/purchase/data`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -7977,7 +8430,7 @@ export const GeneralApiAxiosParamCreator = function (configuration?: Configurati
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(purchaseDataRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -8050,23 +8503,23 @@ export const GeneralApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Purchase - Send Airtime
-         * @param {object} [body] 
+         * @param {PurchaseAirtimeRequest} [purchaseAirtimeRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async purchaseAirtime(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PurchaseAirtimeResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.purchaseAirtime(body, options);
+        async purchaseAirtime(purchaseAirtimeRequest?: PurchaseAirtimeRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PurchaseAirtimeResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.purchaseAirtime(purchaseAirtimeRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Purchase - Buy Data
-         * @param {object} [body] 
+         * @param {PurchaseDataRequest} [purchaseDataRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async purchaseData(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PurchaseDataResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.purchaseData(body, options);
+        async purchaseData(purchaseDataRequest?: PurchaseDataRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PurchaseDataResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.purchaseData(purchaseDataRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -8130,22 +8583,22 @@ export const GeneralApiFactory = function (configuration?: Configuration, basePa
         /**
          * 
          * @summary Purchase - Send Airtime
-         * @param {object} [body] 
+         * @param {PurchaseAirtimeRequest} [purchaseAirtimeRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        purchaseAirtime(body?: object, options?: any): AxiosPromise<PurchaseAirtimeResponse> {
-            return localVarFp.purchaseAirtime(body, options).then((request) => request(axios, basePath));
+        purchaseAirtime(purchaseAirtimeRequest?: PurchaseAirtimeRequest, options?: any): AxiosPromise<PurchaseAirtimeResponse> {
+            return localVarFp.purchaseAirtime(purchaseAirtimeRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Purchase - Buy Data
-         * @param {object} [body] 
+         * @param {PurchaseDataRequest} [purchaseDataRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        purchaseData(body?: object, options?: any): AxiosPromise<PurchaseDataResponse> {
-            return localVarFp.purchaseData(body, options).then((request) => request(axios, basePath));
+        purchaseData(purchaseDataRequest?: PurchaseDataRequest, options?: any): AxiosPromise<PurchaseDataResponse> {
+            return localVarFp.purchaseData(purchaseDataRequest, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -8218,25 +8671,25 @@ export class GeneralApi extends BaseAPI {
     /**
      * 
      * @summary Purchase - Send Airtime
-     * @param {object} [body] 
+     * @param {PurchaseAirtimeRequest} [purchaseAirtimeRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GeneralApi
      */
-    public purchaseAirtime(body?: object, options?: AxiosRequestConfig) {
-        return GeneralApiFp(this.configuration).purchaseAirtime(body, options).then((request) => request(this.axios, this.basePath));
+    public purchaseAirtime(purchaseAirtimeRequest?: PurchaseAirtimeRequest, options?: AxiosRequestConfig) {
+        return GeneralApiFp(this.configuration).purchaseAirtime(purchaseAirtimeRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Purchase - Buy Data
-     * @param {object} [body] 
+     * @param {PurchaseDataRequest} [purchaseDataRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GeneralApi
      */
-    public purchaseData(body?: object, options?: AxiosRequestConfig) {
-        return GeneralApiFp(this.configuration).purchaseData(body, options).then((request) => request(this.axios, this.basePath));
+    public purchaseData(purchaseDataRequest?: PurchaseDataRequest, options?: AxiosRequestConfig) {
+        return GeneralApiFp(this.configuration).purchaseData(purchaseDataRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -9402,11 +9855,11 @@ export const KYCApiAxiosParamCreator = function (configuration?: Configuration) 
         /**
          * 
          * @summary KYC - Selfie BVN Verificatoin
-         * @param {object} [body] 
+         * @param {VerifySelfieBvnRequest} [verifySelfieBvnRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        verifySelfieBvn: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        verifySelfieBvn: async (verifySelfieBvnRequest?: VerifySelfieBvnRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/kyc/bvn/verify`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -9432,7 +9885,7 @@ export const KYCApiAxiosParamCreator = function (configuration?: Configuration) 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(verifySelfieBvnRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -9442,11 +9895,11 @@ export const KYCApiAxiosParamCreator = function (configuration?: Configuration) 
         /**
          * 
          * @summary KYC - Selfie NIN Verification
-         * @param {object} [body] 
+         * @param {VerifySelfieNinRequest} [verifySelfieNinRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        verifySelfieNin: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        verifySelfieNin: async (verifySelfieNinRequest?: VerifySelfieNinRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/kyc/nin/verify`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -9472,7 +9925,7 @@ export const KYCApiAxiosParamCreator = function (configuration?: Configuration) 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(verifySelfieNinRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -9658,23 +10111,23 @@ export const KYCApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary KYC - Selfie BVN Verificatoin
-         * @param {object} [body] 
+         * @param {VerifySelfieBvnRequest} [verifySelfieBvnRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async verifySelfieBvn(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VerifySelfieBvnResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.verifySelfieBvn(body, options);
+        async verifySelfieBvn(verifySelfieBvnRequest?: VerifySelfieBvnRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VerifySelfieBvnResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.verifySelfieBvn(verifySelfieBvnRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary KYC - Selfie NIN Verification
-         * @param {object} [body] 
+         * @param {VerifySelfieNinRequest} [verifySelfieNinRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async verifySelfieNin(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VerifySelfieNinResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.verifySelfieNin(body, options);
+        async verifySelfieNin(verifySelfieNinRequest?: VerifySelfieNinRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VerifySelfieNinResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.verifySelfieNin(verifySelfieNinRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -9842,22 +10295,22 @@ export const KYCApiFactory = function (configuration?: Configuration, basePath?:
         /**
          * 
          * @summary KYC - Selfie BVN Verificatoin
-         * @param {object} [body] 
+         * @param {VerifySelfieBvnRequest} [verifySelfieBvnRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        verifySelfieBvn(body?: object, options?: any): AxiosPromise<VerifySelfieBvnResponse> {
-            return localVarFp.verifySelfieBvn(body, options).then((request) => request(axios, basePath));
+        verifySelfieBvn(verifySelfieBvnRequest?: VerifySelfieBvnRequest, options?: any): AxiosPromise<VerifySelfieBvnResponse> {
+            return localVarFp.verifySelfieBvn(verifySelfieBvnRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary KYC - Selfie NIN Verification
-         * @param {object} [body] 
+         * @param {VerifySelfieNinRequest} [verifySelfieNinRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        verifySelfieNin(body?: object, options?: any): AxiosPromise<VerifySelfieNinResponse> {
-            return localVarFp.verifySelfieNin(body, options).then((request) => request(axios, basePath));
+        verifySelfieNin(verifySelfieNinRequest?: VerifySelfieNinRequest, options?: any): AxiosPromise<VerifySelfieNinResponse> {
+            return localVarFp.verifySelfieNin(verifySelfieNinRequest, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -10052,25 +10505,25 @@ export class KYCApi extends BaseAPI {
     /**
      * 
      * @summary KYC - Selfie BVN Verificatoin
-     * @param {object} [body] 
+     * @param {VerifySelfieBvnRequest} [verifySelfieBvnRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof KYCApi
      */
-    public verifySelfieBvn(body?: object, options?: AxiosRequestConfig) {
-        return KYCApiFp(this.configuration).verifySelfieBvn(body, options).then((request) => request(this.axios, this.basePath));
+    public verifySelfieBvn(verifySelfieBvnRequest?: VerifySelfieBvnRequest, options?: AxiosRequestConfig) {
+        return KYCApiFp(this.configuration).verifySelfieBvn(verifySelfieBvnRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary KYC - Selfie NIN Verification
-     * @param {object} [body] 
+     * @param {VerifySelfieNinRequest} [verifySelfieNinRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof KYCApi
      */
-    public verifySelfieNin(body?: object, options?: AxiosRequestConfig) {
-        return KYCApiFp(this.configuration).verifySelfieNin(body, options).then((request) => request(this.axios, this.basePath));
+    public verifySelfieNin(verifySelfieNinRequest?: VerifySelfieNinRequest, options?: AxiosRequestConfig) {
+        return KYCApiFp(this.configuration).verifySelfieNin(verifySelfieNinRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -10084,11 +10537,11 @@ export const MLApiAxiosParamCreator = function (configuration?: Configuration) {
         /**
          * 
          * @summary Document Analysis Drivers License
-         * @param {object} [body] 
+         * @param {GetDocumentAnalysisRequest} [getDocumentAnalysisRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDocumentAnalysis: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getDocumentAnalysis: async (getDocumentAnalysisRequest?: GetDocumentAnalysisRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/document/analysis/dl`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -10114,7 +10567,7 @@ export const MLApiAxiosParamCreator = function (configuration?: Configuration) {
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(getDocumentAnalysisRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -10124,11 +10577,11 @@ export const MLApiAxiosParamCreator = function (configuration?: Configuration) {
         /**
          * 
          * @summary Generic OCR Service
-         * @param {object} [body] 
+         * @param {GetGenericOcrTextRequest} [getGenericOcrTextRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getGenericOcrText: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getGenericOcrText: async (getGenericOcrTextRequest?: GetGenericOcrTextRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/ml/ocr/generic`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -10154,7 +10607,7 @@ export const MLApiAxiosParamCreator = function (configuration?: Configuration) {
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(getGenericOcrTextRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -10164,11 +10617,11 @@ export const MLApiAxiosParamCreator = function (configuration?: Configuration) {
         /**
          * 
          * @summary BVN Ocr
-         * @param {object} [body] 
+         * @param {GetOcrTextRequest} [getOcrTextRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOcrText: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getOcrText: async (getOcrTextRequest?: GetOcrTextRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/ml/ocr`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -10194,7 +10647,7 @@ export const MLApiAxiosParamCreator = function (configuration?: Configuration) {
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(getOcrTextRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -10204,11 +10657,11 @@ export const MLApiAxiosParamCreator = function (configuration?: Configuration) {
         /**
          * 
          * @summary KYC - Selfie Photo ID Verification
-         * @param {object} [body] 
+         * @param {VerifyPhotoIdWithSelfieRequest} [verifyPhotoIdWithSelfieRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        verifyPhotoIdWithSelfie: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        verifyPhotoIdWithSelfie: async (verifyPhotoIdWithSelfieRequest?: VerifyPhotoIdWithSelfieRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/kyc/photoid/verify`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -10234,7 +10687,7 @@ export const MLApiAxiosParamCreator = function (configuration?: Configuration) {
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(verifyPhotoIdWithSelfieRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -10254,45 +10707,45 @@ export const MLApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Document Analysis Drivers License
-         * @param {object} [body] 
+         * @param {GetDocumentAnalysisRequest} [getDocumentAnalysisRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getDocumentAnalysis(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDocumentAnalysisResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getDocumentAnalysis(body, options);
+        async getDocumentAnalysis(getDocumentAnalysisRequest?: GetDocumentAnalysisRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDocumentAnalysisResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getDocumentAnalysis(getDocumentAnalysisRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Generic OCR Service
-         * @param {object} [body] 
+         * @param {GetGenericOcrTextRequest} [getGenericOcrTextRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getGenericOcrText(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetGenericOcrTextResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getGenericOcrText(body, options);
+        async getGenericOcrText(getGenericOcrTextRequest?: GetGenericOcrTextRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetGenericOcrTextResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getGenericOcrText(getGenericOcrTextRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary BVN Ocr
-         * @param {object} [body] 
+         * @param {GetOcrTextRequest} [getOcrTextRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOcrText(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOcrTextResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getOcrText(body, options);
+        async getOcrText(getOcrTextRequest?: GetOcrTextRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOcrTextResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getOcrText(getOcrTextRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary KYC - Selfie Photo ID Verification
-         * @param {object} [body] 
+         * @param {VerifyPhotoIdWithSelfieRequest} [verifyPhotoIdWithSelfieRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async verifyPhotoIdWithSelfie(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VerifyPhotoIdWithSelfieResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.verifyPhotoIdWithSelfie(body, options);
+        async verifyPhotoIdWithSelfie(verifyPhotoIdWithSelfieRequest?: VerifyPhotoIdWithSelfieRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VerifyPhotoIdWithSelfieResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.verifyPhotoIdWithSelfie(verifyPhotoIdWithSelfieRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -10308,42 +10761,42 @@ export const MLApiFactory = function (configuration?: Configuration, basePath?: 
         /**
          * 
          * @summary Document Analysis Drivers License
-         * @param {object} [body] 
+         * @param {GetDocumentAnalysisRequest} [getDocumentAnalysisRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDocumentAnalysis(body?: object, options?: any): AxiosPromise<GetDocumentAnalysisResponse> {
-            return localVarFp.getDocumentAnalysis(body, options).then((request) => request(axios, basePath));
+        getDocumentAnalysis(getDocumentAnalysisRequest?: GetDocumentAnalysisRequest, options?: any): AxiosPromise<GetDocumentAnalysisResponse> {
+            return localVarFp.getDocumentAnalysis(getDocumentAnalysisRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Generic OCR Service
-         * @param {object} [body] 
+         * @param {GetGenericOcrTextRequest} [getGenericOcrTextRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getGenericOcrText(body?: object, options?: any): AxiosPromise<GetGenericOcrTextResponse> {
-            return localVarFp.getGenericOcrText(body, options).then((request) => request(axios, basePath));
+        getGenericOcrText(getGenericOcrTextRequest?: GetGenericOcrTextRequest, options?: any): AxiosPromise<GetGenericOcrTextResponse> {
+            return localVarFp.getGenericOcrText(getGenericOcrTextRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary BVN Ocr
-         * @param {object} [body] 
+         * @param {GetOcrTextRequest} [getOcrTextRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOcrText(body?: object, options?: any): AxiosPromise<GetOcrTextResponse> {
-            return localVarFp.getOcrText(body, options).then((request) => request(axios, basePath));
+        getOcrText(getOcrTextRequest?: GetOcrTextRequest, options?: any): AxiosPromise<GetOcrTextResponse> {
+            return localVarFp.getOcrText(getOcrTextRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary KYC - Selfie Photo ID Verification
-         * @param {object} [body] 
+         * @param {VerifyPhotoIdWithSelfieRequest} [verifyPhotoIdWithSelfieRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        verifyPhotoIdWithSelfie(body?: object, options?: any): AxiosPromise<VerifyPhotoIdWithSelfieResponse> {
-            return localVarFp.verifyPhotoIdWithSelfie(body, options).then((request) => request(axios, basePath));
+        verifyPhotoIdWithSelfie(verifyPhotoIdWithSelfieRequest?: VerifyPhotoIdWithSelfieRequest, options?: any): AxiosPromise<VerifyPhotoIdWithSelfieResponse> {
+            return localVarFp.verifyPhotoIdWithSelfie(verifyPhotoIdWithSelfieRequest, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -10358,49 +10811,49 @@ export class MLApi extends BaseAPI {
     /**
      * 
      * @summary Document Analysis Drivers License
-     * @param {object} [body] 
+     * @param {GetDocumentAnalysisRequest} [getDocumentAnalysisRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MLApi
      */
-    public getDocumentAnalysis(body?: object, options?: AxiosRequestConfig) {
-        return MLApiFp(this.configuration).getDocumentAnalysis(body, options).then((request) => request(this.axios, this.basePath));
+    public getDocumentAnalysis(getDocumentAnalysisRequest?: GetDocumentAnalysisRequest, options?: AxiosRequestConfig) {
+        return MLApiFp(this.configuration).getDocumentAnalysis(getDocumentAnalysisRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Generic OCR Service
-     * @param {object} [body] 
+     * @param {GetGenericOcrTextRequest} [getGenericOcrTextRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MLApi
      */
-    public getGenericOcrText(body?: object, options?: AxiosRequestConfig) {
-        return MLApiFp(this.configuration).getGenericOcrText(body, options).then((request) => request(this.axios, this.basePath));
+    public getGenericOcrText(getGenericOcrTextRequest?: GetGenericOcrTextRequest, options?: AxiosRequestConfig) {
+        return MLApiFp(this.configuration).getGenericOcrText(getGenericOcrTextRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary BVN Ocr
-     * @param {object} [body] 
+     * @param {GetOcrTextRequest} [getOcrTextRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MLApi
      */
-    public getOcrText(body?: object, options?: AxiosRequestConfig) {
-        return MLApiFp(this.configuration).getOcrText(body, options).then((request) => request(this.axios, this.basePath));
+    public getOcrText(getOcrTextRequest?: GetOcrTextRequest, options?: AxiosRequestConfig) {
+        return MLApiFp(this.configuration).getOcrText(getOcrTextRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary KYC - Selfie Photo ID Verification
-     * @param {object} [body] 
+     * @param {VerifyPhotoIdWithSelfieRequest} [verifyPhotoIdWithSelfieRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MLApi
      */
-    public verifyPhotoIdWithSelfie(body?: object, options?: AxiosRequestConfig) {
-        return MLApiFp(this.configuration).verifyPhotoIdWithSelfie(body, options).then((request) => request(this.axios, this.basePath));
+    public verifyPhotoIdWithSelfie(verifyPhotoIdWithSelfieRequest?: VerifyPhotoIdWithSelfieRequest, options?: AxiosRequestConfig) {
+        return MLApiFp(this.configuration).verifyPhotoIdWithSelfie(verifyPhotoIdWithSelfieRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -10414,11 +10867,11 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Categorize Transactions
-         * @param {object} [body] 
+         * @param {CategorizeTransactionsRequest} [categorizeTransactionsRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        categorizeTransactions: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        categorizeTransactions: async (categorizeTransactionsRequest?: CategorizeTransactionsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/ml/categorize_transaction`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -10444,7 +10897,7 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(categorizeTransactionsRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -10464,12 +10917,12 @@ export const ServicesApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Categorize Transactions
-         * @param {object} [body] 
+         * @param {CategorizeTransactionsRequest} [categorizeTransactionsRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async categorizeTransactions(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CategorizeTransactionsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.categorizeTransactions(body, options);
+        async categorizeTransactions(categorizeTransactionsRequest?: CategorizeTransactionsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CategorizeTransactionsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.categorizeTransactions(categorizeTransactionsRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -10485,12 +10938,12 @@ export const ServicesApiFactory = function (configuration?: Configuration, baseP
         /**
          * 
          * @summary Categorize Transactions
-         * @param {object} [body] 
+         * @param {CategorizeTransactionsRequest} [categorizeTransactionsRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        categorizeTransactions(body?: object, options?: any): AxiosPromise<CategorizeTransactionsResponse> {
-            return localVarFp.categorizeTransactions(body, options).then((request) => request(axios, basePath));
+        categorizeTransactions(categorizeTransactionsRequest?: CategorizeTransactionsRequest, options?: any): AxiosPromise<CategorizeTransactionsResponse> {
+            return localVarFp.categorizeTransactions(categorizeTransactionsRequest, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -10505,13 +10958,13 @@ export class ServicesApi extends BaseAPI {
     /**
      * 
      * @summary Categorize Transactions
-     * @param {object} [body] 
+     * @param {CategorizeTransactionsRequest} [categorizeTransactionsRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ServicesApi
      */
-    public categorizeTransactions(body?: object, options?: AxiosRequestConfig) {
-        return ServicesApiFp(this.configuration).categorizeTransactions(body, options).then((request) => request(this.axios, this.basePath));
+    public categorizeTransactions(categorizeTransactionsRequest?: CategorizeTransactionsRequest, options?: AxiosRequestConfig) {
+        return ServicesApiFp(this.configuration).categorizeTransactions(categorizeTransactionsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -10653,11 +11106,11 @@ export const WalletApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Create NGN Wallet
-         * @param {object} [body] 
+         * @param {CreateWalletRequest} [createWalletRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createWallet: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createWallet: async (createWalletRequest?: CreateWalletRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/wallet/ngn/create`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -10683,7 +11136,7 @@ export const WalletApiAxiosParamCreator = function (configuration?: Configuratio
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(createWalletRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -10693,11 +11146,11 @@ export const WalletApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Credit Sub-wallet
-         * @param {object} [body] 
+         * @param {CreditSubwalletRequest} [creditSubwalletRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        creditSubwallet: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        creditSubwallet: async (creditSubwalletRequest?: CreditSubwalletRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/wallet/ngn/credit`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -10720,7 +11173,7 @@ export const WalletApiAxiosParamCreator = function (configuration?: Configuratio
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(creditSubwalletRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -10853,11 +11306,11 @@ export const WalletApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Transfer Funds
-         * @param {object} [body] 
+         * @param {TransferFundsRequest} [transferFundsRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        transferFunds: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        transferFunds: async (transferFundsRequest?: TransferFundsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/wallet/ngn/transfer`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -10883,7 +11336,7 @@ export const WalletApiAxiosParamCreator = function (configuration?: Configuratio
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(transferFundsRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -10903,23 +11356,23 @@ export const WalletApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Create NGN Wallet
-         * @param {object} [body] 
+         * @param {CreateWalletRequest} [createWalletRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createWallet(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateWalletResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.createWallet(body, options);
+        async createWallet(createWalletRequest?: CreateWalletRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateWalletResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createWallet(createWalletRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Credit Sub-wallet
-         * @param {object} [body] 
+         * @param {CreditSubwalletRequest} [creditSubwalletRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async creditSubwallet(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreditSubwalletResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.creditSubwallet(body, options);
+        async creditSubwallet(creditSubwalletRequest?: CreditSubwalletRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreditSubwalletResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.creditSubwallet(creditSubwalletRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -10958,12 +11411,12 @@ export const WalletApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Transfer Funds
-         * @param {object} [body] 
+         * @param {TransferFundsRequest} [transferFundsRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async transferFunds(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransferFundsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.transferFunds(body, options);
+        async transferFunds(transferFundsRequest?: TransferFundsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransferFundsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.transferFunds(transferFundsRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -10979,22 +11432,22 @@ export const WalletApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary Create NGN Wallet
-         * @param {object} [body] 
+         * @param {CreateWalletRequest} [createWalletRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createWallet(body?: object, options?: any): AxiosPromise<CreateWalletResponse> {
-            return localVarFp.createWallet(body, options).then((request) => request(axios, basePath));
+        createWallet(createWalletRequest?: CreateWalletRequest, options?: any): AxiosPromise<CreateWalletResponse> {
+            return localVarFp.createWallet(createWalletRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Credit Sub-wallet
-         * @param {object} [body] 
+         * @param {CreditSubwalletRequest} [creditSubwalletRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        creditSubwallet(body?: object, options?: any): AxiosPromise<CreditSubwalletResponse> {
-            return localVarFp.creditSubwallet(body, options).then((request) => request(axios, basePath));
+        creditSubwallet(creditSubwalletRequest?: CreditSubwalletRequest, options?: any): AxiosPromise<CreditSubwalletResponse> {
+            return localVarFp.creditSubwallet(creditSubwalletRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -11029,12 +11482,12 @@ export const WalletApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary Transfer Funds
-         * @param {object} [body] 
+         * @param {TransferFundsRequest} [transferFundsRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        transferFunds(body?: object, options?: any): AxiosPromise<TransferFundsResponse> {
-            return localVarFp.transferFunds(body, options).then((request) => request(axios, basePath));
+        transferFunds(transferFundsRequest?: TransferFundsRequest, options?: any): AxiosPromise<TransferFundsResponse> {
+            return localVarFp.transferFunds(transferFundsRequest, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -11049,25 +11502,25 @@ export class WalletApi extends BaseAPI {
     /**
      * 
      * @summary Create NGN Wallet
-     * @param {object} [body] 
+     * @param {CreateWalletRequest} [createWalletRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WalletApi
      */
-    public createWallet(body?: object, options?: AxiosRequestConfig) {
-        return WalletApiFp(this.configuration).createWallet(body, options).then((request) => request(this.axios, this.basePath));
+    public createWallet(createWalletRequest?: CreateWalletRequest, options?: AxiosRequestConfig) {
+        return WalletApiFp(this.configuration).createWallet(createWalletRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Credit Sub-wallet
-     * @param {object} [body] 
+     * @param {CreditSubwalletRequest} [creditSubwalletRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WalletApi
      */
-    public creditSubwallet(body?: object, options?: AxiosRequestConfig) {
-        return WalletApiFp(this.configuration).creditSubwallet(body, options).then((request) => request(this.axios, this.basePath));
+    public creditSubwallet(creditSubwalletRequest?: CreditSubwalletRequest, options?: AxiosRequestConfig) {
+        return WalletApiFp(this.configuration).creditSubwallet(creditSubwalletRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -11109,13 +11562,13 @@ export class WalletApi extends BaseAPI {
     /**
      * 
      * @summary Transfer Funds
-     * @param {object} [body] 
+     * @param {TransferFundsRequest} [transferFundsRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WalletApi
      */
-    public transferFunds(body?: object, options?: AxiosRequestConfig) {
-        return WalletApiFp(this.configuration).transferFunds(body, options).then((request) => request(this.axios, this.basePath));
+    public transferFunds(transferFundsRequest?: TransferFundsRequest, options?: AxiosRequestConfig) {
+        return WalletApiFp(this.configuration).transferFunds(transferFundsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -11201,11 +11654,11 @@ export const WebHooksApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Post Hook
-         * @param {object} [body] 
+         * @param {NotifyWebhookRequest} [notifyWebhookRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        notifyWebhook: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        notifyWebhook: async (notifyWebhookRequest?: NotifyWebhookRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/webhook/notify`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -11231,7 +11684,7 @@ export const WebHooksApiAxiosParamCreator = function (configuration?: Configurat
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(notifyWebhookRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -11241,11 +11694,11 @@ export const WebHooksApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Subscribe to service
-         * @param {object} [body] 
+         * @param {SubscribeServiceRequest} [subscribeServiceRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        subscribeService: async (body?: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        subscribeService: async (subscribeServiceRequest?: SubscribeServiceRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/webhook/subscribe`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -11271,7 +11724,7 @@ export const WebHooksApiAxiosParamCreator = function (configuration?: Configurat
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(subscribeServiceRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -11311,23 +11764,23 @@ export const WebHooksApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Post Hook
-         * @param {object} [body] 
+         * @param {NotifyWebhookRequest} [notifyWebhookRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async notifyWebhook(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NotifyWebhookResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.notifyWebhook(body, options);
+        async notifyWebhook(notifyWebhookRequest?: NotifyWebhookRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NotifyWebhookResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.notifyWebhook(notifyWebhookRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Subscribe to service
-         * @param {object} [body] 
+         * @param {SubscribeServiceRequest} [subscribeServiceRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async subscribeService(body?: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubscribeServiceResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.subscribeService(body, options);
+        async subscribeService(subscribeServiceRequest?: SubscribeServiceRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubscribeServiceResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.subscribeService(subscribeServiceRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -11361,22 +11814,22 @@ export const WebHooksApiFactory = function (configuration?: Configuration, baseP
         /**
          * 
          * @summary Post Hook
-         * @param {object} [body] 
+         * @param {NotifyWebhookRequest} [notifyWebhookRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        notifyWebhook(body?: object, options?: any): AxiosPromise<NotifyWebhookResponse> {
-            return localVarFp.notifyWebhook(body, options).then((request) => request(axios, basePath));
+        notifyWebhook(notifyWebhookRequest?: NotifyWebhookRequest, options?: any): AxiosPromise<NotifyWebhookResponse> {
+            return localVarFp.notifyWebhook(notifyWebhookRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Subscribe to service
-         * @param {object} [body] 
+         * @param {SubscribeServiceRequest} [subscribeServiceRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        subscribeService(body?: object, options?: any): AxiosPromise<SubscribeServiceResponse> {
-            return localVarFp.subscribeService(body, options).then((request) => request(axios, basePath));
+        subscribeService(subscribeServiceRequest?: SubscribeServiceRequest, options?: any): AxiosPromise<SubscribeServiceResponse> {
+            return localVarFp.subscribeService(subscribeServiceRequest, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -11413,25 +11866,25 @@ export class WebHooksApi extends BaseAPI {
     /**
      * 
      * @summary Post Hook
-     * @param {object} [body] 
+     * @param {NotifyWebhookRequest} [notifyWebhookRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WebHooksApi
      */
-    public notifyWebhook(body?: object, options?: AxiosRequestConfig) {
-        return WebHooksApiFp(this.configuration).notifyWebhook(body, options).then((request) => request(this.axios, this.basePath));
+    public notifyWebhook(notifyWebhookRequest?: NotifyWebhookRequest, options?: AxiosRequestConfig) {
+        return WebHooksApiFp(this.configuration).notifyWebhook(notifyWebhookRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Subscribe to service
-     * @param {object} [body] 
+     * @param {SubscribeServiceRequest} [subscribeServiceRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WebHooksApi
      */
-    public subscribeService(body?: object, options?: AxiosRequestConfig) {
-        return WebHooksApiFp(this.configuration).subscribeService(body, options).then((request) => request(this.axios, this.basePath));
+    public subscribeService(subscribeServiceRequest?: SubscribeServiceRequest, options?: AxiosRequestConfig) {
+        return WebHooksApiFp(this.configuration).subscribeService(subscribeServiceRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

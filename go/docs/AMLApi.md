@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ## ScreenAml
 
-> ScreenAmlResponse ScreenAml(ctx).Body(body).Execute()
+> ScreenAmlResponse ScreenAml(ctx).ScreenAmlRequest(screenAmlRequest).Execute()
 
 AML Screening
 
@@ -92,11 +92,11 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+    screenAmlRequest := *dojah.NewScreenAmlRequest() // ScreenAmlRequest |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.AMLApi.ScreenAml(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.AMLApi.ScreenAml(context.Background()).ScreenAmlRequest(screenAmlRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AMLApi.ScreenAml``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -117,7 +117,7 @@ Other parameters are passed through a pointer to a apiScreenAmlRequest struct vi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **screenAmlRequest** | [**ScreenAmlRequest**](ScreenAmlRequest.md) |  | 
 
 ### Return type
 

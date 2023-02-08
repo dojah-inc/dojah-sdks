@@ -93,7 +93,7 @@ public class Example {
 
 <a name="collectTransactions"></a>
 # **collectTransactions**
-> CollectTransactionsResponse collectTransactions(body)
+> CollectTransactionsResponse collectTransactions(collectTransactionsRequest)
 
 Collect Transactions
 
@@ -125,9 +125,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     FinancialApi apiInstance = new FinancialApi(defaultClient);
-    Object body = null; // Object | 
+    CollectTransactionsRequest collectTransactionsRequest = new CollectTransactionsRequest(); // CollectTransactionsRequest | 
     try {
-      CollectTransactionsResponse result = apiInstance.collectTransactions(body);
+      CollectTransactionsResponse result = apiInstance.collectTransactions(collectTransactionsRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FinancialApi#collectTransactions");
@@ -144,7 +144,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **collectTransactionsRequest** | [**CollectTransactionsRequest**](CollectTransactionsRequest.md)|  | [optional] |
 
 ### Return type
 

@@ -66,10 +66,10 @@ namespace Dojah.Net.Api
         /// Post Hook
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="notifyWebhookRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>NotifyWebhookResponse</returns>
-        NotifyWebhookResponse NotifyWebhook(Object body = default(Object), int operationIndex = 0);
+        NotifyWebhookResponse NotifyWebhook(NotifyWebhookRequest notifyWebhookRequest = default(NotifyWebhookRequest), int operationIndex = 0);
 
         /// <summary>
         /// Post Hook
@@ -78,18 +78,18 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="notifyWebhookRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of NotifyWebhookResponse</returns>
-        ApiResponse<NotifyWebhookResponse> NotifyWebhookWithHttpInfo(Object body = default(Object), int operationIndex = 0);
+        ApiResponse<NotifyWebhookResponse> NotifyWebhookWithHttpInfo(NotifyWebhookRequest notifyWebhookRequest = default(NotifyWebhookRequest), int operationIndex = 0);
         /// <summary>
         /// Subscribe to service
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="subscribeServiceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscribeServiceResponse</returns>
-        SubscribeServiceResponse SubscribeService(Object body = default(Object), int operationIndex = 0);
+        SubscribeServiceResponse SubscribeService(SubscribeServiceRequest subscribeServiceRequest = default(SubscribeServiceRequest), int operationIndex = 0);
 
         /// <summary>
         /// Subscribe to service
@@ -98,10 +98,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="subscribeServiceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscribeServiceResponse</returns>
-        ApiResponse<SubscribeServiceResponse> SubscribeServiceWithHttpInfo(Object body = default(Object), int operationIndex = 0);
+        ApiResponse<SubscribeServiceResponse> SubscribeServiceWithHttpInfo(SubscribeServiceRequest subscribeServiceRequest = default(SubscribeServiceRequest), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -164,11 +164,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="notifyWebhookRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NotifyWebhookResponse</returns>
-        System.Threading.Tasks.Task<NotifyWebhookResponse> NotifyWebhookAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<NotifyWebhookResponse> NotifyWebhookAsync(NotifyWebhookRequest notifyWebhookRequest = default(NotifyWebhookRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Post Hook
@@ -177,11 +177,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="notifyWebhookRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (NotifyWebhookResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<NotifyWebhookResponse>> NotifyWebhookWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<NotifyWebhookResponse>> NotifyWebhookWithHttpInfoAsync(NotifyWebhookRequest notifyWebhookRequest = default(NotifyWebhookRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Subscribe to service
         /// </summary>
@@ -189,11 +189,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="subscribeServiceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscribeServiceResponse</returns>
-        System.Threading.Tasks.Task<SubscribeServiceResponse> SubscribeServiceAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SubscribeServiceResponse> SubscribeServiceAsync(SubscribeServiceRequest subscribeServiceRequest = default(SubscribeServiceRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Subscribe to service
@@ -202,11 +202,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="subscribeServiceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscribeServiceResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubscribeServiceResponse>> SubscribeServiceWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SubscribeServiceResponse>> SubscribeServiceWithHttpInfoAsync(SubscribeServiceRequest subscribeServiceRequest = default(SubscribeServiceRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -623,12 +623,12 @@ namespace Dojah.Net.Api
         /// Post Hook 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="notifyWebhookRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>NotifyWebhookResponse</returns>
-        public NotifyWebhookResponse NotifyWebhook(Object body = default(Object), int operationIndex = 0)
+        public NotifyWebhookResponse NotifyWebhook(NotifyWebhookRequest notifyWebhookRequest = default(NotifyWebhookRequest), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<NotifyWebhookResponse> localVarResponse = NotifyWebhookWithHttpInfo(body);
+            Dojah.Net.Client.ApiResponse<NotifyWebhookResponse> localVarResponse = NotifyWebhookWithHttpInfo(notifyWebhookRequest);
             return localVarResponse.Data;
         }
 
@@ -636,10 +636,10 @@ namespace Dojah.Net.Api
         /// Post Hook 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="notifyWebhookRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of NotifyWebhookResponse</returns>
-        public Dojah.Net.Client.ApiResponse<NotifyWebhookResponse> NotifyWebhookWithHttpInfo(Object body = default(Object), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<NotifyWebhookResponse> NotifyWebhookWithHttpInfo(NotifyWebhookRequest notifyWebhookRequest = default(NotifyWebhookRequest), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -664,7 +664,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = notifyWebhookRequest;
 
             localVarRequestOptions.Operation = "WebHooksApi.NotifyWebhook";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -698,13 +698,13 @@ namespace Dojah.Net.Api
         /// Post Hook 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="notifyWebhookRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NotifyWebhookResponse</returns>
-        public async System.Threading.Tasks.Task<NotifyWebhookResponse> NotifyWebhookAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<NotifyWebhookResponse> NotifyWebhookAsync(NotifyWebhookRequest notifyWebhookRequest = default(NotifyWebhookRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<NotifyWebhookResponse> localVarResponse = await NotifyWebhookWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<NotifyWebhookResponse> localVarResponse = await NotifyWebhookWithHttpInfoAsync(notifyWebhookRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -712,11 +712,11 @@ namespace Dojah.Net.Api
         /// Post Hook 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="notifyWebhookRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (NotifyWebhookResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<NotifyWebhookResponse>> NotifyWebhookWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<NotifyWebhookResponse>> NotifyWebhookWithHttpInfoAsync(NotifyWebhookRequest notifyWebhookRequest = default(NotifyWebhookRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -742,7 +742,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = notifyWebhookRequest;
 
             localVarRequestOptions.Operation = "WebHooksApi.NotifyWebhook";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -777,12 +777,12 @@ namespace Dojah.Net.Api
         /// Subscribe to service 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="subscribeServiceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscribeServiceResponse</returns>
-        public SubscribeServiceResponse SubscribeService(Object body = default(Object), int operationIndex = 0)
+        public SubscribeServiceResponse SubscribeService(SubscribeServiceRequest subscribeServiceRequest = default(SubscribeServiceRequest), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<SubscribeServiceResponse> localVarResponse = SubscribeServiceWithHttpInfo(body);
+            Dojah.Net.Client.ApiResponse<SubscribeServiceResponse> localVarResponse = SubscribeServiceWithHttpInfo(subscribeServiceRequest);
             return localVarResponse.Data;
         }
 
@@ -790,10 +790,10 @@ namespace Dojah.Net.Api
         /// Subscribe to service 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="subscribeServiceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscribeServiceResponse</returns>
-        public Dojah.Net.Client.ApiResponse<SubscribeServiceResponse> SubscribeServiceWithHttpInfo(Object body = default(Object), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<SubscribeServiceResponse> SubscribeServiceWithHttpInfo(SubscribeServiceRequest subscribeServiceRequest = default(SubscribeServiceRequest), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -818,7 +818,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = subscribeServiceRequest;
 
             localVarRequestOptions.Operation = "WebHooksApi.SubscribeService";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -852,13 +852,13 @@ namespace Dojah.Net.Api
         /// Subscribe to service 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="subscribeServiceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscribeServiceResponse</returns>
-        public async System.Threading.Tasks.Task<SubscribeServiceResponse> SubscribeServiceAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SubscribeServiceResponse> SubscribeServiceAsync(SubscribeServiceRequest subscribeServiceRequest = default(SubscribeServiceRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<SubscribeServiceResponse> localVarResponse = await SubscribeServiceWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<SubscribeServiceResponse> localVarResponse = await SubscribeServiceWithHttpInfoAsync(subscribeServiceRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -866,11 +866,11 @@ namespace Dojah.Net.Api
         /// Subscribe to service 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="subscribeServiceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscribeServiceResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<SubscribeServiceResponse>> SubscribeServiceWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<SubscribeServiceResponse>> SubscribeServiceWithHttpInfoAsync(SubscribeServiceRequest subscribeServiceRequest = default(SubscribeServiceRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -896,7 +896,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = subscribeServiceRequest;
 
             localVarRequestOptions.Operation = "WebHooksApi.SubscribeService";
             localVarRequestOptions.OperationIndex = operationIndex;

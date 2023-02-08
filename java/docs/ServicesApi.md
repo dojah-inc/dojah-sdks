@@ -9,7 +9,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="categorizeTransactions"></a>
 # **categorizeTransactions**
-> CategorizeTransactionsResponse categorizeTransactions(body)
+> CategorizeTransactionsResponse categorizeTransactions(categorizeTransactionsRequest)
 
 Categorize Transactions
 
@@ -41,9 +41,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     ServicesApi apiInstance = new ServicesApi(defaultClient);
-    Object body = null; // Object | 
+    CategorizeTransactionsRequest categorizeTransactionsRequest = new CategorizeTransactionsRequest(); // CategorizeTransactionsRequest | 
     try {
-      CategorizeTransactionsResponse result = apiInstance.categorizeTransactions(body);
+      CategorizeTransactionsResponse result = apiInstance.categorizeTransactions(categorizeTransactionsRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ServicesApi#categorizeTransactions");
@@ -60,7 +60,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **categorizeTransactionsRequest** | [**CategorizeTransactionsRequest**](CategorizeTransactionsRequest.md)|  | [optional] |
 
 ### Return type
 

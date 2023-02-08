@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## CategorizeTransactions
 
-> CategorizeTransactionsResponse CategorizeTransactions(ctx).Body(body).Execute()
+> CategorizeTransactionsResponse CategorizeTransactions(ctx).CategorizeTransactionsRequest(categorizeTransactionsRequest).Execute()
 
 Categorize Transactions
 
@@ -27,11 +27,11 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+    categorizeTransactionsRequest := *dojah.NewCategorizeTransactionsRequest() // CategorizeTransactionsRequest |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServicesApi.CategorizeTransactions(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ServicesApi.CategorizeTransactions(context.Background()).CategorizeTransactionsRequest(categorizeTransactionsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServicesApi.CategorizeTransactions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ Other parameters are passed through a pointer to a apiCategorizeTransactionsRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **categorizeTransactionsRequest** | [**CategorizeTransactionsRequest**](CategorizeTransactionsRequest.md) |  | 
 
 ### Return type
 

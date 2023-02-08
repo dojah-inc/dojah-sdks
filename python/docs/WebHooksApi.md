@@ -171,6 +171,7 @@ import time
 import dojah_client
 from dojah_client.api import web_hooks_api
 from dojah_client.model.notify_webhook_response import NotifyWebhookResponse
+from dojah_client.model.notify_webhook_request import NotifyWebhookRequest
 from pprint import pprint
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
@@ -193,13 +194,18 @@ configuration.api_key['appIdAuth'] = 'YOUR_API_KEY'
 with dojah_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = web_hooks_api.WebHooksApi(api_client)
-    body = {} # {str: (bool, dict, float, int, list, str, none_type)} |  (optional)
+    notify_webhook_request = NotifyWebhookRequest(
+        subject="kyc_widget",
+        data=NotifyWebhookRequestData(
+            stuff="12345678",
+        ),
+    ) # NotifyWebhookRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Post Hook
-        api_response = api_instance.notify_webhook(body=body)
+        api_response = api_instance.notify_webhook(notify_webhook_request=notify_webhook_request)
         pprint(api_response)
     except dojah_client.ApiException as e:
         print("Exception when calling WebHooksApi->notify_webhook: %s\n" % e)
@@ -210,7 +216,7 @@ with dojah_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **{str: (bool, dict, float, int, list, str, none_type)}**|  | [optional]
+ **notify_webhook_request** | [**NotifyWebhookRequest**](NotifyWebhookRequest.md)|  | [optional]
 
 ### Return type
 
@@ -248,6 +254,7 @@ Subscribe to service
 import time
 import dojah_client
 from dojah_client.api import web_hooks_api
+from dojah_client.model.subscribe_service_request import SubscribeServiceRequest
 from dojah_client.model.subscribe_service_response import SubscribeServiceResponse
 from pprint import pprint
 # The client must configure the authentication and authorization parameters
@@ -271,13 +278,16 @@ configuration.api_key['appIdAuth'] = 'YOUR_API_KEY'
 with dojah_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = web_hooks_api.WebHooksApi(api_client)
-    body = {} # {str: (bool, dict, float, int, list, str, none_type)} |  (optional)
+    subscribe_service_request = SubscribeServiceRequest(
+        webhook="https://webhook.site/c587711d-d9f2-4982-9107-b1f9789a5dfe",
+        service="kyc_widget",
+    ) # SubscribeServiceRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Subscribe to service
-        api_response = api_instance.subscribe_service(body=body)
+        api_response = api_instance.subscribe_service(subscribe_service_request=subscribe_service_request)
         pprint(api_response)
     except dojah_client.ApiException as e:
         print("Exception when calling WebHooksApi->subscribe_service: %s\n" % e)
@@ -288,7 +298,7 @@ with dojah_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **{str: (bool, dict, float, int, list, str, none_type)}**|  | [optional]
+ **subscribe_service_request** | [**SubscribeServiceRequest**](SubscribeServiceRequest.md)|  | [optional]
 
 ### Return type
 

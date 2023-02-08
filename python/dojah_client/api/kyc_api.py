@@ -36,7 +36,9 @@ from dojah_client.model.get_vin_response import GetVinResponse
 from dojah_client.model.get_vnin_response import GetVninResponse
 from dojah_client.model.validate_bvn_response import ValidateBvnResponse
 from dojah_client.model.verify_age_response import VerifyAgeResponse
+from dojah_client.model.verify_selfie_bvn_request import VerifySelfieBvnRequest
 from dojah_client.model.verify_selfie_bvn_response import VerifySelfieBvnResponse
+from dojah_client.model.verify_selfie_nin_request import VerifySelfieNinRequest
 from dojah_client.model.verify_selfie_nin_response import VerifySelfieNinResponse
 
 
@@ -825,7 +827,7 @@ class KYCApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'verify_selfie_bvn_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -841,13 +843,13 @@ class KYCApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'verify_selfie_bvn_request':
+                        (VerifySelfieBvnRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'verify_selfie_bvn_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -876,7 +878,7 @@ class KYCApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'verify_selfie_nin_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -892,13 +894,13 @@ class KYCApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'verify_selfie_nin_request':
+                        (VerifySelfieNinRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'verify_selfie_nin_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -2032,7 +2034,7 @@ class KYCApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            verify_selfie_bvn_request (VerifySelfieBvnRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2110,7 +2112,7 @@ class KYCApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            verify_selfie_nin_request (VerifySelfieNinRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

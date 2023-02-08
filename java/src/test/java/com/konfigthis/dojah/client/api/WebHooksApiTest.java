@@ -15,7 +15,9 @@ package com.konfigthis.dojah.client.api;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.model.DeleteWebhookResponse;
 import com.konfigthis.dojah.client.model.GetWebhooksResponse;
+import com.konfigthis.dojah.client.model.NotifyWebhookRequest;
 import com.konfigthis.dojah.client.model.NotifyWebhookResponse;
+import com.konfigthis.dojah.client.model.SubscribeServiceRequest;
 import com.konfigthis.dojah.client.model.SubscribeServiceResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -62,8 +64,8 @@ public class WebHooksApiTest {
      */
     @Test
     public void notifyWebhookTest() throws ApiException {
-        Object body = null;
-        NotifyWebhookResponse response = api.notifyWebhook(body);
+        NotifyWebhookRequest notifyWebhookRequest = null;
+        NotifyWebhookResponse response = api.notifyWebhook(notifyWebhookRequest);
         // TODO: test validations
     }
 
@@ -74,8 +76,8 @@ public class WebHooksApiTest {
      */
     @Test
     public void subscribeServiceTest() throws ApiException {
-        Object body = null;
-        SubscribeServiceResponse response = api.subscribeService(body);
+        SubscribeServiceRequest subscribeServiceRequest = null;
+        SubscribeServiceResponse response = api.subscribeService(subscribeServiceRequest);
         // TODO: test validations
     }
 

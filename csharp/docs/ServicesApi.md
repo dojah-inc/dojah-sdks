@@ -8,7 +8,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="categorizetransactions"></a>
 # **CategorizeTransactions**
-> CategorizeTransactionsResponse CategorizeTransactions (Object body = null)
+> CategorizeTransactionsResponse CategorizeTransactions (CategorizeTransactionsRequest categorizeTransactionsRequest = null)
 
 Categorize Transactions
 
@@ -38,12 +38,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new ServicesApi(config);
-            var body = null;  // Object |  (optional) 
+            var categorizeTransactionsRequest = new CategorizeTransactionsRequest(); // CategorizeTransactionsRequest |  (optional) 
 
             try
             {
                 // Categorize Transactions
-                CategorizeTransactionsResponse result = apiInstance.CategorizeTransactions(body);
+                CategorizeTransactionsResponse result = apiInstance.CategorizeTransactions(categorizeTransactionsRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -64,7 +64,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Categorize Transactions
-    ApiResponse<CategorizeTransactionsResponse> response = apiInstance.CategorizeTransactionsWithHttpInfo(body);
+    ApiResponse<CategorizeTransactionsResponse> response = apiInstance.CategorizeTransactionsWithHttpInfo(categorizeTransactionsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -81,7 +81,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **categorizeTransactionsRequest** | [**CategorizeTransactionsRequest**](CategorizeTransactionsRequest.md) |  | [optional]  |
 
 ### Return type
 

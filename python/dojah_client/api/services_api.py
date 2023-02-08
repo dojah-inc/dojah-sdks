@@ -21,6 +21,7 @@ from dojah_client.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from dojah_client.model.categorize_transactions_request import CategorizeTransactionsRequest
 from dojah_client.model.categorize_transactions_response import CategorizeTransactionsResponse
 
 
@@ -49,7 +50,7 @@ class ServicesApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'categorize_transactions_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -65,13 +66,13 @@ class ServicesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'categorize_transactions_request':
+                        (CategorizeTransactionsRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'categorize_transactions_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -101,7 +102,7 @@ class ServicesApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            categorize_transactions_request (CategorizeTransactionsRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

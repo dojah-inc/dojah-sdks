@@ -323,7 +323,7 @@ Other parameters are passed through a pointer to a apiGetWalletBalanceRequest st
 
 ## PurchaseAirtime
 
-> PurchaseAirtimeResponse PurchaseAirtime(ctx).Body(body).Execute()
+> PurchaseAirtimeResponse PurchaseAirtime(ctx).PurchaseAirtimeRequest(purchaseAirtimeRequest).Execute()
 
 Purchase - Send Airtime
 
@@ -340,11 +340,11 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+    purchaseAirtimeRequest := *dojah.NewPurchaseAirtimeRequest() // PurchaseAirtimeRequest |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.GeneralApi.PurchaseAirtime(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.GeneralApi.PurchaseAirtime(context.Background()).PurchaseAirtimeRequest(purchaseAirtimeRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GeneralApi.PurchaseAirtime``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -365,7 +365,7 @@ Other parameters are passed through a pointer to a apiPurchaseAirtimeRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **purchaseAirtimeRequest** | [**PurchaseAirtimeRequest**](PurchaseAirtimeRequest.md) |  | 
 
 ### Return type
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ## PurchaseData
 
-> PurchaseDataResponse PurchaseData(ctx).Body(body).Execute()
+> PurchaseDataResponse PurchaseData(ctx).PurchaseDataRequest(purchaseDataRequest).Execute()
 
 Purchase - Buy Data
 
@@ -404,11 +404,11 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+    purchaseDataRequest := *dojah.NewPurchaseDataRequest() // PurchaseDataRequest |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.GeneralApi.PurchaseData(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.GeneralApi.PurchaseData(context.Background()).PurchaseDataRequest(purchaseDataRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GeneralApi.PurchaseData``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -429,7 +429,7 @@ Other parameters are passed through a pointer to a apiPurchaseDataRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **purchaseDataRequest** | [**PurchaseDataRequest**](PurchaseDataRequest.md) |  | 
 
 ### Return type
 

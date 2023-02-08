@@ -14,6 +14,7 @@ package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.model.CollectStatusFromPdfResponse;
+import com.konfigthis.dojah.client.model.CollectTransactionsRequest;
 import com.konfigthis.dojah.client.model.CollectTransactionsResponse;
 import java.io.File;
 import com.konfigthis.dojah.client.model.FinancialGetBasicBvnResponse;
@@ -60,8 +61,8 @@ public class FinancialApiTest {
      */
     @Test
     public void collectTransactionsTest() throws ApiException {
-        Object body = null;
-        CollectTransactionsResponse response = api.collectTransactions(body);
+        CollectTransactionsRequest collectTransactionsRequest = null;
+        CollectTransactionsResponse response = api.collectTransactions(collectTransactionsRequest);
         // TODO: test validations
     }
 

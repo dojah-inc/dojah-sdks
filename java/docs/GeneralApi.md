@@ -371,7 +371,7 @@ This endpoint does not need any parameter.
 
 <a name="purchaseAirtime"></a>
 # **purchaseAirtime**
-> PurchaseAirtimeResponse purchaseAirtime(body)
+> PurchaseAirtimeResponse purchaseAirtime(purchaseAirtimeRequest)
 
 Purchase - Send Airtime
 
@@ -403,9 +403,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     GeneralApi apiInstance = new GeneralApi(defaultClient);
-    Object body = null; // Object | 
+    PurchaseAirtimeRequest purchaseAirtimeRequest = new PurchaseAirtimeRequest(); // PurchaseAirtimeRequest | 
     try {
-      PurchaseAirtimeResponse result = apiInstance.purchaseAirtime(body);
+      PurchaseAirtimeResponse result = apiInstance.purchaseAirtime(purchaseAirtimeRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GeneralApi#purchaseAirtime");
@@ -422,7 +422,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **purchaseAirtimeRequest** | [**PurchaseAirtimeRequest**](PurchaseAirtimeRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -444,7 +444,7 @@ public class Example {
 
 <a name="purchaseData"></a>
 # **purchaseData**
-> PurchaseDataResponse purchaseData(body)
+> PurchaseDataResponse purchaseData(purchaseDataRequest)
 
 Purchase - Buy Data
 
@@ -476,9 +476,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     GeneralApi apiInstance = new GeneralApi(defaultClient);
-    Object body = null; // Object | 
+    PurchaseDataRequest purchaseDataRequest = new PurchaseDataRequest(); // PurchaseDataRequest | 
     try {
-      PurchaseDataResponse result = apiInstance.purchaseData(body);
+      PurchaseDataResponse result = apiInstance.purchaseData(purchaseDataRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GeneralApi#purchaseData");
@@ -495,7 +495,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **purchaseDataRequest** | [**PurchaseDataRequest**](PurchaseDataRequest.md)|  | [optional] |
 
 ### Return type
 

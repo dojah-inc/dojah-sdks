@@ -9,7 +9,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
@@ -28,7 +27,9 @@ import com.konfigthis.dojah.client.model.GetVinResponse;
 import com.konfigthis.dojah.client.model.GetVninResponse;
 import com.konfigthis.dojah.client.model.ValidateBvnResponse;
 import com.konfigthis.dojah.client.model.VerifyAgeResponse;
+import com.konfigthis.dojah.client.model.VerifySelfieBvnRequest;
 import com.konfigthis.dojah.client.model.VerifySelfieBvnResponse;
+import com.konfigthis.dojah.client.model.VerifySelfieNinRequest;
 import com.konfigthis.dojah.client.model.VerifySelfieNinResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -233,7 +234,7 @@ public class KycApiTest {
      */
     @Test
     public void verifySelfieBvnTest() throws ApiException {
-        Object body = null;
+        VerifySelfieBvnRequest body = null;
         VerifySelfieBvnResponse response = api.verifySelfieBvn(body);
         // TODO: test validations
     }
@@ -245,7 +246,7 @@ public class KycApiTest {
      */
     @Test
     public void verifySelfieNinTest() throws ApiException {
-        Object body = null;
+        VerifySelfieNinRequest body = null;
         VerifySelfieNinResponse response = api.verifySelfieNin(body);
         // TODO: test validations
     }

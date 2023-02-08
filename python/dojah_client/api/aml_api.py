@@ -22,6 +22,7 @@ from dojah_client.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from dojah_client.model.get_screening_info_response import GetScreeningInfoResponse
+from dojah_client.model.screen_aml_request import ScreenAmlRequest
 from dojah_client.model.screen_aml_response import ScreenAmlResponse
 
 
@@ -100,7 +101,7 @@ class AMLApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'screen_aml_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -116,13 +117,13 @@ class AMLApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'screen_aml_request':
+                        (ScreenAmlRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'screen_aml_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -230,7 +231,7 @@ class AMLApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            screen_aml_request (ScreenAmlRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

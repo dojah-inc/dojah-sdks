@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## GetDocumentAnalysis
 
-> GetDocumentAnalysisResponse GetDocumentAnalysis(ctx).Body(body).Execute()
+> GetDocumentAnalysisResponse GetDocumentAnalysis(ctx).GetDocumentAnalysisRequest(getDocumentAnalysisRequest).Execute()
 
 Document Analysis Drivers License
 
@@ -30,11 +30,11 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+    getDocumentAnalysisRequest := *dojah.NewGetDocumentAnalysisRequest() // GetDocumentAnalysisRequest |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.MLApi.GetDocumentAnalysis(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.MLApi.GetDocumentAnalysis(context.Background()).GetDocumentAnalysisRequest(getDocumentAnalysisRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MLApi.GetDocumentAnalysis``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiGetDocumentAnalysisRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **getDocumentAnalysisRequest** | [**GetDocumentAnalysisRequest**](GetDocumentAnalysisRequest.md) |  | 
 
 ### Return type
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ## GetGenericOcrText
 
-> GetGenericOcrTextResponse GetGenericOcrText(ctx).Body(body).Execute()
+> GetGenericOcrTextResponse GetGenericOcrText(ctx).GetGenericOcrTextRequest(getGenericOcrTextRequest).Execute()
 
 Generic OCR Service
 
@@ -94,11 +94,11 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+    getGenericOcrTextRequest := *dojah.NewGetGenericOcrTextRequest() // GetGenericOcrTextRequest |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.MLApi.GetGenericOcrText(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.MLApi.GetGenericOcrText(context.Background()).GetGenericOcrTextRequest(getGenericOcrTextRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MLApi.GetGenericOcrText``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -119,7 +119,7 @@ Other parameters are passed through a pointer to a apiGetGenericOcrTextRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **getGenericOcrTextRequest** | [**GetGenericOcrTextRequest**](GetGenericOcrTextRequest.md) |  | 
 
 ### Return type
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ## GetOcrText
 
-> GetOcrTextResponse GetOcrText(ctx).Body(body).Execute()
+> GetOcrTextResponse GetOcrText(ctx).GetOcrTextRequest(getOcrTextRequest).Execute()
 
 BVN Ocr
 
@@ -158,11 +158,11 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+    getOcrTextRequest := *dojah.NewGetOcrTextRequest() // GetOcrTextRequest |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.MLApi.GetOcrText(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.MLApi.GetOcrText(context.Background()).GetOcrTextRequest(getOcrTextRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MLApi.GetOcrText``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -183,7 +183,7 @@ Other parameters are passed through a pointer to a apiGetOcrTextRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **getOcrTextRequest** | [**GetOcrTextRequest**](GetOcrTextRequest.md) |  | 
 
 ### Return type
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ## VerifyPhotoIdWithSelfie
 
-> VerifyPhotoIdWithSelfieResponse VerifyPhotoIdWithSelfie(ctx).Body(body).Execute()
+> VerifyPhotoIdWithSelfieResponse VerifyPhotoIdWithSelfie(ctx).VerifyPhotoIdWithSelfieRequest(verifyPhotoIdWithSelfieRequest).Execute()
 
 KYC - Selfie Photo ID Verification
 
@@ -222,11 +222,11 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+    verifyPhotoIdWithSelfieRequest := *dojah.NewVerifyPhotoIdWithSelfieRequest() // VerifyPhotoIdWithSelfieRequest |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.MLApi.VerifyPhotoIdWithSelfie(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.MLApi.VerifyPhotoIdWithSelfie(context.Background()).VerifyPhotoIdWithSelfieRequest(verifyPhotoIdWithSelfieRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MLApi.VerifyPhotoIdWithSelfie``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -247,7 +247,7 @@ Other parameters are passed through a pointer to a apiVerifyPhotoIdWithSelfieReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **verifyPhotoIdWithSelfieRequest** | [**VerifyPhotoIdWithSelfieRequest**](VerifyPhotoIdWithSelfieRequest.md) |  | 
 
 ### Return type
 

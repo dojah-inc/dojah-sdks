@@ -12,7 +12,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getDocumentAnalysis"></a>
 # **getDocumentAnalysis**
-> GetDocumentAnalysisResponse getDocumentAnalysis(body)
+> GetDocumentAnalysisResponse getDocumentAnalysis(getDocumentAnalysisRequest)
 
 Document Analysis Drivers License
 
@@ -44,9 +44,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     MlApi apiInstance = new MlApi(defaultClient);
-    Object body = null; // Object | 
+    GetDocumentAnalysisRequest getDocumentAnalysisRequest = new GetDocumentAnalysisRequest(); // GetDocumentAnalysisRequest | 
     try {
-      GetDocumentAnalysisResponse result = apiInstance.getDocumentAnalysis(body);
+      GetDocumentAnalysisResponse result = apiInstance.getDocumentAnalysis(getDocumentAnalysisRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MlApi#getDocumentAnalysis");
@@ -63,7 +63,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **getDocumentAnalysisRequest** | [**GetDocumentAnalysisRequest**](GetDocumentAnalysisRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -85,7 +85,7 @@ public class Example {
 
 <a name="getGenericOcrText"></a>
 # **getGenericOcrText**
-> GetGenericOcrTextResponse getGenericOcrText(body)
+> GetGenericOcrTextResponse getGenericOcrText(getGenericOcrTextRequest)
 
 Generic OCR Service
 
@@ -117,9 +117,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     MlApi apiInstance = new MlApi(defaultClient);
-    Object body = null; // Object | 
+    GetGenericOcrTextRequest getGenericOcrTextRequest = new GetGenericOcrTextRequest(); // GetGenericOcrTextRequest | 
     try {
-      GetGenericOcrTextResponse result = apiInstance.getGenericOcrText(body);
+      GetGenericOcrTextResponse result = apiInstance.getGenericOcrText(getGenericOcrTextRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MlApi#getGenericOcrText");
@@ -136,7 +136,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **getGenericOcrTextRequest** | [**GetGenericOcrTextRequest**](GetGenericOcrTextRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -158,7 +158,7 @@ public class Example {
 
 <a name="getOcrText"></a>
 # **getOcrText**
-> GetOcrTextResponse getOcrText(body)
+> GetOcrTextResponse getOcrText(getOcrTextRequest)
 
 BVN Ocr
 
@@ -190,9 +190,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     MlApi apiInstance = new MlApi(defaultClient);
-    Object body = null; // Object | 
+    GetOcrTextRequest getOcrTextRequest = new GetOcrTextRequest(); // GetOcrTextRequest | 
     try {
-      GetOcrTextResponse result = apiInstance.getOcrText(body);
+      GetOcrTextResponse result = apiInstance.getOcrText(getOcrTextRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MlApi#getOcrText");
@@ -209,7 +209,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **getOcrTextRequest** | [**GetOcrTextRequest**](GetOcrTextRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -231,7 +231,7 @@ public class Example {
 
 <a name="verifyPhotoIdWithSelfie"></a>
 # **verifyPhotoIdWithSelfie**
-> VerifyPhotoIdWithSelfieResponse verifyPhotoIdWithSelfie(body)
+> VerifyPhotoIdWithSelfieResponse verifyPhotoIdWithSelfie(verifyPhotoIdWithSelfieRequest)
 
 KYC - Selfie Photo ID Verification
 
@@ -263,9 +263,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     MlApi apiInstance = new MlApi(defaultClient);
-    Object body = null; // Object | 
+    VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest = new VerifyPhotoIdWithSelfieRequest(); // VerifyPhotoIdWithSelfieRequest | 
     try {
-      VerifyPhotoIdWithSelfieResponse result = apiInstance.verifyPhotoIdWithSelfie(body);
+      VerifyPhotoIdWithSelfieResponse result = apiInstance.verifyPhotoIdWithSelfie(verifyPhotoIdWithSelfieRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MlApi#verifyPhotoIdWithSelfie");
@@ -282,7 +282,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **verifyPhotoIdWithSelfieRequest** | [**VerifyPhotoIdWithSelfieRequest**](VerifyPhotoIdWithSelfieRequest.md)|  | [optional] |
 
 ### Return type
 

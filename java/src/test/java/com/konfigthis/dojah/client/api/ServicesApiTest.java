@@ -13,6 +13,7 @@
 package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.model.CategorizeTransactionsRequest;
 import com.konfigthis.dojah.client.model.CategorizeTransactionsResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -37,8 +38,8 @@ public class ServicesApiTest {
      */
     @Test
     public void categorizeTransactionsTest() throws ApiException {
-        Object body = null;
-        CategorizeTransactionsResponse response = api.categorizeTransactions(body);
+        CategorizeTransactionsRequest categorizeTransactionsRequest = null;
+        CategorizeTransactionsResponse response = api.categorizeTransactions(categorizeTransactionsRequest);
         // TODO: test validations
     }
 

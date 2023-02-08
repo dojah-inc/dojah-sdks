@@ -13,9 +13,13 @@
 package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.model.GetDocumentAnalysisRequest;
 import com.konfigthis.dojah.client.model.GetDocumentAnalysisResponse;
+import com.konfigthis.dojah.client.model.GetGenericOcrTextRequest;
 import com.konfigthis.dojah.client.model.GetGenericOcrTextResponse;
+import com.konfigthis.dojah.client.model.GetOcrTextRequest;
 import com.konfigthis.dojah.client.model.GetOcrTextResponse;
+import com.konfigthis.dojah.client.model.VerifyPhotoIdWithSelfieRequest;
 import com.konfigthis.dojah.client.model.VerifyPhotoIdWithSelfieResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -40,8 +44,8 @@ public class MlApiTest {
      */
     @Test
     public void getDocumentAnalysisTest() throws ApiException {
-        Object body = null;
-        GetDocumentAnalysisResponse response = api.getDocumentAnalysis(body);
+        GetDocumentAnalysisRequest getDocumentAnalysisRequest = null;
+        GetDocumentAnalysisResponse response = api.getDocumentAnalysis(getDocumentAnalysisRequest);
         // TODO: test validations
     }
 
@@ -52,8 +56,8 @@ public class MlApiTest {
      */
     @Test
     public void getGenericOcrTextTest() throws ApiException {
-        Object body = null;
-        GetGenericOcrTextResponse response = api.getGenericOcrText(body);
+        GetGenericOcrTextRequest getGenericOcrTextRequest = null;
+        GetGenericOcrTextResponse response = api.getGenericOcrText(getGenericOcrTextRequest);
         // TODO: test validations
     }
 
@@ -64,8 +68,8 @@ public class MlApiTest {
      */
     @Test
     public void getOcrTextTest() throws ApiException {
-        Object body = null;
-        GetOcrTextResponse response = api.getOcrText(body);
+        GetOcrTextRequest getOcrTextRequest = null;
+        GetOcrTextResponse response = api.getOcrText(getOcrTextRequest);
         // TODO: test validations
     }
 
@@ -76,8 +80,8 @@ public class MlApiTest {
      */
     @Test
     public void verifyPhotoIdWithSelfieTest() throws ApiException {
-        Object body = null;
-        VerifyPhotoIdWithSelfieResponse response = api.verifyPhotoIdWithSelfie(body);
+        VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest = null;
+        VerifyPhotoIdWithSelfieResponse response = api.verifyPhotoIdWithSelfie(verifyPhotoIdWithSelfieRequest);
         // TODO: test validations
     }
 

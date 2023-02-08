@@ -84,8 +84,8 @@ namespace Dojah.Net.Test.Api
         public void RequestSenderIdTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.RequestSenderId(body);
+            //RequestSenderIdRequest requestSenderIdRequest = null;
+            //var response = instance.RequestSenderId(requestSenderIdRequest);
             //Assert.IsType<RequestSenderIdResponse>(response);
         }
 
@@ -96,8 +96,8 @@ namespace Dojah.Net.Test.Api
         public void SendOtpTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.SendOtp(body);
+            //SendOtpRequest sendOtpRequest = null;
+            //var response = instance.SendOtp(sendOtpRequest);
             //Assert.IsType<SendOtpResponse>(response);
         }
 
@@ -108,8 +108,8 @@ namespace Dojah.Net.Test.Api
         public void SendSmsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.SendSms(body);
+            //SendSmsRequest sendSmsRequest = null;
+            //var response = instance.SendSms(sendSmsRequest);
             //Assert.IsType<SendSmsResponse>(response);
         }
 

@@ -15,8 +15,11 @@ package com.konfigthis.dojah.client.api;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.model.GetSenderIdResponse;
 import com.konfigthis.dojah.client.model.GetSmsStatusResponse;
+import com.konfigthis.dojah.client.model.RequestSenderIdRequest;
 import com.konfigthis.dojah.client.model.RequestSenderIdResponse;
+import com.konfigthis.dojah.client.model.SendOtpRequest;
 import com.konfigthis.dojah.client.model.SendOtpResponse;
+import com.konfigthis.dojah.client.model.SendSmsRequest;
 import com.konfigthis.dojah.client.model.SendSmsResponse;
 import com.konfigthis.dojah.client.model.ValidateOtpResponse;
 import org.junit.jupiter.api.Disabled;
@@ -65,8 +68,8 @@ public class AuthenticationApiTest {
      */
     @Test
     public void requestSenderIdTest() throws ApiException {
-        Object body = null;
-        RequestSenderIdResponse response = api.requestSenderId(body);
+        RequestSenderIdRequest requestSenderIdRequest = null;
+        RequestSenderIdResponse response = api.requestSenderId(requestSenderIdRequest);
         // TODO: test validations
     }
 
@@ -77,8 +80,8 @@ public class AuthenticationApiTest {
      */
     @Test
     public void sendOtpTest() throws ApiException {
-        Object body = null;
-        SendOtpResponse response = api.sendOtp(body);
+        SendOtpRequest sendOtpRequest = null;
+        SendOtpResponse response = api.sendOtp(sendOtpRequest);
         // TODO: test validations
     }
 
@@ -89,8 +92,8 @@ public class AuthenticationApiTest {
      */
     @Test
     public void sendSmsTest() throws ApiException {
-        Object body = null;
-        SendSmsResponse response = api.sendSms(body);
+        SendSmsRequest sendSmsRequest = null;
+        SendSmsResponse response = api.sendSms(sendSmsRequest);
         // TODO: test validations
     }
 

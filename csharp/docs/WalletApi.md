@@ -13,7 +13,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="createwallet"></a>
 # **CreateWallet**
-> CreateWalletResponse CreateWallet (Object body = null)
+> CreateWalletResponse CreateWallet (CreateWalletRequest createWalletRequest = null)
 
 Create NGN Wallet
 
@@ -43,12 +43,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new WalletApi(config);
-            var body = null;  // Object |  (optional) 
+            var createWalletRequest = new CreateWalletRequest(); // CreateWalletRequest |  (optional) 
 
             try
             {
                 // Create NGN Wallet
-                CreateWalletResponse result = apiInstance.CreateWallet(body);
+                CreateWalletResponse result = apiInstance.CreateWallet(createWalletRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -69,7 +69,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create NGN Wallet
-    ApiResponse<CreateWalletResponse> response = apiInstance.CreateWalletWithHttpInfo(body);
+    ApiResponse<CreateWalletResponse> response = apiInstance.CreateWalletWithHttpInfo(createWalletRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -86,7 +86,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **createWalletRequest** | [**CreateWalletRequest**](CreateWalletRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -111,7 +111,7 @@ catch (ApiException e)
 
 <a name="creditsubwallet"></a>
 # **CreditSubwallet**
-> CreditSubwalletResponse CreditSubwallet (Object body = null)
+> CreditSubwalletResponse CreditSubwallet (CreditSubwalletRequest creditSubwalletRequest = null)
 
 Credit Sub-wallet
 
@@ -137,12 +137,12 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new WalletApi(config);
-            var body = null;  // Object |  (optional) 
+            var creditSubwalletRequest = new CreditSubwalletRequest(); // CreditSubwalletRequest |  (optional) 
 
             try
             {
                 // Credit Sub-wallet
-                CreditSubwalletResponse result = apiInstance.CreditSubwallet(body);
+                CreditSubwalletResponse result = apiInstance.CreditSubwallet(creditSubwalletRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -163,7 +163,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Credit Sub-wallet
-    ApiResponse<CreditSubwalletResponse> response = apiInstance.CreditSubwalletWithHttpInfo(body);
+    ApiResponse<CreditSubwalletResponse> response = apiInstance.CreditSubwalletWithHttpInfo(creditSubwalletRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -180,7 +180,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **creditSubwalletRequest** | [**CreditSubwalletRequest**](CreditSubwalletRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -499,7 +499,7 @@ catch (ApiException e)
 
 <a name="transferfunds"></a>
 # **TransferFunds**
-> TransferFundsResponse TransferFunds (Object body = null)
+> TransferFundsResponse TransferFunds (TransferFundsRequest transferFundsRequest = null)
 
 Transfer Funds
 
@@ -529,12 +529,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new WalletApi(config);
-            var body = null;  // Object |  (optional) 
+            var transferFundsRequest = new TransferFundsRequest(); // TransferFundsRequest |  (optional) 
 
             try
             {
                 // Transfer Funds
-                TransferFundsResponse result = apiInstance.TransferFunds(body);
+                TransferFundsResponse result = apiInstance.TransferFunds(transferFundsRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -555,7 +555,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Transfer Funds
-    ApiResponse<TransferFundsResponse> response = apiInstance.TransferFundsWithHttpInfo(body);
+    ApiResponse<TransferFundsResponse> response = apiInstance.TransferFundsWithHttpInfo(transferFundsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -572,7 +572,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **transferFundsRequest** | [**TransferFundsRequest**](TransferFundsRequest.md) |  | [optional]  |
 
 ### Return type
 

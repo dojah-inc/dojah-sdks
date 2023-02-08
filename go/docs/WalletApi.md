@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## CreateWallet
 
-> CreateWalletResponse CreateWallet(ctx).Body(body).Execute()
+> CreateWalletResponse CreateWallet(ctx).CreateWalletRequest(createWalletRequest).Execute()
 
 Create NGN Wallet
 
@@ -32,11 +32,11 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+    createWalletRequest := *dojah.NewCreateWalletRequest() // CreateWalletRequest |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.WalletApi.CreateWallet(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.WalletApi.CreateWallet(context.Background()).CreateWalletRequest(createWalletRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WalletApi.CreateWallet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -57,7 +57,7 @@ Other parameters are passed through a pointer to a apiCreateWalletRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **createWalletRequest** | [**CreateWalletRequest**](CreateWalletRequest.md) |  | 
 
 ### Return type
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## CreditSubwallet
 
-> CreditSubwalletResponse CreditSubwallet(ctx).Body(body).Execute()
+> CreditSubwalletResponse CreditSubwallet(ctx).CreditSubwalletRequest(creditSubwalletRequest).Execute()
 
 Credit Sub-wallet
 
@@ -96,11 +96,11 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+    creditSubwalletRequest := *dojah.NewCreditSubwalletRequest() // CreditSubwalletRequest |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.WalletApi.CreditSubwallet(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.WalletApi.CreditSubwallet(context.Background()).CreditSubwalletRequest(creditSubwalletRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WalletApi.CreditSubwallet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -121,7 +121,7 @@ Other parameters are passed through a pointer to a apiCreditSubwalletRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **creditSubwalletRequest** | [**CreditSubwalletRequest**](CreditSubwalletRequest.md) |  | 
 
 ### Return type
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 
 ## TransferFunds
 
-> TransferFundsResponse TransferFunds(ctx).Body(body).Execute()
+> TransferFundsResponse TransferFunds(ctx).TransferFundsRequest(transferFundsRequest).Execute()
 
 Transfer Funds
 
@@ -352,11 +352,11 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+    transferFundsRequest := *dojah.NewTransferFundsRequest() // TransferFundsRequest |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.WalletApi.TransferFunds(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.WalletApi.TransferFunds(context.Background()).TransferFundsRequest(transferFundsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WalletApi.TransferFunds``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -377,7 +377,7 @@ Other parameters are passed through a pointer to a apiTransferFundsRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **transferFundsRequest** | [**TransferFundsRequest**](TransferFundsRequest.md) |  | 
 
 ### Return type
 

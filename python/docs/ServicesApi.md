@@ -21,6 +21,7 @@ Categorize Transactions
 import time
 import dojah_client
 from dojah_client.api import services_api
+from dojah_client.model.categorize_transactions_request import CategorizeTransactionsRequest
 from dojah_client.model.categorize_transactions_response import CategorizeTransactionsResponse
 from pprint import pprint
 # The client must configure the authentication and authorization parameters
@@ -44,13 +45,16 @@ configuration.api_key['appIdAuth'] = 'YOUR_API_KEY'
 with dojah_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = services_api.ServicesApi(api_client)
-    body = {} # {str: (bool, dict, float, int, list, str, none_type)} |  (optional)
+    categorize_transactions_request = CategorizeTransactionsRequest(
+        description="POS/WEB PURCHASE TRANSACTION -047608- -253842-MUNCHIES BY MOE OY OYNG",
+        trans_type="debit",
+    ) # CategorizeTransactionsRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Categorize Transactions
-        api_response = api_instance.categorize_transactions(body=body)
+        api_response = api_instance.categorize_transactions(categorize_transactions_request=categorize_transactions_request)
         pprint(api_response)
     except dojah_client.ApiException as e:
         print("Exception when calling ServicesApi->categorize_transactions: %s\n" % e)
@@ -61,7 +65,7 @@ with dojah_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **{str: (bool, dict, float, int, list, str, none_type)}**|  | [optional]
+ **categorize_transactions_request** | [**CategorizeTransactionsRequest**](CategorizeTransactionsRequest.md)|  | [optional]
 
 ### Return type
 

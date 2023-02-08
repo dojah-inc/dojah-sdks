@@ -177,6 +177,7 @@ Messaging - Request Sender ID
 import time
 import dojah_client
 from dojah_client.api import authentication_api
+from dojah_client.model.request_sender_id_request import RequestSenderIdRequest
 from dojah_client.model.request_sender_id_response import RequestSenderIdResponse
 from pprint import pprint
 # The client must configure the authentication and authorization parameters
@@ -200,13 +201,15 @@ configuration.api_key['appIdAuth'] = 'YOUR_API_KEY'
 with dojah_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentication_api.AuthenticationApi(api_client)
-    body = {} # {str: (bool, dict, float, int, list, str, none_type)} |  (optional)
+    request_sender_id_request = RequestSenderIdRequest(
+        sender_id="Dojah",
+    ) # RequestSenderIdRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Messaging - Request Sender ID
-        api_response = api_instance.request_sender_id(body=body)
+        api_response = api_instance.request_sender_id(request_sender_id_request=request_sender_id_request)
         pprint(api_response)
     except dojah_client.ApiException as e:
         print("Exception when calling AuthenticationApi->request_sender_id: %s\n" % e)
@@ -217,7 +220,7 @@ with dojah_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **{str: (bool, dict, float, int, list, str, none_type)}**|  | [optional]
+ **request_sender_id_request** | [**RequestSenderIdRequest**](RequestSenderIdRequest.md)|  | [optional]
 
 ### Return type
 
@@ -255,6 +258,7 @@ Messaging - Send OTP
 import time
 import dojah_client
 from dojah_client.api import authentication_api
+from dojah_client.model.send_otp_request import SendOtpRequest
 from dojah_client.model.send_otp_response import SendOtpResponse
 from pprint import pprint
 # The client must configure the authentication and authorization parameters
@@ -278,13 +282,19 @@ configuration.api_key['appIdAuth'] = 'YOUR_API_KEY'
 with dojah_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentication_api.AuthenticationApi(api_client)
-    body = {} # {str: (bool, dict, float, int, list, str, none_type)} |  (optional)
+    send_otp_request = SendOtpRequest(
+        destination="08068810228",
+        length=6,
+        channel="sms",
+        sender_id="Dojah",
+        priority=True,
+    ) # SendOtpRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Messaging - Send OTP
-        api_response = api_instance.send_otp(body=body)
+        api_response = api_instance.send_otp(send_otp_request=send_otp_request)
         pprint(api_response)
     except dojah_client.ApiException as e:
         print("Exception when calling AuthenticationApi->send_otp: %s\n" % e)
@@ -295,7 +305,7 @@ with dojah_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **{str: (bool, dict, float, int, list, str, none_type)}**|  | [optional]
+ **send_otp_request** | [**SendOtpRequest**](SendOtpRequest.md)|  | [optional]
 
 ### Return type
 
@@ -333,6 +343,7 @@ Messaging - Send SMS
 import time
 import dojah_client
 from dojah_client.api import authentication_api
+from dojah_client.model.send_sms_request import SendSmsRequest
 from dojah_client.model.send_sms_response import SendSmsResponse
 from pprint import pprint
 # The client must configure the authentication and authorization parameters
@@ -356,13 +367,18 @@ configuration.api_key['appIdAuth'] = 'YOUR_API_KEY'
 with dojah_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentication_api.AuthenticationApi(api_client)
-    body = {} # {str: (bool, dict, float, int, list, str, none_type)} |  (optional)
+    send_sms_request = SendSmsRequest(
+        destination="08068810228",
+        message="Checking to see if you are Okay",
+        channel="whatsapp",
+        sender_id="Kedesa",
+    ) # SendSmsRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Messaging - Send SMS
-        api_response = api_instance.send_sms(body=body)
+        api_response = api_instance.send_sms(send_sms_request=send_sms_request)
         pprint(api_response)
     except dojah_client.ApiException as e:
         print("Exception when calling AuthenticationApi->send_sms: %s\n" % e)
@@ -373,7 +389,7 @@ with dojah_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **{str: (bool, dict, float, int, list, str, none_type)}**|  | [optional]
+ **send_sms_request** | [**SendSmsRequest**](SendSmsRequest.md)|  | [optional]
 
 ### Return type
 

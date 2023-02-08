@@ -61,8 +61,8 @@ namespace Dojah.Net.Test.Api
         public void CreateWalletTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.CreateWallet(body);
+            //CreateWalletRequest createWalletRequest = null;
+            //var response = instance.CreateWallet(createWalletRequest);
             //Assert.IsType<CreateWalletResponse>(response);
         }
 
@@ -73,8 +73,8 @@ namespace Dojah.Net.Test.Api
         public void CreditSubwalletTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.CreditSubwallet(body);
+            //CreditSubwalletRequest creditSubwalletRequest = null;
+            //var response = instance.CreditSubwallet(creditSubwalletRequest);
             //Assert.IsType<CreditSubwalletResponse>(response);
         }
 
@@ -121,8 +121,8 @@ namespace Dojah.Net.Test.Api
         public void TransferFundsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.TransferFunds(body);
+            //TransferFundsRequest transferFundsRequest = null;
+            //var response = instance.TransferFunds(transferFundsRequest);
             //Assert.IsType<TransferFundsResponse>(response);
         }
     }

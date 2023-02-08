@@ -1151,6 +1151,7 @@ KYC - Selfie BVN Verificatoin
 import time
 import dojah_client
 from dojah_client.api import kyc_api
+from dojah_client.model.verify_selfie_bvn_request import VerifySelfieBvnRequest
 from dojah_client.model.verify_selfie_bvn_response import VerifySelfieBvnResponse
 from pprint import pprint
 # The client must configure the authentication and authorization parameters
@@ -1174,13 +1175,16 @@ configuration.api_key['appIdAuth'] = 'YOUR_API_KEY'
 with dojah_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kyc_api.KYCApi(api_client)
-    body = {} # {str: (bool, dict, float, int, list, str, none_type)} |  (optional)
+    verify_selfie_bvn_request = VerifySelfieBvnRequest(
+        bvn="22468537919",
+        selfie_image="<base64 encoded image>",
+    ) # VerifySelfieBvnRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # KYC - Selfie BVN Verificatoin
-        api_response = api_instance.verify_selfie_bvn(body=body)
+        api_response = api_instance.verify_selfie_bvn(verify_selfie_bvn_request=verify_selfie_bvn_request)
         pprint(api_response)
     except dojah_client.ApiException as e:
         print("Exception when calling KYCApi->verify_selfie_bvn: %s\n" % e)
@@ -1191,7 +1195,7 @@ with dojah_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **{str: (bool, dict, float, int, list, str, none_type)}**|  | [optional]
+ **verify_selfie_bvn_request** | [**VerifySelfieBvnRequest**](VerifySelfieBvnRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1229,6 +1233,7 @@ KYC - Selfie NIN Verification
 import time
 import dojah_client
 from dojah_client.api import kyc_api
+from dojah_client.model.verify_selfie_nin_request import VerifySelfieNinRequest
 from dojah_client.model.verify_selfie_nin_response import VerifySelfieNinResponse
 from pprint import pprint
 # The client must configure the authentication and authorization parameters
@@ -1252,13 +1257,16 @@ configuration.api_key['appIdAuth'] = 'YOUR_API_KEY'
 with dojah_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kyc_api.KYCApi(api_client)
-    body = {} # {str: (bool, dict, float, int, list, str, none_type)} |  (optional)
+    verify_selfie_nin_request = VerifySelfieNinRequest(
+        nin="79628483753",
+        selfie_image="<base64 encoded image>",
+    ) # VerifySelfieNinRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # KYC - Selfie NIN Verification
-        api_response = api_instance.verify_selfie_nin(body=body)
+        api_response = api_instance.verify_selfie_nin(verify_selfie_nin_request=verify_selfie_nin_request)
         pprint(api_response)
     except dojah_client.ApiException as e:
         print("Exception when calling KYCApi->verify_selfie_nin: %s\n" % e)
@@ -1269,7 +1277,7 @@ with dojah_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **{str: (bool, dict, float, int, list, str, none_type)}**|  | [optional]
+ **verify_selfie_nin_request** | [**VerifySelfieNinRequest**](VerifySelfieNinRequest.md)|  | [optional]
 
 ### Return type
 

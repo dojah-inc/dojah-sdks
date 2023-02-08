@@ -117,7 +117,7 @@ catch (ApiException e)
 
 <a name="collecttransactions"></a>
 # **CollectTransactions**
-> CollectTransactionsResponse CollectTransactions (Object body = null)
+> CollectTransactionsResponse CollectTransactions (CollectTransactionsRequest collectTransactionsRequest = null)
 
 Collect Transactions
 
@@ -147,12 +147,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new FinancialApi(config);
-            var body = null;  // Object |  (optional) 
+            var collectTransactionsRequest = new CollectTransactionsRequest(); // CollectTransactionsRequest |  (optional) 
 
             try
             {
                 // Collect Transactions
-                CollectTransactionsResponse result = apiInstance.CollectTransactions(body);
+                CollectTransactionsResponse result = apiInstance.CollectTransactions(collectTransactionsRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -173,7 +173,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Collect Transactions
-    ApiResponse<CollectTransactionsResponse> response = apiInstance.CollectTransactionsWithHttpInfo(body);
+    ApiResponse<CollectTransactionsResponse> response = apiInstance.CollectTransactionsWithHttpInfo(collectTransactionsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -190,7 +190,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **collectTransactionsRequest** | [**CollectTransactionsRequest**](CollectTransactionsRequest.md) |  | [optional]  |
 
 ### Return type
 

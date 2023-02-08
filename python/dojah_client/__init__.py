@@ -10,7 +10,7 @@
 """
 
 
-__version__ = "1.0.0"
+__version__ = "2.0.0"
 
 # import ApiClient
 from dojah_client.api_client import ApiClient

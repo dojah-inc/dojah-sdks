@@ -183,11 +183,11 @@ func (a *FinancialApiService) CollectStatusFromPdfExecute(r FinancialApiCollectS
 type FinancialApiCollectTransactionsRequest struct {
 	ctx context.Context
 	ApiService *FinancialApiService
-	body *map[string]interface{}
+	collectTransactionsRequest *CollectTransactionsRequest
 }
 
-func (r FinancialApiCollectTransactionsRequest) Body(body map[string]interface{}) FinancialApiCollectTransactionsRequest {
-	r.body = &body
+func (r FinancialApiCollectTransactionsRequest) CollectTransactionsRequest(collectTransactionsRequest CollectTransactionsRequest) FinancialApiCollectTransactionsRequest {
+	r.collectTransactionsRequest = &collectTransactionsRequest
 	return r
 }
 
@@ -247,7 +247,7 @@ func (a *FinancialApiService) CollectTransactionsExecute(r FinancialApiCollectTr
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.collectTransactionsRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

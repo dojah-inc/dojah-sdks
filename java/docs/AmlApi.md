@@ -83,7 +83,7 @@ public class Example {
 
 <a name="screenAml"></a>
 # **screenAml**
-> ScreenAmlResponse screenAml(body)
+> ScreenAmlResponse screenAml(screenAmlRequest)
 
 AML Screening
 
@@ -115,9 +115,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     AmlApi apiInstance = new AmlApi(defaultClient);
-    Object body = null; // Object | 
+    ScreenAmlRequest screenAmlRequest = new ScreenAmlRequest(); // ScreenAmlRequest | 
     try {
-      ScreenAmlResponse result = apiInstance.screenAml(body);
+      ScreenAmlResponse result = apiInstance.screenAml(screenAmlRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AmlApi#screenAml");
@@ -134,7 +134,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **screenAmlRequest** | [**ScreenAmlRequest**](ScreenAmlRequest.md)|  | [optional] |
 
 ### Return type
 

@@ -26,11 +26,14 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.konfigthis.dojah.client.model.CreateWalletRequest;
 import com.konfigthis.dojah.client.model.CreateWalletResponse;
+import com.konfigthis.dojah.client.model.CreditSubwalletRequest;
 import com.konfigthis.dojah.client.model.CreditSubwalletResponse;
 import com.konfigthis.dojah.client.model.GetTransactionResponse;
 import com.konfigthis.dojah.client.model.GetWalletResponse;
 import com.konfigthis.dojah.client.model.GetWalletsResponse;
+import com.konfigthis.dojah.client.model.TransferFundsRequest;
 import com.konfigthis.dojah.client.model.TransferFundsResponse;
 
 import java.lang.reflect.Type;
@@ -79,7 +82,7 @@ public class WalletApi {
 
     /**
      * Build call for createWallet
-     * @param body  (optional)
+     * @param createWalletRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -89,7 +92,7 @@ public class WalletApi {
         <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call createWalletCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createWalletCall(CreateWalletRequest createWalletRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -103,7 +106,7 @@ public class WalletApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = createWalletRequest;
 
         // create path and map variables
         String localVarPath = "/v1/wallet/ngn/create";
@@ -135,15 +138,15 @@ public class WalletApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createWalletValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return createWalletCall(body, _callback);
+    private okhttp3.Call createWalletValidateBeforeCall(CreateWalletRequest createWalletRequest, final ApiCallback _callback) throws ApiException {
+        return createWalletCall(createWalletRequest, _callback);
 
     }
 
     /**
      * Create NGN Wallet
      * 
-     * @param body  (optional)
+     * @param createWalletRequest  (optional)
      * @return CreateWalletResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -152,15 +155,15 @@ public class WalletApi {
         <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public CreateWalletResponse createWallet(Object body) throws ApiException {
-        ApiResponse<CreateWalletResponse> localVarResp = createWalletWithHttpInfo(body);
+    public CreateWalletResponse createWallet(CreateWalletRequest createWalletRequest) throws ApiException {
+        ApiResponse<CreateWalletResponse> localVarResp = createWalletWithHttpInfo(createWalletRequest);
         return localVarResp.getData();
     }
 
     /**
      * Create NGN Wallet
      * 
-     * @param body  (optional)
+     * @param createWalletRequest  (optional)
      * @return ApiResponse&lt;CreateWalletResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -169,8 +172,8 @@ public class WalletApi {
         <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<CreateWalletResponse> createWalletWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = createWalletValidateBeforeCall(body, null);
+    public ApiResponse<CreateWalletResponse> createWalletWithHttpInfo(CreateWalletRequest createWalletRequest) throws ApiException {
+        okhttp3.Call localVarCall = createWalletValidateBeforeCall(createWalletRequest, null);
         Type localVarReturnType = new TypeToken<CreateWalletResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -178,7 +181,7 @@ public class WalletApi {
     /**
      * Create NGN Wallet (asynchronously)
      * 
-     * @param body  (optional)
+     * @param createWalletRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -188,16 +191,16 @@ public class WalletApi {
         <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call createWalletAsync(Object body, final ApiCallback<CreateWalletResponse> _callback) throws ApiException {
+    public okhttp3.Call createWalletAsync(CreateWalletRequest createWalletRequest, final ApiCallback<CreateWalletResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createWalletValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = createWalletValidateBeforeCall(createWalletRequest, _callback);
         Type localVarReturnType = new TypeToken<CreateWalletResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for creditSubwallet
-     * @param body  (optional)
+     * @param creditSubwalletRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -207,7 +210,7 @@ public class WalletApi {
         <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call creditSubwalletCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call creditSubwalletCall(CreditSubwalletRequest creditSubwalletRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -221,7 +224,7 @@ public class WalletApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = creditSubwalletRequest;
 
         // create path and map variables
         String localVarPath = "/v1/wallet/ngn/credit";
@@ -253,15 +256,15 @@ public class WalletApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call creditSubwalletValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return creditSubwalletCall(body, _callback);
+    private okhttp3.Call creditSubwalletValidateBeforeCall(CreditSubwalletRequest creditSubwalletRequest, final ApiCallback _callback) throws ApiException {
+        return creditSubwalletCall(creditSubwalletRequest, _callback);
 
     }
 
     /**
      * Credit Sub-wallet
      * 
-     * @param body  (optional)
+     * @param creditSubwalletRequest  (optional)
      * @return CreditSubwalletResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -270,15 +273,15 @@ public class WalletApi {
         <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public CreditSubwalletResponse creditSubwallet(Object body) throws ApiException {
-        ApiResponse<CreditSubwalletResponse> localVarResp = creditSubwalletWithHttpInfo(body);
+    public CreditSubwalletResponse creditSubwallet(CreditSubwalletRequest creditSubwalletRequest) throws ApiException {
+        ApiResponse<CreditSubwalletResponse> localVarResp = creditSubwalletWithHttpInfo(creditSubwalletRequest);
         return localVarResp.getData();
     }
 
     /**
      * Credit Sub-wallet
      * 
-     * @param body  (optional)
+     * @param creditSubwalletRequest  (optional)
      * @return ApiResponse&lt;CreditSubwalletResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -287,8 +290,8 @@ public class WalletApi {
         <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<CreditSubwalletResponse> creditSubwalletWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = creditSubwalletValidateBeforeCall(body, null);
+    public ApiResponse<CreditSubwalletResponse> creditSubwalletWithHttpInfo(CreditSubwalletRequest creditSubwalletRequest) throws ApiException {
+        okhttp3.Call localVarCall = creditSubwalletValidateBeforeCall(creditSubwalletRequest, null);
         Type localVarReturnType = new TypeToken<CreditSubwalletResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -296,7 +299,7 @@ public class WalletApi {
     /**
      * Credit Sub-wallet (asynchronously)
      * 
-     * @param body  (optional)
+     * @param creditSubwalletRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -306,9 +309,9 @@ public class WalletApi {
         <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call creditSubwalletAsync(Object body, final ApiCallback<CreditSubwalletResponse> _callback) throws ApiException {
+    public okhttp3.Call creditSubwalletAsync(CreditSubwalletRequest creditSubwalletRequest, final ApiCallback<CreditSubwalletResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = creditSubwalletValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = creditSubwalletValidateBeforeCall(creditSubwalletRequest, _callback);
         Type localVarReturnType = new TypeToken<CreditSubwalletResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -678,7 +681,7 @@ public class WalletApi {
     }
     /**
      * Build call for transferFunds
-     * @param body  (optional)
+     * @param transferFundsRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -688,7 +691,7 @@ public class WalletApi {
         <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call transferFundsCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call transferFundsCall(TransferFundsRequest transferFundsRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -702,7 +705,7 @@ public class WalletApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = transferFundsRequest;
 
         // create path and map variables
         String localVarPath = "/v1/wallet/ngn/transfer";
@@ -734,15 +737,15 @@ public class WalletApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call transferFundsValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return transferFundsCall(body, _callback);
+    private okhttp3.Call transferFundsValidateBeforeCall(TransferFundsRequest transferFundsRequest, final ApiCallback _callback) throws ApiException {
+        return transferFundsCall(transferFundsRequest, _callback);
 
     }
 
     /**
      * Transfer Funds
      * 
-     * @param body  (optional)
+     * @param transferFundsRequest  (optional)
      * @return TransferFundsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -751,15 +754,15 @@ public class WalletApi {
         <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public TransferFundsResponse transferFunds(Object body) throws ApiException {
-        ApiResponse<TransferFundsResponse> localVarResp = transferFundsWithHttpInfo(body);
+    public TransferFundsResponse transferFunds(TransferFundsRequest transferFundsRequest) throws ApiException {
+        ApiResponse<TransferFundsResponse> localVarResp = transferFundsWithHttpInfo(transferFundsRequest);
         return localVarResp.getData();
     }
 
     /**
      * Transfer Funds
      * 
-     * @param body  (optional)
+     * @param transferFundsRequest  (optional)
      * @return ApiResponse&lt;TransferFundsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -768,8 +771,8 @@ public class WalletApi {
         <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<TransferFundsResponse> transferFundsWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = transferFundsValidateBeforeCall(body, null);
+    public ApiResponse<TransferFundsResponse> transferFundsWithHttpInfo(TransferFundsRequest transferFundsRequest) throws ApiException {
+        okhttp3.Call localVarCall = transferFundsValidateBeforeCall(transferFundsRequest, null);
         Type localVarReturnType = new TypeToken<TransferFundsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -777,7 +780,7 @@ public class WalletApi {
     /**
      * Transfer Funds (asynchronously)
      * 
-     * @param body  (optional)
+     * @param transferFundsRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -787,9 +790,9 @@ public class WalletApi {
         <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call transferFundsAsync(Object body, final ApiCallback<TransferFundsResponse> _callback) throws ApiException {
+    public okhttp3.Call transferFundsAsync(TransferFundsRequest transferFundsRequest, final ApiCallback<TransferFundsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = transferFundsValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = transferFundsValidateBeforeCall(transferFundsRequest, _callback);
         Type localVarReturnType = new TypeToken<TransferFundsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

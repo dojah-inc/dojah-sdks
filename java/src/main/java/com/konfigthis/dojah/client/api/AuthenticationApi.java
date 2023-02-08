@@ -28,8 +28,11 @@ import java.io.IOException;
 
 import com.konfigthis.dojah.client.model.GetSenderIdResponse;
 import com.konfigthis.dojah.client.model.GetSmsStatusResponse;
+import com.konfigthis.dojah.client.model.RequestSenderIdRequest;
 import com.konfigthis.dojah.client.model.RequestSenderIdResponse;
+import com.konfigthis.dojah.client.model.SendOtpRequest;
 import com.konfigthis.dojah.client.model.SendOtpResponse;
+import com.konfigthis.dojah.client.model.SendSmsRequest;
 import com.konfigthis.dojah.client.model.SendSmsResponse;
 import com.konfigthis.dojah.client.model.ValidateOtpResponse;
 
@@ -313,7 +316,7 @@ public class AuthenticationApi {
     }
     /**
      * Build call for requestSenderId
-     * @param body  (optional)
+     * @param requestSenderIdRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -323,7 +326,7 @@ public class AuthenticationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call requestSenderIdCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call requestSenderIdCall(RequestSenderIdRequest requestSenderIdRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -337,7 +340,7 @@ public class AuthenticationApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = requestSenderIdRequest;
 
         // create path and map variables
         String localVarPath = "/api/v1/messaging/sender_id";
@@ -369,15 +372,15 @@ public class AuthenticationApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call requestSenderIdValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return requestSenderIdCall(body, _callback);
+    private okhttp3.Call requestSenderIdValidateBeforeCall(RequestSenderIdRequest requestSenderIdRequest, final ApiCallback _callback) throws ApiException {
+        return requestSenderIdCall(requestSenderIdRequest, _callback);
 
     }
 
     /**
      * Messaging - Request Sender ID
      * 
-     * @param body  (optional)
+     * @param requestSenderIdRequest  (optional)
      * @return RequestSenderIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -386,15 +389,15 @@ public class AuthenticationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public RequestSenderIdResponse requestSenderId(Object body) throws ApiException {
-        ApiResponse<RequestSenderIdResponse> localVarResp = requestSenderIdWithHttpInfo(body);
+    public RequestSenderIdResponse requestSenderId(RequestSenderIdRequest requestSenderIdRequest) throws ApiException {
+        ApiResponse<RequestSenderIdResponse> localVarResp = requestSenderIdWithHttpInfo(requestSenderIdRequest);
         return localVarResp.getData();
     }
 
     /**
      * Messaging - Request Sender ID
      * 
-     * @param body  (optional)
+     * @param requestSenderIdRequest  (optional)
      * @return ApiResponse&lt;RequestSenderIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -403,8 +406,8 @@ public class AuthenticationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RequestSenderIdResponse> requestSenderIdWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = requestSenderIdValidateBeforeCall(body, null);
+    public ApiResponse<RequestSenderIdResponse> requestSenderIdWithHttpInfo(RequestSenderIdRequest requestSenderIdRequest) throws ApiException {
+        okhttp3.Call localVarCall = requestSenderIdValidateBeforeCall(requestSenderIdRequest, null);
         Type localVarReturnType = new TypeToken<RequestSenderIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -412,7 +415,7 @@ public class AuthenticationApi {
     /**
      * Messaging - Request Sender ID (asynchronously)
      * 
-     * @param body  (optional)
+     * @param requestSenderIdRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -422,16 +425,16 @@ public class AuthenticationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call requestSenderIdAsync(Object body, final ApiCallback<RequestSenderIdResponse> _callback) throws ApiException {
+    public okhttp3.Call requestSenderIdAsync(RequestSenderIdRequest requestSenderIdRequest, final ApiCallback<RequestSenderIdResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = requestSenderIdValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = requestSenderIdValidateBeforeCall(requestSenderIdRequest, _callback);
         Type localVarReturnType = new TypeToken<RequestSenderIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for sendOtp
-     * @param body  (optional)
+     * @param sendOtpRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -441,7 +444,7 @@ public class AuthenticationApi {
         <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call sendOtpCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendOtpCall(SendOtpRequest sendOtpRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -455,7 +458,7 @@ public class AuthenticationApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = sendOtpRequest;
 
         // create path and map variables
         String localVarPath = "/v1/messaging/otp";
@@ -487,15 +490,15 @@ public class AuthenticationApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendOtpValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return sendOtpCall(body, _callback);
+    private okhttp3.Call sendOtpValidateBeforeCall(SendOtpRequest sendOtpRequest, final ApiCallback _callback) throws ApiException {
+        return sendOtpCall(sendOtpRequest, _callback);
 
     }
 
     /**
      * Messaging - Send OTP
      * 
-     * @param body  (optional)
+     * @param sendOtpRequest  (optional)
      * @return SendOtpResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -504,15 +507,15 @@ public class AuthenticationApi {
         <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public SendOtpResponse sendOtp(Object body) throws ApiException {
-        ApiResponse<SendOtpResponse> localVarResp = sendOtpWithHttpInfo(body);
+    public SendOtpResponse sendOtp(SendOtpRequest sendOtpRequest) throws ApiException {
+        ApiResponse<SendOtpResponse> localVarResp = sendOtpWithHttpInfo(sendOtpRequest);
         return localVarResp.getData();
     }
 
     /**
      * Messaging - Send OTP
      * 
-     * @param body  (optional)
+     * @param sendOtpRequest  (optional)
      * @return ApiResponse&lt;SendOtpResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -521,8 +524,8 @@ public class AuthenticationApi {
         <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<SendOtpResponse> sendOtpWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = sendOtpValidateBeforeCall(body, null);
+    public ApiResponse<SendOtpResponse> sendOtpWithHttpInfo(SendOtpRequest sendOtpRequest) throws ApiException {
+        okhttp3.Call localVarCall = sendOtpValidateBeforeCall(sendOtpRequest, null);
         Type localVarReturnType = new TypeToken<SendOtpResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -530,7 +533,7 @@ public class AuthenticationApi {
     /**
      * Messaging - Send OTP (asynchronously)
      * 
-     * @param body  (optional)
+     * @param sendOtpRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -540,16 +543,16 @@ public class AuthenticationApi {
         <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call sendOtpAsync(Object body, final ApiCallback<SendOtpResponse> _callback) throws ApiException {
+    public okhttp3.Call sendOtpAsync(SendOtpRequest sendOtpRequest, final ApiCallback<SendOtpResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = sendOtpValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = sendOtpValidateBeforeCall(sendOtpRequest, _callback);
         Type localVarReturnType = new TypeToken<SendOtpResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for sendSms
-     * @param body  (optional)
+     * @param sendSmsRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -559,7 +562,7 @@ public class AuthenticationApi {
         <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call sendSmsCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendSmsCall(SendSmsRequest sendSmsRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -573,7 +576,7 @@ public class AuthenticationApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = sendSmsRequest;
 
         // create path and map variables
         String localVarPath = "/api/v1/messaging/sms";
@@ -605,15 +608,15 @@ public class AuthenticationApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendSmsValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return sendSmsCall(body, _callback);
+    private okhttp3.Call sendSmsValidateBeforeCall(SendSmsRequest sendSmsRequest, final ApiCallback _callback) throws ApiException {
+        return sendSmsCall(sendSmsRequest, _callback);
 
     }
 
     /**
      * Messaging - Send SMS
      * 
-     * @param body  (optional)
+     * @param sendSmsRequest  (optional)
      * @return SendSmsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -622,15 +625,15 @@ public class AuthenticationApi {
         <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public SendSmsResponse sendSms(Object body) throws ApiException {
-        ApiResponse<SendSmsResponse> localVarResp = sendSmsWithHttpInfo(body);
+    public SendSmsResponse sendSms(SendSmsRequest sendSmsRequest) throws ApiException {
+        ApiResponse<SendSmsResponse> localVarResp = sendSmsWithHttpInfo(sendSmsRequest);
         return localVarResp.getData();
     }
 
     /**
      * Messaging - Send SMS
      * 
-     * @param body  (optional)
+     * @param sendSmsRequest  (optional)
      * @return ApiResponse&lt;SendSmsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -639,8 +642,8 @@ public class AuthenticationApi {
         <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<SendSmsResponse> sendSmsWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = sendSmsValidateBeforeCall(body, null);
+    public ApiResponse<SendSmsResponse> sendSmsWithHttpInfo(SendSmsRequest sendSmsRequest) throws ApiException {
+        okhttp3.Call localVarCall = sendSmsValidateBeforeCall(sendSmsRequest, null);
         Type localVarReturnType = new TypeToken<SendSmsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -648,7 +651,7 @@ public class AuthenticationApi {
     /**
      * Messaging - Send SMS (asynchronously)
      * 
-     * @param body  (optional)
+     * @param sendSmsRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -658,9 +661,9 @@ public class AuthenticationApi {
         <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call sendSmsAsync(Object body, final ApiCallback<SendSmsResponse> _callback) throws ApiException {
+    public okhttp3.Call sendSmsAsync(SendSmsRequest sendSmsRequest, final ApiCallback<SendSmsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = sendSmsValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = sendSmsValidateBeforeCall(sendSmsRequest, _callback);
         Type localVarReturnType = new TypeToken<SendSmsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

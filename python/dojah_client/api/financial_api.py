@@ -22,6 +22,7 @@ from dojah_client.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from dojah_client.model.collect_status_from_pdf_response import CollectStatusFromPdfResponse
+from dojah_client.model.collect_transactions_request import CollectTransactionsRequest
 from dojah_client.model.collect_transactions_response import CollectTransactionsResponse
 from dojah_client.model.financial_get_basic_bvn_response import FinancialGetBasicBvnResponse
 from dojah_client.model.financial_get_full_bvn_response import FinancialGetFullBvnResponse
@@ -115,7 +116,7 @@ class FinancialApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'collect_transactions_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -131,13 +132,13 @@ class FinancialApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'collect_transactions_request':
+                        (CollectTransactionsRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'collect_transactions_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -646,7 +647,7 @@ class FinancialApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            collect_transactions_request (CollectTransactionsRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

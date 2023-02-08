@@ -159,11 +159,11 @@ func (a *AMLApiService) GetScreeningInfoExecute(r AMLApiGetScreeningInfoRequest)
 type AMLApiScreenAmlRequest struct {
 	ctx context.Context
 	ApiService *AMLApiService
-	body *map[string]interface{}
+	screenAmlRequest *ScreenAmlRequest
 }
 
-func (r AMLApiScreenAmlRequest) Body(body map[string]interface{}) AMLApiScreenAmlRequest {
-	r.body = &body
+func (r AMLApiScreenAmlRequest) ScreenAmlRequest(screenAmlRequest ScreenAmlRequest) AMLApiScreenAmlRequest {
+	r.screenAmlRequest = &screenAmlRequest
 	return r
 }
 
@@ -223,7 +223,7 @@ func (a *AMLApiService) ScreenAmlExecute(r AMLApiScreenAmlRequest) (*ScreenAmlRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.screenAmlRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

@@ -27,6 +27,7 @@ import java.io.IOException;
 
 
 import com.konfigthis.dojah.client.model.CollectStatusFromPdfResponse;
+import com.konfigthis.dojah.client.model.CollectTransactionsRequest;
 import com.konfigthis.dojah.client.model.CollectTransactionsResponse;
 import java.io.File;
 import com.konfigthis.dojah.client.model.FinancialGetBasicBvnResponse;
@@ -214,7 +215,7 @@ public class FinancialApi {
     }
     /**
      * Build call for collectTransactions
-     * @param body  (optional)
+     * @param collectTransactionsRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -224,7 +225,7 @@ public class FinancialApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call collectTransactionsCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call collectTransactionsCall(CollectTransactionsRequest collectTransactionsRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -238,7 +239,7 @@ public class FinancialApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = collectTransactionsRequest;
 
         // create path and map variables
         String localVarPath = "/v1/financial/transactions";
@@ -270,15 +271,15 @@ public class FinancialApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call collectTransactionsValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return collectTransactionsCall(body, _callback);
+    private okhttp3.Call collectTransactionsValidateBeforeCall(CollectTransactionsRequest collectTransactionsRequest, final ApiCallback _callback) throws ApiException {
+        return collectTransactionsCall(collectTransactionsRequest, _callback);
 
     }
 
     /**
      * Collect Transactions
      * 
-     * @param body  (optional)
+     * @param collectTransactionsRequest  (optional)
      * @return CollectTransactionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -287,15 +288,15 @@ public class FinancialApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public CollectTransactionsResponse collectTransactions(Object body) throws ApiException {
-        ApiResponse<CollectTransactionsResponse> localVarResp = collectTransactionsWithHttpInfo(body);
+    public CollectTransactionsResponse collectTransactions(CollectTransactionsRequest collectTransactionsRequest) throws ApiException {
+        ApiResponse<CollectTransactionsResponse> localVarResp = collectTransactionsWithHttpInfo(collectTransactionsRequest);
         return localVarResp.getData();
     }
 
     /**
      * Collect Transactions
      * 
-     * @param body  (optional)
+     * @param collectTransactionsRequest  (optional)
      * @return ApiResponse&lt;CollectTransactionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -304,8 +305,8 @@ public class FinancialApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CollectTransactionsResponse> collectTransactionsWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = collectTransactionsValidateBeforeCall(body, null);
+    public ApiResponse<CollectTransactionsResponse> collectTransactionsWithHttpInfo(CollectTransactionsRequest collectTransactionsRequest) throws ApiException {
+        okhttp3.Call localVarCall = collectTransactionsValidateBeforeCall(collectTransactionsRequest, null);
         Type localVarReturnType = new TypeToken<CollectTransactionsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -313,7 +314,7 @@ public class FinancialApi {
     /**
      * Collect Transactions (asynchronously)
      * 
-     * @param body  (optional)
+     * @param collectTransactionsRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -323,9 +324,9 @@ public class FinancialApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call collectTransactionsAsync(Object body, final ApiCallback<CollectTransactionsResponse> _callback) throws ApiException {
+    public okhttp3.Call collectTransactionsAsync(CollectTransactionsRequest collectTransactionsRequest, final ApiCallback<CollectTransactionsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = collectTransactionsValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = collectTransactionsValidateBeforeCall(collectTransactionsRequest, _callback);
         Type localVarReturnType = new TypeToken<CollectTransactionsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

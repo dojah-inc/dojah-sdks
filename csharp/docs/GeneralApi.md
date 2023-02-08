@@ -492,7 +492,7 @@ This endpoint does not need any parameter.
 
 <a name="purchaseairtime"></a>
 # **PurchaseAirtime**
-> PurchaseAirtimeResponse PurchaseAirtime (Object body = null)
+> PurchaseAirtimeResponse PurchaseAirtime (PurchaseAirtimeRequest purchaseAirtimeRequest = null)
 
 Purchase - Send Airtime
 
@@ -522,12 +522,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new GeneralApi(config);
-            var body = null;  // Object |  (optional) 
+            var purchaseAirtimeRequest = new PurchaseAirtimeRequest(); // PurchaseAirtimeRequest |  (optional) 
 
             try
             {
                 // Purchase - Send Airtime
-                PurchaseAirtimeResponse result = apiInstance.PurchaseAirtime(body);
+                PurchaseAirtimeResponse result = apiInstance.PurchaseAirtime(purchaseAirtimeRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -548,7 +548,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Purchase - Send Airtime
-    ApiResponse<PurchaseAirtimeResponse> response = apiInstance.PurchaseAirtimeWithHttpInfo(body);
+    ApiResponse<PurchaseAirtimeResponse> response = apiInstance.PurchaseAirtimeWithHttpInfo(purchaseAirtimeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -565,7 +565,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **purchaseAirtimeRequest** | [**PurchaseAirtimeRequest**](PurchaseAirtimeRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -590,7 +590,7 @@ catch (ApiException e)
 
 <a name="purchasedata"></a>
 # **PurchaseData**
-> PurchaseDataResponse PurchaseData (Object body = null)
+> PurchaseDataResponse PurchaseData (PurchaseDataRequest purchaseDataRequest = null)
 
 Purchase - Buy Data
 
@@ -620,12 +620,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new GeneralApi(config);
-            var body = null;  // Object |  (optional) 
+            var purchaseDataRequest = new PurchaseDataRequest(); // PurchaseDataRequest |  (optional) 
 
             try
             {
                 // Purchase - Buy Data
-                PurchaseDataResponse result = apiInstance.PurchaseData(body);
+                PurchaseDataResponse result = apiInstance.PurchaseData(purchaseDataRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -646,7 +646,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Purchase - Buy Data
-    ApiResponse<PurchaseDataResponse> response = apiInstance.PurchaseDataWithHttpInfo(body);
+    ApiResponse<PurchaseDataResponse> response = apiInstance.PurchaseDataWithHttpInfo(purchaseDataRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -663,7 +663,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **purchaseDataRequest** | [**PurchaseDataRequest**](PurchaseDataRequest.md) |  | [optional]  |
 
 ### Return type
 

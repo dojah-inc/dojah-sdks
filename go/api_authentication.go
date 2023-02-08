@@ -284,11 +284,11 @@ func (a *AuthenticationApiService) GetSmsStatusExecute(r AuthenticationApiGetSms
 type AuthenticationApiRequestSenderIdRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationApiService
-	body *map[string]interface{}
+	requestSenderIdRequest *RequestSenderIdRequest
 }
 
-func (r AuthenticationApiRequestSenderIdRequest) Body(body map[string]interface{}) AuthenticationApiRequestSenderIdRequest {
-	r.body = &body
+func (r AuthenticationApiRequestSenderIdRequest) RequestSenderIdRequest(requestSenderIdRequest RequestSenderIdRequest) AuthenticationApiRequestSenderIdRequest {
+	r.requestSenderIdRequest = &requestSenderIdRequest
 	return r
 }
 
@@ -348,7 +348,7 @@ func (a *AuthenticationApiService) RequestSenderIdExecute(r AuthenticationApiReq
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.requestSenderIdRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -417,11 +417,11 @@ func (a *AuthenticationApiService) RequestSenderIdExecute(r AuthenticationApiReq
 type AuthenticationApiSendOtpRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationApiService
-	body *map[string]interface{}
+	sendOtpRequest *SendOtpRequest
 }
 
-func (r AuthenticationApiSendOtpRequest) Body(body map[string]interface{}) AuthenticationApiSendOtpRequest {
-	r.body = &body
+func (r AuthenticationApiSendOtpRequest) SendOtpRequest(sendOtpRequest SendOtpRequest) AuthenticationApiSendOtpRequest {
+	r.sendOtpRequest = &sendOtpRequest
 	return r
 }
 
@@ -481,7 +481,7 @@ func (a *AuthenticationApiService) SendOtpExecute(r AuthenticationApiSendOtpRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.sendOtpRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -550,11 +550,11 @@ func (a *AuthenticationApiService) SendOtpExecute(r AuthenticationApiSendOtpRequ
 type AuthenticationApiSendSmsRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationApiService
-	body *map[string]interface{}
+	sendSmsRequest *SendSmsRequest
 }
 
-func (r AuthenticationApiSendSmsRequest) Body(body map[string]interface{}) AuthenticationApiSendSmsRequest {
-	r.body = &body
+func (r AuthenticationApiSendSmsRequest) SendSmsRequest(sendSmsRequest SendSmsRequest) AuthenticationApiSendSmsRequest {
+	r.sendSmsRequest = &sendSmsRequest
 	return r
 }
 
@@ -614,7 +614,7 @@ func (a *AuthenticationApiService) SendSmsExecute(r AuthenticationApiSendSmsRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.sendSmsRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

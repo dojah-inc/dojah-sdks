@@ -26,9 +26,13 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.konfigthis.dojah.client.model.GetDocumentAnalysisRequest;
 import com.konfigthis.dojah.client.model.GetDocumentAnalysisResponse;
+import com.konfigthis.dojah.client.model.GetGenericOcrTextRequest;
 import com.konfigthis.dojah.client.model.GetGenericOcrTextResponse;
+import com.konfigthis.dojah.client.model.GetOcrTextRequest;
 import com.konfigthis.dojah.client.model.GetOcrTextResponse;
+import com.konfigthis.dojah.client.model.VerifyPhotoIdWithSelfieRequest;
 import com.konfigthis.dojah.client.model.VerifyPhotoIdWithSelfieResponse;
 
 import java.lang.reflect.Type;
@@ -77,7 +81,7 @@ public class MlApi {
 
     /**
      * Build call for getDocumentAnalysis
-     * @param body  (optional)
+     * @param getDocumentAnalysisRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -87,7 +91,7 @@ public class MlApi {
         <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getDocumentAnalysisCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDocumentAnalysisCall(GetDocumentAnalysisRequest getDocumentAnalysisRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -101,7 +105,7 @@ public class MlApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = getDocumentAnalysisRequest;
 
         // create path and map variables
         String localVarPath = "/v1/document/analysis/dl";
@@ -133,15 +137,15 @@ public class MlApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDocumentAnalysisValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return getDocumentAnalysisCall(body, _callback);
+    private okhttp3.Call getDocumentAnalysisValidateBeforeCall(GetDocumentAnalysisRequest getDocumentAnalysisRequest, final ApiCallback _callback) throws ApiException {
+        return getDocumentAnalysisCall(getDocumentAnalysisRequest, _callback);
 
     }
 
     /**
      * Document Analysis Drivers License
      * 
-     * @param body  (optional)
+     * @param getDocumentAnalysisRequest  (optional)
      * @return GetDocumentAnalysisResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -150,15 +154,15 @@ public class MlApi {
         <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
      </table>
      */
-    public GetDocumentAnalysisResponse getDocumentAnalysis(Object body) throws ApiException {
-        ApiResponse<GetDocumentAnalysisResponse> localVarResp = getDocumentAnalysisWithHttpInfo(body);
+    public GetDocumentAnalysisResponse getDocumentAnalysis(GetDocumentAnalysisRequest getDocumentAnalysisRequest) throws ApiException {
+        ApiResponse<GetDocumentAnalysisResponse> localVarResp = getDocumentAnalysisWithHttpInfo(getDocumentAnalysisRequest);
         return localVarResp.getData();
     }
 
     /**
      * Document Analysis Drivers License
      * 
-     * @param body  (optional)
+     * @param getDocumentAnalysisRequest  (optional)
      * @return ApiResponse&lt;GetDocumentAnalysisResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -167,8 +171,8 @@ public class MlApi {
         <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<GetDocumentAnalysisResponse> getDocumentAnalysisWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = getDocumentAnalysisValidateBeforeCall(body, null);
+    public ApiResponse<GetDocumentAnalysisResponse> getDocumentAnalysisWithHttpInfo(GetDocumentAnalysisRequest getDocumentAnalysisRequest) throws ApiException {
+        okhttp3.Call localVarCall = getDocumentAnalysisValidateBeforeCall(getDocumentAnalysisRequest, null);
         Type localVarReturnType = new TypeToken<GetDocumentAnalysisResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -176,7 +180,7 @@ public class MlApi {
     /**
      * Document Analysis Drivers License (asynchronously)
      * 
-     * @param body  (optional)
+     * @param getDocumentAnalysisRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -186,16 +190,16 @@ public class MlApi {
         <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getDocumentAnalysisAsync(Object body, final ApiCallback<GetDocumentAnalysisResponse> _callback) throws ApiException {
+    public okhttp3.Call getDocumentAnalysisAsync(GetDocumentAnalysisRequest getDocumentAnalysisRequest, final ApiCallback<GetDocumentAnalysisResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getDocumentAnalysisValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = getDocumentAnalysisValidateBeforeCall(getDocumentAnalysisRequest, _callback);
         Type localVarReturnType = new TypeToken<GetDocumentAnalysisResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getGenericOcrText
-     * @param body  (optional)
+     * @param getGenericOcrTextRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -205,7 +209,7 @@ public class MlApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getGenericOcrTextCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getGenericOcrTextCall(GetGenericOcrTextRequest getGenericOcrTextRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -219,7 +223,7 @@ public class MlApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = getGenericOcrTextRequest;
 
         // create path and map variables
         String localVarPath = "/v1/ml/ocr/generic";
@@ -251,15 +255,15 @@ public class MlApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getGenericOcrTextValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return getGenericOcrTextCall(body, _callback);
+    private okhttp3.Call getGenericOcrTextValidateBeforeCall(GetGenericOcrTextRequest getGenericOcrTextRequest, final ApiCallback _callback) throws ApiException {
+        return getGenericOcrTextCall(getGenericOcrTextRequest, _callback);
 
     }
 
     /**
      * Generic OCR Service
      * 
-     * @param body  (optional)
+     * @param getGenericOcrTextRequest  (optional)
      * @return GetGenericOcrTextResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -268,15 +272,15 @@ public class MlApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public GetGenericOcrTextResponse getGenericOcrText(Object body) throws ApiException {
-        ApiResponse<GetGenericOcrTextResponse> localVarResp = getGenericOcrTextWithHttpInfo(body);
+    public GetGenericOcrTextResponse getGenericOcrText(GetGenericOcrTextRequest getGenericOcrTextRequest) throws ApiException {
+        ApiResponse<GetGenericOcrTextResponse> localVarResp = getGenericOcrTextWithHttpInfo(getGenericOcrTextRequest);
         return localVarResp.getData();
     }
 
     /**
      * Generic OCR Service
      * 
-     * @param body  (optional)
+     * @param getGenericOcrTextRequest  (optional)
      * @return ApiResponse&lt;GetGenericOcrTextResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -285,8 +289,8 @@ public class MlApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetGenericOcrTextResponse> getGenericOcrTextWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = getGenericOcrTextValidateBeforeCall(body, null);
+    public ApiResponse<GetGenericOcrTextResponse> getGenericOcrTextWithHttpInfo(GetGenericOcrTextRequest getGenericOcrTextRequest) throws ApiException {
+        okhttp3.Call localVarCall = getGenericOcrTextValidateBeforeCall(getGenericOcrTextRequest, null);
         Type localVarReturnType = new TypeToken<GetGenericOcrTextResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -294,7 +298,7 @@ public class MlApi {
     /**
      * Generic OCR Service (asynchronously)
      * 
-     * @param body  (optional)
+     * @param getGenericOcrTextRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -304,16 +308,16 @@ public class MlApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getGenericOcrTextAsync(Object body, final ApiCallback<GetGenericOcrTextResponse> _callback) throws ApiException {
+    public okhttp3.Call getGenericOcrTextAsync(GetGenericOcrTextRequest getGenericOcrTextRequest, final ApiCallback<GetGenericOcrTextResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getGenericOcrTextValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = getGenericOcrTextValidateBeforeCall(getGenericOcrTextRequest, _callback);
         Type localVarReturnType = new TypeToken<GetGenericOcrTextResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getOcrText
-     * @param body  (optional)
+     * @param getOcrTextRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -323,7 +327,7 @@ public class MlApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOcrTextCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getOcrTextCall(GetOcrTextRequest getOcrTextRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -337,7 +341,7 @@ public class MlApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = getOcrTextRequest;
 
         // create path and map variables
         String localVarPath = "/v1/ml/ocr";
@@ -369,15 +373,15 @@ public class MlApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getOcrTextValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return getOcrTextCall(body, _callback);
+    private okhttp3.Call getOcrTextValidateBeforeCall(GetOcrTextRequest getOcrTextRequest, final ApiCallback _callback) throws ApiException {
+        return getOcrTextCall(getOcrTextRequest, _callback);
 
     }
 
     /**
      * BVN Ocr
      * 
-     * @param body  (optional)
+     * @param getOcrTextRequest  (optional)
      * @return GetOcrTextResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -386,15 +390,15 @@ public class MlApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public GetOcrTextResponse getOcrText(Object body) throws ApiException {
-        ApiResponse<GetOcrTextResponse> localVarResp = getOcrTextWithHttpInfo(body);
+    public GetOcrTextResponse getOcrText(GetOcrTextRequest getOcrTextRequest) throws ApiException {
+        ApiResponse<GetOcrTextResponse> localVarResp = getOcrTextWithHttpInfo(getOcrTextRequest);
         return localVarResp.getData();
     }
 
     /**
      * BVN Ocr
      * 
-     * @param body  (optional)
+     * @param getOcrTextRequest  (optional)
      * @return ApiResponse&lt;GetOcrTextResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -403,8 +407,8 @@ public class MlApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetOcrTextResponse> getOcrTextWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = getOcrTextValidateBeforeCall(body, null);
+    public ApiResponse<GetOcrTextResponse> getOcrTextWithHttpInfo(GetOcrTextRequest getOcrTextRequest) throws ApiException {
+        okhttp3.Call localVarCall = getOcrTextValidateBeforeCall(getOcrTextRequest, null);
         Type localVarReturnType = new TypeToken<GetOcrTextResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -412,7 +416,7 @@ public class MlApi {
     /**
      * BVN Ocr (asynchronously)
      * 
-     * @param body  (optional)
+     * @param getOcrTextRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -422,16 +426,16 @@ public class MlApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOcrTextAsync(Object body, final ApiCallback<GetOcrTextResponse> _callback) throws ApiException {
+    public okhttp3.Call getOcrTextAsync(GetOcrTextRequest getOcrTextRequest, final ApiCallback<GetOcrTextResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getOcrTextValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = getOcrTextValidateBeforeCall(getOcrTextRequest, _callback);
         Type localVarReturnType = new TypeToken<GetOcrTextResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for verifyPhotoIdWithSelfie
-     * @param body  (optional)
+     * @param verifyPhotoIdWithSelfieRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -441,7 +445,7 @@ public class MlApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call verifyPhotoIdWithSelfieCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call verifyPhotoIdWithSelfieCall(VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -455,7 +459,7 @@ public class MlApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = verifyPhotoIdWithSelfieRequest;
 
         // create path and map variables
         String localVarPath = "/v1/kyc/photoid/verify";
@@ -487,15 +491,15 @@ public class MlApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call verifyPhotoIdWithSelfieValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return verifyPhotoIdWithSelfieCall(body, _callback);
+    private okhttp3.Call verifyPhotoIdWithSelfieValidateBeforeCall(VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest, final ApiCallback _callback) throws ApiException {
+        return verifyPhotoIdWithSelfieCall(verifyPhotoIdWithSelfieRequest, _callback);
 
     }
 
     /**
      * KYC - Selfie Photo ID Verification
      * 
-     * @param body  (optional)
+     * @param verifyPhotoIdWithSelfieRequest  (optional)
      * @return VerifyPhotoIdWithSelfieResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -504,15 +508,15 @@ public class MlApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public VerifyPhotoIdWithSelfieResponse verifyPhotoIdWithSelfie(Object body) throws ApiException {
-        ApiResponse<VerifyPhotoIdWithSelfieResponse> localVarResp = verifyPhotoIdWithSelfieWithHttpInfo(body);
+    public VerifyPhotoIdWithSelfieResponse verifyPhotoIdWithSelfie(VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest) throws ApiException {
+        ApiResponse<VerifyPhotoIdWithSelfieResponse> localVarResp = verifyPhotoIdWithSelfieWithHttpInfo(verifyPhotoIdWithSelfieRequest);
         return localVarResp.getData();
     }
 
     /**
      * KYC - Selfie Photo ID Verification
      * 
-     * @param body  (optional)
+     * @param verifyPhotoIdWithSelfieRequest  (optional)
      * @return ApiResponse&lt;VerifyPhotoIdWithSelfieResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -521,8 +525,8 @@ public class MlApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<VerifyPhotoIdWithSelfieResponse> verifyPhotoIdWithSelfieWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = verifyPhotoIdWithSelfieValidateBeforeCall(body, null);
+    public ApiResponse<VerifyPhotoIdWithSelfieResponse> verifyPhotoIdWithSelfieWithHttpInfo(VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest) throws ApiException {
+        okhttp3.Call localVarCall = verifyPhotoIdWithSelfieValidateBeforeCall(verifyPhotoIdWithSelfieRequest, null);
         Type localVarReturnType = new TypeToken<VerifyPhotoIdWithSelfieResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -530,7 +534,7 @@ public class MlApi {
     /**
      * KYC - Selfie Photo ID Verification (asynchronously)
      * 
-     * @param body  (optional)
+     * @param verifyPhotoIdWithSelfieRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -540,9 +544,9 @@ public class MlApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call verifyPhotoIdWithSelfieAsync(Object body, final ApiCallback<VerifyPhotoIdWithSelfieResponse> _callback) throws ApiException {
+    public okhttp3.Call verifyPhotoIdWithSelfieAsync(VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest, final ApiCallback<VerifyPhotoIdWithSelfieResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = verifyPhotoIdWithSelfieValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = verifyPhotoIdWithSelfieValidateBeforeCall(verifyPhotoIdWithSelfieRequest, _callback);
         Type localVarReturnType = new TypeToken<VerifyPhotoIdWithSelfieResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -11,7 +11,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getdocumentanalysis"></a>
 # **GetDocumentAnalysis**
-> GetDocumentAnalysisResponse GetDocumentAnalysis (Object body = null)
+> GetDocumentAnalysisResponse GetDocumentAnalysis (GetDocumentAnalysisRequest getDocumentAnalysisRequest = null)
 
 Document Analysis Drivers License
 
@@ -41,12 +41,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new MLApi(config);
-            var body = null;  // Object |  (optional) 
+            var getDocumentAnalysisRequest = new GetDocumentAnalysisRequest(); // GetDocumentAnalysisRequest |  (optional) 
 
             try
             {
                 // Document Analysis Drivers License
-                GetDocumentAnalysisResponse result = apiInstance.GetDocumentAnalysis(body);
+                GetDocumentAnalysisResponse result = apiInstance.GetDocumentAnalysis(getDocumentAnalysisRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -67,7 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Document Analysis Drivers License
-    ApiResponse<GetDocumentAnalysisResponse> response = apiInstance.GetDocumentAnalysisWithHttpInfo(body);
+    ApiResponse<GetDocumentAnalysisResponse> response = apiInstance.GetDocumentAnalysisWithHttpInfo(getDocumentAnalysisRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -84,7 +84,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **getDocumentAnalysisRequest** | [**GetDocumentAnalysisRequest**](GetDocumentAnalysisRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -109,7 +109,7 @@ catch (ApiException e)
 
 <a name="getgenericocrtext"></a>
 # **GetGenericOcrText**
-> GetGenericOcrTextResponse GetGenericOcrText (Object body = null)
+> GetGenericOcrTextResponse GetGenericOcrText (GetGenericOcrTextRequest getGenericOcrTextRequest = null)
 
 Generic OCR Service
 
@@ -139,12 +139,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new MLApi(config);
-            var body = null;  // Object |  (optional) 
+            var getGenericOcrTextRequest = new GetGenericOcrTextRequest(); // GetGenericOcrTextRequest |  (optional) 
 
             try
             {
                 // Generic OCR Service
-                GetGenericOcrTextResponse result = apiInstance.GetGenericOcrText(body);
+                GetGenericOcrTextResponse result = apiInstance.GetGenericOcrText(getGenericOcrTextRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -165,7 +165,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Generic OCR Service
-    ApiResponse<GetGenericOcrTextResponse> response = apiInstance.GetGenericOcrTextWithHttpInfo(body);
+    ApiResponse<GetGenericOcrTextResponse> response = apiInstance.GetGenericOcrTextWithHttpInfo(getGenericOcrTextRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -182,7 +182,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **getGenericOcrTextRequest** | [**GetGenericOcrTextRequest**](GetGenericOcrTextRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -207,7 +207,7 @@ catch (ApiException e)
 
 <a name="getocrtext"></a>
 # **GetOcrText**
-> GetOcrTextResponse GetOcrText (Object body = null)
+> GetOcrTextResponse GetOcrText (GetOcrTextRequest getOcrTextRequest = null)
 
 BVN Ocr
 
@@ -237,12 +237,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new MLApi(config);
-            var body = null;  // Object |  (optional) 
+            var getOcrTextRequest = new GetOcrTextRequest(); // GetOcrTextRequest |  (optional) 
 
             try
             {
                 // BVN Ocr
-                GetOcrTextResponse result = apiInstance.GetOcrText(body);
+                GetOcrTextResponse result = apiInstance.GetOcrText(getOcrTextRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -263,7 +263,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // BVN Ocr
-    ApiResponse<GetOcrTextResponse> response = apiInstance.GetOcrTextWithHttpInfo(body);
+    ApiResponse<GetOcrTextResponse> response = apiInstance.GetOcrTextWithHttpInfo(getOcrTextRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -280,7 +280,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **getOcrTextRequest** | [**GetOcrTextRequest**](GetOcrTextRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -305,7 +305,7 @@ catch (ApiException e)
 
 <a name="verifyphotoidwithselfie"></a>
 # **VerifyPhotoIdWithSelfie**
-> VerifyPhotoIdWithSelfieResponse VerifyPhotoIdWithSelfie (Object body = null)
+> VerifyPhotoIdWithSelfieResponse VerifyPhotoIdWithSelfie (VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest = null)
 
 KYC - Selfie Photo ID Verification
 
@@ -335,12 +335,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new MLApi(config);
-            var body = null;  // Object |  (optional) 
+            var verifyPhotoIdWithSelfieRequest = new VerifyPhotoIdWithSelfieRequest(); // VerifyPhotoIdWithSelfieRequest |  (optional) 
 
             try
             {
                 // KYC - Selfie Photo ID Verification
-                VerifyPhotoIdWithSelfieResponse result = apiInstance.VerifyPhotoIdWithSelfie(body);
+                VerifyPhotoIdWithSelfieResponse result = apiInstance.VerifyPhotoIdWithSelfie(verifyPhotoIdWithSelfieRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -361,7 +361,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Selfie Photo ID Verification
-    ApiResponse<VerifyPhotoIdWithSelfieResponse> response = apiInstance.VerifyPhotoIdWithSelfieWithHttpInfo(body);
+    ApiResponse<VerifyPhotoIdWithSelfieResponse> response = apiInstance.VerifyPhotoIdWithSelfieWithHttpInfo(verifyPhotoIdWithSelfieRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -378,7 +378,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **verifyPhotoIdWithSelfieRequest** | [**VerifyPhotoIdWithSelfieRequest**](VerifyPhotoIdWithSelfieRequest.md) |  | [optional]  |
 
 ### Return type
 

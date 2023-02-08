@@ -25,11 +25,11 @@ type WalletApiService service
 type WalletApiCreateWalletRequest struct {
 	ctx context.Context
 	ApiService *WalletApiService
-	body *map[string]interface{}
+	createWalletRequest *CreateWalletRequest
 }
 
-func (r WalletApiCreateWalletRequest) Body(body map[string]interface{}) WalletApiCreateWalletRequest {
-	r.body = &body
+func (r WalletApiCreateWalletRequest) CreateWalletRequest(createWalletRequest CreateWalletRequest) WalletApiCreateWalletRequest {
+	r.createWalletRequest = &createWalletRequest
 	return r
 }
 
@@ -89,7 +89,7 @@ func (a *WalletApiService) CreateWalletExecute(r WalletApiCreateWalletRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.createWalletRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -158,11 +158,11 @@ func (a *WalletApiService) CreateWalletExecute(r WalletApiCreateWalletRequest) (
 type WalletApiCreditSubwalletRequest struct {
 	ctx context.Context
 	ApiService *WalletApiService
-	body *map[string]interface{}
+	creditSubwalletRequest *CreditSubwalletRequest
 }
 
-func (r WalletApiCreditSubwalletRequest) Body(body map[string]interface{}) WalletApiCreditSubwalletRequest {
-	r.body = &body
+func (r WalletApiCreditSubwalletRequest) CreditSubwalletRequest(creditSubwalletRequest CreditSubwalletRequest) WalletApiCreditSubwalletRequest {
+	r.creditSubwalletRequest = &creditSubwalletRequest
 	return r
 }
 
@@ -222,7 +222,7 @@ func (a *WalletApiService) CreditSubwalletExecute(r WalletApiCreditSubwalletRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.creditSubwalletRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -679,11 +679,11 @@ func (a *WalletApiService) GetWalletsExecute(r WalletApiGetWalletsRequest) (*Get
 type WalletApiTransferFundsRequest struct {
 	ctx context.Context
 	ApiService *WalletApiService
-	body *map[string]interface{}
+	transferFundsRequest *TransferFundsRequest
 }
 
-func (r WalletApiTransferFundsRequest) Body(body map[string]interface{}) WalletApiTransferFundsRequest {
-	r.body = &body
+func (r WalletApiTransferFundsRequest) TransferFundsRequest(transferFundsRequest TransferFundsRequest) WalletApiTransferFundsRequest {
+	r.transferFundsRequest = &transferFundsRequest
 	return r
 }
 
@@ -743,7 +743,7 @@ func (a *WalletApiService) TransferFundsExecute(r WalletApiTransferFundsRequest)
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.transferFundsRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

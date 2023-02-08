@@ -27,7 +27,9 @@ from dojah_client.model.get_banks_response import GetBanksResponse
 from dojah_client.model.get_bin_response import GetBinResponse
 from dojah_client.model.get_data_plans_response import GetDataPlansResponse
 from dojah_client.model.get_wallet_balance_response import GetWalletBalanceResponse
+from dojah_client.model.purchase_airtime_request import PurchaseAirtimeRequest
 from dojah_client.model.purchase_airtime_response import PurchaseAirtimeResponse
+from dojah_client.model.purchase_data_request import PurchaseDataRequest
 from dojah_client.model.purchase_data_response import PurchaseDataResponse
 
 
@@ -296,7 +298,7 @@ class GeneralApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'purchase_airtime_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -312,13 +314,13 @@ class GeneralApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'purchase_airtime_request':
+                        (PurchaseAirtimeRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'purchase_airtime_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -347,7 +349,7 @@ class GeneralApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'purchase_data_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -363,13 +365,13 @@ class GeneralApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'purchase_data_request':
+                        (PurchaseDataRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'purchase_data_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -787,7 +789,7 @@ class GeneralApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            purchase_airtime_request (PurchaseAirtimeRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -865,7 +867,7 @@ class GeneralApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            purchase_data_request (PurchaseDataRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

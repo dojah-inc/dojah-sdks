@@ -61,8 +61,8 @@ namespace Dojah.Net.Test.Api
         public void CategorizeTransactionsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.CategorizeTransactions(body);
+            //CategorizeTransactionsRequest categorizeTransactionsRequest = null;
+            //var response = instance.CategorizeTransactions(categorizeTransactionsRequest);
             //Assert.IsType<CategorizeTransactionsResponse>(response);
         }
     }

@@ -21,9 +21,13 @@ from dojah_client.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from dojah_client.model.get_document_analysis_request import GetDocumentAnalysisRequest
 from dojah_client.model.get_document_analysis_response import GetDocumentAnalysisResponse
+from dojah_client.model.get_generic_ocr_text_request import GetGenericOcrTextRequest
 from dojah_client.model.get_generic_ocr_text_response import GetGenericOcrTextResponse
+from dojah_client.model.get_ocr_text_request import GetOcrTextRequest
 from dojah_client.model.get_ocr_text_response import GetOcrTextResponse
+from dojah_client.model.verify_photo_id_with_selfie_request import VerifyPhotoIdWithSelfieRequest
 from dojah_client.model.verify_photo_id_with_selfie_response import VerifyPhotoIdWithSelfieResponse
 
 
@@ -52,7 +56,7 @@ class MLApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'get_document_analysis_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -68,13 +72,13 @@ class MLApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'get_document_analysis_request':
+                        (GetDocumentAnalysisRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'get_document_analysis_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -103,7 +107,7 @@ class MLApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'get_generic_ocr_text_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -119,13 +123,13 @@ class MLApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'get_generic_ocr_text_request':
+                        (GetGenericOcrTextRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'get_generic_ocr_text_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -154,7 +158,7 @@ class MLApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'get_ocr_text_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -170,13 +174,13 @@ class MLApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'get_ocr_text_request':
+                        (GetOcrTextRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'get_ocr_text_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -205,7 +209,7 @@ class MLApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'verify_photo_id_with_selfie_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -221,13 +225,13 @@ class MLApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'verify_photo_id_with_selfie_request':
+                        (VerifyPhotoIdWithSelfieRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'verify_photo_id_with_selfie_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -257,7 +261,7 @@ class MLApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            get_document_analysis_request (GetDocumentAnalysisRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -335,7 +339,7 @@ class MLApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            get_generic_ocr_text_request (GetGenericOcrTextRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -413,7 +417,7 @@ class MLApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            get_ocr_text_request (GetOcrTextRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -491,7 +495,7 @@ class MLApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            verify_photo_id_with_selfie_request (VerifyPhotoIdWithSelfieRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

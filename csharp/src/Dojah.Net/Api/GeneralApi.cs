@@ -126,10 +126,10 @@ namespace Dojah.Net.Api
         /// Purchase - Send Airtime
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="purchaseAirtimeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PurchaseAirtimeResponse</returns>
-        PurchaseAirtimeResponse PurchaseAirtime(Object body = default(Object), int operationIndex = 0);
+        PurchaseAirtimeResponse PurchaseAirtime(PurchaseAirtimeRequest purchaseAirtimeRequest = default(PurchaseAirtimeRequest), int operationIndex = 0);
 
         /// <summary>
         /// Purchase - Send Airtime
@@ -138,18 +138,18 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="purchaseAirtimeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PurchaseAirtimeResponse</returns>
-        ApiResponse<PurchaseAirtimeResponse> PurchaseAirtimeWithHttpInfo(Object body = default(Object), int operationIndex = 0);
+        ApiResponse<PurchaseAirtimeResponse> PurchaseAirtimeWithHttpInfo(PurchaseAirtimeRequest purchaseAirtimeRequest = default(PurchaseAirtimeRequest), int operationIndex = 0);
         /// <summary>
         /// Purchase - Buy Data
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="purchaseDataRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PurchaseDataResponse</returns>
-        PurchaseDataResponse PurchaseData(Object body = default(Object), int operationIndex = 0);
+        PurchaseDataResponse PurchaseData(PurchaseDataRequest purchaseDataRequest = default(PurchaseDataRequest), int operationIndex = 0);
 
         /// <summary>
         /// Purchase - Buy Data
@@ -158,10 +158,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="purchaseDataRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PurchaseDataResponse</returns>
-        ApiResponse<PurchaseDataResponse> PurchaseDataWithHttpInfo(Object body = default(Object), int operationIndex = 0);
+        ApiResponse<PurchaseDataResponse> PurchaseDataWithHttpInfo(PurchaseDataRequest purchaseDataRequest = default(PurchaseDataRequest), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -299,11 +299,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="purchaseAirtimeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PurchaseAirtimeResponse</returns>
-        System.Threading.Tasks.Task<PurchaseAirtimeResponse> PurchaseAirtimeAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PurchaseAirtimeResponse> PurchaseAirtimeAsync(PurchaseAirtimeRequest purchaseAirtimeRequest = default(PurchaseAirtimeRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Purchase - Send Airtime
@@ -312,11 +312,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="purchaseAirtimeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PurchaseAirtimeResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PurchaseAirtimeResponse>> PurchaseAirtimeWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PurchaseAirtimeResponse>> PurchaseAirtimeWithHttpInfoAsync(PurchaseAirtimeRequest purchaseAirtimeRequest = default(PurchaseAirtimeRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Purchase - Buy Data
         /// </summary>
@@ -324,11 +324,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="purchaseDataRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PurchaseDataResponse</returns>
-        System.Threading.Tasks.Task<PurchaseDataResponse> PurchaseDataAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PurchaseDataResponse> PurchaseDataAsync(PurchaseDataRequest purchaseDataRequest = default(PurchaseDataRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Purchase - Buy Data
@@ -337,11 +337,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="purchaseDataRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PurchaseDataResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PurchaseDataResponse>> PurchaseDataWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PurchaseDataResponse>> PurchaseDataWithHttpInfoAsync(PurchaseDataRequest purchaseDataRequest = default(PurchaseDataRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1232,12 +1232,12 @@ namespace Dojah.Net.Api
         /// Purchase - Send Airtime 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="purchaseAirtimeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PurchaseAirtimeResponse</returns>
-        public PurchaseAirtimeResponse PurchaseAirtime(Object body = default(Object), int operationIndex = 0)
+        public PurchaseAirtimeResponse PurchaseAirtime(PurchaseAirtimeRequest purchaseAirtimeRequest = default(PurchaseAirtimeRequest), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse> localVarResponse = PurchaseAirtimeWithHttpInfo(body);
+            Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse> localVarResponse = PurchaseAirtimeWithHttpInfo(purchaseAirtimeRequest);
             return localVarResponse.Data;
         }
 
@@ -1245,10 +1245,10 @@ namespace Dojah.Net.Api
         /// Purchase - Send Airtime 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="purchaseAirtimeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PurchaseAirtimeResponse</returns>
-        public Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse> PurchaseAirtimeWithHttpInfo(Object body = default(Object), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse> PurchaseAirtimeWithHttpInfo(PurchaseAirtimeRequest purchaseAirtimeRequest = default(PurchaseAirtimeRequest), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -1273,7 +1273,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = purchaseAirtimeRequest;
 
             localVarRequestOptions.Operation = "GeneralApi.PurchaseAirtime";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1307,13 +1307,13 @@ namespace Dojah.Net.Api
         /// Purchase - Send Airtime 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="purchaseAirtimeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PurchaseAirtimeResponse</returns>
-        public async System.Threading.Tasks.Task<PurchaseAirtimeResponse> PurchaseAirtimeAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PurchaseAirtimeResponse> PurchaseAirtimeAsync(PurchaseAirtimeRequest purchaseAirtimeRequest = default(PurchaseAirtimeRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse> localVarResponse = await PurchaseAirtimeWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse> localVarResponse = await PurchaseAirtimeWithHttpInfoAsync(purchaseAirtimeRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1321,11 +1321,11 @@ namespace Dojah.Net.Api
         /// Purchase - Send Airtime 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="purchaseAirtimeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PurchaseAirtimeResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse>> PurchaseAirtimeWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse>> PurchaseAirtimeWithHttpInfoAsync(PurchaseAirtimeRequest purchaseAirtimeRequest = default(PurchaseAirtimeRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -1351,7 +1351,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = purchaseAirtimeRequest;
 
             localVarRequestOptions.Operation = "GeneralApi.PurchaseAirtime";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1386,12 +1386,12 @@ namespace Dojah.Net.Api
         /// Purchase - Buy Data 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="purchaseDataRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PurchaseDataResponse</returns>
-        public PurchaseDataResponse PurchaseData(Object body = default(Object), int operationIndex = 0)
+        public PurchaseDataResponse PurchaseData(PurchaseDataRequest purchaseDataRequest = default(PurchaseDataRequest), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<PurchaseDataResponse> localVarResponse = PurchaseDataWithHttpInfo(body);
+            Dojah.Net.Client.ApiResponse<PurchaseDataResponse> localVarResponse = PurchaseDataWithHttpInfo(purchaseDataRequest);
             return localVarResponse.Data;
         }
 
@@ -1399,10 +1399,10 @@ namespace Dojah.Net.Api
         /// Purchase - Buy Data 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="purchaseDataRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PurchaseDataResponse</returns>
-        public Dojah.Net.Client.ApiResponse<PurchaseDataResponse> PurchaseDataWithHttpInfo(Object body = default(Object), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<PurchaseDataResponse> PurchaseDataWithHttpInfo(PurchaseDataRequest purchaseDataRequest = default(PurchaseDataRequest), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -1427,7 +1427,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = purchaseDataRequest;
 
             localVarRequestOptions.Operation = "GeneralApi.PurchaseData";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1461,13 +1461,13 @@ namespace Dojah.Net.Api
         /// Purchase - Buy Data 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="purchaseDataRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PurchaseDataResponse</returns>
-        public async System.Threading.Tasks.Task<PurchaseDataResponse> PurchaseDataAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PurchaseDataResponse> PurchaseDataAsync(PurchaseDataRequest purchaseDataRequest = default(PurchaseDataRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<PurchaseDataResponse> localVarResponse = await PurchaseDataWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<PurchaseDataResponse> localVarResponse = await PurchaseDataWithHttpInfoAsync(purchaseDataRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1475,11 +1475,11 @@ namespace Dojah.Net.Api
         /// Purchase - Buy Data 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="purchaseDataRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PurchaseDataResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<PurchaseDataResponse>> PurchaseDataWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<PurchaseDataResponse>> PurchaseDataWithHttpInfoAsync(PurchaseDataRequest purchaseDataRequest = default(PurchaseDataRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -1505,7 +1505,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = purchaseDataRequest;
 
             localVarRequestOptions.Operation = "GeneralApi.PurchaseData";
             localVarRequestOptions.OperationIndex = operationIndex;

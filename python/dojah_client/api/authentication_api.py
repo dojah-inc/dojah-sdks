@@ -23,8 +23,11 @@ from dojah_client.model_utils import (  # noqa: F401
 )
 from dojah_client.model.get_sender_id_response import GetSenderIdResponse
 from dojah_client.model.get_sms_status_response import GetSmsStatusResponse
+from dojah_client.model.request_sender_id_request import RequestSenderIdRequest
 from dojah_client.model.request_sender_id_response import RequestSenderIdResponse
+from dojah_client.model.send_otp_request import SendOtpRequest
 from dojah_client.model.send_otp_response import SendOtpResponse
+from dojah_client.model.send_sms_request import SendSmsRequest
 from dojah_client.model.send_sms_response import SendSmsResponse
 from dojah_client.model.validate_otp_response import ValidateOtpResponse
 
@@ -149,7 +152,7 @@ class AuthenticationApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'request_sender_id_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -165,13 +168,13 @@ class AuthenticationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'request_sender_id_request':
+                        (RequestSenderIdRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'request_sender_id_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -200,7 +203,7 @@ class AuthenticationApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'send_otp_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -216,13 +219,13 @@ class AuthenticationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'send_otp_request':
+                        (SendOtpRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'send_otp_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -251,7 +254,7 @@ class AuthenticationApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'send_sms_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -267,13 +270,13 @@ class AuthenticationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'send_sms_request':
+                        (SendSmsRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'send_sms_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -513,7 +516,7 @@ class AuthenticationApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            request_sender_id_request (RequestSenderIdRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -591,7 +594,7 @@ class AuthenticationApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            send_otp_request (SendOtpRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -669,7 +672,7 @@ class AuthenticationApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            send_sms_request (SendSmsRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

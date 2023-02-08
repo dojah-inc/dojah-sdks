@@ -14,6 +14,7 @@ package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.model.GetScreeningInfoResponse;
+import com.konfigthis.dojah.client.model.ScreenAmlRequest;
 import com.konfigthis.dojah.client.model.ScreenAmlResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -50,8 +51,8 @@ public class AmlApiTest {
      */
     @Test
     public void screenAmlTest() throws ApiException {
-        Object body = null;
-        ScreenAmlResponse response = api.screenAml(body);
+        ScreenAmlRequest screenAmlRequest = null;
+        ScreenAmlResponse response = api.screenAml(screenAmlRequest);
         // TODO: test validations
     }
 

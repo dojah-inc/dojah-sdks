@@ -14,7 +14,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="createWallet"></a>
 # **createWallet**
-> CreateWalletResponse createWallet(body)
+> CreateWalletResponse createWallet(createWalletRequest)
 
 Create NGN Wallet
 
@@ -46,9 +46,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     WalletApi apiInstance = new WalletApi(defaultClient);
-    Object body = null; // Object | 
+    CreateWalletRequest createWalletRequest = new CreateWalletRequest(); // CreateWalletRequest | 
     try {
-      CreateWalletResponse result = apiInstance.createWallet(body);
+      CreateWalletResponse result = apiInstance.createWallet(createWalletRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WalletApi#createWallet");
@@ -65,7 +65,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **createWalletRequest** | [**CreateWalletRequest**](CreateWalletRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -87,7 +87,7 @@ public class Example {
 
 <a name="creditSubwallet"></a>
 # **creditSubwallet**
-> CreditSubwalletResponse creditSubwallet(body)
+> CreditSubwalletResponse creditSubwallet(creditSubwalletRequest)
 
 Credit Sub-wallet
 
@@ -113,9 +113,9 @@ public class Example {
     //apikeyAuth.setApiKeyPrefix("Token");
 
     WalletApi apiInstance = new WalletApi(defaultClient);
-    Object body = null; // Object | 
+    CreditSubwalletRequest creditSubwalletRequest = new CreditSubwalletRequest(); // CreditSubwalletRequest | 
     try {
-      CreditSubwalletResponse result = apiInstance.creditSubwallet(body);
+      CreditSubwalletResponse result = apiInstance.creditSubwallet(creditSubwalletRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WalletApi#creditSubwallet");
@@ -132,7 +132,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **creditSubwalletRequest** | [**CreditSubwalletRequest**](CreditSubwalletRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -373,7 +373,7 @@ public class Example {
 
 <a name="transferFunds"></a>
 # **transferFunds**
-> TransferFundsResponse transferFunds(body)
+> TransferFundsResponse transferFunds(transferFundsRequest)
 
 Transfer Funds
 
@@ -405,9 +405,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     WalletApi apiInstance = new WalletApi(defaultClient);
-    Object body = null; // Object | 
+    TransferFundsRequest transferFundsRequest = new TransferFundsRequest(); // TransferFundsRequest | 
     try {
-      TransferFundsResponse result = apiInstance.transferFunds(body);
+      TransferFundsResponse result = apiInstance.transferFunds(transferFundsRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WalletApi#transferFunds");
@@ -424,7 +424,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **transferFundsRequest** | [**TransferFundsRequest**](TransferFundsRequest.md)|  | [optional] |
 
 ### Return type
 

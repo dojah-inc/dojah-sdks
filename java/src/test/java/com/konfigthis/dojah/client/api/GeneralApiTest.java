@@ -19,7 +19,9 @@ import com.konfigthis.dojah.client.model.GetBanksResponse;
 import com.konfigthis.dojah.client.model.GetBinResponse;
 import com.konfigthis.dojah.client.model.GetDataPlansResponse;
 import com.konfigthis.dojah.client.model.GetWalletBalanceResponse;
+import com.konfigthis.dojah.client.model.PurchaseAirtimeRequest;
 import com.konfigthis.dojah.client.model.PurchaseAirtimeResponse;
+import com.konfigthis.dojah.client.model.PurchaseDataRequest;
 import com.konfigthis.dojah.client.model.PurchaseDataResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -102,8 +104,8 @@ public class GeneralApiTest {
      */
     @Test
     public void purchaseAirtimeTest() throws ApiException {
-        Object body = null;
-        PurchaseAirtimeResponse response = api.purchaseAirtime(body);
+        PurchaseAirtimeRequest purchaseAirtimeRequest = null;
+        PurchaseAirtimeResponse response = api.purchaseAirtime(purchaseAirtimeRequest);
         // TODO: test validations
     }
 
@@ -114,8 +116,8 @@ public class GeneralApiTest {
      */
     @Test
     public void purchaseDataTest() throws ApiException {
-        Object body = null;
-        PurchaseDataResponse response = api.purchaseData(body);
+        PurchaseDataRequest purchaseDataRequest = null;
+        PurchaseDataResponse response = api.purchaseData(purchaseDataRequest);
         // TODO: test validations
     }
 

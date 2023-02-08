@@ -27,6 +27,7 @@ import java.io.IOException;
 
 
 import com.konfigthis.dojah.client.model.GetScreeningInfoResponse;
+import com.konfigthis.dojah.client.model.ScreenAmlRequest;
 import com.konfigthis.dojah.client.model.ScreenAmlResponse;
 
 import java.lang.reflect.Type;
@@ -196,7 +197,7 @@ public class AmlApi {
     }
     /**
      * Build call for screenAml
-     * @param body  (optional)
+     * @param screenAmlRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -206,7 +207,7 @@ public class AmlApi {
         <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call screenAmlCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call screenAmlCall(ScreenAmlRequest screenAmlRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -220,7 +221,7 @@ public class AmlApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = screenAmlRequest;
 
         // create path and map variables
         String localVarPath = "/api/v1/aml/screening";
@@ -252,15 +253,15 @@ public class AmlApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call screenAmlValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return screenAmlCall(body, _callback);
+    private okhttp3.Call screenAmlValidateBeforeCall(ScreenAmlRequest screenAmlRequest, final ApiCallback _callback) throws ApiException {
+        return screenAmlCall(screenAmlRequest, _callback);
 
     }
 
     /**
      * AML Screening
      * 
-     * @param body  (optional)
+     * @param screenAmlRequest  (optional)
      * @return ScreenAmlResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -269,15 +270,15 @@ public class AmlApi {
         <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
      </table>
      */
-    public ScreenAmlResponse screenAml(Object body) throws ApiException {
-        ApiResponse<ScreenAmlResponse> localVarResp = screenAmlWithHttpInfo(body);
+    public ScreenAmlResponse screenAml(ScreenAmlRequest screenAmlRequest) throws ApiException {
+        ApiResponse<ScreenAmlResponse> localVarResp = screenAmlWithHttpInfo(screenAmlRequest);
         return localVarResp.getData();
     }
 
     /**
      * AML Screening
      * 
-     * @param body  (optional)
+     * @param screenAmlRequest  (optional)
      * @return ApiResponse&lt;ScreenAmlResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -286,8 +287,8 @@ public class AmlApi {
         <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<ScreenAmlResponse> screenAmlWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = screenAmlValidateBeforeCall(body, null);
+    public ApiResponse<ScreenAmlResponse> screenAmlWithHttpInfo(ScreenAmlRequest screenAmlRequest) throws ApiException {
+        okhttp3.Call localVarCall = screenAmlValidateBeforeCall(screenAmlRequest, null);
         Type localVarReturnType = new TypeToken<ScreenAmlResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -295,7 +296,7 @@ public class AmlApi {
     /**
      * AML Screening (asynchronously)
      * 
-     * @param body  (optional)
+     * @param screenAmlRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -305,9 +306,9 @@ public class AmlApi {
         <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call screenAmlAsync(Object body, final ApiCallback<ScreenAmlResponse> _callback) throws ApiException {
+    public okhttp3.Call screenAmlAsync(ScreenAmlRequest screenAmlRequest, final ApiCallback<ScreenAmlResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = screenAmlValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = screenAmlValidateBeforeCall(screenAmlRequest, _callback);
         Type localVarReturnType = new TypeToken<ScreenAmlResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

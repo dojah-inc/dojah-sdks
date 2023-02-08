@@ -30,10 +30,10 @@ namespace Dojah.Net.Api
         /// Categorize Transactions
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="categorizeTransactionsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CategorizeTransactionsResponse</returns>
-        CategorizeTransactionsResponse CategorizeTransactions(Object body = default(Object), int operationIndex = 0);
+        CategorizeTransactionsResponse CategorizeTransactions(CategorizeTransactionsRequest categorizeTransactionsRequest = default(CategorizeTransactionsRequest), int operationIndex = 0);
 
         /// <summary>
         /// Categorize Transactions
@@ -42,10 +42,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="categorizeTransactionsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CategorizeTransactionsResponse</returns>
-        ApiResponse<CategorizeTransactionsResponse> CategorizeTransactionsWithHttpInfo(Object body = default(Object), int operationIndex = 0);
+        ApiResponse<CategorizeTransactionsResponse> CategorizeTransactionsWithHttpInfo(CategorizeTransactionsRequest categorizeTransactionsRequest = default(CategorizeTransactionsRequest), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -62,11 +62,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="categorizeTransactionsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CategorizeTransactionsResponse</returns>
-        System.Threading.Tasks.Task<CategorizeTransactionsResponse> CategorizeTransactionsAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CategorizeTransactionsResponse> CategorizeTransactionsAsync(CategorizeTransactionsRequest categorizeTransactionsRequest = default(CategorizeTransactionsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Categorize Transactions
@@ -75,11 +75,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="categorizeTransactionsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CategorizeTransactionsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CategorizeTransactionsResponse>> CategorizeTransactionsWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CategorizeTransactionsResponse>> CategorizeTransactionsWithHttpInfoAsync(CategorizeTransactionsRequest categorizeTransactionsRequest = default(CategorizeTransactionsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -204,12 +204,12 @@ namespace Dojah.Net.Api
         /// Categorize Transactions 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="categorizeTransactionsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CategorizeTransactionsResponse</returns>
-        public CategorizeTransactionsResponse CategorizeTransactions(Object body = default(Object), int operationIndex = 0)
+        public CategorizeTransactionsResponse CategorizeTransactions(CategorizeTransactionsRequest categorizeTransactionsRequest = default(CategorizeTransactionsRequest), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<CategorizeTransactionsResponse> localVarResponse = CategorizeTransactionsWithHttpInfo(body);
+            Dojah.Net.Client.ApiResponse<CategorizeTransactionsResponse> localVarResponse = CategorizeTransactionsWithHttpInfo(categorizeTransactionsRequest);
             return localVarResponse.Data;
         }
 
@@ -217,10 +217,10 @@ namespace Dojah.Net.Api
         /// Categorize Transactions 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="categorizeTransactionsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CategorizeTransactionsResponse</returns>
-        public Dojah.Net.Client.ApiResponse<CategorizeTransactionsResponse> CategorizeTransactionsWithHttpInfo(Object body = default(Object), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<CategorizeTransactionsResponse> CategorizeTransactionsWithHttpInfo(CategorizeTransactionsRequest categorizeTransactionsRequest = default(CategorizeTransactionsRequest), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -245,7 +245,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = categorizeTransactionsRequest;
 
             localVarRequestOptions.Operation = "ServicesApi.CategorizeTransactions";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -279,13 +279,13 @@ namespace Dojah.Net.Api
         /// Categorize Transactions 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="categorizeTransactionsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CategorizeTransactionsResponse</returns>
-        public async System.Threading.Tasks.Task<CategorizeTransactionsResponse> CategorizeTransactionsAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CategorizeTransactionsResponse> CategorizeTransactionsAsync(CategorizeTransactionsRequest categorizeTransactionsRequest = default(CategorizeTransactionsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<CategorizeTransactionsResponse> localVarResponse = await CategorizeTransactionsWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<CategorizeTransactionsResponse> localVarResponse = await CategorizeTransactionsWithHttpInfoAsync(categorizeTransactionsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -293,11 +293,11 @@ namespace Dojah.Net.Api
         /// Categorize Transactions 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="categorizeTransactionsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CategorizeTransactionsResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<CategorizeTransactionsResponse>> CategorizeTransactionsWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<CategorizeTransactionsResponse>> CategorizeTransactionsWithHttpInfoAsync(CategorizeTransactionsRequest categorizeTransactionsRequest = default(CategorizeTransactionsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -323,7 +323,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = categorizeTransactionsRequest;
 
             localVarRequestOptions.Operation = "ServicesApi.CategorizeTransactions";
             localVarRequestOptions.OperationIndex = operationIndex;

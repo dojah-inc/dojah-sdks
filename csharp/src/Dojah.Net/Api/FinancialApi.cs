@@ -52,10 +52,10 @@ namespace Dojah.Net.Api
         /// Collect Transactions
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="collectTransactionsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CollectTransactionsResponse</returns>
-        CollectTransactionsResponse CollectTransactions(Object body = default(Object), int operationIndex = 0);
+        CollectTransactionsResponse CollectTransactions(CollectTransactionsRequest collectTransactionsRequest = default(CollectTransactionsRequest), int operationIndex = 0);
 
         /// <summary>
         /// Collect Transactions
@@ -64,10 +64,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="collectTransactionsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CollectTransactionsResponse</returns>
-        ApiResponse<CollectTransactionsResponse> CollectTransactionsWithHttpInfo(Object body = default(Object), int operationIndex = 0);
+        ApiResponse<CollectTransactionsResponse> CollectTransactionsWithHttpInfo(CollectTransactionsRequest collectTransactionsRequest = default(CollectTransactionsRequest), int operationIndex = 0);
         /// <summary>
         /// Get Account Information
         /// </summary>
@@ -274,11 +274,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="collectTransactionsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CollectTransactionsResponse</returns>
-        System.Threading.Tasks.Task<CollectTransactionsResponse> CollectTransactionsAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CollectTransactionsResponse> CollectTransactionsAsync(CollectTransactionsRequest collectTransactionsRequest = default(CollectTransactionsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Collect Transactions
@@ -287,11 +287,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="collectTransactionsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CollectTransactionsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CollectTransactionsResponse>> CollectTransactionsWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CollectTransactionsResponse>> CollectTransactionsWithHttpInfoAsync(CollectTransactionsRequest collectTransactionsRequest = default(CollectTransactionsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Account Information
         /// </summary>
@@ -788,12 +788,12 @@ namespace Dojah.Net.Api
         /// Collect Transactions 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="collectTransactionsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CollectTransactionsResponse</returns>
-        public CollectTransactionsResponse CollectTransactions(Object body = default(Object), int operationIndex = 0)
+        public CollectTransactionsResponse CollectTransactions(CollectTransactionsRequest collectTransactionsRequest = default(CollectTransactionsRequest), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<CollectTransactionsResponse> localVarResponse = CollectTransactionsWithHttpInfo(body);
+            Dojah.Net.Client.ApiResponse<CollectTransactionsResponse> localVarResponse = CollectTransactionsWithHttpInfo(collectTransactionsRequest);
             return localVarResponse.Data;
         }
 
@@ -801,10 +801,10 @@ namespace Dojah.Net.Api
         /// Collect Transactions 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="collectTransactionsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CollectTransactionsResponse</returns>
-        public Dojah.Net.Client.ApiResponse<CollectTransactionsResponse> CollectTransactionsWithHttpInfo(Object body = default(Object), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<CollectTransactionsResponse> CollectTransactionsWithHttpInfo(CollectTransactionsRequest collectTransactionsRequest = default(CollectTransactionsRequest), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -829,7 +829,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = collectTransactionsRequest;
 
             localVarRequestOptions.Operation = "FinancialApi.CollectTransactions";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -863,13 +863,13 @@ namespace Dojah.Net.Api
         /// Collect Transactions 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="collectTransactionsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CollectTransactionsResponse</returns>
-        public async System.Threading.Tasks.Task<CollectTransactionsResponse> CollectTransactionsAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CollectTransactionsResponse> CollectTransactionsAsync(CollectTransactionsRequest collectTransactionsRequest = default(CollectTransactionsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<CollectTransactionsResponse> localVarResponse = await CollectTransactionsWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<CollectTransactionsResponse> localVarResponse = await CollectTransactionsWithHttpInfoAsync(collectTransactionsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -877,11 +877,11 @@ namespace Dojah.Net.Api
         /// Collect Transactions 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="collectTransactionsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CollectTransactionsResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<CollectTransactionsResponse>> CollectTransactionsWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<CollectTransactionsResponse>> CollectTransactionsWithHttpInfoAsync(CollectTransactionsRequest collectTransactionsRequest = default(CollectTransactionsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -907,7 +907,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = collectTransactionsRequest;
 
             localVarRequestOptions.Operation = "FinancialApi.CollectTransactions";
             localVarRequestOptions.OperationIndex = operationIndex;

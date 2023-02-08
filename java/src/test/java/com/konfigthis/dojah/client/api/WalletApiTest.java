@@ -13,11 +13,14 @@
 package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.model.CreateWalletRequest;
 import com.konfigthis.dojah.client.model.CreateWalletResponse;
+import com.konfigthis.dojah.client.model.CreditSubwalletRequest;
 import com.konfigthis.dojah.client.model.CreditSubwalletResponse;
 import com.konfigthis.dojah.client.model.GetTransactionResponse;
 import com.konfigthis.dojah.client.model.GetWalletResponse;
 import com.konfigthis.dojah.client.model.GetWalletsResponse;
+import com.konfigthis.dojah.client.model.TransferFundsRequest;
 import com.konfigthis.dojah.client.model.TransferFundsResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -42,8 +45,8 @@ public class WalletApiTest {
      */
     @Test
     public void createWalletTest() throws ApiException {
-        Object body = null;
-        CreateWalletResponse response = api.createWallet(body);
+        CreateWalletRequest createWalletRequest = null;
+        CreateWalletResponse response = api.createWallet(createWalletRequest);
         // TODO: test validations
     }
 
@@ -54,8 +57,8 @@ public class WalletApiTest {
      */
     @Test
     public void creditSubwalletTest() throws ApiException {
-        Object body = null;
-        CreditSubwalletResponse response = api.creditSubwallet(body);
+        CreditSubwalletRequest creditSubwalletRequest = null;
+        CreditSubwalletResponse response = api.creditSubwallet(creditSubwalletRequest);
         // TODO: test validations
     }
 
@@ -102,8 +105,8 @@ public class WalletApiTest {
      */
     @Test
     public void transferFundsTest() throws ApiException {
-        Object body = null;
-        TransferFundsResponse response = api.transferFunds(body);
+        TransferFundsRequest transferFundsRequest = null;
+        TransferFundsResponse response = api.transferFunds(transferFundsRequest);
         // TODO: test validations
     }
 

@@ -275,11 +275,11 @@ func (a *WebHooksApiService) GetWebhooksExecute(r WebHooksApiGetWebhooksRequest)
 type WebHooksApiNotifyWebhookRequest struct {
 	ctx context.Context
 	ApiService *WebHooksApiService
-	body *map[string]interface{}
+	notifyWebhookRequest *NotifyWebhookRequest
 }
 
-func (r WebHooksApiNotifyWebhookRequest) Body(body map[string]interface{}) WebHooksApiNotifyWebhookRequest {
-	r.body = &body
+func (r WebHooksApiNotifyWebhookRequest) NotifyWebhookRequest(notifyWebhookRequest NotifyWebhookRequest) WebHooksApiNotifyWebhookRequest {
+	r.notifyWebhookRequest = &notifyWebhookRequest
 	return r
 }
 
@@ -339,7 +339,7 @@ func (a *WebHooksApiService) NotifyWebhookExecute(r WebHooksApiNotifyWebhookRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.notifyWebhookRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -408,11 +408,11 @@ func (a *WebHooksApiService) NotifyWebhookExecute(r WebHooksApiNotifyWebhookRequ
 type WebHooksApiSubscribeServiceRequest struct {
 	ctx context.Context
 	ApiService *WebHooksApiService
-	body *map[string]interface{}
+	subscribeServiceRequest *SubscribeServiceRequest
 }
 
-func (r WebHooksApiSubscribeServiceRequest) Body(body map[string]interface{}) WebHooksApiSubscribeServiceRequest {
-	r.body = &body
+func (r WebHooksApiSubscribeServiceRequest) SubscribeServiceRequest(subscribeServiceRequest SubscribeServiceRequest) WebHooksApiSubscribeServiceRequest {
+	r.subscribeServiceRequest = &subscribeServiceRequest
 	return r
 }
 
@@ -472,7 +472,7 @@ func (a *WebHooksApiService) SubscribeServiceExecute(r WebHooksApiSubscribeServi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.subscribeServiceRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

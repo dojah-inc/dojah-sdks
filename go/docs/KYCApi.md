@@ -942,7 +942,7 @@ Name | Type | Description  | Notes
 
 ## VerifySelfieBvn
 
-> VerifySelfieBvnResponse VerifySelfieBvn(ctx).Body(body).Execute()
+> VerifySelfieBvnResponse VerifySelfieBvn(ctx).VerifySelfieBvnRequest(verifySelfieBvnRequest).Execute()
 
 KYC - Selfie BVN Verificatoin
 
@@ -959,11 +959,11 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+    verifySelfieBvnRequest := *dojah.NewVerifySelfieBvnRequest() // VerifySelfieBvnRequest |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.KYCApi.VerifySelfieBvn(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.KYCApi.VerifySelfieBvn(context.Background()).VerifySelfieBvnRequest(verifySelfieBvnRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KYCApi.VerifySelfieBvn``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -984,7 +984,7 @@ Other parameters are passed through a pointer to a apiVerifySelfieBvnRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **verifySelfieBvnRequest** | [**VerifySelfieBvnRequest**](VerifySelfieBvnRequest.md) |  | 
 
 ### Return type
 
@@ -1006,7 +1006,7 @@ Name | Type | Description  | Notes
 
 ## VerifySelfieNin
 
-> VerifySelfieNinResponse VerifySelfieNin(ctx).Body(body).Execute()
+> VerifySelfieNinResponse VerifySelfieNin(ctx).VerifySelfieNinRequest(verifySelfieNinRequest).Execute()
 
 KYC - Selfie NIN Verification
 
@@ -1023,11 +1023,11 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+    verifySelfieNinRequest := *dojah.NewVerifySelfieNinRequest() // VerifySelfieNinRequest |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.KYCApi.VerifySelfieNin(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.KYCApi.VerifySelfieNin(context.Background()).VerifySelfieNinRequest(verifySelfieNinRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KYCApi.VerifySelfieNin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1048,7 +1048,7 @@ Other parameters are passed through a pointer to a apiVerifySelfieNinRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **verifySelfieNinRequest** | [**VerifySelfieNinRequest**](VerifySelfieNinRequest.md) |  | 
 
 ### Return type
 

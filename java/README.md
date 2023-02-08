@@ -39,7 +39,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.konfigthis.dojah</groupId>
   <artifactId>dojah-java-sdk</artifactId>
-  <version>1.0.0</version>
+  <version>2.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -50,12 +50,11 @@ Add this dependency to your project's build file:
 
 ```groovy
   repositories {
-    mavenCentral()     // Needed if the 'dojah-java-sdk' jar has been published to maven central.
-    mavenLocal()       // Needed if the 'dojah-java-sdk' jar has been published to the local maven repo.
+    mavenCentral()
   }
 
   dependencies {
-     implementation "com.konfigthis.dojah:dojah-java-sdk:1.0.0"
+     implementation "com.konfigthis.dojah:dojah-java-sdk:2.0.0"
   }
 ```
 
@@ -69,7 +68,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dojah-java-sdk-1.0.0.jar`
+* `target/dojah-java-sdk-2.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -202,13 +201,18 @@ Class | Method | HTTP request | Description
  - [AnalyzeDocumentResponseEntityDocumentType](docs/AnalyzeDocumentResponseEntityDocumentType.md)
  - [AnalyzeDocumentResponseEntityStatus](docs/AnalyzeDocumentResponseEntityStatus.md)
  - [AnalyzeDocumentResponseEntityTextDataInner](docs/AnalyzeDocumentResponseEntityTextDataInner.md)
+ - [CategorizeTransactionsRequest](docs/CategorizeTransactionsRequest.md)
  - [CategorizeTransactionsResponse](docs/CategorizeTransactionsResponse.md)
  - [CategorizeTransactionsResponseEntity](docs/CategorizeTransactionsResponseEntity.md)
  - [CollectStatusFromPdfResponse](docs/CollectStatusFromPdfResponse.md)
+ - [CollectTransactionsRequest](docs/CollectTransactionsRequest.md)
+ - [CollectTransactionsRequestTransactionsInner](docs/CollectTransactionsRequestTransactionsInner.md)
  - [CollectTransactionsResponse](docs/CollectTransactionsResponse.md)
  - [CollectTransactionsResponseEntity](docs/CollectTransactionsResponseEntity.md)
+ - [CreateWalletRequest](docs/CreateWalletRequest.md)
  - [CreateWalletResponse](docs/CreateWalletResponse.md)
  - [CreateWalletResponseEntity](docs/CreateWalletResponseEntity.md)
+ - [CreditSubwalletRequest](docs/CreditSubwalletRequest.md)
  - [CreditSubwalletResponse](docs/CreditSubwalletResponse.md)
  - [CreditSubwalletResponseEntity](docs/CreditSubwalletResponseEntity.md)
  - [DeleteWebhookResponse](docs/DeleteWebhookResponse.md)
@@ -246,6 +250,7 @@ Class | Method | HTTP request | Description
  - [GetCacResponse](docs/GetCacResponse.md)
  - [GetCacResponseEntity](docs/GetCacResponseEntity.md)
  - [GetDataPlansResponse](docs/GetDataPlansResponse.md)
+ - [GetDocumentAnalysisRequest](docs/GetDocumentAnalysisRequest.md)
  - [GetDocumentAnalysisResponse](docs/GetDocumentAnalysisResponse.md)
  - [GetDocumentAnalysisResponseEntity](docs/GetDocumentAnalysisResponseEntity.md)
  - [GetDocumentAnalysisResponseEntityData](docs/GetDocumentAnalysisResponseEntityData.md)
@@ -258,6 +263,7 @@ Class | Method | HTTP request | Description
  - [GetEmailReputationResponseEntityDetails](docs/GetEmailReputationResponseEntityDetails.md)
  - [GetFullBvnResponse](docs/GetFullBvnResponse.md)
  - [GetFullBvnResponseEntity](docs/GetFullBvnResponseEntity.md)
+ - [GetGenericOcrTextRequest](docs/GetGenericOcrTextRequest.md)
  - [GetGenericOcrTextResponse](docs/GetGenericOcrTextResponse.md)
  - [GetKycDriversLicenseResponse](docs/GetKycDriversLicenseResponse.md)
  - [GetKycDriversLicenseResponseEntity](docs/GetKycDriversLicenseResponseEntity.md)
@@ -268,6 +274,7 @@ Class | Method | HTTP request | Description
  - [GetNationalIdResponseEntity](docs/GetNationalIdResponseEntity.md)
  - [GetNubanResponse](docs/GetNubanResponse.md)
  - [GetNubanResponseEntity](docs/GetNubanResponseEntity.md)
+ - [GetOcrTextRequest](docs/GetOcrTextRequest.md)
  - [GetOcrTextResponse](docs/GetOcrTextResponse.md)
  - [GetOcrTextResponseEntity](docs/GetOcrTextResponseEntity.md)
  - [GetPassportResponse](docs/GetPassportResponse.md)
@@ -312,21 +319,31 @@ Class | Method | HTTP request | Description
  - [GetWalletsResponseEntity](docs/GetWalletsResponseEntity.md)
  - [GetWebhooksResponse](docs/GetWebhooksResponse.md)
  - [GetWebhooksResponseEntityInner](docs/GetWebhooksResponseEntityInner.md)
+ - [NotifyWebhookRequest](docs/NotifyWebhookRequest.md)
+ - [NotifyWebhookRequestData](docs/NotifyWebhookRequestData.md)
  - [NotifyWebhookResponse](docs/NotifyWebhookResponse.md)
+ - [PurchaseAirtimeRequest](docs/PurchaseAirtimeRequest.md)
  - [PurchaseAirtimeResponse](docs/PurchaseAirtimeResponse.md)
  - [PurchaseAirtimeResponseEntity](docs/PurchaseAirtimeResponseEntity.md)
  - [PurchaseAirtimeResponseEntityDataInner](docs/PurchaseAirtimeResponseEntityDataInner.md)
+ - [PurchaseDataRequest](docs/PurchaseDataRequest.md)
  - [PurchaseDataResponse](docs/PurchaseDataResponse.md)
  - [PurchaseDataResponseEntityInner](docs/PurchaseDataResponseEntityInner.md)
+ - [RequestSenderIdRequest](docs/RequestSenderIdRequest.md)
  - [RequestSenderIdResponse](docs/RequestSenderIdResponse.md)
  - [RequestSenderIdResponseEntityInner](docs/RequestSenderIdResponseEntityInner.md)
+ - [ScreenAmlRequest](docs/ScreenAmlRequest.md)
  - [ScreenAmlResponse](docs/ScreenAmlResponse.md)
  - [ScreenAmlResponseEntity](docs/ScreenAmlResponseEntity.md)
+ - [SendOtpRequest](docs/SendOtpRequest.md)
  - [SendOtpResponse](docs/SendOtpResponse.md)
  - [SendOtpResponseEntityInner](docs/SendOtpResponseEntityInner.md)
+ - [SendSmsRequest](docs/SendSmsRequest.md)
  - [SendSmsResponse](docs/SendSmsResponse.md)
  - [SendSmsResponseEntity](docs/SendSmsResponseEntity.md)
+ - [SubscribeServiceRequest](docs/SubscribeServiceRequest.md)
  - [SubscribeServiceResponse](docs/SubscribeServiceResponse.md)
+ - [TransferFundsRequest](docs/TransferFundsRequest.md)
  - [TransferFundsResponse](docs/TransferFundsResponse.md)
  - [TransferFundsResponseEntity](docs/TransferFundsResponseEntity.md)
  - [ValidateBvnResponse](docs/ValidateBvnResponse.md)
@@ -337,12 +354,15 @@ Class | Method | HTTP request | Description
  - [ValidateOtpResponseEntity](docs/ValidateOtpResponseEntity.md)
  - [VerifyAgeResponse](docs/VerifyAgeResponse.md)
  - [VerifyAgeResponseEntity](docs/VerifyAgeResponseEntity.md)
+ - [VerifyPhotoIdWithSelfieRequest](docs/VerifyPhotoIdWithSelfieRequest.md)
  - [VerifyPhotoIdWithSelfieResponse](docs/VerifyPhotoIdWithSelfieResponse.md)
  - [VerifyPhotoIdWithSelfieResponseEntity](docs/VerifyPhotoIdWithSelfieResponseEntity.md)
  - [VerifyPhotoIdWithSelfieResponseEntitySelfie](docs/VerifyPhotoIdWithSelfieResponseEntitySelfie.md)
+ - [VerifySelfieBvnRequest](docs/VerifySelfieBvnRequest.md)
  - [VerifySelfieBvnResponse](docs/VerifySelfieBvnResponse.md)
  - [VerifySelfieBvnResponseEntity](docs/VerifySelfieBvnResponseEntity.md)
  - [VerifySelfieBvnResponseEntitySelfieVerification](docs/VerifySelfieBvnResponseEntitySelfieVerification.md)
+ - [VerifySelfieNinRequest](docs/VerifySelfieNinRequest.md)
  - [VerifySelfieNinResponse](docs/VerifySelfieNinResponse.md)
  - [VerifySelfieNinResponseEntity](docs/VerifySelfieNinResponseEntity.md)
  - [VerifySelfieNinResponseEntitySelfieVerification](docs/VerifySelfieNinResponseEntitySelfieVerification.md)

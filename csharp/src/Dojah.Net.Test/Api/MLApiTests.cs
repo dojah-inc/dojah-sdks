@@ -61,8 +61,8 @@ namespace Dojah.Net.Test.Api
         public void GetDocumentAnalysisTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.GetDocumentAnalysis(body);
+            //GetDocumentAnalysisRequest getDocumentAnalysisRequest = null;
+            //var response = instance.GetDocumentAnalysis(getDocumentAnalysisRequest);
             //Assert.IsType<GetDocumentAnalysisResponse>(response);
         }
 
@@ -73,8 +73,8 @@ namespace Dojah.Net.Test.Api
         public void GetGenericOcrTextTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.GetGenericOcrText(body);
+            //GetGenericOcrTextRequest getGenericOcrTextRequest = null;
+            //var response = instance.GetGenericOcrText(getGenericOcrTextRequest);
             //Assert.IsType<GetGenericOcrTextResponse>(response);
         }
 
@@ -85,8 +85,8 @@ namespace Dojah.Net.Test.Api
         public void GetOcrTextTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.GetOcrText(body);
+            //GetOcrTextRequest getOcrTextRequest = null;
+            //var response = instance.GetOcrText(getOcrTextRequest);
             //Assert.IsType<GetOcrTextResponse>(response);
         }
 
@@ -97,8 +97,8 @@ namespace Dojah.Net.Test.Api
         public void VerifyPhotoIdWithSelfieTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.VerifyPhotoIdWithSelfie(body);
+            //VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest = null;
+            //var response = instance.VerifyPhotoIdWithSelfie(verifyPhotoIdWithSelfieRequest);
             //Assert.IsType<VerifyPhotoIdWithSelfieResponse>(response);
         }
     }

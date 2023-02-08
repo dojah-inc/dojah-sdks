@@ -25,11 +25,11 @@ type ServicesApiService service
 type ServicesApiCategorizeTransactionsRequest struct {
 	ctx context.Context
 	ApiService *ServicesApiService
-	body *map[string]interface{}
+	categorizeTransactionsRequest *CategorizeTransactionsRequest
 }
 
-func (r ServicesApiCategorizeTransactionsRequest) Body(body map[string]interface{}) ServicesApiCategorizeTransactionsRequest {
-	r.body = &body
+func (r ServicesApiCategorizeTransactionsRequest) CategorizeTransactionsRequest(categorizeTransactionsRequest CategorizeTransactionsRequest) ServicesApiCategorizeTransactionsRequest {
+	r.categorizeTransactionsRequest = &categorizeTransactionsRequest
 	return r
 }
 
@@ -89,7 +89,7 @@ func (a *ServicesApiService) CategorizeTransactionsExecute(r ServicesApiCategori
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.categorizeTransactionsRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

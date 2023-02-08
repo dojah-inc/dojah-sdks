@@ -23,7 +23,9 @@ from dojah_client.model_utils import (  # noqa: F401
 )
 from dojah_client.model.delete_webhook_response import DeleteWebhookResponse
 from dojah_client.model.get_webhooks_response import GetWebhooksResponse
+from dojah_client.model.notify_webhook_request import NotifyWebhookRequest
 from dojah_client.model.notify_webhook_response import NotifyWebhookResponse
+from dojah_client.model.subscribe_service_request import SubscribeServiceRequest
 from dojah_client.model.subscribe_service_response import SubscribeServiceResponse
 
 
@@ -142,7 +144,7 @@ class WebHooksApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'notify_webhook_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -158,13 +160,13 @@ class WebHooksApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'notify_webhook_request':
+                        (NotifyWebhookRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'notify_webhook_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -193,7 +195,7 @@ class WebHooksApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'subscribe_service_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -209,13 +211,13 @@ class WebHooksApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'subscribe_service_request':
+                        (SubscribeServiceRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'subscribe_service_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -399,7 +401,7 @@ class WebHooksApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            notify_webhook_request (NotifyWebhookRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -477,7 +479,7 @@ class WebHooksApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            subscribe_service_request (SubscribeServiceRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

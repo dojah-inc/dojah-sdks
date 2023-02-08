@@ -26,6 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.konfigthis.dojah.client.model.CategorizeTransactionsRequest;
 import com.konfigthis.dojah.client.model.CategorizeTransactionsResponse;
 
 import java.lang.reflect.Type;
@@ -74,7 +75,7 @@ public class ServicesApi {
 
     /**
      * Build call for categorizeTransactions
-     * @param body  (optional)
+     * @param categorizeTransactionsRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -84,7 +85,7 @@ public class ServicesApi {
         <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call categorizeTransactionsCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call categorizeTransactionsCall(CategorizeTransactionsRequest categorizeTransactionsRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -98,7 +99,7 @@ public class ServicesApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = categorizeTransactionsRequest;
 
         // create path and map variables
         String localVarPath = "/v1/ml/categorize_transaction";
@@ -130,15 +131,15 @@ public class ServicesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call categorizeTransactionsValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return categorizeTransactionsCall(body, _callback);
+    private okhttp3.Call categorizeTransactionsValidateBeforeCall(CategorizeTransactionsRequest categorizeTransactionsRequest, final ApiCallback _callback) throws ApiException {
+        return categorizeTransactionsCall(categorizeTransactionsRequest, _callback);
 
     }
 
     /**
      * Categorize Transactions
      * 
-     * @param body  (optional)
+     * @param categorizeTransactionsRequest  (optional)
      * @return CategorizeTransactionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -147,15 +148,15 @@ public class ServicesApi {
         <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public CategorizeTransactionsResponse categorizeTransactions(Object body) throws ApiException {
-        ApiResponse<CategorizeTransactionsResponse> localVarResp = categorizeTransactionsWithHttpInfo(body);
+    public CategorizeTransactionsResponse categorizeTransactions(CategorizeTransactionsRequest categorizeTransactionsRequest) throws ApiException {
+        ApiResponse<CategorizeTransactionsResponse> localVarResp = categorizeTransactionsWithHttpInfo(categorizeTransactionsRequest);
         return localVarResp.getData();
     }
 
     /**
      * Categorize Transactions
      * 
-     * @param body  (optional)
+     * @param categorizeTransactionsRequest  (optional)
      * @return ApiResponse&lt;CategorizeTransactionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -164,8 +165,8 @@ public class ServicesApi {
         <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<CategorizeTransactionsResponse> categorizeTransactionsWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = categorizeTransactionsValidateBeforeCall(body, null);
+    public ApiResponse<CategorizeTransactionsResponse> categorizeTransactionsWithHttpInfo(CategorizeTransactionsRequest categorizeTransactionsRequest) throws ApiException {
+        okhttp3.Call localVarCall = categorizeTransactionsValidateBeforeCall(categorizeTransactionsRequest, null);
         Type localVarReturnType = new TypeToken<CategorizeTransactionsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -173,7 +174,7 @@ public class ServicesApi {
     /**
      * Categorize Transactions (asynchronously)
      * 
-     * @param body  (optional)
+     * @param categorizeTransactionsRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -183,9 +184,9 @@ public class ServicesApi {
         <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call categorizeTransactionsAsync(Object body, final ApiCallback<CategorizeTransactionsResponse> _callback) throws ApiException {
+    public okhttp3.Call categorizeTransactionsAsync(CategorizeTransactionsRequest categorizeTransactionsRequest, final ApiCallback<CategorizeTransactionsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = categorizeTransactionsValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = categorizeTransactionsValidateBeforeCall(categorizeTransactionsRequest, _callback);
         Type localVarReturnType = new TypeToken<CategorizeTransactionsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

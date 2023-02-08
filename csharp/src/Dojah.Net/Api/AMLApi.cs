@@ -50,10 +50,10 @@ namespace Dojah.Net.Api
         /// AML Screening
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="screenAmlRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScreenAmlResponse</returns>
-        ScreenAmlResponse ScreenAml(Object body = default(Object), int operationIndex = 0);
+        ScreenAmlResponse ScreenAml(ScreenAmlRequest screenAmlRequest = default(ScreenAmlRequest), int operationIndex = 0);
 
         /// <summary>
         /// AML Screening
@@ -62,10 +62,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="screenAmlRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScreenAmlResponse</returns>
-        ApiResponse<ScreenAmlResponse> ScreenAmlWithHttpInfo(Object body = default(Object), int operationIndex = 0);
+        ApiResponse<ScreenAmlResponse> ScreenAmlWithHttpInfo(ScreenAmlRequest screenAmlRequest = default(ScreenAmlRequest), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -107,11 +107,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="screenAmlRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScreenAmlResponse</returns>
-        System.Threading.Tasks.Task<ScreenAmlResponse> ScreenAmlAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ScreenAmlResponse> ScreenAmlAsync(ScreenAmlRequest screenAmlRequest = default(ScreenAmlRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// AML Screening
@@ -120,11 +120,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="screenAmlRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScreenAmlResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ScreenAmlResponse>> ScreenAmlWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ScreenAmlResponse>> ScreenAmlWithHttpInfoAsync(ScreenAmlRequest screenAmlRequest = default(ScreenAmlRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -407,12 +407,12 @@ namespace Dojah.Net.Api
         /// AML Screening 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="screenAmlRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScreenAmlResponse</returns>
-        public ScreenAmlResponse ScreenAml(Object body = default(Object), int operationIndex = 0)
+        public ScreenAmlResponse ScreenAml(ScreenAmlRequest screenAmlRequest = default(ScreenAmlRequest), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<ScreenAmlResponse> localVarResponse = ScreenAmlWithHttpInfo(body);
+            Dojah.Net.Client.ApiResponse<ScreenAmlResponse> localVarResponse = ScreenAmlWithHttpInfo(screenAmlRequest);
             return localVarResponse.Data;
         }
 
@@ -420,10 +420,10 @@ namespace Dojah.Net.Api
         /// AML Screening 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="screenAmlRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScreenAmlResponse</returns>
-        public Dojah.Net.Client.ApiResponse<ScreenAmlResponse> ScreenAmlWithHttpInfo(Object body = default(Object), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<ScreenAmlResponse> ScreenAmlWithHttpInfo(ScreenAmlRequest screenAmlRequest = default(ScreenAmlRequest), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -448,7 +448,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = screenAmlRequest;
 
             localVarRequestOptions.Operation = "AMLApi.ScreenAml";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -482,13 +482,13 @@ namespace Dojah.Net.Api
         /// AML Screening 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="screenAmlRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScreenAmlResponse</returns>
-        public async System.Threading.Tasks.Task<ScreenAmlResponse> ScreenAmlAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ScreenAmlResponse> ScreenAmlAsync(ScreenAmlRequest screenAmlRequest = default(ScreenAmlRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<ScreenAmlResponse> localVarResponse = await ScreenAmlWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<ScreenAmlResponse> localVarResponse = await ScreenAmlWithHttpInfoAsync(screenAmlRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -496,11 +496,11 @@ namespace Dojah.Net.Api
         /// AML Screening 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
+        /// <param name="screenAmlRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScreenAmlResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<ScreenAmlResponse>> ScreenAmlWithHttpInfoAsync(Object body = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<ScreenAmlResponse>> ScreenAmlWithHttpInfoAsync(ScreenAmlRequest screenAmlRequest = default(ScreenAmlRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -526,7 +526,7 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = screenAmlRequest;
 
             localVarRequestOptions.Operation = "AMLApi.ScreenAml";
             localVarRequestOptions.OperationIndex = operationIndex;

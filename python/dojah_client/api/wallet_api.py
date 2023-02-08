@@ -21,11 +21,14 @@ from dojah_client.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from dojah_client.model.create_wallet_request import CreateWalletRequest
 from dojah_client.model.create_wallet_response import CreateWalletResponse
+from dojah_client.model.credit_subwallet_request import CreditSubwalletRequest
 from dojah_client.model.credit_subwallet_response import CreditSubwalletResponse
 from dojah_client.model.get_transaction_response import GetTransactionResponse
 from dojah_client.model.get_wallet_response import GetWalletResponse
 from dojah_client.model.get_wallets_response import GetWalletsResponse
+from dojah_client.model.transfer_funds_request import TransferFundsRequest
 from dojah_client.model.transfer_funds_response import TransferFundsResponse
 
 
@@ -54,7 +57,7 @@ class WalletApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'create_wallet_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -70,13 +73,13 @@ class WalletApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'create_wallet_request':
+                        (CreateWalletRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'create_wallet_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -104,7 +107,7 @@ class WalletApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'credit_subwallet_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -120,13 +123,13 @@ class WalletApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'credit_subwallet_request':
+                        (CreditSubwalletRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'credit_subwallet_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -305,7 +308,7 @@ class WalletApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'transfer_funds_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -321,13 +324,13 @@ class WalletApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        ({str: (bool, dict, float, int, list, str, none_type)},),
+                    'transfer_funds_request':
+                        (TransferFundsRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
+                    'transfer_funds_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -357,7 +360,7 @@ class WalletApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            create_wallet_request (CreateWalletRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -435,7 +438,7 @@ class WalletApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            credit_subwallet_request (CreditSubwalletRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -747,7 +750,7 @@ class WalletApi(object):
 
 
         Keyword Args:
-            body ({str: (bool, dict, float, int, list, str, none_type)}): [optional]
+            transfer_funds_request (TransferFundsRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

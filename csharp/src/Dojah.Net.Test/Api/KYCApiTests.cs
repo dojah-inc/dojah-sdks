@@ -241,8 +241,8 @@ namespace Dojah.Net.Test.Api
         public void VerifySelfieBvnTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.VerifySelfieBvn(body);
+            //VerifySelfieBvnRequest verifySelfieBvnRequest = null;
+            //var response = instance.VerifySelfieBvn(verifySelfieBvnRequest);
             //Assert.IsType<VerifySelfieBvnResponse>(response);
         }
 
@@ -253,8 +253,8 @@ namespace Dojah.Net.Test.Api
         public void VerifySelfieNinTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.VerifySelfieNin(body);
+            //VerifySelfieNinRequest verifySelfieNinRequest = null;
+            //var response = instance.VerifySelfieNin(verifySelfieNinRequest);
             //Assert.IsType<VerifySelfieNinResponse>(response);
         }
     }

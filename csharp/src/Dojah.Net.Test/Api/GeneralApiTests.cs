@@ -119,8 +119,8 @@ namespace Dojah.Net.Test.Api
         public void PurchaseAirtimeTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.PurchaseAirtime(body);
+            //PurchaseAirtimeRequest purchaseAirtimeRequest = null;
+            //var response = instance.PurchaseAirtime(purchaseAirtimeRequest);
             //Assert.IsType<PurchaseAirtimeResponse>(response);
         }
 
@@ -131,8 +131,8 @@ namespace Dojah.Net.Test.Api
         public void PurchaseDataTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.PurchaseData(body);
+            //PurchaseDataRequest purchaseDataRequest = null;
+            //var response = instance.PurchaseData(purchaseDataRequest);
             //Assert.IsType<PurchaseDataResponse>(response);
         }
     }

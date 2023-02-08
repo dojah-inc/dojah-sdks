@@ -150,7 +150,7 @@ This endpoint does not need any parameter.
 
 <a name="notifyWebhook"></a>
 # **notifyWebhook**
-> NotifyWebhookResponse notifyWebhook(body)
+> NotifyWebhookResponse notifyWebhook(notifyWebhookRequest)
 
 Post Hook
 
@@ -182,9 +182,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     WebHooksApi apiInstance = new WebHooksApi(defaultClient);
-    Object body = null; // Object | 
+    NotifyWebhookRequest notifyWebhookRequest = new NotifyWebhookRequest(); // NotifyWebhookRequest | 
     try {
-      NotifyWebhookResponse result = apiInstance.notifyWebhook(body);
+      NotifyWebhookResponse result = apiInstance.notifyWebhook(notifyWebhookRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebHooksApi#notifyWebhook");
@@ -201,7 +201,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **notifyWebhookRequest** | [**NotifyWebhookRequest**](NotifyWebhookRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -223,7 +223,7 @@ public class Example {
 
 <a name="subscribeService"></a>
 # **subscribeService**
-> SubscribeServiceResponse subscribeService(body)
+> SubscribeServiceResponse subscribeService(subscribeServiceRequest)
 
 Subscribe to service
 
@@ -255,9 +255,9 @@ public class Example {
     //appIdAuth.setApiKeyPrefix("Token");
 
     WebHooksApi apiInstance = new WebHooksApi(defaultClient);
-    Object body = null; // Object | 
+    SubscribeServiceRequest subscribeServiceRequest = new SubscribeServiceRequest(); // SubscribeServiceRequest | 
     try {
-      SubscribeServiceResponse result = apiInstance.subscribeService(body);
+      SubscribeServiceResponse result = apiInstance.subscribeService(subscribeServiceRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebHooksApi#subscribeService");
@@ -274,7 +274,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+| **subscribeServiceRequest** | [**SubscribeServiceRequest**](SubscribeServiceRequest.md)|  | [optional] |
 
 ### Return type
 

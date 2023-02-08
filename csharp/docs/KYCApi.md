@@ -1417,7 +1417,7 @@ catch (ApiException e)
 
 <a name="verifyselfiebvn"></a>
 # **VerifySelfieBvn**
-> VerifySelfieBvnResponse VerifySelfieBvn (Object body = null)
+> VerifySelfieBvnResponse VerifySelfieBvn (VerifySelfieBvnRequest verifySelfieBvnRequest = null)
 
 KYC - Selfie BVN Verificatoin
 
@@ -1447,12 +1447,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
-            var body = null;  // Object |  (optional) 
+            var verifySelfieBvnRequest = new VerifySelfieBvnRequest(); // VerifySelfieBvnRequest |  (optional) 
 
             try
             {
                 // KYC - Selfie BVN Verificatoin
-                VerifySelfieBvnResponse result = apiInstance.VerifySelfieBvn(body);
+                VerifySelfieBvnResponse result = apiInstance.VerifySelfieBvn(verifySelfieBvnRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1473,7 +1473,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Selfie BVN Verificatoin
-    ApiResponse<VerifySelfieBvnResponse> response = apiInstance.VerifySelfieBvnWithHttpInfo(body);
+    ApiResponse<VerifySelfieBvnResponse> response = apiInstance.VerifySelfieBvnWithHttpInfo(verifySelfieBvnRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1490,7 +1490,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **verifySelfieBvnRequest** | [**VerifySelfieBvnRequest**](VerifySelfieBvnRequest.md) |  | [optional]  |
 
 ### Return type
 
@@ -1515,7 +1515,7 @@ catch (ApiException e)
 
 <a name="verifyselfienin"></a>
 # **VerifySelfieNin**
-> VerifySelfieNinResponse VerifySelfieNin (Object body = null)
+> VerifySelfieNinResponse VerifySelfieNin (VerifySelfieNinRequest verifySelfieNinRequest = null)
 
 KYC - Selfie NIN Verification
 
@@ -1545,12 +1545,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
-            var body = null;  // Object |  (optional) 
+            var verifySelfieNinRequest = new VerifySelfieNinRequest(); // VerifySelfieNinRequest |  (optional) 
 
             try
             {
                 // KYC - Selfie NIN Verification
-                VerifySelfieNinResponse result = apiInstance.VerifySelfieNin(body);
+                VerifySelfieNinResponse result = apiInstance.VerifySelfieNin(verifySelfieNinRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1571,7 +1571,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Selfie NIN Verification
-    ApiResponse<VerifySelfieNinResponse> response = apiInstance.VerifySelfieNinWithHttpInfo(body);
+    ApiResponse<VerifySelfieNinResponse> response = apiInstance.VerifySelfieNinWithHttpInfo(verifySelfieNinRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1588,7 +1588,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **verifySelfieNinRequest** | [**VerifySelfieNinRequest**](VerifySelfieNinRequest.md) |  | [optional]  |
 
 ### Return type
 

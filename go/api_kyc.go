@@ -2019,11 +2019,11 @@ func (a *KYCApiService) VerifyAgeExecute(r KYCApiVerifyAgeRequest) (*VerifyAgeRe
 type KYCApiVerifySelfieBvnRequest struct {
 	ctx context.Context
 	ApiService *KYCApiService
-	body *map[string]interface{}
+	verifySelfieBvnRequest *VerifySelfieBvnRequest
 }
 
-func (r KYCApiVerifySelfieBvnRequest) Body(body map[string]interface{}) KYCApiVerifySelfieBvnRequest {
-	r.body = &body
+func (r KYCApiVerifySelfieBvnRequest) VerifySelfieBvnRequest(verifySelfieBvnRequest VerifySelfieBvnRequest) KYCApiVerifySelfieBvnRequest {
+	r.verifySelfieBvnRequest = &verifySelfieBvnRequest
 	return r
 }
 
@@ -2083,7 +2083,7 @@ func (a *KYCApiService) VerifySelfieBvnExecute(r KYCApiVerifySelfieBvnRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.verifySelfieBvnRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2152,11 +2152,11 @@ func (a *KYCApiService) VerifySelfieBvnExecute(r KYCApiVerifySelfieBvnRequest) (
 type KYCApiVerifySelfieNinRequest struct {
 	ctx context.Context
 	ApiService *KYCApiService
-	body *map[string]interface{}
+	verifySelfieNinRequest *VerifySelfieNinRequest
 }
 
-func (r KYCApiVerifySelfieNinRequest) Body(body map[string]interface{}) KYCApiVerifySelfieNinRequest {
-	r.body = &body
+func (r KYCApiVerifySelfieNinRequest) VerifySelfieNinRequest(verifySelfieNinRequest VerifySelfieNinRequest) KYCApiVerifySelfieNinRequest {
+	r.verifySelfieNinRequest = &verifySelfieNinRequest
 	return r
 }
 
@@ -2216,7 +2216,7 @@ func (a *KYCApiService) VerifySelfieNinExecute(r KYCApiVerifySelfieNinRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.verifySelfieNinRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

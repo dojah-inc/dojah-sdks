@@ -41,7 +41,9 @@ import com.konfigthis.dojah.client.model.GetVinResponse;
 import com.konfigthis.dojah.client.model.GetVninResponse;
 import com.konfigthis.dojah.client.model.ValidateBvnResponse;
 import com.konfigthis.dojah.client.model.VerifyAgeResponse;
+import com.konfigthis.dojah.client.model.VerifySelfieBvnRequest;
 import com.konfigthis.dojah.client.model.VerifySelfieBvnResponse;
+import com.konfigthis.dojah.client.model.VerifySelfieNinRequest;
 import com.konfigthis.dojah.client.model.VerifySelfieNinResponse;
 
 import java.lang.reflect.Type;
@@ -1884,7 +1886,7 @@ public class KycApi {
     }
     /**
      * Build call for verifySelfieBvn
-     * @param body  (optional)
+     * @param verifySelfieBvnRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1894,7 +1896,7 @@ public class KycApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call verifySelfieBvnCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call verifySelfieBvnCall(VerifySelfieBvnRequest verifySelfieBvnRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1908,7 +1910,7 @@ public class KycApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = verifySelfieBvnRequest;
 
         // create path and map variables
         String localVarPath = "/v1/kyc/bvn/verify";
@@ -1940,15 +1942,15 @@ public class KycApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call verifySelfieBvnValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return verifySelfieBvnCall(body, _callback);
+    private okhttp3.Call verifySelfieBvnValidateBeforeCall(VerifySelfieBvnRequest verifySelfieBvnRequest, final ApiCallback _callback) throws ApiException {
+        return verifySelfieBvnCall(verifySelfieBvnRequest, _callback);
 
     }
 
     /**
      * KYC - Selfie BVN Verificatoin
      * 
-     * @param body  (optional)
+     * @param verifySelfieBvnRequest  (optional)
      * @return VerifySelfieBvnResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1957,15 +1959,15 @@ public class KycApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public VerifySelfieBvnResponse verifySelfieBvn(Object body) throws ApiException {
-        ApiResponse<VerifySelfieBvnResponse> localVarResp = verifySelfieBvnWithHttpInfo(body);
+    public VerifySelfieBvnResponse verifySelfieBvn(VerifySelfieBvnRequest verifySelfieBvnRequest) throws ApiException {
+        ApiResponse<VerifySelfieBvnResponse> localVarResp = verifySelfieBvnWithHttpInfo(verifySelfieBvnRequest);
         return localVarResp.getData();
     }
 
     /**
      * KYC - Selfie BVN Verificatoin
      * 
-     * @param body  (optional)
+     * @param verifySelfieBvnRequest  (optional)
      * @return ApiResponse&lt;VerifySelfieBvnResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1974,8 +1976,8 @@ public class KycApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<VerifySelfieBvnResponse> verifySelfieBvnWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = verifySelfieBvnValidateBeforeCall(body, null);
+    public ApiResponse<VerifySelfieBvnResponse> verifySelfieBvnWithHttpInfo(VerifySelfieBvnRequest verifySelfieBvnRequest) throws ApiException {
+        okhttp3.Call localVarCall = verifySelfieBvnValidateBeforeCall(verifySelfieBvnRequest, null);
         Type localVarReturnType = new TypeToken<VerifySelfieBvnResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1983,7 +1985,7 @@ public class KycApi {
     /**
      * KYC - Selfie BVN Verificatoin (asynchronously)
      * 
-     * @param body  (optional)
+     * @param verifySelfieBvnRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1993,16 +1995,16 @@ public class KycApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call verifySelfieBvnAsync(Object body, final ApiCallback<VerifySelfieBvnResponse> _callback) throws ApiException {
+    public okhttp3.Call verifySelfieBvnAsync(VerifySelfieBvnRequest verifySelfieBvnRequest, final ApiCallback<VerifySelfieBvnResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = verifySelfieBvnValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = verifySelfieBvnValidateBeforeCall(verifySelfieBvnRequest, _callback);
         Type localVarReturnType = new TypeToken<VerifySelfieBvnResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for verifySelfieNin
-     * @param body  (optional)
+     * @param verifySelfieNinRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2012,7 +2014,7 @@ public class KycApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call verifySelfieNinCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call verifySelfieNinCall(VerifySelfieNinRequest verifySelfieNinRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2026,7 +2028,7 @@ public class KycApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = verifySelfieNinRequest;
 
         // create path and map variables
         String localVarPath = "/v1/kyc/nin/verify";
@@ -2058,15 +2060,15 @@ public class KycApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call verifySelfieNinValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return verifySelfieNinCall(body, _callback);
+    private okhttp3.Call verifySelfieNinValidateBeforeCall(VerifySelfieNinRequest verifySelfieNinRequest, final ApiCallback _callback) throws ApiException {
+        return verifySelfieNinCall(verifySelfieNinRequest, _callback);
 
     }
 
     /**
      * KYC - Selfie NIN Verification
      * 
-     * @param body  (optional)
+     * @param verifySelfieNinRequest  (optional)
      * @return VerifySelfieNinResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2075,15 +2077,15 @@ public class KycApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public VerifySelfieNinResponse verifySelfieNin(Object body) throws ApiException {
-        ApiResponse<VerifySelfieNinResponse> localVarResp = verifySelfieNinWithHttpInfo(body);
+    public VerifySelfieNinResponse verifySelfieNin(VerifySelfieNinRequest verifySelfieNinRequest) throws ApiException {
+        ApiResponse<VerifySelfieNinResponse> localVarResp = verifySelfieNinWithHttpInfo(verifySelfieNinRequest);
         return localVarResp.getData();
     }
 
     /**
      * KYC - Selfie NIN Verification
      * 
-     * @param body  (optional)
+     * @param verifySelfieNinRequest  (optional)
      * @return ApiResponse&lt;VerifySelfieNinResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2092,8 +2094,8 @@ public class KycApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<VerifySelfieNinResponse> verifySelfieNinWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = verifySelfieNinValidateBeforeCall(body, null);
+    public ApiResponse<VerifySelfieNinResponse> verifySelfieNinWithHttpInfo(VerifySelfieNinRequest verifySelfieNinRequest) throws ApiException {
+        okhttp3.Call localVarCall = verifySelfieNinValidateBeforeCall(verifySelfieNinRequest, null);
         Type localVarReturnType = new TypeToken<VerifySelfieNinResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2101,7 +2103,7 @@ public class KycApi {
     /**
      * KYC - Selfie NIN Verification (asynchronously)
      * 
-     * @param body  (optional)
+     * @param verifySelfieNinRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2111,9 +2113,9 @@ public class KycApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call verifySelfieNinAsync(Object body, final ApiCallback<VerifySelfieNinResponse> _callback) throws ApiException {
+    public okhttp3.Call verifySelfieNinAsync(VerifySelfieNinRequest verifySelfieNinRequest, final ApiCallback<VerifySelfieNinResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = verifySelfieNinValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = verifySelfieNinValidateBeforeCall(verifySelfieNinRequest, _callback);
         Type localVarReturnType = new TypeToken<VerifySelfieNinResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

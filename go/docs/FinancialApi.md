@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ## CollectTransactions
 
-> CollectTransactionsResponse CollectTransactions(ctx).Body(body).Execute()
+> CollectTransactionsResponse CollectTransactions(ctx).CollectTransactionsRequest(collectTransactionsRequest).Execute()
 
 Collect Transactions
 
@@ -102,11 +102,11 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+    collectTransactionsRequest := *dojah.NewCollectTransactionsRequest() // CollectTransactionsRequest |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.FinancialApi.CollectTransactions(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.FinancialApi.CollectTransactions(context.Background()).CollectTransactionsRequest(collectTransactionsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FinancialApi.CollectTransactions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -127,7 +127,7 @@ Other parameters are passed through a pointer to a apiCollectTransactionsRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **collectTransactionsRequest** | [**CollectTransactionsRequest**](CollectTransactionsRequest.md) |  | 
 
 ### Return type
 

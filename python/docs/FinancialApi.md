@@ -110,6 +110,7 @@ Collect Transactions
 import time
 import dojah_client
 from dojah_client.api import financial_api
+from dojah_client.model.collect_transactions_request import CollectTransactionsRequest
 from dojah_client.model.collect_transactions_response import CollectTransactionsResponse
 from pprint import pprint
 # The client must configure the authentication and authorization parameters
@@ -133,13 +134,24 @@ configuration.api_key['appIdAuth'] = 'YOUR_API_KEY'
 with dojah_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = financial_api.FinancialApi(api_client)
-    body = {} # {str: (bool, dict, float, int, list, str, none_type)} |  (optional)
+    collect_transactions_request = CollectTransactionsRequest(
+        transactions=[
+            CollectTransactionsRequestTransactionsInner(
+                transaction_date="2021-04-30",
+                transaction_amount="2016.4",
+                transaction_description="0033199479:Int.Pd:01-04-2021 to 30-04-2 |",
+                transaction_type="credit",
+                reference_number="12345tgfnde9000",
+            ),
+        ],
+        app_id="6138a052147a0100341ca124",
+    ) # CollectTransactionsRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Collect Transactions
-        api_response = api_instance.collect_transactions(body=body)
+        api_response = api_instance.collect_transactions(collect_transactions_request=collect_transactions_request)
         pprint(api_response)
     except dojah_client.ApiException as e:
         print("Exception when calling FinancialApi->collect_transactions: %s\n" % e)
@@ -150,7 +162,7 @@ with dojah_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **{str: (bool, dict, float, int, list, str, none_type)}**|  | [optional]
+ **collect_transactions_request** | [**CollectTransactionsRequest**](CollectTransactionsRequest.md)|  | [optional]
 
 ### Return type
 

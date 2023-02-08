@@ -107,7 +107,7 @@ catch (ApiException e)
 
 <a name="screenaml"></a>
 # **ScreenAml**
-> ScreenAmlResponse ScreenAml (Object body = null)
+> ScreenAmlResponse ScreenAml (ScreenAmlRequest screenAmlRequest = null)
 
 AML Screening
 
@@ -137,12 +137,12 @@ namespace Example
             // config.AddApiKeyPrefix("AppId", "Bearer");
 
             var apiInstance = new AMLApi(config);
-            var body = null;  // Object |  (optional) 
+            var screenAmlRequest = new ScreenAmlRequest(); // ScreenAmlRequest |  (optional) 
 
             try
             {
                 // AML Screening
-                ScreenAmlResponse result = apiInstance.ScreenAml(body);
+                ScreenAmlResponse result = apiInstance.ScreenAml(screenAmlRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -163,7 +163,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // AML Screening
-    ApiResponse<ScreenAmlResponse> response = apiInstance.ScreenAmlWithHttpInfo(body);
+    ApiResponse<ScreenAmlResponse> response = apiInstance.ScreenAmlWithHttpInfo(screenAmlRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -180,7 +180,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | **Object** |  | [optional]  |
+| **screenAmlRequest** | [**ScreenAmlRequest**](ScreenAmlRequest.md) |  | [optional]  |
 
 ### Return type
 

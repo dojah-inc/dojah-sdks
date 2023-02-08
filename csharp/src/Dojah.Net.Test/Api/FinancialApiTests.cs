@@ -74,8 +74,8 @@ namespace Dojah.Net.Test.Api
         public void CollectTransactionsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
-            //var response = instance.CollectTransactions(body);
+            //CollectTransactionsRequest collectTransactionsRequest = null;
+            //var response = instance.CollectTransactions(collectTransactionsRequest);
             //Assert.IsType<CollectTransactionsResponse>(response);
         }
 
