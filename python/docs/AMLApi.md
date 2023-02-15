@@ -30,7 +30,12 @@ from pprint import pprint
 # satisfies your auth use case.
 
 # Configure API key authorization: apikeyAuth
-configuration = dojah_client.Configuration(api_key={'apikeyAuth': 'YOUR_API_KEY'})
+configuration = dojah_client.Configuration(
+    api_key={'apikeyAuth': 'YOUR_API_KEY'},
+    # Defining the host is optional and defaults to https://api.dojah.io
+    # See configuration.py for a list of all supported configuration parameters.
+    host = 'https://api.dojah.io'
+)
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikeyAuth'] = 'Bearer'
@@ -109,7 +114,12 @@ from pprint import pprint
 # satisfies your auth use case.
 
 # Configure API key authorization: apikeyAuth
-configuration = dojah_client.Configuration(api_key={'apikeyAuth': 'YOUR_API_KEY'})
+configuration = dojah_client.Configuration(
+    api_key={'apikeyAuth': 'YOUR_API_KEY'},
+    # Defining the host is optional and defaults to https://api.dojah.io
+    # See configuration.py for a list of all supported configuration parameters.
+    host = 'https://api.dojah.io'
+)
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikeyAuth'] = 'Bearer'

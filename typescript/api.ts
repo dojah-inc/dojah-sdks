@@ -285,6 +285,25 @@ export interface CategorizeTransactionsResponseEntity {
 /**
  * 
  * @export
+ * @interface CollectStatusFromPdfRequest
+ */
+export interface CollectStatusFromPdfRequest {
+    /**
+     * 
+     * @type {File}
+     * @memberof CollectStatusFromPdfRequest
+     */
+    'statement'?: File;
+    /**
+     * 
+     * @type {number}
+     * @memberof CollectStatusFromPdfRequest
+     */
+    'bank_code'?: number;
+}
+/**
+ * 
+ * @export
  * @interface CollectStatusFromPdfResponse
  */
 export interface CollectStatusFromPdfResponse {

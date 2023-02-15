@@ -10,6 +10,8 @@ Testing WalletApiService
 package dojah
 
 import (
+    "os"
+    "context"
     "github.com/stretchr/testify/assert"
     "github.com/stretchr/testify/require"
     "testing"
@@ -19,6 +21,12 @@ import (
 func Test_dojah_WalletApiService(t *testing.T) {
 
     configuration := dojah.NewConfiguration()
+    
+    apiKey := os.Getenv("API_KEY")
+    configuration.Context = context.WithValue(configuration.Context, dojah.ContextAPIKeys, map[string]dojah.APIKey{
+        "apikeyAuth": {Key: apiKey},
+    })
+    
     apiClient := dojah.NewAPIClient(configuration)
 
     t.Run("Test WalletApiService CreateWallet", func(t *testing.T) {
