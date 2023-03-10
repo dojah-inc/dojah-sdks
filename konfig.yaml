@@ -14,6 +14,7 @@ generators:
     npmName: dojah-typescript-sdk
     readmeSnippet: snippets/typescript.ts
     outputDirectory: typescript
+    clientName: Dojah
     git:
       userId: konfig-dev
       repoId: dojah-sdks/tree/main/typescript
@@ -22,9 +23,18 @@ generators:
     packageName: dojah_client
     projectName: dojah-python-sdk
     outputDirectory: python
+    clientName: Dojah
     git:
       userId: konfig-dev
       repoId: dojah-sdks/tree/main/python
+  php:
+    version: 1.0.0
+    packageName: dojah-php-sdk
+    invokerPackage: Dojah
+    outputDirectory: php
+    git:
+      userId: konfig-dev
+      repoId: dojah-php-sdk
   csharp:
     version: 3.0.0
     packageName: Dojah.Net
@@ -40,11 +50,3 @@ generators:
     git:
       userId: konfig-dev
       repoId: dojah-sdks/go
-  php:
-    disabled: true
-    version: 1.0.0
-    packageName: dojah-php
-    outputDirectory: php
-    git:
-      userId: konfig-dev
-      repoId: dojah-sdks/tree/main/php
