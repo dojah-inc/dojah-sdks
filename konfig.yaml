@@ -7,7 +7,7 @@ generators:
     artifactId: dojah-java-sdk
     outputDirectory: java
     git:
-      userId: konfig-dev
+      userId: dojah-inc
       repoId: dojah-sdks/tree/main/java
   typescript:
     version: 3.0.0
@@ -16,7 +16,7 @@ generators:
     outputDirectory: typescript
     clientName: Dojah
     git:
-      userId: konfig-dev
+      userId: dojah-inc
       repoId: dojah-sdks/tree/main/typescript
   python:
     version: 3.0.0
@@ -25,7 +25,7 @@ generators:
     outputDirectory: python
     clientName: Dojah
     git:
-      userId: konfig-dev
+      userId: dojah-inc
       repoId: dojah-sdks/tree/main/python
   php:
     version: 1.0.0
@@ -33,7 +33,7 @@ generators:
     invokerPackage: Dojah
     outputDirectory: php
     git:
-      userId: konfig-dev
+      userId: dojah-inc
       repoId: dojah-php-sdk
   csharp:
     version: 3.0.0
@@ -41,12 +41,12 @@ generators:
     outputDirectory: csharp
     logoPath: logo.png
     git:
-      userId: konfig-dev
+      userId: dojah-inc
       repoId: dojah-sdks/tree/main/csharp
   go:
     version: 3.0.0
     packageName: dojah
     outputDirectory: go
     git:
-      userId: konfig-dev
+      userId: dojah-inc
       repoId: dojah-sdks/go
