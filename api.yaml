@@ -70,10 +70,6 @@ paths:
               schema:
                 type: string
                 example: kyc
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             ETag:
               schema:
                 type: string
@@ -161,10 +157,6 @@ paths:
               schema:
                 type: string
                 example: kyc
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             ETag:
               schema:
                 type: string
@@ -361,10 +353,6 @@ paths:
               schema:
                 type: string
                 example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -484,10 +472,6 @@ paths:
               schema:
                 type: string
                 example: Thu, 28 Oct 2021 23:22:04 GMT
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Transfer-Encoding:
               schema:
                 type: string
@@ -685,10 +669,6 @@ paths:
               schema:
                 type: string
                 example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -796,10 +776,6 @@ paths:
               schema:
                 type: string
                 example: Mon, 12 Apr 2021 13:31:13 GMT
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Transfer-Encoding:
               schema:
                 type: string
@@ -888,10 +864,6 @@ paths:
               schema:
                 type: string
                 example: Wed, 21 Jul 2021 23:05:12 GMT
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Transfer-Encoding:
               schema:
                 type: string
@@ -1033,10 +1005,6 @@ paths:
               schema:
                 type: string
                 example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -1143,10 +1111,6 @@ paths:
               schema:
                 type: string
                 example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -1194,10 +1158,6 @@ paths:
               schema:
                 type: string
                 example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -1245,10 +1205,6 @@ paths:
               schema:
                 type: string
                 example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -1292,10 +1248,6 @@ paths:
               schema:
                 type: string
                 example: Fri, 29 Oct 2021 00:11:30 GMT
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Transfer-Encoding:
               schema:
                 type: string
@@ -1393,10 +1345,6 @@ paths:
               schema:
                 type: string
                 example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -1439,10 +1387,6 @@ paths:
               schema:
                 type: string
                 example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -1512,10 +1456,6 @@ paths:
               schema:
                 type: string
                 example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -1576,10 +1516,6 @@ paths:
               schema:
                 type: string
                 example: Thu, 28 Oct 2021 22:31:45 GMT
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Transfer-Encoding:
               schema:
                 type: string
@@ -1676,10 +1612,6 @@ paths:
               schema:
                 type: string
                 example: Thu, 28 Oct 2021 22:08:44 GMT
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Transfer-Encoding:
               schema:
                 type: string
@@ -1776,10 +1708,6 @@ paths:
               schema:
                 type: string
                 example: Mon, 19 Jul 2021 11:55:32 GMT
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Transfer-Encoding:
               schema:
                 type: string
@@ -1897,10 +1825,6 @@ paths:
               schema:
                 type: string
                 example: Mon, 19 Jul 2021 10:44:04 GMT
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Transfer-Encoding:
               schema:
                 type: string
@@ -2030,10 +1954,6 @@ paths:
               schema:
                 type: string
                 example: Mon, 19 Jul 2021 11:54:02 GMT
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Transfer-Encoding:
               schema:
                 type: string
@@ -2131,10 +2051,6 @@ paths:
               schema:
                 type: string
                 example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -2182,10 +2098,6 @@ paths:
               schema:
                 type: string
                 example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -2229,10 +2141,6 @@ paths:
               schema:
                 type: string
                 example: Wed, 07 Apr 2021 09:32:53 GMT
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Transfer-Encoding:
               schema:
                 type: string
@@ -2321,10 +2229,6 @@ paths:
               schema:
                 type: string
                 example: Wed, 07 Apr 2021 09:34:06 GMT
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Transfer-Encoding:
               schema:
                 type: string
@@ -2417,10 +2321,6 @@ paths:
               schema:
                 type: string
                 example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -2468,10 +2368,6 @@ paths:
               schema:
                 type: string
                 example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -2554,10 +2450,6 @@ paths:
               schema:
                 type: string
                 example: Sat, 10 Sep 2022 15:11:09 GMT
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Transfer-Encoding:
               schema:
                 type: string
@@ -2732,10 +2624,6 @@ paths:
               schema:
                 type: integer
                 example: 20
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -2803,10 +2691,6 @@ paths:
               schema:
                 type: integer
                 example: 100
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -2985,10 +2869,6 @@ paths:
               schema:
                 type: string
                 example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -3058,10 +2938,6 @@ paths:
               schema:
                 type: string
                 example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -3109,10 +2985,6 @@ paths:
               schema:
                 type: string
                 example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
@@ -3168,10 +3040,6 @@ paths:
               schema:
                 type: string
                 example: Fri, 29 Oct 2021 00:54:49 GMT
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Transfer-Encoding:
               schema:
                 type: string
@@ -3260,10 +3128,6 @@ paths:
               schema:
                 type: string
                 example: Wed, 06 Apr 2022 23:18:47 GMT
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Transfer-Encoding:
               schema:
                 type: string
@@ -3355,10 +3219,6 @@ paths:
               schema:
                 type: string
                 example: '*'
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
             Content-Length:
               schema:
                 type: integer
