@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AppId** | Pointer to **string** |  | [optional] 
 **TotalAmount** | Pointer to **float32** |  | [optional] 
-**ClientWallets** | Pointer to [**[]GetWalletResponseEntity**](GetWalletResponseEntity.md) |  | [optional] 
+**ClientWallets** | Pointer to [**[]GetWalletsResponseEntityClientWalletsInner**](GetWalletsResponseEntityClientWalletsInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalAmount returns a boolean if a field has been set.
 
 ### GetClientWallets
 
-`func (o *GetWalletsResponseEntity) GetClientWallets() []GetWalletResponseEntity`
+`func (o *GetWalletsResponseEntity) GetClientWallets() []GetWalletsResponseEntityClientWalletsInner`
 
 GetClientWallets returns the ClientWallets field if non-nil, zero value otherwise.
 
 ### GetClientWalletsOk
 
-`func (o *GetWalletsResponseEntity) GetClientWalletsOk() (*[]GetWalletResponseEntity, bool)`
+`func (o *GetWalletsResponseEntity) GetClientWalletsOk() (*[]GetWalletsResponseEntityClientWalletsInner, bool)`
 
 GetClientWalletsOk returns a tuple with the ClientWallets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientWallets
 
-`func (o *GetWalletsResponseEntity) SetClientWallets(v []GetWalletResponseEntity)`
+`func (o *GetWalletsResponseEntity) SetClientWallets(v []GetWalletsResponseEntityClientWalletsInner)`
 
 SetClientWallets sets ClientWallets field to given value.
 

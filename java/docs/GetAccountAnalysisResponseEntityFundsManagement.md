@@ -7,21 +7,21 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**accountActivity** | **BigDecimal** |  |  [optional] |
+|**accountActivity** | **Double** |  |  [optional] |
 |**accountSweep** | **String** |  |  [optional] |
-|**averageMonthlyLoanAmount** | **BigDecimal** |  |  [optional] |
-|**averageMonthlyLoanRepaymentAmount** | **BigDecimal** |  |  [optional] |
-|**gamblingRate** | **BigDecimal** |  |  [optional] |
+|**averageMonthlyLoanAmount** | **Double** |  |  [optional] |
+|**averageMonthlyLoanRepaymentAmount** | **Double** |  |  [optional] |
+|**gamblingRate** | **Double** |  |  [optional] |
 |**gamblingStatus** | **String** |  |  [optional] |
 |**loanInflowAmount** | **String** |  |  [optional] |
-|**loanRepaymentToInflowAmount** | **BigDecimal** |  |  [optional] |
+|**loanRepaymentToInflowAmount** | **Double** |  |  [optional] |
 |**monthToMonthInflowToOutflowAmount** | **String** |  |  [optional] |
 |**numberOfCreditLoanTransactions** | **String** |  |  [optional] |
 |**numberOfDebitRepaymentTransactions** | **String** |  |  [optional] |
 |**overallInflowToOutflowAmount** | **String** |  |  [optional] |
-|**percentOfInflowIrregularity** | **BigDecimal** |  |  [optional] |
-|**totalLoanAmount** | **BigDecimal** |  |  [optional] |
-|**totalLoanRepaymentAmount** | **BigDecimal** |  |  [optional] |
+|**percentOfInflowIrregularity** | **Double** |  |  [optional] |
+|**totalLoanAmount** | **Double** |  |  [optional] |
+|**totalLoanRepaymentAmount** | **Double** |  |  [optional] |
 
 
 

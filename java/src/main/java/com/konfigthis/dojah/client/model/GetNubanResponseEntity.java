@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -141,6 +142,10 @@ public class GetNubanResponseEntity {
   }
 
   public GetNubanResponseEntity accountCurrency(String accountCurrency) {
+
+    
+    
+    
     
     this.accountCurrency = accountCurrency;
     return this;
@@ -159,11 +164,19 @@ public class GetNubanResponseEntity {
 
 
   public void setAccountCurrency(String accountCurrency) {
+
+    
+    
+    
     this.accountCurrency = accountCurrency;
   }
 
 
   public GetNubanResponseEntity accountName(String accountName) {
+
+    
+    
+    
     
     this.accountName = accountName;
     return this;
@@ -182,11 +195,19 @@ public class GetNubanResponseEntity {
 
 
   public void setAccountName(String accountName) {
+
+    
+    
+    
     this.accountName = accountName;
   }
 
 
   public GetNubanResponseEntity accountNumber(String accountNumber) {
+
+    
+    
+    
     
     this.accountNumber = accountNumber;
     return this;
@@ -205,11 +226,19 @@ public class GetNubanResponseEntity {
 
 
   public void setAccountNumber(String accountNumber) {
+
+    
+    
+    
     this.accountNumber = accountNumber;
   }
 
 
   public GetNubanResponseEntity accountType(String accountType) {
+
+    
+    
+    
     
     this.accountType = accountType;
     return this;
@@ -228,11 +257,19 @@ public class GetNubanResponseEntity {
 
 
   public void setAccountType(String accountType) {
+
+    
+    
+    
     this.accountType = accountType;
   }
 
 
   public GetNubanResponseEntity address1(String address1) {
+
+    
+    
+    
     
     this.address1 = address1;
     return this;
@@ -251,11 +288,19 @@ public class GetNubanResponseEntity {
 
 
   public void setAddress1(String address1) {
+
+    
+    
+    
     this.address1 = address1;
   }
 
 
   public GetNubanResponseEntity address2(String address2) {
+
+    
+    
+    
     
     this.address2 = address2;
     return this;
@@ -274,11 +319,19 @@ public class GetNubanResponseEntity {
 
 
   public void setAddress2(String address2) {
+
+    
+    
+    
     this.address2 = address2;
   }
 
 
   public GetNubanResponseEntity city(String city) {
+
+    
+    
+    
     
     this.city = city;
     return this;
@@ -297,11 +350,19 @@ public class GetNubanResponseEntity {
 
 
   public void setCity(String city) {
+
+    
+    
+    
     this.city = city;
   }
 
 
   public GetNubanResponseEntity countryCode(String countryCode) {
+
+    
+    
+    
     
     this.countryCode = countryCode;
     return this;
@@ -320,11 +381,19 @@ public class GetNubanResponseEntity {
 
 
   public void setCountryCode(String countryCode) {
+
+    
+    
+    
     this.countryCode = countryCode;
   }
 
 
   public GetNubanResponseEntity countryOfBirth(String countryOfBirth) {
+
+    
+    
+    
     
     this.countryOfBirth = countryOfBirth;
     return this;
@@ -343,11 +412,19 @@ public class GetNubanResponseEntity {
 
 
   public void setCountryOfBirth(String countryOfBirth) {
+
+    
+    
+    
     this.countryOfBirth = countryOfBirth;
   }
 
 
   public GetNubanResponseEntity countryOfIssue(String countryOfIssue) {
+
+    
+    
+    
     
     this.countryOfIssue = countryOfIssue;
     return this;
@@ -366,11 +443,19 @@ public class GetNubanResponseEntity {
 
 
   public void setCountryOfIssue(String countryOfIssue) {
+
+    
+    
+    
     this.countryOfIssue = countryOfIssue;
   }
 
 
   public GetNubanResponseEntity dob(String dob) {
+
+    
+    
+    
     
     this.dob = dob;
     return this;
@@ -389,11 +474,19 @@ public class GetNubanResponseEntity {
 
 
   public void setDob(String dob) {
+
+    
+    
+    
     this.dob = dob;
   }
 
 
   public GetNubanResponseEntity expiryDate(String expiryDate) {
+
+    
+    
+    
     
     this.expiryDate = expiryDate;
     return this;
@@ -412,11 +505,19 @@ public class GetNubanResponseEntity {
 
 
   public void setExpiryDate(String expiryDate) {
+
+    
+    
+    
     this.expiryDate = expiryDate;
   }
 
 
   public GetNubanResponseEntity firstName(String firstName) {
+
+    
+    
+    
     
     this.firstName = firstName;
     return this;
@@ -435,11 +536,19 @@ public class GetNubanResponseEntity {
 
 
   public void setFirstName(String firstName) {
+
+    
+    
+    
     this.firstName = firstName;
   }
 
 
   public GetNubanResponseEntity identityNumber(String identityNumber) {
+
+    
+    
+    
     
     this.identityNumber = identityNumber;
     return this;
@@ -458,11 +567,19 @@ public class GetNubanResponseEntity {
 
 
   public void setIdentityNumber(String identityNumber) {
+
+    
+    
+    
     this.identityNumber = identityNumber;
   }
 
 
   public GetNubanResponseEntity identityType(String identityType) {
+
+    
+    
+    
     
     this.identityType = identityType;
     return this;
@@ -481,11 +598,19 @@ public class GetNubanResponseEntity {
 
 
   public void setIdentityType(String identityType) {
+
+    
+    
+    
     this.identityType = identityType;
   }
 
 
   public GetNubanResponseEntity lastName(String lastName) {
+
+    
+    
+    
     
     this.lastName = lastName;
     return this;
@@ -504,11 +629,19 @@ public class GetNubanResponseEntity {
 
 
   public void setLastName(String lastName) {
+
+    
+    
+    
     this.lastName = lastName;
   }
 
 
   public GetNubanResponseEntity nationality(String nationality) {
+
+    
+    
+    
     
     this.nationality = nationality;
     return this;
@@ -527,11 +660,19 @@ public class GetNubanResponseEntity {
 
 
   public void setNationality(String nationality) {
+
+    
+    
+    
     this.nationality = nationality;
   }
 
 
   public GetNubanResponseEntity otherNames(String otherNames) {
+
+    
+    
+    
     
     this.otherNames = otherNames;
     return this;
@@ -550,11 +691,19 @@ public class GetNubanResponseEntity {
 
 
   public void setOtherNames(String otherNames) {
+
+    
+    
+    
     this.otherNames = otherNames;
   }
 
 
   public GetNubanResponseEntity phone(String phone) {
+
+    
+    
+    
     
     this.phone = phone;
     return this;
@@ -573,11 +722,19 @@ public class GetNubanResponseEntity {
 
 
   public void setPhone(String phone) {
+
+    
+    
+    
     this.phone = phone;
   }
 
 
   public GetNubanResponseEntity postalCode(String postalCode) {
+
+    
+    
+    
     
     this.postalCode = postalCode;
     return this;
@@ -596,11 +753,19 @@ public class GetNubanResponseEntity {
 
 
   public void setPostalCode(String postalCode) {
+
+    
+    
+    
     this.postalCode = postalCode;
   }
 
 
   public GetNubanResponseEntity reference(String reference) {
+
+    
+    
+    
     
     this.reference = reference;
     return this;
@@ -619,11 +784,19 @@ public class GetNubanResponseEntity {
 
 
   public void setReference(String reference) {
+
+    
+    
+    
     this.reference = reference;
   }
 
 
   public GetNubanResponseEntity stateCode(String stateCode) {
+
+    
+    
+    
     
     this.stateCode = stateCode;
     return this;
@@ -642,6 +815,10 @@ public class GetNubanResponseEntity {
 
 
   public void setStateCode(String stateCode) {
+
+    
+    
+    
     this.stateCode = stateCode;
   }
 

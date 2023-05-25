@@ -13,6 +13,9 @@
 package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.model.GetDocumentAnalysisRequest;
 import com.konfigthis.dojah.client.model.GetDocumentAnalysisResponse;
 import com.konfigthis.dojah.client.model.GetGenericOcrTextRequest;
@@ -23,6 +26,7 @@ import com.konfigthis.dojah.client.model.VerifyPhotoIdWithSelfieRequest;
 import com.konfigthis.dojah.client.model.VerifyPhotoIdWithSelfieResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,7 +39,14 @@ import java.util.Map;
 @Disabled
 public class MlApiTest {
 
-    private final MlApi api = new MlApi();
+    private static MlApi api;
+
+    
+    @BeforeAll
+    public static void beforeClass() {
+        ApiClient apiClient = Configuration.getDefaultApiClient();
+        api = new MlApi(apiClient);
+    }
 
     /**
      * Document Analysis Drivers License
@@ -44,8 +55,10 @@ public class MlApiTest {
      */
     @Test
     public void getDocumentAnalysisTest() throws ApiException {
-        GetDocumentAnalysisRequest getDocumentAnalysisRequest = null;
-        GetDocumentAnalysisResponse response = api.getDocumentAnalysis(getDocumentAnalysisRequest);
+        String img = null;
+        GetDocumentAnalysisResponse response = api.getDocumentAnalysis()
+                .img(img)
+                .execute();
         // TODO: test validations
     }
 
@@ -56,8 +69,10 @@ public class MlApiTest {
      */
     @Test
     public void getGenericOcrTextTest() throws ApiException {
-        GetGenericOcrTextRequest getGenericOcrTextRequest = null;
-        GetGenericOcrTextResponse response = api.getGenericOcrText(getGenericOcrTextRequest);
+        String img = null;
+        GetGenericOcrTextResponse response = api.getGenericOcrText()
+                .img(img)
+                .execute();
         // TODO: test validations
     }
 
@@ -68,8 +83,10 @@ public class MlApiTest {
      */
     @Test
     public void getOcrTextTest() throws ApiException {
-        GetOcrTextRequest getOcrTextRequest = null;
-        GetOcrTextResponse response = api.getOcrText(getOcrTextRequest);
+        String image = null;
+        GetOcrTextResponse response = api.getOcrText()
+                .image(image)
+                .execute();
         // TODO: test validations
     }
 
@@ -80,8 +97,12 @@ public class MlApiTest {
      */
     @Test
     public void verifyPhotoIdWithSelfieTest() throws ApiException {
-        VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest = null;
-        VerifyPhotoIdWithSelfieResponse response = api.verifyPhotoIdWithSelfie(verifyPhotoIdWithSelfieRequest);
+        String selfieImage = null;
+        String photoidImage = null;
+        VerifyPhotoIdWithSelfieResponse response = api.verifyPhotoIdWithSelfie()
+                .selfieImage(selfieImage)
+                .photoidImage(photoidImage)
+                .execute();
         // TODO: test validations
     }
 

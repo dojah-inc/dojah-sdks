@@ -23,6 +23,7 @@ Collect Status via PDF Statement
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -36,15 +37,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new FinancialApi(config);
             var statement = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
@@ -54,13 +58,19 @@ namespace Example
             {
                 // Collect Status via PDF Statement
                 CollectStatusFromPdfResponse result = apiInstance.CollectStatusFromPdf(statement, bankCode);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling FinancialApi.CollectStatusFromPdf: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling FinancialApi.CollectStatusFromPdf: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -123,6 +133,7 @@ Collect Transactions
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -136,15 +147,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new FinancialApi(config);
             var collectTransactionsRequest = new CollectTransactionsRequest(); // CollectTransactionsRequest |  (optional) 
@@ -153,13 +167,19 @@ namespace Example
             {
                 // Collect Transactions
                 CollectTransactionsResponse result = apiInstance.CollectTransactions(collectTransactionsRequest);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling FinancialApi.CollectTransactions: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling FinancialApi.CollectTransactions: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -223,6 +243,7 @@ Get Account Information
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -236,15 +257,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new FinancialApi(config);
             var accountId = d5b86083-08c5-4de2-ac19-7610a16c297d;  // string |  (optional) 
@@ -253,13 +277,19 @@ namespace Example
             {
                 // Get Account Information
                 GetAccountResponse result = apiInstance.GetAccount(accountId);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling FinancialApi.GetAccount: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling FinancialApi.GetAccount: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -309,7 +339,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -321,6 +351,7 @@ Get Account Analysis
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -334,15 +365,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new FinancialApi(config);
 
@@ -350,13 +384,19 @@ namespace Example
             {
                 // Get Account Analysis
                 GetAccountAnalysisResponse result = apiInstance.GetAccountAnalysis();
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling FinancialApi.GetAccountAnalysis: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling FinancialApi.GetAccountAnalysis: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -402,7 +442,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * uuid -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
+| **200** | OK |  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * uuid -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -414,6 +454,7 @@ Get Account Subscriptions
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -427,15 +468,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new FinancialApi(config);
             var accountId = 02f63911-a958-4025-9d72-8bd2d7da274b;  // string |  (optional) 
@@ -444,13 +488,19 @@ namespace Example
             {
                 // Get Account Subscriptions
                 GetAccountSubscriptionsResponse result = apiInstance.GetAccountSubscriptions(accountId);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling FinancialApi.GetAccountSubscriptions: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling FinancialApi.GetAccountSubscriptions: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -500,7 +550,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -512,6 +562,7 @@ Get Account Transactions
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -525,15 +576,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new FinancialApi(config);
             var accountId = d5b86083-08c5-4de2-ac19-7610a16c297d;  // string |  (optional) 
@@ -543,13 +597,19 @@ namespace Example
             {
                 // Get Account Transactions
                 GetAccountTransactionsResponse result = apiInstance.GetAccountTransactions(accountId, length);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling FinancialApi.GetAccountTransactions: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling FinancialApi.GetAccountTransactions: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -600,7 +660,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -612,6 +672,7 @@ Get BVN Information Basic
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -625,15 +686,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new FinancialApi(config);
             var accountId = 34c7a2a10b4d4050869fe6f0aa6f0a30;  // string |  (optional) 
@@ -642,13 +706,19 @@ namespace Example
             {
                 // Get BVN Information Basic
                 FinancialGetBasicBvnResponse result = apiInstance.GetBasicBvn(accountId);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling FinancialApi.GetBasicBvn: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling FinancialApi.GetBasicBvn: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -698,7 +768,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
+| **200** | OK |  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -710,6 +780,7 @@ Get Earning Structure
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -723,15 +794,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new FinancialApi(config);
             var accountId = 02f63911-a958-4025-9d72-8bd2d7da274b;  // string |  (optional) 
@@ -740,13 +814,19 @@ namespace Example
             {
                 // Get Earning Structure
                 GetEarningStructureResponse result = apiInstance.GetEarningStructure(accountId);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling FinancialApi.GetEarningStructure: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling FinancialApi.GetEarningStructure: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -796,7 +876,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -808,6 +888,7 @@ Get BVN Information Full
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -821,15 +902,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new FinancialApi(config);
             var accountId = 34c7a2a10b4d4050869fe6f0aa6f0a30;  // string |  (optional) 
@@ -838,13 +922,19 @@ namespace Example
             {
                 // Get BVN Information Full
                 FinancialGetFullBvnResponse result = apiInstance.GetFullBvn(accountId);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling FinancialApi.GetFullBvn: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling FinancialApi.GetFullBvn: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -894,7 +984,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
+| **200** | OK |  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -906,6 +996,7 @@ Get Spending Pattern
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -919,15 +1010,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new FinancialApi(config);
             var accountId = 02f63911-a958-4025-9d72-8bd2d7da274b;  // string |  (optional) 
@@ -936,13 +1030,19 @@ namespace Example
             {
                 // Get Spending Pattern
                 GetSpendingPatternResponse result = apiInstance.GetSpendingPattern(accountId);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling FinancialApi.GetSpendingPattern: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling FinancialApi.GetSpendingPattern: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -992,7 +1092,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

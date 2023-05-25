@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -52,7 +52,7 @@ import com.konfigthis.dojah.client.JSON;
 public class VerifySelfieBvnResponseEntitySelfieVerification {
   public static final String SERIALIZED_NAME_CONFIDENCE_VALUE = "confidence_value";
   @SerializedName(SERIALIZED_NAME_CONFIDENCE_VALUE)
-  private BigDecimal confidenceValue;
+  private Double confidenceValue;
 
   public static final String SERIALIZED_NAME_MATCH = "match";
   @SerializedName(SERIALIZED_NAME_MATCH)
@@ -61,9 +61,23 @@ public class VerifySelfieBvnResponseEntitySelfieVerification {
   public VerifySelfieBvnResponseEntitySelfieVerification() {
   }
 
-  public VerifySelfieBvnResponseEntitySelfieVerification confidenceValue(BigDecimal confidenceValue) {
+  public VerifySelfieBvnResponseEntitySelfieVerification confidenceValue(Double confidenceValue) {
+
+    
+    
+    
     
     this.confidenceValue = confidenceValue;
+    return this;
+  }
+
+  public VerifySelfieBvnResponseEntitySelfieVerification confidenceValue(Integer confidenceValue) {
+
+    
+    
+    
+    
+    this.confidenceValue = confidenceValue.doubleValue();
     return this;
   }
 
@@ -74,17 +88,25 @@ public class VerifySelfieBvnResponseEntitySelfieVerification {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "99.99803924560547", value = "")
 
-  public BigDecimal getConfidenceValue() {
+  public Double getConfidenceValue() {
     return confidenceValue;
   }
 
 
-  public void setConfidenceValue(BigDecimal confidenceValue) {
+  public void setConfidenceValue(Double confidenceValue) {
+
+    
+    
+    
     this.confidenceValue = confidenceValue;
   }
 
 
   public VerifySelfieBvnResponseEntitySelfieVerification match(Boolean match) {
+
+    
+    
+    
     
     this.match = match;
     return this;
@@ -103,6 +125,10 @@ public class VerifySelfieBvnResponseEntitySelfieVerification {
 
 
   public void setMatch(Boolean match) {
+
+    
+    
+    
     this.match = match;
   }
 

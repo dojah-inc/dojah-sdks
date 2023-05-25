@@ -34,6 +34,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -58,6 +59,10 @@ public class GetTinResponse {
   }
 
   public GetTinResponse entity(GetTinResponseEntity entity) {
+
+    
+    
+    
     
     this.entity = entity;
     return this;
@@ -76,6 +81,10 @@ public class GetTinResponse {
 
 
   public void setEntity(GetTinResponseEntity entity) {
+
+    
+    
+    
     this.entity = entity;
   }
 

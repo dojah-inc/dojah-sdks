@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +35,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -62,83 +62,83 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_AIRTIMEAND_DATA = "averageMonthlyExpenseOnAirtimeandData";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_AIRTIMEAND_DATA)
-  private BigDecimal averageMonthlyExpenseOnAirtimeandData;
+  private Double averageMonthlyExpenseOnAirtimeandData;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_ATM_AND_P_O_S = "averageMonthlyExpenseOnAtmAndPOS";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_ATM_AND_P_O_S)
-  private BigDecimal averageMonthlyExpenseOnAtmAndPOS;
+  private Double averageMonthlyExpenseOnAtmAndPOS;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_CHARGES_AND_STAMP_DUTY = "averageMonthlyExpenseOnChargesAndStampDuty";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_CHARGES_AND_STAMP_DUTY)
-  private BigDecimal averageMonthlyExpenseOnChargesAndStampDuty;
+  private Double averageMonthlyExpenseOnChargesAndStampDuty;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_ENTERTAINMENT = "averageMonthlyExpenseOnEntertainment";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_ENTERTAINMENT)
-  private BigDecimal averageMonthlyExpenseOnEntertainment;
+  private Double averageMonthlyExpenseOnEntertainment;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_GAMBLING = "averageMonthlyExpenseOnGambling";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_GAMBLING)
-  private BigDecimal averageMonthlyExpenseOnGambling;
+  private Double averageMonthlyExpenseOnGambling;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_HEALTH = "averageMonthlyExpenseOnHealth";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_HEALTH)
-  private BigDecimal averageMonthlyExpenseOnHealth;
+  private Double averageMonthlyExpenseOnHealth;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_HOSPITALITYAND_FOOD = "averageMonthlyExpenseOnHospitalityandFood";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_HOSPITALITYAND_FOOD)
-  private BigDecimal averageMonthlyExpenseOnHospitalityandFood;
+  private Double averageMonthlyExpenseOnHospitalityandFood;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_INSURANCE = "averageMonthlyExpenseOnInsurance";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_INSURANCE)
-  private BigDecimal averageMonthlyExpenseOnInsurance;
+  private Double averageMonthlyExpenseOnInsurance;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_INTERNATIONAL_TRANSACTIONS = "averageMonthlyExpenseOnInternationalTransactions";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_INTERNATIONAL_TRANSACTIONS)
-  private BigDecimal averageMonthlyExpenseOnInternationalTransactions;
+  private Double averageMonthlyExpenseOnInternationalTransactions;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_ONLINEAND_WEB = "averageMonthlyExpenseOnOnlineandWeb";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_ONLINEAND_WEB)
-  private BigDecimal averageMonthlyExpenseOnOnlineandWeb;
+  private Double averageMonthlyExpenseOnOnlineandWeb;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_RENT = "averageMonthlyExpenseOnRent";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_RENT)
-  private BigDecimal averageMonthlyExpenseOnRent;
+  private Double averageMonthlyExpenseOnRent;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_SAVINGS_AND_INVESTMENTS = "averageMonthlyExpenseOnSavingsAndInvestments";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_SAVINGS_AND_INVESTMENTS)
-  private BigDecimal averageMonthlyExpenseOnSavingsAndInvestments;
+  private Double averageMonthlyExpenseOnSavingsAndInvestments;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_TRANSFER = "averageMonthlyExpenseOnTransfer";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_TRANSFER)
-  private BigDecimal averageMonthlyExpenseOnTransfer;
+  private Double averageMonthlyExpenseOnTransfer;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_TRANSPORTATION = "averageMonthlyExpenseOnTransportation";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_TRANSPORTATION)
-  private BigDecimal averageMonthlyExpenseOnTransportation;
+  private Double averageMonthlyExpenseOnTransportation;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_U_S_S_D = "averageMonthlyExpenseOnUSSD";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_U_S_S_D)
-  private BigDecimal averageMonthlyExpenseOnUSSD;
+  private Double averageMonthlyExpenseOnUSSD;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_UTILITIES = "averageMonthlyExpenseOnUtilities";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSE_ON_UTILITIES)
-  private BigDecimal averageMonthlyExpenseOnUtilities;
+  private Double averageMonthlyExpenseOnUtilities;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSEON_TRAVEL = "averageMonthlyExpenseonTravel";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_EXPENSEON_TRAVEL)
-  private BigDecimal averageMonthlyExpenseonTravel;
+  private Double averageMonthlyExpenseonTravel;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_RECURRING_EXPENSES = "averageMonthlyRecurringExpenses";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_RECURRING_EXPENSES)
-  private BigDecimal averageMonthlyRecurringExpenses;
+  private Double averageMonthlyRecurringExpenses;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_TOTAL_EXPENSES = "averageMonthlyTotalExpenses";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_TOTAL_EXPENSES)
-  private BigDecimal averageMonthlyTotalExpenses;
+  private Double averageMonthlyTotalExpenses;
 
   public static final String SERIALIZED_NAME_MINIMUM_SALARY = "minimumSalary";
   @SerializedName(SERIALIZED_NAME_MINIMUM_SALARY)
-  private BigDecimal minimumSalary;
+  private Double minimumSalary;
 
   public static final String SERIALIZED_NAME_MONTH_WITHMAXIMUM_EXPENSE = "monthWithmaximumExpense";
   @SerializedName(SERIALIZED_NAME_MONTH_WITHMAXIMUM_EXPENSE)
@@ -154,76 +154,80 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
 
   public static final String SERIALIZED_NAME_TOTAL_EXPENSE_ON_AIRTIME_AND_DATA = "totalExpenseOnAirtimeAndData";
   @SerializedName(SERIALIZED_NAME_TOTAL_EXPENSE_ON_AIRTIME_AND_DATA)
-  private BigDecimal totalExpenseOnAirtimeAndData;
+  private Double totalExpenseOnAirtimeAndData;
 
   public static final String SERIALIZED_NAME_TOTAL_EXPENSE_ON_INTERNATIONAL_TRANSACTIONS = "totalExpenseOnInternationalTransactions";
   @SerializedName(SERIALIZED_NAME_TOTAL_EXPENSE_ON_INTERNATIONAL_TRANSACTIONS)
-  private BigDecimal totalExpenseOnInternationalTransactions;
+  private Double totalExpenseOnInternationalTransactions;
 
   public static final String SERIALIZED_NAME_TOTAL_EXPENSE_ON_SAVINGS_AND_INVESTMENTS = "totalExpenseOnSavingsAndInvestments";
   @SerializedName(SERIALIZED_NAME_TOTAL_EXPENSE_ON_SAVINGS_AND_INVESTMENTS)
-  private BigDecimal totalExpenseOnSavingsAndInvestments;
+  private Double totalExpenseOnSavingsAndInvestments;
 
   public static final String SERIALIZED_NAME_TOTAL_EXPENSE_ON_TRANSFER = "totalExpenseOnTransfer";
   @SerializedName(SERIALIZED_NAME_TOTAL_EXPENSE_ON_TRANSFER)
-  private BigDecimal totalExpenseOnTransfer;
+  private Double totalExpenseOnTransfer;
 
   public static final String SERIALIZED_NAME_TOTAL_EXPENSE_ON_TRANSPORTATION = "totalExpenseOnTransportation";
   @SerializedName(SERIALIZED_NAME_TOTAL_EXPENSE_ON_TRANSPORTATION)
-  private BigDecimal totalExpenseOnTransportation;
+  private Double totalExpenseOnTransportation;
 
   public static final String SERIALIZED_NAME_TOTAL_EXPENSE_ON_TRAVEL = "totalExpenseOnTravel";
   @SerializedName(SERIALIZED_NAME_TOTAL_EXPENSE_ON_TRAVEL)
-  private BigDecimal totalExpenseOnTravel;
+  private Double totalExpenseOnTravel;
 
   public static final String SERIALIZED_NAME_TOTAL_EXPENSE_ON_U_S_S_D = "totalExpenseOnUSSD";
   @SerializedName(SERIALIZED_NAME_TOTAL_EXPENSE_ON_U_S_S_D)
-  private BigDecimal totalExpenseOnUSSD;
+  private Double totalExpenseOnUSSD;
 
   public static final String SERIALIZED_NAME_TOTAL_EXPENSE_ON_UTILITIES = "totalExpenseOnUtilities";
   @SerializedName(SERIALIZED_NAME_TOTAL_EXPENSE_ON_UTILITIES)
-  private BigDecimal totalExpenseOnUtilities;
+  private Double totalExpenseOnUtilities;
 
   public static final String SERIALIZED_NAME_TOTAL_EXPENSEON_CHARGES_AND_STAMP_DUTY = "totalExpenseonChargesAndStampDuty";
   @SerializedName(SERIALIZED_NAME_TOTAL_EXPENSEON_CHARGES_AND_STAMP_DUTY)
-  private BigDecimal totalExpenseonChargesAndStampDuty;
+  private Double totalExpenseonChargesAndStampDuty;
 
   public static final String SERIALIZED_NAME_TOTAL_EXPENSEON_ENTERTAINMENT = "totalExpenseonEntertainment";
   @SerializedName(SERIALIZED_NAME_TOTAL_EXPENSEON_ENTERTAINMENT)
-  private BigDecimal totalExpenseonEntertainment;
+  private Double totalExpenseonEntertainment;
 
   public static final String SERIALIZED_NAME_TOTAL_EXPENSEON_GAMBLING = "totalExpenseonGambling";
   @SerializedName(SERIALIZED_NAME_TOTAL_EXPENSEON_GAMBLING)
-  private BigDecimal totalExpenseonGambling;
+  private Double totalExpenseonGambling;
 
   public static final String SERIALIZED_NAME_TOTAL_EXPENSEON_HEALTH = "totalExpenseonHealth";
   @SerializedName(SERIALIZED_NAME_TOTAL_EXPENSEON_HEALTH)
-  private BigDecimal totalExpenseonHealth;
+  private Double totalExpenseonHealth;
 
   public static final String SERIALIZED_NAME_TOTAL_EXPENSEON_HOSPITALITYAND_FOOD = "totalExpenseonHospitalityandFood";
   @SerializedName(SERIALIZED_NAME_TOTAL_EXPENSEON_HOSPITALITYAND_FOOD)
-  private BigDecimal totalExpenseonHospitalityandFood;
+  private Double totalExpenseonHospitalityandFood;
 
   public static final String SERIALIZED_NAME_TOTAL_EXPENSEON_INSURANCE = "totalExpenseonInsurance";
   @SerializedName(SERIALIZED_NAME_TOTAL_EXPENSEON_INSURANCE)
-  private BigDecimal totalExpenseonInsurance;
+  private Double totalExpenseonInsurance;
 
   public static final String SERIALIZED_NAME_TOTAL_EXPENSEON_ONLINEAND_WEB = "totalExpenseonOnlineandWeb";
   @SerializedName(SERIALIZED_NAME_TOTAL_EXPENSEON_ONLINEAND_WEB)
-  private BigDecimal totalExpenseonOnlineandWeb;
+  private Double totalExpenseonOnlineandWeb;
 
   public static final String SERIALIZED_NAME_TOTAL_MONTHLY_EXPENSES = "totalMonthlyExpenses";
   @SerializedName(SERIALIZED_NAME_TOTAL_MONTHLY_EXPENSES)
-  private BigDecimal totalMonthlyExpenses;
+  private Double totalMonthlyExpenses;
 
   public static final String SERIALIZED_NAME_TOTAL_RECURRING_EXPENSES = "totalRecurringExpenses";
   @SerializedName(SERIALIZED_NAME_TOTAL_RECURRING_EXPENSES)
-  private BigDecimal totalRecurringExpenses;
+  private Double totalRecurringExpenses;
 
   public GetAccountAnalysisResponseEntityExpenseBreakdown() {
   }
 
   public GetAccountAnalysisResponseEntityExpenseBreakdown maximumExpense(String maximumExpense) {
+
+    
+    
+    
     
     this.maximumExpense = maximumExpense;
     return this;
@@ -242,11 +246,19 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
 
 
   public void setMaximumExpense(String maximumExpense) {
+
+    
+    
+    
     this.maximumExpense = maximumExpense;
   }
 
 
   public GetAccountAnalysisResponseEntityExpenseBreakdown atmLocations(List<String> atmLocations) {
+
+    
+    
+    
     
     this.atmLocations = atmLocations;
     return this;
@@ -273,13 +285,31 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
 
 
   public void setAtmLocations(List<String> atmLocations) {
+
+    
+    
+    
     this.atmLocations = atmLocations;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnAirtimeandData(BigDecimal averageMonthlyExpenseOnAirtimeandData) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnAirtimeandData(Double averageMonthlyExpenseOnAirtimeandData) {
+
+    
+    
+    
     
     this.averageMonthlyExpenseOnAirtimeandData = averageMonthlyExpenseOnAirtimeandData;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnAirtimeandData(Integer averageMonthlyExpenseOnAirtimeandData) {
+
+    
+    
+    
+    
+    this.averageMonthlyExpenseOnAirtimeandData = averageMonthlyExpenseOnAirtimeandData.doubleValue();
     return this;
   }
 
@@ -290,19 +320,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "2200", value = "")
 
-  public BigDecimal getAverageMonthlyExpenseOnAirtimeandData() {
+  public Double getAverageMonthlyExpenseOnAirtimeandData() {
     return averageMonthlyExpenseOnAirtimeandData;
   }
 
 
-  public void setAverageMonthlyExpenseOnAirtimeandData(BigDecimal averageMonthlyExpenseOnAirtimeandData) {
+  public void setAverageMonthlyExpenseOnAirtimeandData(Double averageMonthlyExpenseOnAirtimeandData) {
+
+    
+    
+    
     this.averageMonthlyExpenseOnAirtimeandData = averageMonthlyExpenseOnAirtimeandData;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnAtmAndPOS(BigDecimal averageMonthlyExpenseOnAtmAndPOS) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnAtmAndPOS(Double averageMonthlyExpenseOnAtmAndPOS) {
+
+    
+    
+    
     
     this.averageMonthlyExpenseOnAtmAndPOS = averageMonthlyExpenseOnAtmAndPOS;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnAtmAndPOS(Integer averageMonthlyExpenseOnAtmAndPOS) {
+
+    
+    
+    
+    
+    this.averageMonthlyExpenseOnAtmAndPOS = averageMonthlyExpenseOnAtmAndPOS.doubleValue();
     return this;
   }
 
@@ -313,19 +361,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "39663.05", value = "")
 
-  public BigDecimal getAverageMonthlyExpenseOnAtmAndPOS() {
+  public Double getAverageMonthlyExpenseOnAtmAndPOS() {
     return averageMonthlyExpenseOnAtmAndPOS;
   }
 
 
-  public void setAverageMonthlyExpenseOnAtmAndPOS(BigDecimal averageMonthlyExpenseOnAtmAndPOS) {
+  public void setAverageMonthlyExpenseOnAtmAndPOS(Double averageMonthlyExpenseOnAtmAndPOS) {
+
+    
+    
+    
     this.averageMonthlyExpenseOnAtmAndPOS = averageMonthlyExpenseOnAtmAndPOS;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnChargesAndStampDuty(BigDecimal averageMonthlyExpenseOnChargesAndStampDuty) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnChargesAndStampDuty(Double averageMonthlyExpenseOnChargesAndStampDuty) {
+
+    
+    
+    
     
     this.averageMonthlyExpenseOnChargesAndStampDuty = averageMonthlyExpenseOnChargesAndStampDuty;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnChargesAndStampDuty(Integer averageMonthlyExpenseOnChargesAndStampDuty) {
+
+    
+    
+    
+    
+    this.averageMonthlyExpenseOnChargesAndStampDuty = averageMonthlyExpenseOnChargesAndStampDuty.doubleValue();
     return this;
   }
 
@@ -336,19 +402,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "108.88", value = "")
 
-  public BigDecimal getAverageMonthlyExpenseOnChargesAndStampDuty() {
+  public Double getAverageMonthlyExpenseOnChargesAndStampDuty() {
     return averageMonthlyExpenseOnChargesAndStampDuty;
   }
 
 
-  public void setAverageMonthlyExpenseOnChargesAndStampDuty(BigDecimal averageMonthlyExpenseOnChargesAndStampDuty) {
+  public void setAverageMonthlyExpenseOnChargesAndStampDuty(Double averageMonthlyExpenseOnChargesAndStampDuty) {
+
+    
+    
+    
     this.averageMonthlyExpenseOnChargesAndStampDuty = averageMonthlyExpenseOnChargesAndStampDuty;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnEntertainment(BigDecimal averageMonthlyExpenseOnEntertainment) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnEntertainment(Double averageMonthlyExpenseOnEntertainment) {
+
+    
+    
+    
     
     this.averageMonthlyExpenseOnEntertainment = averageMonthlyExpenseOnEntertainment;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnEntertainment(Integer averageMonthlyExpenseOnEntertainment) {
+
+    
+    
+    
+    
+    this.averageMonthlyExpenseOnEntertainment = averageMonthlyExpenseOnEntertainment.doubleValue();
     return this;
   }
 
@@ -359,19 +443,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "168.46", value = "")
 
-  public BigDecimal getAverageMonthlyExpenseOnEntertainment() {
+  public Double getAverageMonthlyExpenseOnEntertainment() {
     return averageMonthlyExpenseOnEntertainment;
   }
 
 
-  public void setAverageMonthlyExpenseOnEntertainment(BigDecimal averageMonthlyExpenseOnEntertainment) {
+  public void setAverageMonthlyExpenseOnEntertainment(Double averageMonthlyExpenseOnEntertainment) {
+
+    
+    
+    
     this.averageMonthlyExpenseOnEntertainment = averageMonthlyExpenseOnEntertainment;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnGambling(BigDecimal averageMonthlyExpenseOnGambling) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnGambling(Double averageMonthlyExpenseOnGambling) {
+
+    
+    
+    
     
     this.averageMonthlyExpenseOnGambling = averageMonthlyExpenseOnGambling;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnGambling(Integer averageMonthlyExpenseOnGambling) {
+
+    
+    
+    
+    
+    this.averageMonthlyExpenseOnGambling = averageMonthlyExpenseOnGambling.doubleValue();
     return this;
   }
 
@@ -382,19 +484,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getAverageMonthlyExpenseOnGambling() {
+  public Double getAverageMonthlyExpenseOnGambling() {
     return averageMonthlyExpenseOnGambling;
   }
 
 
-  public void setAverageMonthlyExpenseOnGambling(BigDecimal averageMonthlyExpenseOnGambling) {
+  public void setAverageMonthlyExpenseOnGambling(Double averageMonthlyExpenseOnGambling) {
+
+    
+    
+    
     this.averageMonthlyExpenseOnGambling = averageMonthlyExpenseOnGambling;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnHealth(BigDecimal averageMonthlyExpenseOnHealth) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnHealth(Double averageMonthlyExpenseOnHealth) {
+
+    
+    
+    
     
     this.averageMonthlyExpenseOnHealth = averageMonthlyExpenseOnHealth;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnHealth(Integer averageMonthlyExpenseOnHealth) {
+
+    
+    
+    
+    
+    this.averageMonthlyExpenseOnHealth = averageMonthlyExpenseOnHealth.doubleValue();
     return this;
   }
 
@@ -405,19 +525,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "91.67", value = "")
 
-  public BigDecimal getAverageMonthlyExpenseOnHealth() {
+  public Double getAverageMonthlyExpenseOnHealth() {
     return averageMonthlyExpenseOnHealth;
   }
 
 
-  public void setAverageMonthlyExpenseOnHealth(BigDecimal averageMonthlyExpenseOnHealth) {
+  public void setAverageMonthlyExpenseOnHealth(Double averageMonthlyExpenseOnHealth) {
+
+    
+    
+    
     this.averageMonthlyExpenseOnHealth = averageMonthlyExpenseOnHealth;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnHospitalityandFood(BigDecimal averageMonthlyExpenseOnHospitalityandFood) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnHospitalityandFood(Double averageMonthlyExpenseOnHospitalityandFood) {
+
+    
+    
+    
     
     this.averageMonthlyExpenseOnHospitalityandFood = averageMonthlyExpenseOnHospitalityandFood;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnHospitalityandFood(Integer averageMonthlyExpenseOnHospitalityandFood) {
+
+    
+    
+    
+    
+    this.averageMonthlyExpenseOnHospitalityandFood = averageMonthlyExpenseOnHospitalityandFood.doubleValue();
     return this;
   }
 
@@ -428,19 +566,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getAverageMonthlyExpenseOnHospitalityandFood() {
+  public Double getAverageMonthlyExpenseOnHospitalityandFood() {
     return averageMonthlyExpenseOnHospitalityandFood;
   }
 
 
-  public void setAverageMonthlyExpenseOnHospitalityandFood(BigDecimal averageMonthlyExpenseOnHospitalityandFood) {
+  public void setAverageMonthlyExpenseOnHospitalityandFood(Double averageMonthlyExpenseOnHospitalityandFood) {
+
+    
+    
+    
     this.averageMonthlyExpenseOnHospitalityandFood = averageMonthlyExpenseOnHospitalityandFood;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnInsurance(BigDecimal averageMonthlyExpenseOnInsurance) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnInsurance(Double averageMonthlyExpenseOnInsurance) {
+
+    
+    
+    
     
     this.averageMonthlyExpenseOnInsurance = averageMonthlyExpenseOnInsurance;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnInsurance(Integer averageMonthlyExpenseOnInsurance) {
+
+    
+    
+    
+    
+    this.averageMonthlyExpenseOnInsurance = averageMonthlyExpenseOnInsurance.doubleValue();
     return this;
   }
 
@@ -451,19 +607,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getAverageMonthlyExpenseOnInsurance() {
+  public Double getAverageMonthlyExpenseOnInsurance() {
     return averageMonthlyExpenseOnInsurance;
   }
 
 
-  public void setAverageMonthlyExpenseOnInsurance(BigDecimal averageMonthlyExpenseOnInsurance) {
+  public void setAverageMonthlyExpenseOnInsurance(Double averageMonthlyExpenseOnInsurance) {
+
+    
+    
+    
     this.averageMonthlyExpenseOnInsurance = averageMonthlyExpenseOnInsurance;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnInternationalTransactions(BigDecimal averageMonthlyExpenseOnInternationalTransactions) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnInternationalTransactions(Double averageMonthlyExpenseOnInternationalTransactions) {
+
+    
+    
+    
     
     this.averageMonthlyExpenseOnInternationalTransactions = averageMonthlyExpenseOnInternationalTransactions;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnInternationalTransactions(Integer averageMonthlyExpenseOnInternationalTransactions) {
+
+    
+    
+    
+    
+    this.averageMonthlyExpenseOnInternationalTransactions = averageMonthlyExpenseOnInternationalTransactions.doubleValue();
     return this;
   }
 
@@ -474,19 +648,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getAverageMonthlyExpenseOnInternationalTransactions() {
+  public Double getAverageMonthlyExpenseOnInternationalTransactions() {
     return averageMonthlyExpenseOnInternationalTransactions;
   }
 
 
-  public void setAverageMonthlyExpenseOnInternationalTransactions(BigDecimal averageMonthlyExpenseOnInternationalTransactions) {
+  public void setAverageMonthlyExpenseOnInternationalTransactions(Double averageMonthlyExpenseOnInternationalTransactions) {
+
+    
+    
+    
     this.averageMonthlyExpenseOnInternationalTransactions = averageMonthlyExpenseOnInternationalTransactions;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnOnlineandWeb(BigDecimal averageMonthlyExpenseOnOnlineandWeb) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnOnlineandWeb(Double averageMonthlyExpenseOnOnlineandWeb) {
+
+    
+    
+    
     
     this.averageMonthlyExpenseOnOnlineandWeb = averageMonthlyExpenseOnOnlineandWeb;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnOnlineandWeb(Integer averageMonthlyExpenseOnOnlineandWeb) {
+
+    
+    
+    
+    
+    this.averageMonthlyExpenseOnOnlineandWeb = averageMonthlyExpenseOnOnlineandWeb.doubleValue();
     return this;
   }
 
@@ -497,19 +689,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "24955.55", value = "")
 
-  public BigDecimal getAverageMonthlyExpenseOnOnlineandWeb() {
+  public Double getAverageMonthlyExpenseOnOnlineandWeb() {
     return averageMonthlyExpenseOnOnlineandWeb;
   }
 
 
-  public void setAverageMonthlyExpenseOnOnlineandWeb(BigDecimal averageMonthlyExpenseOnOnlineandWeb) {
+  public void setAverageMonthlyExpenseOnOnlineandWeb(Double averageMonthlyExpenseOnOnlineandWeb) {
+
+    
+    
+    
     this.averageMonthlyExpenseOnOnlineandWeb = averageMonthlyExpenseOnOnlineandWeb;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnRent(BigDecimal averageMonthlyExpenseOnRent) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnRent(Double averageMonthlyExpenseOnRent) {
+
+    
+    
+    
     
     this.averageMonthlyExpenseOnRent = averageMonthlyExpenseOnRent;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnRent(Integer averageMonthlyExpenseOnRent) {
+
+    
+    
+    
+    
+    this.averageMonthlyExpenseOnRent = averageMonthlyExpenseOnRent.doubleValue();
     return this;
   }
 
@@ -520,19 +730,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getAverageMonthlyExpenseOnRent() {
+  public Double getAverageMonthlyExpenseOnRent() {
     return averageMonthlyExpenseOnRent;
   }
 
 
-  public void setAverageMonthlyExpenseOnRent(BigDecimal averageMonthlyExpenseOnRent) {
+  public void setAverageMonthlyExpenseOnRent(Double averageMonthlyExpenseOnRent) {
+
+    
+    
+    
     this.averageMonthlyExpenseOnRent = averageMonthlyExpenseOnRent;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnSavingsAndInvestments(BigDecimal averageMonthlyExpenseOnSavingsAndInvestments) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnSavingsAndInvestments(Double averageMonthlyExpenseOnSavingsAndInvestments) {
+
+    
+    
+    
     
     this.averageMonthlyExpenseOnSavingsAndInvestments = averageMonthlyExpenseOnSavingsAndInvestments;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnSavingsAndInvestments(Integer averageMonthlyExpenseOnSavingsAndInvestments) {
+
+    
+    
+    
+    
+    this.averageMonthlyExpenseOnSavingsAndInvestments = averageMonthlyExpenseOnSavingsAndInvestments.doubleValue();
     return this;
   }
 
@@ -543,19 +771,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getAverageMonthlyExpenseOnSavingsAndInvestments() {
+  public Double getAverageMonthlyExpenseOnSavingsAndInvestments() {
     return averageMonthlyExpenseOnSavingsAndInvestments;
   }
 
 
-  public void setAverageMonthlyExpenseOnSavingsAndInvestments(BigDecimal averageMonthlyExpenseOnSavingsAndInvestments) {
+  public void setAverageMonthlyExpenseOnSavingsAndInvestments(Double averageMonthlyExpenseOnSavingsAndInvestments) {
+
+    
+    
+    
     this.averageMonthlyExpenseOnSavingsAndInvestments = averageMonthlyExpenseOnSavingsAndInvestments;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnTransfer(BigDecimal averageMonthlyExpenseOnTransfer) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnTransfer(Double averageMonthlyExpenseOnTransfer) {
+
+    
+    
+    
     
     this.averageMonthlyExpenseOnTransfer = averageMonthlyExpenseOnTransfer;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnTransfer(Integer averageMonthlyExpenseOnTransfer) {
+
+    
+    
+    
+    
+    this.averageMonthlyExpenseOnTransfer = averageMonthlyExpenseOnTransfer.doubleValue();
     return this;
   }
 
@@ -566,19 +812,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "11692.5", value = "")
 
-  public BigDecimal getAverageMonthlyExpenseOnTransfer() {
+  public Double getAverageMonthlyExpenseOnTransfer() {
     return averageMonthlyExpenseOnTransfer;
   }
 
 
-  public void setAverageMonthlyExpenseOnTransfer(BigDecimal averageMonthlyExpenseOnTransfer) {
+  public void setAverageMonthlyExpenseOnTransfer(Double averageMonthlyExpenseOnTransfer) {
+
+    
+    
+    
     this.averageMonthlyExpenseOnTransfer = averageMonthlyExpenseOnTransfer;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnTransportation(BigDecimal averageMonthlyExpenseOnTransportation) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnTransportation(Double averageMonthlyExpenseOnTransportation) {
+
+    
+    
+    
     
     this.averageMonthlyExpenseOnTransportation = averageMonthlyExpenseOnTransportation;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnTransportation(Integer averageMonthlyExpenseOnTransportation) {
+
+    
+    
+    
+    
+    this.averageMonthlyExpenseOnTransportation = averageMonthlyExpenseOnTransportation.doubleValue();
     return this;
   }
 
@@ -589,19 +853,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getAverageMonthlyExpenseOnTransportation() {
+  public Double getAverageMonthlyExpenseOnTransportation() {
     return averageMonthlyExpenseOnTransportation;
   }
 
 
-  public void setAverageMonthlyExpenseOnTransportation(BigDecimal averageMonthlyExpenseOnTransportation) {
+  public void setAverageMonthlyExpenseOnTransportation(Double averageMonthlyExpenseOnTransportation) {
+
+    
+    
+    
     this.averageMonthlyExpenseOnTransportation = averageMonthlyExpenseOnTransportation;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnUSSD(BigDecimal averageMonthlyExpenseOnUSSD) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnUSSD(Double averageMonthlyExpenseOnUSSD) {
+
+    
+    
+    
     
     this.averageMonthlyExpenseOnUSSD = averageMonthlyExpenseOnUSSD;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnUSSD(Integer averageMonthlyExpenseOnUSSD) {
+
+    
+    
+    
+    
+    this.averageMonthlyExpenseOnUSSD = averageMonthlyExpenseOnUSSD.doubleValue();
     return this;
   }
 
@@ -612,19 +894,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "333.33", value = "")
 
-  public BigDecimal getAverageMonthlyExpenseOnUSSD() {
+  public Double getAverageMonthlyExpenseOnUSSD() {
     return averageMonthlyExpenseOnUSSD;
   }
 
 
-  public void setAverageMonthlyExpenseOnUSSD(BigDecimal averageMonthlyExpenseOnUSSD) {
+  public void setAverageMonthlyExpenseOnUSSD(Double averageMonthlyExpenseOnUSSD) {
+
+    
+    
+    
     this.averageMonthlyExpenseOnUSSD = averageMonthlyExpenseOnUSSD;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnUtilities(BigDecimal averageMonthlyExpenseOnUtilities) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnUtilities(Double averageMonthlyExpenseOnUtilities) {
+
+    
+    
+    
     
     this.averageMonthlyExpenseOnUtilities = averageMonthlyExpenseOnUtilities;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseOnUtilities(Integer averageMonthlyExpenseOnUtilities) {
+
+    
+    
+    
+    
+    this.averageMonthlyExpenseOnUtilities = averageMonthlyExpenseOnUtilities.doubleValue();
     return this;
   }
 
@@ -635,19 +935,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getAverageMonthlyExpenseOnUtilities() {
+  public Double getAverageMonthlyExpenseOnUtilities() {
     return averageMonthlyExpenseOnUtilities;
   }
 
 
-  public void setAverageMonthlyExpenseOnUtilities(BigDecimal averageMonthlyExpenseOnUtilities) {
+  public void setAverageMonthlyExpenseOnUtilities(Double averageMonthlyExpenseOnUtilities) {
+
+    
+    
+    
     this.averageMonthlyExpenseOnUtilities = averageMonthlyExpenseOnUtilities;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseonTravel(BigDecimal averageMonthlyExpenseonTravel) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseonTravel(Double averageMonthlyExpenseonTravel) {
+
+    
+    
+    
     
     this.averageMonthlyExpenseonTravel = averageMonthlyExpenseonTravel;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyExpenseonTravel(Integer averageMonthlyExpenseonTravel) {
+
+    
+    
+    
+    
+    this.averageMonthlyExpenseonTravel = averageMonthlyExpenseonTravel.doubleValue();
     return this;
   }
 
@@ -658,19 +976,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getAverageMonthlyExpenseonTravel() {
+  public Double getAverageMonthlyExpenseonTravel() {
     return averageMonthlyExpenseonTravel;
   }
 
 
-  public void setAverageMonthlyExpenseonTravel(BigDecimal averageMonthlyExpenseonTravel) {
+  public void setAverageMonthlyExpenseonTravel(Double averageMonthlyExpenseonTravel) {
+
+    
+    
+    
     this.averageMonthlyExpenseonTravel = averageMonthlyExpenseonTravel;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyRecurringExpenses(BigDecimal averageMonthlyRecurringExpenses) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyRecurringExpenses(Double averageMonthlyRecurringExpenses) {
+
+    
+    
+    
     
     this.averageMonthlyRecurringExpenses = averageMonthlyRecurringExpenses;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyRecurringExpenses(Integer averageMonthlyRecurringExpenses) {
+
+    
+    
+    
+    
+    this.averageMonthlyRecurringExpenses = averageMonthlyRecurringExpenses.doubleValue();
     return this;
   }
 
@@ -681,19 +1017,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getAverageMonthlyRecurringExpenses() {
+  public Double getAverageMonthlyRecurringExpenses() {
     return averageMonthlyRecurringExpenses;
   }
 
 
-  public void setAverageMonthlyRecurringExpenses(BigDecimal averageMonthlyRecurringExpenses) {
+  public void setAverageMonthlyRecurringExpenses(Double averageMonthlyRecurringExpenses) {
+
+    
+    
+    
     this.averageMonthlyRecurringExpenses = averageMonthlyRecurringExpenses;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyTotalExpenses(BigDecimal averageMonthlyTotalExpenses) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyTotalExpenses(Double averageMonthlyTotalExpenses) {
+
+    
+    
+    
     
     this.averageMonthlyTotalExpenses = averageMonthlyTotalExpenses;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown averageMonthlyTotalExpenses(Integer averageMonthlyTotalExpenses) {
+
+    
+    
+    
+    
+    this.averageMonthlyTotalExpenses = averageMonthlyTotalExpenses.doubleValue();
     return this;
   }
 
@@ -704,19 +1058,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "53555.55", value = "")
 
-  public BigDecimal getAverageMonthlyTotalExpenses() {
+  public Double getAverageMonthlyTotalExpenses() {
     return averageMonthlyTotalExpenses;
   }
 
 
-  public void setAverageMonthlyTotalExpenses(BigDecimal averageMonthlyTotalExpenses) {
+  public void setAverageMonthlyTotalExpenses(Double averageMonthlyTotalExpenses) {
+
+    
+    
+    
     this.averageMonthlyTotalExpenses = averageMonthlyTotalExpenses;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown minimumSalary(BigDecimal minimumSalary) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown minimumSalary(Double minimumSalary) {
+
+    
+    
+    
     
     this.minimumSalary = minimumSalary;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown minimumSalary(Integer minimumSalary) {
+
+    
+    
+    
+    
+    this.minimumSalary = minimumSalary.doubleValue();
     return this;
   }
 
@@ -727,17 +1099,25 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "653.25", value = "")
 
-  public BigDecimal getMinimumSalary() {
+  public Double getMinimumSalary() {
     return minimumSalary;
   }
 
 
-  public void setMinimumSalary(BigDecimal minimumSalary) {
+  public void setMinimumSalary(Double minimumSalary) {
+
+    
+    
+    
     this.minimumSalary = minimumSalary;
   }
 
 
   public GetAccountAnalysisResponseEntityExpenseBreakdown monthWithmaximumExpense(String monthWithmaximumExpense) {
+
+    
+    
+    
     
     this.monthWithmaximumExpense = monthWithmaximumExpense;
     return this;
@@ -756,11 +1136,19 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
 
 
   public void setMonthWithmaximumExpense(String monthWithmaximumExpense) {
+
+    
+    
+    
     this.monthWithmaximumExpense = monthWithmaximumExpense;
   }
 
 
   public GetAccountAnalysisResponseEntityExpenseBreakdown mostFrequentExpense(String mostFrequentExpense) {
+
+    
+    
+    
     
     this.mostFrequentExpense = mostFrequentExpense;
     return this;
@@ -779,11 +1167,19 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
 
 
   public void setMostFrequentExpense(String mostFrequentExpense) {
+
+    
+    
+    
     this.mostFrequentExpense = mostFrequentExpense;
   }
 
 
   public GetAccountAnalysisResponseEntityExpenseBreakdown mostFrequentExpenseCategory(String mostFrequentExpenseCategory) {
+
+    
+    
+    
     
     this.mostFrequentExpenseCategory = mostFrequentExpenseCategory;
     return this;
@@ -802,13 +1198,31 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
 
 
   public void setMostFrequentExpenseCategory(String mostFrequentExpenseCategory) {
+
+    
+    
+    
     this.mostFrequentExpenseCategory = mostFrequentExpenseCategory;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnAirtimeAndData(BigDecimal totalExpenseOnAirtimeAndData) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnAirtimeAndData(Double totalExpenseOnAirtimeAndData) {
+
+    
+    
+    
     
     this.totalExpenseOnAirtimeAndData = totalExpenseOnAirtimeAndData;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnAirtimeAndData(Integer totalExpenseOnAirtimeAndData) {
+
+    
+    
+    
+    
+    this.totalExpenseOnAirtimeAndData = totalExpenseOnAirtimeAndData.doubleValue();
     return this;
   }
 
@@ -819,19 +1233,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "13200", value = "")
 
-  public BigDecimal getTotalExpenseOnAirtimeAndData() {
+  public Double getTotalExpenseOnAirtimeAndData() {
     return totalExpenseOnAirtimeAndData;
   }
 
 
-  public void setTotalExpenseOnAirtimeAndData(BigDecimal totalExpenseOnAirtimeAndData) {
+  public void setTotalExpenseOnAirtimeAndData(Double totalExpenseOnAirtimeAndData) {
+
+    
+    
+    
     this.totalExpenseOnAirtimeAndData = totalExpenseOnAirtimeAndData;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnInternationalTransactions(BigDecimal totalExpenseOnInternationalTransactions) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnInternationalTransactions(Double totalExpenseOnInternationalTransactions) {
+
+    
+    
+    
     
     this.totalExpenseOnInternationalTransactions = totalExpenseOnInternationalTransactions;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnInternationalTransactions(Integer totalExpenseOnInternationalTransactions) {
+
+    
+    
+    
+    
+    this.totalExpenseOnInternationalTransactions = totalExpenseOnInternationalTransactions.doubleValue();
     return this;
   }
 
@@ -842,19 +1274,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getTotalExpenseOnInternationalTransactions() {
+  public Double getTotalExpenseOnInternationalTransactions() {
     return totalExpenseOnInternationalTransactions;
   }
 
 
-  public void setTotalExpenseOnInternationalTransactions(BigDecimal totalExpenseOnInternationalTransactions) {
+  public void setTotalExpenseOnInternationalTransactions(Double totalExpenseOnInternationalTransactions) {
+
+    
+    
+    
     this.totalExpenseOnInternationalTransactions = totalExpenseOnInternationalTransactions;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnSavingsAndInvestments(BigDecimal totalExpenseOnSavingsAndInvestments) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnSavingsAndInvestments(Double totalExpenseOnSavingsAndInvestments) {
+
+    
+    
+    
     
     this.totalExpenseOnSavingsAndInvestments = totalExpenseOnSavingsAndInvestments;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnSavingsAndInvestments(Integer totalExpenseOnSavingsAndInvestments) {
+
+    
+    
+    
+    
+    this.totalExpenseOnSavingsAndInvestments = totalExpenseOnSavingsAndInvestments.doubleValue();
     return this;
   }
 
@@ -865,19 +1315,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getTotalExpenseOnSavingsAndInvestments() {
+  public Double getTotalExpenseOnSavingsAndInvestments() {
     return totalExpenseOnSavingsAndInvestments;
   }
 
 
-  public void setTotalExpenseOnSavingsAndInvestments(BigDecimal totalExpenseOnSavingsAndInvestments) {
+  public void setTotalExpenseOnSavingsAndInvestments(Double totalExpenseOnSavingsAndInvestments) {
+
+    
+    
+    
     this.totalExpenseOnSavingsAndInvestments = totalExpenseOnSavingsAndInvestments;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnTransfer(BigDecimal totalExpenseOnTransfer) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnTransfer(Double totalExpenseOnTransfer) {
+
+    
+    
+    
     
     this.totalExpenseOnTransfer = totalExpenseOnTransfer;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnTransfer(Integer totalExpenseOnTransfer) {
+
+    
+    
+    
+    
+    this.totalExpenseOnTransfer = totalExpenseOnTransfer.doubleValue();
     return this;
   }
 
@@ -888,19 +1356,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "70155.02", value = "")
 
-  public BigDecimal getTotalExpenseOnTransfer() {
+  public Double getTotalExpenseOnTransfer() {
     return totalExpenseOnTransfer;
   }
 
 
-  public void setTotalExpenseOnTransfer(BigDecimal totalExpenseOnTransfer) {
+  public void setTotalExpenseOnTransfer(Double totalExpenseOnTransfer) {
+
+    
+    
+    
     this.totalExpenseOnTransfer = totalExpenseOnTransfer;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnTransportation(BigDecimal totalExpenseOnTransportation) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnTransportation(Double totalExpenseOnTransportation) {
+
+    
+    
+    
     
     this.totalExpenseOnTransportation = totalExpenseOnTransportation;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnTransportation(Integer totalExpenseOnTransportation) {
+
+    
+    
+    
+    
+    this.totalExpenseOnTransportation = totalExpenseOnTransportation.doubleValue();
     return this;
   }
 
@@ -911,19 +1397,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getTotalExpenseOnTransportation() {
+  public Double getTotalExpenseOnTransportation() {
     return totalExpenseOnTransportation;
   }
 
 
-  public void setTotalExpenseOnTransportation(BigDecimal totalExpenseOnTransportation) {
+  public void setTotalExpenseOnTransportation(Double totalExpenseOnTransportation) {
+
+    
+    
+    
     this.totalExpenseOnTransportation = totalExpenseOnTransportation;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnTravel(BigDecimal totalExpenseOnTravel) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnTravel(Double totalExpenseOnTravel) {
+
+    
+    
+    
     
     this.totalExpenseOnTravel = totalExpenseOnTravel;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnTravel(Integer totalExpenseOnTravel) {
+
+    
+    
+    
+    
+    this.totalExpenseOnTravel = totalExpenseOnTravel.doubleValue();
     return this;
   }
 
@@ -934,19 +1438,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getTotalExpenseOnTravel() {
+  public Double getTotalExpenseOnTravel() {
     return totalExpenseOnTravel;
   }
 
 
-  public void setTotalExpenseOnTravel(BigDecimal totalExpenseOnTravel) {
+  public void setTotalExpenseOnTravel(Double totalExpenseOnTravel) {
+
+    
+    
+    
     this.totalExpenseOnTravel = totalExpenseOnTravel;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnUSSD(BigDecimal totalExpenseOnUSSD) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnUSSD(Double totalExpenseOnUSSD) {
+
+    
+    
+    
     
     this.totalExpenseOnUSSD = totalExpenseOnUSSD;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnUSSD(Integer totalExpenseOnUSSD) {
+
+    
+    
+    
+    
+    this.totalExpenseOnUSSD = totalExpenseOnUSSD.doubleValue();
     return this;
   }
 
@@ -957,19 +1479,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "2000", value = "")
 
-  public BigDecimal getTotalExpenseOnUSSD() {
+  public Double getTotalExpenseOnUSSD() {
     return totalExpenseOnUSSD;
   }
 
 
-  public void setTotalExpenseOnUSSD(BigDecimal totalExpenseOnUSSD) {
+  public void setTotalExpenseOnUSSD(Double totalExpenseOnUSSD) {
+
+    
+    
+    
     this.totalExpenseOnUSSD = totalExpenseOnUSSD;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnUtilities(BigDecimal totalExpenseOnUtilities) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnUtilities(Double totalExpenseOnUtilities) {
+
+    
+    
+    
     
     this.totalExpenseOnUtilities = totalExpenseOnUtilities;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseOnUtilities(Integer totalExpenseOnUtilities) {
+
+    
+    
+    
+    
+    this.totalExpenseOnUtilities = totalExpenseOnUtilities.doubleValue();
     return this;
   }
 
@@ -980,19 +1520,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getTotalExpenseOnUtilities() {
+  public Double getTotalExpenseOnUtilities() {
     return totalExpenseOnUtilities;
   }
 
 
-  public void setTotalExpenseOnUtilities(BigDecimal totalExpenseOnUtilities) {
+  public void setTotalExpenseOnUtilities(Double totalExpenseOnUtilities) {
+
+    
+    
+    
     this.totalExpenseOnUtilities = totalExpenseOnUtilities;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonChargesAndStampDuty(BigDecimal totalExpenseonChargesAndStampDuty) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonChargesAndStampDuty(Double totalExpenseonChargesAndStampDuty) {
+
+    
+    
+    
     
     this.totalExpenseonChargesAndStampDuty = totalExpenseonChargesAndStampDuty;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonChargesAndStampDuty(Integer totalExpenseonChargesAndStampDuty) {
+
+    
+    
+    
+    
+    this.totalExpenseonChargesAndStampDuty = totalExpenseonChargesAndStampDuty.doubleValue();
     return this;
   }
 
@@ -1003,19 +1561,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "237978.3", value = "")
 
-  public BigDecimal getTotalExpenseonChargesAndStampDuty() {
+  public Double getTotalExpenseonChargesAndStampDuty() {
     return totalExpenseonChargesAndStampDuty;
   }
 
 
-  public void setTotalExpenseonChargesAndStampDuty(BigDecimal totalExpenseonChargesAndStampDuty) {
+  public void setTotalExpenseonChargesAndStampDuty(Double totalExpenseonChargesAndStampDuty) {
+
+    
+    
+    
     this.totalExpenseonChargesAndStampDuty = totalExpenseonChargesAndStampDuty;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonEntertainment(BigDecimal totalExpenseonEntertainment) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonEntertainment(Double totalExpenseonEntertainment) {
+
+    
+    
+    
     
     this.totalExpenseonEntertainment = totalExpenseonEntertainment;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonEntertainment(Integer totalExpenseonEntertainment) {
+
+    
+    
+    
+    
+    this.totalExpenseonEntertainment = totalExpenseonEntertainment.doubleValue();
     return this;
   }
 
@@ -1026,19 +1602,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1010.75", value = "")
 
-  public BigDecimal getTotalExpenseonEntertainment() {
+  public Double getTotalExpenseonEntertainment() {
     return totalExpenseonEntertainment;
   }
 
 
-  public void setTotalExpenseonEntertainment(BigDecimal totalExpenseonEntertainment) {
+  public void setTotalExpenseonEntertainment(Double totalExpenseonEntertainment) {
+
+    
+    
+    
     this.totalExpenseonEntertainment = totalExpenseonEntertainment;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonGambling(BigDecimal totalExpenseonGambling) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonGambling(Double totalExpenseonGambling) {
+
+    
+    
+    
     
     this.totalExpenseonGambling = totalExpenseonGambling;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonGambling(Integer totalExpenseonGambling) {
+
+    
+    
+    
+    
+    this.totalExpenseonGambling = totalExpenseonGambling.doubleValue();
     return this;
   }
 
@@ -1049,19 +1643,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getTotalExpenseonGambling() {
+  public Double getTotalExpenseonGambling() {
     return totalExpenseonGambling;
   }
 
 
-  public void setTotalExpenseonGambling(BigDecimal totalExpenseonGambling) {
+  public void setTotalExpenseonGambling(Double totalExpenseonGambling) {
+
+    
+    
+    
     this.totalExpenseonGambling = totalExpenseonGambling;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonHealth(BigDecimal totalExpenseonHealth) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonHealth(Double totalExpenseonHealth) {
+
+    
+    
+    
     
     this.totalExpenseonHealth = totalExpenseonHealth;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonHealth(Integer totalExpenseonHealth) {
+
+    
+    
+    
+    
+    this.totalExpenseonHealth = totalExpenseonHealth.doubleValue();
     return this;
   }
 
@@ -1072,19 +1684,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "550", value = "")
 
-  public BigDecimal getTotalExpenseonHealth() {
+  public Double getTotalExpenseonHealth() {
     return totalExpenseonHealth;
   }
 
 
-  public void setTotalExpenseonHealth(BigDecimal totalExpenseonHealth) {
+  public void setTotalExpenseonHealth(Double totalExpenseonHealth) {
+
+    
+    
+    
     this.totalExpenseonHealth = totalExpenseonHealth;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonHospitalityandFood(BigDecimal totalExpenseonHospitalityandFood) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonHospitalityandFood(Double totalExpenseonHospitalityandFood) {
+
+    
+    
+    
     
     this.totalExpenseonHospitalityandFood = totalExpenseonHospitalityandFood;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonHospitalityandFood(Integer totalExpenseonHospitalityandFood) {
+
+    
+    
+    
+    
+    this.totalExpenseonHospitalityandFood = totalExpenseonHospitalityandFood.doubleValue();
     return this;
   }
 
@@ -1095,19 +1725,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getTotalExpenseonHospitalityandFood() {
+  public Double getTotalExpenseonHospitalityandFood() {
     return totalExpenseonHospitalityandFood;
   }
 
 
-  public void setTotalExpenseonHospitalityandFood(BigDecimal totalExpenseonHospitalityandFood) {
+  public void setTotalExpenseonHospitalityandFood(Double totalExpenseonHospitalityandFood) {
+
+    
+    
+    
     this.totalExpenseonHospitalityandFood = totalExpenseonHospitalityandFood;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonInsurance(BigDecimal totalExpenseonInsurance) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonInsurance(Double totalExpenseonInsurance) {
+
+    
+    
+    
     
     this.totalExpenseonInsurance = totalExpenseonInsurance;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonInsurance(Integer totalExpenseonInsurance) {
+
+    
+    
+    
+    
+    this.totalExpenseonInsurance = totalExpenseonInsurance.doubleValue();
     return this;
   }
 
@@ -1118,19 +1766,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getTotalExpenseonInsurance() {
+  public Double getTotalExpenseonInsurance() {
     return totalExpenseonInsurance;
   }
 
 
-  public void setTotalExpenseonInsurance(BigDecimal totalExpenseonInsurance) {
+  public void setTotalExpenseonInsurance(Double totalExpenseonInsurance) {
+
+    
+    
+    
     this.totalExpenseonInsurance = totalExpenseonInsurance;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonOnlineandWeb(BigDecimal totalExpenseonOnlineandWeb) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonOnlineandWeb(Double totalExpenseonOnlineandWeb) {
+
+    
+    
+    
     
     this.totalExpenseonOnlineandWeb = totalExpenseonOnlineandWeb;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalExpenseonOnlineandWeb(Integer totalExpenseonOnlineandWeb) {
+
+    
+    
+    
+    
+    this.totalExpenseonOnlineandWeb = totalExpenseonOnlineandWeb.doubleValue();
     return this;
   }
 
@@ -1141,19 +1807,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "149733.3", value = "")
 
-  public BigDecimal getTotalExpenseonOnlineandWeb() {
+  public Double getTotalExpenseonOnlineandWeb() {
     return totalExpenseonOnlineandWeb;
   }
 
 
-  public void setTotalExpenseonOnlineandWeb(BigDecimal totalExpenseonOnlineandWeb) {
+  public void setTotalExpenseonOnlineandWeb(Double totalExpenseonOnlineandWeb) {
+
+    
+    
+    
     this.totalExpenseonOnlineandWeb = totalExpenseonOnlineandWeb;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown totalMonthlyExpenses(BigDecimal totalMonthlyExpenses) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalMonthlyExpenses(Double totalMonthlyExpenses) {
+
+    
+    
+    
     
     this.totalMonthlyExpenses = totalMonthlyExpenses;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalMonthlyExpenses(Integer totalMonthlyExpenses) {
+
+    
+    
+    
+    
+    this.totalMonthlyExpenses = totalMonthlyExpenses.doubleValue();
     return this;
   }
 
@@ -1164,19 +1848,37 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "321333.32", value = "")
 
-  public BigDecimal getTotalMonthlyExpenses() {
+  public Double getTotalMonthlyExpenses() {
     return totalMonthlyExpenses;
   }
 
 
-  public void setTotalMonthlyExpenses(BigDecimal totalMonthlyExpenses) {
+  public void setTotalMonthlyExpenses(Double totalMonthlyExpenses) {
+
+    
+    
+    
     this.totalMonthlyExpenses = totalMonthlyExpenses;
   }
 
 
-  public GetAccountAnalysisResponseEntityExpenseBreakdown totalRecurringExpenses(BigDecimal totalRecurringExpenses) {
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalRecurringExpenses(Double totalRecurringExpenses) {
+
+    
+    
+    
     
     this.totalRecurringExpenses = totalRecurringExpenses;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityExpenseBreakdown totalRecurringExpenses(Integer totalRecurringExpenses) {
+
+    
+    
+    
+    
+    this.totalRecurringExpenses = totalRecurringExpenses.doubleValue();
     return this;
   }
 
@@ -1187,12 +1889,16 @@ public class GetAccountAnalysisResponseEntityExpenseBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getTotalRecurringExpenses() {
+  public Double getTotalRecurringExpenses() {
     return totalRecurringExpenses;
   }
 
 
-  public void setTotalRecurringExpenses(BigDecimal totalRecurringExpenses) {
+  public void setTotalRecurringExpenses(Double totalRecurringExpenses) {
+
+    
+    
+    
     this.totalRecurringExpenses = totalRecurringExpenses;
   }
 

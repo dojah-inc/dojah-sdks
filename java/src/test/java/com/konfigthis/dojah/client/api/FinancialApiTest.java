@@ -13,8 +13,12 @@
 package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.model.CollectStatusFromPdfResponse;
 import com.konfigthis.dojah.client.model.CollectTransactionsRequest;
+import com.konfigthis.dojah.client.model.CollectTransactionsRequestTransactionsInner;
 import com.konfigthis.dojah.client.model.CollectTransactionsResponse;
 import java.io.File;
 import com.konfigthis.dojah.client.model.FinancialGetBasicBvnResponse;
@@ -27,6 +31,7 @@ import com.konfigthis.dojah.client.model.GetEarningStructureResponse;
 import com.konfigthis.dojah.client.model.GetSpendingPatternResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,7 +44,14 @@ import java.util.Map;
 @Disabled
 public class FinancialApiTest {
 
-    private final FinancialApi api = new FinancialApi();
+    private static FinancialApi api;
+
+    
+    @BeforeAll
+    public static void beforeClass() {
+        ApiClient apiClient = Configuration.getDefaultApiClient();
+        api = new FinancialApi(apiClient);
+    }
 
     /**
      * Collect Status via PDF Statement
@@ -50,7 +62,10 @@ public class FinancialApiTest {
     public void collectStatusFromPdfTest() throws ApiException {
         File statement = null;
         Integer bankCode = null;
-        CollectStatusFromPdfResponse response = api.collectStatusFromPdf(statement, bankCode);
+        CollectStatusFromPdfResponse response = api.collectStatusFromPdf()
+                .statement(statement)
+                .bankCode(bankCode)
+                .execute();
         // TODO: test validations
     }
 
@@ -61,8 +76,12 @@ public class FinancialApiTest {
      */
     @Test
     public void collectTransactionsTest() throws ApiException {
-        CollectTransactionsRequest collectTransactionsRequest = null;
-        CollectTransactionsResponse response = api.collectTransactions(collectTransactionsRequest);
+        List<CollectTransactionsRequestTransactionsInner> transactions = null;
+        String appId = null;
+        CollectTransactionsResponse response = api.collectTransactions()
+                .transactions(transactions)
+                .appId(appId)
+                .execute();
         // TODO: test validations
     }
 
@@ -76,7 +95,9 @@ public class FinancialApiTest {
     @Test
     public void getAccountTest() throws ApiException {
         String accountId = null;
-        GetAccountResponse response = api.getAccount(accountId);
+        GetAccountResponse response = api.getAccount()
+                .accountId(accountId)
+                .execute();
         // TODO: test validations
     }
 
@@ -87,7 +108,8 @@ public class FinancialApiTest {
      */
     @Test
     public void getAccountAnalysisTest() throws ApiException {
-        GetAccountAnalysisResponse response = api.getAccountAnalysis();
+        GetAccountAnalysisResponse response = api.getAccountAnalysis()
+                .execute();
         // TODO: test validations
     }
 
@@ -99,7 +121,9 @@ public class FinancialApiTest {
     @Test
     public void getAccountSubscriptionsTest() throws ApiException {
         String accountId = null;
-        GetAccountSubscriptionsResponse response = api.getAccountSubscriptions(accountId);
+        GetAccountSubscriptionsResponse response = api.getAccountSubscriptions()
+                .accountId(accountId)
+                .execute();
         // TODO: test validations
     }
 
@@ -112,7 +136,10 @@ public class FinancialApiTest {
     public void getAccountTransactionsTest() throws ApiException {
         String accountId = null;
         Integer length = null;
-        GetAccountTransactionsResponse response = api.getAccountTransactions(accountId, length);
+        GetAccountTransactionsResponse response = api.getAccountTransactions()
+                .accountId(accountId)
+                .length(length)
+                .execute();
         // TODO: test validations
     }
 
@@ -124,7 +151,9 @@ public class FinancialApiTest {
     @Test
     public void getBasicBvnTest() throws ApiException {
         String accountId = null;
-        FinancialGetBasicBvnResponse response = api.getBasicBvn(accountId);
+        FinancialGetBasicBvnResponse response = api.getBasicBvn()
+                .accountId(accountId)
+                .execute();
         // TODO: test validations
     }
 
@@ -136,7 +165,9 @@ public class FinancialApiTest {
     @Test
     public void getEarningStructureTest() throws ApiException {
         String accountId = null;
-        GetEarningStructureResponse response = api.getEarningStructure(accountId);
+        GetEarningStructureResponse response = api.getEarningStructure()
+                .accountId(accountId)
+                .execute();
         // TODO: test validations
     }
 
@@ -148,7 +179,9 @@ public class FinancialApiTest {
     @Test
     public void getFullBvnTest() throws ApiException {
         String accountId = null;
-        FinancialGetFullBvnResponse response = api.getFullBvn(accountId);
+        FinancialGetFullBvnResponse response = api.getFullBvn()
+                .accountId(accountId)
+                .execute();
         // TODO: test validations
     }
 
@@ -160,7 +193,9 @@ public class FinancialApiTest {
     @Test
     public void getSpendingPatternTest() throws ApiException {
         String accountId = null;
-        GetSpendingPatternResponse response = api.getSpendingPattern(accountId);
+        GetSpendingPatternResponse response = api.getSpendingPattern()
+                .accountId(accountId)
+                .execute();
         // TODO: test validations
     }
 

@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**confidenceValue** | **BigDecimal** |  |  [optional] |
+|**confidenceValue** | **Double** |  |  [optional] |
 |**match** | **Boolean** |  |  [optional] |
 
 

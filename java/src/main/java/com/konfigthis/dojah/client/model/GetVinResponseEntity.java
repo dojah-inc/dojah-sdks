@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -93,6 +94,10 @@ public class GetVinResponseEntity {
   }
 
   public GetVinResponseEntity fullName(String fullName) {
+
+    
+    
+    
     
     this.fullName = fullName;
     return this;
@@ -111,11 +116,19 @@ public class GetVinResponseEntity {
 
 
   public void setFullName(String fullName) {
+
+    
+    
+    
     this.fullName = fullName;
   }
 
 
   public GetVinResponseEntity voterIdentificationNumberColon(String voterIdentificationNumberColon) {
+
+    
+    
+    
     
     this.voterIdentificationNumberColon = voterIdentificationNumberColon;
     return this;
@@ -134,11 +147,19 @@ public class GetVinResponseEntity {
 
 
   public void setVoterIdentificationNumberColon(String voterIdentificationNumberColon) {
+
+    
+    
+    
     this.voterIdentificationNumberColon = voterIdentificationNumberColon;
   }
 
 
   public GetVinResponseEntity genderColon(String genderColon) {
+
+    
+    
+    
     
     this.genderColon = genderColon;
     return this;
@@ -157,11 +178,19 @@ public class GetVinResponseEntity {
 
 
   public void setGenderColon(String genderColon) {
+
+    
+    
+    
     this.genderColon = genderColon;
   }
 
 
   public GetVinResponseEntity occupationColon(String occupationColon) {
+
+    
+    
+    
     
     this.occupationColon = occupationColon;
     return this;
@@ -180,11 +209,19 @@ public class GetVinResponseEntity {
 
 
   public void setOccupationColon(String occupationColon) {
+
+    
+    
+    
     this.occupationColon = occupationColon;
   }
 
 
   public GetVinResponseEntity timeOfRegistrationColon(String timeOfRegistrationColon) {
+
+    
+    
+    
     
     this.timeOfRegistrationColon = timeOfRegistrationColon;
     return this;
@@ -203,11 +240,19 @@ public class GetVinResponseEntity {
 
 
   public void setTimeOfRegistrationColon(String timeOfRegistrationColon) {
+
+    
+    
+    
     this.timeOfRegistrationColon = timeOfRegistrationColon;
   }
 
 
   public GetVinResponseEntity stateColon(String stateColon) {
+
+    
+    
+    
     
     this.stateColon = stateColon;
     return this;
@@ -226,11 +271,19 @@ public class GetVinResponseEntity {
 
 
   public void setStateColon(String stateColon) {
+
+    
+    
+    
     this.stateColon = stateColon;
   }
 
 
   public GetVinResponseEntity localGovernmentColon(String localGovernmentColon) {
+
+    
+    
+    
     
     this.localGovernmentColon = localGovernmentColon;
     return this;
@@ -249,11 +302,19 @@ public class GetVinResponseEntity {
 
 
   public void setLocalGovernmentColon(String localGovernmentColon) {
+
+    
+    
+    
     this.localGovernmentColon = localGovernmentColon;
   }
 
 
   public GetVinResponseEntity registrationAreaWardColon(String registrationAreaWardColon) {
+
+    
+    
+    
     
     this.registrationAreaWardColon = registrationAreaWardColon;
     return this;
@@ -272,11 +333,19 @@ public class GetVinResponseEntity {
 
 
   public void setRegistrationAreaWardColon(String registrationAreaWardColon) {
+
+    
+    
+    
     this.registrationAreaWardColon = registrationAreaWardColon;
   }
 
 
   public GetVinResponseEntity pollingUnitColon(String pollingUnitColon) {
+
+    
+    
+    
     
     this.pollingUnitColon = pollingUnitColon;
     return this;
@@ -295,11 +364,19 @@ public class GetVinResponseEntity {
 
 
   public void setPollingUnitColon(String pollingUnitColon) {
+
+    
+    
+    
     this.pollingUnitColon = pollingUnitColon;
   }
 
 
   public GetVinResponseEntity pollingUnitCode(String pollingUnitCode) {
+
+    
+    
+    
     
     this.pollingUnitCode = pollingUnitCode;
     return this;
@@ -318,6 +395,10 @@ public class GetVinResponseEntity {
 
 
   public void setPollingUnitCode(String pollingUnitCode) {
+
+    
+    
+    
     this.pollingUnitCode = pollingUnitCode;
   }
 

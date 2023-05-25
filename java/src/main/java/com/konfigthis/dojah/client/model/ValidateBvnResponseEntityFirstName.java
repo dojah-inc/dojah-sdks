@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -52,7 +52,7 @@ import com.konfigthis.dojah.client.JSON;
 public class ValidateBvnResponseEntityFirstName {
   public static final String SERIALIZED_NAME_CONFIDENCE_VALUE = "confidence_value";
   @SerializedName(SERIALIZED_NAME_CONFIDENCE_VALUE)
-  private BigDecimal confidenceValue;
+  private Double confidenceValue;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -61,9 +61,23 @@ public class ValidateBvnResponseEntityFirstName {
   public ValidateBvnResponseEntityFirstName() {
   }
 
-  public ValidateBvnResponseEntityFirstName confidenceValue(BigDecimal confidenceValue) {
+  public ValidateBvnResponseEntityFirstName confidenceValue(Double confidenceValue) {
+
+    
+    
+    
     
     this.confidenceValue = confidenceValue;
+    return this;
+  }
+
+  public ValidateBvnResponseEntityFirstName confidenceValue(Integer confidenceValue) {
+
+    
+    
+    
+    
+    this.confidenceValue = confidenceValue.doubleValue();
     return this;
   }
 
@@ -74,17 +88,25 @@ public class ValidateBvnResponseEntityFirstName {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "100", value = "")
 
-  public BigDecimal getConfidenceValue() {
+  public Double getConfidenceValue() {
     return confidenceValue;
   }
 
 
-  public void setConfidenceValue(BigDecimal confidenceValue) {
+  public void setConfidenceValue(Double confidenceValue) {
+
+    
+    
+    
     this.confidenceValue = confidenceValue;
   }
 
 
   public ValidateBvnResponseEntityFirstName status(Boolean status) {
+
+    
+    
+    
     
     this.status = status;
     return this;
@@ -103,6 +125,10 @@ public class ValidateBvnResponseEntityFirstName {
 
 
   public void setStatus(Boolean status) {
+
+    
+    
+    
     this.status = status;
   }
 

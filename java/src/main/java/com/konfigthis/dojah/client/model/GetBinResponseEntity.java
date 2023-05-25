@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -81,6 +82,10 @@ public class GetBinResponseEntity {
   }
 
   public GetBinResponseEntity bin(String bin) {
+
+    
+    
+    
     
     this.bin = bin;
     return this;
@@ -99,11 +104,19 @@ public class GetBinResponseEntity {
 
 
   public void setBin(String bin) {
+
+    
+    
+    
     this.bin = bin;
   }
 
 
   public GetBinResponseEntity brand(String brand) {
+
+    
+    
+    
     
     this.brand = brand;
     return this;
@@ -122,11 +135,19 @@ public class GetBinResponseEntity {
 
 
   public void setBrand(String brand) {
+
+    
+    
+    
     this.brand = brand;
   }
 
 
   public GetBinResponseEntity subBrand(String subBrand) {
+
+    
+    
+    
     
     this.subBrand = subBrand;
     return this;
@@ -145,11 +166,19 @@ public class GetBinResponseEntity {
 
 
   public void setSubBrand(String subBrand) {
+
+    
+    
+    
     this.subBrand = subBrand;
   }
 
 
   public GetBinResponseEntity countryCode(String countryCode) {
+
+    
+    
+    
     
     this.countryCode = countryCode;
     return this;
@@ -168,11 +197,19 @@ public class GetBinResponseEntity {
 
 
   public void setCountryCode(String countryCode) {
+
+    
+    
+    
     this.countryCode = countryCode;
   }
 
 
   public GetBinResponseEntity countryName(String countryName) {
+
+    
+    
+    
     
     this.countryName = countryName;
     return this;
@@ -191,11 +228,19 @@ public class GetBinResponseEntity {
 
 
   public void setCountryName(String countryName) {
+
+    
+    
+    
     this.countryName = countryName;
   }
 
 
   public GetBinResponseEntity cardType(String cardType) {
+
+    
+    
+    
     
     this.cardType = cardType;
     return this;
@@ -214,11 +259,19 @@ public class GetBinResponseEntity {
 
 
   public void setCardType(String cardType) {
+
+    
+    
+    
     this.cardType = cardType;
   }
 
 
   public GetBinResponseEntity bank(String bank) {
+
+    
+    
+    
     
     this.bank = bank;
     return this;
@@ -237,6 +290,10 @@ public class GetBinResponseEntity {
 
 
   public void setBank(String bank) {
+
+    
+    
+    
     this.bank = bank;
   }
 

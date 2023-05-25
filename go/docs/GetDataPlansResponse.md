@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Entity** | Pointer to [**[]PurchaseDataResponseEntityInner**](PurchaseDataResponseEntityInner.md) |  | [optional] 
+**Entity** | Pointer to [**[]GetDataPlansResponseEntityInner**](GetDataPlansResponseEntityInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEntity
 
-`func (o *GetDataPlansResponse) GetEntity() []PurchaseDataResponseEntityInner`
+`func (o *GetDataPlansResponse) GetEntity() []GetDataPlansResponseEntityInner`
 
 GetEntity returns the Entity field if non-nil, zero value otherwise.
 
 ### GetEntityOk
 
-`func (o *GetDataPlansResponse) GetEntityOk() (*[]PurchaseDataResponseEntityInner, bool)`
+`func (o *GetDataPlansResponse) GetEntityOk() (*[]GetDataPlansResponseEntityInner, bool)`
 
 GetEntityOk returns a tuple with the Entity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntity
 
-`func (o *GetDataPlansResponse) SetEntity(v []PurchaseDataResponseEntityInner)`
+`func (o *GetDataPlansResponse) SetEntity(v []GetDataPlansResponseEntityInner)`
 
 SetEntity sets Entity field to given value.
 

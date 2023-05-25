@@ -16,7 +16,7 @@ import (
 
 // GetAdvancedCacResponse struct for GetAdvancedCacResponse
 type GetAdvancedCacResponse struct {
-	Entity *GetBasicCacResponseEntity `json:"entity,omitempty"`
+	Entity *GetAdvancedCacResponseEntity `json:"entity,omitempty"`
 }
 
 // NewGetAdvancedCacResponse instantiates a new GetAdvancedCacResponse object
@@ -37,9 +37,9 @@ func NewGetAdvancedCacResponseWithDefaults() *GetAdvancedCacResponse {
 }
 
 // GetEntity returns the Entity field value if set, zero value otherwise.
-func (o *GetAdvancedCacResponse) GetEntity() GetBasicCacResponseEntity {
+func (o *GetAdvancedCacResponse) GetEntity() GetAdvancedCacResponseEntity {
 	if o == nil || isNil(o.Entity) {
-		var ret GetBasicCacResponseEntity
+		var ret GetAdvancedCacResponseEntity
 		return ret
 	}
 	return *o.Entity
@@ -47,7 +47,7 @@ func (o *GetAdvancedCacResponse) GetEntity() GetBasicCacResponseEntity {
 
 // GetEntityOk returns a tuple with the Entity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetAdvancedCacResponse) GetEntityOk() (*GetBasicCacResponseEntity, bool) {
+func (o *GetAdvancedCacResponse) GetEntityOk() (*GetAdvancedCacResponseEntity, bool) {
 	if o == nil || isNil(o.Entity) {
     return nil, false
 	}
@@ -63,8 +63,8 @@ func (o *GetAdvancedCacResponse) HasEntity() bool {
 	return false
 }
 
-// SetEntity gets a reference to the given GetBasicCacResponseEntity and assigns it to the Entity field.
-func (o *GetAdvancedCacResponse) SetEntity(v GetBasicCacResponseEntity) {
+// SetEntity gets a reference to the given GetAdvancedCacResponseEntity and assigns it to the Entity field.
+func (o *GetAdvancedCacResponse) SetEntity(v GetAdvancedCacResponseEntity) {
 	o.Entity = &v
 }
 

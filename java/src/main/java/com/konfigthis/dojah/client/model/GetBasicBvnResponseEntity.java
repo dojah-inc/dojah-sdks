@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -77,6 +78,10 @@ public class GetBasicBvnResponseEntity {
   }
 
   public GetBasicBvnResponseEntity firstName(String firstName) {
+
+    
+    
+    
     
     this.firstName = firstName;
     return this;
@@ -95,11 +100,19 @@ public class GetBasicBvnResponseEntity {
 
 
   public void setFirstName(String firstName) {
+
+    
+    
+    
     this.firstName = firstName;
   }
 
 
   public GetBasicBvnResponseEntity lastName(String lastName) {
+
+    
+    
+    
     
     this.lastName = lastName;
     return this;
@@ -118,11 +131,19 @@ public class GetBasicBvnResponseEntity {
 
 
   public void setLastName(String lastName) {
+
+    
+    
+    
     this.lastName = lastName;
   }
 
 
   public GetBasicBvnResponseEntity dob(String dob) {
+
+    
+    
+    
     
     this.dob = dob;
     return this;
@@ -141,11 +162,19 @@ public class GetBasicBvnResponseEntity {
 
 
   public void setDob(String dob) {
+
+    
+    
+    
     this.dob = dob;
   }
 
 
   public GetBasicBvnResponseEntity formattedDob(String formattedDob) {
+
+    
+    
+    
     
     this.formattedDob = formattedDob;
     return this;
@@ -164,11 +193,19 @@ public class GetBasicBvnResponseEntity {
 
 
   public void setFormattedDob(String formattedDob) {
+
+    
+    
+    
     this.formattedDob = formattedDob;
   }
 
 
   public GetBasicBvnResponseEntity mobile(String mobile) {
+
+    
+    
+    
     
     this.mobile = mobile;
     return this;
@@ -187,11 +224,19 @@ public class GetBasicBvnResponseEntity {
 
 
   public void setMobile(String mobile) {
+
+    
+    
+    
     this.mobile = mobile;
   }
 
 
   public GetBasicBvnResponseEntity bvn(String bvn) {
+
+    
+    
+    
     
     this.bvn = bvn;
     return this;
@@ -210,6 +255,10 @@ public class GetBasicBvnResponseEntity {
 
 
   public void setBvn(String bvn) {
+
+    
+    
+    
     this.bvn = bvn;
   }
 

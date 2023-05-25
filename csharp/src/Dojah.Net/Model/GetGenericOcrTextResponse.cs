@@ -35,7 +35,7 @@ namespace Dojah.Net.Model
         /// Initializes a new instance of the <see cref="GetGenericOcrTextResponse" /> class.
         /// </summary>
         /// <param name="entity">entity.</param>
-        public GetGenericOcrTextResponse(GetOcrTextResponseEntity entity = default(GetOcrTextResponseEntity))
+        public GetGenericOcrTextResponse(GetGenericOcrTextResponseEntity entity = default(GetGenericOcrTextResponseEntity))
         {
             this.Entity = entity;
         }
@@ -44,7 +44,7 @@ namespace Dojah.Net.Model
         /// Gets or Sets Entity
         /// </summary>
         [DataMember(Name = "entity", EmitDefaultValue = false)]
-        public GetOcrTextResponseEntity Entity { get; set; }
+        public GetGenericOcrTextResponseEntity Entity { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

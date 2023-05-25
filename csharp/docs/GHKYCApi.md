@@ -16,6 +16,7 @@ Driver's License
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -29,15 +30,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new GHKYCApi(config);
             var id = V0000000;  // string |  (optional) 
@@ -48,13 +52,19 @@ namespace Example
             {
                 // Driver's License
                 GetDriversLicenseResponse result = apiInstance.GetDriversLicense(id, fullName, dateOfBirth);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling GHKYCApi.GetDriversLicense: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling GHKYCApi.GetDriversLicense: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -106,7 +116,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * Content-Type -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  |
+| **200** | OK |  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -118,6 +128,7 @@ Passport
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -131,15 +142,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new GHKYCApi(config);
             var id = G0000000;  // string |  (optional) 
@@ -152,13 +166,19 @@ namespace Example
             {
                 // Passport
                 GetPassportResponse result = apiInstance.GetPassport(id, firstName, lastName, middleName, dateOfBirth);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling GHKYCApi.GetPassport: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling GHKYCApi.GetPassport: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -212,7 +232,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * Content-Type -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  |
+| **200** | OK |  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -224,6 +244,7 @@ SSNIT
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -237,15 +258,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new GHKYCApi(config);
             var id = G0000000;  // string |  (optional) 
@@ -256,13 +280,19 @@ namespace Example
             {
                 // SSNIT
                 GetSsnitResponse result = apiInstance.GetSsnit(id, fullName, dateOfBirth);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling GHKYCApi.GetSsnit: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling GHKYCApi.GetSsnit: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }

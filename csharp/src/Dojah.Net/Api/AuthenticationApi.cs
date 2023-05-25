@@ -341,8 +341,8 @@ namespace Dojah.Net.Api
                 Dojah.Net.Client.GlobalConfiguration.Instance,
                 new Dojah.Net.Client.Configuration { BasePath = basePath }
             );
-            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
+            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration);
+            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration);
             this.ExceptionFactory = Dojah.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
@@ -360,9 +360,9 @@ namespace Dojah.Net.Api
                 Dojah.Net.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Dojah.Net.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration);
+            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration);
+            this.ExceptionFactory = Dojah.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -617,7 +617,7 @@ namespace Dojah.Net.Api
 
             if (messageId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "message_id", messageId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "message_id", messageId, ""));
             }
 
             localVarRequestOptions.Operation = "AuthenticationApi.GetSmsStatus";
@@ -697,7 +697,7 @@ namespace Dojah.Net.Api
 
             if (messageId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "message_id", messageId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "message_id", messageId, ""));
             }
 
             localVarRequestOptions.Operation = "AuthenticationApi.GetSmsStatus";
@@ -1239,11 +1239,11 @@ namespace Dojah.Net.Api
 
             if (referenceId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "reference_id", referenceId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "reference_id", referenceId, ""));
             }
             if (code != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "code", code));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "code", code, ""));
             }
 
             localVarRequestOptions.Operation = "AuthenticationApi.ValidateOtp";
@@ -1325,11 +1325,11 @@ namespace Dojah.Net.Api
 
             if (referenceId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "reference_id", referenceId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "reference_id", referenceId, ""));
             }
             if (code != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "code", code));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "code", code, ""));
             }
 
             localVarRequestOptions.Operation = "AuthenticationApi.ValidateOtp";

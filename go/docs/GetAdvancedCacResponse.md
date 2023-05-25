@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Entity** | Pointer to [**GetBasicCacResponseEntity**](GetBasicCacResponseEntity.md) |  | [optional] 
+**Entity** | Pointer to [**GetAdvancedCacResponseEntity**](GetAdvancedCacResponseEntity.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEntity
 
-`func (o *GetAdvancedCacResponse) GetEntity() GetBasicCacResponseEntity`
+`func (o *GetAdvancedCacResponse) GetEntity() GetAdvancedCacResponseEntity`
 
 GetEntity returns the Entity field if non-nil, zero value otherwise.
 
 ### GetEntityOk
 
-`func (o *GetAdvancedCacResponse) GetEntityOk() (*GetBasicCacResponseEntity, bool)`
+`func (o *GetAdvancedCacResponse) GetEntityOk() (*GetAdvancedCacResponseEntity, bool)`
 
 GetEntityOk returns a tuple with the Entity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntity
 
-`func (o *GetAdvancedCacResponse) SetEntity(v GetBasicCacResponseEntity)`
+`func (o *GetAdvancedCacResponse) SetEntity(v GetAdvancedCacResponseEntity)`
 
 SetEntity sets Entity field to given value.
 

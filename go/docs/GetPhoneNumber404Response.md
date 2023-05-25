@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Entity** | Pointer to [**GetPhoneNumberResponseEntity**](GetPhoneNumberResponseEntity.md) |  | [optional] 
+**Entity** | Pointer to [**GetPhoneNumber404ResponseEntity**](GetPhoneNumber404ResponseEntity.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEntity
 
-`func (o *GetPhoneNumber404Response) GetEntity() GetPhoneNumberResponseEntity`
+`func (o *GetPhoneNumber404Response) GetEntity() GetPhoneNumber404ResponseEntity`
 
 GetEntity returns the Entity field if non-nil, zero value otherwise.
 
 ### GetEntityOk
 
-`func (o *GetPhoneNumber404Response) GetEntityOk() (*GetPhoneNumberResponseEntity, bool)`
+`func (o *GetPhoneNumber404Response) GetEntityOk() (*GetPhoneNumber404ResponseEntity, bool)`
 
 GetEntityOk returns a tuple with the Entity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntity
 
-`func (o *GetPhoneNumber404Response) SetEntity(v GetPhoneNumberResponseEntity)`
+`func (o *GetPhoneNumber404Response) SetEntity(v GetPhoneNumber404ResponseEntity)`
 
 SetEntity sets Entity field to given value.
 

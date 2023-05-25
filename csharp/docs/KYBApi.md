@@ -17,6 +17,7 @@ KYC - Get CAC Advanced
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -30,15 +31,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYBApi(config);
             var rc = 1432074;  // int? |  (optional) 
@@ -49,13 +53,19 @@ namespace Example
             {
                 // KYC - Get CAC Advanced
                 GetAdvancedCacResponse result = apiInstance.GetAdvancedCac(rc, type, _class);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYBApi.GetAdvancedCac: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYBApi.GetAdvancedCac: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -119,6 +129,7 @@ KYB - Get CAC 2
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -132,15 +143,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYBApi(config);
             var rc = 3330883;  // int? |  (optional) 
@@ -150,13 +164,19 @@ namespace Example
             {
                 // KYB - Get CAC 2
                 GetBasicCacResponse result = apiInstance.GetBasicCac(rc, type);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYBApi.GetBasicCac: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYBApi.GetBasicCac: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -219,6 +239,7 @@ KYC - Get CAC
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -232,15 +253,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYBApi(config);
             var rcNumber = 1432074;  // int? |  (optional) 
@@ -250,13 +274,19 @@ namespace Example
             {
                 // KYC - Get CAC 
                 GetCacResponse result = apiInstance.GetCac(rcNumber, companyName);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYBApi.GetCac: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYBApi.GetCac: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -307,7 +337,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -319,6 +349,7 @@ KYC - Fetch Tin
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -332,15 +363,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYBApi(config);
             var tin = 21148119-0001;  // string |  (optional) 
@@ -349,13 +383,19 @@ namespace Example
             {
                 // KYC - Fetch Tin
                 GetTinResponse result = apiInstance.GetTin(tin);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYBApi.GetTin: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYBApi.GetTin: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -405,7 +445,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

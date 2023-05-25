@@ -19,11 +19,10 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.konfigthis.dojah.client.model.GetWalletResponseEntity;
+import com.konfigthis.dojah.client.model.GetWalletsResponseEntityClientWalletsInner;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +36,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -59,16 +59,20 @@ public class GetWalletsResponseEntity {
 
   public static final String SERIALIZED_NAME_TOTAL_AMOUNT = "total_amount";
   @SerializedName(SERIALIZED_NAME_TOTAL_AMOUNT)
-  private BigDecimal totalAmount;
+  private Double totalAmount;
 
   public static final String SERIALIZED_NAME_CLIENT_WALLETS = "client_wallets";
   @SerializedName(SERIALIZED_NAME_CLIENT_WALLETS)
-  private List<GetWalletResponseEntity> clientWallets = null;
+  private List<GetWalletsResponseEntityClientWalletsInner> clientWallets = null;
 
   public GetWalletsResponseEntity() {
   }
 
   public GetWalletsResponseEntity appId(String appId) {
+
+    
+    
+    
     
     this.appId = appId;
     return this;
@@ -87,13 +91,31 @@ public class GetWalletsResponseEntity {
 
 
   public void setAppId(String appId) {
+
+    
+    
+    
     this.appId = appId;
   }
 
 
-  public GetWalletsResponseEntity totalAmount(BigDecimal totalAmount) {
+  public GetWalletsResponseEntity totalAmount(Double totalAmount) {
+
+    
+    
+    
     
     this.totalAmount = totalAmount;
+    return this;
+  }
+
+  public GetWalletsResponseEntity totalAmount(Integer totalAmount) {
+
+    
+    
+    
+    
+    this.totalAmount = totalAmount.doubleValue();
     return this;
   }
 
@@ -104,23 +126,31 @@ public class GetWalletsResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "500", value = "")
 
-  public BigDecimal getTotalAmount() {
+  public Double getTotalAmount() {
     return totalAmount;
   }
 
 
-  public void setTotalAmount(BigDecimal totalAmount) {
+  public void setTotalAmount(Double totalAmount) {
+
+    
+    
+    
     this.totalAmount = totalAmount;
   }
 
 
-  public GetWalletsResponseEntity clientWallets(List<GetWalletResponseEntity> clientWallets) {
+  public GetWalletsResponseEntity clientWallets(List<GetWalletsResponseEntityClientWalletsInner> clientWallets) {
+
+    
+    
+    
     
     this.clientWallets = clientWallets;
     return this;
   }
 
-  public GetWalletsResponseEntity addClientWalletsItem(GetWalletResponseEntity clientWalletsItem) {
+  public GetWalletsResponseEntity addClientWalletsItem(GetWalletsResponseEntityClientWalletsInner clientWalletsItem) {
     if (this.clientWallets == null) {
       this.clientWallets = new ArrayList<>();
     }
@@ -135,12 +165,16 @@ public class GetWalletsResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<GetWalletResponseEntity> getClientWallets() {
+  public List<GetWalletsResponseEntityClientWalletsInner> getClientWallets() {
     return clientWallets;
   }
 
 
-  public void setClientWallets(List<GetWalletResponseEntity> clientWallets) {
+  public void setClientWallets(List<GetWalletsResponseEntityClientWalletsInner> clientWallets) {
+
+    
+    
+    
     this.clientWallets = clientWallets;
   }
 
@@ -273,7 +307,7 @@ public class GetWalletsResponseEntity {
 
           // validate the optional field `client_wallets` (array)
           for (int i = 0; i < jsonArrayclientWallets.size(); i++) {
-            GetWalletResponseEntity.validateJsonObject(jsonArrayclientWallets.get(i).getAsJsonObject());
+            GetWalletsResponseEntityClientWalletsInner.validateJsonObject(jsonArrayclientWallets.get(i).getAsJsonObject());
           };
         }
       }

@@ -15,6 +15,9 @@ package com.konfigthis.dojah.client;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
 import com.google.gson.TypeAdapter;
 import com.google.gson.internal.bind.util.ISO8601Utils;
 import com.google.gson.stream.JsonReader;
@@ -92,6 +95,21 @@ public class JSON {
         gsonBuilder.registerTypeAdapter(OffsetDateTime.class, offsetDateTimeTypeAdapter);
         gsonBuilder.registerTypeAdapter(LocalDate.class, localDateTypeAdapter);
         gsonBuilder.registerTypeAdapter(byte[].class, byteArrayAdapter);
+
+        /**
+         * For the "type: number" schema we accept both Double and Integer
+         * In the case that we pass "1.0" or "1" we serialize the JsonPrimitive
+         * as the "1" literal. This is useful when the server expects an integer.
+         */
+        gsonBuilder.registerTypeAdapter(Double.class, new JsonSerializer<Double>() {
+
+            @Override
+            public JsonElement serialize(Double src, Type typeOfSrc, JsonSerializationContext context) {
+                if (src == src.longValue())
+                    return new JsonPrimitive(src.longValue());
+                return new JsonPrimitive(src);
+            }
+        });
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.AnalyzeDocumentResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.AnalyzeDocumentResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.AnalyzeDocumentResponseEntityDocumentImages.CustomTypeAdapterFactory());
@@ -103,6 +121,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.CategorizeTransactionsResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.CollectStatusFromPdfRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.CollectStatusFromPdfResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.CollectStatusFromPdfResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.CollectTransactionsRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.CollectTransactionsRequestTransactionsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.CollectTransactionsResponse.CustomTypeAdapterFactory());
@@ -120,7 +139,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.FinancialGetFullBvnResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GeneralGetNubanResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GeneralGetNubanResponseEntity.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GeneralGetWalletBalanceResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetAccountAnalysisResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetAccountAnalysisResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetAccountAnalysisResponseEntityAccountBreakdown.CustomTypeAdapterFactory());
@@ -135,6 +153,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetAccountTransactionsResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetAccountTransactionsResponseEntityTransactionsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetAdvancedCacResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetAdvancedCacResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetBanksResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetBanksResponseEntityInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetBasicBvnResponse.CustomTypeAdapterFactory());
@@ -148,6 +167,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetCacResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetCacResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetDataPlansResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetDataPlansResponseEntityInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetDocumentAnalysisRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetDocumentAnalysisResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetDocumentAnalysisResponseEntity.CustomTypeAdapterFactory());
@@ -163,6 +183,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetFullBvnResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetGenericOcrTextRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetGenericOcrTextResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetGenericOcrTextResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetKycDriversLicenseResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetKycDriversLicenseResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetKycDriversLicenseResponseEntityPersonalDetails.CustomTypeAdapterFactory());
@@ -177,7 +198,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetOcrTextResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetPassportResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetPassportResponseEntity.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetPhoneNumber404Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetPhoneNumberResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetPhoneNumberResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetPremiumBvnResponse.CustomTypeAdapterFactory());
@@ -215,6 +235,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetWalletResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetWalletsResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetWalletsResponseEntity.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetWalletsResponseEntityClientWalletsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetWebhooksResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.GetWebhooksResponseEntityInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.NotifyWebhookRequest.CustomTypeAdapterFactory());
@@ -264,6 +285,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.VerifySelfieNinResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.VerifySelfieNinResponseEntity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.dojah.client.model.VerifySelfieNinResponseEntitySelfieVerification.CustomTypeAdapterFactory());
+        gsonBuilder.disableHtmlEscaping();
         gson = gsonBuilder.create();
     }
 

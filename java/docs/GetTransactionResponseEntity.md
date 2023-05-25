@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**walletId** | **String** |  |  [optional] |
-|**transactionAmount** | **BigDecimal** |  |  [optional] |
+|**transactionAmount** | **Double** |  |  [optional] |
 |**transactionType** | **String** |  |  [optional] |
 |**recipientAccountNumber** | **String** |  |  [optional] |
 |**senderAccountNumber** | **String** |  |  [optional] |

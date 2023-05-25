@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -73,6 +74,10 @@ public class GetBasicCacResponseEntity {
   }
 
   public GetBasicCacResponseEntity rcNumber(String rcNumber) {
+
+    
+    
+    
     
     this.rcNumber = rcNumber;
     return this;
@@ -91,11 +96,19 @@ public class GetBasicCacResponseEntity {
 
 
   public void setRcNumber(String rcNumber) {
+
+    
+    
+    
     this.rcNumber = rcNumber;
   }
 
 
   public GetBasicCacResponseEntity companyName(String companyName) {
+
+    
+    
+    
     
     this.companyName = companyName;
     return this;
@@ -114,11 +127,19 @@ public class GetBasicCacResponseEntity {
 
 
   public void setCompanyName(String companyName) {
+
+    
+    
+    
     this.companyName = companyName;
   }
 
 
   public GetBasicCacResponseEntity address(String address) {
+
+    
+    
+    
     
     this.address = address;
     return this;
@@ -137,11 +158,19 @@ public class GetBasicCacResponseEntity {
 
 
   public void setAddress(String address) {
+
+    
+    
+    
     this.address = address;
   }
 
 
   public GetBasicCacResponseEntity dateOfRegistration(String dateOfRegistration) {
+
+    
+    
+    
     
     this.dateOfRegistration = dateOfRegistration;
     return this;
@@ -160,11 +189,19 @@ public class GetBasicCacResponseEntity {
 
 
   public void setDateOfRegistration(String dateOfRegistration) {
+
+    
+    
+    
     this.dateOfRegistration = dateOfRegistration;
   }
 
 
   public GetBasicCacResponseEntity typeOfCompany(String typeOfCompany) {
+
+    
+    
+    
     
     this.typeOfCompany = typeOfCompany;
     return this;
@@ -183,6 +220,10 @@ public class GetBasicCacResponseEntity {
 
 
   public void setTypeOfCompany(String typeOfCompany) {
+
+    
+    
+    
     this.typeOfCompany = typeOfCompany;
   }
 

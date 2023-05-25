@@ -14,15 +14,15 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="createWallet"></a>
 # **createWallet**
-> CreateWalletResponse createWallet(createWalletRequest)
+> CreateWalletResponse createWallet().createWalletRequest(createWalletRequest).execute();
 
 Create NGN Wallet
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -30,26 +30,57 @@ import com.konfigthis.dojah.client.api.WalletApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    WalletApi apiInstance = new WalletApi(defaultClient);
-    CreateWalletRequest createWalletRequest = new CreateWalletRequest(); // CreateWalletRequest | 
+    WalletApi api = new WalletApi(apiClient);
+    String lastName = "lastName_example";
+    String firstName = "firstName_example";
+    String phoneNumber = "phoneNumber_example";
+    String dob = "dob_example";
+    String route = "route_example";
     try {
-      CreateWalletResponse result = apiInstance.createWallet(createWalletRequest);
+      CreateWalletResponse result = api
+              .createWallet()
+              .lastName(lastName)
+              .firstName(firstName)
+              .phoneNumber(phoneNumber)
+              .dob(dob)
+              .route(route)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WalletApi#createWallet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<CreateWalletResponse> response = api
+              .createWallet()
+              .lastName(lastName)
+              .firstName(firstName)
+              .phoneNumber(phoneNumber)
+              .dob(dob)
+              .route(route)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling WalletApi#createWallet");
       System.err.println("Status code: " + e.getCode());
@@ -83,19 +114,19 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
 
 <a name="creditSubwallet"></a>
 # **creditSubwallet**
-> CreditSubwalletResponse creditSubwallet(creditSubwalletRequest)
+> CreditSubwalletResponse creditSubwallet().creditSubwalletRequest(creditSubwalletRequest).execute();
 
 Credit Sub-wallet
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -103,20 +134,45 @@ import com.konfigthis.dojah.client.api.WalletApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
-    WalletApi apiInstance = new WalletApi(defaultClient);
-    CreditSubwalletRequest creditSubwalletRequest = new CreditSubwalletRequest(); // CreditSubwalletRequest | 
+    WalletApi api = new WalletApi(apiClient);
+    String amount = "amount_example";
+    String walletId = "walletId_example";
     try {
-      CreditSubwalletResponse result = apiInstance.creditSubwallet(creditSubwalletRequest);
+      CreditSubwalletResponse result = api
+              .creditSubwallet()
+              .amount(amount)
+              .walletId(walletId)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WalletApi#creditSubwallet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<CreditSubwalletResponse> response = api
+              .creditSubwallet()
+              .amount(amount)
+              .walletId(walletId)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling WalletApi#creditSubwallet");
       System.err.println("Status code: " + e.getCode());
@@ -150,19 +206,19 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
+| **200** | OK |  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
 
 <a name="getTransaction"></a>
 # **getTransaction**
-> GetTransactionResponse getTransaction(transactionId)
+> GetTransactionResponse getTransaction().transactionId(transactionId).execute();
 
 Retrieve Transaction Details
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -170,26 +226,45 @@ import com.konfigthis.dojah.client.api.WalletApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    WalletApi apiInstance = new WalletApi(defaultClient);
-    String transactionId = "Dojah-c02585e5-9a8b-4230-8c1b-11fd2869f4ce"; // String | 
+    WalletApi api = new WalletApi(apiClient);
+    String transactionId = "Dojah-c02585e5-9a8b-4230-8c1b-11fd2869f4ce";
     try {
-      GetTransactionResponse result = apiInstance.getTransaction(transactionId);
+      GetTransactionResponse result = api
+              .getTransaction()
+              .transactionId(transactionId)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WalletApi#getTransaction");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<GetTransactionResponse> response = api
+              .getTransaction()
+              .transactionId(transactionId)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling WalletApi#getTransaction");
       System.err.println("Status code: " + e.getCode());
@@ -223,19 +298,19 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
+| **200** | OK |  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
 
 <a name="getWallet"></a>
 # **getWallet**
-> GetWalletResponse getWallet(walletId)
+> GetWalletResponse getWallet().walletId(walletId).execute();
 
 Retrieve Wallet Details
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -243,26 +318,45 @@ import com.konfigthis.dojah.client.api.WalletApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    WalletApi apiInstance = new WalletApi(defaultClient);
-    String walletId = "694a047f-fb99-46d7-8c3c-d655716a834a"; // String | 
+    WalletApi api = new WalletApi(apiClient);
+    String walletId = "694a047f-fb99-46d7-8c3c-d655716a834a";
     try {
-      GetWalletResponse result = apiInstance.getWallet(walletId);
+      GetWalletResponse result = api
+              .getWallet()
+              .walletId(walletId)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WalletApi#getWallet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<GetWalletResponse> response = api
+              .getWallet()
+              .walletId(walletId)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling WalletApi#getWallet");
       System.err.println("Status code: " + e.getCode());
@@ -296,19 +390,19 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
+| **200** | OK |  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
 
 <a name="getWallets"></a>
 # **getWallets**
-> GetWalletsResponse getWallets(appId)
+> GetWalletsResponse getWallets().appId(appId).execute();
 
 Get Wallets
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -316,26 +410,45 @@ import com.konfigthis.dojah.client.api.WalletApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    WalletApi apiInstance = new WalletApi(defaultClient);
-    String appId = "{{app_id}}"; // String | 
+    WalletApi api = new WalletApi(apiClient);
+    String appId = "{{app_id}}";
     try {
-      GetWalletsResponse result = apiInstance.getWallets(appId);
+      GetWalletsResponse result = api
+              .getWallets()
+              .appId(appId)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WalletApi#getWallets");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<GetWalletsResponse> response = api
+              .getWallets()
+              .appId(appId)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling WalletApi#getWallets");
       System.err.println("Status code: " + e.getCode());
@@ -369,19 +482,19 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
+| **200** | OK |  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
 
 <a name="transferFunds"></a>
 # **transferFunds**
-> TransferFundsResponse transferFunds(transferFundsRequest)
+> TransferFundsResponse transferFunds().transferFundsRequest(transferFundsRequest).execute();
 
 Transfer Funds
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -389,26 +502,54 @@ import com.konfigthis.dojah.client.api.WalletApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    WalletApi apiInstance = new WalletApi(defaultClient);
-    TransferFundsRequest transferFundsRequest = new TransferFundsRequest(); // TransferFundsRequest | 
+    WalletApi api = new WalletApi(apiClient);
+    String amount = "amount_example";
+    String recipientBankCode = "recipientBankCode_example";
+    String recipientAccountNumber = "recipientAccountNumber_example";
+    String walletId = "walletId_example";
     try {
-      TransferFundsResponse result = apiInstance.transferFunds(transferFundsRequest);
+      TransferFundsResponse result = api
+              .transferFunds()
+              .amount(amount)
+              .recipientBankCode(recipientBankCode)
+              .recipientAccountNumber(recipientAccountNumber)
+              .walletId(walletId)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WalletApi#transferFunds");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<TransferFundsResponse> response = api
+              .transferFunds()
+              .amount(amount)
+              .recipientBankCode(recipientBankCode)
+              .recipientAccountNumber(recipientAccountNumber)
+              .walletId(walletId)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling WalletApi#transferFunds");
       System.err.println("Status code: " + e.getCode());
@@ -442,5 +583,5 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
+| **200** | OK |  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
 

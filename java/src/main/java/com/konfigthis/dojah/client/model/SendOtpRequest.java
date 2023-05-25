@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -56,7 +56,7 @@ public class SendOtpRequest {
 
   public static final String SERIALIZED_NAME_LENGTH = "length";
   @SerializedName(SERIALIZED_NAME_LENGTH)
-  private BigDecimal length;
+  private Double length;
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
@@ -74,6 +74,10 @@ public class SendOtpRequest {
   }
 
   public SendOtpRequest destination(String destination) {
+
+    
+    
+    
     
     this.destination = destination;
     return this;
@@ -92,13 +96,31 @@ public class SendOtpRequest {
 
 
   public void setDestination(String destination) {
+
+    
+    
+    
     this.destination = destination;
   }
 
 
-  public SendOtpRequest length(BigDecimal length) {
+  public SendOtpRequest length(Double length) {
+
+    
+    
+    
     
     this.length = length;
+    return this;
+  }
+
+  public SendOtpRequest length(Integer length) {
+
+    
+    
+    
+    
+    this.length = length.doubleValue();
     return this;
   }
 
@@ -109,17 +131,25 @@ public class SendOtpRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "6", value = "")
 
-  public BigDecimal getLength() {
+  public Double getLength() {
     return length;
   }
 
 
-  public void setLength(BigDecimal length) {
+  public void setLength(Double length) {
+
+    
+    
+    
     this.length = length;
   }
 
 
   public SendOtpRequest channel(String channel) {
+
+    
+    
+    
     
     this.channel = channel;
     return this;
@@ -138,11 +168,19 @@ public class SendOtpRequest {
 
 
   public void setChannel(String channel) {
+
+    
+    
+    
     this.channel = channel;
   }
 
 
   public SendOtpRequest senderId(String senderId) {
+
+    
+    
+    
     
     this.senderId = senderId;
     return this;
@@ -161,11 +199,19 @@ public class SendOtpRequest {
 
 
   public void setSenderId(String senderId) {
+
+    
+    
+    
     this.senderId = senderId;
   }
 
 
   public SendOtpRequest priority(Boolean priority) {
+
+    
+    
+    
     
     this.priority = priority;
     return this;
@@ -184,6 +230,10 @@ public class SendOtpRequest {
 
 
   public void setPriority(Boolean priority) {
+
+    
+    
+    
     this.priority = priority;
   }
 

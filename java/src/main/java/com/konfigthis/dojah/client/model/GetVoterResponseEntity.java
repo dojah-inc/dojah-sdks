@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -101,6 +102,10 @@ public class GetVoterResponseEntity {
   }
 
   public GetVoterResponseEntity voterNumber(String voterNumber) {
+
+    
+    
+    
     
     this.voterNumber = voterNumber;
     return this;
@@ -119,11 +124,19 @@ public class GetVoterResponseEntity {
 
 
   public void setVoterNumber(String voterNumber) {
+
+    
+    
+    
     this.voterNumber = voterNumber;
   }
 
 
   public GetVoterResponseEntity firstName(String firstName) {
+
+    
+    
+    
     
     this.firstName = firstName;
     return this;
@@ -142,11 +155,19 @@ public class GetVoterResponseEntity {
 
 
   public void setFirstName(String firstName) {
+
+    
+    
+    
     this.firstName = firstName;
   }
 
 
   public GetVoterResponseEntity lastName(String lastName) {
+
+    
+    
+    
     
     this.lastName = lastName;
     return this;
@@ -165,11 +186,19 @@ public class GetVoterResponseEntity {
 
 
   public void setLastName(String lastName) {
+
+    
+    
+    
     this.lastName = lastName;
   }
 
 
   public GetVoterResponseEntity gender(String gender) {
+
+    
+    
+    
     
     this.gender = gender;
     return this;
@@ -188,11 +217,19 @@ public class GetVoterResponseEntity {
 
 
   public void setGender(String gender) {
+
+    
+    
+    
     this.gender = gender;
   }
 
 
   public GetVoterResponseEntity village(String village) {
+
+    
+    
+    
     
     this.village = village;
     return this;
@@ -211,11 +248,19 @@ public class GetVoterResponseEntity {
 
 
   public void setVillage(String village) {
+
+    
+    
+    
     this.village = village;
   }
 
 
   public GetVoterResponseEntity district(String district) {
+
+    
+    
+    
     
     this.district = district;
     return this;
@@ -234,11 +279,19 @@ public class GetVoterResponseEntity {
 
 
   public void setDistrict(String district) {
+
+    
+    
+    
     this.district = district;
   }
 
 
   public GetVoterResponseEntity constituency(String constituency) {
+
+    
+    
+    
     
     this.constituency = constituency;
     return this;
@@ -257,11 +310,19 @@ public class GetVoterResponseEntity {
 
 
   public void setConstituency(String constituency) {
+
+    
+    
+    
     this.constituency = constituency;
   }
 
 
   public GetVoterResponseEntity subCounty(String subCounty) {
+
+    
+    
+    
     
     this.subCounty = subCounty;
     return this;
@@ -280,11 +341,19 @@ public class GetVoterResponseEntity {
 
 
   public void setSubCounty(String subCounty) {
+
+    
+    
+    
     this.subCounty = subCounty;
   }
 
 
   public GetVoterResponseEntity parish(String parish) {
+
+    
+    
+    
     
     this.parish = parish;
     return this;
@@ -303,11 +372,19 @@ public class GetVoterResponseEntity {
 
 
   public void setParish(String parish) {
+
+    
+    
+    
     this.parish = parish;
   }
 
 
   public GetVoterResponseEntity pollingStation(String pollingStation) {
+
+    
+    
+    
     
     this.pollingStation = pollingStation;
     return this;
@@ -326,11 +403,19 @@ public class GetVoterResponseEntity {
 
 
   public void setPollingStation(String pollingStation) {
+
+    
+    
+    
     this.pollingStation = pollingStation;
   }
 
 
   public GetVoterResponseEntity isFirstNameMatch(Boolean isFirstNameMatch) {
+
+    
+    
+    
     
     this.isFirstNameMatch = isFirstNameMatch;
     return this;
@@ -349,11 +434,19 @@ public class GetVoterResponseEntity {
 
 
   public void setIsFirstNameMatch(Boolean isFirstNameMatch) {
+
+    
+    
+    
     this.isFirstNameMatch = isFirstNameMatch;
   }
 
 
   public GetVoterResponseEntity isLastNameMatch(Boolean isLastNameMatch) {
+
+    
+    
+    
     
     this.isLastNameMatch = isLastNameMatch;
     return this;
@@ -372,6 +465,10 @@ public class GetVoterResponseEntity {
 
 
   public void setIsLastNameMatch(Boolean isLastNameMatch) {
+
+    
+    
+    
     this.isLastNameMatch = isLastNameMatch;
   }
 

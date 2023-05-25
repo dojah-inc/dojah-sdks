@@ -13,9 +13,13 @@
 package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.model.GetVoterResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,7 +32,14 @@ import java.util.Map;
 @Disabled
 public class UgKycApiTest {
 
-    private final UgKycApi api = new UgKycApi();
+    private static UgKycApi api;
+
+    
+    @BeforeAll
+    public static void beforeClass() {
+        ApiClient apiClient = Configuration.getDefaultApiClient();
+        api = new UgKycApi(apiClient);
+    }
 
     /**
      * Voters ID
@@ -40,7 +51,11 @@ public class UgKycApiTest {
         Integer id = null;
         String firstName = null;
         String lastName = null;
-        GetVoterResponse response = api.getVoter(id, firstName, lastName);
+        GetVoterResponse response = api.getVoter()
+                .id(id)
+                .firstName(firstName)
+                .lastName(lastName)
+                .execute();
         // TODO: test validations
     }
 

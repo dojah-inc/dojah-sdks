@@ -34,6 +34,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -58,6 +59,10 @@ public class GetDocumentAnalysisResponseEntity {
   }
 
   public GetDocumentAnalysisResponseEntity data(GetDocumentAnalysisResponseEntityData data) {
+
+    
+    
+    
     
     this.data = data;
     return this;
@@ -76,6 +81,10 @@ public class GetDocumentAnalysisResponseEntity {
 
 
   public void setData(GetDocumentAnalysisResponseEntityData data) {
+
+    
+    
+    
     this.data = data;
   }
 

@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **BigDecimal** |  |  [optional] |
+|**id** | **Double** |  |  [optional] |
 |**transactionDate** | **String** |  |  [optional] |
 |**valueDate** | **String** |  |  [optional] |
 |**transType** | **String** |  |  [optional] |

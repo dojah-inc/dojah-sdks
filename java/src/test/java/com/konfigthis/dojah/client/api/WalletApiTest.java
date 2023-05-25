@@ -13,6 +13,9 @@
 package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.model.CreateWalletRequest;
 import com.konfigthis.dojah.client.model.CreateWalletResponse;
 import com.konfigthis.dojah.client.model.CreditSubwalletRequest;
@@ -24,6 +27,7 @@ import com.konfigthis.dojah.client.model.TransferFundsRequest;
 import com.konfigthis.dojah.client.model.TransferFundsResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,7 +40,14 @@ import java.util.Map;
 @Disabled
 public class WalletApiTest {
 
-    private final WalletApi api = new WalletApi();
+    private static WalletApi api;
+
+    
+    @BeforeAll
+    public static void beforeClass() {
+        ApiClient apiClient = Configuration.getDefaultApiClient();
+        api = new WalletApi(apiClient);
+    }
 
     /**
      * Create NGN Wallet
@@ -45,8 +56,18 @@ public class WalletApiTest {
      */
     @Test
     public void createWalletTest() throws ApiException {
-        CreateWalletRequest createWalletRequest = null;
-        CreateWalletResponse response = api.createWallet(createWalletRequest);
+        String lastName = null;
+        String firstName = null;
+        String phoneNumber = null;
+        String dob = null;
+        String route = null;
+        CreateWalletResponse response = api.createWallet()
+                .lastName(lastName)
+                .firstName(firstName)
+                .phoneNumber(phoneNumber)
+                .dob(dob)
+                .route(route)
+                .execute();
         // TODO: test validations
     }
 
@@ -57,8 +78,12 @@ public class WalletApiTest {
      */
     @Test
     public void creditSubwalletTest() throws ApiException {
-        CreditSubwalletRequest creditSubwalletRequest = null;
-        CreditSubwalletResponse response = api.creditSubwallet(creditSubwalletRequest);
+        String amount = null;
+        String walletId = null;
+        CreditSubwalletResponse response = api.creditSubwallet()
+                .amount(amount)
+                .walletId(walletId)
+                .execute();
         // TODO: test validations
     }
 
@@ -70,7 +95,9 @@ public class WalletApiTest {
     @Test
     public void getTransactionTest() throws ApiException {
         String transactionId = null;
-        GetTransactionResponse response = api.getTransaction(transactionId);
+        GetTransactionResponse response = api.getTransaction()
+                .transactionId(transactionId)
+                .execute();
         // TODO: test validations
     }
 
@@ -82,7 +109,9 @@ public class WalletApiTest {
     @Test
     public void getWalletTest() throws ApiException {
         String walletId = null;
-        GetWalletResponse response = api.getWallet(walletId);
+        GetWalletResponse response = api.getWallet()
+                .walletId(walletId)
+                .execute();
         // TODO: test validations
     }
 
@@ -94,7 +123,9 @@ public class WalletApiTest {
     @Test
     public void getWalletsTest() throws ApiException {
         String appId = null;
-        GetWalletsResponse response = api.getWallets(appId);
+        GetWalletsResponse response = api.getWallets()
+                .appId(appId)
+                .execute();
         // TODO: test validations
     }
 
@@ -105,8 +136,16 @@ public class WalletApiTest {
      */
     @Test
     public void transferFundsTest() throws ApiException {
-        TransferFundsRequest transferFundsRequest = null;
-        TransferFundsResponse response = api.transferFunds(transferFundsRequest);
+        String amount = null;
+        String recipientBankCode = null;
+        String recipientAccountNumber = null;
+        String walletId = null;
+        TransferFundsResponse response = api.transferFunds()
+                .amount(amount)
+                .recipientBankCode(recipientBankCode)
+                .recipientAccountNumber(recipientAccountNumber)
+                .walletId(walletId)
+                .execute();
         // TODO: test validations
     }
 

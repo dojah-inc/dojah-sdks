@@ -11,15 +11,15 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getDriversLicense"></a>
 # **getDriversLicense**
-> GetDriversLicenseResponse getDriversLicense(id, fullName, dateOfBirth)
+> GetDriversLicenseResponse getDriversLicense().id(id).fullName(fullName).dateOfBirth(dateOfBirth).execute();
 
 Driver&#39;s License
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -27,28 +27,51 @@ import com.konfigthis.dojah.client.api.GhKycApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    GhKycApi apiInstance = new GhKycApi(defaultClient);
-    String id = "V0000000"; // String | 
-    String fullName = "John Doe"; // String | 
-    String dateOfBirth = "1988-09-01"; // String | 
+    GhKycApi api = new GhKycApi(apiClient);
+    String id = "V0000000";
+    String fullName = "John Doe";
+    String dateOfBirth = "1988-09-01";
     try {
-      GetDriversLicenseResponse result = apiInstance.getDriversLicense(id, fullName, dateOfBirth);
+      GetDriversLicenseResponse result = api
+              .getDriversLicense()
+              .id(id)
+              .fullName(fullName)
+              .dateOfBirth(dateOfBirth)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling GhKycApi#getDriversLicense");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<GetDriversLicenseResponse> response = api
+              .getDriversLicense()
+              .id(id)
+              .fullName(fullName)
+              .dateOfBirth(dateOfBirth)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling GhKycApi#getDriversLicense");
       System.err.println("Status code: " + e.getCode());
@@ -84,19 +107,19 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * Content-Type -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  |
+| **200** | OK |  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  |
 
 <a name="getPassport"></a>
 # **getPassport**
-> GetPassportResponse getPassport(id, firstName, lastName, middleName, dateOfBirth)
+> GetPassportResponse getPassport().id(id).firstName(firstName).lastName(lastName).middleName(middleName).dateOfBirth(dateOfBirth).execute();
 
 Passport
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -104,30 +127,57 @@ import com.konfigthis.dojah.client.api.GhKycApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    GhKycApi apiInstance = new GhKycApi(defaultClient);
-    String id = "G0000000"; // String | 
-    String firstName = "John"; // String | 
-    String lastName = "Doe"; // String | 
-    String middleName = "Jack"; // String | 
-    String dateOfBirth = "1990-04-05"; // String | 
+    GhKycApi api = new GhKycApi(apiClient);
+    String id = "G0000000";
+    String firstName = "John";
+    String lastName = "Doe";
+    String middleName = "Jack";
+    String dateOfBirth = "1990-04-05";
     try {
-      GetPassportResponse result = apiInstance.getPassport(id, firstName, lastName, middleName, dateOfBirth);
+      GetPassportResponse result = api
+              .getPassport()
+              .id(id)
+              .firstName(firstName)
+              .lastName(lastName)
+              .middleName(middleName)
+              .dateOfBirth(dateOfBirth)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling GhKycApi#getPassport");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<GetPassportResponse> response = api
+              .getPassport()
+              .id(id)
+              .firstName(firstName)
+              .lastName(lastName)
+              .middleName(middleName)
+              .dateOfBirth(dateOfBirth)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling GhKycApi#getPassport");
       System.err.println("Status code: " + e.getCode());
@@ -165,19 +215,19 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * Content-Type -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  |
+| **200** | OK |  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  |
 
 <a name="getSsnit"></a>
 # **getSsnit**
-> GetSsnitResponse getSsnit(id, fullName, dateOfBirth)
+> GetSsnitResponse getSsnit().id(id).fullName(fullName).dateOfBirth(dateOfBirth).execute();
 
 SSNIT
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -185,28 +235,51 @@ import com.konfigthis.dojah.client.api.GhKycApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    GhKycApi apiInstance = new GhKycApi(defaultClient);
-    String id = "G0000000"; // String | 
-    String fullName = "John Doe"; // String | 
-    String dateOfBirth = "1990-04-05"; // String | 
+    GhKycApi api = new GhKycApi(apiClient);
+    String id = "G0000000";
+    String fullName = "John Doe";
+    String dateOfBirth = "1990-04-05";
     try {
-      GetSsnitResponse result = apiInstance.getSsnit(id, fullName, dateOfBirth);
+      GetSsnitResponse result = api
+              .getSsnit()
+              .id(id)
+              .fullName(fullName)
+              .dateOfBirth(dateOfBirth)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling GhKycApi#getSsnit");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<GetSsnitResponse> response = api
+              .getSsnit()
+              .id(id)
+              .fullName(fullName)
+              .dateOfBirth(dateOfBirth)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling GhKycApi#getSsnit");
       System.err.println("Status code: " + e.getCode());

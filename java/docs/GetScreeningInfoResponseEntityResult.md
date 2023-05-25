@@ -20,7 +20,7 @@
 |**govDesignation** | **String** |  |  [optional] |
 |**lastName** | **String** |  |  [optional] |
 |**levelDesc** | **String** |  |  [optional] |
-|**masterId** | **BigDecimal** |  |  [optional] |
+|**masterId** | **Double** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**nationalId** | **String** |  |  [optional] |
 |**otherId** | **String** |  |  [optional] |
@@ -29,7 +29,7 @@
 |**positions** | **String** |  |  [optional] |
 |**prefix** | **String** |  |  [optional] |
 |**primaryName** | **String** |  |  [optional] |
-|**relatedId** | **BigDecimal** |  |  [optional] |
+|**relatedId** | **Double** |  |  [optional] |
 |**relationships** | **List&lt;String&gt;** |  |  [optional] |
 |**remarks** | **String** |  |  [optional] |
 |**sourceName** | **String** |  |  [optional] |

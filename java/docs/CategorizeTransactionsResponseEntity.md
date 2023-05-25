@@ -9,8 +9,8 @@
 |------------ | ------------- | ------------- | -------------|
 |**category** | **String** |  |  [optional] |
 |**subCategory** | **String** |  |  [optional] |
-|**serviceId** | **BigDecimal** |  |  [optional] |
-|**isSubscription** | **BigDecimal** |  |  [optional] |
+|**serviceId** | **Double** |  |  [optional] |
+|**isSubscription** | **Double** |  |  [optional] |
 |**duration** | **String** |  |  [optional] |
 |**serviceName** | **String** |  |  [optional] |
 |**label** | **String** |  |  [optional] |

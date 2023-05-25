@@ -43,11 +43,14 @@ public class KybApi {
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public KybApi() {
+    public KybApi() throws IllegalArgumentException {
         this(Configuration.getDefaultApiClient());
     }
 
-    public KybApi(ApiClient apiClient) {
+    public KybApi(ApiClient apiClient) throws IllegalArgumentException {
+        if (apiClient.getApikeyAuth() == null) {
+            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
+        }
         this.localVarApiClient = apiClient;
     }
 
@@ -75,21 +78,7 @@ public class KybApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    /**
-     * Build call for getAdvancedCac
-     * @param rc  (optional)
-     * @param type  (optional)
-     * @param propertyClass  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getAdvancedCacCall(Integer rc, String type, String propertyClass, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAdvancedCacCall(Integer rc, String type, String propertyClass, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -151,81 +140,134 @@ public class KybApi {
 
     }
 
-    /**
-     * KYC - Get CAC Advanced
-     * 
-     * @param rc  (optional)
-     * @param type  (optional)
-     * @param propertyClass  (optional)
-     * @return GetAdvancedCacResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetAdvancedCacResponse getAdvancedCac(Integer rc, String type, String propertyClass) throws ApiException {
-        ApiResponse<GetAdvancedCacResponse> localVarResp = getAdvancedCacWithHttpInfo(rc, type, propertyClass);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - Get CAC Advanced
-     * 
-     * @param rc  (optional)
-     * @param type  (optional)
-     * @param propertyClass  (optional)
-     * @return ApiResponse&lt;GetAdvancedCacResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetAdvancedCacResponse> getAdvancedCacWithHttpInfo(Integer rc, String type, String propertyClass) throws ApiException {
+    private ApiResponse<GetAdvancedCacResponse> getAdvancedCacWithHttpInfo(Integer rc, String type, String propertyClass) throws ApiException {
         okhttp3.Call localVarCall = getAdvancedCacValidateBeforeCall(rc, type, propertyClass, null);
         Type localVarReturnType = new TypeToken<GetAdvancedCacResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYC - Get CAC Advanced (asynchronously)
-     * 
-     * @param rc  (optional)
-     * @param type  (optional)
-     * @param propertyClass  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getAdvancedCacAsync(Integer rc, String type, String propertyClass, final ApiCallback<GetAdvancedCacResponse> _callback) throws ApiException {
+    private okhttp3.Call getAdvancedCacAsync(Integer rc, String type, String propertyClass, final ApiCallback<GetAdvancedCacResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAdvancedCacValidateBeforeCall(rc, type, propertyClass, _callback);
         Type localVarReturnType = new TypeToken<GetAdvancedCacResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetAdvancedCacRequestBuilder {
+        private Integer rc;
+        private String type;
+        private String propertyClass;
+
+        private GetAdvancedCacRequestBuilder() {
+        }
+
+        /**
+         * Set rc
+         * @param rc  (optional)
+         * @return GetAdvancedCacRequestBuilder
+         */
+        public GetAdvancedCacRequestBuilder rc(Integer rc) {
+            this.rc = rc;
+            return this;
+        }
+        
+        /**
+         * Set type
+         * @param type  (optional)
+         * @return GetAdvancedCacRequestBuilder
+         */
+        public GetAdvancedCacRequestBuilder type(String type) {
+            this.type = type;
+            return this;
+        }
+        
+        /**
+         * Set propertyClass
+         * @param propertyClass  (optional)
+         * @return GetAdvancedCacRequestBuilder
+         */
+        public GetAdvancedCacRequestBuilder propertyClass(String propertyClass) {
+            this.propertyClass = propertyClass;
+            return this;
+        }
+        
+        /**
+         * Build call for getAdvancedCac
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getAdvancedCacCall(rc, type, propertyClass, _callback);
+        }
+
+
+        /**
+         * Execute getAdvancedCac request
+         * @return GetAdvancedCacResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public GetAdvancedCacResponse execute() throws ApiException {
+            ApiResponse<GetAdvancedCacResponse> localVarResp = getAdvancedCacWithHttpInfo(rc, type, propertyClass);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getAdvancedCac request with HTTP info returned
+         * @return ApiResponse&lt;GetAdvancedCacResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetAdvancedCacResponse> executeWithHttpInfo() throws ApiException {
+            return getAdvancedCacWithHttpInfo(rc, type, propertyClass);
+        }
+
+        /**
+         * Execute getAdvancedCac request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetAdvancedCacResponse> _callback) throws ApiException {
+            return getAdvancedCacAsync(rc, type, propertyClass, _callback);
+        }
+    }
+
     /**
-     * Build call for getBasicCac
-     * @param rc  (optional)
-     * @param type  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * KYC - Get CAC Advanced
+     * 
+     * @return GetAdvancedCacRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBasicCacCall(Integer rc, String type, final ApiCallback _callback) throws ApiException {
+    public GetAdvancedCacRequestBuilder getAdvancedCac() throws IllegalArgumentException {
+        return new GetAdvancedCacRequestBuilder();
+    }
+    private okhttp3.Call getBasicCacCall(Integer rc, String type, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -283,78 +325,123 @@ public class KybApi {
 
     }
 
-    /**
-     * KYB - Get CAC 2
-     * 
-     * @param rc  (optional)
-     * @param type  (optional)
-     * @return GetBasicCacResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetBasicCacResponse getBasicCac(Integer rc, String type) throws ApiException {
-        ApiResponse<GetBasicCacResponse> localVarResp = getBasicCacWithHttpInfo(rc, type);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYB - Get CAC 2
-     * 
-     * @param rc  (optional)
-     * @param type  (optional)
-     * @return ApiResponse&lt;GetBasicCacResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetBasicCacResponse> getBasicCacWithHttpInfo(Integer rc, String type) throws ApiException {
+    private ApiResponse<GetBasicCacResponse> getBasicCacWithHttpInfo(Integer rc, String type) throws ApiException {
         okhttp3.Call localVarCall = getBasicCacValidateBeforeCall(rc, type, null);
         Type localVarReturnType = new TypeToken<GetBasicCacResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYB - Get CAC 2 (asynchronously)
-     * 
-     * @param rc  (optional)
-     * @param type  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getBasicCacAsync(Integer rc, String type, final ApiCallback<GetBasicCacResponse> _callback) throws ApiException {
+    private okhttp3.Call getBasicCacAsync(Integer rc, String type, final ApiCallback<GetBasicCacResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getBasicCacValidateBeforeCall(rc, type, _callback);
         Type localVarReturnType = new TypeToken<GetBasicCacResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetBasicCacRequestBuilder {
+        private Integer rc;
+        private String type;
+
+        private GetBasicCacRequestBuilder() {
+        }
+
+        /**
+         * Set rc
+         * @param rc  (optional)
+         * @return GetBasicCacRequestBuilder
+         */
+        public GetBasicCacRequestBuilder rc(Integer rc) {
+            this.rc = rc;
+            return this;
+        }
+        
+        /**
+         * Set type
+         * @param type  (optional)
+         * @return GetBasicCacRequestBuilder
+         */
+        public GetBasicCacRequestBuilder type(String type) {
+            this.type = type;
+            return this;
+        }
+        
+        /**
+         * Build call for getBasicCac
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getBasicCacCall(rc, type, _callback);
+        }
+
+
+        /**
+         * Execute getBasicCac request
+         * @return GetBasicCacResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public GetBasicCacResponse execute() throws ApiException {
+            ApiResponse<GetBasicCacResponse> localVarResp = getBasicCacWithHttpInfo(rc, type);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getBasicCac request with HTTP info returned
+         * @return ApiResponse&lt;GetBasicCacResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetBasicCacResponse> executeWithHttpInfo() throws ApiException {
+            return getBasicCacWithHttpInfo(rc, type);
+        }
+
+        /**
+         * Execute getBasicCac request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetBasicCacResponse> _callback) throws ApiException {
+            return getBasicCacAsync(rc, type, _callback);
+        }
+    }
+
     /**
-     * Build call for getCac
-     * @param rcNumber  (optional)
-     * @param companyName  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * KYB - Get CAC 2
+     * 
+     * @return GetBasicCacRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCacCall(Integer rcNumber, String companyName, final ApiCallback _callback) throws ApiException {
+    public GetBasicCacRequestBuilder getBasicCac() throws IllegalArgumentException {
+        return new GetBasicCacRequestBuilder();
+    }
+    private okhttp3.Call getCacCall(Integer rcNumber, String companyName, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -412,77 +499,123 @@ public class KybApi {
 
     }
 
-    /**
-     * KYC - Get CAC 
-     * 
-     * @param rcNumber  (optional)
-     * @param companyName  (optional)
-     * @return GetCacResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public GetCacResponse getCac(Integer rcNumber, String companyName) throws ApiException {
-        ApiResponse<GetCacResponse> localVarResp = getCacWithHttpInfo(rcNumber, companyName);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - Get CAC 
-     * 
-     * @param rcNumber  (optional)
-     * @param companyName  (optional)
-     * @return ApiResponse&lt;GetCacResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetCacResponse> getCacWithHttpInfo(Integer rcNumber, String companyName) throws ApiException {
+    private ApiResponse<GetCacResponse> getCacWithHttpInfo(Integer rcNumber, String companyName) throws ApiException {
         okhttp3.Call localVarCall = getCacValidateBeforeCall(rcNumber, companyName, null);
         Type localVarReturnType = new TypeToken<GetCacResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYC - Get CAC  (asynchronously)
-     * 
-     * @param rcNumber  (optional)
-     * @param companyName  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getCacAsync(Integer rcNumber, String companyName, final ApiCallback<GetCacResponse> _callback) throws ApiException {
+    private okhttp3.Call getCacAsync(Integer rcNumber, String companyName, final ApiCallback<GetCacResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCacValidateBeforeCall(rcNumber, companyName, _callback);
         Type localVarReturnType = new TypeToken<GetCacResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetCacRequestBuilder {
+        private Integer rcNumber;
+        private String companyName;
+
+        private GetCacRequestBuilder() {
+        }
+
+        /**
+         * Set rcNumber
+         * @param rcNumber  (optional)
+         * @return GetCacRequestBuilder
+         */
+        public GetCacRequestBuilder rcNumber(Integer rcNumber) {
+            this.rcNumber = rcNumber;
+            return this;
+        }
+        
+        /**
+         * Set companyName
+         * @param companyName  (optional)
+         * @return GetCacRequestBuilder
+         */
+        public GetCacRequestBuilder companyName(String companyName) {
+            this.companyName = companyName;
+            return this;
+        }
+        
+        /**
+         * Build call for getCac
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getCacCall(rcNumber, companyName, _callback);
+        }
+
+
+        /**
+         * Execute getCac request
+         * @return GetCacResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public GetCacResponse execute() throws ApiException {
+            ApiResponse<GetCacResponse> localVarResp = getCacWithHttpInfo(rcNumber, companyName);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getCac request with HTTP info returned
+         * @return ApiResponse&lt;GetCacResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetCacResponse> executeWithHttpInfo() throws ApiException {
+            return getCacWithHttpInfo(rcNumber, companyName);
+        }
+
+        /**
+         * Execute getCac request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetCacResponse> _callback) throws ApiException {
+            return getCacAsync(rcNumber, companyName, _callback);
+        }
+    }
+
     /**
-     * Build call for getTin
-     * @param tin  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * KYC - Get CAC 
+     * 
+     * @return GetCacRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getTinCall(String tin, final ApiCallback _callback) throws ApiException {
+    public GetCacRequestBuilder getCac() throws IllegalArgumentException {
+        return new GetCacRequestBuilder();
+    }
+    private okhttp3.Call getTinCall(String tin, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -536,59 +669,109 @@ public class KybApi {
 
     }
 
-    /**
-     * KYC - Fetch Tin
-     * 
-     * @param tin  (optional)
-     * @return GetTinResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public GetTinResponse getTin(String tin) throws ApiException {
-        ApiResponse<GetTinResponse> localVarResp = getTinWithHttpInfo(tin);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - Fetch Tin
-     * 
-     * @param tin  (optional)
-     * @return ApiResponse&lt;GetTinResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetTinResponse> getTinWithHttpInfo(String tin) throws ApiException {
+    private ApiResponse<GetTinResponse> getTinWithHttpInfo(String tin) throws ApiException {
         okhttp3.Call localVarCall = getTinValidateBeforeCall(tin, null);
         Type localVarReturnType = new TypeToken<GetTinResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYC - Fetch Tin (asynchronously)
-     * 
-     * @param tin  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getTinAsync(String tin, final ApiCallback<GetTinResponse> _callback) throws ApiException {
+    private okhttp3.Call getTinAsync(String tin, final ApiCallback<GetTinResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTinValidateBeforeCall(tin, _callback);
         Type localVarReturnType = new TypeToken<GetTinResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
+    }
+
+    public class GetTinRequestBuilder {
+        private String tin;
+
+        private GetTinRequestBuilder() {
+        }
+
+        /**
+         * Set tin
+         * @param tin  (optional)
+         * @return GetTinRequestBuilder
+         */
+        public GetTinRequestBuilder tin(String tin) {
+            this.tin = tin;
+            return this;
+        }
+        
+        /**
+         * Build call for getTin
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getTinCall(tin, _callback);
+        }
+
+
+        /**
+         * Execute getTin request
+         * @return GetTinResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public GetTinResponse execute() throws ApiException {
+            ApiResponse<GetTinResponse> localVarResp = getTinWithHttpInfo(tin);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getTin request with HTTP info returned
+         * @return ApiResponse&lt;GetTinResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetTinResponse> executeWithHttpInfo() throws ApiException {
+            return getTinWithHttpInfo(tin);
+        }
+
+        /**
+         * Execute getTin request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetTinResponse> _callback) throws ApiException {
+            return getTinAsync(tin, _callback);
+        }
+    }
+
+    /**
+     * KYC - Fetch Tin
+     * 
+     * @return GetTinRequestBuilder
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+     </table>
+     */
+    public GetTinRequestBuilder getTin() throws IllegalArgumentException {
+        return new GetTinRequestBuilder();
     }
 }

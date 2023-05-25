@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -35,6 +34,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -53,7 +53,7 @@ import com.konfigthis.dojah.client.JSON;
 public class GetAccountAnalysisResponseEntityFundsManagement {
   public static final String SERIALIZED_NAME_ACCOUNT_ACTIVITY = "accountActivity";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ACTIVITY)
-  private BigDecimal accountActivity;
+  private Double accountActivity;
 
   public static final String SERIALIZED_NAME_ACCOUNT_SWEEP = "accountSweep";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_SWEEP)
@@ -61,15 +61,15 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_LOAN_AMOUNT = "averageMonthlyLoanAmount";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_LOAN_AMOUNT)
-  private BigDecimal averageMonthlyLoanAmount;
+  private Double averageMonthlyLoanAmount;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_LOAN_REPAYMENT_AMOUNT = "averageMonthlyLoanRepaymentAmount";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_LOAN_REPAYMENT_AMOUNT)
-  private BigDecimal averageMonthlyLoanRepaymentAmount;
+  private Double averageMonthlyLoanRepaymentAmount;
 
   public static final String SERIALIZED_NAME_GAMBLING_RATE = "gamblingRate";
   @SerializedName(SERIALIZED_NAME_GAMBLING_RATE)
-  private BigDecimal gamblingRate;
+  private Double gamblingRate;
 
   public static final String SERIALIZED_NAME_GAMBLING_STATUS = "gamblingStatus";
   @SerializedName(SERIALIZED_NAME_GAMBLING_STATUS)
@@ -81,7 +81,7 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
 
   public static final String SERIALIZED_NAME_LOAN_REPAYMENT_TO_INFLOW_AMOUNT = "loanRepaymentToInflowAmount";
   @SerializedName(SERIALIZED_NAME_LOAN_REPAYMENT_TO_INFLOW_AMOUNT)
-  private BigDecimal loanRepaymentToInflowAmount;
+  private Double loanRepaymentToInflowAmount;
 
   public static final String SERIALIZED_NAME_MONTH_TO_MONTH_INFLOW_TO_OUTFLOW_AMOUNT = "monthToMonthInflowToOutflowAmount";
   @SerializedName(SERIALIZED_NAME_MONTH_TO_MONTH_INFLOW_TO_OUTFLOW_AMOUNT)
@@ -101,22 +101,36 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
 
   public static final String SERIALIZED_NAME_PERCENT_OF_INFLOW_IRREGULARITY = "percentOfInflowIrregularity";
   @SerializedName(SERIALIZED_NAME_PERCENT_OF_INFLOW_IRREGULARITY)
-  private BigDecimal percentOfInflowIrregularity;
+  private Double percentOfInflowIrregularity;
 
   public static final String SERIALIZED_NAME_TOTAL_LOAN_AMOUNT = "totalLoanAmount";
   @SerializedName(SERIALIZED_NAME_TOTAL_LOAN_AMOUNT)
-  private BigDecimal totalLoanAmount;
+  private Double totalLoanAmount;
 
   public static final String SERIALIZED_NAME_TOTAL_LOAN_REPAYMENT_AMOUNT = "totalLoanRepaymentAmount";
   @SerializedName(SERIALIZED_NAME_TOTAL_LOAN_REPAYMENT_AMOUNT)
-  private BigDecimal totalLoanRepaymentAmount;
+  private Double totalLoanRepaymentAmount;
 
   public GetAccountAnalysisResponseEntityFundsManagement() {
   }
 
-  public GetAccountAnalysisResponseEntityFundsManagement accountActivity(BigDecimal accountActivity) {
+  public GetAccountAnalysisResponseEntityFundsManagement accountActivity(Double accountActivity) {
+
+    
+    
+    
     
     this.accountActivity = accountActivity;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityFundsManagement accountActivity(Integer accountActivity) {
+
+    
+    
+    
+    
+    this.accountActivity = accountActivity.doubleValue();
     return this;
   }
 
@@ -127,17 +141,25 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0.1", value = "")
 
-  public BigDecimal getAccountActivity() {
+  public Double getAccountActivity() {
     return accountActivity;
   }
 
 
-  public void setAccountActivity(BigDecimal accountActivity) {
+  public void setAccountActivity(Double accountActivity) {
+
+    
+    
+    
     this.accountActivity = accountActivity;
   }
 
 
   public GetAccountAnalysisResponseEntityFundsManagement accountSweep(String accountSweep) {
+
+    
+    
+    
     
     this.accountSweep = accountSweep;
     return this;
@@ -156,13 +178,31 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
 
 
   public void setAccountSweep(String accountSweep) {
+
+    
+    
+    
     this.accountSweep = accountSweep;
   }
 
 
-  public GetAccountAnalysisResponseEntityFundsManagement averageMonthlyLoanAmount(BigDecimal averageMonthlyLoanAmount) {
+  public GetAccountAnalysisResponseEntityFundsManagement averageMonthlyLoanAmount(Double averageMonthlyLoanAmount) {
+
+    
+    
+    
     
     this.averageMonthlyLoanAmount = averageMonthlyLoanAmount;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityFundsManagement averageMonthlyLoanAmount(Integer averageMonthlyLoanAmount) {
+
+    
+    
+    
+    
+    this.averageMonthlyLoanAmount = averageMonthlyLoanAmount.doubleValue();
     return this;
   }
 
@@ -173,19 +213,37 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getAverageMonthlyLoanAmount() {
+  public Double getAverageMonthlyLoanAmount() {
     return averageMonthlyLoanAmount;
   }
 
 
-  public void setAverageMonthlyLoanAmount(BigDecimal averageMonthlyLoanAmount) {
+  public void setAverageMonthlyLoanAmount(Double averageMonthlyLoanAmount) {
+
+    
+    
+    
     this.averageMonthlyLoanAmount = averageMonthlyLoanAmount;
   }
 
 
-  public GetAccountAnalysisResponseEntityFundsManagement averageMonthlyLoanRepaymentAmount(BigDecimal averageMonthlyLoanRepaymentAmount) {
+  public GetAccountAnalysisResponseEntityFundsManagement averageMonthlyLoanRepaymentAmount(Double averageMonthlyLoanRepaymentAmount) {
+
+    
+    
+    
     
     this.averageMonthlyLoanRepaymentAmount = averageMonthlyLoanRepaymentAmount;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityFundsManagement averageMonthlyLoanRepaymentAmount(Integer averageMonthlyLoanRepaymentAmount) {
+
+    
+    
+    
+    
+    this.averageMonthlyLoanRepaymentAmount = averageMonthlyLoanRepaymentAmount.doubleValue();
     return this;
   }
 
@@ -196,19 +254,37 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getAverageMonthlyLoanRepaymentAmount() {
+  public Double getAverageMonthlyLoanRepaymentAmount() {
     return averageMonthlyLoanRepaymentAmount;
   }
 
 
-  public void setAverageMonthlyLoanRepaymentAmount(BigDecimal averageMonthlyLoanRepaymentAmount) {
+  public void setAverageMonthlyLoanRepaymentAmount(Double averageMonthlyLoanRepaymentAmount) {
+
+    
+    
+    
     this.averageMonthlyLoanRepaymentAmount = averageMonthlyLoanRepaymentAmount;
   }
 
 
-  public GetAccountAnalysisResponseEntityFundsManagement gamblingRate(BigDecimal gamblingRate) {
+  public GetAccountAnalysisResponseEntityFundsManagement gamblingRate(Double gamblingRate) {
+
+    
+    
+    
     
     this.gamblingRate = gamblingRate;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityFundsManagement gamblingRate(Integer gamblingRate) {
+
+    
+    
+    
+    
+    this.gamblingRate = gamblingRate.doubleValue();
     return this;
   }
 
@@ -219,17 +295,25 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getGamblingRate() {
+  public Double getGamblingRate() {
     return gamblingRate;
   }
 
 
-  public void setGamblingRate(BigDecimal gamblingRate) {
+  public void setGamblingRate(Double gamblingRate) {
+
+    
+    
+    
     this.gamblingRate = gamblingRate;
   }
 
 
   public GetAccountAnalysisResponseEntityFundsManagement gamblingStatus(String gamblingStatus) {
+
+    
+    
+    
     
     this.gamblingStatus = gamblingStatus;
     return this;
@@ -248,11 +332,19 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
 
 
   public void setGamblingStatus(String gamblingStatus) {
+
+    
+    
+    
     this.gamblingStatus = gamblingStatus;
   }
 
 
   public GetAccountAnalysisResponseEntityFundsManagement loanInflowAmount(String loanInflowAmount) {
+
+    
+    
+    
     
     this.loanInflowAmount = loanInflowAmount;
     return this;
@@ -271,13 +363,31 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
 
 
   public void setLoanInflowAmount(String loanInflowAmount) {
+
+    
+    
+    
     this.loanInflowAmount = loanInflowAmount;
   }
 
 
-  public GetAccountAnalysisResponseEntityFundsManagement loanRepaymentToInflowAmount(BigDecimal loanRepaymentToInflowAmount) {
+  public GetAccountAnalysisResponseEntityFundsManagement loanRepaymentToInflowAmount(Double loanRepaymentToInflowAmount) {
+
+    
+    
+    
     
     this.loanRepaymentToInflowAmount = loanRepaymentToInflowAmount;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityFundsManagement loanRepaymentToInflowAmount(Integer loanRepaymentToInflowAmount) {
+
+    
+    
+    
+    
+    this.loanRepaymentToInflowAmount = loanRepaymentToInflowAmount.doubleValue();
     return this;
   }
 
@@ -288,17 +398,25 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getLoanRepaymentToInflowAmount() {
+  public Double getLoanRepaymentToInflowAmount() {
     return loanRepaymentToInflowAmount;
   }
 
 
-  public void setLoanRepaymentToInflowAmount(BigDecimal loanRepaymentToInflowAmount) {
+  public void setLoanRepaymentToInflowAmount(Double loanRepaymentToInflowAmount) {
+
+    
+    
+    
     this.loanRepaymentToInflowAmount = loanRepaymentToInflowAmount;
   }
 
 
   public GetAccountAnalysisResponseEntityFundsManagement monthToMonthInflowToOutflowAmount(String monthToMonthInflowToOutflowAmount) {
+
+    
+    
+    
     
     this.monthToMonthInflowToOutflowAmount = monthToMonthInflowToOutflowAmount;
     return this;
@@ -317,11 +435,19 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
 
 
   public void setMonthToMonthInflowToOutflowAmount(String monthToMonthInflowToOutflowAmount) {
+
+    
+    
+    
     this.monthToMonthInflowToOutflowAmount = monthToMonthInflowToOutflowAmount;
   }
 
 
   public GetAccountAnalysisResponseEntityFundsManagement numberOfCreditLoanTransactions(String numberOfCreditLoanTransactions) {
+
+    
+    
+    
     
     this.numberOfCreditLoanTransactions = numberOfCreditLoanTransactions;
     return this;
@@ -340,11 +466,19 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
 
 
   public void setNumberOfCreditLoanTransactions(String numberOfCreditLoanTransactions) {
+
+    
+    
+    
     this.numberOfCreditLoanTransactions = numberOfCreditLoanTransactions;
   }
 
 
   public GetAccountAnalysisResponseEntityFundsManagement numberOfDebitRepaymentTransactions(String numberOfDebitRepaymentTransactions) {
+
+    
+    
+    
     
     this.numberOfDebitRepaymentTransactions = numberOfDebitRepaymentTransactions;
     return this;
@@ -363,11 +497,19 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
 
 
   public void setNumberOfDebitRepaymentTransactions(String numberOfDebitRepaymentTransactions) {
+
+    
+    
+    
     this.numberOfDebitRepaymentTransactions = numberOfDebitRepaymentTransactions;
   }
 
 
   public GetAccountAnalysisResponseEntityFundsManagement overallInflowToOutflowAmount(String overallInflowToOutflowAmount) {
+
+    
+    
+    
     
     this.overallInflowToOutflowAmount = overallInflowToOutflowAmount;
     return this;
@@ -386,13 +528,31 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
 
 
   public void setOverallInflowToOutflowAmount(String overallInflowToOutflowAmount) {
+
+    
+    
+    
     this.overallInflowToOutflowAmount = overallInflowToOutflowAmount;
   }
 
 
-  public GetAccountAnalysisResponseEntityFundsManagement percentOfInflowIrregularity(BigDecimal percentOfInflowIrregularity) {
+  public GetAccountAnalysisResponseEntityFundsManagement percentOfInflowIrregularity(Double percentOfInflowIrregularity) {
+
+    
+    
+    
     
     this.percentOfInflowIrregularity = percentOfInflowIrregularity;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityFundsManagement percentOfInflowIrregularity(Integer percentOfInflowIrregularity) {
+
+    
+    
+    
+    
+    this.percentOfInflowIrregularity = percentOfInflowIrregularity.doubleValue();
     return this;
   }
 
@@ -403,19 +563,37 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getPercentOfInflowIrregularity() {
+  public Double getPercentOfInflowIrregularity() {
     return percentOfInflowIrregularity;
   }
 
 
-  public void setPercentOfInflowIrregularity(BigDecimal percentOfInflowIrregularity) {
+  public void setPercentOfInflowIrregularity(Double percentOfInflowIrregularity) {
+
+    
+    
+    
     this.percentOfInflowIrregularity = percentOfInflowIrregularity;
   }
 
 
-  public GetAccountAnalysisResponseEntityFundsManagement totalLoanAmount(BigDecimal totalLoanAmount) {
+  public GetAccountAnalysisResponseEntityFundsManagement totalLoanAmount(Double totalLoanAmount) {
+
+    
+    
+    
     
     this.totalLoanAmount = totalLoanAmount;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityFundsManagement totalLoanAmount(Integer totalLoanAmount) {
+
+    
+    
+    
+    
+    this.totalLoanAmount = totalLoanAmount.doubleValue();
     return this;
   }
 
@@ -426,19 +604,37 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getTotalLoanAmount() {
+  public Double getTotalLoanAmount() {
     return totalLoanAmount;
   }
 
 
-  public void setTotalLoanAmount(BigDecimal totalLoanAmount) {
+  public void setTotalLoanAmount(Double totalLoanAmount) {
+
+    
+    
+    
     this.totalLoanAmount = totalLoanAmount;
   }
 
 
-  public GetAccountAnalysisResponseEntityFundsManagement totalLoanRepaymentAmount(BigDecimal totalLoanRepaymentAmount) {
+  public GetAccountAnalysisResponseEntityFundsManagement totalLoanRepaymentAmount(Double totalLoanRepaymentAmount) {
+
+    
+    
+    
     
     this.totalLoanRepaymentAmount = totalLoanRepaymentAmount;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityFundsManagement totalLoanRepaymentAmount(Integer totalLoanRepaymentAmount) {
+
+    
+    
+    
+    
+    this.totalLoanRepaymentAmount = totalLoanRepaymentAmount.doubleValue();
     return this;
   }
 
@@ -449,12 +645,16 @@ public class GetAccountAnalysisResponseEntityFundsManagement {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getTotalLoanRepaymentAmount() {
+  public Double getTotalLoanRepaymentAmount() {
     return totalLoanRepaymentAmount;
   }
 
 
-  public void setTotalLoanRepaymentAmount(BigDecimal totalLoanRepaymentAmount) {
+  public void setTotalLoanRepaymentAmount(Double totalLoanRepaymentAmount) {
+
+    
+    
+    
     this.totalLoanRepaymentAmount = totalLoanRepaymentAmount;
   }
 

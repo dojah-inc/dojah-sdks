@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +35,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -58,7 +58,7 @@ public class GetAccountSubscriptionsResponseEntity {
 
   public static final String SERIALIZED_NAME_TOTAL = "total";
   @SerializedName(SERIALIZED_NAME_TOTAL)
-  private BigDecimal total;
+  private Double total;
 
   public static final String SERIALIZED_NAME_PREVIOUS_PAGE = "previous_page";
   @SerializedName(SERIALIZED_NAME_PREVIOUS_PAGE)
@@ -70,16 +70,20 @@ public class GetAccountSubscriptionsResponseEntity {
 
   public static final String SERIALIZED_NAME_TOTAL_PAGES = "total_pages";
   @SerializedName(SERIALIZED_NAME_TOTAL_PAGES)
-  private BigDecimal totalPages;
+  private Double totalPages;
 
   public static final String SERIALIZED_NAME_CURRENT_PAGE = "current_page";
   @SerializedName(SERIALIZED_NAME_CURRENT_PAGE)
-  private BigDecimal currentPage;
+  private Double currentPage;
 
   public GetAccountSubscriptionsResponseEntity() {
   }
 
   public GetAccountSubscriptionsResponseEntity subscriptions(List<String> subscriptions) {
+
+    
+    
+    
     
     this.subscriptions = subscriptions;
     return this;
@@ -106,13 +110,31 @@ public class GetAccountSubscriptionsResponseEntity {
 
 
   public void setSubscriptions(List<String> subscriptions) {
+
+    
+    
+    
     this.subscriptions = subscriptions;
   }
 
 
-  public GetAccountSubscriptionsResponseEntity total(BigDecimal total) {
+  public GetAccountSubscriptionsResponseEntity total(Double total) {
+
+    
+    
+    
     
     this.total = total;
+    return this;
+  }
+
+  public GetAccountSubscriptionsResponseEntity total(Integer total) {
+
+    
+    
+    
+    
+    this.total = total.doubleValue();
     return this;
   }
 
@@ -123,17 +145,25 @@ public class GetAccountSubscriptionsResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getTotal() {
+  public Double getTotal() {
     return total;
   }
 
 
-  public void setTotal(BigDecimal total) {
+  public void setTotal(Double total) {
+
+    
+    
+    
     this.total = total;
   }
 
 
   public GetAccountSubscriptionsResponseEntity previousPage(String previousPage) {
+
+    
+    
+    
     
     this.previousPage = previousPage;
     return this;
@@ -152,11 +182,19 @@ public class GetAccountSubscriptionsResponseEntity {
 
 
   public void setPreviousPage(String previousPage) {
+
+    
+    
+    
     this.previousPage = previousPage;
   }
 
 
   public GetAccountSubscriptionsResponseEntity nextPage(String nextPage) {
+
+    
+    
+    
     
     this.nextPage = nextPage;
     return this;
@@ -175,13 +213,31 @@ public class GetAccountSubscriptionsResponseEntity {
 
 
   public void setNextPage(String nextPage) {
+
+    
+    
+    
     this.nextPage = nextPage;
   }
 
 
-  public GetAccountSubscriptionsResponseEntity totalPages(BigDecimal totalPages) {
+  public GetAccountSubscriptionsResponseEntity totalPages(Double totalPages) {
+
+    
+    
+    
     
     this.totalPages = totalPages;
+    return this;
+  }
+
+  public GetAccountSubscriptionsResponseEntity totalPages(Integer totalPages) {
+
+    
+    
+    
+    
+    this.totalPages = totalPages.doubleValue();
     return this;
   }
 
@@ -192,19 +248,37 @@ public class GetAccountSubscriptionsResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1", value = "")
 
-  public BigDecimal getTotalPages() {
+  public Double getTotalPages() {
     return totalPages;
   }
 
 
-  public void setTotalPages(BigDecimal totalPages) {
+  public void setTotalPages(Double totalPages) {
+
+    
+    
+    
     this.totalPages = totalPages;
   }
 
 
-  public GetAccountSubscriptionsResponseEntity currentPage(BigDecimal currentPage) {
+  public GetAccountSubscriptionsResponseEntity currentPage(Double currentPage) {
+
+    
+    
+    
     
     this.currentPage = currentPage;
+    return this;
+  }
+
+  public GetAccountSubscriptionsResponseEntity currentPage(Integer currentPage) {
+
+    
+    
+    
+    
+    this.currentPage = currentPage.doubleValue();
     return this;
   }
 
@@ -215,12 +289,16 @@ public class GetAccountSubscriptionsResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1", value = "")
 
-  public BigDecimal getCurrentPage() {
+  public Double getCurrentPage() {
     return currentPage;
   }
 
 
-  public void setCurrentPage(BigDecimal currentPage) {
+  public void setCurrentPage(Double currentPage) {
+
+    
+    
+    
     this.currentPage = currentPage;
   }
 

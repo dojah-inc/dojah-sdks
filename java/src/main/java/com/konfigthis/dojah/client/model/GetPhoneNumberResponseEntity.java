@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -168,12 +168,16 @@ public class GetPhoneNumberResponseEntity {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private BigDecimal status;
+  private Double status;
 
   public GetPhoneNumberResponseEntity() {
   }
 
   public GetPhoneNumberResponseEntity title(String title) {
+
+    
+    
+    
     
     this.title = title;
     return this;
@@ -192,11 +196,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setTitle(String title) {
+
+    
+    
+    
     this.title = title;
   }
 
 
   public GetPhoneNumberResponseEntity msisdn(String msisdn) {
+
+    
+    
+    
     
     this.msisdn = msisdn;
     return this;
@@ -215,11 +227,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setMsisdn(String msisdn) {
+
+    
+    
+    
     this.msisdn = msisdn;
   }
 
 
   public GetPhoneNumberResponseEntity firstName(String firstName) {
+
+    
+    
+    
     
     this.firstName = firstName;
     return this;
@@ -238,11 +258,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setFirstName(String firstName) {
+
+    
+    
+    
     this.firstName = firstName;
   }
 
 
   public GetPhoneNumberResponseEntity middleName(String middleName) {
+
+    
+    
+    
     
     this.middleName = middleName;
     return this;
@@ -261,11 +289,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setMiddleName(String middleName) {
+
+    
+    
+    
     this.middleName = middleName;
   }
 
 
   public GetPhoneNumberResponseEntity lastName(String lastName) {
+
+    
+    
+    
     
     this.lastName = lastName;
     return this;
@@ -284,11 +320,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setLastName(String lastName) {
+
+    
+    
+    
     this.lastName = lastName;
   }
 
 
   public GetPhoneNumberResponseEntity maritalStatus(String maritalStatus) {
+
+    
+    
+    
     
     this.maritalStatus = maritalStatus;
     return this;
@@ -307,11 +351,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setMaritalStatus(String maritalStatus) {
+
+    
+    
+    
     this.maritalStatus = maritalStatus;
   }
 
 
   public GetPhoneNumberResponseEntity gender(String gender) {
+
+    
+    
+    
     
     this.gender = gender;
     return this;
@@ -330,11 +382,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setGender(String gender) {
+
+    
+    
+    
     this.gender = gender;
   }
 
 
   public GetPhoneNumberResponseEntity birthDate(String birthDate) {
+
+    
+    
+    
     
     this.birthDate = birthDate;
     return this;
@@ -353,11 +413,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setBirthDate(String birthDate) {
+
+    
+    
+    
     this.birthDate = birthDate;
   }
 
 
   public GetPhoneNumberResponseEntity birthLga(String birthLga) {
+
+    
+    
+    
     
     this.birthLga = birthLga;
     return this;
@@ -376,11 +444,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setBirthLga(String birthLga) {
+
+    
+    
+    
     this.birthLga = birthLga;
   }
 
 
   public GetPhoneNumberResponseEntity birthState(String birthState) {
+
+    
+    
+    
     
     this.birthState = birthState;
     return this;
@@ -399,11 +475,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setBirthState(String birthState) {
+
+    
+    
+    
     this.birthState = birthState;
   }
 
 
   public GetPhoneNumberResponseEntity educationalLevel(String educationalLevel) {
+
+    
+    
+    
     
     this.educationalLevel = educationalLevel;
     return this;
@@ -422,11 +506,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setEducationalLevel(String educationalLevel) {
+
+    
+    
+    
     this.educationalLevel = educationalLevel;
   }
 
 
   public GetPhoneNumberResponseEntity emplymentStatus(String emplymentStatus) {
+
+    
+    
+    
     
     this.emplymentStatus = emplymentStatus;
     return this;
@@ -445,11 +537,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setEmplymentStatus(String emplymentStatus) {
+
+    
+    
+    
     this.emplymentStatus = emplymentStatus;
   }
 
 
   public GetPhoneNumberResponseEntity nspokenLang(String nspokenLang) {
+
+    
+    
+    
     
     this.nspokenLang = nspokenLang;
     return this;
@@ -468,11 +568,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setNspokenLang(String nspokenLang) {
+
+    
+    
+    
     this.nspokenLang = nspokenLang;
   }
 
 
   public GetPhoneNumberResponseEntity ospokenlang(String ospokenlang) {
+
+    
+    
+    
     
     this.ospokenlang = ospokenlang;
     return this;
@@ -491,11 +599,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setOspokenlang(String ospokenlang) {
+
+    
+    
+    
     this.ospokenlang = ospokenlang;
   }
 
 
   public GetPhoneNumberResponseEntity profession(String profession) {
+
+    
+    
+    
     
     this.profession = profession;
     return this;
@@ -514,11 +630,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setProfession(String profession) {
+
+    
+    
+    
     this.profession = profession;
   }
 
 
   public GetPhoneNumberResponseEntity religion(String religion) {
+
+    
+    
+    
     
     this.religion = religion;
     return this;
@@ -537,11 +661,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setReligion(String religion) {
+
+    
+    
+    
     this.religion = religion;
   }
 
 
   public GetPhoneNumberResponseEntity residenceAddressLine1(String residenceAddressLine1) {
+
+    
+    
+    
     
     this.residenceAddressLine1 = residenceAddressLine1;
     return this;
@@ -560,11 +692,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setResidenceAddressLine1(String residenceAddressLine1) {
+
+    
+    
+    
     this.residenceAddressLine1 = residenceAddressLine1;
   }
 
 
   public GetPhoneNumberResponseEntity residenceTown(String residenceTown) {
+
+    
+    
+    
     
     this.residenceTown = residenceTown;
     return this;
@@ -583,11 +723,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setResidenceTown(String residenceTown) {
+
+    
+    
+    
     this.residenceTown = residenceTown;
   }
 
 
   public GetPhoneNumberResponseEntity residenceLga(String residenceLga) {
+
+    
+    
+    
     
     this.residenceLga = residenceLga;
     return this;
@@ -606,11 +754,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setResidenceLga(String residenceLga) {
+
+    
+    
+    
     this.residenceLga = residenceLga;
   }
 
 
   public GetPhoneNumberResponseEntity residenceState(String residenceState) {
+
+    
+    
+    
     
     this.residenceState = residenceState;
     return this;
@@ -629,11 +785,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setResidenceState(String residenceState) {
+
+    
+    
+    
     this.residenceState = residenceState;
   }
 
 
   public GetPhoneNumberResponseEntity residenceStatus(String residenceStatus) {
+
+    
+    
+    
     
     this.residenceStatus = residenceStatus;
     return this;
@@ -652,11 +816,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setResidenceStatus(String residenceStatus) {
+
+    
+    
+    
     this.residenceStatus = residenceStatus;
   }
 
 
   public GetPhoneNumberResponseEntity selfOriginLga(String selfOriginLga) {
+
+    
+    
+    
     
     this.selfOriginLga = selfOriginLga;
     return this;
@@ -675,11 +847,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setSelfOriginLga(String selfOriginLga) {
+
+    
+    
+    
     this.selfOriginLga = selfOriginLga;
   }
 
 
   public GetPhoneNumberResponseEntity selfOriginPlace(String selfOriginPlace) {
+
+    
+    
+    
     
     this.selfOriginPlace = selfOriginPlace;
     return this;
@@ -698,11 +878,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setSelfOriginPlace(String selfOriginPlace) {
+
+    
+    
+    
     this.selfOriginPlace = selfOriginPlace;
   }
 
 
   public GetPhoneNumberResponseEntity selfOriginState(String selfOriginState) {
+
+    
+    
+    
     
     this.selfOriginState = selfOriginState;
     return this;
@@ -721,11 +909,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setSelfOriginState(String selfOriginState) {
+
+    
+    
+    
     this.selfOriginState = selfOriginState;
   }
 
 
   public GetPhoneNumberResponseEntity state(String state) {
+
+    
+    
+    
     
     this.state = state;
     return this;
@@ -744,11 +940,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setState(String state) {
+
+    
+    
+    
     this.state = state;
   }
 
 
   public GetPhoneNumberResponseEntity lga(String lga) {
+
+    
+    
+    
     
     this.lga = lga;
     return this;
@@ -767,11 +971,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setLga(String lga) {
+
+    
+    
+    
     this.lga = lga;
   }
 
 
   public GetPhoneNumberResponseEntity nin(String nin) {
+
+    
+    
+    
     
     this.nin = nin;
     return this;
@@ -790,11 +1002,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setNin(String nin) {
+
+    
+    
+    
     this.nin = nin;
   }
 
 
   public GetPhoneNumberResponseEntity height(String height) {
+
+    
+    
+    
     
     this.height = height;
     return this;
@@ -813,11 +1033,19 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setHeight(String height) {
+
+    
+    
+    
     this.height = height;
   }
 
 
   public GetPhoneNumberResponseEntity picture(String picture) {
+
+    
+    
+    
     
     this.picture = picture;
     return this;
@@ -836,13 +1064,31 @@ public class GetPhoneNumberResponseEntity {
 
 
   public void setPicture(String picture) {
+
+    
+    
+    
     this.picture = picture;
   }
 
 
-  public GetPhoneNumberResponseEntity status(BigDecimal status) {
+  public GetPhoneNumberResponseEntity status(Double status) {
+
+    
+    
+    
     
     this.status = status;
+    return this;
+  }
+
+  public GetPhoneNumberResponseEntity status(Integer status) {
+
+    
+    
+    
+    
+    this.status = status.doubleValue();
     return this;
   }
 
@@ -853,12 +1099,16 @@ public class GetPhoneNumberResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "200", value = "")
 
-  public BigDecimal getStatus() {
+  public Double getStatus() {
     return status;
   }
 
 
-  public void setStatus(BigDecimal status) {
+  public void setStatus(Double status) {
+
+    
+    
+    
     this.status = status;
   }
 

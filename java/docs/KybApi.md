@@ -12,15 +12,15 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getAdvancedCac"></a>
 # **getAdvancedCac**
-> GetAdvancedCacResponse getAdvancedCac(rc, type, propertyClass)
+> GetAdvancedCacResponse getAdvancedCac().rc(rc).type(type).propertyClass(propertyClass).execute();
 
 KYC - Get CAC Advanced
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -28,28 +28,51 @@ import com.konfigthis.dojah.client.api.KybApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    KybApi apiInstance = new KybApi(defaultClient);
-    Integer rc = 1432074; // Integer | 
-    String type = "co"; // String | 
-    String propertyClass = "advance"; // String | 
+    KybApi api = new KybApi(apiClient);
+    Integer rc = 1432074;
+    String type = "co";
+    String propertyClass = "advance";
     try {
-      GetAdvancedCacResponse result = apiInstance.getAdvancedCac(rc, type, propertyClass);
+      GetAdvancedCacResponse result = api
+              .getAdvancedCac()
+              .rc(rc)
+              .type(type)
+              .propertyClass(propertyClass)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling KybApi#getAdvancedCac");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<GetAdvancedCacResponse> response = api
+              .getAdvancedCac()
+              .rc(rc)
+              .type(type)
+              .propertyClass(propertyClass)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling KybApi#getAdvancedCac");
       System.err.println("Status code: " + e.getCode());
@@ -89,15 +112,15 @@ public class Example {
 
 <a name="getBasicCac"></a>
 # **getBasicCac**
-> GetBasicCacResponse getBasicCac(rc, type)
+> GetBasicCacResponse getBasicCac().rc(rc).type(type).execute();
 
 KYB - Get CAC 2
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -105,27 +128,48 @@ import com.konfigthis.dojah.client.api.KybApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    KybApi apiInstance = new KybApi(defaultClient);
-    Integer rc = 3330883; // Integer | 
-    String type = "bn"; // String | 
+    KybApi api = new KybApi(apiClient);
+    Integer rc = 3330883;
+    String type = "bn";
     try {
-      GetBasicCacResponse result = apiInstance.getBasicCac(rc, type);
+      GetBasicCacResponse result = api
+              .getBasicCac()
+              .rc(rc)
+              .type(type)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling KybApi#getBasicCac");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<GetBasicCacResponse> response = api
+              .getBasicCac()
+              .rc(rc)
+              .type(type)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling KybApi#getBasicCac");
       System.err.println("Status code: " + e.getCode());
@@ -164,15 +208,15 @@ public class Example {
 
 <a name="getCac"></a>
 # **getCac**
-> GetCacResponse getCac(rcNumber, companyName)
+> GetCacResponse getCac().rcNumber(rcNumber).companyName(companyName).execute();
 
 KYC - Get CAC 
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -180,27 +224,48 @@ import com.konfigthis.dojah.client.api.KybApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    KybApi apiInstance = new KybApi(defaultClient);
-    Integer rcNumber = 1432074; // Integer | 
-    String companyName = "ELTA SOLUTIONS LIMITED"; // String | 
+    KybApi api = new KybApi(apiClient);
+    Integer rcNumber = 1432074;
+    String companyName = "ELTA SOLUTIONS LIMITED";
     try {
-      GetCacResponse result = apiInstance.getCac(rcNumber, companyName);
+      GetCacResponse result = api
+              .getCac()
+              .rcNumber(rcNumber)
+              .companyName(companyName)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling KybApi#getCac");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<GetCacResponse> response = api
+              .getCac()
+              .rcNumber(rcNumber)
+              .companyName(companyName)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling KybApi#getCac");
       System.err.println("Status code: " + e.getCode());
@@ -235,19 +300,19 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
 
 <a name="getTin"></a>
 # **getTin**
-> GetTinResponse getTin(tin)
+> GetTinResponse getTin().tin(tin).execute();
 
 KYC - Fetch Tin
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -255,26 +320,45 @@ import com.konfigthis.dojah.client.api.KybApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    KybApi apiInstance = new KybApi(defaultClient);
-    String tin = "21148119-0001"; // String | 
+    KybApi api = new KybApi(apiClient);
+    String tin = "21148119-0001";
     try {
-      GetTinResponse result = apiInstance.getTin(tin);
+      GetTinResponse result = api
+              .getTin()
+              .tin(tin)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling KybApi#getTin");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<GetTinResponse> response = api
+              .getTin()
+              .tin(tin)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling KybApi#getTin");
       System.err.println("Status code: " + e.getCode());
@@ -308,5 +392,5 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
 

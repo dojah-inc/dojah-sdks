@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -97,6 +98,10 @@ public class GetKycPassportResponseEntity {
   }
 
   public GetKycPassportResponseEntity passportNumber(String passportNumber) {
+
+    
+    
+    
     
     this.passportNumber = passportNumber;
     return this;
@@ -115,11 +120,19 @@ public class GetKycPassportResponseEntity {
 
 
   public void setPassportNumber(String passportNumber) {
+
+    
+    
+    
     this.passportNumber = passportNumber;
   }
 
 
   public GetKycPassportResponseEntity dateOfIssue(String dateOfIssue) {
+
+    
+    
+    
     
     this.dateOfIssue = dateOfIssue;
     return this;
@@ -138,11 +151,19 @@ public class GetKycPassportResponseEntity {
 
 
   public void setDateOfIssue(String dateOfIssue) {
+
+    
+    
+    
     this.dateOfIssue = dateOfIssue;
   }
 
 
   public GetKycPassportResponseEntity expiryDate(String expiryDate) {
+
+    
+    
+    
     
     this.expiryDate = expiryDate;
     return this;
@@ -161,11 +182,19 @@ public class GetKycPassportResponseEntity {
 
 
   public void setExpiryDate(String expiryDate) {
+
+    
+    
+    
     this.expiryDate = expiryDate;
   }
 
 
   public GetKycPassportResponseEntity documentType(String documentType) {
+
+    
+    
+    
     
     this.documentType = documentType;
     return this;
@@ -184,11 +213,19 @@ public class GetKycPassportResponseEntity {
 
 
   public void setDocumentType(String documentType) {
+
+    
+    
+    
     this.documentType = documentType;
   }
 
 
   public GetKycPassportResponseEntity issuePlace(String issuePlace) {
+
+    
+    
+    
     
     this.issuePlace = issuePlace;
     return this;
@@ -207,11 +244,19 @@ public class GetKycPassportResponseEntity {
 
 
   public void setIssuePlace(String issuePlace) {
+
+    
+    
+    
     this.issuePlace = issuePlace;
   }
 
 
   public GetKycPassportResponseEntity surname(String surname) {
+
+    
+    
+    
     
     this.surname = surname;
     return this;
@@ -230,11 +275,19 @@ public class GetKycPassportResponseEntity {
 
 
   public void setSurname(String surname) {
+
+    
+    
+    
     this.surname = surname;
   }
 
 
   public GetKycPassportResponseEntity firstName(String firstName) {
+
+    
+    
+    
     
     this.firstName = firstName;
     return this;
@@ -253,11 +306,19 @@ public class GetKycPassportResponseEntity {
 
 
   public void setFirstName(String firstName) {
+
+    
+    
+    
     this.firstName = firstName;
   }
 
 
   public GetKycPassportResponseEntity otherNames(String otherNames) {
+
+    
+    
+    
     
     this.otherNames = otherNames;
     return this;
@@ -276,11 +337,19 @@ public class GetKycPassportResponseEntity {
 
 
   public void setOtherNames(String otherNames) {
+
+    
+    
+    
     this.otherNames = otherNames;
   }
 
 
   public GetKycPassportResponseEntity dateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     
     this.dateOfBirth = dateOfBirth;
     return this;
@@ -299,11 +368,19 @@ public class GetKycPassportResponseEntity {
 
 
   public void setDateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     this.dateOfBirth = dateOfBirth;
   }
 
 
   public GetKycPassportResponseEntity gender(String gender) {
+
+    
+    
+    
     
     this.gender = gender;
     return this;
@@ -322,11 +399,19 @@ public class GetKycPassportResponseEntity {
 
 
   public void setGender(String gender) {
+
+    
+    
+    
     this.gender = gender;
   }
 
 
   public GetKycPassportResponseEntity photo(String photo) {
+
+    
+    
+    
     
     this.photo = photo;
     return this;
@@ -345,6 +430,10 @@ public class GetKycPassportResponseEntity {
 
 
   public void setPhoto(String photo) {
+
+    
+    
+    
     this.photo = photo;
   }
 

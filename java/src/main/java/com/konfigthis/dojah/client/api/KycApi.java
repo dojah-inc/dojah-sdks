@@ -34,7 +34,6 @@ import com.konfigthis.dojah.client.model.GetFullBvnResponse;
 import com.konfigthis.dojah.client.model.GetKycDriversLicenseResponse;
 import com.konfigthis.dojah.client.model.GetKycPassportResponse;
 import com.konfigthis.dojah.client.model.GetNubanResponse;
-import com.konfigthis.dojah.client.model.GetPhoneNumber404Response;
 import com.konfigthis.dojah.client.model.GetPhoneNumberResponse;
 import com.konfigthis.dojah.client.model.GetPremiumBvnResponse;
 import com.konfigthis.dojah.client.model.GetVinResponse;
@@ -58,11 +57,14 @@ public class KycApi {
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public KycApi() {
+    public KycApi() throws IllegalArgumentException {
         this(Configuration.getDefaultApiClient());
     }
 
-    public KycApi(ApiClient apiClient) {
+    public KycApi(ApiClient apiClient) throws IllegalArgumentException {
+        if (apiClient.getApikeyAuth() == null) {
+            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
+        }
         this.localVarApiClient = apiClient;
     }
 
@@ -90,18 +92,7 @@ public class KycApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    /**
-     * Build call for analyzeDocument
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call analyzeDocumentCall(final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call analyzeDocumentCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -151,71 +142,101 @@ public class KycApi {
 
     }
 
-    /**
-     * KYC - Document Analysis
-     * 
-     * @return AnalyzeDocumentResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public AnalyzeDocumentResponse analyzeDocument() throws ApiException {
-        ApiResponse<AnalyzeDocumentResponse> localVarResp = analyzeDocumentWithHttpInfo();
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - Document Analysis
-     * 
-     * @return ApiResponse&lt;AnalyzeDocumentResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<AnalyzeDocumentResponse> analyzeDocumentWithHttpInfo() throws ApiException {
+    private ApiResponse<AnalyzeDocumentResponse> analyzeDocumentWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = analyzeDocumentValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<AnalyzeDocumentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYC - Document Analysis (asynchronously)
-     * 
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call analyzeDocumentAsync(final ApiCallback<AnalyzeDocumentResponse> _callback) throws ApiException {
+    private okhttp3.Call analyzeDocumentAsync(final ApiCallback<AnalyzeDocumentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = analyzeDocumentValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<AnalyzeDocumentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class AnalyzeDocumentRequestBuilder {
+
+        private AnalyzeDocumentRequestBuilder() {
+        }
+
+        /**
+         * Build call for analyzeDocument
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return analyzeDocumentCall(_callback);
+        }
+
+
+        /**
+         * Execute analyzeDocument request
+         * @return AnalyzeDocumentResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public AnalyzeDocumentResponse execute() throws ApiException {
+            ApiResponse<AnalyzeDocumentResponse> localVarResp = analyzeDocumentWithHttpInfo();
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute analyzeDocument request with HTTP info returned
+         * @return ApiResponse&lt;AnalyzeDocumentResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<AnalyzeDocumentResponse> executeWithHttpInfo() throws ApiException {
+            return analyzeDocumentWithHttpInfo();
+        }
+
+        /**
+         * Execute analyzeDocument request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<AnalyzeDocumentResponse> _callback) throws ApiException {
+            return analyzeDocumentAsync(_callback);
+        }
+    }
+
     /**
-     * Build call for getBasicBvn
-     * @param bvn  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * KYC - Document Analysis
+     * 
+     * @return AnalyzeDocumentRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBasicBvnCall(Integer bvn, final ApiCallback _callback) throws ApiException {
+    public AnalyzeDocumentRequestBuilder analyzeDocument() throws IllegalArgumentException {
+        return new AnalyzeDocumentRequestBuilder();
+    }
+    private okhttp3.Call getBasicBvnCall(Integer bvn, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -269,74 +290,112 @@ public class KycApi {
 
     }
 
-    /**
-     * KYC - Get Basic BVN Info
-     * 
-     * @param bvn  (optional)
-     * @return GetBasicBvnResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetBasicBvnResponse getBasicBvn(Integer bvn) throws ApiException {
-        ApiResponse<GetBasicBvnResponse> localVarResp = getBasicBvnWithHttpInfo(bvn);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - Get Basic BVN Info
-     * 
-     * @param bvn  (optional)
-     * @return ApiResponse&lt;GetBasicBvnResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetBasicBvnResponse> getBasicBvnWithHttpInfo(Integer bvn) throws ApiException {
+    private ApiResponse<GetBasicBvnResponse> getBasicBvnWithHttpInfo(Integer bvn) throws ApiException {
         okhttp3.Call localVarCall = getBasicBvnValidateBeforeCall(bvn, null);
         Type localVarReturnType = new TypeToken<GetBasicBvnResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYC - Get Basic BVN Info (asynchronously)
-     * 
-     * @param bvn  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getBasicBvnAsync(Integer bvn, final ApiCallback<GetBasicBvnResponse> _callback) throws ApiException {
+    private okhttp3.Call getBasicBvnAsync(Integer bvn, final ApiCallback<GetBasicBvnResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getBasicBvnValidateBeforeCall(bvn, _callback);
         Type localVarReturnType = new TypeToken<GetBasicBvnResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetBasicBvnRequestBuilder {
+        private Integer bvn;
+
+        private GetBasicBvnRequestBuilder() {
+        }
+
+        /**
+         * Set bvn
+         * @param bvn  (optional)
+         * @return GetBasicBvnRequestBuilder
+         */
+        public GetBasicBvnRequestBuilder bvn(Integer bvn) {
+            this.bvn = bvn;
+            return this;
+        }
+        
+        /**
+         * Build call for getBasicBvn
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getBasicBvnCall(bvn, _callback);
+        }
+
+
+        /**
+         * Execute getBasicBvn request
+         * @return GetBasicBvnResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public GetBasicBvnResponse execute() throws ApiException {
+            ApiResponse<GetBasicBvnResponse> localVarResp = getBasicBvnWithHttpInfo(bvn);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getBasicBvn request with HTTP info returned
+         * @return ApiResponse&lt;GetBasicBvnResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetBasicBvnResponse> executeWithHttpInfo() throws ApiException {
+            return getBasicBvnWithHttpInfo(bvn);
+        }
+
+        /**
+         * Execute getBasicBvn request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetBasicBvnResponse> _callback) throws ApiException {
+            return getBasicBvnAsync(bvn, _callback);
+        }
+    }
+
     /**
-     * Build call for getBasicPhoneNumber
-     * @param phoneNumber  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * KYC - Get Basic BVN Info
+     * 
+     * @return GetBasicBvnRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBasicPhoneNumberCall(Integer phoneNumber, final ApiCallback _callback) throws ApiException {
+    public GetBasicBvnRequestBuilder getBasicBvn() throws IllegalArgumentException {
+        return new GetBasicBvnRequestBuilder();
+    }
+    private okhttp3.Call getBasicPhoneNumberCall(Integer phoneNumber, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -390,74 +449,112 @@ public class KycApi {
 
     }
 
-    /**
-     * KYC Lookup Phone Number Basic
-     * 
-     * @param phoneNumber  (optional)
-     * @return GetBasicPhoneNumberResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetBasicPhoneNumberResponse getBasicPhoneNumber(Integer phoneNumber) throws ApiException {
-        ApiResponse<GetBasicPhoneNumberResponse> localVarResp = getBasicPhoneNumberWithHttpInfo(phoneNumber);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC Lookup Phone Number Basic
-     * 
-     * @param phoneNumber  (optional)
-     * @return ApiResponse&lt;GetBasicPhoneNumberResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetBasicPhoneNumberResponse> getBasicPhoneNumberWithHttpInfo(Integer phoneNumber) throws ApiException {
+    private ApiResponse<GetBasicPhoneNumberResponse> getBasicPhoneNumberWithHttpInfo(Integer phoneNumber) throws ApiException {
         okhttp3.Call localVarCall = getBasicPhoneNumberValidateBeforeCall(phoneNumber, null);
         Type localVarReturnType = new TypeToken<GetBasicPhoneNumberResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYC Lookup Phone Number Basic (asynchronously)
-     * 
-     * @param phoneNumber  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getBasicPhoneNumberAsync(Integer phoneNumber, final ApiCallback<GetBasicPhoneNumberResponse> _callback) throws ApiException {
+    private okhttp3.Call getBasicPhoneNumberAsync(Integer phoneNumber, final ApiCallback<GetBasicPhoneNumberResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getBasicPhoneNumberValidateBeforeCall(phoneNumber, _callback);
         Type localVarReturnType = new TypeToken<GetBasicPhoneNumberResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetBasicPhoneNumberRequestBuilder {
+        private Integer phoneNumber;
+
+        private GetBasicPhoneNumberRequestBuilder() {
+        }
+
+        /**
+         * Set phoneNumber
+         * @param phoneNumber  (optional)
+         * @return GetBasicPhoneNumberRequestBuilder
+         */
+        public GetBasicPhoneNumberRequestBuilder phoneNumber(Integer phoneNumber) {
+            this.phoneNumber = phoneNumber;
+            return this;
+        }
+        
+        /**
+         * Build call for getBasicPhoneNumber
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getBasicPhoneNumberCall(phoneNumber, _callback);
+        }
+
+
+        /**
+         * Execute getBasicPhoneNumber request
+         * @return GetBasicPhoneNumberResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public GetBasicPhoneNumberResponse execute() throws ApiException {
+            ApiResponse<GetBasicPhoneNumberResponse> localVarResp = getBasicPhoneNumberWithHttpInfo(phoneNumber);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getBasicPhoneNumber request with HTTP info returned
+         * @return ApiResponse&lt;GetBasicPhoneNumberResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetBasicPhoneNumberResponse> executeWithHttpInfo() throws ApiException {
+            return getBasicPhoneNumberWithHttpInfo(phoneNumber);
+        }
+
+        /**
+         * Execute getBasicPhoneNumber request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetBasicPhoneNumberResponse> _callback) throws ApiException {
+            return getBasicPhoneNumberAsync(phoneNumber, _callback);
+        }
+    }
+
     /**
-     * Build call for getDriversLicense
-     * @param licenseNumber  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * KYC Lookup Phone Number Basic
+     * 
+     * @return GetBasicPhoneNumberRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDriversLicenseCall(String licenseNumber, final ApiCallback _callback) throws ApiException {
+    public GetBasicPhoneNumberRequestBuilder getBasicPhoneNumber() throws IllegalArgumentException {
+        return new GetBasicPhoneNumberRequestBuilder();
+    }
+    private okhttp3.Call getDriversLicenseCall(String licenseNumber, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -511,74 +608,112 @@ public class KycApi {
 
     }
 
-    /**
-     * KYC - Get Drivers License Info
-     * 
-     * @param licenseNumber  (optional)
-     * @return GetKycDriversLicenseResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetKycDriversLicenseResponse getDriversLicense(String licenseNumber) throws ApiException {
-        ApiResponse<GetKycDriversLicenseResponse> localVarResp = getDriversLicenseWithHttpInfo(licenseNumber);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - Get Drivers License Info
-     * 
-     * @param licenseNumber  (optional)
-     * @return ApiResponse&lt;GetKycDriversLicenseResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetKycDriversLicenseResponse> getDriversLicenseWithHttpInfo(String licenseNumber) throws ApiException {
+    private ApiResponse<GetKycDriversLicenseResponse> getDriversLicenseWithHttpInfo(String licenseNumber) throws ApiException {
         okhttp3.Call localVarCall = getDriversLicenseValidateBeforeCall(licenseNumber, null);
         Type localVarReturnType = new TypeToken<GetKycDriversLicenseResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYC - Get Drivers License Info (asynchronously)
-     * 
-     * @param licenseNumber  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getDriversLicenseAsync(String licenseNumber, final ApiCallback<GetKycDriversLicenseResponse> _callback) throws ApiException {
+    private okhttp3.Call getDriversLicenseAsync(String licenseNumber, final ApiCallback<GetKycDriversLicenseResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getDriversLicenseValidateBeforeCall(licenseNumber, _callback);
         Type localVarReturnType = new TypeToken<GetKycDriversLicenseResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetDriversLicenseRequestBuilder {
+        private String licenseNumber;
+
+        private GetDriversLicenseRequestBuilder() {
+        }
+
+        /**
+         * Set licenseNumber
+         * @param licenseNumber  (optional)
+         * @return GetDriversLicenseRequestBuilder
+         */
+        public GetDriversLicenseRequestBuilder licenseNumber(String licenseNumber) {
+            this.licenseNumber = licenseNumber;
+            return this;
+        }
+        
+        /**
+         * Build call for getDriversLicense
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getDriversLicenseCall(licenseNumber, _callback);
+        }
+
+
+        /**
+         * Execute getDriversLicense request
+         * @return GetKycDriversLicenseResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public GetKycDriversLicenseResponse execute() throws ApiException {
+            ApiResponse<GetKycDriversLicenseResponse> localVarResp = getDriversLicenseWithHttpInfo(licenseNumber);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getDriversLicense request with HTTP info returned
+         * @return ApiResponse&lt;GetKycDriversLicenseResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetKycDriversLicenseResponse> executeWithHttpInfo() throws ApiException {
+            return getDriversLicenseWithHttpInfo(licenseNumber);
+        }
+
+        /**
+         * Execute getDriversLicense request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetKycDriversLicenseResponse> _callback) throws ApiException {
+            return getDriversLicenseAsync(licenseNumber, _callback);
+        }
+    }
+
     /**
-     * Build call for getEmailReputation
-     * @param email  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * KYC - Get Drivers License Info
+     * 
+     * @return GetDriversLicenseRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEmailReputationCall(String email, final ApiCallback _callback) throws ApiException {
+    public GetDriversLicenseRequestBuilder getDriversLicense() throws IllegalArgumentException {
+        return new GetDriversLicenseRequestBuilder();
+    }
+    private okhttp3.Call getEmailReputationCall(String email, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -632,74 +767,112 @@ public class KycApi {
 
     }
 
-    /**
-     * KYC - Get Email Reputation
-     * 
-     * @param email  (optional)
-     * @return GetEmailReputationResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public GetEmailReputationResponse getEmailReputation(String email) throws ApiException {
-        ApiResponse<GetEmailReputationResponse> localVarResp = getEmailReputationWithHttpInfo(email);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - Get Email Reputation
-     * 
-     * @param email  (optional)
-     * @return ApiResponse&lt;GetEmailReputationResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetEmailReputationResponse> getEmailReputationWithHttpInfo(String email) throws ApiException {
+    private ApiResponse<GetEmailReputationResponse> getEmailReputationWithHttpInfo(String email) throws ApiException {
         okhttp3.Call localVarCall = getEmailReputationValidateBeforeCall(email, null);
         Type localVarReturnType = new TypeToken<GetEmailReputationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYC - Get Email Reputation (asynchronously)
-     * 
-     * @param email  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getEmailReputationAsync(String email, final ApiCallback<GetEmailReputationResponse> _callback) throws ApiException {
+    private okhttp3.Call getEmailReputationAsync(String email, final ApiCallback<GetEmailReputationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getEmailReputationValidateBeforeCall(email, _callback);
         Type localVarReturnType = new TypeToken<GetEmailReputationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetEmailReputationRequestBuilder {
+        private String email;
+
+        private GetEmailReputationRequestBuilder() {
+        }
+
+        /**
+         * Set email
+         * @param email  (optional)
+         * @return GetEmailReputationRequestBuilder
+         */
+        public GetEmailReputationRequestBuilder email(String email) {
+            this.email = email;
+            return this;
+        }
+        
+        /**
+         * Build call for getEmailReputation
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getEmailReputationCall(email, _callback);
+        }
+
+
+        /**
+         * Execute getEmailReputation request
+         * @return GetEmailReputationResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public GetEmailReputationResponse execute() throws ApiException {
+            ApiResponse<GetEmailReputationResponse> localVarResp = getEmailReputationWithHttpInfo(email);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getEmailReputation request with HTTP info returned
+         * @return ApiResponse&lt;GetEmailReputationResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetEmailReputationResponse> executeWithHttpInfo() throws ApiException {
+            return getEmailReputationWithHttpInfo(email);
+        }
+
+        /**
+         * Execute getEmailReputation request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetEmailReputationResponse> _callback) throws ApiException {
+            return getEmailReputationAsync(email, _callback);
+        }
+    }
+
     /**
-     * Build call for getFullBvn
-     * @param bvn  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * KYC - Get Email Reputation
+     * 
+     * @return GetEmailReputationRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getFullBvnCall(Integer bvn, final ApiCallback _callback) throws ApiException {
+    public GetEmailReputationRequestBuilder getEmailReputation() throws IllegalArgumentException {
+        return new GetEmailReputationRequestBuilder();
+    }
+    private okhttp3.Call getFullBvnCall(Integer bvn, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -753,75 +926,112 @@ public class KycApi {
 
     }
 
-    /**
-     * KYC - Lookup BVN Basic
-     * 
-     * @param bvn  (optional)
-     * @return GetFullBvnResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetFullBvnResponse getFullBvn(Integer bvn) throws ApiException {
-        ApiResponse<GetFullBvnResponse> localVarResp = getFullBvnWithHttpInfo(bvn);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - Lookup BVN Basic
-     * 
-     * @param bvn  (optional)
-     * @return ApiResponse&lt;GetFullBvnResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetFullBvnResponse> getFullBvnWithHttpInfo(Integer bvn) throws ApiException {
+    private ApiResponse<GetFullBvnResponse> getFullBvnWithHttpInfo(Integer bvn) throws ApiException {
         okhttp3.Call localVarCall = getFullBvnValidateBeforeCall(bvn, null);
         Type localVarReturnType = new TypeToken<GetFullBvnResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYC - Lookup BVN Basic (asynchronously)
-     * 
-     * @param bvn  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getFullBvnAsync(Integer bvn, final ApiCallback<GetFullBvnResponse> _callback) throws ApiException {
+    private okhttp3.Call getFullBvnAsync(Integer bvn, final ApiCallback<GetFullBvnResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFullBvnValidateBeforeCall(bvn, _callback);
         Type localVarReturnType = new TypeToken<GetFullBvnResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetFullBvnRequestBuilder {
+        private Integer bvn;
+
+        private GetFullBvnRequestBuilder() {
+        }
+
+        /**
+         * Set bvn
+         * @param bvn  (optional)
+         * @return GetFullBvnRequestBuilder
+         */
+        public GetFullBvnRequestBuilder bvn(Integer bvn) {
+            this.bvn = bvn;
+            return this;
+        }
+        
+        /**
+         * Build call for getFullBvn
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getFullBvnCall(bvn, _callback);
+        }
+
+
+        /**
+         * Execute getFullBvn request
+         * @return GetFullBvnResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public GetFullBvnResponse execute() throws ApiException {
+            ApiResponse<GetFullBvnResponse> localVarResp = getFullBvnWithHttpInfo(bvn);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getFullBvn request with HTTP info returned
+         * @return ApiResponse&lt;GetFullBvnResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetFullBvnResponse> executeWithHttpInfo() throws ApiException {
+            return getFullBvnWithHttpInfo(bvn);
+        }
+
+        /**
+         * Execute getFullBvn request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetFullBvnResponse> _callback) throws ApiException {
+            return getFullBvnAsync(bvn, _callback);
+        }
+    }
+
     /**
-     * Build call for getNuban
-     * @param bankCode  (optional)
-     * @param accountNumber  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * KYC - Lookup BVN Basic
+     * 
+     * @return GetFullBvnRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNubanCall(Integer bankCode, Integer accountNumber, final ApiCallback _callback) throws ApiException {
+    public GetFullBvnRequestBuilder getFullBvn() throws IllegalArgumentException {
+        return new GetFullBvnRequestBuilder();
+    }
+    private okhttp3.Call getNubanCall(Integer bankCode, Integer accountNumber, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -879,78 +1089,123 @@ public class KycApi {
 
     }
 
-    /**
-     * KYC - Get NUBAN Information
-     * 
-     * @param bankCode  (optional)
-     * @param accountNumber  (optional)
-     * @return GetNubanResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public GetNubanResponse getNuban(Integer bankCode, Integer accountNumber) throws ApiException {
-        ApiResponse<GetNubanResponse> localVarResp = getNubanWithHttpInfo(bankCode, accountNumber);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - Get NUBAN Information
-     * 
-     * @param bankCode  (optional)
-     * @param accountNumber  (optional)
-     * @return ApiResponse&lt;GetNubanResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetNubanResponse> getNubanWithHttpInfo(Integer bankCode, Integer accountNumber) throws ApiException {
+    private ApiResponse<GetNubanResponse> getNubanWithHttpInfo(Integer bankCode, Integer accountNumber) throws ApiException {
         okhttp3.Call localVarCall = getNubanValidateBeforeCall(bankCode, accountNumber, null);
         Type localVarReturnType = new TypeToken<GetNubanResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYC - Get NUBAN Information (asynchronously)
-     * 
-     * @param bankCode  (optional)
-     * @param accountNumber  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getNubanAsync(Integer bankCode, Integer accountNumber, final ApiCallback<GetNubanResponse> _callback) throws ApiException {
+    private okhttp3.Call getNubanAsync(Integer bankCode, Integer accountNumber, final ApiCallback<GetNubanResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getNubanValidateBeforeCall(bankCode, accountNumber, _callback);
         Type localVarReturnType = new TypeToken<GetNubanResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetNubanRequestBuilder {
+        private Integer bankCode;
+        private Integer accountNumber;
+
+        private GetNubanRequestBuilder() {
+        }
+
+        /**
+         * Set bankCode
+         * @param bankCode  (optional)
+         * @return GetNubanRequestBuilder
+         */
+        public GetNubanRequestBuilder bankCode(Integer bankCode) {
+            this.bankCode = bankCode;
+            return this;
+        }
+        
+        /**
+         * Set accountNumber
+         * @param accountNumber  (optional)
+         * @return GetNubanRequestBuilder
+         */
+        public GetNubanRequestBuilder accountNumber(Integer accountNumber) {
+            this.accountNumber = accountNumber;
+            return this;
+        }
+        
+        /**
+         * Build call for getNuban
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getNubanCall(bankCode, accountNumber, _callback);
+        }
+
+
+        /**
+         * Execute getNuban request
+         * @return GetNubanResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public GetNubanResponse execute() throws ApiException {
+            ApiResponse<GetNubanResponse> localVarResp = getNubanWithHttpInfo(bankCode, accountNumber);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getNuban request with HTTP info returned
+         * @return ApiResponse&lt;GetNubanResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetNubanResponse> executeWithHttpInfo() throws ApiException {
+            return getNubanWithHttpInfo(bankCode, accountNumber);
+        }
+
+        /**
+         * Execute getNuban request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetNubanResponse> _callback) throws ApiException {
+            return getNubanAsync(bankCode, accountNumber, _callback);
+        }
+    }
+
     /**
-     * Build call for getPassport
-     * @param passportNumber  (optional)
-     * @param surname  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * KYC - Get NUBAN Information
+     * 
+     * @return GetNubanRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getPassportCall(Integer passportNumber, String surname, final ApiCallback _callback) throws ApiException {
+    public GetNubanRequestBuilder getNuban() throws IllegalArgumentException {
+        return new GetNubanRequestBuilder();
+    }
+    private okhttp3.Call getPassportCall(Integer passportNumber, String surname, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1008,78 +1263,123 @@ public class KycApi {
 
     }
 
-    /**
-     * KYC - Passport
-     * 
-     * @param passportNumber  (optional)
-     * @param surname  (optional)
-     * @return GetKycPassportResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetKycPassportResponse getPassport(Integer passportNumber, String surname) throws ApiException {
-        ApiResponse<GetKycPassportResponse> localVarResp = getPassportWithHttpInfo(passportNumber, surname);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - Passport
-     * 
-     * @param passportNumber  (optional)
-     * @param surname  (optional)
-     * @return ApiResponse&lt;GetKycPassportResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetKycPassportResponse> getPassportWithHttpInfo(Integer passportNumber, String surname) throws ApiException {
+    private ApiResponse<GetKycPassportResponse> getPassportWithHttpInfo(Integer passportNumber, String surname) throws ApiException {
         okhttp3.Call localVarCall = getPassportValidateBeforeCall(passportNumber, surname, null);
         Type localVarReturnType = new TypeToken<GetKycPassportResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYC - Passport (asynchronously)
-     * 
-     * @param passportNumber  (optional)
-     * @param surname  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getPassportAsync(Integer passportNumber, String surname, final ApiCallback<GetKycPassportResponse> _callback) throws ApiException {
+    private okhttp3.Call getPassportAsync(Integer passportNumber, String surname, final ApiCallback<GetKycPassportResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getPassportValidateBeforeCall(passportNumber, surname, _callback);
         Type localVarReturnType = new TypeToken<GetKycPassportResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetPassportRequestBuilder {
+        private Integer passportNumber;
+        private String surname;
+
+        private GetPassportRequestBuilder() {
+        }
+
+        /**
+         * Set passportNumber
+         * @param passportNumber  (optional)
+         * @return GetPassportRequestBuilder
+         */
+        public GetPassportRequestBuilder passportNumber(Integer passportNumber) {
+            this.passportNumber = passportNumber;
+            return this;
+        }
+        
+        /**
+         * Set surname
+         * @param surname  (optional)
+         * @return GetPassportRequestBuilder
+         */
+        public GetPassportRequestBuilder surname(String surname) {
+            this.surname = surname;
+            return this;
+        }
+        
+        /**
+         * Build call for getPassport
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getPassportCall(passportNumber, surname, _callback);
+        }
+
+
+        /**
+         * Execute getPassport request
+         * @return GetKycPassportResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public GetKycPassportResponse execute() throws ApiException {
+            ApiResponse<GetKycPassportResponse> localVarResp = getPassportWithHttpInfo(passportNumber, surname);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getPassport request with HTTP info returned
+         * @return ApiResponse&lt;GetKycPassportResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetKycPassportResponse> executeWithHttpInfo() throws ApiException {
+            return getPassportWithHttpInfo(passportNumber, surname);
+        }
+
+        /**
+         * Execute getPassport request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetKycPassportResponse> _callback) throws ApiException {
+            return getPassportAsync(passportNumber, surname, _callback);
+        }
+    }
+
     /**
-     * Build call for getPhoneNumber
-     * @param phoneNumber  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * KYC - Passport
+     * 
+     * @return GetPassportRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPhoneNumberCall(Integer phoneNumber, final ApiCallback _callback) throws ApiException {
+    public GetPassportRequestBuilder getPassport() throws IllegalArgumentException {
+        return new GetPassportRequestBuilder();
+    }
+    private okhttp3.Call getPhoneNumberCall(Integer phoneNumber, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1133,77 +1433,112 @@ public class KycApi {
 
     }
 
-    /**
-     * KYC - Lookup Phone Number
-     * 
-     * @param phoneNumber  (optional)
-     * @return GetPhoneNumberResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetPhoneNumberResponse getPhoneNumber(Integer phoneNumber) throws ApiException {
-        ApiResponse<GetPhoneNumberResponse> localVarResp = getPhoneNumberWithHttpInfo(phoneNumber);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - Lookup Phone Number
-     * 
-     * @param phoneNumber  (optional)
-     * @return ApiResponse&lt;GetPhoneNumberResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetPhoneNumberResponse> getPhoneNumberWithHttpInfo(Integer phoneNumber) throws ApiException {
+    private ApiResponse<GetPhoneNumberResponse> getPhoneNumberWithHttpInfo(Integer phoneNumber) throws ApiException {
         okhttp3.Call localVarCall = getPhoneNumberValidateBeforeCall(phoneNumber, null);
         Type localVarReturnType = new TypeToken<GetPhoneNumberResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYC - Lookup Phone Number (asynchronously)
-     * 
-     * @param phoneNumber  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getPhoneNumberAsync(Integer phoneNumber, final ApiCallback<GetPhoneNumberResponse> _callback) throws ApiException {
+    private okhttp3.Call getPhoneNumberAsync(Integer phoneNumber, final ApiCallback<GetPhoneNumberResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getPhoneNumberValidateBeforeCall(phoneNumber, _callback);
         Type localVarReturnType = new TypeToken<GetPhoneNumberResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetPhoneNumberRequestBuilder {
+        private Integer phoneNumber;
+
+        private GetPhoneNumberRequestBuilder() {
+        }
+
+        /**
+         * Set phoneNumber
+         * @param phoneNumber  (optional)
+         * @return GetPhoneNumberRequestBuilder
+         */
+        public GetPhoneNumberRequestBuilder phoneNumber(Integer phoneNumber) {
+            this.phoneNumber = phoneNumber;
+            return this;
+        }
+        
+        /**
+         * Build call for getPhoneNumber
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getPhoneNumberCall(phoneNumber, _callback);
+        }
+
+
+        /**
+         * Execute getPhoneNumber request
+         * @return GetPhoneNumberResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public GetPhoneNumberResponse execute() throws ApiException {
+            ApiResponse<GetPhoneNumberResponse> localVarResp = getPhoneNumberWithHttpInfo(phoneNumber);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getPhoneNumber request with HTTP info returned
+         * @return ApiResponse&lt;GetPhoneNumberResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetPhoneNumberResponse> executeWithHttpInfo() throws ApiException {
+            return getPhoneNumberWithHttpInfo(phoneNumber);
+        }
+
+        /**
+         * Execute getPhoneNumber request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetPhoneNumberResponse> _callback) throws ApiException {
+            return getPhoneNumberAsync(phoneNumber, _callback);
+        }
+    }
+
     /**
-     * Build call for getPremiumBvn
-     * @param bvn  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * KYC - Lookup Phone Number
+     * 
+     * @return GetPhoneNumberRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPremiumBvnCall(Integer bvn, final ApiCallback _callback) throws ApiException {
+    public GetPhoneNumberRequestBuilder getPhoneNumber() throws IllegalArgumentException {
+        return new GetPhoneNumberRequestBuilder();
+    }
+    private okhttp3.Call getPremiumBvnCall(Integer bvn, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1257,78 +1592,112 @@ public class KycApi {
 
     }
 
-    /**
-     * KYC - Lookup BVN Premium
-     * 
-     * @param bvn  (optional)
-     * @return GetPremiumBvnResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public GetPremiumBvnResponse getPremiumBvn(Integer bvn) throws ApiException {
-        ApiResponse<GetPremiumBvnResponse> localVarResp = getPremiumBvnWithHttpInfo(bvn);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - Lookup BVN Premium
-     * 
-     * @param bvn  (optional)
-     * @return ApiResponse&lt;GetPremiumBvnResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetPremiumBvnResponse> getPremiumBvnWithHttpInfo(Integer bvn) throws ApiException {
+    private ApiResponse<GetPremiumBvnResponse> getPremiumBvnWithHttpInfo(Integer bvn) throws ApiException {
         okhttp3.Call localVarCall = getPremiumBvnValidateBeforeCall(bvn, null);
         Type localVarReturnType = new TypeToken<GetPremiumBvnResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYC - Lookup BVN Premium (asynchronously)
-     * 
-     * @param bvn  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getPremiumBvnAsync(Integer bvn, final ApiCallback<GetPremiumBvnResponse> _callback) throws ApiException {
+    private okhttp3.Call getPremiumBvnAsync(Integer bvn, final ApiCallback<GetPremiumBvnResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getPremiumBvnValidateBeforeCall(bvn, _callback);
         Type localVarReturnType = new TypeToken<GetPremiumBvnResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetPremiumBvnRequestBuilder {
+        private Integer bvn;
+
+        private GetPremiumBvnRequestBuilder() {
+        }
+
+        /**
+         * Set bvn
+         * @param bvn  (optional)
+         * @return GetPremiumBvnRequestBuilder
+         */
+        public GetPremiumBvnRequestBuilder bvn(Integer bvn) {
+            this.bvn = bvn;
+            return this;
+        }
+        
+        /**
+         * Build call for getPremiumBvn
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getPremiumBvnCall(bvn, _callback);
+        }
+
+
+        /**
+         * Execute getPremiumBvn request
+         * @return GetPremiumBvnResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public GetPremiumBvnResponse execute() throws ApiException {
+            ApiResponse<GetPremiumBvnResponse> localVarResp = getPremiumBvnWithHttpInfo(bvn);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getPremiumBvn request with HTTP info returned
+         * @return ApiResponse&lt;GetPremiumBvnResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetPremiumBvnResponse> executeWithHttpInfo() throws ApiException {
+            return getPremiumBvnWithHttpInfo(bvn);
+        }
+
+        /**
+         * Execute getPremiumBvn request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetPremiumBvnResponse> _callback) throws ApiException {
+            return getPremiumBvnAsync(bvn, _callback);
+        }
+    }
+
     /**
-     * Build call for getVIN
-     * @param mode  (optional)
-     * @param firstname  (optional)
-     * @param lastname  (optional)
-     * @param vin  (optional)
-     * @param state  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * KYC - Lookup BVN Premium
+     * 
+     * @return GetPremiumBvnRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getVINCall(String mode, String firstname, String lastname, Integer vin, String state, final ApiCallback _callback) throws ApiException {
+    public GetPremiumBvnRequestBuilder getPremiumBvn() throws IllegalArgumentException {
+        return new GetPremiumBvnRequestBuilder();
+    }
+    private okhttp3.Call getVINCall(String mode, String firstname, String lastname, Integer vin, String state, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1398,86 +1767,156 @@ public class KycApi {
 
     }
 
-    /**
-     * KYC - Get VIN
-     * 
-     * @param mode  (optional)
-     * @param firstname  (optional)
-     * @param lastname  (optional)
-     * @param vin  (optional)
-     * @param state  (optional)
-     * @return GetVinResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public GetVinResponse getVIN(String mode, String firstname, String lastname, Integer vin, String state) throws ApiException {
-        ApiResponse<GetVinResponse> localVarResp = getVINWithHttpInfo(mode, firstname, lastname, vin, state);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - Get VIN
-     * 
-     * @param mode  (optional)
-     * @param firstname  (optional)
-     * @param lastname  (optional)
-     * @param vin  (optional)
-     * @param state  (optional)
-     * @return ApiResponse&lt;GetVinResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetVinResponse> getVINWithHttpInfo(String mode, String firstname, String lastname, Integer vin, String state) throws ApiException {
+    private ApiResponse<GetVinResponse> getVINWithHttpInfo(String mode, String firstname, String lastname, Integer vin, String state) throws ApiException {
         okhttp3.Call localVarCall = getVINValidateBeforeCall(mode, firstname, lastname, vin, state, null);
         Type localVarReturnType = new TypeToken<GetVinResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYC - Get VIN (asynchronously)
-     * 
-     * @param mode  (optional)
-     * @param firstname  (optional)
-     * @param lastname  (optional)
-     * @param vin  (optional)
-     * @param state  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getVINAsync(String mode, String firstname, String lastname, Integer vin, String state, final ApiCallback<GetVinResponse> _callback) throws ApiException {
+    private okhttp3.Call getVINAsync(String mode, String firstname, String lastname, Integer vin, String state, final ApiCallback<GetVinResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getVINValidateBeforeCall(mode, firstname, lastname, vin, state, _callback);
         Type localVarReturnType = new TypeToken<GetVinResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetVINRequestBuilder {
+        private String mode;
+        private String firstname;
+        private String lastname;
+        private Integer vin;
+        private String state;
+
+        private GetVINRequestBuilder() {
+        }
+
+        /**
+         * Set mode
+         * @param mode  (optional)
+         * @return GetVINRequestBuilder
+         */
+        public GetVINRequestBuilder mode(String mode) {
+            this.mode = mode;
+            return this;
+        }
+        
+        /**
+         * Set firstname
+         * @param firstname  (optional)
+         * @return GetVINRequestBuilder
+         */
+        public GetVINRequestBuilder firstname(String firstname) {
+            this.firstname = firstname;
+            return this;
+        }
+        
+        /**
+         * Set lastname
+         * @param lastname  (optional)
+         * @return GetVINRequestBuilder
+         */
+        public GetVINRequestBuilder lastname(String lastname) {
+            this.lastname = lastname;
+            return this;
+        }
+        
+        /**
+         * Set vin
+         * @param vin  (optional)
+         * @return GetVINRequestBuilder
+         */
+        public GetVINRequestBuilder vin(Integer vin) {
+            this.vin = vin;
+            return this;
+        }
+        
+        /**
+         * Set state
+         * @param state  (optional)
+         * @return GetVINRequestBuilder
+         */
+        public GetVINRequestBuilder state(String state) {
+            this.state = state;
+            return this;
+        }
+        
+        /**
+         * Build call for getVIN
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getVINCall(mode, firstname, lastname, vin, state, _callback);
+        }
+
+
+        /**
+         * Execute getVIN request
+         * @return GetVinResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public GetVinResponse execute() throws ApiException {
+            ApiResponse<GetVinResponse> localVarResp = getVINWithHttpInfo(mode, firstname, lastname, vin, state);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getVIN request with HTTP info returned
+         * @return ApiResponse&lt;GetVinResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetVinResponse> executeWithHttpInfo() throws ApiException {
+            return getVINWithHttpInfo(mode, firstname, lastname, vin, state);
+        }
+
+        /**
+         * Execute getVIN request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetVinResponse> _callback) throws ApiException {
+            return getVINAsync(mode, firstname, lastname, vin, state, _callback);
+        }
+    }
+
     /**
-     * Build call for getVnin
-     * @param vnin  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * KYC - Get VIN
+     * 
+     * @return GetVINRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getVninCall(String vnin, final ApiCallback _callback) throws ApiException {
+    public GetVINRequestBuilder getVIN() throws IllegalArgumentException {
+        return new GetVINRequestBuilder();
+    }
+    private okhttp3.Call getVninCall(String vnin, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1531,76 +1970,112 @@ public class KycApi {
 
     }
 
-    /**
-     * Lookup VNIN
-     * 
-     * @param vnin  (optional)
-     * @return GetVninResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetVninResponse getVnin(String vnin) throws ApiException {
-        ApiResponse<GetVninResponse> localVarResp = getVninWithHttpInfo(vnin);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Lookup VNIN
-     * 
-     * @param vnin  (optional)
-     * @return ApiResponse&lt;GetVninResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetVninResponse> getVninWithHttpInfo(String vnin) throws ApiException {
+    private ApiResponse<GetVninResponse> getVninWithHttpInfo(String vnin) throws ApiException {
         okhttp3.Call localVarCall = getVninValidateBeforeCall(vnin, null);
         Type localVarReturnType = new TypeToken<GetVninResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Lookup VNIN (asynchronously)
-     * 
-     * @param vnin  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getVninAsync(String vnin, final ApiCallback<GetVninResponse> _callback) throws ApiException {
+    private okhttp3.Call getVninAsync(String vnin, final ApiCallback<GetVninResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getVninValidateBeforeCall(vnin, _callback);
         Type localVarReturnType = new TypeToken<GetVninResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetVninRequestBuilder {
+        private String vnin;
+
+        private GetVninRequestBuilder() {
+        }
+
+        /**
+         * Set vnin
+         * @param vnin  (optional)
+         * @return GetVninRequestBuilder
+         */
+        public GetVninRequestBuilder vnin(String vnin) {
+            this.vnin = vnin;
+            return this;
+        }
+        
+        /**
+         * Build call for getVnin
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getVninCall(vnin, _callback);
+        }
+
+
+        /**
+         * Execute getVnin request
+         * @return GetVninResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public GetVninResponse execute() throws ApiException {
+            ApiResponse<GetVninResponse> localVarResp = getVninWithHttpInfo(vnin);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getVnin request with HTTP info returned
+         * @return ApiResponse&lt;GetVninResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetVninResponse> executeWithHttpInfo() throws ApiException {
+            return getVninWithHttpInfo(vnin);
+        }
+
+        /**
+         * Execute getVnin request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetVninResponse> _callback) throws ApiException {
+            return getVninAsync(vnin, _callback);
+        }
+    }
+
     /**
-     * Build call for validateBvn
-     * @param bvn  (optional)
-     * @param firstName  (optional)
-     * @param dob  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Lookup VNIN
+     * 
+     * @return GetVninRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call validateBvnCall(Integer bvn, String firstName, String dob, final ApiCallback _callback) throws ApiException {
+    public GetVninRequestBuilder getVnin() throws IllegalArgumentException {
+        return new GetVninRequestBuilder();
+    }
+    private okhttp3.Call validateBvnCall(Integer bvn, String firstName, String dob, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1662,85 +2137,134 @@ public class KycApi {
 
     }
 
-    /**
-     * KYC - Validate BVN
-     * 
-     * @param bvn  (optional)
-     * @param firstName  (optional)
-     * @param dob  (optional)
-     * @return ValidateBvnResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ValidateBvnResponse validateBvn(Integer bvn, String firstName, String dob) throws ApiException {
-        ApiResponse<ValidateBvnResponse> localVarResp = validateBvnWithHttpInfo(bvn, firstName, dob);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - Validate BVN
-     * 
-     * @param bvn  (optional)
-     * @param firstName  (optional)
-     * @param dob  (optional)
-     * @return ApiResponse&lt;ValidateBvnResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<ValidateBvnResponse> validateBvnWithHttpInfo(Integer bvn, String firstName, String dob) throws ApiException {
+    private ApiResponse<ValidateBvnResponse> validateBvnWithHttpInfo(Integer bvn, String firstName, String dob) throws ApiException {
         okhttp3.Call localVarCall = validateBvnValidateBeforeCall(bvn, firstName, dob, null);
         Type localVarReturnType = new TypeToken<ValidateBvnResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYC - Validate BVN (asynchronously)
-     * 
-     * @param bvn  (optional)
-     * @param firstName  (optional)
-     * @param dob  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call validateBvnAsync(Integer bvn, String firstName, String dob, final ApiCallback<ValidateBvnResponse> _callback) throws ApiException {
+    private okhttp3.Call validateBvnAsync(Integer bvn, String firstName, String dob, final ApiCallback<ValidateBvnResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = validateBvnValidateBeforeCall(bvn, firstName, dob, _callback);
         Type localVarReturnType = new TypeToken<ValidateBvnResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class ValidateBvnRequestBuilder {
+        private Integer bvn;
+        private String firstName;
+        private String dob;
+
+        private ValidateBvnRequestBuilder() {
+        }
+
+        /**
+         * Set bvn
+         * @param bvn  (optional)
+         * @return ValidateBvnRequestBuilder
+         */
+        public ValidateBvnRequestBuilder bvn(Integer bvn) {
+            this.bvn = bvn;
+            return this;
+        }
+        
+        /**
+         * Set firstName
+         * @param firstName  (optional)
+         * @return ValidateBvnRequestBuilder
+         */
+        public ValidateBvnRequestBuilder firstName(String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+        
+        /**
+         * Set dob
+         * @param dob  (optional)
+         * @return ValidateBvnRequestBuilder
+         */
+        public ValidateBvnRequestBuilder dob(String dob) {
+            this.dob = dob;
+            return this;
+        }
+        
+        /**
+         * Build call for validateBvn
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return validateBvnCall(bvn, firstName, dob, _callback);
+        }
+
+
+        /**
+         * Execute validateBvn request
+         * @return ValidateBvnResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public ValidateBvnResponse execute() throws ApiException {
+            ApiResponse<ValidateBvnResponse> localVarResp = validateBvnWithHttpInfo(bvn, firstName, dob);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute validateBvn request with HTTP info returned
+         * @return ApiResponse&lt;ValidateBvnResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<ValidateBvnResponse> executeWithHttpInfo() throws ApiException {
+            return validateBvnWithHttpInfo(bvn, firstName, dob);
+        }
+
+        /**
+         * Execute validateBvn request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<ValidateBvnResponse> _callback) throws ApiException {
+            return validateBvnAsync(bvn, firstName, dob, _callback);
+        }
+    }
+
     /**
-     * Build call for verifyAge
-     * @param mode  (optional)
-     * @param accountNumber  (optional)
-     * @param bankCode  (optional)
-     * @param dob  (optional)
-     * @param firstName  (optional)
-     * @param lastName  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * KYC - Validate BVN
+     * 
+     * @return ValidateBvnRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call verifyAgeCall(String mode, Integer accountNumber, Integer bankCode, String dob, String firstName, String lastName, final ApiCallback _callback) throws ApiException {
+    public ValidateBvnRequestBuilder validateBvn() throws IllegalArgumentException {
+        return new ValidateBvnRequestBuilder();
+    }
+    private okhttp3.Call verifyAgeCall(String mode, Integer accountNumber, Integer bankCode, String dob, String firstName, String lastName, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1814,89 +2338,167 @@ public class KycApi {
 
     }
 
-    /**
-     * KYC - Age Verification
-     * 
-     * @param mode  (optional)
-     * @param accountNumber  (optional)
-     * @param bankCode  (optional)
-     * @param dob  (optional)
-     * @param firstName  (optional)
-     * @param lastName  (optional)
-     * @return VerifyAgeResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public VerifyAgeResponse verifyAge(String mode, Integer accountNumber, Integer bankCode, String dob, String firstName, String lastName) throws ApiException {
-        ApiResponse<VerifyAgeResponse> localVarResp = verifyAgeWithHttpInfo(mode, accountNumber, bankCode, dob, firstName, lastName);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - Age Verification
-     * 
-     * @param mode  (optional)
-     * @param accountNumber  (optional)
-     * @param bankCode  (optional)
-     * @param dob  (optional)
-     * @param firstName  (optional)
-     * @param lastName  (optional)
-     * @return ApiResponse&lt;VerifyAgeResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<VerifyAgeResponse> verifyAgeWithHttpInfo(String mode, Integer accountNumber, Integer bankCode, String dob, String firstName, String lastName) throws ApiException {
+    private ApiResponse<VerifyAgeResponse> verifyAgeWithHttpInfo(String mode, Integer accountNumber, Integer bankCode, String dob, String firstName, String lastName) throws ApiException {
         okhttp3.Call localVarCall = verifyAgeValidateBeforeCall(mode, accountNumber, bankCode, dob, firstName, lastName, null);
         Type localVarReturnType = new TypeToken<VerifyAgeResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYC - Age Verification (asynchronously)
-     * 
-     * @param mode  (optional)
-     * @param accountNumber  (optional)
-     * @param bankCode  (optional)
-     * @param dob  (optional)
-     * @param firstName  (optional)
-     * @param lastName  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call verifyAgeAsync(String mode, Integer accountNumber, Integer bankCode, String dob, String firstName, String lastName, final ApiCallback<VerifyAgeResponse> _callback) throws ApiException {
+    private okhttp3.Call verifyAgeAsync(String mode, Integer accountNumber, Integer bankCode, String dob, String firstName, String lastName, final ApiCallback<VerifyAgeResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = verifyAgeValidateBeforeCall(mode, accountNumber, bankCode, dob, firstName, lastName, _callback);
         Type localVarReturnType = new TypeToken<VerifyAgeResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class VerifyAgeRequestBuilder {
+        private String mode;
+        private Integer accountNumber;
+        private Integer bankCode;
+        private String dob;
+        private String firstName;
+        private String lastName;
+
+        private VerifyAgeRequestBuilder() {
+        }
+
+        /**
+         * Set mode
+         * @param mode  (optional)
+         * @return VerifyAgeRequestBuilder
+         */
+        public VerifyAgeRequestBuilder mode(String mode) {
+            this.mode = mode;
+            return this;
+        }
+        
+        /**
+         * Set accountNumber
+         * @param accountNumber  (optional)
+         * @return VerifyAgeRequestBuilder
+         */
+        public VerifyAgeRequestBuilder accountNumber(Integer accountNumber) {
+            this.accountNumber = accountNumber;
+            return this;
+        }
+        
+        /**
+         * Set bankCode
+         * @param bankCode  (optional)
+         * @return VerifyAgeRequestBuilder
+         */
+        public VerifyAgeRequestBuilder bankCode(Integer bankCode) {
+            this.bankCode = bankCode;
+            return this;
+        }
+        
+        /**
+         * Set dob
+         * @param dob  (optional)
+         * @return VerifyAgeRequestBuilder
+         */
+        public VerifyAgeRequestBuilder dob(String dob) {
+            this.dob = dob;
+            return this;
+        }
+        
+        /**
+         * Set firstName
+         * @param firstName  (optional)
+         * @return VerifyAgeRequestBuilder
+         */
+        public VerifyAgeRequestBuilder firstName(String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+        
+        /**
+         * Set lastName
+         * @param lastName  (optional)
+         * @return VerifyAgeRequestBuilder
+         */
+        public VerifyAgeRequestBuilder lastName(String lastName) {
+            this.lastName = lastName;
+            return this;
+        }
+        
+        /**
+         * Build call for verifyAge
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return verifyAgeCall(mode, accountNumber, bankCode, dob, firstName, lastName, _callback);
+        }
+
+
+        /**
+         * Execute verifyAge request
+         * @return VerifyAgeResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public VerifyAgeResponse execute() throws ApiException {
+            ApiResponse<VerifyAgeResponse> localVarResp = verifyAgeWithHttpInfo(mode, accountNumber, bankCode, dob, firstName, lastName);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute verifyAge request with HTTP info returned
+         * @return ApiResponse&lt;VerifyAgeResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<VerifyAgeResponse> executeWithHttpInfo() throws ApiException {
+            return verifyAgeWithHttpInfo(mode, accountNumber, bankCode, dob, firstName, lastName);
+        }
+
+        /**
+         * Execute verifyAge request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<VerifyAgeResponse> _callback) throws ApiException {
+            return verifyAgeAsync(mode, accountNumber, bankCode, dob, firstName, lastName, _callback);
+        }
+    }
+
     /**
-     * Build call for verifySelfieBvn
-     * @param verifySelfieBvnRequest  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * KYC - Age Verification
+     * 
+     * @return VerifyAgeRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call verifySelfieBvnCall(VerifySelfieBvnRequest verifySelfieBvnRequest, final ApiCallback _callback) throws ApiException {
+    public VerifyAgeRequestBuilder verifyAge() throws IllegalArgumentException {
+        return new VerifyAgeRequestBuilder();
+    }
+    private okhttp3.Call verifySelfieBvnCall(VerifySelfieBvnRequest verifySelfieBvnRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1947,74 +2549,133 @@ public class KycApi {
 
     }
 
-    /**
-     * KYC - Selfie BVN Verificatoin
-     * 
-     * @param verifySelfieBvnRequest  (optional)
-     * @return VerifySelfieBvnResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public VerifySelfieBvnResponse verifySelfieBvn(VerifySelfieBvnRequest verifySelfieBvnRequest) throws ApiException {
-        ApiResponse<VerifySelfieBvnResponse> localVarResp = verifySelfieBvnWithHttpInfo(verifySelfieBvnRequest);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - Selfie BVN Verificatoin
-     * 
-     * @param verifySelfieBvnRequest  (optional)
-     * @return ApiResponse&lt;VerifySelfieBvnResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<VerifySelfieBvnResponse> verifySelfieBvnWithHttpInfo(VerifySelfieBvnRequest verifySelfieBvnRequest) throws ApiException {
+    private ApiResponse<VerifySelfieBvnResponse> verifySelfieBvnWithHttpInfo(VerifySelfieBvnRequest verifySelfieBvnRequest) throws ApiException {
         okhttp3.Call localVarCall = verifySelfieBvnValidateBeforeCall(verifySelfieBvnRequest, null);
         Type localVarReturnType = new TypeToken<VerifySelfieBvnResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * KYC - Selfie BVN Verificatoin (asynchronously)
-     * 
-     * @param verifySelfieBvnRequest  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call verifySelfieBvnAsync(VerifySelfieBvnRequest verifySelfieBvnRequest, final ApiCallback<VerifySelfieBvnResponse> _callback) throws ApiException {
+    private okhttp3.Call verifySelfieBvnAsync(VerifySelfieBvnRequest verifySelfieBvnRequest, final ApiCallback<VerifySelfieBvnResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = verifySelfieBvnValidateBeforeCall(verifySelfieBvnRequest, _callback);
         Type localVarReturnType = new TypeToken<VerifySelfieBvnResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class VerifySelfieBvnRequestBuilder {
+        private String bvn;
+        private String selfieImage;
+
+        private VerifySelfieBvnRequestBuilder() {
+        }
+
+        /**
+         * Set bvn
+         * @param bvn  (optional)
+         * @return VerifySelfieBvnRequestBuilder
+         */
+        public VerifySelfieBvnRequestBuilder bvn(String bvn) {
+            this.bvn = bvn;
+            return this;
+        }
+        
+        /**
+         * Set selfieImage
+         * @param selfieImage  (optional)
+         * @return VerifySelfieBvnRequestBuilder
+         */
+        public VerifySelfieBvnRequestBuilder selfieImage(String selfieImage) {
+            this.selfieImage = selfieImage;
+            return this;
+        }
+        
+        /**
+         * Build call for verifySelfieBvn
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            VerifySelfieBvnRequest verifySelfieBvnRequest = buildBodyParams();
+            return verifySelfieBvnCall(verifySelfieBvnRequest, _callback);
+        }
+
+        private VerifySelfieBvnRequest buildBodyParams() {
+            VerifySelfieBvnRequest verifySelfieBvnRequest = new VerifySelfieBvnRequest();
+            verifySelfieBvnRequest.bvn(this.bvn);
+            verifySelfieBvnRequest.selfieImage(this.selfieImage);
+            return verifySelfieBvnRequest;
+        }
+
+        /**
+         * Execute verifySelfieBvn request
+         * @return VerifySelfieBvnResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public VerifySelfieBvnResponse execute() throws ApiException {
+            VerifySelfieBvnRequest verifySelfieBvnRequest = buildBodyParams();
+            ApiResponse<VerifySelfieBvnResponse> localVarResp = verifySelfieBvnWithHttpInfo(verifySelfieBvnRequest);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute verifySelfieBvn request with HTTP info returned
+         * @return ApiResponse&lt;VerifySelfieBvnResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<VerifySelfieBvnResponse> executeWithHttpInfo() throws ApiException {
+            VerifySelfieBvnRequest verifySelfieBvnRequest = buildBodyParams();
+            return verifySelfieBvnWithHttpInfo(verifySelfieBvnRequest);
+        }
+
+        /**
+         * Execute verifySelfieBvn request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<VerifySelfieBvnResponse> _callback) throws ApiException {
+            VerifySelfieBvnRequest verifySelfieBvnRequest = buildBodyParams();
+            return verifySelfieBvnAsync(verifySelfieBvnRequest, _callback);
+        }
+    }
+
     /**
-     * Build call for verifySelfieNin
-     * @param verifySelfieNinRequest  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * KYC - Selfie BVN Verificatoin
+     * 
+     * @return VerifySelfieBvnRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call verifySelfieNinCall(VerifySelfieNinRequest verifySelfieNinRequest, final ApiCallback _callback) throws ApiException {
+    public VerifySelfieBvnRequestBuilder verifySelfieBvn() throws IllegalArgumentException {
+        return new VerifySelfieBvnRequestBuilder();
+    }
+    private okhttp3.Call verifySelfieNinCall(VerifySelfieNinRequest verifySelfieNinRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2065,59 +2726,130 @@ public class KycApi {
 
     }
 
-    /**
-     * KYC - Selfie NIN Verification
-     * 
-     * @param verifySelfieNinRequest  (optional)
-     * @return VerifySelfieNinResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public VerifySelfieNinResponse verifySelfieNin(VerifySelfieNinRequest verifySelfieNinRequest) throws ApiException {
-        ApiResponse<VerifySelfieNinResponse> localVarResp = verifySelfieNinWithHttpInfo(verifySelfieNinRequest);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - Selfie NIN Verification
-     * 
-     * @param verifySelfieNinRequest  (optional)
-     * @return ApiResponse&lt;VerifySelfieNinResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<VerifySelfieNinResponse> verifySelfieNinWithHttpInfo(VerifySelfieNinRequest verifySelfieNinRequest) throws ApiException {
+    private ApiResponse<VerifySelfieNinResponse> verifySelfieNinWithHttpInfo(VerifySelfieNinRequest verifySelfieNinRequest) throws ApiException {
         okhttp3.Call localVarCall = verifySelfieNinValidateBeforeCall(verifySelfieNinRequest, null);
         Type localVarReturnType = new TypeToken<VerifySelfieNinResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
+    private okhttp3.Call verifySelfieNinAsync(VerifySelfieNinRequest verifySelfieNinRequest, final ApiCallback<VerifySelfieNinResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = verifySelfieNinValidateBeforeCall(verifySelfieNinRequest, _callback);
+        Type localVarReturnType = new TypeToken<VerifySelfieNinResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+
+    public class VerifySelfieNinRequestBuilder {
+        private String nin;
+        private String selfieImage;
+
+        private VerifySelfieNinRequestBuilder() {
+        }
+
+        /**
+         * Set nin
+         * @param nin  (optional)
+         * @return VerifySelfieNinRequestBuilder
+         */
+        public VerifySelfieNinRequestBuilder nin(String nin) {
+            this.nin = nin;
+            return this;
+        }
+        
+        /**
+         * Set selfieImage
+         * @param selfieImage  (optional)
+         * @return VerifySelfieNinRequestBuilder
+         */
+        public VerifySelfieNinRequestBuilder selfieImage(String selfieImage) {
+            this.selfieImage = selfieImage;
+            return this;
+        }
+        
+        /**
+         * Build call for verifySelfieNin
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            VerifySelfieNinRequest verifySelfieNinRequest = buildBodyParams();
+            return verifySelfieNinCall(verifySelfieNinRequest, _callback);
+        }
+
+        private VerifySelfieNinRequest buildBodyParams() {
+            VerifySelfieNinRequest verifySelfieNinRequest = new VerifySelfieNinRequest();
+            verifySelfieNinRequest.nin(this.nin);
+            verifySelfieNinRequest.selfieImage(this.selfieImage);
+            return verifySelfieNinRequest;
+        }
+
+        /**
+         * Execute verifySelfieNin request
+         * @return VerifySelfieNinResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public VerifySelfieNinResponse execute() throws ApiException {
+            VerifySelfieNinRequest verifySelfieNinRequest = buildBodyParams();
+            ApiResponse<VerifySelfieNinResponse> localVarResp = verifySelfieNinWithHttpInfo(verifySelfieNinRequest);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute verifySelfieNin request with HTTP info returned
+         * @return ApiResponse&lt;VerifySelfieNinResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<VerifySelfieNinResponse> executeWithHttpInfo() throws ApiException {
+            VerifySelfieNinRequest verifySelfieNinRequest = buildBodyParams();
+            return verifySelfieNinWithHttpInfo(verifySelfieNinRequest);
+        }
+
+        /**
+         * Execute verifySelfieNin request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<VerifySelfieNinResponse> _callback) throws ApiException {
+            VerifySelfieNinRequest verifySelfieNinRequest = buildBodyParams();
+            return verifySelfieNinAsync(verifySelfieNinRequest, _callback);
+        }
+    }
+
     /**
-     * KYC - Selfie NIN Verification (asynchronously)
+     * KYC - Selfie NIN Verification
      * 
-     * @param verifySelfieNinRequest  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @return VerifySelfieNinRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call verifySelfieNinAsync(VerifySelfieNinRequest verifySelfieNinRequest, final ApiCallback<VerifySelfieNinResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = verifySelfieNinValidateBeforeCall(verifySelfieNinRequest, _callback);
-        Type localVarReturnType = new TypeToken<VerifySelfieNinResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
+    public VerifySelfieNinRequestBuilder verifySelfieNin() throws IllegalArgumentException {
+        return new VerifySelfieNinRequestBuilder();
     }
 }

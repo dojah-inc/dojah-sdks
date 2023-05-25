@@ -10,7 +10,7 @@
 |**email** | **String** |  |  [optional] |
 |**reputation** | **String** |  |  [optional] |
 |**suspicious** | **Boolean** |  |  [optional] |
-|**references** | **BigDecimal** |  |  [optional] |
+|**references** | **Double** |  |  [optional] |
 |**details** | [**GetEmailReputationResponseEntityDetails**](GetEmailReputationResponseEntityDetails.md) |  |  [optional] |
 
 

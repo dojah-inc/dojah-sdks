@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -61,6 +62,10 @@ public class GeneralGetNubanResponseEntity {
   }
 
   public GeneralGetNubanResponseEntity accountNumber(String accountNumber) {
+
+    
+    
+    
     
     this.accountNumber = accountNumber;
     return this;
@@ -79,11 +84,19 @@ public class GeneralGetNubanResponseEntity {
 
 
   public void setAccountNumber(String accountNumber) {
+
+    
+    
+    
     this.accountNumber = accountNumber;
   }
 
 
   public GeneralGetNubanResponseEntity accountName(String accountName) {
+
+    
+    
+    
     
     this.accountName = accountName;
     return this;
@@ -102,6 +115,10 @@ public class GeneralGetNubanResponseEntity {
 
 
   public void setAccountName(String accountName) {
+
+    
+    
+    
     this.accountName = accountName;
   }
 

@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -64,7 +64,7 @@ public class AnalyzeDocumentResponseEntityDocumentType {
 
   public static final String SERIALIZED_NAME_DOCUMENT_TYPE_ID = "document_type_id";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE_ID)
-  private BigDecimal documentTypeId;
+  private Double documentTypeId;
 
   public static final String SERIALIZED_NAME_DOCUMENT_YEAR = "document_year";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_YEAR)
@@ -74,6 +74,10 @@ public class AnalyzeDocumentResponseEntityDocumentType {
   }
 
   public AnalyzeDocumentResponseEntityDocumentType documentName(String documentName) {
+
+    
+    
+    
     
     this.documentName = documentName;
     return this;
@@ -92,11 +96,19 @@ public class AnalyzeDocumentResponseEntityDocumentType {
 
 
   public void setDocumentName(String documentName) {
+
+    
+    
+    
     this.documentName = documentName;
   }
 
 
   public AnalyzeDocumentResponseEntityDocumentType documentCountryName(String documentCountryName) {
+
+    
+    
+    
     
     this.documentCountryName = documentCountryName;
     return this;
@@ -115,11 +127,19 @@ public class AnalyzeDocumentResponseEntityDocumentType {
 
 
   public void setDocumentCountryName(String documentCountryName) {
+
+    
+    
+    
     this.documentCountryName = documentCountryName;
   }
 
 
   public AnalyzeDocumentResponseEntityDocumentType documentCountryCode(String documentCountryCode) {
+
+    
+    
+    
     
     this.documentCountryCode = documentCountryCode;
     return this;
@@ -138,13 +158,31 @@ public class AnalyzeDocumentResponseEntityDocumentType {
 
 
   public void setDocumentCountryCode(String documentCountryCode) {
+
+    
+    
+    
     this.documentCountryCode = documentCountryCode;
   }
 
 
-  public AnalyzeDocumentResponseEntityDocumentType documentTypeId(BigDecimal documentTypeId) {
+  public AnalyzeDocumentResponseEntityDocumentType documentTypeId(Double documentTypeId) {
+
+    
+    
+    
     
     this.documentTypeId = documentTypeId;
+    return this;
+  }
+
+  public AnalyzeDocumentResponseEntityDocumentType documentTypeId(Integer documentTypeId) {
+
+    
+    
+    
+    
+    this.documentTypeId = documentTypeId.doubleValue();
     return this;
   }
 
@@ -155,17 +193,25 @@ public class AnalyzeDocumentResponseEntityDocumentType {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "173", value = "")
 
-  public BigDecimal getDocumentTypeId() {
+  public Double getDocumentTypeId() {
     return documentTypeId;
   }
 
 
-  public void setDocumentTypeId(BigDecimal documentTypeId) {
+  public void setDocumentTypeId(Double documentTypeId) {
+
+    
+    
+    
     this.documentTypeId = documentTypeId;
   }
 
 
   public AnalyzeDocumentResponseEntityDocumentType documentYear(String documentYear) {
+
+    
+    
+    
     
     this.documentYear = documentYear;
     return this;
@@ -184,6 +230,10 @@ public class AnalyzeDocumentResponseEntityDocumentType {
 
 
   public void setDocumentYear(String documentYear) {
+
+    
+    
+    
     this.documentYear = documentYear;
   }
 

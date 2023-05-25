@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -121,6 +122,10 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
   }
 
   public GetKycDriversLicenseResponseEntityPersonalDetails firstname(String firstname) {
+
+    
+    
+    
     
     this.firstname = firstname;
     return this;
@@ -139,11 +144,19 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
 
 
   public void setFirstname(String firstname) {
+
+    
+    
+    
     this.firstname = firstname;
   }
 
 
   public GetKycDriversLicenseResponseEntityPersonalDetails othername(String othername) {
+
+    
+    
+    
     
     this.othername = othername;
     return this;
@@ -162,11 +175,19 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
 
 
   public void setOthername(String othername) {
+
+    
+    
+    
     this.othername = othername;
   }
 
 
   public GetKycDriversLicenseResponseEntityPersonalDetails surname(String surname) {
+
+    
+    
+    
     
     this.surname = surname;
     return this;
@@ -185,11 +206,19 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
 
 
   public void setSurname(String surname) {
+
+    
+    
+    
     this.surname = surname;
   }
 
 
   public GetKycDriversLicenseResponseEntityPersonalDetails motherMaidenName(String motherMaidenName) {
+
+    
+    
+    
     
     this.motherMaidenName = motherMaidenName;
     return this;
@@ -208,11 +237,19 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
 
 
   public void setMotherMaidenName(String motherMaidenName) {
+
+    
+    
+    
     this.motherMaidenName = motherMaidenName;
   }
 
 
   public GetKycDriversLicenseResponseEntityPersonalDetails gender(String gender) {
+
+    
+    
+    
     
     this.gender = gender;
     return this;
@@ -231,11 +268,19 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
 
 
   public void setGender(String gender) {
+
+    
+    
+    
     this.gender = gender;
   }
 
 
   public GetKycDriversLicenseResponseEntityPersonalDetails birthDate(String birthDate) {
+
+    
+    
+    
     
     this.birthDate = birthDate;
     return this;
@@ -254,11 +299,19 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
 
 
   public void setBirthDate(String birthDate) {
+
+    
+    
+    
     this.birthDate = birthDate;
   }
 
 
   public GetKycDriversLicenseResponseEntityPersonalDetails bloodGroupId(String bloodGroupId) {
+
+    
+    
+    
     
     this.bloodGroupId = bloodGroupId;
     return this;
@@ -277,11 +330,19 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
 
 
   public void setBloodGroupId(String bloodGroupId) {
+
+    
+    
+    
     this.bloodGroupId = bloodGroupId;
   }
 
 
   public GetKycDriversLicenseResponseEntityPersonalDetails facialMark(String facialMark) {
+
+    
+    
+    
     
     this.facialMark = facialMark;
     return this;
@@ -300,11 +361,19 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
 
 
   public void setFacialMark(String facialMark) {
+
+    
+    
+    
     this.facialMark = facialMark;
   }
 
 
   public GetKycDriversLicenseResponseEntityPersonalDetails glasses(String glasses) {
+
+    
+    
+    
     
     this.glasses = glasses;
     return this;
@@ -323,11 +392,19 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
 
 
   public void setGlasses(String glasses) {
+
+    
+    
+    
     this.glasses = glasses;
   }
 
 
   public GetKycDriversLicenseResponseEntityPersonalDetails height(String height) {
+
+    
+    
+    
     
     this.height = height;
     return this;
@@ -346,11 +423,19 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
 
 
   public void setHeight(String height) {
+
+    
+    
+    
     this.height = height;
   }
 
 
   public GetKycDriversLicenseResponseEntityPersonalDetails universaltaxIdentityNumber(String universaltaxIdentityNumber) {
+
+    
+    
+    
     
     this.universaltaxIdentityNumber = universaltaxIdentityNumber;
     return this;
@@ -369,11 +454,19 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
 
 
   public void setUniversaltaxIdentityNumber(String universaltaxIdentityNumber) {
+
+    
+    
+    
     this.universaltaxIdentityNumber = universaltaxIdentityNumber;
   }
 
 
   public GetKycDriversLicenseResponseEntityPersonalDetails ninNumber(String ninNumber) {
+
+    
+    
+    
     
     this.ninNumber = ninNumber;
     return this;
@@ -392,11 +485,19 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
 
 
   public void setNinNumber(String ninNumber) {
+
+    
+    
+    
     this.ninNumber = ninNumber;
   }
 
 
   public GetKycDriversLicenseResponseEntityPersonalDetails country(String country) {
+
+    
+    
+    
     
     this.country = country;
     return this;
@@ -415,11 +516,19 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
 
 
   public void setCountry(String country) {
+
+    
+    
+    
     this.country = country;
   }
 
 
   public GetKycDriversLicenseResponseEntityPersonalDetails state(String state) {
+
+    
+    
+    
     
     this.state = state;
     return this;
@@ -438,11 +547,19 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
 
 
   public void setState(String state) {
+
+    
+    
+    
     this.state = state;
   }
 
 
   public GetKycDriversLicenseResponseEntityPersonalDetails lga(String lga) {
+
+    
+    
+    
     
     this.lga = lga;
     return this;
@@ -461,11 +578,19 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
 
 
   public void setLga(String lga) {
+
+    
+    
+    
     this.lga = lga;
   }
 
 
   public GetKycDriversLicenseResponseEntityPersonalDetails isDisability(String isDisability) {
+
+    
+    
+    
     
     this.isDisability = isDisability;
     return this;
@@ -484,11 +609,19 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
 
 
   public void setIsDisability(String isDisability) {
+
+    
+    
+    
     this.isDisability = isDisability;
   }
 
 
   public GetKycDriversLicenseResponseEntityPersonalDetails disabilityReason(String disabilityReason) {
+
+    
+    
+    
     
     this.disabilityReason = disabilityReason;
     return this;
@@ -507,6 +640,10 @@ public class GetKycDriversLicenseResponseEntityPersonalDetails {
 
 
   public void setDisabilityReason(String disabilityReason) {
+
+    
+    
+    
     this.disabilityReason = disabilityReason;
   }
 

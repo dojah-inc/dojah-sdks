@@ -10,7 +10,7 @@
 |**documentName** | **String** |  |  [optional] |
 |**documentCountryName** | **String** |  |  [optional] |
 |**documentCountryCode** | **String** |  |  [optional] |
-|**documentTypeId** | **BigDecimal** |  |  [optional] |
+|**documentTypeId** | **Double** |  |  [optional] |
 |**documentYear** | **String** |  |  [optional] |
 
 

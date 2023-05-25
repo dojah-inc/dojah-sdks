@@ -8,8 +8,8 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**appId** | **String** |  |  [optional] |
-|**totalAmount** | **BigDecimal** |  |  [optional] |
-|**clientWallets** | [**List&lt;GetWalletResponseEntity&gt;**](GetWalletResponseEntity.md) |  |  [optional] |
+|**totalAmount** | **Double** |  |  [optional] |
+|**clientWallets** | [**List&lt;GetWalletsResponseEntityClientWalletsInner&gt;**](GetWalletsResponseEntityClientWalletsInner.md) |  |  [optional] |
 
 
 

@@ -13,8 +13,10 @@
 package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.model.GeneralGetNubanResponse;
-import com.konfigthis.dojah.client.model.GeneralGetWalletBalanceResponse;
 import com.konfigthis.dojah.client.model.GetBanksResponse;
 import com.konfigthis.dojah.client.model.GetBinResponse;
 import com.konfigthis.dojah.client.model.GetDataPlansResponse;
@@ -25,6 +27,7 @@ import com.konfigthis.dojah.client.model.PurchaseDataRequest;
 import com.konfigthis.dojah.client.model.PurchaseDataResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,7 +40,14 @@ import java.util.Map;
 @Disabled
 public class GeneralApiTest {
 
-    private final GeneralApi api = new GeneralApi();
+    private static GeneralApi api;
+
+    
+    @BeforeAll
+    public static void beforeClass() {
+        ApiClient apiClient = Configuration.getDefaultApiClient();
+        api = new GeneralApi(apiClient);
+    }
 
     /**
      * General - Get Banks
@@ -46,7 +56,8 @@ public class GeneralApiTest {
      */
     @Test
     public void getBanksTest() throws ApiException {
-        GetBanksResponse response = api.getBanks();
+        GetBanksResponse response = api.getBanks()
+                .execute();
         // TODO: test validations
     }
 
@@ -58,7 +69,9 @@ public class GeneralApiTest {
     @Test
     public void getBinTest() throws ApiException {
         Integer cardBin = null;
-        GetBinResponse response = api.getBin(cardBin);
+        GetBinResponse response = api.getBin()
+                .cardBin(cardBin)
+                .execute();
         // TODO: test validations
     }
 
@@ -69,7 +82,8 @@ public class GeneralApiTest {
      */
     @Test
     public void getDataPlansTest() throws ApiException {
-        GetDataPlansResponse response = api.getDataPlans();
+        GetDataPlansResponse response = api.getDataPlans()
+                .execute();
         // TODO: test validations
     }
 
@@ -82,7 +96,10 @@ public class GeneralApiTest {
     public void getNubanTest() throws ApiException {
         Integer bankCode = null;
         Integer accountNumber = null;
-        GeneralGetNubanResponse response = api.getNuban(bankCode, accountNumber);
+        GeneralGetNubanResponse response = api.getNuban()
+                .bankCode(bankCode)
+                .accountNumber(accountNumber)
+                .execute();
         // TODO: test validations
     }
 
@@ -93,7 +110,8 @@ public class GeneralApiTest {
      */
     @Test
     public void getWalletBalanceTest() throws ApiException {
-        GetWalletBalanceResponse response = api.getWalletBalance();
+        GetWalletBalanceResponse response = api.getWalletBalance()
+                .execute();
         // TODO: test validations
     }
 
@@ -104,8 +122,12 @@ public class GeneralApiTest {
      */
     @Test
     public void purchaseAirtimeTest() throws ApiException {
-        PurchaseAirtimeRequest purchaseAirtimeRequest = null;
-        PurchaseAirtimeResponse response = api.purchaseAirtime(purchaseAirtimeRequest);
+        String destination = null;
+        String amount = null;
+        PurchaseAirtimeResponse response = api.purchaseAirtime()
+                .destination(destination)
+                .amount(amount)
+                .execute();
         // TODO: test validations
     }
 
@@ -116,8 +138,12 @@ public class GeneralApiTest {
      */
     @Test
     public void purchaseDataTest() throws ApiException {
-        PurchaseDataRequest purchaseDataRequest = null;
-        PurchaseDataResponse response = api.purchaseData(purchaseDataRequest);
+        String plan = null;
+        String destination = null;
+        PurchaseDataResponse response = api.purchaseData()
+                .plan(plan)
+                .destination(destination)
+                .execute();
         // TODO: test validations
     }
 

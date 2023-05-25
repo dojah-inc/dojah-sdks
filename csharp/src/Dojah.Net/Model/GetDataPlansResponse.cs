@@ -35,7 +35,7 @@ namespace Dojah.Net.Model
         /// Initializes a new instance of the <see cref="GetDataPlansResponse" /> class.
         /// </summary>
         /// <param name="entity">entity.</param>
-        public GetDataPlansResponse(List<PurchaseDataResponseEntityInner> entity = default(List<PurchaseDataResponseEntityInner>))
+        public GetDataPlansResponse(List<GetDataPlansResponseEntityInner> entity = default(List<GetDataPlansResponseEntityInner>))
         {
             this.Entity = entity;
         }
@@ -44,7 +44,7 @@ namespace Dojah.Net.Model
         /// Gets or Sets Entity
         /// </summary>
         [DataMember(Name = "entity", EmitDefaultValue = false)]
-        public List<PurchaseDataResponseEntityInner> Entity { get; set; }
+        public List<GetDataPlansResponseEntityInner> Entity { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

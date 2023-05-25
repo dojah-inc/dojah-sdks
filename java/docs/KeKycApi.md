@@ -9,15 +9,15 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getNationalId"></a>
 # **getNationalId**
-> GetNationalIdResponse getNationalId(id, firstName, lastName, middleName, dateOfBirth, gender)
+> GetNationalIdResponse getNationalId().id(id).firstName(firstName).lastName(lastName).middleName(middleName).dateOfBirth(dateOfBirth).gender(gender).execute();
 
 KYC - National ID
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -25,31 +25,60 @@ import com.konfigthis.dojah.client.api.KeKycApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    KeKycApi apiInstance = new KeKycApi(defaultClient);
-    Integer id = 24798402; // Integer | 
-    String firstName = "ZEDEKIAH"; // String | 
-    String lastName = "ANDENGA"; // String | 
-    String middleName = "middleName_example"; // String | 
-    String dateOfBirth = "1985-12-29"; // String | 
-    String gender = "M"; // String | 
+    KeKycApi api = new KeKycApi(apiClient);
+    Integer id = 24798402;
+    String firstName = "ZEDEKIAH";
+    String lastName = "ANDENGA";
+    String middleName = "middleName_example";
+    String dateOfBirth = "1985-12-29";
+    String gender = "M";
     try {
-      GetNationalIdResponse result = apiInstance.getNationalId(id, firstName, lastName, middleName, dateOfBirth, gender);
+      GetNationalIdResponse result = api
+              .getNationalId()
+              .id(id)
+              .firstName(firstName)
+              .lastName(lastName)
+              .middleName(middleName)
+              .dateOfBirth(dateOfBirth)
+              .gender(gender)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling KeKycApi#getNationalId");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<GetNationalIdResponse> response = api
+              .getNationalId()
+              .id(id)
+              .firstName(firstName)
+              .lastName(lastName)
+              .middleName(middleName)
+              .dateOfBirth(dateOfBirth)
+              .gender(gender)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling KeKycApi#getNationalId");
       System.err.println("Status code: " + e.getCode());

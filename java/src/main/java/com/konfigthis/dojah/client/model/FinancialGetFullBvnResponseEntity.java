@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -153,6 +154,10 @@ public class FinancialGetFullBvnResponseEntity {
   }
 
   public FinancialGetFullBvnResponseEntity title(String title) {
+
+    
+    
+    
     
     this.title = title;
     return this;
@@ -171,11 +176,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setTitle(String title) {
+
+    
+    
+    
     this.title = title;
   }
 
 
   public FinancialGetFullBvnResponseEntity bvn(String bvn) {
+
+    
+    
+    
     
     this.bvn = bvn;
     return this;
@@ -194,11 +207,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setBvn(String bvn) {
+
+    
+    
+    
     this.bvn = bvn;
   }
 
 
   public FinancialGetFullBvnResponseEntity dateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     
     this.dateOfBirth = dateOfBirth;
     return this;
@@ -217,11 +238,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setDateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     this.dateOfBirth = dateOfBirth;
   }
 
 
   public FinancialGetFullBvnResponseEntity email(String email) {
+
+    
+    
+    
     
     this.email = email;
     return this;
@@ -240,11 +269,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setEmail(String email) {
+
+    
+    
+    
     this.email = email;
   }
 
 
   public FinancialGetFullBvnResponseEntity enrollmentBank(String enrollmentBank) {
+
+    
+    
+    
     
     this.enrollmentBank = enrollmentBank;
     return this;
@@ -263,11 +300,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setEnrollmentBank(String enrollmentBank) {
+
+    
+    
+    
     this.enrollmentBank = enrollmentBank;
   }
 
 
   public FinancialGetFullBvnResponseEntity enrollmentBranch(String enrollmentBranch) {
+
+    
+    
+    
     
     this.enrollmentBranch = enrollmentBranch;
     return this;
@@ -286,11 +331,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setEnrollmentBranch(String enrollmentBranch) {
+
+    
+    
+    
     this.enrollmentBranch = enrollmentBranch;
   }
 
 
   public FinancialGetFullBvnResponseEntity firstName(String firstName) {
+
+    
+    
+    
     
     this.firstName = firstName;
     return this;
@@ -309,11 +362,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setFirstName(String firstName) {
+
+    
+    
+    
     this.firstName = firstName;
   }
 
 
   public FinancialGetFullBvnResponseEntity gender(String gender) {
+
+    
+    
+    
     
     this.gender = gender;
     return this;
@@ -332,11 +393,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setGender(String gender) {
+
+    
+    
+    
     this.gender = gender;
   }
 
 
   public FinancialGetFullBvnResponseEntity image(String image) {
+
+    
+    
+    
     
     this.image = image;
     return this;
@@ -355,11 +424,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setImage(String image) {
+
+    
+    
+    
     this.image = image;
   }
 
 
   public FinancialGetFullBvnResponseEntity lastName(String lastName) {
+
+    
+    
+    
     
     this.lastName = lastName;
     return this;
@@ -378,11 +455,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setLastName(String lastName) {
+
+    
+    
+    
     this.lastName = lastName;
   }
 
 
   public FinancialGetFullBvnResponseEntity levelOfAccount(String levelOfAccount) {
+
+    
+    
+    
     
     this.levelOfAccount = levelOfAccount;
     return this;
@@ -401,11 +486,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setLevelOfAccount(String levelOfAccount) {
+
+    
+    
+    
     this.levelOfAccount = levelOfAccount;
   }
 
 
   public FinancialGetFullBvnResponseEntity lgaOfOrigin(String lgaOfOrigin) {
+
+    
+    
+    
     
     this.lgaOfOrigin = lgaOfOrigin;
     return this;
@@ -424,11 +517,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setLgaOfOrigin(String lgaOfOrigin) {
+
+    
+    
+    
     this.lgaOfOrigin = lgaOfOrigin;
   }
 
 
   public FinancialGetFullBvnResponseEntity lgaOfResidence(String lgaOfResidence) {
+
+    
+    
+    
     
     this.lgaOfResidence = lgaOfResidence;
     return this;
@@ -447,11 +548,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setLgaOfResidence(String lgaOfResidence) {
+
+    
+    
+    
     this.lgaOfResidence = lgaOfResidence;
   }
 
 
   public FinancialGetFullBvnResponseEntity maritalStatus(String maritalStatus) {
+
+    
+    
+    
     
     this.maritalStatus = maritalStatus;
     return this;
@@ -470,11 +579,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setMaritalStatus(String maritalStatus) {
+
+    
+    
+    
     this.maritalStatus = maritalStatus;
   }
 
 
   public FinancialGetFullBvnResponseEntity middleName(String middleName) {
+
+    
+    
+    
     
     this.middleName = middleName;
     return this;
@@ -493,11 +610,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setMiddleName(String middleName) {
+
+    
+    
+    
     this.middleName = middleName;
   }
 
 
   public FinancialGetFullBvnResponseEntity nameOnCard(String nameOnCard) {
+
+    
+    
+    
     
     this.nameOnCard = nameOnCard;
     return this;
@@ -516,11 +641,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setNameOnCard(String nameOnCard) {
+
+    
+    
+    
     this.nameOnCard = nameOnCard;
   }
 
 
   public FinancialGetFullBvnResponseEntity nationality(String nationality) {
+
+    
+    
+    
     
     this.nationality = nationality;
     return this;
@@ -539,11 +672,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setNationality(String nationality) {
+
+    
+    
+    
     this.nationality = nationality;
   }
 
 
   public FinancialGetFullBvnResponseEntity nin(String nin) {
+
+    
+    
+    
     
     this.nin = nin;
     return this;
@@ -562,11 +703,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setNin(String nin) {
+
+    
+    
+    
     this.nin = nin;
   }
 
 
   public FinancialGetFullBvnResponseEntity phoneNumber1(String phoneNumber1) {
+
+    
+    
+    
     
     this.phoneNumber1 = phoneNumber1;
     return this;
@@ -585,11 +734,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setPhoneNumber1(String phoneNumber1) {
+
+    
+    
+    
     this.phoneNumber1 = phoneNumber1;
   }
 
 
   public FinancialGetFullBvnResponseEntity phoneNumber2(String phoneNumber2) {
+
+    
+    
+    
     
     this.phoneNumber2 = phoneNumber2;
     return this;
@@ -608,11 +765,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setPhoneNumber2(String phoneNumber2) {
+
+    
+    
+    
     this.phoneNumber2 = phoneNumber2;
   }
 
 
   public FinancialGetFullBvnResponseEntity registrationDate(String registrationDate) {
+
+    
+    
+    
     
     this.registrationDate = registrationDate;
     return this;
@@ -631,11 +796,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setRegistrationDate(String registrationDate) {
+
+    
+    
+    
     this.registrationDate = registrationDate;
   }
 
 
   public FinancialGetFullBvnResponseEntity residentialAddress(String residentialAddress) {
+
+    
+    
+    
     
     this.residentialAddress = residentialAddress;
     return this;
@@ -654,11 +827,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setResidentialAddress(String residentialAddress) {
+
+    
+    
+    
     this.residentialAddress = residentialAddress;
   }
 
 
   public FinancialGetFullBvnResponseEntity stateOfOrigin(String stateOfOrigin) {
+
+    
+    
+    
     
     this.stateOfOrigin = stateOfOrigin;
     return this;
@@ -677,11 +858,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setStateOfOrigin(String stateOfOrigin) {
+
+    
+    
+    
     this.stateOfOrigin = stateOfOrigin;
   }
 
 
   public FinancialGetFullBvnResponseEntity stateOfResidence(String stateOfResidence) {
+
+    
+    
+    
     
     this.stateOfResidence = stateOfResidence;
     return this;
@@ -700,11 +889,19 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setStateOfResidence(String stateOfResidence) {
+
+    
+    
+    
     this.stateOfResidence = stateOfResidence;
   }
 
 
   public FinancialGetFullBvnResponseEntity watchListed(String watchListed) {
+
+    
+    
+    
     
     this.watchListed = watchListed;
     return this;
@@ -723,6 +920,10 @@ public class FinancialGetFullBvnResponseEntity {
 
 
   public void setWatchListed(String watchListed) {
+
+    
+    
+    
     this.watchListed = watchListed;
   }
 

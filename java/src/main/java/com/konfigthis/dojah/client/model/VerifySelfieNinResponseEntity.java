@@ -34,6 +34,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -254,6 +255,10 @@ public class VerifySelfieNinResponseEntity {
   }
 
   public VerifySelfieNinResponseEntity title(String title) {
+
+    
+    
+    
     
     this.title = title;
     return this;
@@ -272,11 +277,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setTitle(String title) {
+
+    
+    
+    
     this.title = title;
   }
 
 
   public VerifySelfieNinResponseEntity nin(String nin) {
+
+    
+    
+    
     
     this.nin = nin;
     return this;
@@ -295,11 +308,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setNin(String nin) {
+
+    
+    
+    
     this.nin = nin;
   }
 
 
   public VerifySelfieNinResponseEntity firstname(String firstname) {
+
+    
+    
+    
     
     this.firstname = firstname;
     return this;
@@ -318,11 +339,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setFirstname(String firstname) {
+
+    
+    
+    
     this.firstname = firstname;
   }
 
 
   public VerifySelfieNinResponseEntity middlename(String middlename) {
+
+    
+    
+    
     
     this.middlename = middlename;
     return this;
@@ -341,11 +370,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setMiddlename(String middlename) {
+
+    
+    
+    
     this.middlename = middlename;
   }
 
 
   public VerifySelfieNinResponseEntity surname(String surname) {
+
+    
+    
+    
     
     this.surname = surname;
     return this;
@@ -364,11 +401,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setSurname(String surname) {
+
+    
+    
+    
     this.surname = surname;
   }
 
 
   public VerifySelfieNinResponseEntity maidenname(String maidenname) {
+
+    
+    
+    
     
     this.maidenname = maidenname;
     return this;
@@ -387,11 +432,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setMaidenname(String maidenname) {
+
+    
+    
+    
     this.maidenname = maidenname;
   }
 
 
   public VerifySelfieNinResponseEntity telephoneno(String telephoneno) {
+
+    
+    
+    
     
     this.telephoneno = telephoneno;
     return this;
@@ -410,11 +463,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setTelephoneno(String telephoneno) {
+
+    
+    
+    
     this.telephoneno = telephoneno;
   }
 
 
   public VerifySelfieNinResponseEntity state(String state) {
+
+    
+    
+    
     
     this.state = state;
     return this;
@@ -433,11 +494,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setState(String state) {
+
+    
+    
+    
     this.state = state;
   }
 
 
   public VerifySelfieNinResponseEntity place(String place) {
+
+    
+    
+    
     
     this.place = place;
     return this;
@@ -456,11 +525,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setPlace(String place) {
+
+    
+    
+    
     this.place = place;
   }
 
 
   public VerifySelfieNinResponseEntity profession(String profession) {
+
+    
+    
+    
     
     this.profession = profession;
     return this;
@@ -479,11 +556,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setProfession(String profession) {
+
+    
+    
+    
     this.profession = profession;
   }
 
 
   public VerifySelfieNinResponseEntity height(String height) {
+
+    
+    
+    
     
     this.height = height;
     return this;
@@ -502,11 +587,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setHeight(String height) {
+
+    
+    
+    
     this.height = height;
   }
 
 
   public VerifySelfieNinResponseEntity email(String email) {
+
+    
+    
+    
     
     this.email = email;
     return this;
@@ -525,11 +618,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setEmail(String email) {
+
+    
+    
+    
     this.email = email;
   }
 
 
   public VerifySelfieNinResponseEntity birthdate(String birthdate) {
+
+    
+    
+    
     
     this.birthdate = birthdate;
     return this;
@@ -548,11 +649,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setBirthdate(String birthdate) {
+
+    
+    
+    
     this.birthdate = birthdate;
   }
 
 
   public VerifySelfieNinResponseEntity birthstate(String birthstate) {
+
+    
+    
+    
     
     this.birthstate = birthstate;
     return this;
@@ -571,11 +680,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setBirthstate(String birthstate) {
+
+    
+    
+    
     this.birthstate = birthstate;
   }
 
 
   public VerifySelfieNinResponseEntity birthcountry(String birthcountry) {
+
+    
+    
+    
     
     this.birthcountry = birthcountry;
     return this;
@@ -594,11 +711,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setBirthcountry(String birthcountry) {
+
+    
+    
+    
     this.birthcountry = birthcountry;
   }
 
 
   public VerifySelfieNinResponseEntity centralID(String centralID) {
+
+    
+    
+    
     
     this.centralID = centralID;
     return this;
@@ -617,11 +742,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setCentralID(String centralID) {
+
+    
+    
+    
     this.centralID = centralID;
   }
 
 
   public VerifySelfieNinResponseEntity documentno(String documentno) {
+
+    
+    
+    
     
     this.documentno = documentno;
     return this;
@@ -640,11 +773,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setDocumentno(String documentno) {
+
+    
+    
+    
     this.documentno = documentno;
   }
 
 
   public VerifySelfieNinResponseEntity educationallevel(String educationallevel) {
+
+    
+    
+    
     
     this.educationallevel = educationallevel;
     return this;
@@ -663,11 +804,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setEducationallevel(String educationallevel) {
+
+    
+    
+    
     this.educationallevel = educationallevel;
   }
 
 
   public VerifySelfieNinResponseEntity employmentstatus(String employmentstatus) {
+
+    
+    
+    
     
     this.employmentstatus = employmentstatus;
     return this;
@@ -686,11 +835,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setEmploymentstatus(String employmentstatus) {
+
+    
+    
+    
     this.employmentstatus = employmentstatus;
   }
 
 
   public VerifySelfieNinResponseEntity nokFirstname(String nokFirstname) {
+
+    
+    
+    
     
     this.nokFirstname = nokFirstname;
     return this;
@@ -709,11 +866,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setNokFirstname(String nokFirstname) {
+
+    
+    
+    
     this.nokFirstname = nokFirstname;
   }
 
 
   public VerifySelfieNinResponseEntity nokLastname(String nokLastname) {
+
+    
+    
+    
     
     this.nokLastname = nokLastname;
     return this;
@@ -732,11 +897,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setNokLastname(String nokLastname) {
+
+    
+    
+    
     this.nokLastname = nokLastname;
   }
 
 
   public VerifySelfieNinResponseEntity nokMiddlename(String nokMiddlename) {
+
+    
+    
+    
     
     this.nokMiddlename = nokMiddlename;
     return this;
@@ -755,11 +928,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setNokMiddlename(String nokMiddlename) {
+
+    
+    
+    
     this.nokMiddlename = nokMiddlename;
   }
 
 
   public VerifySelfieNinResponseEntity nokAddress1(String nokAddress1) {
+
+    
+    
+    
     
     this.nokAddress1 = nokAddress1;
     return this;
@@ -778,11 +959,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setNokAddress1(String nokAddress1) {
+
+    
+    
+    
     this.nokAddress1 = nokAddress1;
   }
 
 
   public VerifySelfieNinResponseEntity nokAddress2(String nokAddress2) {
+
+    
+    
+    
     
     this.nokAddress2 = nokAddress2;
     return this;
@@ -801,11 +990,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setNokAddress2(String nokAddress2) {
+
+    
+    
+    
     this.nokAddress2 = nokAddress2;
   }
 
 
   public VerifySelfieNinResponseEntity nokLga(String nokLga) {
+
+    
+    
+    
     
     this.nokLga = nokLga;
     return this;
@@ -824,11 +1021,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setNokLga(String nokLga) {
+
+    
+    
+    
     this.nokLga = nokLga;
   }
 
 
   public VerifySelfieNinResponseEntity nokState(String nokState) {
+
+    
+    
+    
     
     this.nokState = nokState;
     return this;
@@ -847,11 +1052,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setNokState(String nokState) {
+
+    
+    
+    
     this.nokState = nokState;
   }
 
 
   public VerifySelfieNinResponseEntity nokTown(String nokTown) {
+
+    
+    
+    
     
     this.nokTown = nokTown;
     return this;
@@ -870,11 +1083,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setNokTown(String nokTown) {
+
+    
+    
+    
     this.nokTown = nokTown;
   }
 
 
   public VerifySelfieNinResponseEntity nokPostalcode(String nokPostalcode) {
+
+    
+    
+    
     
     this.nokPostalcode = nokPostalcode;
     return this;
@@ -893,11 +1114,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setNokPostalcode(String nokPostalcode) {
+
+    
+    
+    
     this.nokPostalcode = nokPostalcode;
   }
 
 
   public VerifySelfieNinResponseEntity othername(String othername) {
+
+    
+    
+    
     
     this.othername = othername;
     return this;
@@ -916,11 +1145,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setOthername(String othername) {
+
+    
+    
+    
     this.othername = othername;
   }
 
 
   public VerifySelfieNinResponseEntity pfirstname(String pfirstname) {
+
+    
+    
+    
     
     this.pfirstname = pfirstname;
     return this;
@@ -939,11 +1176,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setPfirstname(String pfirstname) {
+
+    
+    
+    
     this.pfirstname = pfirstname;
   }
 
 
   public VerifySelfieNinResponseEntity photo(String photo) {
+
+    
+    
+    
     
     this.photo = photo;
     return this;
@@ -962,11 +1207,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setPhoto(String photo) {
+
+    
+    
+    
     this.photo = photo;
   }
 
 
   public VerifySelfieNinResponseEntity pmiddlename(String pmiddlename) {
+
+    
+    
+    
     
     this.pmiddlename = pmiddlename;
     return this;
@@ -985,11 +1238,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setPmiddlename(String pmiddlename) {
+
+    
+    
+    
     this.pmiddlename = pmiddlename;
   }
 
 
   public VerifySelfieNinResponseEntity psurname(String psurname) {
+
+    
+    
+    
     
     this.psurname = psurname;
     return this;
@@ -1008,11 +1269,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setPsurname(String psurname) {
+
+    
+    
+    
     this.psurname = psurname;
   }
 
 
   public VerifySelfieNinResponseEntity nspokenlang(String nspokenlang) {
+
+    
+    
+    
     
     this.nspokenlang = nspokenlang;
     return this;
@@ -1031,11 +1300,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setNspokenlang(String nspokenlang) {
+
+    
+    
+    
     this.nspokenlang = nspokenlang;
   }
 
 
   public VerifySelfieNinResponseEntity ospokenlang(String ospokenlang) {
+
+    
+    
+    
     
     this.ospokenlang = ospokenlang;
     return this;
@@ -1054,11 +1331,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setOspokenlang(String ospokenlang) {
+
+    
+    
+    
     this.ospokenlang = ospokenlang;
   }
 
 
   public VerifySelfieNinResponseEntity religion(String religion) {
+
+    
+    
+    
     
     this.religion = religion;
     return this;
@@ -1077,11 +1362,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setReligion(String religion) {
+
+    
+    
+    
     this.religion = religion;
   }
 
 
   public VerifySelfieNinResponseEntity residenceTown(String residenceTown) {
+
+    
+    
+    
     
     this.residenceTown = residenceTown;
     return this;
@@ -1100,11 +1393,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setResidenceTown(String residenceTown) {
+
+    
+    
+    
     this.residenceTown = residenceTown;
   }
 
 
   public VerifySelfieNinResponseEntity residenceLga(String residenceLga) {
+
+    
+    
+    
     
     this.residenceLga = residenceLga;
     return this;
@@ -1123,11 +1424,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setResidenceLga(String residenceLga) {
+
+    
+    
+    
     this.residenceLga = residenceLga;
   }
 
 
   public VerifySelfieNinResponseEntity residenceState(String residenceState) {
+
+    
+    
+    
     
     this.residenceState = residenceState;
     return this;
@@ -1146,11 +1455,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setResidenceState(String residenceState) {
+
+    
+    
+    
     this.residenceState = residenceState;
   }
 
 
   public VerifySelfieNinResponseEntity residencestatus(String residencestatus) {
+
+    
+    
+    
     
     this.residencestatus = residencestatus;
     return this;
@@ -1169,11 +1486,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setResidencestatus(String residencestatus) {
+
+    
+    
+    
     this.residencestatus = residencestatus;
   }
 
 
   public VerifySelfieNinResponseEntity residenceAddressLine1(String residenceAddressLine1) {
+
+    
+    
+    
     
     this.residenceAddressLine1 = residenceAddressLine1;
     return this;
@@ -1192,11 +1517,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setResidenceAddressLine1(String residenceAddressLine1) {
+
+    
+    
+    
     this.residenceAddressLine1 = residenceAddressLine1;
   }
 
 
   public VerifySelfieNinResponseEntity residenceAddressLine2(String residenceAddressLine2) {
+
+    
+    
+    
     
     this.residenceAddressLine2 = residenceAddressLine2;
     return this;
@@ -1215,11 +1548,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setResidenceAddressLine2(String residenceAddressLine2) {
+
+    
+    
+    
     this.residenceAddressLine2 = residenceAddressLine2;
   }
 
 
   public VerifySelfieNinResponseEntity selfOriginLga(String selfOriginLga) {
+
+    
+    
+    
     
     this.selfOriginLga = selfOriginLga;
     return this;
@@ -1238,11 +1579,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setSelfOriginLga(String selfOriginLga) {
+
+    
+    
+    
     this.selfOriginLga = selfOriginLga;
   }
 
 
   public VerifySelfieNinResponseEntity selfOriginPlace(String selfOriginPlace) {
+
+    
+    
+    
     
     this.selfOriginPlace = selfOriginPlace;
     return this;
@@ -1261,11 +1610,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setSelfOriginPlace(String selfOriginPlace) {
+
+    
+    
+    
     this.selfOriginPlace = selfOriginPlace;
   }
 
 
   public VerifySelfieNinResponseEntity selfOriginState(String selfOriginState) {
+
+    
+    
+    
     
     this.selfOriginState = selfOriginState;
     return this;
@@ -1284,11 +1641,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setSelfOriginState(String selfOriginState) {
+
+    
+    
+    
     this.selfOriginState = selfOriginState;
   }
 
 
   public VerifySelfieNinResponseEntity signature(String signature) {
+
+    
+    
+    
     
     this.signature = signature;
     return this;
@@ -1307,11 +1672,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setSignature(String signature) {
+
+    
+    
+    
     this.signature = signature;
   }
 
 
   public VerifySelfieNinResponseEntity nationality(String nationality) {
+
+    
+    
+    
     
     this.nationality = nationality;
     return this;
@@ -1330,11 +1703,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setNationality(String nationality) {
+
+    
+    
+    
     this.nationality = nationality;
   }
 
 
   public VerifySelfieNinResponseEntity gender(String gender) {
+
+    
+    
+    
     
     this.gender = gender;
     return this;
@@ -1353,11 +1734,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setGender(String gender) {
+
+    
+    
+    
     this.gender = gender;
   }
 
 
   public VerifySelfieNinResponseEntity trackingId(String trackingId) {
+
+    
+    
+    
     
     this.trackingId = trackingId;
     return this;
@@ -1376,11 +1765,19 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setTrackingId(String trackingId) {
+
+    
+    
+    
     this.trackingId = trackingId;
   }
 
 
   public VerifySelfieNinResponseEntity selfieVerification(VerifySelfieNinResponseEntitySelfieVerification selfieVerification) {
+
+    
+    
+    
     
     this.selfieVerification = selfieVerification;
     return this;
@@ -1399,6 +1796,10 @@ public class VerifySelfieNinResponseEntity {
 
 
   public void setSelfieVerification(VerifySelfieNinResponseEntitySelfieVerification selfieVerification) {
+
+    
+    
+    
     this.selfieVerification = selfieVerification;
   }
 

@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +35,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -98,7 +98,7 @@ public class GetEmailReputationResponseEntityDetails {
 
   public static final String SERIALIZED_NAME_DAYS_SINCE_DOMAIN_CREATION = "days_since_domain_creation";
   @SerializedName(SERIALIZED_NAME_DAYS_SINCE_DOMAIN_CREATION)
-  private BigDecimal daysSinceDomainCreation;
+  private Double daysSinceDomainCreation;
 
   public static final String SERIALIZED_NAME_SUSPICIOUS_TLD = "suspicious_tld";
   @SerializedName(SERIALIZED_NAME_SUSPICIOUS_TLD)
@@ -152,6 +152,10 @@ public class GetEmailReputationResponseEntityDetails {
   }
 
   public GetEmailReputationResponseEntityDetails blacklisted(Boolean blacklisted) {
+
+    
+    
+    
     
     this.blacklisted = blacklisted;
     return this;
@@ -170,11 +174,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setBlacklisted(Boolean blacklisted) {
+
+    
+    
+    
     this.blacklisted = blacklisted;
   }
 
 
   public GetEmailReputationResponseEntityDetails maliciousActivity(Boolean maliciousActivity) {
+
+    
+    
+    
     
     this.maliciousActivity = maliciousActivity;
     return this;
@@ -193,11 +205,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setMaliciousActivity(Boolean maliciousActivity) {
+
+    
+    
+    
     this.maliciousActivity = maliciousActivity;
   }
 
 
   public GetEmailReputationResponseEntityDetails maliciousActivityRecent(Boolean maliciousActivityRecent) {
+
+    
+    
+    
     
     this.maliciousActivityRecent = maliciousActivityRecent;
     return this;
@@ -216,11 +236,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setMaliciousActivityRecent(Boolean maliciousActivityRecent) {
+
+    
+    
+    
     this.maliciousActivityRecent = maliciousActivityRecent;
   }
 
 
   public GetEmailReputationResponseEntityDetails credentialsLeaked(Boolean credentialsLeaked) {
+
+    
+    
+    
     
     this.credentialsLeaked = credentialsLeaked;
     return this;
@@ -239,11 +267,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setCredentialsLeaked(Boolean credentialsLeaked) {
+
+    
+    
+    
     this.credentialsLeaked = credentialsLeaked;
   }
 
 
   public GetEmailReputationResponseEntityDetails credentialsLeakedRecent(Boolean credentialsLeakedRecent) {
+
+    
+    
+    
     
     this.credentialsLeakedRecent = credentialsLeakedRecent;
     return this;
@@ -262,11 +298,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setCredentialsLeakedRecent(Boolean credentialsLeakedRecent) {
+
+    
+    
+    
     this.credentialsLeakedRecent = credentialsLeakedRecent;
   }
 
 
   public GetEmailReputationResponseEntityDetails dataBreach(Boolean dataBreach) {
+
+    
+    
+    
     
     this.dataBreach = dataBreach;
     return this;
@@ -285,11 +329,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setDataBreach(Boolean dataBreach) {
+
+    
+    
+    
     this.dataBreach = dataBreach;
   }
 
 
   public GetEmailReputationResponseEntityDetails firstSeen(String firstSeen) {
+
+    
+    
+    
     
     this.firstSeen = firstSeen;
     return this;
@@ -308,11 +360,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setFirstSeen(String firstSeen) {
+
+    
+    
+    
     this.firstSeen = firstSeen;
   }
 
 
   public GetEmailReputationResponseEntityDetails lastSeen(String lastSeen) {
+
+    
+    
+    
     
     this.lastSeen = lastSeen;
     return this;
@@ -331,11 +391,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setLastSeen(String lastSeen) {
+
+    
+    
+    
     this.lastSeen = lastSeen;
   }
 
 
   public GetEmailReputationResponseEntityDetails domainExists(Boolean domainExists) {
+
+    
+    
+    
     
     this.domainExists = domainExists;
     return this;
@@ -354,11 +422,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setDomainExists(Boolean domainExists) {
+
+    
+    
+    
     this.domainExists = domainExists;
   }
 
 
   public GetEmailReputationResponseEntityDetails domainReputation(String domainReputation) {
+
+    
+    
+    
     
     this.domainReputation = domainReputation;
     return this;
@@ -377,11 +453,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setDomainReputation(String domainReputation) {
+
+    
+    
+    
     this.domainReputation = domainReputation;
   }
 
 
   public GetEmailReputationResponseEntityDetails newDomain(Boolean newDomain) {
+
+    
+    
+    
     
     this.newDomain = newDomain;
     return this;
@@ -400,13 +484,31 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setNewDomain(Boolean newDomain) {
+
+    
+    
+    
     this.newDomain = newDomain;
   }
 
 
-  public GetEmailReputationResponseEntityDetails daysSinceDomainCreation(BigDecimal daysSinceDomainCreation) {
+  public GetEmailReputationResponseEntityDetails daysSinceDomainCreation(Double daysSinceDomainCreation) {
+
+    
+    
+    
     
     this.daysSinceDomainCreation = daysSinceDomainCreation;
+    return this;
+  }
+
+  public GetEmailReputationResponseEntityDetails daysSinceDomainCreation(Integer daysSinceDomainCreation) {
+
+    
+    
+    
+    
+    this.daysSinceDomainCreation = daysSinceDomainCreation.doubleValue();
     return this;
   }
 
@@ -417,17 +519,25 @@ public class GetEmailReputationResponseEntityDetails {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "9474", value = "")
 
-  public BigDecimal getDaysSinceDomainCreation() {
+  public Double getDaysSinceDomainCreation() {
     return daysSinceDomainCreation;
   }
 
 
-  public void setDaysSinceDomainCreation(BigDecimal daysSinceDomainCreation) {
+  public void setDaysSinceDomainCreation(Double daysSinceDomainCreation) {
+
+    
+    
+    
     this.daysSinceDomainCreation = daysSinceDomainCreation;
   }
 
 
   public GetEmailReputationResponseEntityDetails suspiciousTld(Boolean suspiciousTld) {
+
+    
+    
+    
     
     this.suspiciousTld = suspiciousTld;
     return this;
@@ -446,11 +556,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setSuspiciousTld(Boolean suspiciousTld) {
+
+    
+    
+    
     this.suspiciousTld = suspiciousTld;
   }
 
 
   public GetEmailReputationResponseEntityDetails spam(Boolean spam) {
+
+    
+    
+    
     
     this.spam = spam;
     return this;
@@ -469,11 +587,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setSpam(Boolean spam) {
+
+    
+    
+    
     this.spam = spam;
   }
 
 
   public GetEmailReputationResponseEntityDetails freeProvider(Boolean freeProvider) {
+
+    
+    
+    
     
     this.freeProvider = freeProvider;
     return this;
@@ -492,11 +618,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setFreeProvider(Boolean freeProvider) {
+
+    
+    
+    
     this.freeProvider = freeProvider;
   }
 
 
   public GetEmailReputationResponseEntityDetails disposable(Boolean disposable) {
+
+    
+    
+    
     
     this.disposable = disposable;
     return this;
@@ -515,11 +649,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setDisposable(Boolean disposable) {
+
+    
+    
+    
     this.disposable = disposable;
   }
 
 
   public GetEmailReputationResponseEntityDetails deliverable(Boolean deliverable) {
+
+    
+    
+    
     
     this.deliverable = deliverable;
     return this;
@@ -538,11 +680,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setDeliverable(Boolean deliverable) {
+
+    
+    
+    
     this.deliverable = deliverable;
   }
 
 
   public GetEmailReputationResponseEntityDetails acceptAll(Boolean acceptAll) {
+
+    
+    
+    
     
     this.acceptAll = acceptAll;
     return this;
@@ -561,11 +711,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setAcceptAll(Boolean acceptAll) {
+
+    
+    
+    
     this.acceptAll = acceptAll;
   }
 
 
   public GetEmailReputationResponseEntityDetails validMx(Boolean validMx) {
+
+    
+    
+    
     
     this.validMx = validMx;
     return this;
@@ -584,11 +742,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setValidMx(Boolean validMx) {
+
+    
+    
+    
     this.validMx = validMx;
   }
 
 
   public GetEmailReputationResponseEntityDetails primaryMx(String primaryMx) {
+
+    
+    
+    
     
     this.primaryMx = primaryMx;
     return this;
@@ -607,11 +773,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setPrimaryMx(String primaryMx) {
+
+    
+    
+    
     this.primaryMx = primaryMx;
   }
 
 
   public GetEmailReputationResponseEntityDetails spoofable(Boolean spoofable) {
+
+    
+    
+    
     
     this.spoofable = spoofable;
     return this;
@@ -630,11 +804,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setSpoofable(Boolean spoofable) {
+
+    
+    
+    
     this.spoofable = spoofable;
   }
 
 
   public GetEmailReputationResponseEntityDetails spfStrict(Boolean spfStrict) {
+
+    
+    
+    
     
     this.spfStrict = spfStrict;
     return this;
@@ -653,11 +835,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setSpfStrict(Boolean spfStrict) {
+
+    
+    
+    
     this.spfStrict = spfStrict;
   }
 
 
   public GetEmailReputationResponseEntityDetails dmarcEnforced(Boolean dmarcEnforced) {
+
+    
+    
+    
     
     this.dmarcEnforced = dmarcEnforced;
     return this;
@@ -676,11 +866,19 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setDmarcEnforced(Boolean dmarcEnforced) {
+
+    
+    
+    
     this.dmarcEnforced = dmarcEnforced;
   }
 
 
   public GetEmailReputationResponseEntityDetails profiles(List<String> profiles) {
+
+    
+    
+    
     
     this.profiles = profiles;
     return this;
@@ -707,6 +905,10 @@ public class GetEmailReputationResponseEntityDetails {
 
 
   public void setProfiles(List<String> profiles) {
+
+    
+    
+    
     this.profiles = profiles;
   }
 

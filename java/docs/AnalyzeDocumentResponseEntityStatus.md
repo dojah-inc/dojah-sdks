@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**overallStatus** | **BigDecimal** |  |  [optional] |
+|**overallStatus** | **Double** |  |  [optional] |
 |**documentImages** | **String** |  |  [optional] |
 |**text** | **String** |  |  [optional] |
 |**documentType** | **String** |  |  [optional] |

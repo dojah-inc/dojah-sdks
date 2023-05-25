@@ -136,8 +136,8 @@ namespace Dojah.Net.Api
                 Dojah.Net.Client.GlobalConfiguration.Instance,
                 new Dojah.Net.Client.Configuration { BasePath = basePath }
             );
-            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
+            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration);
+            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration);
             this.ExceptionFactory = Dojah.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
@@ -155,9 +155,9 @@ namespace Dojah.Net.Api
                 Dojah.Net.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Dojah.Net.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration);
+            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration);
+            this.ExceptionFactory = Dojah.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -276,27 +276,27 @@ namespace Dojah.Net.Api
 
             if (id != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "id", id));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "id", id, ""));
             }
             if (firstName != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "first_name", firstName));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "first_name", firstName, ""));
             }
             if (lastName != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "last_name", lastName));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "last_name", lastName, ""));
             }
             if (middleName != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "middle_name", middleName));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "middle_name", middleName, ""));
             }
             if (dateOfBirth != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "date_of_birth", dateOfBirth));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "date_of_birth", dateOfBirth, ""));
             }
             if (gender != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "gender", gender));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "gender", gender, ""));
             }
 
             localVarRequestOptions.Operation = "KEKYCApi.GetNationalId";
@@ -386,27 +386,27 @@ namespace Dojah.Net.Api
 
             if (id != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "id", id));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "id", id, ""));
             }
             if (firstName != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "first_name", firstName));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "first_name", firstName, ""));
             }
             if (lastName != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "last_name", lastName));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "last_name", lastName, ""));
             }
             if (middleName != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "middle_name", middleName));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "middle_name", middleName, ""));
             }
             if (dateOfBirth != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "date_of_birth", dateOfBirth));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "date_of_birth", dateOfBirth, ""));
             }
             if (gender != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "gender", gender));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "gender", gender, ""));
             }
 
             localVarRequestOptions.Operation = "KEKYCApi.GetNationalId";

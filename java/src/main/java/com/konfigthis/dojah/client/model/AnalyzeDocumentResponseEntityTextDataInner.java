@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -56,11 +56,11 @@ public class AnalyzeDocumentResponseEntityTextDataInner {
 
   public static final String SERIALIZED_NAME_FIELD_TYPE = "field_type";
   @SerializedName(SERIALIZED_NAME_FIELD_TYPE)
-  private BigDecimal fieldType;
+  private Double fieldType;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private BigDecimal status;
+  private Double status;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
@@ -70,6 +70,10 @@ public class AnalyzeDocumentResponseEntityTextDataInner {
   }
 
   public AnalyzeDocumentResponseEntityTextDataInner fieldName(String fieldName) {
+
+    
+    
+    
     
     this.fieldName = fieldName;
     return this;
@@ -88,13 +92,31 @@ public class AnalyzeDocumentResponseEntityTextDataInner {
 
 
   public void setFieldName(String fieldName) {
+
+    
+    
+    
     this.fieldName = fieldName;
   }
 
 
-  public AnalyzeDocumentResponseEntityTextDataInner fieldType(BigDecimal fieldType) {
+  public AnalyzeDocumentResponseEntityTextDataInner fieldType(Double fieldType) {
+
+    
+    
+    
     
     this.fieldType = fieldType;
+    return this;
+  }
+
+  public AnalyzeDocumentResponseEntityTextDataInner fieldType(Integer fieldType) {
+
+    
+    
+    
+    
+    this.fieldType = fieldType.doubleValue();
     return this;
   }
 
@@ -105,19 +127,37 @@ public class AnalyzeDocumentResponseEntityTextDataInner {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "3", value = "")
 
-  public BigDecimal getFieldType() {
+  public Double getFieldType() {
     return fieldType;
   }
 
 
-  public void setFieldType(BigDecimal fieldType) {
+  public void setFieldType(Double fieldType) {
+
+    
+    
+    
     this.fieldType = fieldType;
   }
 
 
-  public AnalyzeDocumentResponseEntityTextDataInner status(BigDecimal status) {
+  public AnalyzeDocumentResponseEntityTextDataInner status(Double status) {
+
+    
+    
+    
     
     this.status = status;
+    return this;
+  }
+
+  public AnalyzeDocumentResponseEntityTextDataInner status(Integer status) {
+
+    
+    
+    
+    
+    this.status = status.doubleValue();
     return this;
   }
 
@@ -128,17 +168,25 @@ public class AnalyzeDocumentResponseEntityTextDataInner {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getStatus() {
+  public Double getStatus() {
     return status;
   }
 
 
-  public void setStatus(BigDecimal status) {
+  public void setStatus(Double status) {
+
+    
+    
+    
     this.status = status;
   }
 
 
   public AnalyzeDocumentResponseEntityTextDataInner value(String value) {
+
+    
+    
+    
     
     this.value = value;
     return this;
@@ -157,6 +205,10 @@ public class AnalyzeDocumentResponseEntityTextDataInner {
 
 
   public void setValue(String value) {
+
+    
+    
+    
     this.value = value;
   }
 

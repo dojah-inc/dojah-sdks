@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.konfigthis.dojah.client.model.CollectTransactionsResponseEntity;
+import com.konfigthis.dojah.client.model.CollectStatusFromPdfResponseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -34,6 +34,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -52,12 +53,16 @@ import com.konfigthis.dojah.client.JSON;
 public class CollectStatusFromPdfResponse {
   public static final String SERIALIZED_NAME_ENTITY = "entity";
   @SerializedName(SERIALIZED_NAME_ENTITY)
-  private CollectTransactionsResponseEntity entity;
+  private CollectStatusFromPdfResponseEntity entity;
 
   public CollectStatusFromPdfResponse() {
   }
 
-  public CollectStatusFromPdfResponse entity(CollectTransactionsResponseEntity entity) {
+  public CollectStatusFromPdfResponse entity(CollectStatusFromPdfResponseEntity entity) {
+
+    
+    
+    
     
     this.entity = entity;
     return this;
@@ -70,12 +75,16 @@ public class CollectStatusFromPdfResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public CollectTransactionsResponseEntity getEntity() {
+  public CollectStatusFromPdfResponseEntity getEntity() {
     return entity;
   }
 
 
-  public void setEntity(CollectTransactionsResponseEntity entity) {
+  public void setEntity(CollectStatusFromPdfResponseEntity entity) {
+
+    
+    
+    
     this.entity = entity;
   }
 
@@ -191,7 +200,7 @@ public class CollectStatusFromPdfResponse {
       }
       // validate the optional field `entity`
       if (jsonObj.get("entity") != null && !jsonObj.get("entity").isJsonNull()) {
-        CollectTransactionsResponseEntity.validateJsonObject(jsonObj.getAsJsonObject("entity"));
+        CollectStatusFromPdfResponseEntity.validateJsonObject(jsonObj.getAsJsonObject("entity"));
       }
   }
 

@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -105,6 +106,10 @@ public class GetBasicPhoneNumberResponseEntity {
   }
 
   public GetBasicPhoneNumberResponseEntity msisdn(String msisdn) {
+
+    
+    
+    
     
     this.msisdn = msisdn;
     return this;
@@ -123,11 +128,19 @@ public class GetBasicPhoneNumberResponseEntity {
 
 
   public void setMsisdn(String msisdn) {
+
+    
+    
+    
     this.msisdn = msisdn;
   }
 
 
   public GetBasicPhoneNumberResponseEntity firstName(String firstName) {
+
+    
+    
+    
     
     this.firstName = firstName;
     return this;
@@ -146,11 +159,19 @@ public class GetBasicPhoneNumberResponseEntity {
 
 
   public void setFirstName(String firstName) {
+
+    
+    
+    
     this.firstName = firstName;
   }
 
 
   public GetBasicPhoneNumberResponseEntity lastName(String lastName) {
+
+    
+    
+    
     
     this.lastName = lastName;
     return this;
@@ -169,11 +190,19 @@ public class GetBasicPhoneNumberResponseEntity {
 
 
   public void setLastName(String lastName) {
+
+    
+    
+    
     this.lastName = lastName;
   }
 
 
   public GetBasicPhoneNumberResponseEntity email(String email) {
+
+    
+    
+    
     
     this.email = email;
     return this;
@@ -192,11 +221,19 @@ public class GetBasicPhoneNumberResponseEntity {
 
 
   public void setEmail(String email) {
+
+    
+    
+    
     this.email = email;
   }
 
 
   public GetBasicPhoneNumberResponseEntity encryptedPan(String encryptedPan) {
+
+    
+    
+    
     
     this.encryptedPan = encryptedPan;
     return this;
@@ -215,11 +252,19 @@ public class GetBasicPhoneNumberResponseEntity {
 
 
   public void setEncryptedPan(String encryptedPan) {
+
+    
+    
+    
     this.encryptedPan = encryptedPan;
   }
 
 
   public GetBasicPhoneNumberResponseEntity dateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     
     this.dateOfBirth = dateOfBirth;
     return this;
@@ -238,11 +283,19 @@ public class GetBasicPhoneNumberResponseEntity {
 
 
   public void setDateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     this.dateOfBirth = dateOfBirth;
   }
 
 
   public GetBasicPhoneNumberResponseEntity bvn(String bvn) {
+
+    
+    
+    
     
     this.bvn = bvn;
     return this;
@@ -261,11 +314,19 @@ public class GetBasicPhoneNumberResponseEntity {
 
 
   public void setBvn(String bvn) {
+
+    
+    
+    
     this.bvn = bvn;
   }
 
 
   public GetBasicPhoneNumberResponseEntity address(String address) {
+
+    
+    
+    
     
     this.address = address;
     return this;
@@ -284,11 +345,19 @@ public class GetBasicPhoneNumberResponseEntity {
 
 
   public void setAddress(String address) {
+
+    
+    
+    
     this.address = address;
   }
 
 
   public GetBasicPhoneNumberResponseEntity addressCity(String addressCity) {
+
+    
+    
+    
     
     this.addressCity = addressCity;
     return this;
@@ -307,11 +376,19 @@ public class GetBasicPhoneNumberResponseEntity {
 
 
   public void setAddressCity(String addressCity) {
+
+    
+    
+    
     this.addressCity = addressCity;
   }
 
 
   public GetBasicPhoneNumberResponseEntity addressState(String addressState) {
+
+    
+    
+    
     
     this.addressState = addressState;
     return this;
@@ -330,11 +407,19 @@ public class GetBasicPhoneNumberResponseEntity {
 
 
   public void setAddressState(String addressState) {
+
+    
+    
+    
     this.addressState = addressState;
   }
 
 
   public GetBasicPhoneNumberResponseEntity accountNumber(String accountNumber) {
+
+    
+    
+    
     
     this.accountNumber = accountNumber;
     return this;
@@ -353,11 +438,19 @@ public class GetBasicPhoneNumberResponseEntity {
 
 
   public void setAccountNumber(String accountNumber) {
+
+    
+    
+    
     this.accountNumber = accountNumber;
   }
 
 
   public GetBasicPhoneNumberResponseEntity bankCode(String bankCode) {
+
+    
+    
+    
     
     this.bankCode = bankCode;
     return this;
@@ -376,11 +469,19 @@ public class GetBasicPhoneNumberResponseEntity {
 
 
   public void setBankCode(String bankCode) {
+
+    
+    
+    
     this.bankCode = bankCode;
   }
 
 
   public GetBasicPhoneNumberResponseEntity gender(String gender) {
+
+    
+    
+    
     
     this.gender = gender;
     return this;
@@ -399,6 +500,10 @@ public class GetBasicPhoneNumberResponseEntity {
 
 
   public void setGender(String gender) {
+
+    
+    
+    
     this.gender = gender;
   }
 

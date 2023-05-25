@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -61,6 +62,10 @@ public class SubscribeServiceRequest {
   }
 
   public SubscribeServiceRequest webhook(String webhook) {
+
+    
+    
+    
     
     this.webhook = webhook;
     return this;
@@ -79,11 +84,19 @@ public class SubscribeServiceRequest {
 
 
   public void setWebhook(String webhook) {
+
+    
+    
+    
     this.webhook = webhook;
   }
 
 
   public SubscribeServiceRequest service(String service) {
+
+    
+    
+    
     
     this.service = service;
     return this;
@@ -102,6 +115,10 @@ public class SubscribeServiceRequest {
 
 
   public void setService(String service) {
+
+    
+    
+    
     this.service = service;
   }
 

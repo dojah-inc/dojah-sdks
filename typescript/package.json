@@ -1,11 +1,14 @@
 {
   "name": "dojah-typescript-sdk",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Client for DOJAH APIs",
   "author": "Konfig",
+  "engines": {
+    "node": ">=10"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/konfig-dev/dojah-sdks/tree/main/typescript"
+    "url": "https://github.com/dojah-inc/dojah-sdks/tree/main/typescript"
   },
   "keywords": [
     "axios",
@@ -14,6 +17,9 @@
     "dojah-typescript-sdk"
   ],
   "license": "Unlicense",
+  "files": [
+    "./dist/**/*"
+  ],
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {

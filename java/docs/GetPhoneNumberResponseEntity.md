@@ -36,7 +36,7 @@
 |**nin** | **String** |  |  [optional] |
 |**height** | **String** |  |  [optional] |
 |**picture** | **String** |  |  [optional] |
-|**status** | **BigDecimal** |  |  [optional] |
+|**status** | **Double** |  |  [optional] |
 
 
 

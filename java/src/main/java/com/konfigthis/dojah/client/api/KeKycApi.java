@@ -40,11 +40,14 @@ public class KeKycApi {
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public KeKycApi() {
+    public KeKycApi() throws IllegalArgumentException {
         this(Configuration.getDefaultApiClient());
     }
 
-    public KeKycApi(ApiClient apiClient) {
+    public KeKycApi(ApiClient apiClient) throws IllegalArgumentException {
+        if (apiClient.getApikeyAuth() == null) {
+            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
+        }
         this.localVarApiClient = apiClient;
     }
 
@@ -72,24 +75,7 @@ public class KeKycApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    /**
-     * Build call for getNationalId
-     * @param id  (optional)
-     * @param firstName  (optional)
-     * @param lastName  (optional)
-     * @param middleName  (optional)
-     * @param dateOfBirth  (optional)
-     * @param gender  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getNationalIdCall(Integer id, String firstName, String lastName, String middleName, String dateOfBirth, String gender, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getNationalIdCall(Integer id, String firstName, String lastName, String middleName, String dateOfBirth, String gender, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -163,74 +149,164 @@ public class KeKycApi {
 
     }
 
-    /**
-     * KYC - National ID
-     * 
-     * @param id  (optional)
-     * @param firstName  (optional)
-     * @param lastName  (optional)
-     * @param middleName  (optional)
-     * @param dateOfBirth  (optional)
-     * @param gender  (optional)
-     * @return GetNationalIdResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetNationalIdResponse getNationalId(Integer id, String firstName, String lastName, String middleName, String dateOfBirth, String gender) throws ApiException {
-        ApiResponse<GetNationalIdResponse> localVarResp = getNationalIdWithHttpInfo(id, firstName, lastName, middleName, dateOfBirth, gender);
-        return localVarResp.getData();
-    }
 
-    /**
-     * KYC - National ID
-     * 
-     * @param id  (optional)
-     * @param firstName  (optional)
-     * @param lastName  (optional)
-     * @param middleName  (optional)
-     * @param dateOfBirth  (optional)
-     * @param gender  (optional)
-     * @return ApiResponse&lt;GetNationalIdResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetNationalIdResponse> getNationalIdWithHttpInfo(Integer id, String firstName, String lastName, String middleName, String dateOfBirth, String gender) throws ApiException {
+    private ApiResponse<GetNationalIdResponse> getNationalIdWithHttpInfo(Integer id, String firstName, String lastName, String middleName, String dateOfBirth, String gender) throws ApiException {
         okhttp3.Call localVarCall = getNationalIdValidateBeforeCall(id, firstName, lastName, middleName, dateOfBirth, gender, null);
         Type localVarReturnType = new TypeToken<GetNationalIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
+    private okhttp3.Call getNationalIdAsync(Integer id, String firstName, String lastName, String middleName, String dateOfBirth, String gender, final ApiCallback<GetNationalIdResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getNationalIdValidateBeforeCall(id, firstName, lastName, middleName, dateOfBirth, gender, _callback);
+        Type localVarReturnType = new TypeToken<GetNationalIdResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+
+    public class GetNationalIdRequestBuilder {
+        private Integer id;
+        private String firstName;
+        private String lastName;
+        private String middleName;
+        private String dateOfBirth;
+        private String gender;
+
+        private GetNationalIdRequestBuilder() {
+        }
+
+        /**
+         * Set id
+         * @param id  (optional)
+         * @return GetNationalIdRequestBuilder
+         */
+        public GetNationalIdRequestBuilder id(Integer id) {
+            this.id = id;
+            return this;
+        }
+        
+        /**
+         * Set firstName
+         * @param firstName  (optional)
+         * @return GetNationalIdRequestBuilder
+         */
+        public GetNationalIdRequestBuilder firstName(String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+        
+        /**
+         * Set lastName
+         * @param lastName  (optional)
+         * @return GetNationalIdRequestBuilder
+         */
+        public GetNationalIdRequestBuilder lastName(String lastName) {
+            this.lastName = lastName;
+            return this;
+        }
+        
+        /**
+         * Set middleName
+         * @param middleName  (optional)
+         * @return GetNationalIdRequestBuilder
+         */
+        public GetNationalIdRequestBuilder middleName(String middleName) {
+            this.middleName = middleName;
+            return this;
+        }
+        
+        /**
+         * Set dateOfBirth
+         * @param dateOfBirth  (optional)
+         * @return GetNationalIdRequestBuilder
+         */
+        public GetNationalIdRequestBuilder dateOfBirth(String dateOfBirth) {
+            this.dateOfBirth = dateOfBirth;
+            return this;
+        }
+        
+        /**
+         * Set gender
+         * @param gender  (optional)
+         * @return GetNationalIdRequestBuilder
+         */
+        public GetNationalIdRequestBuilder gender(String gender) {
+            this.gender = gender;
+            return this;
+        }
+        
+        /**
+         * Build call for getNationalId
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getNationalIdCall(id, firstName, lastName, middleName, dateOfBirth, gender, _callback);
+        }
+
+
+        /**
+         * Execute getNationalId request
+         * @return GetNationalIdResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public GetNationalIdResponse execute() throws ApiException {
+            ApiResponse<GetNationalIdResponse> localVarResp = getNationalIdWithHttpInfo(id, firstName, lastName, middleName, dateOfBirth, gender);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getNationalId request with HTTP info returned
+         * @return ApiResponse&lt;GetNationalIdResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetNationalIdResponse> executeWithHttpInfo() throws ApiException {
+            return getNationalIdWithHttpInfo(id, firstName, lastName, middleName, dateOfBirth, gender);
+        }
+
+        /**
+         * Execute getNationalId request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetNationalIdResponse> _callback) throws ApiException {
+            return getNationalIdAsync(id, firstName, lastName, middleName, dateOfBirth, gender, _callback);
+        }
+    }
+
     /**
-     * KYC - National ID (asynchronously)
+     * KYC - National ID
      * 
-     * @param id  (optional)
-     * @param firstName  (optional)
-     * @param lastName  (optional)
-     * @param middleName  (optional)
-     * @param dateOfBirth  (optional)
-     * @param gender  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @return GetNationalIdRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNationalIdAsync(Integer id, String firstName, String lastName, String middleName, String dateOfBirth, String gender, final ApiCallback<GetNationalIdResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = getNationalIdValidateBeforeCall(id, firstName, lastName, middleName, dateOfBirth, gender, _callback);
-        Type localVarReturnType = new TypeToken<GetNationalIdResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
+    public GetNationalIdRequestBuilder getNationalId() throws IllegalArgumentException {
+        return new GetNationalIdRequestBuilder();
     }
 }

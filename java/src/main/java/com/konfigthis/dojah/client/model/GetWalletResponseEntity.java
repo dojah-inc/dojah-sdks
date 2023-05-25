@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -56,7 +56,7 @@ public class GetWalletResponseEntity {
 
   public static final String SERIALIZED_NAME_WALLET_AMOUNT = "wallet_amount";
   @SerializedName(SERIALIZED_NAME_WALLET_AMOUNT)
-  private BigDecimal walletAmount;
+  private Double walletAmount;
 
   public static final String SERIALIZED_NAME_ACCOUNT_NUMBER = "account_number";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_NUMBER)
@@ -74,6 +74,10 @@ public class GetWalletResponseEntity {
   }
 
   public GetWalletResponseEntity walletId(String walletId) {
+
+    
+    
+    
     
     this.walletId = walletId;
     return this;
@@ -92,13 +96,31 @@ public class GetWalletResponseEntity {
 
 
   public void setWalletId(String walletId) {
+
+    
+    
+    
     this.walletId = walletId;
   }
 
 
-  public GetWalletResponseEntity walletAmount(BigDecimal walletAmount) {
+  public GetWalletResponseEntity walletAmount(Double walletAmount) {
+
+    
+    
+    
     
     this.walletAmount = walletAmount;
+    return this;
+  }
+
+  public GetWalletResponseEntity walletAmount(Integer walletAmount) {
+
+    
+    
+    
+    
+    this.walletAmount = walletAmount.doubleValue();
     return this;
   }
 
@@ -109,17 +131,25 @@ public class GetWalletResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "500", value = "")
 
-  public BigDecimal getWalletAmount() {
+  public Double getWalletAmount() {
     return walletAmount;
   }
 
 
-  public void setWalletAmount(BigDecimal walletAmount) {
+  public void setWalletAmount(Double walletAmount) {
+
+    
+    
+    
     this.walletAmount = walletAmount;
   }
 
 
   public GetWalletResponseEntity accountNumber(String accountNumber) {
+
+    
+    
+    
     
     this.accountNumber = accountNumber;
     return this;
@@ -138,11 +168,19 @@ public class GetWalletResponseEntity {
 
 
   public void setAccountNumber(String accountNumber) {
+
+    
+    
+    
     this.accountNumber = accountNumber;
   }
 
 
   public GetWalletResponseEntity phoneNumber(String phoneNumber) {
+
+    
+    
+    
     
     this.phoneNumber = phoneNumber;
     return this;
@@ -161,11 +199,19 @@ public class GetWalletResponseEntity {
 
 
   public void setPhoneNumber(String phoneNumber) {
+
+    
+    
+    
     this.phoneNumber = phoneNumber;
   }
 
 
   public GetWalletResponseEntity bankName(String bankName) {
+
+    
+    
+    
     
     this.bankName = bankName;
     return this;
@@ -184,6 +230,10 @@ public class GetWalletResponseEntity {
 
 
   public void setBankName(String bankName) {
+
+    
+    
+    
     this.bankName = bankName;
   }
 

@@ -44,7 +44,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.konfigthis.dojah</groupId>
   <artifactId>dojah-java-sdk</artifactId>
-  <version>3.0.0</version>
+  <version>4.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -60,7 +60,7 @@ repositories {
 }
 
 dependencies {
-   implementation "com.konfigthis.dojah:dojah-java-sdk:3.0.0"
+   implementation "com.konfigthis.dojah:dojah-java-sdk:4.0.0"
 }
 ```
 
@@ -97,7 +97,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dojah-java-sdk-3.0.0.jar`
+* `target/dojah-java-sdk-4.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -105,10 +105,9 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -122,22 +121,39 @@ public class Example {
     // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) apiClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) apiClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    AmlApi apiInstance = new AmlApi(apiClient);
-    String referenceId = "c574a3c8-dc27-4013-8bbc-462e7ed87d55"; // String | 
+    AmlApi api = new AmlApi(apiClient);
+    String referenceId = "c574a3c8-dc27-4013-8bbc-462e7ed87d55";
     try {
-      GetScreeningInfoResponse result = apiInstance.getScreeningInfo(referenceId);
+      GetScreeningInfoResponse result = api
+              .getScreeningInfo()
+              .referenceId(referenceId)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AmlApi#getScreeningInfo");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<GetScreeningInfoResponse> response = api
+              .getScreeningInfo()
+              .referenceId(referenceId)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling AmlApi#getScreeningInfo");
       System.err.println("Status code: " + e.getCode());
@@ -147,7 +163,6 @@ public class Example {
     }
   }
 }
-
 ```
 
 ## Documentation for API Endpoints
@@ -174,6 +189,9 @@ Class | Method | HTTP request | Description
 *FinancialApi* | [**getEarningStructure**](docs/FinancialApi.md#getEarningStructure) | **GET** /v1/financial/earning_structure | Get Earning Structure
 *FinancialApi* | [**getFullBvn**](docs/FinancialApi.md#getFullBvn) | **GET** /v1/financial/bvn_information/full | Get BVN Information Full
 *FinancialApi* | [**getSpendingPattern**](docs/FinancialApi.md#getSpendingPattern) | **GET** /v1/financial/spending_pattern | Get Spending Pattern
+*GhKycApi* | [**getDriversLicense**](docs/GhKycApi.md#getDriversLicense) | **GET** /api/v1/gh/kyc/dl | Driver&#39;s License
+*GhKycApi* | [**getPassport**](docs/GhKycApi.md#getPassport) | **GET** /api/v1/gh/kyc/passport | Passport
+*GhKycApi* | [**getSsnit**](docs/GhKycApi.md#getSsnit) | **GET** /api/v1/gh/kyc/ssnit | SSNIT
 *GeneralApi* | [**getBanks**](docs/GeneralApi.md#getBanks) | **GET** /v1/general/banks | General - Get Banks
 *GeneralApi* | [**getBin**](docs/GeneralApi.md#getBin) | **GET** /v1/general/bin | General Resolve BIN
 *GeneralApi* | [**getDataPlans**](docs/GeneralApi.md#getDataPlans) | **GET** /v1/purchase/data/plans | Purchase - Get Data Plans
@@ -181,9 +199,6 @@ Class | Method | HTTP request | Description
 *GeneralApi* | [**getWalletBalance**](docs/GeneralApi.md#getWalletBalance) | **GET** /api/v1/balance | Get Dojah Wallet Balance
 *GeneralApi* | [**purchaseAirtime**](docs/GeneralApi.md#purchaseAirtime) | **POST** /v1/purchase/airtime | Purchase - Send Airtime
 *GeneralApi* | [**purchaseData**](docs/GeneralApi.md#purchaseData) | **POST** /v1/purchase/data | Purchase - Buy Data
-*GhKycApi* | [**getDriversLicense**](docs/GhKycApi.md#getDriversLicense) | **GET** /api/v1/gh/kyc/dl | Driver&#39;s License
-*GhKycApi* | [**getPassport**](docs/GhKycApi.md#getPassport) | **GET** /api/v1/gh/kyc/passport | Passport
-*GhKycApi* | [**getSsnit**](docs/GhKycApi.md#getSsnit) | **GET** /api/v1/gh/kyc/ssnit | SSNIT
 *KeKycApi* | [**getNationalId**](docs/KeKycApi.md#getNationalId) | **GET** /api/v1/ke/kyc/id | KYC - National ID
 *KybApi* | [**getAdvancedCac**](docs/KybApi.md#getAdvancedCac) | **GET** /v1/kyc/cac/advance | KYC - Get CAC Advanced
 *KybApi* | [**getBasicCac**](docs/KybApi.md#getBasicCac) | **GET** /v1/kyc/cac/basic | KYB - Get CAC 2
@@ -236,6 +251,7 @@ Class | Method | HTTP request | Description
  - [CategorizeTransactionsResponseEntity](docs/CategorizeTransactionsResponseEntity.md)
  - [CollectStatusFromPdfRequest](docs/CollectStatusFromPdfRequest.md)
  - [CollectStatusFromPdfResponse](docs/CollectStatusFromPdfResponse.md)
+ - [CollectStatusFromPdfResponseEntity](docs/CollectStatusFromPdfResponseEntity.md)
  - [CollectTransactionsRequest](docs/CollectTransactionsRequest.md)
  - [CollectTransactionsRequestTransactionsInner](docs/CollectTransactionsRequestTransactionsInner.md)
  - [CollectTransactionsResponse](docs/CollectTransactionsResponse.md)
@@ -253,7 +269,6 @@ Class | Method | HTTP request | Description
  - [FinancialGetFullBvnResponseEntity](docs/FinancialGetFullBvnResponseEntity.md)
  - [GeneralGetNubanResponse](docs/GeneralGetNubanResponse.md)
  - [GeneralGetNubanResponseEntity](docs/GeneralGetNubanResponseEntity.md)
- - [GeneralGetWalletBalanceResponse](docs/GeneralGetWalletBalanceResponse.md)
  - [GetAccountAnalysisResponse](docs/GetAccountAnalysisResponse.md)
  - [GetAccountAnalysisResponseEntity](docs/GetAccountAnalysisResponseEntity.md)
  - [GetAccountAnalysisResponseEntityAccountBreakdown](docs/GetAccountAnalysisResponseEntityAccountBreakdown.md)
@@ -268,6 +283,7 @@ Class | Method | HTTP request | Description
  - [GetAccountTransactionsResponseEntity](docs/GetAccountTransactionsResponseEntity.md)
  - [GetAccountTransactionsResponseEntityTransactionsInner](docs/GetAccountTransactionsResponseEntityTransactionsInner.md)
  - [GetAdvancedCacResponse](docs/GetAdvancedCacResponse.md)
+ - [GetAdvancedCacResponseEntity](docs/GetAdvancedCacResponseEntity.md)
  - [GetBanksResponse](docs/GetBanksResponse.md)
  - [GetBanksResponseEntityInner](docs/GetBanksResponseEntityInner.md)
  - [GetBasicBvnResponse](docs/GetBasicBvnResponse.md)
@@ -281,6 +297,7 @@ Class | Method | HTTP request | Description
  - [GetCacResponse](docs/GetCacResponse.md)
  - [GetCacResponseEntity](docs/GetCacResponseEntity.md)
  - [GetDataPlansResponse](docs/GetDataPlansResponse.md)
+ - [GetDataPlansResponseEntityInner](docs/GetDataPlansResponseEntityInner.md)
  - [GetDocumentAnalysisRequest](docs/GetDocumentAnalysisRequest.md)
  - [GetDocumentAnalysisResponse](docs/GetDocumentAnalysisResponse.md)
  - [GetDocumentAnalysisResponseEntity](docs/GetDocumentAnalysisResponseEntity.md)
@@ -296,6 +313,7 @@ Class | Method | HTTP request | Description
  - [GetFullBvnResponseEntity](docs/GetFullBvnResponseEntity.md)
  - [GetGenericOcrTextRequest](docs/GetGenericOcrTextRequest.md)
  - [GetGenericOcrTextResponse](docs/GetGenericOcrTextResponse.md)
+ - [GetGenericOcrTextResponseEntity](docs/GetGenericOcrTextResponseEntity.md)
  - [GetKycDriversLicenseResponse](docs/GetKycDriversLicenseResponse.md)
  - [GetKycDriversLicenseResponseEntity](docs/GetKycDriversLicenseResponseEntity.md)
  - [GetKycDriversLicenseResponseEntityPersonalDetails](docs/GetKycDriversLicenseResponseEntityPersonalDetails.md)
@@ -310,7 +328,6 @@ Class | Method | HTTP request | Description
  - [GetOcrTextResponseEntity](docs/GetOcrTextResponseEntity.md)
  - [GetPassportResponse](docs/GetPassportResponse.md)
  - [GetPassportResponseEntity](docs/GetPassportResponseEntity.md)
- - [GetPhoneNumber404Response](docs/GetPhoneNumber404Response.md)
  - [GetPhoneNumberResponse](docs/GetPhoneNumberResponse.md)
  - [GetPhoneNumberResponseEntity](docs/GetPhoneNumberResponseEntity.md)
  - [GetPremiumBvnResponse](docs/GetPremiumBvnResponse.md)
@@ -348,6 +365,7 @@ Class | Method | HTTP request | Description
  - [GetWalletResponseEntity](docs/GetWalletResponseEntity.md)
  - [GetWalletsResponse](docs/GetWalletsResponse.md)
  - [GetWalletsResponseEntity](docs/GetWalletsResponseEntity.md)
+ - [GetWalletsResponseEntityClientWalletsInner](docs/GetWalletsResponseEntityClientWalletsInner.md)
  - [GetWebhooksResponse](docs/GetWebhooksResponse.md)
  - [GetWebhooksResponseEntityInner](docs/GetWebhooksResponseEntityInner.md)
  - [NotifyWebhookRequest](docs/NotifyWebhookRequest.md)

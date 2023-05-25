@@ -9,9 +9,13 @@
  * Do not edit the class manually.
  */
 
+
 package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.model.AnalyzeDocumentResponse;
 import com.konfigthis.dojah.client.model.GetBasicBvnResponse;
 import com.konfigthis.dojah.client.model.GetBasicPhoneNumberResponse;
@@ -20,7 +24,6 @@ import com.konfigthis.dojah.client.model.GetFullBvnResponse;
 import com.konfigthis.dojah.client.model.GetKycDriversLicenseResponse;
 import com.konfigthis.dojah.client.model.GetKycPassportResponse;
 import com.konfigthis.dojah.client.model.GetNubanResponse;
-import com.konfigthis.dojah.client.model.GetPhoneNumber404Response;
 import com.konfigthis.dojah.client.model.GetPhoneNumberResponse;
 import com.konfigthis.dojah.client.model.GetPremiumBvnResponse;
 import com.konfigthis.dojah.client.model.GetVinResponse;
@@ -33,6 +36,7 @@ import com.konfigthis.dojah.client.model.VerifySelfieNinRequest;
 import com.konfigthis.dojah.client.model.VerifySelfieNinResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,7 +49,14 @@ import java.util.Map;
 @Disabled
 public class KycApiTest {
 
-    private final KycApi api = new KycApi();
+    private static KycApi api;
+
+    
+    @BeforeAll
+    public static void beforeClass() {
+        ApiClient apiClient = Configuration.getDefaultApiClient();
+        api = new KycApi(apiClient);
+    }
 
     /**
      * KYC - Document Analysis
@@ -54,7 +65,8 @@ public class KycApiTest {
      */
     @Test
     public void analyzeDocumentTest() throws ApiException {
-        AnalyzeDocumentResponse response = api.analyzeDocument();
+        AnalyzeDocumentResponse response = api.analyzeDocument()
+                .execute();
         // TODO: test validations
     }
 
@@ -66,7 +78,9 @@ public class KycApiTest {
     @Test
     public void getBasicBvnTest() throws ApiException {
         Integer bvn = null;
-        GetBasicBvnResponse response = api.getBasicBvn(bvn);
+        GetBasicBvnResponse response = api.getBasicBvn()
+                .bvn(bvn)
+                .execute();
         // TODO: test validations
     }
 
@@ -78,7 +92,9 @@ public class KycApiTest {
     @Test
     public void getBasicPhoneNumberTest() throws ApiException {
         Integer phoneNumber = null;
-        GetBasicPhoneNumberResponse response = api.getBasicPhoneNumber(phoneNumber);
+        GetBasicPhoneNumberResponse response = api.getBasicPhoneNumber()
+                .phoneNumber(phoneNumber)
+                .execute();
         // TODO: test validations
     }
 
@@ -90,7 +106,9 @@ public class KycApiTest {
     @Test
     public void getDriversLicenseTest() throws ApiException {
         String licenseNumber = null;
-        GetKycDriversLicenseResponse response = api.getDriversLicense(licenseNumber);
+        GetKycDriversLicenseResponse response = api.getDriversLicense()
+                .licenseNumber(licenseNumber)
+                .execute();
         // TODO: test validations
     }
 
@@ -102,7 +120,9 @@ public class KycApiTest {
     @Test
     public void getEmailReputationTest() throws ApiException {
         String email = null;
-        GetEmailReputationResponse response = api.getEmailReputation(email);
+        GetEmailReputationResponse response = api.getEmailReputation()
+                .email(email)
+                .execute();
         // TODO: test validations
     }
 
@@ -114,7 +134,9 @@ public class KycApiTest {
     @Test
     public void getFullBvnTest() throws ApiException {
         Integer bvn = null;
-        GetFullBvnResponse response = api.getFullBvn(bvn);
+        GetFullBvnResponse response = api.getFullBvn()
+                .bvn(bvn)
+                .execute();
         // TODO: test validations
     }
 
@@ -127,7 +149,10 @@ public class KycApiTest {
     public void getNubanTest() throws ApiException {
         Integer bankCode = null;
         Integer accountNumber = null;
-        GetNubanResponse response = api.getNuban(bankCode, accountNumber);
+        GetNubanResponse response = api.getNuban()
+                .bankCode(bankCode)
+                .accountNumber(accountNumber)
+                .execute();
         // TODO: test validations
     }
 
@@ -140,7 +165,10 @@ public class KycApiTest {
     public void getPassportTest() throws ApiException {
         Integer passportNumber = null;
         String surname = null;
-        GetKycPassportResponse response = api.getPassport(passportNumber, surname);
+        GetKycPassportResponse response = api.getPassport()
+                .passportNumber(passportNumber)
+                .surname(surname)
+                .execute();
         // TODO: test validations
     }
 
@@ -152,7 +180,9 @@ public class KycApiTest {
     @Test
     public void getPhoneNumberTest() throws ApiException {
         Integer phoneNumber = null;
-        GetPhoneNumberResponse response = api.getPhoneNumber(phoneNumber);
+        GetPhoneNumberResponse response = api.getPhoneNumber()
+                .phoneNumber(phoneNumber)
+                .execute();
         // TODO: test validations
     }
 
@@ -164,7 +194,9 @@ public class KycApiTest {
     @Test
     public void getPremiumBvnTest() throws ApiException {
         Integer bvn = null;
-        GetPremiumBvnResponse response = api.getPremiumBvn(bvn);
+        GetPremiumBvnResponse response = api.getPremiumBvn()
+                .bvn(bvn)
+                .execute();
         // TODO: test validations
     }
 
@@ -180,7 +212,13 @@ public class KycApiTest {
         String lastname = null;
         Integer vin = null;
         String state = null;
-        GetVinResponse response = api.getVIN(mode, firstname, lastname, vin, state);
+        GetVinResponse response = api.getVIN()
+                .mode(mode)
+                .firstname(firstname)
+                .lastname(lastname)
+                .vin(vin)
+                .state(state)
+                .execute();
         // TODO: test validations
     }
 
@@ -192,7 +230,9 @@ public class KycApiTest {
     @Test
     public void getVninTest() throws ApiException {
         String vnin = null;
-        GetVninResponse response = api.getVnin(vnin);
+        GetVninResponse response = api.getVnin()
+                .vnin(vnin)
+                .execute();
         // TODO: test validations
     }
 
@@ -206,7 +246,11 @@ public class KycApiTest {
         Integer bvn = null;
         String firstName = null;
         String dob = null;
-        ValidateBvnResponse response = api.validateBvn(bvn, firstName, dob);
+        ValidateBvnResponse response = api.validateBvn()
+                .bvn(bvn)
+                .firstName(firstName)
+                .dob(dob)
+                .execute();
         // TODO: test validations
     }
 
@@ -223,7 +267,14 @@ public class KycApiTest {
         String dob = null;
         String firstName = null;
         String lastName = null;
-        VerifyAgeResponse response = api.verifyAge(mode, accountNumber, bankCode, dob, firstName, lastName);
+        VerifyAgeResponse response = api.verifyAge()
+                .mode(mode)
+                .accountNumber(accountNumber)
+                .bankCode(bankCode)
+                .dob(dob)
+                .firstName(firstName)
+                .lastName(lastName)
+                .execute();
         // TODO: test validations
     }
 
@@ -234,8 +285,12 @@ public class KycApiTest {
      */
     @Test
     public void verifySelfieBvnTest() throws ApiException {
-        VerifySelfieBvnRequest body = null;
-        VerifySelfieBvnResponse response = api.verifySelfieBvn(body);
+        String bvn = null;
+        String selfieImage = null;
+        VerifySelfieBvnResponse response = api.verifySelfieBvn()
+                .bvn(bvn)
+                .selfieImage(selfieImage)
+                .execute();
         // TODO: test validations
     }
 
@@ -246,8 +301,12 @@ public class KycApiTest {
      */
     @Test
     public void verifySelfieNinTest() throws ApiException {
-        VerifySelfieNinRequest body = null;
-        VerifySelfieNinResponse response = api.verifySelfieNin(body);
+        String nin = null;
+        String selfieImage = null;
+        VerifySelfieNinResponse response = api.verifySelfieNin()
+                .nin(nin)
+                .selfieImage(selfieImage)
+                .execute();
         // TODO: test validations
     }
 

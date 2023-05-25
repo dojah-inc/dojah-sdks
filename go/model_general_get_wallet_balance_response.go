@@ -16,7 +16,7 @@ import (
 
 // GeneralGetWalletBalanceResponse struct for GeneralGetWalletBalanceResponse
 type GeneralGetWalletBalanceResponse struct {
-	Entity *GetWalletBalanceResponseEntity `json:"entity,omitempty"`
+	Entity *GeneralGetWalletBalanceResponseEntity `json:"entity,omitempty"`
 }
 
 // NewGeneralGetWalletBalanceResponse instantiates a new GeneralGetWalletBalanceResponse object
@@ -37,9 +37,9 @@ func NewGeneralGetWalletBalanceResponseWithDefaults() *GeneralGetWalletBalanceRe
 }
 
 // GetEntity returns the Entity field value if set, zero value otherwise.
-func (o *GeneralGetWalletBalanceResponse) GetEntity() GetWalletBalanceResponseEntity {
+func (o *GeneralGetWalletBalanceResponse) GetEntity() GeneralGetWalletBalanceResponseEntity {
 	if o == nil || isNil(o.Entity) {
-		var ret GetWalletBalanceResponseEntity
+		var ret GeneralGetWalletBalanceResponseEntity
 		return ret
 	}
 	return *o.Entity
@@ -47,7 +47,7 @@ func (o *GeneralGetWalletBalanceResponse) GetEntity() GetWalletBalanceResponseEn
 
 // GetEntityOk returns a tuple with the Entity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GeneralGetWalletBalanceResponse) GetEntityOk() (*GetWalletBalanceResponseEntity, bool) {
+func (o *GeneralGetWalletBalanceResponse) GetEntityOk() (*GeneralGetWalletBalanceResponseEntity, bool) {
 	if o == nil || isNil(o.Entity) {
     return nil, false
 	}
@@ -63,8 +63,8 @@ func (o *GeneralGetWalletBalanceResponse) HasEntity() bool {
 	return false
 }
 
-// SetEntity gets a reference to the given GetWalletBalanceResponseEntity and assigns it to the Entity field.
-func (o *GeneralGetWalletBalanceResponse) SetEntity(v GetWalletBalanceResponseEntity) {
+// SetEntity gets a reference to the given GeneralGetWalletBalanceResponseEntity and assigns it to the Entity field.
+func (o *GeneralGetWalletBalanceResponse) SetEntity(v GeneralGetWalletBalanceResponseEntity) {
 	o.Entity = &v
 }
 

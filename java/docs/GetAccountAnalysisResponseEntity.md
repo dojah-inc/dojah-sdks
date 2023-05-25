@@ -12,7 +12,7 @@
 |**fundsManagement** | [**GetAccountAnalysisResponseEntityFundsManagement**](GetAccountAnalysisResponseEntityFundsManagement.md) |  |  [optional] |
 |**inflowBreakdown** | [**GetAccountAnalysisResponseEntityInflowBreakdown**](GetAccountAnalysisResponseEntityInflowBreakdown.md) |  |  [optional] |
 |**transactionRoutineBreakdown** | [**GetAccountAnalysisResponseEntityTransactionRoutineBreakdown**](GetAccountAnalysisResponseEntityTransactionRoutineBreakdown.md) |  |  [optional] |
-|**status** | **BigDecimal** |  |  [optional] |
+|**status** | **Double** |  |  [optional] |
 
 
 

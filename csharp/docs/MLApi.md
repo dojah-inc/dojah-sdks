@@ -17,6 +17,7 @@ Document Analysis Drivers License
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -30,15 +31,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new MLApi(config);
             var getDocumentAnalysisRequest = new GetDocumentAnalysisRequest(); // GetDocumentAnalysisRequest |  (optional) 
@@ -47,13 +51,19 @@ namespace Example
             {
                 // Document Analysis Drivers License
                 GetDocumentAnalysisResponse result = apiInstance.GetDocumentAnalysis(getDocumentAnalysisRequest);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling MLApi.GetDocumentAnalysis: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling MLApi.GetDocumentAnalysis: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -103,7 +113,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  |
+| **200** | OK |  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -115,6 +125,7 @@ Generic OCR Service
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -128,15 +139,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new MLApi(config);
             var getGenericOcrTextRequest = new GetGenericOcrTextRequest(); // GetGenericOcrTextRequest |  (optional) 
@@ -145,13 +159,19 @@ namespace Example
             {
                 // Generic OCR Service
                 GetGenericOcrTextResponse result = apiInstance.GetGenericOcrText(getGenericOcrTextRequest);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling MLApi.GetGenericOcrText: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling MLApi.GetGenericOcrText: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -213,6 +233,7 @@ BVN Ocr
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -226,15 +247,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new MLApi(config);
             var getOcrTextRequest = new GetOcrTextRequest(); // GetOcrTextRequest |  (optional) 
@@ -243,13 +267,19 @@ namespace Example
             {
                 // BVN Ocr
                 GetOcrTextResponse result = apiInstance.GetOcrText(getOcrTextRequest);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling MLApi.GetOcrText: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling MLApi.GetOcrText: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -311,6 +341,7 @@ KYC - Selfie Photo ID Verification
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -324,15 +355,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new MLApi(config);
             var verifyPhotoIdWithSelfieRequest = new VerifyPhotoIdWithSelfieRequest(); // VerifyPhotoIdWithSelfieRequest |  (optional) 
@@ -341,13 +375,19 @@ namespace Example
             {
                 // KYC - Selfie Photo ID Verification
                 VerifyPhotoIdWithSelfieResponse result = apiInstance.VerifyPhotoIdWithSelfie(verifyPhotoIdWithSelfieRequest);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling MLApi.VerifyPhotoIdWithSelfie: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling MLApi.VerifyPhotoIdWithSelfie: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }

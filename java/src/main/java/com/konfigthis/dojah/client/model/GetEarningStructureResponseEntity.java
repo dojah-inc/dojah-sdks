@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -52,7 +52,7 @@ import com.konfigthis.dojah.client.JSON;
 public class GetEarningStructureResponseEntity {
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_INCOME = "average_monthly_income";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_INCOME)
-  private BigDecimal averageMonthlyIncome;
+  private Double averageMonthlyIncome;
 
   public static final String SERIALIZED_NAME_SALARY_EARNER = "salary_earner";
   @SerializedName(SERIALIZED_NAME_SALARY_EARNER)
@@ -64,14 +64,28 @@ public class GetEarningStructureResponseEntity {
 
   public static final String SERIALIZED_NAME_NUMBER_OF_DAYS = "number_of_days";
   @SerializedName(SERIALIZED_NAME_NUMBER_OF_DAYS)
-  private BigDecimal numberOfDays;
+  private Double numberOfDays;
 
   public GetEarningStructureResponseEntity() {
   }
 
-  public GetEarningStructureResponseEntity averageMonthlyIncome(BigDecimal averageMonthlyIncome) {
+  public GetEarningStructureResponseEntity averageMonthlyIncome(Double averageMonthlyIncome) {
+
+    
+    
+    
     
     this.averageMonthlyIncome = averageMonthlyIncome;
+    return this;
+  }
+
+  public GetEarningStructureResponseEntity averageMonthlyIncome(Integer averageMonthlyIncome) {
+
+    
+    
+    
+    
+    this.averageMonthlyIncome = averageMonthlyIncome.doubleValue();
     return this;
   }
 
@@ -82,17 +96,25 @@ public class GetEarningStructureResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1070300.0383333336", value = "")
 
-  public BigDecimal getAverageMonthlyIncome() {
+  public Double getAverageMonthlyIncome() {
     return averageMonthlyIncome;
   }
 
 
-  public void setAverageMonthlyIncome(BigDecimal averageMonthlyIncome) {
+  public void setAverageMonthlyIncome(Double averageMonthlyIncome) {
+
+    
+    
+    
     this.averageMonthlyIncome = averageMonthlyIncome;
   }
 
 
   public GetEarningStructureResponseEntity salaryEarner(Boolean salaryEarner) {
+
+    
+    
+    
     
     this.salaryEarner = salaryEarner;
     return this;
@@ -111,11 +133,19 @@ public class GetEarningStructureResponseEntity {
 
 
   public void setSalaryEarner(Boolean salaryEarner) {
+
+    
+    
+    
     this.salaryEarner = salaryEarner;
   }
 
 
   public GetEarningStructureResponseEntity consistent(Boolean consistent) {
+
+    
+    
+    
     
     this.consistent = consistent;
     return this;
@@ -134,13 +164,31 @@ public class GetEarningStructureResponseEntity {
 
 
   public void setConsistent(Boolean consistent) {
+
+    
+    
+    
     this.consistent = consistent;
   }
 
 
-  public GetEarningStructureResponseEntity numberOfDays(BigDecimal numberOfDays) {
+  public GetEarningStructureResponseEntity numberOfDays(Double numberOfDays) {
+
+    
+    
+    
     
     this.numberOfDays = numberOfDays;
+    return this;
+  }
+
+  public GetEarningStructureResponseEntity numberOfDays(Integer numberOfDays) {
+
+    
+    
+    
+    
+    this.numberOfDays = numberOfDays.doubleValue();
     return this;
   }
 
@@ -151,12 +199,16 @@ public class GetEarningStructureResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "183", value = "")
 
-  public BigDecimal getNumberOfDays() {
+  public Double getNumberOfDays() {
     return numberOfDays;
   }
 
 
-  public void setNumberOfDays(BigDecimal numberOfDays) {
+  public void setNumberOfDays(Double numberOfDays) {
+
+    
+    
+    
     this.numberOfDays = numberOfDays;
   }
 

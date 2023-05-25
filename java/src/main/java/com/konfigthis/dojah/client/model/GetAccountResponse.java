@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -81,6 +82,10 @@ public class GetAccountResponse {
   }
 
   public GetAccountResponse name(String name) {
+
+    
+    
+    
     
     this.name = name;
     return this;
@@ -99,11 +104,19 @@ public class GetAccountResponse {
 
 
   public void setName(String name) {
+
+    
+    
+    
     this.name = name;
   }
 
 
   public GetAccountResponse accountNumber(String accountNumber) {
+
+    
+    
+    
     
     this.accountNumber = accountNumber;
     return this;
@@ -122,11 +135,19 @@ public class GetAccountResponse {
 
 
   public void setAccountNumber(String accountNumber) {
+
+    
+    
+    
     this.accountNumber = accountNumber;
   }
 
 
   public GetAccountResponse bvn(String bvn) {
+
+    
+    
+    
     
     this.bvn = bvn;
     return this;
@@ -145,11 +166,19 @@ public class GetAccountResponse {
 
 
   public void setBvn(String bvn) {
+
+    
+    
+    
     this.bvn = bvn;
   }
 
 
   public GetAccountResponse accountType(String accountType) {
+
+    
+    
+    
     
     this.accountType = accountType;
     return this;
@@ -168,11 +197,19 @@ public class GetAccountResponse {
 
 
   public void setAccountType(String accountType) {
+
+    
+    
+    
     this.accountType = accountType;
   }
 
 
   public GetAccountResponse currency(String currency) {
+
+    
+    
+    
     
     this.currency = currency;
     return this;
@@ -191,11 +228,19 @@ public class GetAccountResponse {
 
 
   public void setCurrency(String currency) {
+
+    
+    
+    
     this.currency = currency;
   }
 
 
   public GetAccountResponse accountStatus(String accountStatus) {
+
+    
+    
+    
     
     this.accountStatus = accountStatus;
     return this;
@@ -214,11 +259,19 @@ public class GetAccountResponse {
 
 
   public void setAccountStatus(String accountStatus) {
+
+    
+    
+    
     this.accountStatus = accountStatus;
   }
 
 
   public GetAccountResponse balance(String balance) {
+
+    
+    
+    
     
     this.balance = balance;
     return this;
@@ -237,6 +290,10 @@ public class GetAccountResponse {
 
 
   public void setBalance(String balance) {
+
+    
+    
+    
     this.balance = balance;
   }
 

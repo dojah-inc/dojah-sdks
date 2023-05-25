@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**description** | **String** |  |  [optional] |
-|**amount** | **BigDecimal** |  |  [optional] |
+|**amount** | **Double** |  |  [optional] |
 |**plan** | **String** |  |  [optional] |
 
 

@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -61,6 +62,10 @@ public class CreditSubwalletRequest {
   }
 
   public CreditSubwalletRequest amount(String amount) {
+
+    
+    
+    
     
     this.amount = amount;
     return this;
@@ -79,11 +84,19 @@ public class CreditSubwalletRequest {
 
 
   public void setAmount(String amount) {
+
+    
+    
+    
     this.amount = amount;
   }
 
 
   public CreditSubwalletRequest walletId(String walletId) {
+
+    
+    
+    
     
     this.walletId = walletId;
     return this;
@@ -102,6 +115,10 @@ public class CreditSubwalletRequest {
 
 
   public void setWalletId(String walletId) {
+
+    
+    
+    
     this.walletId = walletId;
   }
 

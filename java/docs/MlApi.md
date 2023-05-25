@@ -12,15 +12,15 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getDocumentAnalysis"></a>
 # **getDocumentAnalysis**
-> GetDocumentAnalysisResponse getDocumentAnalysis(getDocumentAnalysisRequest)
+> GetDocumentAnalysisResponse getDocumentAnalysis().getDocumentAnalysisRequest(getDocumentAnalysisRequest).execute();
 
 Document Analysis Drivers License
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -28,26 +28,45 @@ import com.konfigthis.dojah.client.api.MlApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    MlApi apiInstance = new MlApi(defaultClient);
-    GetDocumentAnalysisRequest getDocumentAnalysisRequest = new GetDocumentAnalysisRequest(); // GetDocumentAnalysisRequest | 
+    MlApi api = new MlApi(apiClient);
+    String img = "img_example";
     try {
-      GetDocumentAnalysisResponse result = apiInstance.getDocumentAnalysis(getDocumentAnalysisRequest);
+      GetDocumentAnalysisResponse result = api
+              .getDocumentAnalysis()
+              .img(img)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MlApi#getDocumentAnalysis");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<GetDocumentAnalysisResponse> response = api
+              .getDocumentAnalysis()
+              .img(img)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling MlApi#getDocumentAnalysis");
       System.err.println("Status code: " + e.getCode());
@@ -81,19 +100,19 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  |
+| **200** | OK |  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  |
 
 <a name="getGenericOcrText"></a>
 # **getGenericOcrText**
-> GetGenericOcrTextResponse getGenericOcrText(getGenericOcrTextRequest)
+> GetGenericOcrTextResponse getGenericOcrText().getGenericOcrTextRequest(getGenericOcrTextRequest).execute();
 
 Generic OCR Service
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -101,26 +120,45 @@ import com.konfigthis.dojah.client.api.MlApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    MlApi apiInstance = new MlApi(defaultClient);
-    GetGenericOcrTextRequest getGenericOcrTextRequest = new GetGenericOcrTextRequest(); // GetGenericOcrTextRequest | 
+    MlApi api = new MlApi(apiClient);
+    String img = "img_example";
     try {
-      GetGenericOcrTextResponse result = apiInstance.getGenericOcrText(getGenericOcrTextRequest);
+      GetGenericOcrTextResponse result = api
+              .getGenericOcrText()
+              .img(img)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MlApi#getGenericOcrText");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<GetGenericOcrTextResponse> response = api
+              .getGenericOcrText()
+              .img(img)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling MlApi#getGenericOcrText");
       System.err.println("Status code: " + e.getCode());
@@ -158,15 +196,15 @@ public class Example {
 
 <a name="getOcrText"></a>
 # **getOcrText**
-> GetOcrTextResponse getOcrText(getOcrTextRequest)
+> GetOcrTextResponse getOcrText().getOcrTextRequest(getOcrTextRequest).execute();
 
 BVN Ocr
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -174,26 +212,45 @@ import com.konfigthis.dojah.client.api.MlApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    MlApi apiInstance = new MlApi(defaultClient);
-    GetOcrTextRequest getOcrTextRequest = new GetOcrTextRequest(); // GetOcrTextRequest | 
+    MlApi api = new MlApi(apiClient);
+    String image = "image_example";
     try {
-      GetOcrTextResponse result = apiInstance.getOcrText(getOcrTextRequest);
+      GetOcrTextResponse result = api
+              .getOcrText()
+              .image(image)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MlApi#getOcrText");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<GetOcrTextResponse> response = api
+              .getOcrText()
+              .image(image)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling MlApi#getOcrText");
       System.err.println("Status code: " + e.getCode());
@@ -231,15 +288,15 @@ public class Example {
 
 <a name="verifyPhotoIdWithSelfie"></a>
 # **verifyPhotoIdWithSelfie**
-> VerifyPhotoIdWithSelfieResponse verifyPhotoIdWithSelfie(verifyPhotoIdWithSelfieRequest)
+> VerifyPhotoIdWithSelfieResponse verifyPhotoIdWithSelfie().verifyPhotoIdWithSelfieRequest(verifyPhotoIdWithSelfieRequest).execute();
 
 KYC - Selfie Photo ID Verification
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -247,26 +304,48 @@ import com.konfigthis.dojah.client.api.MlApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    MlApi apiInstance = new MlApi(defaultClient);
-    VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest = new VerifyPhotoIdWithSelfieRequest(); // VerifyPhotoIdWithSelfieRequest | 
+    MlApi api = new MlApi(apiClient);
+    String selfieImage = "selfieImage_example";
+    String photoidImage = "photoidImage_example";
     try {
-      VerifyPhotoIdWithSelfieResponse result = apiInstance.verifyPhotoIdWithSelfie(verifyPhotoIdWithSelfieRequest);
+      VerifyPhotoIdWithSelfieResponse result = api
+              .verifyPhotoIdWithSelfie()
+              .selfieImage(selfieImage)
+              .photoidImage(photoidImage)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MlApi#verifyPhotoIdWithSelfie");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<VerifyPhotoIdWithSelfieResponse> response = api
+              .verifyPhotoIdWithSelfie()
+              .selfieImage(selfieImage)
+              .photoidImage(photoidImage)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling MlApi#verifyPhotoIdWithSelfie");
       System.err.println("Status code: " + e.getCode());

@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -69,6 +70,10 @@ public class VerifyAgeResponseEntity {
   }
 
   public VerifyAgeResponseEntity firstName(String firstName) {
+
+    
+    
+    
     
     this.firstName = firstName;
     return this;
@@ -87,11 +92,19 @@ public class VerifyAgeResponseEntity {
 
 
   public void setFirstName(String firstName) {
+
+    
+    
+    
     this.firstName = firstName;
   }
 
 
   public VerifyAgeResponseEntity lastName(String lastName) {
+
+    
+    
+    
     
     this.lastName = lastName;
     return this;
@@ -110,11 +123,19 @@ public class VerifyAgeResponseEntity {
 
 
   public void setLastName(String lastName) {
+
+    
+    
+    
     this.lastName = lastName;
   }
 
 
   public VerifyAgeResponseEntity dateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     
     this.dateOfBirth = dateOfBirth;
     return this;
@@ -133,11 +154,19 @@ public class VerifyAgeResponseEntity {
 
 
   public void setDateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     this.dateOfBirth = dateOfBirth;
   }
 
 
   public VerifyAgeResponseEntity verification(Boolean verification) {
+
+    
+    
+    
     
     this.verification = verification;
     return this;
@@ -156,6 +185,10 @@ public class VerifyAgeResponseEntity {
 
 
   public void setVerification(Boolean verification) {
+
+    
+    
+    
     this.verification = verification;
   }
 

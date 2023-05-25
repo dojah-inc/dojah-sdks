@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**entity** | [**GetOcrTextResponseEntity**](GetOcrTextResponseEntity.md) |  |  [optional] |
+|**entity** | [**GetGenericOcrTextResponseEntity**](GetGenericOcrTextResponseEntity.md) |  |  [optional] |
 
 
 

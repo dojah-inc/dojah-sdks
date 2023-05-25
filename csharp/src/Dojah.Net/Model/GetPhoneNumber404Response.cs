@@ -35,7 +35,7 @@ namespace Dojah.Net.Model
         /// Initializes a new instance of the <see cref="GetPhoneNumber404Response" /> class.
         /// </summary>
         /// <param name="entity">entity.</param>
-        public GetPhoneNumber404Response(GetPhoneNumberResponseEntity entity = default(GetPhoneNumberResponseEntity))
+        public GetPhoneNumber404Response(GetPhoneNumber404ResponseEntity entity = default(GetPhoneNumber404ResponseEntity))
         {
             this.Entity = entity;
         }
@@ -44,7 +44,7 @@ namespace Dojah.Net.Model
         /// Gets or Sets Entity
         /// </summary>
         [DataMember(Name = "entity", EmitDefaultValue = false)]
-        public GetPhoneNumberResponseEntity Entity { get; set; }
+        public GetPhoneNumber404ResponseEntity Entity { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

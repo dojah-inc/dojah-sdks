@@ -10,14 +10,14 @@
 |**additionalIncome** | **String** |  |  [optional] |
 |**recurringSalaryPayments** | **String** |  |  [optional] |
 |**aSalaryEarner** | **String** |  |  [optional] |
-|**averageAdditionalIncome** | **BigDecimal** |  |  [optional] |
-|**averageGuaranteedSalary** | **BigDecimal** |  |  [optional] |
+|**averageAdditionalIncome** | **Double** |  |  [optional] |
+|**averageGuaranteedSalary** | **Double** |  |  [optional] |
 |**estimatedSalaryPaymentDay** | **String** |  |  [optional] |
 |**lastDateOfSalaryPayment** | **String** |  |  [optional] |
-|**minimumSalary** | **BigDecimal** |  |  [optional] |
-|**netAverageMonthlySalary** | **BigDecimal** |  |  [optional] |
-|**numberOfAdditionalIncomePayments** | **BigDecimal** |  |  [optional] |
-|**totalnumberOfSalaryPayments** | **BigDecimal** |  |  [optional] |
+|**minimumSalary** | **Double** |  |  [optional] |
+|**netAverageMonthlySalary** | **Double** |  |  [optional] |
+|**numberOfAdditionalIncomePayments** | **Double** |  |  [optional] |
+|**totalnumberOfSalaryPayments** | **Double** |  |  [optional] |
 
 
 

@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -152,12 +152,16 @@ public class GetPremiumBvnResponseEntity {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private BigDecimal status;
+  private Double status;
 
   public GetPremiumBvnResponseEntity() {
   }
 
   public GetPremiumBvnResponseEntity title(String title) {
+
+    
+    
+    
     
     this.title = title;
     return this;
@@ -176,11 +180,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setTitle(String title) {
+
+    
+    
+    
     this.title = title;
   }
 
 
   public GetPremiumBvnResponseEntity bvn(String bvn) {
+
+    
+    
+    
     
     this.bvn = bvn;
     return this;
@@ -199,11 +211,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setBvn(String bvn) {
+
+    
+    
+    
     this.bvn = bvn;
   }
 
 
   public GetPremiumBvnResponseEntity dateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     
     this.dateOfBirth = dateOfBirth;
     return this;
@@ -222,11 +242,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setDateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     this.dateOfBirth = dateOfBirth;
   }
 
 
   public GetPremiumBvnResponseEntity email(String email) {
+
+    
+    
+    
     
     this.email = email;
     return this;
@@ -245,11 +273,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setEmail(String email) {
+
+    
+    
+    
     this.email = email;
   }
 
 
   public GetPremiumBvnResponseEntity enrollmentBank(String enrollmentBank) {
+
+    
+    
+    
     
     this.enrollmentBank = enrollmentBank;
     return this;
@@ -268,11 +304,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setEnrollmentBank(String enrollmentBank) {
+
+    
+    
+    
     this.enrollmentBank = enrollmentBank;
   }
 
 
   public GetPremiumBvnResponseEntity enrollmentBranch(String enrollmentBranch) {
+
+    
+    
+    
     
     this.enrollmentBranch = enrollmentBranch;
     return this;
@@ -291,11 +335,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setEnrollmentBranch(String enrollmentBranch) {
+
+    
+    
+    
     this.enrollmentBranch = enrollmentBranch;
   }
 
 
   public GetPremiumBvnResponseEntity firstName(String firstName) {
+
+    
+    
+    
     
     this.firstName = firstName;
     return this;
@@ -314,11 +366,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setFirstName(String firstName) {
+
+    
+    
+    
     this.firstName = firstName;
   }
 
 
   public GetPremiumBvnResponseEntity gender(String gender) {
+
+    
+    
+    
     
     this.gender = gender;
     return this;
@@ -337,11 +397,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setGender(String gender) {
+
+    
+    
+    
     this.gender = gender;
   }
 
 
   public GetPremiumBvnResponseEntity image(String image) {
+
+    
+    
+    
     
     this.image = image;
     return this;
@@ -360,11 +428,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setImage(String image) {
+
+    
+    
+    
     this.image = image;
   }
 
 
   public GetPremiumBvnResponseEntity lastName(String lastName) {
+
+    
+    
+    
     
     this.lastName = lastName;
     return this;
@@ -383,11 +459,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setLastName(String lastName) {
+
+    
+    
+    
     this.lastName = lastName;
   }
 
 
   public GetPremiumBvnResponseEntity levelOfAccount(String levelOfAccount) {
+
+    
+    
+    
     
     this.levelOfAccount = levelOfAccount;
     return this;
@@ -406,11 +490,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setLevelOfAccount(String levelOfAccount) {
+
+    
+    
+    
     this.levelOfAccount = levelOfAccount;
   }
 
 
   public GetPremiumBvnResponseEntity lgaOfOrigin(String lgaOfOrigin) {
+
+    
+    
+    
     
     this.lgaOfOrigin = lgaOfOrigin;
     return this;
@@ -429,11 +521,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setLgaOfOrigin(String lgaOfOrigin) {
+
+    
+    
+    
     this.lgaOfOrigin = lgaOfOrigin;
   }
 
 
   public GetPremiumBvnResponseEntity lgaOfResidence(String lgaOfResidence) {
+
+    
+    
+    
     
     this.lgaOfResidence = lgaOfResidence;
     return this;
@@ -452,11 +552,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setLgaOfResidence(String lgaOfResidence) {
+
+    
+    
+    
     this.lgaOfResidence = lgaOfResidence;
   }
 
 
   public GetPremiumBvnResponseEntity maritalStatus(String maritalStatus) {
+
+    
+    
+    
     
     this.maritalStatus = maritalStatus;
     return this;
@@ -475,11 +583,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setMaritalStatus(String maritalStatus) {
+
+    
+    
+    
     this.maritalStatus = maritalStatus;
   }
 
 
   public GetPremiumBvnResponseEntity middleName(String middleName) {
+
+    
+    
+    
     
     this.middleName = middleName;
     return this;
@@ -498,11 +614,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setMiddleName(String middleName) {
+
+    
+    
+    
     this.middleName = middleName;
   }
 
 
   public GetPremiumBvnResponseEntity nameOnCard(String nameOnCard) {
+
+    
+    
+    
     
     this.nameOnCard = nameOnCard;
     return this;
@@ -521,11 +645,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setNameOnCard(String nameOnCard) {
+
+    
+    
+    
     this.nameOnCard = nameOnCard;
   }
 
 
   public GetPremiumBvnResponseEntity nationality(String nationality) {
+
+    
+    
+    
     
     this.nationality = nationality;
     return this;
@@ -544,11 +676,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setNationality(String nationality) {
+
+    
+    
+    
     this.nationality = nationality;
   }
 
 
   public GetPremiumBvnResponseEntity nin(String nin) {
+
+    
+    
+    
     
     this.nin = nin;
     return this;
@@ -567,11 +707,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setNin(String nin) {
+
+    
+    
+    
     this.nin = nin;
   }
 
 
   public GetPremiumBvnResponseEntity phoneNumber1(String phoneNumber1) {
+
+    
+    
+    
     
     this.phoneNumber1 = phoneNumber1;
     return this;
@@ -590,11 +738,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setPhoneNumber1(String phoneNumber1) {
+
+    
+    
+    
     this.phoneNumber1 = phoneNumber1;
   }
 
 
   public GetPremiumBvnResponseEntity phoneNumber2(String phoneNumber2) {
+
+    
+    
+    
     
     this.phoneNumber2 = phoneNumber2;
     return this;
@@ -613,11 +769,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setPhoneNumber2(String phoneNumber2) {
+
+    
+    
+    
     this.phoneNumber2 = phoneNumber2;
   }
 
 
   public GetPremiumBvnResponseEntity registrationDate(String registrationDate) {
+
+    
+    
+    
     
     this.registrationDate = registrationDate;
     return this;
@@ -636,11 +800,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setRegistrationDate(String registrationDate) {
+
+    
+    
+    
     this.registrationDate = registrationDate;
   }
 
 
   public GetPremiumBvnResponseEntity residentialAddress(String residentialAddress) {
+
+    
+    
+    
     
     this.residentialAddress = residentialAddress;
     return this;
@@ -659,11 +831,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setResidentialAddress(String residentialAddress) {
+
+    
+    
+    
     this.residentialAddress = residentialAddress;
   }
 
 
   public GetPremiumBvnResponseEntity stateOfOrigin(String stateOfOrigin) {
+
+    
+    
+    
     
     this.stateOfOrigin = stateOfOrigin;
     return this;
@@ -682,11 +862,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setStateOfOrigin(String stateOfOrigin) {
+
+    
+    
+    
     this.stateOfOrigin = stateOfOrigin;
   }
 
 
   public GetPremiumBvnResponseEntity stateOfResidence(String stateOfResidence) {
+
+    
+    
+    
     
     this.stateOfResidence = stateOfResidence;
     return this;
@@ -705,11 +893,19 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setStateOfResidence(String stateOfResidence) {
+
+    
+    
+    
     this.stateOfResidence = stateOfResidence;
   }
 
 
   public GetPremiumBvnResponseEntity watchListed(String watchListed) {
+
+    
+    
+    
     
     this.watchListed = watchListed;
     return this;
@@ -728,13 +924,31 @@ public class GetPremiumBvnResponseEntity {
 
 
   public void setWatchListed(String watchListed) {
+
+    
+    
+    
     this.watchListed = watchListed;
   }
 
 
-  public GetPremiumBvnResponseEntity status(BigDecimal status) {
+  public GetPremiumBvnResponseEntity status(Double status) {
+
+    
+    
+    
     
     this.status = status;
+    return this;
+  }
+
+  public GetPremiumBvnResponseEntity status(Integer status) {
+
+    
+    
+    
+    
+    this.status = status.doubleValue();
     return this;
   }
 
@@ -745,12 +959,16 @@ public class GetPremiumBvnResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "200", value = "")
 
-  public BigDecimal getStatus() {
+  public Double getStatus() {
     return status;
   }
 
 
-  public void setStatus(BigDecimal status) {
+  public void setStatus(Double status) {
+
+    
+    
+    
     this.status = status;
   }
 

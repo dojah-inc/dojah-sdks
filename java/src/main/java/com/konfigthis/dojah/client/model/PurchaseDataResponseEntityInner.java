@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -56,7 +56,7 @@ public class PurchaseDataResponseEntityInner {
 
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
-  private BigDecimal amount;
+  private Double amount;
 
   public static final String SERIALIZED_NAME_PLAN = "plan";
   @SerializedName(SERIALIZED_NAME_PLAN)
@@ -66,6 +66,10 @@ public class PurchaseDataResponseEntityInner {
   }
 
   public PurchaseDataResponseEntityInner description(String description) {
+
+    
+    
+    
     
     this.description = description;
     return this;
@@ -84,13 +88,31 @@ public class PurchaseDataResponseEntityInner {
 
 
   public void setDescription(String description) {
+
+    
+    
+    
     this.description = description;
   }
 
 
-  public PurchaseDataResponseEntityInner amount(BigDecimal amount) {
+  public PurchaseDataResponseEntityInner amount(Double amount) {
+
+    
+    
+    
     
     this.amount = amount;
+    return this;
+  }
+
+  public PurchaseDataResponseEntityInner amount(Integer amount) {
+
+    
+    
+    
+    
+    this.amount = amount.doubleValue();
     return this;
   }
 
@@ -101,17 +123,25 @@ public class PurchaseDataResponseEntityInner {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1000", value = "")
 
-  public BigDecimal getAmount() {
+  public Double getAmount() {
     return amount;
   }
 
 
-  public void setAmount(BigDecimal amount) {
+  public void setAmount(Double amount) {
+
+    
+    
+    
     this.amount = amount;
   }
 
 
   public PurchaseDataResponseEntityInner plan(String plan) {
+
+    
+    
+    
     
     this.plan = plan;
     return this;
@@ -130,6 +160,10 @@ public class PurchaseDataResponseEntityInner {
 
 
   public void setPlan(String plan) {
+
+    
+    
+    
     this.plan = plan;
   }
 

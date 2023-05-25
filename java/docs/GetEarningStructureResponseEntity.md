@@ -7,10 +7,10 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**averageMonthlyIncome** | **BigDecimal** |  |  [optional] |
+|**averageMonthlyIncome** | **Double** |  |  [optional] |
 |**salaryEarner** | **Boolean** |  |  [optional] |
 |**consistent** | **Boolean** |  |  [optional] |
-|**numberOfDays** | **BigDecimal** |  |  [optional] |
+|**numberOfDays** | **Double** |  |  [optional] |
 
 
 

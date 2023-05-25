@@ -14,7 +14,7 @@ import (
 	"os"
 	"testing"
 
-	dojah "github.com/konfig-dev/dojah-sdks/go"
+	dojah "github.com/dojah-inc/dojah-sdks/go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

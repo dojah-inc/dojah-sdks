@@ -36,6 +36,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -60,6 +61,10 @@ public class GetWebhooksResponse {
   }
 
   public GetWebhooksResponse entity(List<GetWebhooksResponseEntityInner> entity) {
+
+    
+    
+    
     
     this.entity = entity;
     return this;
@@ -86,6 +91,10 @@ public class GetWebhooksResponse {
 
 
   public void setEntity(List<GetWebhooksResponseEntityInner> entity) {
+
+    
+    
+    
     this.entity = entity;
   }
 

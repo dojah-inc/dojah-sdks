@@ -29,6 +29,7 @@ KYC - Document Analysis
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -42,15 +43,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
 
@@ -58,13 +62,19 @@ namespace Example
             {
                 // KYC - Document Analysis
                 AnalyzeDocumentResponse result = apiInstance.AnalyzeDocument();
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYCApi.AnalyzeDocument: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYCApi.AnalyzeDocument: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -122,6 +132,7 @@ KYC - Get Basic BVN Info
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -135,15 +146,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
             var bvn = 22468537919;  // int? |  (optional) 
@@ -152,13 +166,19 @@ namespace Example
             {
                 // KYC - Get Basic BVN Info
                 GetBasicBvnResponse result = apiInstance.GetBasicBvn(bvn);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYCApi.GetBasicBvn: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYCApi.GetBasicBvn: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -220,6 +240,7 @@ KYC Lookup Phone Number Basic
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -233,15 +254,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
             var phoneNumber = 8068810228;  // int? |  (optional) 
@@ -250,13 +274,19 @@ namespace Example
             {
                 // KYC Lookup Phone Number Basic
                 GetBasicPhoneNumberResponse result = apiInstance.GetBasicPhoneNumber(phoneNumber);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYCApi.GetBasicPhoneNumber: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYCApi.GetBasicPhoneNumber: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -318,6 +348,7 @@ KYC - Get Drivers License Info
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -331,15 +362,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
             var licenseNumber = FKJ49409AB13;  // string |  (optional) 
@@ -348,13 +382,19 @@ namespace Example
             {
                 // KYC - Get Drivers License Info
                 GetKycDriversLicenseResponse result = apiInstance.GetDriversLicense(licenseNumber);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYCApi.GetDriversLicense: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYCApi.GetDriversLicense: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -416,6 +456,7 @@ KYC - Get Email Reputation
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -429,15 +470,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
             var email = johndoe@gmail.com;  // string |  (optional) 
@@ -446,13 +490,19 @@ namespace Example
             {
                 // KYC - Get Email Reputation
                 GetEmailReputationResponse result = apiInstance.GetEmailReputation(email);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYCApi.GetEmailReputation: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYCApi.GetEmailReputation: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -502,7 +552,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
+| **200** | OK |  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -514,6 +564,7 @@ KYC - Lookup BVN Basic
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -527,15 +578,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
             var bvn = 22222222222;  // int? |  (optional) 
@@ -544,13 +598,19 @@ namespace Example
             {
                 // KYC - Lookup BVN Basic
                 GetFullBvnResponse result = apiInstance.GetFullBvn(bvn);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYCApi.GetFullBvn: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYCApi.GetFullBvn: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -612,6 +672,7 @@ KYC - Get NUBAN Information
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -625,15 +686,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
             var bankCode = 58;  // int? |  (optional) 
@@ -643,13 +707,19 @@ namespace Example
             {
                 // KYC - Get NUBAN Information
                 GetNubanResponse result = apiInstance.GetNuban(bankCode, accountNumber);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYCApi.GetNuban: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYCApi.GetNuban: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -700,7 +770,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -712,6 +782,7 @@ KYC - Passport
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -725,15 +796,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
             var passportNumber = 70142502085;  // int? |  (optional) 
@@ -743,13 +817,19 @@ namespace Example
             {
                 // KYC - Passport
                 GetKycPassportResponse result = apiInstance.GetPassport(passportNumber, surname);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYCApi.GetPassport: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYCApi.GetPassport: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -812,6 +892,7 @@ KYC - Lookup Phone Number
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -825,15 +906,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
             var phoneNumber = 8011111111;  // int? |  (optional) 
@@ -842,13 +926,19 @@ namespace Example
             {
                 // KYC - Lookup Phone Number
                 GetPhoneNumberResponse result = apiInstance.GetPhoneNumber(phoneNumber);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYCApi.GetPhoneNumber: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYCApi.GetPhoneNumber: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -911,6 +1001,7 @@ KYC - Lookup BVN Premium
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -924,15 +1015,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
             var bvn = 22305638508;  // int? |  (optional) 
@@ -941,13 +1035,19 @@ namespace Example
             {
                 // KYC - Lookup BVN Premium
                 GetPremiumBvnResponse result = apiInstance.GetPremiumBvn(bvn);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYCApi.GetPremiumBvn: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYCApi.GetPremiumBvn: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -997,7 +1097,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
+| **200** | OK |  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1009,6 +1109,7 @@ KYC - Get VIN
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -1022,15 +1123,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
             var mode = vin;  // string |  (optional) 
@@ -1043,13 +1147,19 @@ namespace Example
             {
                 // KYC - Get VIN
                 GetVinResponse result = apiInstance.GetVIN(mode, firstname, lastname, vin, state);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYCApi.GetVIN: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYCApi.GetVIN: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -1103,7 +1213,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
+| **200** | OK |  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1115,6 +1225,7 @@ Lookup VNIN
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -1128,15 +1239,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
             var vnin = AB012345678910YZ;  // string |  (optional) 
@@ -1145,13 +1259,19 @@ namespace Example
             {
                 // Lookup VNIN
                 GetVninResponse result = apiInstance.GetVnin(vnin);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYCApi.GetVnin: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYCApi.GetVnin: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -1213,6 +1333,7 @@ KYC - Validate BVN
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -1226,15 +1347,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
             var bvn = 22250148240;  // int? |  (optional) 
@@ -1245,13 +1369,19 @@ namespace Example
             {
                 // KYC - Validate BVN
                 ValidateBvnResponse result = apiInstance.ValidateBvn(bvn, firstName, dob);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYCApi.ValidateBvn: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYCApi.ValidateBvn: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -1315,6 +1445,7 @@ KYC - Age Verification
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -1328,15 +1459,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
             var mode = account_number;  // string |  (optional) 
@@ -1350,13 +1484,19 @@ namespace Example
             {
                 // KYC - Age Verification
                 VerifyAgeResponse result = apiInstance.VerifyAge(mode, accountNumber, bankCode, dob, firstName, lastName);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYCApi.VerifyAge: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYCApi.VerifyAge: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -1411,7 +1551,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1423,6 +1563,7 @@ KYC - Selfie BVN Verificatoin
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -1436,15 +1577,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
             var verifySelfieBvnRequest = new VerifySelfieBvnRequest(); // VerifySelfieBvnRequest |  (optional) 
@@ -1453,13 +1597,19 @@ namespace Example
             {
                 // KYC - Selfie BVN Verificatoin
                 VerifySelfieBvnResponse result = apiInstance.VerifySelfieBvn(verifySelfieBvnRequest);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYCApi.VerifySelfieBvn: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYCApi.VerifySelfieBvn: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }
@@ -1521,6 +1671,7 @@ KYC - Selfie NIN Verification
 
 ### Example
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Dojah.Net.Api;
@@ -1534,15 +1685,18 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.dojah.io";
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
             // Configure API key authorization: apikeyAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.AddApiKey("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("AppId", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
             var verifySelfieNinRequest = new VerifySelfieNinRequest(); // VerifySelfieNinRequest |  (optional) 
@@ -1551,13 +1705,19 @@ namespace Example
             {
                 // KYC - Selfie NIN Verification
                 VerifySelfieNinResponse result = apiInstance.VerifySelfieNin(verifySelfieNinRequest);
-                Debug.WriteLine(result);
+                Console.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling KYCApi.VerifySelfieNin: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling KYCApi.VerifySelfieNin: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
             }
         }
     }

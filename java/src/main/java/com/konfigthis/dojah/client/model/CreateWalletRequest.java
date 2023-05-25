@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -73,6 +74,10 @@ public class CreateWalletRequest {
   }
 
   public CreateWalletRequest lastName(String lastName) {
+
+    
+    
+    
     
     this.lastName = lastName;
     return this;
@@ -91,11 +96,19 @@ public class CreateWalletRequest {
 
 
   public void setLastName(String lastName) {
+
+    
+    
+    
     this.lastName = lastName;
   }
 
 
   public CreateWalletRequest firstName(String firstName) {
+
+    
+    
+    
     
     this.firstName = firstName;
     return this;
@@ -114,11 +127,19 @@ public class CreateWalletRequest {
 
 
   public void setFirstName(String firstName) {
+
+    
+    
+    
     this.firstName = firstName;
   }
 
 
   public CreateWalletRequest phoneNumber(String phoneNumber) {
+
+    
+    
+    
     
     this.phoneNumber = phoneNumber;
     return this;
@@ -137,11 +158,19 @@ public class CreateWalletRequest {
 
 
   public void setPhoneNumber(String phoneNumber) {
+
+    
+    
+    
     this.phoneNumber = phoneNumber;
   }
 
 
   public CreateWalletRequest dob(String dob) {
+
+    
+    
+    
     
     this.dob = dob;
     return this;
@@ -160,11 +189,19 @@ public class CreateWalletRequest {
 
 
   public void setDob(String dob) {
+
+    
+    
+    
     this.dob = dob;
   }
 
 
   public CreateWalletRequest route(String route) {
+
+    
+    
+    
     
     this.route = route;
     return this;
@@ -183,6 +220,10 @@ public class CreateWalletRequest {
 
 
   public void setRoute(String route) {
+
+    
+    
+    
     this.route = route;
   }
 

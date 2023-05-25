@@ -18,7 +18,7 @@
 |**picture** | **String** |  |  [optional] |
 |**pin** | **String** |  |  [optional] |
 |**processingCenter** | **String** |  |  [optional] |
-|**status** | **BigDecimal** |  |  [optional] |
+|**status** | **Double** |  |  [optional] |
 
 
 

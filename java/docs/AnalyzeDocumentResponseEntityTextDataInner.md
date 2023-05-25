@@ -8,8 +8,8 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**fieldName** | **String** |  |  [optional] |
-|**fieldType** | **BigDecimal** |  |  [optional] |
-|**status** | **BigDecimal** |  |  [optional] |
+|**fieldType** | **Double** |  |  [optional] |
+|**status** | **Double** |  |  [optional] |
 |**value** | **String** |  |  [optional] |
 
 

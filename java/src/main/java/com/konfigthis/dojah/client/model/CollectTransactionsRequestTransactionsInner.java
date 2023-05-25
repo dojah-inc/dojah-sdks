@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -73,6 +74,10 @@ public class CollectTransactionsRequestTransactionsInner {
   }
 
   public CollectTransactionsRequestTransactionsInner transactionDate(String transactionDate) {
+
+    
+    
+    
     
     this.transactionDate = transactionDate;
     return this;
@@ -91,11 +96,19 @@ public class CollectTransactionsRequestTransactionsInner {
 
 
   public void setTransactionDate(String transactionDate) {
+
+    
+    
+    
     this.transactionDate = transactionDate;
   }
 
 
   public CollectTransactionsRequestTransactionsInner transactionAmount(String transactionAmount) {
+
+    
+    
+    
     
     this.transactionAmount = transactionAmount;
     return this;
@@ -114,11 +127,19 @@ public class CollectTransactionsRequestTransactionsInner {
 
 
   public void setTransactionAmount(String transactionAmount) {
+
+    
+    
+    
     this.transactionAmount = transactionAmount;
   }
 
 
   public CollectTransactionsRequestTransactionsInner transactionDescription(String transactionDescription) {
+
+    
+    
+    
     
     this.transactionDescription = transactionDescription;
     return this;
@@ -137,11 +158,19 @@ public class CollectTransactionsRequestTransactionsInner {
 
 
   public void setTransactionDescription(String transactionDescription) {
+
+    
+    
+    
     this.transactionDescription = transactionDescription;
   }
 
 
   public CollectTransactionsRequestTransactionsInner transactionType(String transactionType) {
+
+    
+    
+    
     
     this.transactionType = transactionType;
     return this;
@@ -160,11 +189,19 @@ public class CollectTransactionsRequestTransactionsInner {
 
 
   public void setTransactionType(String transactionType) {
+
+    
+    
+    
     this.transactionType = transactionType;
   }
 
 
   public CollectTransactionsRequestTransactionsInner referenceNumber(String referenceNumber) {
+
+    
+    
+    
     
     this.referenceNumber = referenceNumber;
     return this;
@@ -183,6 +220,10 @@ public class CollectTransactionsRequestTransactionsInner {
 
 
   public void setReferenceNumber(String referenceNumber) {
+
+    
+    
+    
     this.referenceNumber = referenceNumber;
   }
 

@@ -15,7 +15,7 @@ import (
     "github.com/stretchr/testify/assert"
     "github.com/stretchr/testify/require"
     "testing"
-    dojah "github.com/konfig-dev/dojah-sdks/go"
+    dojah "github.com/dojah-inc/dojah-sdks/go"
 )
 
 func Test_dojah_WebHooksApiService(t *testing.T) {
