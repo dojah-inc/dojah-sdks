@@ -38,6 +38,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -78,6 +79,10 @@ public class GetSpendingPatternResponseEntityPattern {
   }
 
   public GetSpendingPatternResponseEntityPattern others(GetSpendingPatternResponseEntityPatternOthers others) {
+
+    
+    
+    
     
     this.others = others;
     return this;
@@ -96,11 +101,19 @@ public class GetSpendingPatternResponseEntityPattern {
 
 
   public void setOthers(GetSpendingPatternResponseEntityPatternOthers others) {
+
+    
+    
+    
     this.others = others;
   }
 
 
   public GetSpendingPatternResponseEntityPattern food(GetSpendingPatternResponseEntityPatternFood food) {
+
+    
+    
+    
     
     this.food = food;
     return this;
@@ -119,11 +132,19 @@ public class GetSpendingPatternResponseEntityPattern {
 
 
   public void setFood(GetSpendingPatternResponseEntityPatternFood food) {
+
+    
+    
+    
     this.food = food;
   }
 
 
   public GetSpendingPatternResponseEntityPattern airtimeData(GetSpendingPatternResponseEntityPatternAirtimeData airtimeData) {
+
+    
+    
+    
     
     this.airtimeData = airtimeData;
     return this;
@@ -142,11 +163,19 @@ public class GetSpendingPatternResponseEntityPattern {
 
 
   public void setAirtimeData(GetSpendingPatternResponseEntityPatternAirtimeData airtimeData) {
+
+    
+    
+    
     this.airtimeData = airtimeData;
   }
 
 
   public GetSpendingPatternResponseEntityPattern bankTransfer(GetSpendingPatternResponseEntityPatternBankTransfer bankTransfer) {
+
+    
+    
+    
     
     this.bankTransfer = bankTransfer;
     return this;
@@ -165,11 +194,19 @@ public class GetSpendingPatternResponseEntityPattern {
 
 
   public void setBankTransfer(GetSpendingPatternResponseEntityPatternBankTransfer bankTransfer) {
+
+    
+    
+    
     this.bankTransfer = bankTransfer;
   }
 
 
   public GetSpendingPatternResponseEntityPattern charges(GetSpendingPatternResponseEntityPatternCharges charges) {
+
+    
+    
+    
     
     this.charges = charges;
     return this;
@@ -188,6 +225,10 @@ public class GetSpendingPatternResponseEntityPattern {
 
 
   public void setCharges(GetSpendingPatternResponseEntityPatternCharges charges) {
+
+    
+    
+    
     this.charges = charges;
   }
 

@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -52,7 +52,7 @@ import com.konfigthis.dojah.client.JSON;
 public class AnalyzeDocumentResponseEntityStatus {
   public static final String SERIALIZED_NAME_OVERALL_STATUS = "overall_status";
   @SerializedName(SERIALIZED_NAME_OVERALL_STATUS)
-  private BigDecimal overallStatus;
+  private Double overallStatus;
 
   public static final String SERIALIZED_NAME_DOCUMENT_IMAGES = "document_images";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_IMAGES)
@@ -73,9 +73,23 @@ public class AnalyzeDocumentResponseEntityStatus {
   public AnalyzeDocumentResponseEntityStatus() {
   }
 
-  public AnalyzeDocumentResponseEntityStatus overallStatus(BigDecimal overallStatus) {
+  public AnalyzeDocumentResponseEntityStatus overallStatus(Double overallStatus) {
+
+    
+    
+    
     
     this.overallStatus = overallStatus;
+    return this;
+  }
+
+  public AnalyzeDocumentResponseEntityStatus overallStatus(Integer overallStatus) {
+
+    
+    
+    
+    
+    this.overallStatus = overallStatus.doubleValue();
     return this;
   }
 
@@ -86,17 +100,25 @@ public class AnalyzeDocumentResponseEntityStatus {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getOverallStatus() {
+  public Double getOverallStatus() {
     return overallStatus;
   }
 
 
-  public void setOverallStatus(BigDecimal overallStatus) {
+  public void setOverallStatus(Double overallStatus) {
+
+    
+    
+    
     this.overallStatus = overallStatus;
   }
 
 
   public AnalyzeDocumentResponseEntityStatus documentImages(String documentImages) {
+
+    
+    
+    
     
     this.documentImages = documentImages;
     return this;
@@ -115,11 +137,19 @@ public class AnalyzeDocumentResponseEntityStatus {
 
 
   public void setDocumentImages(String documentImages) {
+
+    
+    
+    
     this.documentImages = documentImages;
   }
 
 
   public AnalyzeDocumentResponseEntityStatus text(String text) {
+
+    
+    
+    
     
     this.text = text;
     return this;
@@ -138,11 +168,19 @@ public class AnalyzeDocumentResponseEntityStatus {
 
 
   public void setText(String text) {
+
+    
+    
+    
     this.text = text;
   }
 
 
   public AnalyzeDocumentResponseEntityStatus documentType(String documentType) {
+
+    
+    
+    
     
     this.documentType = documentType;
     return this;
@@ -161,11 +199,19 @@ public class AnalyzeDocumentResponseEntityStatus {
 
 
   public void setDocumentType(String documentType) {
+
+    
+    
+    
     this.documentType = documentType;
   }
 
 
   public AnalyzeDocumentResponseEntityStatus expiry(String expiry) {
+
+    
+    
+    
     
     this.expiry = expiry;
     return this;
@@ -184,6 +230,10 @@ public class AnalyzeDocumentResponseEntityStatus {
 
 
   public void setExpiry(String expiry) {
+
+    
+    
+    
     this.expiry = expiry;
   }
 

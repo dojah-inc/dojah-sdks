@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -65,6 +66,10 @@ public class AnalyzeDocumentResponseEntityDocumentImages {
   }
 
   public AnalyzeDocumentResponseEntityDocumentImages portrait(String portrait) {
+
+    
+    
+    
     
     this.portrait = portrait;
     return this;
@@ -83,11 +88,19 @@ public class AnalyzeDocumentResponseEntityDocumentImages {
 
 
   public void setPortrait(String portrait) {
+
+    
+    
+    
     this.portrait = portrait;
   }
 
 
   public AnalyzeDocumentResponseEntityDocumentImages fingerprint(String fingerprint) {
+
+    
+    
+    
     
     this.fingerprint = fingerprint;
     return this;
@@ -106,11 +119,19 @@ public class AnalyzeDocumentResponseEntityDocumentImages {
 
 
   public void setFingerprint(String fingerprint) {
+
+    
+    
+    
     this.fingerprint = fingerprint;
   }
 
 
   public AnalyzeDocumentResponseEntityDocumentImages documentFrontSide(String documentFrontSide) {
+
+    
+    
+    
     
     this.documentFrontSide = documentFrontSide;
     return this;
@@ -129,6 +150,10 @@ public class AnalyzeDocumentResponseEntityDocumentImages {
 
 
   public void setDocumentFrontSide(String documentFrontSide) {
+
+    
+    
+    
     this.documentFrontSide = documentFrontSide;
   }
 

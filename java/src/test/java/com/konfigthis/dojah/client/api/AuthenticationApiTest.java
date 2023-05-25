@@ -13,6 +13,9 @@
 package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.model.GetSenderIdResponse;
 import com.konfigthis.dojah.client.model.GetSmsStatusResponse;
 import com.konfigthis.dojah.client.model.RequestSenderIdRequest;
@@ -24,6 +27,7 @@ import com.konfigthis.dojah.client.model.SendSmsResponse;
 import com.konfigthis.dojah.client.model.ValidateOtpResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,7 +40,14 @@ import java.util.Map;
 @Disabled
 public class AuthenticationApiTest {
 
-    private final AuthenticationApi api = new AuthenticationApi();
+    private static AuthenticationApi api;
+
+    
+    @BeforeAll
+    public static void beforeClass() {
+        ApiClient apiClient = Configuration.getDefaultApiClient();
+        api = new AuthenticationApi(apiClient);
+    }
 
     /**
      * Messaging - Get Sender IDs
@@ -45,7 +56,8 @@ public class AuthenticationApiTest {
      */
     @Test
     public void getSenderIdTest() throws ApiException {
-        GetSenderIdResponse response = api.getSenderId();
+        GetSenderIdResponse response = api.getSenderId()
+                .execute();
         // TODO: test validations
     }
 
@@ -57,7 +69,9 @@ public class AuthenticationApiTest {
     @Test
     public void getSmsStatusTest() throws ApiException {
         String messageId = null;
-        GetSmsStatusResponse response = api.getSmsStatus(messageId);
+        GetSmsStatusResponse response = api.getSmsStatus()
+                .messageId(messageId)
+                .execute();
         // TODO: test validations
     }
 
@@ -68,8 +82,10 @@ public class AuthenticationApiTest {
      */
     @Test
     public void requestSenderIdTest() throws ApiException {
-        RequestSenderIdRequest requestSenderIdRequest = null;
-        RequestSenderIdResponse response = api.requestSenderId(requestSenderIdRequest);
+        String senderId = null;
+        RequestSenderIdResponse response = api.requestSenderId()
+                .senderId(senderId)
+                .execute();
         // TODO: test validations
     }
 
@@ -80,8 +96,18 @@ public class AuthenticationApiTest {
      */
     @Test
     public void sendOtpTest() throws ApiException {
-        SendOtpRequest sendOtpRequest = null;
-        SendOtpResponse response = api.sendOtp(sendOtpRequest);
+        String destination = null;
+        Double length = null;
+        String channel = null;
+        String senderId = null;
+        Boolean priority = null;
+        SendOtpResponse response = api.sendOtp()
+                .destination(destination)
+                .length(length)
+                .channel(channel)
+                .senderId(senderId)
+                .priority(priority)
+                .execute();
         // TODO: test validations
     }
 
@@ -92,8 +118,16 @@ public class AuthenticationApiTest {
      */
     @Test
     public void sendSmsTest() throws ApiException {
-        SendSmsRequest sendSmsRequest = null;
-        SendSmsResponse response = api.sendSms(sendSmsRequest);
+        String destination = null;
+        String message = null;
+        String channel = null;
+        String senderId = null;
+        SendSmsResponse response = api.sendSms()
+                .destination(destination)
+                .message(message)
+                .channel(channel)
+                .senderId(senderId)
+                .execute();
         // TODO: test validations
     }
 
@@ -106,7 +140,10 @@ public class AuthenticationApiTest {
     public void validateOtpTest() throws ApiException {
         String referenceId = null;
         Integer code = null;
-        ValidateOtpResponse response = api.validateOtp(referenceId, code);
+        ValidateOtpResponse response = api.validateOtp()
+                .referenceId(referenceId)
+                .code(code)
+                .execute();
         // TODO: test validations
     }
 

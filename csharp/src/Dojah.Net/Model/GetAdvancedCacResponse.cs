@@ -35,7 +35,7 @@ namespace Dojah.Net.Model
         /// Initializes a new instance of the <see cref="GetAdvancedCacResponse" /> class.
         /// </summary>
         /// <param name="entity">entity.</param>
-        public GetAdvancedCacResponse(GetBasicCacResponseEntity entity = default(GetBasicCacResponseEntity))
+        public GetAdvancedCacResponse(GetAdvancedCacResponseEntity entity = default(GetAdvancedCacResponseEntity))
         {
             this.Entity = entity;
         }
@@ -44,7 +44,7 @@ namespace Dojah.Net.Model
         /// Gets or Sets Entity
         /// </summary>
         [DataMember(Name = "entity", EmitDefaultValue = false)]
-        public GetBasicCacResponseEntity Entity { get; set; }
+        public GetAdvancedCacResponseEntity Entity { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

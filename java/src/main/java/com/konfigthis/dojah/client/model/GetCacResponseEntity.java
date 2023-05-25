@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -69,6 +70,10 @@ public class GetCacResponseEntity {
   }
 
   public GetCacResponseEntity rcNumber(String rcNumber) {
+
+    
+    
+    
     
     this.rcNumber = rcNumber;
     return this;
@@ -87,11 +92,19 @@ public class GetCacResponseEntity {
 
 
   public void setRcNumber(String rcNumber) {
+
+    
+    
+    
     this.rcNumber = rcNumber;
   }
 
 
   public GetCacResponseEntity companyName(String companyName) {
+
+    
+    
+    
     
     this.companyName = companyName;
     return this;
@@ -110,11 +123,19 @@ public class GetCacResponseEntity {
 
 
   public void setCompanyName(String companyName) {
+
+    
+    
+    
     this.companyName = companyName;
   }
 
 
   public GetCacResponseEntity address(String address) {
+
+    
+    
+    
     
     this.address = address;
     return this;
@@ -133,11 +154,19 @@ public class GetCacResponseEntity {
 
 
   public void setAddress(String address) {
+
+    
+    
+    
     this.address = address;
   }
 
 
   public GetCacResponseEntity dateOfRegistration(String dateOfRegistration) {
+
+    
+    
+    
     
     this.dateOfRegistration = dateOfRegistration;
     return this;
@@ -156,6 +185,10 @@ public class GetCacResponseEntity {
 
 
   public void setDateOfRegistration(String dateOfRegistration) {
+
+    
+    
+    
     this.dateOfRegistration = dateOfRegistration;
   }
 

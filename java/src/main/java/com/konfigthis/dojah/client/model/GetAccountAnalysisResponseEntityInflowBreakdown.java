@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -35,6 +34,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -65,11 +65,11 @@ public class GetAccountAnalysisResponseEntityInflowBreakdown {
 
   public static final String SERIALIZED_NAME_AVERAGE_ADDITIONAL_INCOME = "averageAdditionalIncome";
   @SerializedName(SERIALIZED_NAME_AVERAGE_ADDITIONAL_INCOME)
-  private BigDecimal averageAdditionalIncome;
+  private Double averageAdditionalIncome;
 
   public static final String SERIALIZED_NAME_AVERAGE_GUARANTEED_SALARY = "averageGuaranteedSalary";
   @SerializedName(SERIALIZED_NAME_AVERAGE_GUARANTEED_SALARY)
-  private BigDecimal averageGuaranteedSalary;
+  private Double averageGuaranteedSalary;
 
   public static final String SERIALIZED_NAME_ESTIMATED_SALARY_PAYMENT_DAY = "estimatedSalaryPaymentDay";
   @SerializedName(SERIALIZED_NAME_ESTIMATED_SALARY_PAYMENT_DAY)
@@ -81,24 +81,28 @@ public class GetAccountAnalysisResponseEntityInflowBreakdown {
 
   public static final String SERIALIZED_NAME_MINIMUM_SALARY = "minimumSalary";
   @SerializedName(SERIALIZED_NAME_MINIMUM_SALARY)
-  private BigDecimal minimumSalary;
+  private Double minimumSalary;
 
   public static final String SERIALIZED_NAME_NET_AVERAGE_MONTHLY_SALARY = "netAverageMonthlySalary";
   @SerializedName(SERIALIZED_NAME_NET_AVERAGE_MONTHLY_SALARY)
-  private BigDecimal netAverageMonthlySalary;
+  private Double netAverageMonthlySalary;
 
   public static final String SERIALIZED_NAME_NUMBER_OF_ADDITIONAL_INCOME_PAYMENTS = "numberOfAdditionalIncomePayments";
   @SerializedName(SERIALIZED_NAME_NUMBER_OF_ADDITIONAL_INCOME_PAYMENTS)
-  private BigDecimal numberOfAdditionalIncomePayments;
+  private Double numberOfAdditionalIncomePayments;
 
   public static final String SERIALIZED_NAME_TOTALNUMBER_OF_SALARY_PAYMENTS = "totalnumberOfSalaryPayments";
   @SerializedName(SERIALIZED_NAME_TOTALNUMBER_OF_SALARY_PAYMENTS)
-  private BigDecimal totalnumberOfSalaryPayments;
+  private Double totalnumberOfSalaryPayments;
 
   public GetAccountAnalysisResponseEntityInflowBreakdown() {
   }
 
   public GetAccountAnalysisResponseEntityInflowBreakdown additionalIncome(String additionalIncome) {
+
+    
+    
+    
     
     this.additionalIncome = additionalIncome;
     return this;
@@ -117,11 +121,19 @@ public class GetAccountAnalysisResponseEntityInflowBreakdown {
 
 
   public void setAdditionalIncome(String additionalIncome) {
+
+    
+    
+    
     this.additionalIncome = additionalIncome;
   }
 
 
   public GetAccountAnalysisResponseEntityInflowBreakdown recurringSalaryPayments(String recurringSalaryPayments) {
+
+    
+    
+    
     
     this.recurringSalaryPayments = recurringSalaryPayments;
     return this;
@@ -140,11 +152,19 @@ public class GetAccountAnalysisResponseEntityInflowBreakdown {
 
 
   public void setRecurringSalaryPayments(String recurringSalaryPayments) {
+
+    
+    
+    
     this.recurringSalaryPayments = recurringSalaryPayments;
   }
 
 
   public GetAccountAnalysisResponseEntityInflowBreakdown aSalaryEarner(String aSalaryEarner) {
+
+    
+    
+    
     
     this.aSalaryEarner = aSalaryEarner;
     return this;
@@ -163,13 +183,31 @@ public class GetAccountAnalysisResponseEntityInflowBreakdown {
 
 
   public void setaSalaryEarner(String aSalaryEarner) {
+
+    
+    
+    
     this.aSalaryEarner = aSalaryEarner;
   }
 
 
-  public GetAccountAnalysisResponseEntityInflowBreakdown averageAdditionalIncome(BigDecimal averageAdditionalIncome) {
+  public GetAccountAnalysisResponseEntityInflowBreakdown averageAdditionalIncome(Double averageAdditionalIncome) {
+
+    
+    
+    
     
     this.averageAdditionalIncome = averageAdditionalIncome;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityInflowBreakdown averageAdditionalIncome(Integer averageAdditionalIncome) {
+
+    
+    
+    
+    
+    this.averageAdditionalIncome = averageAdditionalIncome.doubleValue();
     return this;
   }
 
@@ -180,19 +218,37 @@ public class GetAccountAnalysisResponseEntityInflowBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "9166.67", value = "")
 
-  public BigDecimal getAverageAdditionalIncome() {
+  public Double getAverageAdditionalIncome() {
     return averageAdditionalIncome;
   }
 
 
-  public void setAverageAdditionalIncome(BigDecimal averageAdditionalIncome) {
+  public void setAverageAdditionalIncome(Double averageAdditionalIncome) {
+
+    
+    
+    
     this.averageAdditionalIncome = averageAdditionalIncome;
   }
 
 
-  public GetAccountAnalysisResponseEntityInflowBreakdown averageGuaranteedSalary(BigDecimal averageGuaranteedSalary) {
+  public GetAccountAnalysisResponseEntityInflowBreakdown averageGuaranteedSalary(Double averageGuaranteedSalary) {
+
+    
+    
+    
     
     this.averageGuaranteedSalary = averageGuaranteedSalary;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityInflowBreakdown averageGuaranteedSalary(Integer averageGuaranteedSalary) {
+
+    
+    
+    
+    
+    this.averageGuaranteedSalary = averageGuaranteedSalary.doubleValue();
     return this;
   }
 
@@ -203,17 +259,25 @@ public class GetAccountAnalysisResponseEntityInflowBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getAverageGuaranteedSalary() {
+  public Double getAverageGuaranteedSalary() {
     return averageGuaranteedSalary;
   }
 
 
-  public void setAverageGuaranteedSalary(BigDecimal averageGuaranteedSalary) {
+  public void setAverageGuaranteedSalary(Double averageGuaranteedSalary) {
+
+    
+    
+    
     this.averageGuaranteedSalary = averageGuaranteedSalary;
   }
 
 
   public GetAccountAnalysisResponseEntityInflowBreakdown estimatedSalaryPaymentDay(String estimatedSalaryPaymentDay) {
+
+    
+    
+    
     
     this.estimatedSalaryPaymentDay = estimatedSalaryPaymentDay;
     return this;
@@ -232,11 +296,19 @@ public class GetAccountAnalysisResponseEntityInflowBreakdown {
 
 
   public void setEstimatedSalaryPaymentDay(String estimatedSalaryPaymentDay) {
+
+    
+    
+    
     this.estimatedSalaryPaymentDay = estimatedSalaryPaymentDay;
   }
 
 
   public GetAccountAnalysisResponseEntityInflowBreakdown lastDateOfSalaryPayment(String lastDateOfSalaryPayment) {
+
+    
+    
+    
     
     this.lastDateOfSalaryPayment = lastDateOfSalaryPayment;
     return this;
@@ -255,13 +327,31 @@ public class GetAccountAnalysisResponseEntityInflowBreakdown {
 
 
   public void setLastDateOfSalaryPayment(String lastDateOfSalaryPayment) {
+
+    
+    
+    
     this.lastDateOfSalaryPayment = lastDateOfSalaryPayment;
   }
 
 
-  public GetAccountAnalysisResponseEntityInflowBreakdown minimumSalary(BigDecimal minimumSalary) {
+  public GetAccountAnalysisResponseEntityInflowBreakdown minimumSalary(Double minimumSalary) {
+
+    
+    
+    
     
     this.minimumSalary = minimumSalary;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityInflowBreakdown minimumSalary(Integer minimumSalary) {
+
+    
+    
+    
+    
+    this.minimumSalary = minimumSalary.doubleValue();
     return this;
   }
 
@@ -272,19 +362,37 @@ public class GetAccountAnalysisResponseEntityInflowBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getMinimumSalary() {
+  public Double getMinimumSalary() {
     return minimumSalary;
   }
 
 
-  public void setMinimumSalary(BigDecimal minimumSalary) {
+  public void setMinimumSalary(Double minimumSalary) {
+
+    
+    
+    
     this.minimumSalary = minimumSalary;
   }
 
 
-  public GetAccountAnalysisResponseEntityInflowBreakdown netAverageMonthlySalary(BigDecimal netAverageMonthlySalary) {
+  public GetAccountAnalysisResponseEntityInflowBreakdown netAverageMonthlySalary(Double netAverageMonthlySalary) {
+
+    
+    
+    
     
     this.netAverageMonthlySalary = netAverageMonthlySalary;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityInflowBreakdown netAverageMonthlySalary(Integer netAverageMonthlySalary) {
+
+    
+    
+    
+    
+    this.netAverageMonthlySalary = netAverageMonthlySalary.doubleValue();
     return this;
   }
 
@@ -295,19 +403,37 @@ public class GetAccountAnalysisResponseEntityInflowBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getNetAverageMonthlySalary() {
+  public Double getNetAverageMonthlySalary() {
     return netAverageMonthlySalary;
   }
 
 
-  public void setNetAverageMonthlySalary(BigDecimal netAverageMonthlySalary) {
+  public void setNetAverageMonthlySalary(Double netAverageMonthlySalary) {
+
+    
+    
+    
     this.netAverageMonthlySalary = netAverageMonthlySalary;
   }
 
 
-  public GetAccountAnalysisResponseEntityInflowBreakdown numberOfAdditionalIncomePayments(BigDecimal numberOfAdditionalIncomePayments) {
+  public GetAccountAnalysisResponseEntityInflowBreakdown numberOfAdditionalIncomePayments(Double numberOfAdditionalIncomePayments) {
+
+    
+    
+    
     
     this.numberOfAdditionalIncomePayments = numberOfAdditionalIncomePayments;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityInflowBreakdown numberOfAdditionalIncomePayments(Integer numberOfAdditionalIncomePayments) {
+
+    
+    
+    
+    
+    this.numberOfAdditionalIncomePayments = numberOfAdditionalIncomePayments.doubleValue();
     return this;
   }
 
@@ -318,19 +444,37 @@ public class GetAccountAnalysisResponseEntityInflowBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "2", value = "")
 
-  public BigDecimal getNumberOfAdditionalIncomePayments() {
+  public Double getNumberOfAdditionalIncomePayments() {
     return numberOfAdditionalIncomePayments;
   }
 
 
-  public void setNumberOfAdditionalIncomePayments(BigDecimal numberOfAdditionalIncomePayments) {
+  public void setNumberOfAdditionalIncomePayments(Double numberOfAdditionalIncomePayments) {
+
+    
+    
+    
     this.numberOfAdditionalIncomePayments = numberOfAdditionalIncomePayments;
   }
 
 
-  public GetAccountAnalysisResponseEntityInflowBreakdown totalnumberOfSalaryPayments(BigDecimal totalnumberOfSalaryPayments) {
+  public GetAccountAnalysisResponseEntityInflowBreakdown totalnumberOfSalaryPayments(Double totalnumberOfSalaryPayments) {
+
+    
+    
+    
     
     this.totalnumberOfSalaryPayments = totalnumberOfSalaryPayments;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityInflowBreakdown totalnumberOfSalaryPayments(Integer totalnumberOfSalaryPayments) {
+
+    
+    
+    
+    
+    this.totalnumberOfSalaryPayments = totalnumberOfSalaryPayments.doubleValue();
     return this;
   }
 
@@ -341,12 +485,16 @@ public class GetAccountAnalysisResponseEntityInflowBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getTotalnumberOfSalaryPayments() {
+  public Double getTotalnumberOfSalaryPayments() {
     return totalnumberOfSalaryPayments;
   }
 
 
-  public void setTotalnumberOfSalaryPayments(BigDecimal totalnumberOfSalaryPayments) {
+  public void setTotalnumberOfSalaryPayments(Double totalnumberOfSalaryPayments) {
+
+    
+    
+    
     this.totalnumberOfSalaryPayments = totalnumberOfSalaryPayments;
   }
 

@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -35,6 +34,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -57,7 +57,7 @@ public class TransferFundsResponseEntity {
 
   public static final String SERIALIZED_NAME_TRANSACTION_AMOUNT = "transaction_amount";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_AMOUNT)
-  private BigDecimal transactionAmount;
+  private Double transactionAmount;
 
   public static final String SERIALIZED_NAME_TRANSACTION_TYPE = "transaction_type";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_TYPE)
@@ -95,6 +95,10 @@ public class TransferFundsResponseEntity {
   }
 
   public TransferFundsResponseEntity walletId(String walletId) {
+
+    
+    
+    
     
     this.walletId = walletId;
     return this;
@@ -113,13 +117,31 @@ public class TransferFundsResponseEntity {
 
 
   public void setWalletId(String walletId) {
+
+    
+    
+    
     this.walletId = walletId;
   }
 
 
-  public TransferFundsResponseEntity transactionAmount(BigDecimal transactionAmount) {
+  public TransferFundsResponseEntity transactionAmount(Double transactionAmount) {
+
+    
+    
+    
     
     this.transactionAmount = transactionAmount;
+    return this;
+  }
+
+  public TransferFundsResponseEntity transactionAmount(Integer transactionAmount) {
+
+    
+    
+    
+    
+    this.transactionAmount = transactionAmount.doubleValue();
     return this;
   }
 
@@ -130,17 +152,25 @@ public class TransferFundsResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "10", value = "")
 
-  public BigDecimal getTransactionAmount() {
+  public Double getTransactionAmount() {
     return transactionAmount;
   }
 
 
-  public void setTransactionAmount(BigDecimal transactionAmount) {
+  public void setTransactionAmount(Double transactionAmount) {
+
+    
+    
+    
     this.transactionAmount = transactionAmount;
   }
 
 
   public TransferFundsResponseEntity transactionType(String transactionType) {
+
+    
+    
+    
     
     this.transactionType = transactionType;
     return this;
@@ -159,11 +189,19 @@ public class TransferFundsResponseEntity {
 
 
   public void setTransactionType(String transactionType) {
+
+    
+    
+    
     this.transactionType = transactionType;
   }
 
 
   public TransferFundsResponseEntity recipientAccountNumber(String recipientAccountNumber) {
+
+    
+    
+    
     
     this.recipientAccountNumber = recipientAccountNumber;
     return this;
@@ -182,11 +220,19 @@ public class TransferFundsResponseEntity {
 
 
   public void setRecipientAccountNumber(String recipientAccountNumber) {
+
+    
+    
+    
     this.recipientAccountNumber = recipientAccountNumber;
   }
 
 
   public TransferFundsResponseEntity senderAccountNumber(String senderAccountNumber) {
+
+    
+    
+    
     
     this.senderAccountNumber = senderAccountNumber;
     return this;
@@ -205,11 +251,19 @@ public class TransferFundsResponseEntity {
 
 
   public void setSenderAccountNumber(String senderAccountNumber) {
+
+    
+    
+    
     this.senderAccountNumber = senderAccountNumber;
   }
 
 
   public TransferFundsResponseEntity transactionRemarks(String transactionRemarks) {
+
+    
+    
+    
     
     this.transactionRemarks = transactionRemarks;
     return this;
@@ -228,11 +282,19 @@ public class TransferFundsResponseEntity {
 
 
   public void setTransactionRemarks(String transactionRemarks) {
+
+    
+    
+    
     this.transactionRemarks = transactionRemarks;
   }
 
 
   public TransferFundsResponseEntity transactionReason(String transactionReason) {
+
+    
+    
+    
     
     this.transactionReason = transactionReason;
     return this;
@@ -251,11 +313,19 @@ public class TransferFundsResponseEntity {
 
 
   public void setTransactionReason(String transactionReason) {
+
+    
+    
+    
     this.transactionReason = transactionReason;
   }
 
 
   public TransferFundsResponseEntity transactionId(String transactionId) {
+
+    
+    
+    
     
     this.transactionId = transactionId;
     return this;
@@ -274,11 +344,19 @@ public class TransferFundsResponseEntity {
 
 
   public void setTransactionId(String transactionId) {
+
+    
+    
+    
     this.transactionId = transactionId;
   }
 
 
   public TransferFundsResponseEntity transactionStatus(String transactionStatus) {
+
+    
+    
+    
     
     this.transactionStatus = transactionStatus;
     return this;
@@ -297,11 +375,19 @@ public class TransferFundsResponseEntity {
 
 
   public void setTransactionStatus(String transactionStatus) {
+
+    
+    
+    
     this.transactionStatus = transactionStatus;
   }
 
 
   public TransferFundsResponseEntity dateCreated(String dateCreated) {
+
+    
+    
+    
     
     this.dateCreated = dateCreated;
     return this;
@@ -320,6 +406,10 @@ public class TransferFundsResponseEntity {
 
 
   public void setDateCreated(String dateCreated) {
+
+    
+    
+    
     this.dateCreated = dateCreated;
   }
 

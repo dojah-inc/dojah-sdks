@@ -34,6 +34,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -62,6 +63,10 @@ public class CollectStatusFromPdfRequest {
   }
 
   public CollectStatusFromPdfRequest statement(File statement) {
+
+    
+    
+    
     
     this.statement = statement;
     return this;
@@ -80,11 +85,19 @@ public class CollectStatusFromPdfRequest {
 
 
   public void setStatement(File statement) {
+
+    
+    
+    
     this.statement = statement;
   }
 
 
   public CollectStatusFromPdfRequest bankCode(Integer bankCode) {
+
+    
+    
+    
     
     this.bankCode = bankCode;
     return this;
@@ -103,6 +116,10 @@ public class CollectStatusFromPdfRequest {
 
 
   public void setBankCode(Integer bankCode) {
+
+    
+    
+    
     this.bankCode = bankCode;
   }
 

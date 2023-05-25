@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Entity** | Pointer to [**GetWalletBalanceResponseEntity**](GetWalletBalanceResponseEntity.md) |  | [optional] 
+**Entity** | Pointer to [**GeneralGetWalletBalanceResponseEntity**](GeneralGetWalletBalanceResponseEntity.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEntity
 
-`func (o *GeneralGetWalletBalanceResponse) GetEntity() GetWalletBalanceResponseEntity`
+`func (o *GeneralGetWalletBalanceResponse) GetEntity() GeneralGetWalletBalanceResponseEntity`
 
 GetEntity returns the Entity field if non-nil, zero value otherwise.
 
 ### GetEntityOk
 
-`func (o *GeneralGetWalletBalanceResponse) GetEntityOk() (*GetWalletBalanceResponseEntity, bool)`
+`func (o *GeneralGetWalletBalanceResponse) GetEntityOk() (*GeneralGetWalletBalanceResponseEntity, bool)`
 
 GetEntityOk returns a tuple with the Entity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntity
 
-`func (o *GeneralGetWalletBalanceResponse) SetEntity(v GetWalletBalanceResponseEntity)`
+`func (o *GeneralGetWalletBalanceResponse) SetEntity(v GeneralGetWalletBalanceResponseEntity)`
 
 SetEntity sets Entity field to given value.
 

@@ -35,7 +35,7 @@ namespace Dojah.Net.Model
         /// Initializes a new instance of the <see cref="GeneralGetWalletBalanceResponse" /> class.
         /// </summary>
         /// <param name="entity">entity.</param>
-        public GeneralGetWalletBalanceResponse(GetWalletBalanceResponseEntity entity = default(GetWalletBalanceResponseEntity))
+        public GeneralGetWalletBalanceResponse(GeneralGetWalletBalanceResponseEntity entity = default(GeneralGetWalletBalanceResponseEntity))
         {
             this.Entity = entity;
         }
@@ -44,7 +44,7 @@ namespace Dojah.Net.Model
         /// Gets or Sets Entity
         /// </summary>
         [DataMember(Name = "entity", EmitDefaultValue = false)]
-        public GetWalletBalanceResponseEntity Entity { get; set; }
+        public GeneralGetWalletBalanceResponseEntity Entity { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

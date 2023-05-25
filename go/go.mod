@@ -1,4 +1,4 @@
-module github.com/konfig-dev/dojah-sdks/go
+module github.com/dojah-inc/dojah-sdks/go
 
 go 1.13
 

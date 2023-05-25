@@ -12,7 +12,8 @@ import os
 import unittest
 
 import dojah_client
-from dojah_client.api.ghkyc_api import GHKYCApi
+from dojah_client import Dojah, ApiException
+from dojah_client.apis.tags.ghkyc_api import GHKYCApi
 from dojah_client.api_client import ApiClient
 from dojah_client.configuration import Configuration  # noqa: E501
 
@@ -21,13 +22,13 @@ class TestGHKYCApi(unittest.TestCase):
     """GHKYCApi unit test stubs"""
 
     def setUp(self):
-        configuration = Configuration(api_key={
-            'apikeyAuth': os.environ["DOJAH_API_KEY"],
-            'appIdAuth': os.environ["DOJAH_APP_ID"]
-        })
-        configuration.server_index = 1
-        api_client = ApiClient(configuration)
-        self.api = GHKYCApi(api_client)  # noqa: E501
+        # configuration = Configuration(authorization=os.environ["DOJAH_API_KEY"], app_id=os.environ["DOJAH_APP_ID"])
+        dojah = Dojah(authorization=os.environ["DOJAH_API_KEY"], app_id=os.environ["DOJAH_APP_ID"], server_index=1)
+        # configuration.server_index = 1
+        # api_client = ApiClient(configuration)
+       
+        # self.api = GHKYCApi(api_client)  # noqa: E501
+        self.api = dojah.gh_kyc
 
     def tearDown(self):
         pass

@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -61,6 +62,10 @@ public class PurchaseAirtimeResponseEntityDataInner {
   }
 
   public PurchaseAirtimeResponseEntityDataInner destination(String destination) {
+
+    
+    
+    
     
     this.destination = destination;
     return this;
@@ -79,11 +84,19 @@ public class PurchaseAirtimeResponseEntityDataInner {
 
 
   public void setDestination(String destination) {
+
+    
+    
+    
     this.destination = destination;
   }
 
 
   public PurchaseAirtimeResponseEntityDataInner status(String status) {
+
+    
+    
+    
     
     this.status = status;
     return this;
@@ -102,6 +115,10 @@ public class PurchaseAirtimeResponseEntityDataInner {
 
 
   public void setStatus(String status) {
+
+    
+    
+    
     this.status = status;
   }
 

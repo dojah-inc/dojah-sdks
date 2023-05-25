@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -69,6 +70,10 @@ public class TransferFundsRequest {
   }
 
   public TransferFundsRequest amount(String amount) {
+
+    
+    
+    
     
     this.amount = amount;
     return this;
@@ -87,11 +92,19 @@ public class TransferFundsRequest {
 
 
   public void setAmount(String amount) {
+
+    
+    
+    
     this.amount = amount;
   }
 
 
   public TransferFundsRequest recipientBankCode(String recipientBankCode) {
+
+    
+    
+    
     
     this.recipientBankCode = recipientBankCode;
     return this;
@@ -110,11 +123,19 @@ public class TransferFundsRequest {
 
 
   public void setRecipientBankCode(String recipientBankCode) {
+
+    
+    
+    
     this.recipientBankCode = recipientBankCode;
   }
 
 
   public TransferFundsRequest recipientAccountNumber(String recipientAccountNumber) {
+
+    
+    
+    
     
     this.recipientAccountNumber = recipientAccountNumber;
     return this;
@@ -133,11 +154,19 @@ public class TransferFundsRequest {
 
 
   public void setRecipientAccountNumber(String recipientAccountNumber) {
+
+    
+    
+    
     this.recipientAccountNumber = recipientAccountNumber;
   }
 
 
   public TransferFundsRequest walletId(String walletId) {
+
+    
+    
+    
     
     this.walletId = walletId;
     return this;
@@ -156,6 +185,10 @@ public class TransferFundsRequest {
 
 
   public void setWalletId(String walletId) {
+
+    
+    
+    
     this.walletId = walletId;
   }
 

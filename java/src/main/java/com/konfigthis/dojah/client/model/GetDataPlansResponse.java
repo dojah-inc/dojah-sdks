@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.konfigthis.dojah.client.model.PurchaseDataResponseEntityInner;
+import com.konfigthis.dojah.client.model.GetDataPlansResponseEntityInner;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -36,6 +36,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -54,18 +55,22 @@ import com.konfigthis.dojah.client.JSON;
 public class GetDataPlansResponse {
   public static final String SERIALIZED_NAME_ENTITY = "entity";
   @SerializedName(SERIALIZED_NAME_ENTITY)
-  private List<PurchaseDataResponseEntityInner> entity = null;
+  private List<GetDataPlansResponseEntityInner> entity = null;
 
   public GetDataPlansResponse() {
   }
 
-  public GetDataPlansResponse entity(List<PurchaseDataResponseEntityInner> entity) {
+  public GetDataPlansResponse entity(List<GetDataPlansResponseEntityInner> entity) {
+
+    
+    
+    
     
     this.entity = entity;
     return this;
   }
 
-  public GetDataPlansResponse addEntityItem(PurchaseDataResponseEntityInner entityItem) {
+  public GetDataPlansResponse addEntityItem(GetDataPlansResponseEntityInner entityItem) {
     if (this.entity == null) {
       this.entity = new ArrayList<>();
     }
@@ -80,12 +85,16 @@ public class GetDataPlansResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<PurchaseDataResponseEntityInner> getEntity() {
+  public List<GetDataPlansResponseEntityInner> getEntity() {
     return entity;
   }
 
 
-  public void setEntity(List<PurchaseDataResponseEntityInner> entity) {
+  public void setEntity(List<GetDataPlansResponseEntityInner> entity) {
+
+    
+    
+    
     this.entity = entity;
   }
 
@@ -209,7 +218,7 @@ public class GetDataPlansResponse {
 
           // validate the optional field `entity` (array)
           for (int i = 0; i < jsonArrayentity.size(); i++) {
-            PurchaseDataResponseEntityInner.validateJsonObject(jsonArrayentity.get(i).getAsJsonObject());
+            GetDataPlansResponseEntityInner.validateJsonObject(jsonArrayentity.get(i).getAsJsonObject());
           };
         }
       }

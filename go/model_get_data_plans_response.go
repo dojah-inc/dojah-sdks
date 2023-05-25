@@ -16,7 +16,7 @@ import (
 
 // GetDataPlansResponse struct for GetDataPlansResponse
 type GetDataPlansResponse struct {
-	Entity []PurchaseDataResponseEntityInner `json:"entity,omitempty"`
+	Entity []GetDataPlansResponseEntityInner `json:"entity,omitempty"`
 }
 
 // NewGetDataPlansResponse instantiates a new GetDataPlansResponse object
@@ -37,9 +37,9 @@ func NewGetDataPlansResponseWithDefaults() *GetDataPlansResponse {
 }
 
 // GetEntity returns the Entity field value if set, zero value otherwise.
-func (o *GetDataPlansResponse) GetEntity() []PurchaseDataResponseEntityInner {
+func (o *GetDataPlansResponse) GetEntity() []GetDataPlansResponseEntityInner {
 	if o == nil || isNil(o.Entity) {
-		var ret []PurchaseDataResponseEntityInner
+		var ret []GetDataPlansResponseEntityInner
 		return ret
 	}
 	return o.Entity
@@ -47,7 +47,7 @@ func (o *GetDataPlansResponse) GetEntity() []PurchaseDataResponseEntityInner {
 
 // GetEntityOk returns a tuple with the Entity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetDataPlansResponse) GetEntityOk() ([]PurchaseDataResponseEntityInner, bool) {
+func (o *GetDataPlansResponse) GetEntityOk() ([]GetDataPlansResponseEntityInner, bool) {
 	if o == nil || isNil(o.Entity) {
     return nil, false
 	}
@@ -63,8 +63,8 @@ func (o *GetDataPlansResponse) HasEntity() bool {
 	return false
 }
 
-// SetEntity gets a reference to the given []PurchaseDataResponseEntityInner and assigns it to the Entity field.
-func (o *GetDataPlansResponse) SetEntity(v []PurchaseDataResponseEntityInner) {
+// SetEntity gets a reference to the given []GetDataPlansResponseEntityInner and assigns it to the Entity field.
+func (o *GetDataPlansResponse) SetEntity(v []GetDataPlansResponseEntityInner) {
 	o.Entity = v
 }
 

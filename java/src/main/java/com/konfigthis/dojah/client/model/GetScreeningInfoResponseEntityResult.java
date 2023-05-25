@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +35,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -106,7 +106,7 @@ public class GetScreeningInfoResponseEntityResult {
 
   public static final String SERIALIZED_NAME_MASTER_ID = "masterId";
   @SerializedName(SERIALIZED_NAME_MASTER_ID)
-  private BigDecimal masterId;
+  private Double masterId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -142,7 +142,7 @@ public class GetScreeningInfoResponseEntityResult {
 
   public static final String SERIALIZED_NAME_RELATED_ID = "relatedId";
   @SerializedName(SERIALIZED_NAME_RELATED_ID)
-  private BigDecimal relatedId;
+  private Double relatedId;
 
   public static final String SERIALIZED_NAME_RELATIONSHIPS = "relationships";
   @SerializedName(SERIALIZED_NAME_RELATIONSHIPS)
@@ -180,6 +180,10 @@ public class GetScreeningInfoResponseEntityResult {
   }
 
   public GetScreeningInfoResponseEntityResult addresses(List<String> addresses) {
+
+    
+    
+    
     
     this.addresses = addresses;
     return this;
@@ -206,11 +210,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setAddresses(List<String> addresses) {
+
+    
+    
+    
     this.addresses = addresses;
   }
 
 
   public GetScreeningInfoResponseEntityResult aka(String aka) {
+
+    
+    
+    
     
     this.aka = aka;
     return this;
@@ -229,11 +241,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setAka(String aka) {
+
+    
+    
+    
     this.aka = aka;
   }
 
 
   public GetScreeningInfoResponseEntityResult aliases(List<String> aliases) {
+
+    
+    
+    
     
     this.aliases = aliases;
     return this;
@@ -260,11 +280,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setAliases(List<String> aliases) {
+
+    
+    
+    
     this.aliases = aliases;
   }
 
 
   public GetScreeningInfoResponseEntityResult countryName(String countryName) {
+
+    
+    
+    
     
     this.countryName = countryName;
     return this;
@@ -283,11 +311,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setCountryName(String countryName) {
+
+    
+    
+    
     this.countryName = countryName;
   }
 
 
   public GetScreeningInfoResponseEntityResult dob(String dob) {
+
+    
+    
+    
     
     this.dob = dob;
     return this;
@@ -306,11 +342,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setDob(String dob) {
+
+    
+    
+    
     this.dob = dob;
   }
 
 
   public GetScreeningInfoResponseEntityResult dob2(String dob2) {
+
+    
+    
+    
     
     this.dob2 = dob2;
     return this;
@@ -329,11 +373,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setDob2(String dob2) {
+
+    
+    
+    
     this.dob2 = dob2;
   }
 
 
   public GetScreeningInfoResponseEntityResult effectiveDate(String effectiveDate) {
+
+    
+    
+    
     
     this.effectiveDate = effectiveDate;
     return this;
@@ -352,11 +404,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setEffectiveDate(String effectiveDate) {
+
+    
+    
+    
     this.effectiveDate = effectiveDate;
   }
 
 
   public GetScreeningInfoResponseEntityResult entryCategory(String entryCategory) {
+
+    
+    
+    
     
     this.entryCategory = entryCategory;
     return this;
@@ -375,11 +435,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setEntryCategory(String entryCategory) {
+
+    
+    
+    
     this.entryCategory = entryCategory;
   }
 
 
   public GetScreeningInfoResponseEntityResult entryDesc(String entryDesc) {
+
+    
+    
+    
     
     this.entryDesc = entryDesc;
     return this;
@@ -398,11 +466,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setEntryDesc(String entryDesc) {
+
+    
+    
+    
     this.entryDesc = entryDesc;
   }
 
 
   public GetScreeningInfoResponseEntityResult firstName(String firstName) {
+
+    
+    
+    
     
     this.firstName = firstName;
     return this;
@@ -421,11 +497,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setFirstName(String firstName) {
+
+    
+    
+    
     this.firstName = firstName;
   }
 
 
   public GetScreeningInfoResponseEntityResult govDesignation(String govDesignation) {
+
+    
+    
+    
     
     this.govDesignation = govDesignation;
     return this;
@@ -444,11 +528,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setGovDesignation(String govDesignation) {
+
+    
+    
+    
     this.govDesignation = govDesignation;
   }
 
 
   public GetScreeningInfoResponseEntityResult lastName(String lastName) {
+
+    
+    
+    
     
     this.lastName = lastName;
     return this;
@@ -467,11 +559,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setLastName(String lastName) {
+
+    
+    
+    
     this.lastName = lastName;
   }
 
 
   public GetScreeningInfoResponseEntityResult levelDesc(String levelDesc) {
+
+    
+    
+    
     
     this.levelDesc = levelDesc;
     return this;
@@ -490,13 +590,31 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setLevelDesc(String levelDesc) {
+
+    
+    
+    
     this.levelDesc = levelDesc;
   }
 
 
-  public GetScreeningInfoResponseEntityResult masterId(BigDecimal masterId) {
+  public GetScreeningInfoResponseEntityResult masterId(Double masterId) {
+
+    
+    
+    
     
     this.masterId = masterId;
+    return this;
+  }
+
+  public GetScreeningInfoResponseEntityResult masterId(Integer masterId) {
+
+    
+    
+    
+    
+    this.masterId = masterId.doubleValue();
     return this;
   }
 
@@ -507,17 +625,25 @@ public class GetScreeningInfoResponseEntityResult {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getMasterId() {
+  public Double getMasterId() {
     return masterId;
   }
 
 
-  public void setMasterId(BigDecimal masterId) {
+  public void setMasterId(Double masterId) {
+
+    
+    
+    
     this.masterId = masterId;
   }
 
 
   public GetScreeningInfoResponseEntityResult name(String name) {
+
+    
+    
+    
     
     this.name = name;
     return this;
@@ -536,11 +662,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setName(String name) {
+
+    
+    
+    
     this.name = name;
   }
 
 
   public GetScreeningInfoResponseEntityResult nationalId(String nationalId) {
+
+    
+    
+    
     
     this.nationalId = nationalId;
     return this;
@@ -559,11 +693,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setNationalId(String nationalId) {
+
+    
+    
+    
     this.nationalId = nationalId;
   }
 
 
   public GetScreeningInfoResponseEntityResult otherId(String otherId) {
+
+    
+    
+    
     
     this.otherId = otherId;
     return this;
@@ -582,11 +724,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setOtherId(String otherId) {
+
+    
+    
+    
     this.otherId = otherId;
   }
 
 
   public GetScreeningInfoResponseEntityResult passportId(String passportId) {
+
+    
+    
+    
     
     this.passportId = passportId;
     return this;
@@ -605,11 +755,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setPassportId(String passportId) {
+
+    
+    
+    
     this.passportId = passportId;
   }
 
 
   public GetScreeningInfoResponseEntityResult pob(String pob) {
+
+    
+    
+    
     
     this.pob = pob;
     return this;
@@ -628,11 +786,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setPob(String pob) {
+
+    
+    
+    
     this.pob = pob;
   }
 
 
   public GetScreeningInfoResponseEntityResult positions(String positions) {
+
+    
+    
+    
     
     this.positions = positions;
     return this;
@@ -651,11 +817,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setPositions(String positions) {
+
+    
+    
+    
     this.positions = positions;
   }
 
 
   public GetScreeningInfoResponseEntityResult prefix(String prefix) {
+
+    
+    
+    
     
     this.prefix = prefix;
     return this;
@@ -674,11 +848,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setPrefix(String prefix) {
+
+    
+    
+    
     this.prefix = prefix;
   }
 
 
   public GetScreeningInfoResponseEntityResult primaryName(String primaryName) {
+
+    
+    
+    
     
     this.primaryName = primaryName;
     return this;
@@ -697,13 +879,31 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setPrimaryName(String primaryName) {
+
+    
+    
+    
     this.primaryName = primaryName;
   }
 
 
-  public GetScreeningInfoResponseEntityResult relatedId(BigDecimal relatedId) {
+  public GetScreeningInfoResponseEntityResult relatedId(Double relatedId) {
+
+    
+    
+    
     
     this.relatedId = relatedId;
+    return this;
+  }
+
+  public GetScreeningInfoResponseEntityResult relatedId(Integer relatedId) {
+
+    
+    
+    
+    
+    this.relatedId = relatedId.doubleValue();
     return this;
   }
 
@@ -714,17 +914,25 @@ public class GetScreeningInfoResponseEntityResult {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getRelatedId() {
+  public Double getRelatedId() {
     return relatedId;
   }
 
 
-  public void setRelatedId(BigDecimal relatedId) {
+  public void setRelatedId(Double relatedId) {
+
+    
+    
+    
     this.relatedId = relatedId;
   }
 
 
   public GetScreeningInfoResponseEntityResult relationships(List<String> relationships) {
+
+    
+    
+    
     
     this.relationships = relationships;
     return this;
@@ -751,11 +959,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setRelationships(List<String> relationships) {
+
+    
+    
+    
     this.relationships = relationships;
   }
 
 
   public GetScreeningInfoResponseEntityResult remarks(String remarks) {
+
+    
+    
+    
     
     this.remarks = remarks;
     return this;
@@ -774,11 +990,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setRemarks(String remarks) {
+
+    
+    
+    
     this.remarks = remarks;
   }
 
 
   public GetScreeningInfoResponseEntityResult sourceName(String sourceName) {
+
+    
+    
+    
     
     this.sourceName = sourceName;
     return this;
@@ -797,11 +1021,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setSourceName(String sourceName) {
+
+    
+    
+    
     this.sourceName = sourceName;
   }
 
 
   public GetScreeningInfoResponseEntityResult sourceWebLinks(String sourceWebLinks) {
+
+    
+    
+    
     
     this.sourceWebLinks = sourceWebLinks;
     return this;
@@ -820,11 +1052,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setSourceWebLinks(String sourceWebLinks) {
+
+    
+    
+    
     this.sourceWebLinks = sourceWebLinks;
   }
 
 
   public GetScreeningInfoResponseEntityResult subCatDesc(String subCatDesc) {
+
+    
+    
+    
     
     this.subCatDesc = subCatDesc;
     return this;
@@ -843,11 +1083,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setSubCatDesc(String subCatDesc) {
+
+    
+    
+    
     this.subCatDesc = subCatDesc;
   }
 
 
   public GetScreeningInfoResponseEntityResult suffix(String suffix) {
+
+    
+    
+    
     
     this.suffix = suffix;
     return this;
@@ -866,11 +1114,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setSuffix(String suffix) {
+
+    
+    
+    
     this.suffix = suffix;
   }
 
 
   public GetScreeningInfoResponseEntityResult touchDate(String touchDate) {
+
+    
+    
+    
     
     this.touchDate = touchDate;
     return this;
@@ -889,11 +1145,19 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setTouchDate(String touchDate) {
+
+    
+    
+    
     this.touchDate = touchDate;
   }
 
 
   public GetScreeningInfoResponseEntityResult watch(Boolean watch) {
+
+    
+    
+    
     
     this.watch = watch;
     return this;
@@ -912,6 +1176,10 @@ public class GetScreeningInfoResponseEntityResult {
 
 
   public void setWatch(Boolean watch) {
+
+    
+    
+    
     this.watch = watch;
   }
 

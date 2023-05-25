@@ -48,11 +48,14 @@ public class AuthenticationApi {
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public AuthenticationApi() {
+    public AuthenticationApi() throws IllegalArgumentException {
         this(Configuration.getDefaultApiClient());
     }
 
-    public AuthenticationApi(ApiClient apiClient) {
+    public AuthenticationApi(ApiClient apiClient) throws IllegalArgumentException {
+        if (apiClient.getApikeyAuth() == null) {
+            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
+        }
         this.localVarApiClient = apiClient;
     }
 
@@ -80,18 +83,7 @@ public class AuthenticationApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    /**
-     * Build call for getSenderId
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getSenderIdCall(final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSenderIdCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -141,71 +133,101 @@ public class AuthenticationApi {
 
     }
 
-    /**
-     * Messaging - Get Sender IDs
-     * 
-     * @return GetSenderIdResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public GetSenderIdResponse getSenderId() throws ApiException {
-        ApiResponse<GetSenderIdResponse> localVarResp = getSenderIdWithHttpInfo();
-        return localVarResp.getData();
-    }
 
-    /**
-     * Messaging - Get Sender IDs
-     * 
-     * @return ApiResponse&lt;GetSenderIdResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetSenderIdResponse> getSenderIdWithHttpInfo() throws ApiException {
+    private ApiResponse<GetSenderIdResponse> getSenderIdWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = getSenderIdValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<GetSenderIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Messaging - Get Sender IDs (asynchronously)
-     * 
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getSenderIdAsync(final ApiCallback<GetSenderIdResponse> _callback) throws ApiException {
+    private okhttp3.Call getSenderIdAsync(final ApiCallback<GetSenderIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSenderIdValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<GetSenderIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetSenderIdRequestBuilder {
+
+        private GetSenderIdRequestBuilder() {
+        }
+
+        /**
+         * Build call for getSenderId
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getSenderIdCall(_callback);
+        }
+
+
+        /**
+         * Execute getSenderId request
+         * @return GetSenderIdResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public GetSenderIdResponse execute() throws ApiException {
+            ApiResponse<GetSenderIdResponse> localVarResp = getSenderIdWithHttpInfo();
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getSenderId request with HTTP info returned
+         * @return ApiResponse&lt;GetSenderIdResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetSenderIdResponse> executeWithHttpInfo() throws ApiException {
+            return getSenderIdWithHttpInfo();
+        }
+
+        /**
+         * Execute getSenderId request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetSenderIdResponse> _callback) throws ApiException {
+            return getSenderIdAsync(_callback);
+        }
+    }
+
     /**
-     * Build call for getSmsStatus
-     * @param messageId  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Messaging - Get Sender IDs
+     * 
+     * @return GetSenderIdRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getSmsStatusCall(String messageId, final ApiCallback _callback) throws ApiException {
+    public GetSenderIdRequestBuilder getSenderId() throws IllegalArgumentException {
+        return new GetSenderIdRequestBuilder();
+    }
+    private okhttp3.Call getSmsStatusCall(String messageId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -259,74 +281,112 @@ public class AuthenticationApi {
 
     }
 
-    /**
-     * Messaging - Get SMS Status
-     * 
-     * @param messageId  (optional)
-     * @return GetSmsStatusResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public GetSmsStatusResponse getSmsStatus(String messageId) throws ApiException {
-        ApiResponse<GetSmsStatusResponse> localVarResp = getSmsStatusWithHttpInfo(messageId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Messaging - Get SMS Status
-     * 
-     * @param messageId  (optional)
-     * @return ApiResponse&lt;GetSmsStatusResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetSmsStatusResponse> getSmsStatusWithHttpInfo(String messageId) throws ApiException {
+    private ApiResponse<GetSmsStatusResponse> getSmsStatusWithHttpInfo(String messageId) throws ApiException {
         okhttp3.Call localVarCall = getSmsStatusValidateBeforeCall(messageId, null);
         Type localVarReturnType = new TypeToken<GetSmsStatusResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Messaging - Get SMS Status (asynchronously)
-     * 
-     * @param messageId  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getSmsStatusAsync(String messageId, final ApiCallback<GetSmsStatusResponse> _callback) throws ApiException {
+    private okhttp3.Call getSmsStatusAsync(String messageId, final ApiCallback<GetSmsStatusResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSmsStatusValidateBeforeCall(messageId, _callback);
         Type localVarReturnType = new TypeToken<GetSmsStatusResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetSmsStatusRequestBuilder {
+        private String messageId;
+
+        private GetSmsStatusRequestBuilder() {
+        }
+
+        /**
+         * Set messageId
+         * @param messageId  (optional)
+         * @return GetSmsStatusRequestBuilder
+         */
+        public GetSmsStatusRequestBuilder messageId(String messageId) {
+            this.messageId = messageId;
+            return this;
+        }
+        
+        /**
+         * Build call for getSmsStatus
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getSmsStatusCall(messageId, _callback);
+        }
+
+
+        /**
+         * Execute getSmsStatus request
+         * @return GetSmsStatusResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public GetSmsStatusResponse execute() throws ApiException {
+            ApiResponse<GetSmsStatusResponse> localVarResp = getSmsStatusWithHttpInfo(messageId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getSmsStatus request with HTTP info returned
+         * @return ApiResponse&lt;GetSmsStatusResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetSmsStatusResponse> executeWithHttpInfo() throws ApiException {
+            return getSmsStatusWithHttpInfo(messageId);
+        }
+
+        /**
+         * Execute getSmsStatus request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetSmsStatusResponse> _callback) throws ApiException {
+            return getSmsStatusAsync(messageId, _callback);
+        }
+    }
+
     /**
-     * Build call for requestSenderId
-     * @param requestSenderIdRequest  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Messaging - Get SMS Status
+     * 
+     * @return GetSmsStatusRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call requestSenderIdCall(RequestSenderIdRequest requestSenderIdRequest, final ApiCallback _callback) throws ApiException {
+    public GetSmsStatusRequestBuilder getSmsStatus() throws IllegalArgumentException {
+        return new GetSmsStatusRequestBuilder();
+    }
+    private okhttp3.Call requestSenderIdCall(RequestSenderIdRequest requestSenderIdRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -377,74 +437,121 @@ public class AuthenticationApi {
 
     }
 
-    /**
-     * Messaging - Request Sender ID
-     * 
-     * @param requestSenderIdRequest  (optional)
-     * @return RequestSenderIdResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public RequestSenderIdResponse requestSenderId(RequestSenderIdRequest requestSenderIdRequest) throws ApiException {
-        ApiResponse<RequestSenderIdResponse> localVarResp = requestSenderIdWithHttpInfo(requestSenderIdRequest);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Messaging - Request Sender ID
-     * 
-     * @param requestSenderIdRequest  (optional)
-     * @return ApiResponse&lt;RequestSenderIdResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<RequestSenderIdResponse> requestSenderIdWithHttpInfo(RequestSenderIdRequest requestSenderIdRequest) throws ApiException {
+    private ApiResponse<RequestSenderIdResponse> requestSenderIdWithHttpInfo(RequestSenderIdRequest requestSenderIdRequest) throws ApiException {
         okhttp3.Call localVarCall = requestSenderIdValidateBeforeCall(requestSenderIdRequest, null);
         Type localVarReturnType = new TypeToken<RequestSenderIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Messaging - Request Sender ID (asynchronously)
-     * 
-     * @param requestSenderIdRequest  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call requestSenderIdAsync(RequestSenderIdRequest requestSenderIdRequest, final ApiCallback<RequestSenderIdResponse> _callback) throws ApiException {
+    private okhttp3.Call requestSenderIdAsync(RequestSenderIdRequest requestSenderIdRequest, final ApiCallback<RequestSenderIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = requestSenderIdValidateBeforeCall(requestSenderIdRequest, _callback);
         Type localVarReturnType = new TypeToken<RequestSenderIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class RequestSenderIdRequestBuilder {
+        private String senderId;
+
+        private RequestSenderIdRequestBuilder() {
+        }
+
+        /**
+         * Set senderId
+         * @param senderId  (optional)
+         * @return RequestSenderIdRequestBuilder
+         */
+        public RequestSenderIdRequestBuilder senderId(String senderId) {
+            this.senderId = senderId;
+            return this;
+        }
+        
+        /**
+         * Build call for requestSenderId
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            RequestSenderIdRequest requestSenderIdRequest = buildBodyParams();
+            return requestSenderIdCall(requestSenderIdRequest, _callback);
+        }
+
+        private RequestSenderIdRequest buildBodyParams() {
+            RequestSenderIdRequest requestSenderIdRequest = new RequestSenderIdRequest();
+            requestSenderIdRequest.senderId(this.senderId);
+            return requestSenderIdRequest;
+        }
+
+        /**
+         * Execute requestSenderId request
+         * @return RequestSenderIdResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public RequestSenderIdResponse execute() throws ApiException {
+            RequestSenderIdRequest requestSenderIdRequest = buildBodyParams();
+            ApiResponse<RequestSenderIdResponse> localVarResp = requestSenderIdWithHttpInfo(requestSenderIdRequest);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute requestSenderId request with HTTP info returned
+         * @return ApiResponse&lt;RequestSenderIdResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<RequestSenderIdResponse> executeWithHttpInfo() throws ApiException {
+            RequestSenderIdRequest requestSenderIdRequest = buildBodyParams();
+            return requestSenderIdWithHttpInfo(requestSenderIdRequest);
+        }
+
+        /**
+         * Execute requestSenderId request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<RequestSenderIdResponse> _callback) throws ApiException {
+            RequestSenderIdRequest requestSenderIdRequest = buildBodyParams();
+            return requestSenderIdAsync(requestSenderIdRequest, _callback);
+        }
+    }
+
     /**
-     * Build call for sendOtp
-     * @param sendOtpRequest  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Messaging - Request Sender ID
+     * 
+     * @return RequestSenderIdRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendOtpCall(SendOtpRequest sendOtpRequest, final ApiCallback _callback) throws ApiException {
+    public RequestSenderIdRequestBuilder requestSenderId() throws IllegalArgumentException {
+        return new RequestSenderIdRequestBuilder();
+    }
+    private okhttp3.Call sendOtpCall(SendOtpRequest sendOtpRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -495,74 +602,169 @@ public class AuthenticationApi {
 
     }
 
-    /**
-     * Messaging - Send OTP
-     * 
-     * @param sendOtpRequest  (optional)
-     * @return SendOtpResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public SendOtpResponse sendOtp(SendOtpRequest sendOtpRequest) throws ApiException {
-        ApiResponse<SendOtpResponse> localVarResp = sendOtpWithHttpInfo(sendOtpRequest);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Messaging - Send OTP
-     * 
-     * @param sendOtpRequest  (optional)
-     * @return ApiResponse&lt;SendOtpResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<SendOtpResponse> sendOtpWithHttpInfo(SendOtpRequest sendOtpRequest) throws ApiException {
+    private ApiResponse<SendOtpResponse> sendOtpWithHttpInfo(SendOtpRequest sendOtpRequest) throws ApiException {
         okhttp3.Call localVarCall = sendOtpValidateBeforeCall(sendOtpRequest, null);
         Type localVarReturnType = new TypeToken<SendOtpResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Messaging - Send OTP (asynchronously)
-     * 
-     * @param sendOtpRequest  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call sendOtpAsync(SendOtpRequest sendOtpRequest, final ApiCallback<SendOtpResponse> _callback) throws ApiException {
+    private okhttp3.Call sendOtpAsync(SendOtpRequest sendOtpRequest, final ApiCallback<SendOtpResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = sendOtpValidateBeforeCall(sendOtpRequest, _callback);
         Type localVarReturnType = new TypeToken<SendOtpResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class SendOtpRequestBuilder {
+        private String destination;
+        private double length;
+        private String channel;
+        private String senderId;
+        private Boolean priority;
+
+        private SendOtpRequestBuilder() {
+        }
+
+        /**
+         * Set destination
+         * @param destination  (optional)
+         * @return SendOtpRequestBuilder
+         */
+        public SendOtpRequestBuilder destination(String destination) {
+            this.destination = destination;
+            return this;
+        }
+        
+        /**
+         * Set length
+         * @param length  (optional)
+         * @return SendOtpRequestBuilder
+         */
+        public SendOtpRequestBuilder length(double length) {
+            this.length = length;
+            return this;
+        }
+        
+        /**
+         * Set channel
+         * @param channel  (optional)
+         * @return SendOtpRequestBuilder
+         */
+        public SendOtpRequestBuilder channel(String channel) {
+            this.channel = channel;
+            return this;
+        }
+        
+        /**
+         * Set senderId
+         * @param senderId  (optional)
+         * @return SendOtpRequestBuilder
+         */
+        public SendOtpRequestBuilder senderId(String senderId) {
+            this.senderId = senderId;
+            return this;
+        }
+        
+        /**
+         * Set priority
+         * @param priority  (optional)
+         * @return SendOtpRequestBuilder
+         */
+        public SendOtpRequestBuilder priority(Boolean priority) {
+            this.priority = priority;
+            return this;
+        }
+        
+        /**
+         * Build call for sendOtp
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            SendOtpRequest sendOtpRequest = buildBodyParams();
+            return sendOtpCall(sendOtpRequest, _callback);
+        }
+
+        private SendOtpRequest buildBodyParams() {
+            SendOtpRequest sendOtpRequest = new SendOtpRequest();
+            sendOtpRequest.destination(this.destination);
+            sendOtpRequest.length(this.length);
+            sendOtpRequest.channel(this.channel);
+            sendOtpRequest.senderId(this.senderId);
+            sendOtpRequest.priority(this.priority);
+            return sendOtpRequest;
+        }
+
+        /**
+         * Execute sendOtp request
+         * @return SendOtpResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public SendOtpResponse execute() throws ApiException {
+            SendOtpRequest sendOtpRequest = buildBodyParams();
+            ApiResponse<SendOtpResponse> localVarResp = sendOtpWithHttpInfo(sendOtpRequest);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute sendOtp request with HTTP info returned
+         * @return ApiResponse&lt;SendOtpResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<SendOtpResponse> executeWithHttpInfo() throws ApiException {
+            SendOtpRequest sendOtpRequest = buildBodyParams();
+            return sendOtpWithHttpInfo(sendOtpRequest);
+        }
+
+        /**
+         * Execute sendOtp request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<SendOtpResponse> _callback) throws ApiException {
+            SendOtpRequest sendOtpRequest = buildBodyParams();
+            return sendOtpAsync(sendOtpRequest, _callback);
+        }
+    }
+
     /**
-     * Build call for sendSms
-     * @param sendSmsRequest  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Messaging - Send OTP
+     * 
+     * @return SendOtpRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call sendSmsCall(SendSmsRequest sendSmsRequest, final ApiCallback _callback) throws ApiException {
+    public SendOtpRequestBuilder sendOtp() throws IllegalArgumentException {
+        return new SendOtpRequestBuilder();
+    }
+    private okhttp3.Call sendSmsCall(SendSmsRequest sendSmsRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -613,75 +815,157 @@ public class AuthenticationApi {
 
     }
 
-    /**
-     * Messaging - Send SMS
-     * 
-     * @param sendSmsRequest  (optional)
-     * @return SendSmsResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public SendSmsResponse sendSms(SendSmsRequest sendSmsRequest) throws ApiException {
-        ApiResponse<SendSmsResponse> localVarResp = sendSmsWithHttpInfo(sendSmsRequest);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Messaging - Send SMS
-     * 
-     * @param sendSmsRequest  (optional)
-     * @return ApiResponse&lt;SendSmsResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<SendSmsResponse> sendSmsWithHttpInfo(SendSmsRequest sendSmsRequest) throws ApiException {
+    private ApiResponse<SendSmsResponse> sendSmsWithHttpInfo(SendSmsRequest sendSmsRequest) throws ApiException {
         okhttp3.Call localVarCall = sendSmsValidateBeforeCall(sendSmsRequest, null);
         Type localVarReturnType = new TypeToken<SendSmsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Messaging - Send SMS (asynchronously)
-     * 
-     * @param sendSmsRequest  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call sendSmsAsync(SendSmsRequest sendSmsRequest, final ApiCallback<SendSmsResponse> _callback) throws ApiException {
+    private okhttp3.Call sendSmsAsync(SendSmsRequest sendSmsRequest, final ApiCallback<SendSmsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = sendSmsValidateBeforeCall(sendSmsRequest, _callback);
         Type localVarReturnType = new TypeToken<SendSmsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class SendSmsRequestBuilder {
+        private String destination;
+        private String message;
+        private String channel;
+        private String senderId;
+
+        private SendSmsRequestBuilder() {
+        }
+
+        /**
+         * Set destination
+         * @param destination  (optional)
+         * @return SendSmsRequestBuilder
+         */
+        public SendSmsRequestBuilder destination(String destination) {
+            this.destination = destination;
+            return this;
+        }
+        
+        /**
+         * Set message
+         * @param message  (optional)
+         * @return SendSmsRequestBuilder
+         */
+        public SendSmsRequestBuilder message(String message) {
+            this.message = message;
+            return this;
+        }
+        
+        /**
+         * Set channel
+         * @param channel  (optional)
+         * @return SendSmsRequestBuilder
+         */
+        public SendSmsRequestBuilder channel(String channel) {
+            this.channel = channel;
+            return this;
+        }
+        
+        /**
+         * Set senderId
+         * @param senderId  (optional)
+         * @return SendSmsRequestBuilder
+         */
+        public SendSmsRequestBuilder senderId(String senderId) {
+            this.senderId = senderId;
+            return this;
+        }
+        
+        /**
+         * Build call for sendSms
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            SendSmsRequest sendSmsRequest = buildBodyParams();
+            return sendSmsCall(sendSmsRequest, _callback);
+        }
+
+        private SendSmsRequest buildBodyParams() {
+            SendSmsRequest sendSmsRequest = new SendSmsRequest();
+            sendSmsRequest.destination(this.destination);
+            sendSmsRequest.message(this.message);
+            sendSmsRequest.channel(this.channel);
+            sendSmsRequest.senderId(this.senderId);
+            return sendSmsRequest;
+        }
+
+        /**
+         * Execute sendSms request
+         * @return SendSmsResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public SendSmsResponse execute() throws ApiException {
+            SendSmsRequest sendSmsRequest = buildBodyParams();
+            ApiResponse<SendSmsResponse> localVarResp = sendSmsWithHttpInfo(sendSmsRequest);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute sendSms request with HTTP info returned
+         * @return ApiResponse&lt;SendSmsResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<SendSmsResponse> executeWithHttpInfo() throws ApiException {
+            SendSmsRequest sendSmsRequest = buildBodyParams();
+            return sendSmsWithHttpInfo(sendSmsRequest);
+        }
+
+        /**
+         * Execute sendSms request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<SendSmsResponse> _callback) throws ApiException {
+            SendSmsRequest sendSmsRequest = buildBodyParams();
+            return sendSmsAsync(sendSmsRequest, _callback);
+        }
+    }
+
     /**
-     * Build call for validateOtp
-     * @param referenceId  (optional)
-     * @param code  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Messaging - Send SMS
+     * 
+     * @return SendSmsRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call validateOtpCall(String referenceId, Integer code, final ApiCallback _callback) throws ApiException {
+    public SendSmsRequestBuilder sendSms() throws IllegalArgumentException {
+        return new SendSmsRequestBuilder();
+    }
+    private okhttp3.Call validateOtpCall(String referenceId, Integer code, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -739,62 +1023,120 @@ public class AuthenticationApi {
 
     }
 
-    /**
-     * Messaging - Validate OTP
-     * 
-     * @param referenceId  (optional)
-     * @param code  (optional)
-     * @return ValidateOtpResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public ValidateOtpResponse validateOtp(String referenceId, Integer code) throws ApiException {
-        ApiResponse<ValidateOtpResponse> localVarResp = validateOtpWithHttpInfo(referenceId, code);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Messaging - Validate OTP
-     * 
-     * @param referenceId  (optional)
-     * @param code  (optional)
-     * @return ApiResponse&lt;ValidateOtpResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<ValidateOtpResponse> validateOtpWithHttpInfo(String referenceId, Integer code) throws ApiException {
+    private ApiResponse<ValidateOtpResponse> validateOtpWithHttpInfo(String referenceId, Integer code) throws ApiException {
         okhttp3.Call localVarCall = validateOtpValidateBeforeCall(referenceId, code, null);
         Type localVarReturnType = new TypeToken<ValidateOtpResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Messaging - Validate OTP (asynchronously)
-     * 
-     * @param referenceId  (optional)
-     * @param code  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call validateOtpAsync(String referenceId, Integer code, final ApiCallback<ValidateOtpResponse> _callback) throws ApiException {
+    private okhttp3.Call validateOtpAsync(String referenceId, Integer code, final ApiCallback<ValidateOtpResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = validateOtpValidateBeforeCall(referenceId, code, _callback);
         Type localVarReturnType = new TypeToken<ValidateOtpResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
+    }
+
+    public class ValidateOtpRequestBuilder {
+        private String referenceId;
+        private Integer code;
+
+        private ValidateOtpRequestBuilder() {
+        }
+
+        /**
+         * Set referenceId
+         * @param referenceId  (optional)
+         * @return ValidateOtpRequestBuilder
+         */
+        public ValidateOtpRequestBuilder referenceId(String referenceId) {
+            this.referenceId = referenceId;
+            return this;
+        }
+        
+        /**
+         * Set code
+         * @param code  (optional)
+         * @return ValidateOtpRequestBuilder
+         */
+        public ValidateOtpRequestBuilder code(Integer code) {
+            this.code = code;
+            return this;
+        }
+        
+        /**
+         * Build call for validateOtp
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return validateOtpCall(referenceId, code, _callback);
+        }
+
+
+        /**
+         * Execute validateOtp request
+         * @return ValidateOtpResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public ValidateOtpResponse execute() throws ApiException {
+            ApiResponse<ValidateOtpResponse> localVarResp = validateOtpWithHttpInfo(referenceId, code);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute validateOtp request with HTTP info returned
+         * @return ApiResponse&lt;ValidateOtpResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<ValidateOtpResponse> executeWithHttpInfo() throws ApiException {
+            return validateOtpWithHttpInfo(referenceId, code);
+        }
+
+        /**
+         * Execute validateOtp request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<ValidateOtpResponse> _callback) throws ApiException {
+            return validateOtpAsync(referenceId, code, _callback);
+        }
+    }
+
+    /**
+     * Messaging - Validate OTP
+     * 
+     * @return ValidateOtpRequestBuilder
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+     </table>
+     */
+    public ValidateOtpRequestBuilder validateOtp() throws IllegalArgumentException {
+        return new ValidateOtpRequestBuilder();
     }
 }

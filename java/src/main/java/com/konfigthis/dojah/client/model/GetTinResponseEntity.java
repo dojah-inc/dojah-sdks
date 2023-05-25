@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -85,6 +86,10 @@ public class GetTinResponseEntity {
   }
 
   public GetTinResponseEntity search(String search) {
+
+    
+    
+    
     
     this.search = search;
     return this;
@@ -103,11 +108,19 @@ public class GetTinResponseEntity {
 
 
   public void setSearch(String search) {
+
+    
+    
+    
     this.search = search;
   }
 
 
   public GetTinResponseEntity taxpayerName(String taxpayerName) {
+
+    
+    
+    
     
     this.taxpayerName = taxpayerName;
     return this;
@@ -126,11 +139,19 @@ public class GetTinResponseEntity {
 
 
   public void setTaxpayerName(String taxpayerName) {
+
+    
+    
+    
     this.taxpayerName = taxpayerName;
   }
 
 
   public GetTinResponseEntity caCRegNo(String caCRegNo) {
+
+    
+    
+    
     
     this.caCRegNo = caCRegNo;
     return this;
@@ -149,11 +170,19 @@ public class GetTinResponseEntity {
 
 
   public void setCaCRegNo(String caCRegNo) {
+
+    
+    
+    
     this.caCRegNo = caCRegNo;
   }
 
 
   public GetTinResponseEntity FIRSTIN(String FIRSTIN) {
+
+    
+    
+    
     
     this.FIRSTIN = FIRSTIN;
     return this;
@@ -172,11 +201,19 @@ public class GetTinResponseEntity {
 
 
   public void setFIRSTIN(String FIRSTIN) {
+
+    
+    
+    
     this.FIRSTIN = FIRSTIN;
   }
 
 
   public GetTinResponseEntity JITTIN(String JITTIN) {
+
+    
+    
+    
     
     this.JITTIN = JITTIN;
     return this;
@@ -195,11 +232,19 @@ public class GetTinResponseEntity {
 
 
   public void setJITTIN(String JITTIN) {
+
+    
+    
+    
     this.JITTIN = JITTIN;
   }
 
 
   public GetTinResponseEntity taxOffice(String taxOffice) {
+
+    
+    
+    
     
     this.taxOffice = taxOffice;
     return this;
@@ -218,11 +263,19 @@ public class GetTinResponseEntity {
 
 
   public void setTaxOffice(String taxOffice) {
+
+    
+    
+    
     this.taxOffice = taxOffice;
   }
 
 
   public GetTinResponseEntity phoneNo(String phoneNo) {
+
+    
+    
+    
     
     this.phoneNo = phoneNo;
     return this;
@@ -241,11 +294,19 @@ public class GetTinResponseEntity {
 
 
   public void setPhoneNo(String phoneNo) {
+
+    
+    
+    
     this.phoneNo = phoneNo;
   }
 
 
   public GetTinResponseEntity email(String email) {
+
+    
+    
+    
     
     this.email = email;
     return this;
@@ -264,6 +325,10 @@ public class GetTinResponseEntity {
 
 
   public void setEmail(String email) {
+
+    
+    
+    
     this.email = email;
   }
 

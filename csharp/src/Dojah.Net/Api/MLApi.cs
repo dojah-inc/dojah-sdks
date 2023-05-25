@@ -251,8 +251,8 @@ namespace Dojah.Net.Api
                 Dojah.Net.Client.GlobalConfiguration.Instance,
                 new Dojah.Net.Client.Configuration { BasePath = basePath }
             );
-            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
+            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration);
+            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration);
             this.ExceptionFactory = Dojah.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
@@ -270,9 +270,9 @@ namespace Dojah.Net.Api
                 Dojah.Net.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Dojah.Net.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration);
+            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration);
+            this.ExceptionFactory = Dojah.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>

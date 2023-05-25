@@ -16,7 +16,7 @@ import (
 
 // GetGenericOcrTextResponse struct for GetGenericOcrTextResponse
 type GetGenericOcrTextResponse struct {
-	Entity *GetOcrTextResponseEntity `json:"entity,omitempty"`
+	Entity *GetGenericOcrTextResponseEntity `json:"entity,omitempty"`
 }
 
 // NewGetGenericOcrTextResponse instantiates a new GetGenericOcrTextResponse object
@@ -37,9 +37,9 @@ func NewGetGenericOcrTextResponseWithDefaults() *GetGenericOcrTextResponse {
 }
 
 // GetEntity returns the Entity field value if set, zero value otherwise.
-func (o *GetGenericOcrTextResponse) GetEntity() GetOcrTextResponseEntity {
+func (o *GetGenericOcrTextResponse) GetEntity() GetGenericOcrTextResponseEntity {
 	if o == nil || isNil(o.Entity) {
-		var ret GetOcrTextResponseEntity
+		var ret GetGenericOcrTextResponseEntity
 		return ret
 	}
 	return *o.Entity
@@ -47,7 +47,7 @@ func (o *GetGenericOcrTextResponse) GetEntity() GetOcrTextResponseEntity {
 
 // GetEntityOk returns a tuple with the Entity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetGenericOcrTextResponse) GetEntityOk() (*GetOcrTextResponseEntity, bool) {
+func (o *GetGenericOcrTextResponse) GetEntityOk() (*GetGenericOcrTextResponseEntity, bool) {
 	if o == nil || isNil(o.Entity) {
     return nil, false
 	}
@@ -63,8 +63,8 @@ func (o *GetGenericOcrTextResponse) HasEntity() bool {
 	return false
 }
 
-// SetEntity gets a reference to the given GetOcrTextResponseEntity and assigns it to the Entity field.
-func (o *GetGenericOcrTextResponse) SetEntity(v GetOcrTextResponseEntity) {
+// SetEntity gets a reference to the given GetGenericOcrTextResponseEntity and assigns it to the Entity field.
+func (o *GetGenericOcrTextResponse) SetEntity(v GetGenericOcrTextResponseEntity) {
 	o.Entity = &v
 }
 

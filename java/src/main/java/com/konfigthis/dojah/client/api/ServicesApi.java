@@ -41,11 +41,14 @@ public class ServicesApi {
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public ServicesApi() {
+    public ServicesApi() throws IllegalArgumentException {
         this(Configuration.getDefaultApiClient());
     }
 
-    public ServicesApi(ApiClient apiClient) {
+    public ServicesApi(ApiClient apiClient) throws IllegalArgumentException {
+        if (apiClient.getApikeyAuth() == null) {
+            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
+        }
         this.localVarApiClient = apiClient;
     }
 
@@ -73,19 +76,7 @@ public class ServicesApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    /**
-     * Build call for categorizeTransactions
-     * @param categorizeTransactionsRequest  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call categorizeTransactionsCall(CategorizeTransactionsRequest categorizeTransactionsRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call categorizeTransactionsCall(CategorizeTransactionsRequest categorizeTransactionsRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -136,59 +127,130 @@ public class ServicesApi {
 
     }
 
-    /**
-     * Categorize Transactions
-     * 
-     * @param categorizeTransactionsRequest  (optional)
-     * @return CategorizeTransactionsResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public CategorizeTransactionsResponse categorizeTransactions(CategorizeTransactionsRequest categorizeTransactionsRequest) throws ApiException {
-        ApiResponse<CategorizeTransactionsResponse> localVarResp = categorizeTransactionsWithHttpInfo(categorizeTransactionsRequest);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Categorize Transactions
-     * 
-     * @param categorizeTransactionsRequest  (optional)
-     * @return ApiResponse&lt;CategorizeTransactionsResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<CategorizeTransactionsResponse> categorizeTransactionsWithHttpInfo(CategorizeTransactionsRequest categorizeTransactionsRequest) throws ApiException {
+    private ApiResponse<CategorizeTransactionsResponse> categorizeTransactionsWithHttpInfo(CategorizeTransactionsRequest categorizeTransactionsRequest) throws ApiException {
         okhttp3.Call localVarCall = categorizeTransactionsValidateBeforeCall(categorizeTransactionsRequest, null);
         Type localVarReturnType = new TypeToken<CategorizeTransactionsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Categorize Transactions (asynchronously)
-     * 
-     * @param categorizeTransactionsRequest  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call categorizeTransactionsAsync(CategorizeTransactionsRequest categorizeTransactionsRequest, final ApiCallback<CategorizeTransactionsResponse> _callback) throws ApiException {
+    private okhttp3.Call categorizeTransactionsAsync(CategorizeTransactionsRequest categorizeTransactionsRequest, final ApiCallback<CategorizeTransactionsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = categorizeTransactionsValidateBeforeCall(categorizeTransactionsRequest, _callback);
         Type localVarReturnType = new TypeToken<CategorizeTransactionsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
+    }
+
+    public class CategorizeTransactionsRequestBuilder {
+        private String description;
+        private String transType;
+
+        private CategorizeTransactionsRequestBuilder() {
+        }
+
+        /**
+         * Set description
+         * @param description  (optional)
+         * @return CategorizeTransactionsRequestBuilder
+         */
+        public CategorizeTransactionsRequestBuilder description(String description) {
+            this.description = description;
+            return this;
+        }
+        
+        /**
+         * Set transType
+         * @param transType  (optional)
+         * @return CategorizeTransactionsRequestBuilder
+         */
+        public CategorizeTransactionsRequestBuilder transType(String transType) {
+            this.transType = transType;
+            return this;
+        }
+        
+        /**
+         * Build call for categorizeTransactions
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            CategorizeTransactionsRequest categorizeTransactionsRequest = buildBodyParams();
+            return categorizeTransactionsCall(categorizeTransactionsRequest, _callback);
+        }
+
+        private CategorizeTransactionsRequest buildBodyParams() {
+            CategorizeTransactionsRequest categorizeTransactionsRequest = new CategorizeTransactionsRequest();
+            categorizeTransactionsRequest.description(this.description);
+            categorizeTransactionsRequest.transType(this.transType);
+            return categorizeTransactionsRequest;
+        }
+
+        /**
+         * Execute categorizeTransactions request
+         * @return CategorizeTransactionsResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public CategorizeTransactionsResponse execute() throws ApiException {
+            CategorizeTransactionsRequest categorizeTransactionsRequest = buildBodyParams();
+            ApiResponse<CategorizeTransactionsResponse> localVarResp = categorizeTransactionsWithHttpInfo(categorizeTransactionsRequest);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute categorizeTransactions request with HTTP info returned
+         * @return ApiResponse&lt;CategorizeTransactionsResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<CategorizeTransactionsResponse> executeWithHttpInfo() throws ApiException {
+            CategorizeTransactionsRequest categorizeTransactionsRequest = buildBodyParams();
+            return categorizeTransactionsWithHttpInfo(categorizeTransactionsRequest);
+        }
+
+        /**
+         * Execute categorizeTransactions request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<CategorizeTransactionsResponse> _callback) throws ApiException {
+            CategorizeTransactionsRequest categorizeTransactionsRequest = buildBodyParams();
+            return categorizeTransactionsAsync(categorizeTransactionsRequest, _callback);
+        }
+    }
+
+    /**
+     * Categorize Transactions
+     * 
+     * @return CategorizeTransactionsRequestBuilder
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+     </table>
+     */
+    public CategorizeTransactionsRequestBuilder categorizeTransactions() throws IllegalArgumentException {
+        return new CategorizeTransactionsRequestBuilder();
     }
 }

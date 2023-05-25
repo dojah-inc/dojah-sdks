@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**entity** | [**GetBasicCacResponseEntity**](GetBasicCacResponseEntity.md) |  |  [optional] |
+|**entity** | [**GetAdvancedCacResponseEntity**](GetAdvancedCacResponseEntity.md) |  |  [optional] |
 
 
 

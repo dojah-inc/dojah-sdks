@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -81,6 +82,10 @@ public class GetWebhooksResponseEntityInner {
   }
 
   public GetWebhooksResponseEntityInner appId(String appId) {
+
+    
+    
+    
     
     this.appId = appId;
     return this;
@@ -99,11 +104,19 @@ public class GetWebhooksResponseEntityInner {
 
 
   public void setAppId(String appId) {
+
+    
+    
+    
     this.appId = appId;
   }
 
 
   public GetWebhooksResponseEntityInner endpoint(String endpoint) {
+
+    
+    
+    
     
     this.endpoint = endpoint;
     return this;
@@ -122,11 +135,19 @@ public class GetWebhooksResponseEntityInner {
 
 
   public void setEndpoint(String endpoint) {
+
+    
+    
+    
     this.endpoint = endpoint;
   }
 
 
   public GetWebhooksResponseEntityInner environment(String environment) {
+
+    
+    
+    
     
     this.environment = environment;
     return this;
@@ -145,11 +166,19 @@ public class GetWebhooksResponseEntityInner {
 
 
   public void setEnvironment(String environment) {
+
+    
+    
+    
     this.environment = environment;
   }
 
 
   public GetWebhooksResponseEntityInner service(String service) {
+
+    
+    
+    
     
     this.service = service;
     return this;
@@ -168,11 +197,19 @@ public class GetWebhooksResponseEntityInner {
 
 
   public void setService(String service) {
+
+    
+    
+    
     this.service = service;
   }
 
 
   public GetWebhooksResponseEntityInner confirmationStatus(String confirmationStatus) {
+
+    
+    
+    
     
     this.confirmationStatus = confirmationStatus;
     return this;
@@ -191,11 +228,19 @@ public class GetWebhooksResponseEntityInner {
 
 
   public void setConfirmationStatus(String confirmationStatus) {
+
+    
+    
+    
     this.confirmationStatus = confirmationStatus;
   }
 
 
   public GetWebhooksResponseEntityInner dateCreated(String dateCreated) {
+
+    
+    
+    
     
     this.dateCreated = dateCreated;
     return this;
@@ -214,11 +259,19 @@ public class GetWebhooksResponseEntityInner {
 
 
   public void setDateCreated(String dateCreated) {
+
+    
+    
+    
     this.dateCreated = dateCreated;
   }
 
 
   public GetWebhooksResponseEntityInner dateUpdated(String dateUpdated) {
+
+    
+    
+    
     
     this.dateUpdated = dateUpdated;
     return this;
@@ -237,6 +290,10 @@ public class GetWebhooksResponseEntityInner {
 
 
   public void setDateUpdated(String dateUpdated) {
+
+    
+    
+    
     this.dateUpdated = dateUpdated;
   }
 

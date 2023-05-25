@@ -34,12 +34,11 @@ public class GhKycApiTest {
 
     @BeforeClass
     public static void beforeClass() {
+        // TODO FOLLOW THE README
         ApiClient apiClient = Configuration.getDefaultApiClient();
-        ApiKeyAuth apiKey = (ApiKeyAuth) apiClient.getAuthentication("apikeyAuth");
-        ApiKeyAuth appId = (ApiKeyAuth) apiClient.getAuthentication("appIdAuth");
+        apiClient.setApikeyAuth(System.getenv("DOJAH_API_KEY"));
+        apiClient.setAppIdAuth(System.getenv("DOJAH_APP_ID"));
         apiClient.setBasePath("https://sandbox.dojah.io");
-        apiKey.setApiKey(System.getenv("DOJAH_API_KEY"));
-        appId.setApiKey(System.getenv("DOJAH_APP_ID"));
         api = new GhKycApi(apiClient);
     }
 
@@ -53,7 +52,8 @@ public class GhKycApiTest {
         String id = "V0000";
         String fullName = "John Doe";
         String dateOfBirth = "1988-09-01";
-        GetDriversLicenseResponse response = api.getDriversLicense(id, fullName, dateOfBirth);
+        GetDriversLicenseResponse response = api.getDriversLicense().id(id).fullName(fullName)
+                .dateOfBirth(dateOfBirth).execute();
         assertNotNull(response, "Response is null");
     }
 
@@ -69,7 +69,8 @@ public class GhKycApiTest {
         String lastName = "Doe";
         String middleName = "";
         String dateOfBirth = "1988-09-01";
-        GetPassportResponse response = api.getPassport(id, firstName, lastName, middleName, dateOfBirth);
+        GetPassportResponse response = api.getPassport().id(id).firstName(firstName).lastName(lastName)
+                .middleName(middleName).dateOfBirth(dateOfBirth).execute();
         assertNotNull(response, "Response is null");
     }
 
@@ -84,7 +85,7 @@ public class GhKycApiTest {
         String id = null;
         String fullName = null;
         String dateOfBirth = null;
-        GetSsnitResponse response = api.getSsnit(id, fullName, dateOfBirth);
+        GetSsnitResponse response = api.getSsnit().id(id).fullName(fullName).dateOfBirth(dateOfBirth).execute();
         // TODO: test validations
     }
 

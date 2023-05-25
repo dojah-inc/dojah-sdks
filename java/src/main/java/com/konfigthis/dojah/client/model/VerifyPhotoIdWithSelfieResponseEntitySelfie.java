@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -52,7 +52,7 @@ import com.konfigthis.dojah.client.JSON;
 public class VerifyPhotoIdWithSelfieResponseEntitySelfie {
   public static final String SERIALIZED_NAME_CONFIDENCE_VALUE = "confidence_value";
   @SerializedName(SERIALIZED_NAME_CONFIDENCE_VALUE)
-  private BigDecimal confidenceValue;
+  private Double confidenceValue;
 
   public static final String SERIALIZED_NAME_MATCH = "match";
   @SerializedName(SERIALIZED_NAME_MATCH)
@@ -85,9 +85,23 @@ public class VerifyPhotoIdWithSelfieResponseEntitySelfie {
   public VerifyPhotoIdWithSelfieResponseEntitySelfie() {
   }
 
-  public VerifyPhotoIdWithSelfieResponseEntitySelfie confidenceValue(BigDecimal confidenceValue) {
+  public VerifyPhotoIdWithSelfieResponseEntitySelfie confidenceValue(Double confidenceValue) {
+
+    
+    
+    
     
     this.confidenceValue = confidenceValue;
+    return this;
+  }
+
+  public VerifyPhotoIdWithSelfieResponseEntitySelfie confidenceValue(Integer confidenceValue) {
+
+    
+    
+    
+    
+    this.confidenceValue = confidenceValue.doubleValue();
     return this;
   }
 
@@ -98,17 +112,25 @@ public class VerifyPhotoIdWithSelfieResponseEntitySelfie {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "90", value = "")
 
-  public BigDecimal getConfidenceValue() {
+  public Double getConfidenceValue() {
     return confidenceValue;
   }
 
 
-  public void setConfidenceValue(BigDecimal confidenceValue) {
+  public void setConfidenceValue(Double confidenceValue) {
+
+    
+    
+    
     this.confidenceValue = confidenceValue;
   }
 
 
   public VerifyPhotoIdWithSelfieResponseEntitySelfie match(Boolean match) {
+
+    
+    
+    
     
     this.match = match;
     return this;
@@ -127,11 +149,19 @@ public class VerifyPhotoIdWithSelfieResponseEntitySelfie {
 
 
   public void setMatch(Boolean match) {
+
+    
+    
+    
     this.match = match;
   }
 
 
   public VerifyPhotoIdWithSelfieResponseEntitySelfie photoIdImageBlurry(Boolean photoIdImageBlurry) {
+
+    
+    
+    
     
     this.photoIdImageBlurry = photoIdImageBlurry;
     return this;
@@ -150,11 +180,19 @@ public class VerifyPhotoIdWithSelfieResponseEntitySelfie {
 
 
   public void setPhotoIdImageBlurry(Boolean photoIdImageBlurry) {
+
+    
+    
+    
     this.photoIdImageBlurry = photoIdImageBlurry;
   }
 
 
   public VerifyPhotoIdWithSelfieResponseEntitySelfie selfieImageBlurry(Boolean selfieImageBlurry) {
+
+    
+    
+    
     
     this.selfieImageBlurry = selfieImageBlurry;
     return this;
@@ -173,11 +211,19 @@ public class VerifyPhotoIdWithSelfieResponseEntitySelfie {
 
 
   public void setSelfieImageBlurry(Boolean selfieImageBlurry) {
+
+    
+    
+    
     this.selfieImageBlurry = selfieImageBlurry;
   }
 
 
   public VerifyPhotoIdWithSelfieResponseEntitySelfie selfieGlare(Boolean selfieGlare) {
+
+    
+    
+    
     
     this.selfieGlare = selfieGlare;
     return this;
@@ -196,11 +242,19 @@ public class VerifyPhotoIdWithSelfieResponseEntitySelfie {
 
 
   public void setSelfieGlare(Boolean selfieGlare) {
+
+    
+    
+    
     this.selfieGlare = selfieGlare;
   }
 
 
   public VerifyPhotoIdWithSelfieResponseEntitySelfie photoIdGlare(Boolean photoIdGlare) {
+
+    
+    
+    
     
     this.photoIdGlare = photoIdGlare;
     return this;
@@ -219,11 +273,19 @@ public class VerifyPhotoIdWithSelfieResponseEntitySelfie {
 
 
   public void setPhotoIdGlare(Boolean photoIdGlare) {
+
+    
+    
+    
     this.photoIdGlare = photoIdGlare;
   }
 
 
   public VerifyPhotoIdWithSelfieResponseEntitySelfie ageRange(String ageRange) {
+
+    
+    
+    
     
     this.ageRange = ageRange;
     return this;
@@ -242,11 +304,19 @@ public class VerifyPhotoIdWithSelfieResponseEntitySelfie {
 
 
   public void setAgeRange(String ageRange) {
+
+    
+    
+    
     this.ageRange = ageRange;
   }
 
 
   public VerifyPhotoIdWithSelfieResponseEntitySelfie sunglasses(Boolean sunglasses) {
+
+    
+    
+    
     
     this.sunglasses = sunglasses;
     return this;
@@ -265,6 +335,10 @@ public class VerifyPhotoIdWithSelfieResponseEntitySelfie {
 
 
   public void setSunglasses(Boolean sunglasses) {
+
+    
+    
+    
     this.sunglasses = sunglasses;
   }
 

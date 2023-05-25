@@ -112,6 +112,30 @@ public class ApiClient {
         authentications = Collections.unmodifiableMap(authentications);
     }
 
+
+    public String getApikeyAuth() {
+        return ((ApiKeyAuth) this.getAuthentication("Authorization")).getApiKey();
+    }
+
+    public void setApikeyAuth(String apiKey) {
+        ((ApiKeyAuth) this.getAuthentication("Authorization")).setApiKey(apiKey);
+    }
+
+    public void setApikeyAuthPrefix(String prefix) {
+        ((ApiKeyAuth) this.getAuthentication("Authorization")).setApiKeyPrefix(prefix);
+    }
+    public String getAppIdAuth() {
+        return ((ApiKeyAuth) this.getAuthentication("AppId")).getApiKey();
+    }
+
+    public void setAppIdAuth(String apiKey) {
+        ((ApiKeyAuth) this.getAuthentication("AppId")).setApiKey(apiKey);
+    }
+
+    public void setAppIdAuthPrefix(String prefix) {
+        ((ApiKeyAuth) this.getAuthentication("AppId")).setApiKeyPrefix(prefix);
+    }
+
     private void initHttpClient() {
         initHttpClient(Collections.<Interceptor>emptyList());
     }
@@ -122,6 +146,7 @@ public class ApiClient {
         for (Interceptor interceptor: interceptors) {
             builder.addInterceptor(interceptor);
         }
+        builder.readTimeout(0, TimeUnit.MILLISECONDS);
 
         httpClient = builder.build();
     }
@@ -132,7 +157,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("Konfig/3.0.0/java");
+        setUserAgent("Konfig/4.0.0/java");
 
         authentications = new HashMap<String, Authentication>();
     }
@@ -153,6 +178,10 @@ public class ApiClient {
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {
+        // strip trailing slash from basePath
+        if (basePath != null && basePath.endsWith("/")) {
+            basePath = basePath.substring(0, basePath.length() - 1);
+        }
         this.basePath = basePath;
         return this;
     }
@@ -854,7 +883,7 @@ public class ApiClient {
                     "Content type \"" + contentType + "\" is not supported for type: " + returnType,
                     response.code(),
                     response.headers().toMultimap(),
-                    respBody);
+                    respBody, response.receivedResponseAtMillis() - response.sentRequestAtMillis());
         }
     }
 
@@ -980,7 +1009,13 @@ public class ApiClient {
         try {
             Response response = call.execute();
             T data = handleResponse(response, returnType);
-            return new ApiResponse<T>(response.code(), response.headers().toMultimap(), data);
+            return new ApiResponse<T>(
+                    call.request(),
+                    response.code(),
+                    response.headers().toMultimap(),
+                    data,
+                    response.receivedResponseAtMillis() -
+                            response.sentRequestAtMillis());
         } catch (IOException e) {
             throw new ApiException(e);
         }
@@ -1050,7 +1085,7 @@ public class ApiClient {
                     try {
                         response.body().close();
                     } catch (Exception e) {
-                        throw new ApiException(response.message(), e, response.code(), response.headers().toMultimap());
+                        throw new ApiException(response.message(), e, response.code(), response.headers().toMultimap(), response.receivedResponseAtMillis() - response.sentRequestAtMillis());
                     }
                 }
                 return null;
@@ -1063,10 +1098,10 @@ public class ApiClient {
                 try {
                     respBody = response.body().string();
                 } catch (IOException e) {
-                    throw new ApiException(response.message(), e, response.code(), response.headers().toMultimap());
+                    throw new ApiException(response.message(), e, response.code(), response.headers().toMultimap(), response.receivedResponseAtMillis() - response.sentRequestAtMillis());
                 }
             }
-            throw new ApiException(response.message(), response.code(), response.headers().toMultimap(), respBody);
+            throw new ApiException(response.message(), response.code(), response.headers().toMultimap(), respBody, response.receivedResponseAtMillis() - response.sentRequestAtMillis());
         }
     }
 

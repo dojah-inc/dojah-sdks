@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -69,6 +70,10 @@ public class SendOtpResponseEntityInner {
   }
 
   public SendOtpResponseEntityInner referenceId(String referenceId) {
+
+    
+    
+    
     
     this.referenceId = referenceId;
     return this;
@@ -87,11 +92,19 @@ public class SendOtpResponseEntityInner {
 
 
   public void setReferenceId(String referenceId) {
+
+    
+    
+    
     this.referenceId = referenceId;
   }
 
 
   public SendOtpResponseEntityInner destination(String destination) {
+
+    
+    
+    
     
     this.destination = destination;
     return this;
@@ -110,11 +123,19 @@ public class SendOtpResponseEntityInner {
 
 
   public void setDestination(String destination) {
+
+    
+    
+    
     this.destination = destination;
   }
 
 
   public SendOtpResponseEntityInner statusId(String statusId) {
+
+    
+    
+    
     
     this.statusId = statusId;
     return this;
@@ -133,11 +154,19 @@ public class SendOtpResponseEntityInner {
 
 
   public void setStatusId(String statusId) {
+
+    
+    
+    
     this.statusId = statusId;
   }
 
 
   public SendOtpResponseEntityInner status(String status) {
+
+    
+    
+    
     
     this.status = status;
     return this;
@@ -156,6 +185,10 @@ public class SendOtpResponseEntityInner {
 
 
   public void setStatus(String status) {
+
+    
+    
+    
     this.status = status;
   }
 

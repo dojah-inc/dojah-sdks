@@ -13,14 +13,19 @@
 package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.model.DeleteWebhookResponse;
 import com.konfigthis.dojah.client.model.GetWebhooksResponse;
 import com.konfigthis.dojah.client.model.NotifyWebhookRequest;
+import com.konfigthis.dojah.client.model.NotifyWebhookRequestData;
 import com.konfigthis.dojah.client.model.NotifyWebhookResponse;
 import com.konfigthis.dojah.client.model.SubscribeServiceRequest;
 import com.konfigthis.dojah.client.model.SubscribeServiceResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,7 +38,14 @@ import java.util.Map;
 @Disabled
 public class WebHooksApiTest {
 
-    private final WebHooksApi api = new WebHooksApi();
+    private static WebHooksApi api;
+
+    
+    @BeforeAll
+    public static void beforeClass() {
+        ApiClient apiClient = Configuration.getDefaultApiClient();
+        api = new WebHooksApi(apiClient);
+    }
 
     /**
      * Delete Webhook
@@ -42,7 +54,8 @@ public class WebHooksApiTest {
      */
     @Test
     public void deleteWebhookTest() throws ApiException {
-        DeleteWebhookResponse response = api.deleteWebhook();
+        DeleteWebhookResponse response = api.deleteWebhook()
+                .execute();
         // TODO: test validations
     }
 
@@ -53,7 +66,8 @@ public class WebHooksApiTest {
      */
     @Test
     public void getWebhooksTest() throws ApiException {
-        GetWebhooksResponse response = api.getWebhooks();
+        GetWebhooksResponse response = api.getWebhooks()
+                .execute();
         // TODO: test validations
     }
 
@@ -64,8 +78,12 @@ public class WebHooksApiTest {
      */
     @Test
     public void notifyWebhookTest() throws ApiException {
-        NotifyWebhookRequest notifyWebhookRequest = null;
-        NotifyWebhookResponse response = api.notifyWebhook(notifyWebhookRequest);
+        String subject = null;
+        NotifyWebhookRequestData data = null;
+        NotifyWebhookResponse response = api.notifyWebhook()
+                .subject(subject)
+                .data(data)
+                .execute();
         // TODO: test validations
     }
 
@@ -76,8 +94,12 @@ public class WebHooksApiTest {
      */
     @Test
     public void subscribeServiceTest() throws ApiException {
-        SubscribeServiceRequest subscribeServiceRequest = null;
-        SubscribeServiceResponse response = api.subscribeService(subscribeServiceRequest);
+        String webhook = null;
+        String service = null;
+        SubscribeServiceResponse response = api.subscribeService()
+                .webhook(webhook)
+                .service(service)
+                .execute();
         // TODO: test validations
     }
 

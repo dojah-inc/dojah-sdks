@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -69,6 +70,10 @@ public class SendSmsRequest {
   }
 
   public SendSmsRequest destination(String destination) {
+
+    
+    
+    
     
     this.destination = destination;
     return this;
@@ -87,11 +92,19 @@ public class SendSmsRequest {
 
 
   public void setDestination(String destination) {
+
+    
+    
+    
     this.destination = destination;
   }
 
 
   public SendSmsRequest message(String message) {
+
+    
+    
+    
     
     this.message = message;
     return this;
@@ -110,11 +123,19 @@ public class SendSmsRequest {
 
 
   public void setMessage(String message) {
+
+    
+    
+    
     this.message = message;
   }
 
 
   public SendSmsRequest channel(String channel) {
+
+    
+    
+    
     
     this.channel = channel;
     return this;
@@ -133,11 +154,19 @@ public class SendSmsRequest {
 
 
   public void setChannel(String channel) {
+
+    
+    
+    
     this.channel = channel;
   }
 
 
   public SendSmsRequest senderId(String senderId) {
+
+    
+    
+    
     
     this.senderId = senderId;
     return this;
@@ -156,6 +185,10 @@ public class SendSmsRequest {
 
 
   public void setSenderId(String senderId) {
+
+    
+    
+    
     this.senderId = senderId;
   }
 

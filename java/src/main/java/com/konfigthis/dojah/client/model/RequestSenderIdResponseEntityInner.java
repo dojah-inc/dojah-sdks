@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -65,6 +66,10 @@ public class RequestSenderIdResponseEntityInner {
   }
 
   public RequestSenderIdResponseEntityInner senderId(String senderId) {
+
+    
+    
+    
     
     this.senderId = senderId;
     return this;
@@ -83,11 +88,19 @@ public class RequestSenderIdResponseEntityInner {
 
 
   public void setSenderId(String senderId) {
+
+    
+    
+    
     this.senderId = senderId;
   }
 
 
   public RequestSenderIdResponseEntityInner activated(Boolean activated) {
+
+    
+    
+    
     
     this.activated = activated;
     return this;
@@ -106,11 +119,19 @@ public class RequestSenderIdResponseEntityInner {
 
 
   public void setActivated(Boolean activated) {
+
+    
+    
+    
     this.activated = activated;
   }
 
 
   public RequestSenderIdResponseEntityInner createdAt(String createdAt) {
+
+    
+    
+    
     
     this.createdAt = createdAt;
     return this;
@@ -129,6 +150,10 @@ public class RequestSenderIdResponseEntityInner {
 
 
   public void setCreatedAt(String createdAt) {
+
+    
+    
+    
     this.createdAt = createdAt;
   }
 

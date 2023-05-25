@@ -23,7 +23,6 @@ import com.konfigthis.dojah.client.model.GetEmailReputationResponseEntityDetails
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -35,6 +34,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -65,7 +65,7 @@ public class GetEmailReputationResponseEntity {
 
   public static final String SERIALIZED_NAME_REFERENCES = "references";
   @SerializedName(SERIALIZED_NAME_REFERENCES)
-  private BigDecimal references;
+  private Double references;
 
   public static final String SERIALIZED_NAME_DETAILS = "details";
   @SerializedName(SERIALIZED_NAME_DETAILS)
@@ -75,6 +75,10 @@ public class GetEmailReputationResponseEntity {
   }
 
   public GetEmailReputationResponseEntity email(String email) {
+
+    
+    
+    
     
     this.email = email;
     return this;
@@ -93,11 +97,19 @@ public class GetEmailReputationResponseEntity {
 
 
   public void setEmail(String email) {
+
+    
+    
+    
     this.email = email;
   }
 
 
   public GetEmailReputationResponseEntity reputation(String reputation) {
+
+    
+    
+    
     
     this.reputation = reputation;
     return this;
@@ -116,11 +128,19 @@ public class GetEmailReputationResponseEntity {
 
 
   public void setReputation(String reputation) {
+
+    
+    
+    
     this.reputation = reputation;
   }
 
 
   public GetEmailReputationResponseEntity suspicious(Boolean suspicious) {
+
+    
+    
+    
     
     this.suspicious = suspicious;
     return this;
@@ -139,13 +159,31 @@ public class GetEmailReputationResponseEntity {
 
 
   public void setSuspicious(Boolean suspicious) {
+
+    
+    
+    
     this.suspicious = suspicious;
   }
 
 
-  public GetEmailReputationResponseEntity references(BigDecimal references) {
+  public GetEmailReputationResponseEntity references(Double references) {
+
+    
+    
+    
     
     this.references = references;
+    return this;
+  }
+
+  public GetEmailReputationResponseEntity references(Integer references) {
+
+    
+    
+    
+    
+    this.references = references.doubleValue();
     return this;
   }
 
@@ -156,17 +194,25 @@ public class GetEmailReputationResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "178", value = "")
 
-  public BigDecimal getReferences() {
+  public Double getReferences() {
     return references;
   }
 
 
-  public void setReferences(BigDecimal references) {
+  public void setReferences(Double references) {
+
+    
+    
+    
     this.references = references;
   }
 
 
   public GetEmailReputationResponseEntity details(GetEmailReputationResponseEntityDetails details) {
+
+    
+    
+    
     
     this.details = details;
     return this;
@@ -185,6 +231,10 @@ public class GetEmailReputationResponseEntity {
 
 
   public void setDetails(GetEmailReputationResponseEntityDetails details) {
+
+    
+    
+    
     this.details = details;
   }
 

@@ -18,7 +18,7 @@ import (
 type GetWalletsResponseEntity struct {
 	AppId *string `json:"app_id,omitempty"`
 	TotalAmount *float32 `json:"total_amount,omitempty"`
-	ClientWallets []GetWalletResponseEntity `json:"client_wallets,omitempty"`
+	ClientWallets []GetWalletsResponseEntityClientWalletsInner `json:"client_wallets,omitempty"`
 }
 
 // NewGetWalletsResponseEntity instantiates a new GetWalletsResponseEntity object
@@ -103,9 +103,9 @@ func (o *GetWalletsResponseEntity) SetTotalAmount(v float32) {
 }
 
 // GetClientWallets returns the ClientWallets field value if set, zero value otherwise.
-func (o *GetWalletsResponseEntity) GetClientWallets() []GetWalletResponseEntity {
+func (o *GetWalletsResponseEntity) GetClientWallets() []GetWalletsResponseEntityClientWalletsInner {
 	if o == nil || isNil(o.ClientWallets) {
-		var ret []GetWalletResponseEntity
+		var ret []GetWalletsResponseEntityClientWalletsInner
 		return ret
 	}
 	return o.ClientWallets
@@ -113,7 +113,7 @@ func (o *GetWalletsResponseEntity) GetClientWallets() []GetWalletResponseEntity 
 
 // GetClientWalletsOk returns a tuple with the ClientWallets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetWalletsResponseEntity) GetClientWalletsOk() ([]GetWalletResponseEntity, bool) {
+func (o *GetWalletsResponseEntity) GetClientWalletsOk() ([]GetWalletsResponseEntityClientWalletsInner, bool) {
 	if o == nil || isNil(o.ClientWallets) {
     return nil, false
 	}
@@ -129,8 +129,8 @@ func (o *GetWalletsResponseEntity) HasClientWallets() bool {
 	return false
 }
 
-// SetClientWallets gets a reference to the given []GetWalletResponseEntity and assigns it to the ClientWallets field.
-func (o *GetWalletsResponseEntity) SetClientWallets(v []GetWalletResponseEntity) {
+// SetClientWallets gets a reference to the given []GetWalletsResponseEntityClientWalletsInner and assigns it to the ClientWallets field.
+func (o *GetWalletsResponseEntity) SetClientWallets(v []GetWalletsResponseEntityClientWalletsInner) {
 	o.ClientWallets = v
 }
 

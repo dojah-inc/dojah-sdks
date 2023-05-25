@@ -32,7 +32,7 @@
 |**stateOfOrigin** | **String** |  |  [optional] |
 |**stateOfResidence** | **String** |  |  [optional] |
 |**watchListed** | **String** |  |  [optional] |
-|**status** | **BigDecimal** |  |  [optional] |
+|**status** | **Double** |  |  [optional] |
 
 
 

@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -97,6 +98,10 @@ public class GetNationalIdResponseEntity {
   }
 
   public GetNationalIdResponseEntity dateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     
     this.dateOfBirth = dateOfBirth;
     return this;
@@ -115,11 +120,19 @@ public class GetNationalIdResponseEntity {
 
 
   public void setDateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     this.dateOfBirth = dateOfBirth;
   }
 
 
   public GetNationalIdResponseEntity firstName(String firstName) {
+
+    
+    
+    
     
     this.firstName = firstName;
     return this;
@@ -138,11 +151,19 @@ public class GetNationalIdResponseEntity {
 
 
   public void setFirstName(String firstName) {
+
+    
+    
+    
     this.firstName = firstName;
   }
 
 
   public GetNationalIdResponseEntity gender(String gender) {
+
+    
+    
+    
     
     this.gender = gender;
     return this;
@@ -161,11 +182,19 @@ public class GetNationalIdResponseEntity {
 
 
   public void setGender(String gender) {
+
+    
+    
+    
     this.gender = gender;
   }
 
 
   public GetNationalIdResponseEntity id(String id) {
+
+    
+    
+    
     
     this.id = id;
     return this;
@@ -184,11 +213,19 @@ public class GetNationalIdResponseEntity {
 
 
   public void setId(String id) {
+
+    
+    
+    
     this.id = id;
   }
 
 
   public GetNationalIdResponseEntity isDateOfBirthMatch(Boolean isDateOfBirthMatch) {
+
+    
+    
+    
     
     this.isDateOfBirthMatch = isDateOfBirthMatch;
     return this;
@@ -207,11 +244,19 @@ public class GetNationalIdResponseEntity {
 
 
   public void setIsDateOfBirthMatch(Boolean isDateOfBirthMatch) {
+
+    
+    
+    
     this.isDateOfBirthMatch = isDateOfBirthMatch;
   }
 
 
   public GetNationalIdResponseEntity isFirstNameMatch(Boolean isFirstNameMatch) {
+
+    
+    
+    
     
     this.isFirstNameMatch = isFirstNameMatch;
     return this;
@@ -230,11 +275,19 @@ public class GetNationalIdResponseEntity {
 
 
   public void setIsFirstNameMatch(Boolean isFirstNameMatch) {
+
+    
+    
+    
     this.isFirstNameMatch = isFirstNameMatch;
   }
 
 
   public GetNationalIdResponseEntity isGenderMatch(Boolean isGenderMatch) {
+
+    
+    
+    
     
     this.isGenderMatch = isGenderMatch;
     return this;
@@ -253,11 +306,19 @@ public class GetNationalIdResponseEntity {
 
 
   public void setIsGenderMatch(Boolean isGenderMatch) {
+
+    
+    
+    
     this.isGenderMatch = isGenderMatch;
   }
 
 
   public GetNationalIdResponseEntity isLastNameMatch(Boolean isLastNameMatch) {
+
+    
+    
+    
     
     this.isLastNameMatch = isLastNameMatch;
     return this;
@@ -276,11 +337,19 @@ public class GetNationalIdResponseEntity {
 
 
   public void setIsLastNameMatch(Boolean isLastNameMatch) {
+
+    
+    
+    
     this.isLastNameMatch = isLastNameMatch;
   }
 
 
   public GetNationalIdResponseEntity isMiddleNameMatch(Boolean isMiddleNameMatch) {
+
+    
+    
+    
     
     this.isMiddleNameMatch = isMiddleNameMatch;
     return this;
@@ -299,11 +368,19 @@ public class GetNationalIdResponseEntity {
 
 
   public void setIsMiddleNameMatch(Boolean isMiddleNameMatch) {
+
+    
+    
+    
     this.isMiddleNameMatch = isMiddleNameMatch;
   }
 
 
   public GetNationalIdResponseEntity lastName(String lastName) {
+
+    
+    
+    
     
     this.lastName = lastName;
     return this;
@@ -322,11 +399,19 @@ public class GetNationalIdResponseEntity {
 
 
   public void setLastName(String lastName) {
+
+    
+    
+    
     this.lastName = lastName;
   }
 
 
   public GetNationalIdResponseEntity middleName(String middleName) {
+
+    
+    
+    
     
     this.middleName = middleName;
     return this;
@@ -345,6 +430,10 @@ public class GetNationalIdResponseEntity {
 
 
   public void setMiddleName(String middleName) {
+
+    
+    
+    
     this.middleName = middleName;
   }
 

@@ -37,7 +37,7 @@ namespace Dojah.Net.Model
         /// <param name="appId">appId.</param>
         /// <param name="totalAmount">totalAmount.</param>
         /// <param name="clientWallets">clientWallets.</param>
-        public GetWalletsResponseEntity(string appId = default(string), decimal totalAmount = default(decimal), List<GetWalletResponseEntity> clientWallets = default(List<GetWalletResponseEntity>))
+        public GetWalletsResponseEntity(string appId = default(string), decimal totalAmount = default(decimal), List<GetWalletsResponseEntityClientWalletsInner> clientWallets = default(List<GetWalletsResponseEntityClientWalletsInner>))
         {
             this.AppId = appId;
             this.TotalAmount = totalAmount;
@@ -60,7 +60,7 @@ namespace Dojah.Net.Model
         /// Gets or Sets ClientWallets
         /// </summary>
         [DataMember(Name = "client_wallets", EmitDefaultValue = false)]
-        public List<GetWalletResponseEntity> ClientWallets { get; set; }
+        public List<GetWalletsResponseEntityClientWalletsInner> ClientWallets { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

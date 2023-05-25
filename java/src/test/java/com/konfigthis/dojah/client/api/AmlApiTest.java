@@ -13,11 +13,15 @@
 package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.model.GetScreeningInfoResponse;
 import com.konfigthis.dojah.client.model.ScreenAmlRequest;
 import com.konfigthis.dojah.client.model.ScreenAmlResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,7 +34,14 @@ import java.util.Map;
 @Disabled
 public class AmlApiTest {
 
-    private final AmlApi api = new AmlApi();
+    private static AmlApi api;
+
+    
+    @BeforeAll
+    public static void beforeClass() {
+        ApiClient apiClient = Configuration.getDefaultApiClient();
+        api = new AmlApi(apiClient);
+    }
 
     /**
      * Get AML Info
@@ -40,7 +51,9 @@ public class AmlApiTest {
     @Test
     public void getScreeningInfoTest() throws ApiException {
         String referenceId = null;
-        GetScreeningInfoResponse response = api.getScreeningInfo(referenceId);
+        GetScreeningInfoResponse response = api.getScreeningInfo()
+                .referenceId(referenceId)
+                .execute();
         // TODO: test validations
     }
 
@@ -51,8 +64,14 @@ public class AmlApiTest {
      */
     @Test
     public void screenAmlTest() throws ApiException {
-        ScreenAmlRequest screenAmlRequest = null;
-        ScreenAmlResponse response = api.screenAml(screenAmlRequest);
+        String firstName = null;
+        String lastName = null;
+        String dateOfBirth = null;
+        ScreenAmlResponse response = api.screenAml()
+                .firstName(firstName)
+                .lastName(lastName)
+                .dateOfBirth(dateOfBirth)
+                .execute();
         // TODO: test validations
     }
 

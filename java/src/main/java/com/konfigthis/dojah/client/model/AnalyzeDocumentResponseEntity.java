@@ -39,6 +39,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -75,6 +76,10 @@ public class AnalyzeDocumentResponseEntity {
   }
 
   public AnalyzeDocumentResponseEntity status(AnalyzeDocumentResponseEntityStatus status) {
+
+    
+    
+    
     
     this.status = status;
     return this;
@@ -93,11 +98,19 @@ public class AnalyzeDocumentResponseEntity {
 
 
   public void setStatus(AnalyzeDocumentResponseEntityStatus status) {
+
+    
+    
+    
     this.status = status;
   }
 
 
   public AnalyzeDocumentResponseEntity documentType(AnalyzeDocumentResponseEntityDocumentType documentType) {
+
+    
+    
+    
     
     this.documentType = documentType;
     return this;
@@ -116,11 +129,19 @@ public class AnalyzeDocumentResponseEntity {
 
 
   public void setDocumentType(AnalyzeDocumentResponseEntityDocumentType documentType) {
+
+    
+    
+    
     this.documentType = documentType;
   }
 
 
   public AnalyzeDocumentResponseEntity documentImages(AnalyzeDocumentResponseEntityDocumentImages documentImages) {
+
+    
+    
+    
     
     this.documentImages = documentImages;
     return this;
@@ -139,11 +160,19 @@ public class AnalyzeDocumentResponseEntity {
 
 
   public void setDocumentImages(AnalyzeDocumentResponseEntityDocumentImages documentImages) {
+
+    
+    
+    
     this.documentImages = documentImages;
   }
 
 
   public AnalyzeDocumentResponseEntity textData(List<AnalyzeDocumentResponseEntityTextDataInner> textData) {
+
+    
+    
+    
     
     this.textData = textData;
     return this;
@@ -170,6 +199,10 @@ public class AnalyzeDocumentResponseEntity {
 
 
   public void setTextData(List<AnalyzeDocumentResponseEntityTextDataInner> textData) {
+
+    
+    
+    
     this.textData = textData;
   }
 

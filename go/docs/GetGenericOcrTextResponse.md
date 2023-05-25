@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Entity** | Pointer to [**GetOcrTextResponseEntity**](GetOcrTextResponseEntity.md) |  | [optional] 
+**Entity** | Pointer to [**GetGenericOcrTextResponseEntity**](GetGenericOcrTextResponseEntity.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEntity
 
-`func (o *GetGenericOcrTextResponse) GetEntity() GetOcrTextResponseEntity`
+`func (o *GetGenericOcrTextResponse) GetEntity() GetGenericOcrTextResponseEntity`
 
 GetEntity returns the Entity field if non-nil, zero value otherwise.
 
 ### GetEntityOk
 
-`func (o *GetGenericOcrTextResponse) GetEntityOk() (*GetOcrTextResponseEntity, bool)`
+`func (o *GetGenericOcrTextResponse) GetEntityOk() (*GetGenericOcrTextResponseEntity, bool)`
 
 GetEntityOk returns a tuple with the Entity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntity
 
-`func (o *GetGenericOcrTextResponse) SetEntity(v GetOcrTextResponseEntity)`
+`func (o *GetGenericOcrTextResponse) SetEntity(v GetGenericOcrTextResponseEntity)`
 
 SetEntity sets Entity field to given value.
 

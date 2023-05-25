@@ -528,8 +528,8 @@ namespace Dojah.Net.Api
                 Dojah.Net.Client.GlobalConfiguration.Instance,
                 new Dojah.Net.Client.Configuration { BasePath = basePath }
             );
-            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
+            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration);
+            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration);
             this.ExceptionFactory = Dojah.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
@@ -547,9 +547,9 @@ namespace Dojah.Net.Api
                 Dojah.Net.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Dojah.Net.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration);
+            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration);
+            this.ExceptionFactory = Dojah.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -984,7 +984,7 @@ namespace Dojah.Net.Api
 
             if (accountId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId, ""));
             }
 
             localVarRequestOptions.Operation = "FinancialApi.GetAccount";
@@ -1064,7 +1064,7 @@ namespace Dojah.Net.Api
 
             if (accountId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId, ""));
             }
 
             localVarRequestOptions.Operation = "FinancialApi.GetAccount";
@@ -1288,7 +1288,7 @@ namespace Dojah.Net.Api
 
             if (accountId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId, ""));
             }
 
             localVarRequestOptions.Operation = "FinancialApi.GetAccountSubscriptions";
@@ -1368,7 +1368,7 @@ namespace Dojah.Net.Api
 
             if (accountId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId, ""));
             }
 
             localVarRequestOptions.Operation = "FinancialApi.GetAccountSubscriptions";
@@ -1448,11 +1448,11 @@ namespace Dojah.Net.Api
 
             if (accountId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId, ""));
             }
             if (length != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "length", length));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "length", length, ""));
             }
 
             localVarRequestOptions.Operation = "FinancialApi.GetAccountTransactions";
@@ -1534,11 +1534,11 @@ namespace Dojah.Net.Api
 
             if (accountId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId, ""));
             }
             if (length != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "length", length));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "length", length, ""));
             }
 
             localVarRequestOptions.Operation = "FinancialApi.GetAccountTransactions";
@@ -1616,7 +1616,7 @@ namespace Dojah.Net.Api
 
             if (accountId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId, ""));
             }
 
             localVarRequestOptions.Operation = "FinancialApi.GetBasicBvn";
@@ -1696,7 +1696,7 @@ namespace Dojah.Net.Api
 
             if (accountId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId, ""));
             }
 
             localVarRequestOptions.Operation = "FinancialApi.GetBasicBvn";
@@ -1774,7 +1774,7 @@ namespace Dojah.Net.Api
 
             if (accountId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId, ""));
             }
 
             localVarRequestOptions.Operation = "FinancialApi.GetEarningStructure";
@@ -1854,7 +1854,7 @@ namespace Dojah.Net.Api
 
             if (accountId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId, ""));
             }
 
             localVarRequestOptions.Operation = "FinancialApi.GetEarningStructure";
@@ -1932,7 +1932,7 @@ namespace Dojah.Net.Api
 
             if (accountId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId, ""));
             }
 
             localVarRequestOptions.Operation = "FinancialApi.GetFullBvn";
@@ -2012,7 +2012,7 @@ namespace Dojah.Net.Api
 
             if (accountId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId, ""));
             }
 
             localVarRequestOptions.Operation = "FinancialApi.GetFullBvn";
@@ -2090,7 +2090,7 @@ namespace Dojah.Net.Api
 
             if (accountId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId, ""));
             }
 
             localVarRequestOptions.Operation = "FinancialApi.GetSpendingPattern";
@@ -2170,7 +2170,7 @@ namespace Dojah.Net.Api
 
             if (accountId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_id", accountId, ""));
             }
 
             localVarRequestOptions.Operation = "FinancialApi.GetSpendingPattern";

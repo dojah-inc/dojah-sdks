@@ -9,15 +9,15 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getVoter"></a>
 # **getVoter**
-> GetVoterResponse getVoter(id, firstName, lastName)
+> GetVoterResponse getVoter().id(id).firstName(firstName).lastName(lastName).execute();
 
 Voters ID
 
 ### Example
 ```java
-// Import classes:
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
@@ -25,28 +25,51 @@ import com.konfigthis.dojah.client.api.UgKycApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.dojah.io");
+
+    ApiClient apiClient = Configuration.getDefaultApiClient();
+    // Set custom base path if desired
+    // apiClient.setBasePath("https://api.dojah.io");
     
     // Configure API key authorization: apikeyAuth
-    ApiKeyAuth apikeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("apikeyAuth");
-    apikeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikeyAuth.setApiKeyPrefix("Token");
+    apiClient.setApikeyAuth("YOUR API KEY");
 
     // Configure API key authorization: appIdAuth
-    ApiKeyAuth appIdAuth = (ApiKeyAuth) defaultClient.getAuthentication("appIdAuth");
-    appIdAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //appIdAuth.setApiKeyPrefix("Token");
+    apiClient.setAppIdAuth("YOUR API KEY");
 
-    UgKycApi apiInstance = new UgKycApi(defaultClient);
-    Integer id = 67335751; // Integer | 
-    String firstName = "Happy"; // String | 
-    String lastName = "Christmas"; // String | 
+    UgKycApi api = new UgKycApi(apiClient);
+    Integer id = 67335751;
+    String firstName = "Happy";
+    String lastName = "Christmas";
     try {
-      GetVoterResponse result = apiInstance.getVoter(id, firstName, lastName);
+      GetVoterResponse result = api
+              .getVoter()
+              .id(id)
+              .firstName(firstName)
+              .lastName(lastName)
+              .execute();
       System.out.println(result);
+      System.out.println(result.toJson()); // Serialize response back to JSON 
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UgKycApi#getVoter");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    try {
+      ApiResponse<GetVoterResponse> response = api
+              .getVoter()
+              .id(id)
+              .firstName(firstName)
+              .lastName(lastName)
+              .executeWithHttpInfo();
+      System.out.println(response.getData());
+      System.out.println(response.getHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling UgKycApi#getVoter");
       System.err.println("Status code: " + e.getCode());

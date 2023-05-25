@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -61,6 +62,10 @@ public class VerifySelfieBvnRequest {
   }
 
   public VerifySelfieBvnRequest bvn(String bvn) {
+
+    
+    
+    
     
     this.bvn = bvn;
     return this;
@@ -79,11 +84,19 @@ public class VerifySelfieBvnRequest {
 
 
   public void setBvn(String bvn) {
+
+    
+    
+    
     this.bvn = bvn;
   }
 
 
   public VerifySelfieBvnRequest selfieImage(String selfieImage) {
+
+    
+    
+    
     
     this.selfieImage = selfieImage;
     return this;
@@ -102,6 +115,10 @@ public class VerifySelfieBvnRequest {
 
 
   public void setSelfieImage(String selfieImage) {
+
+    
+    
+    
     this.selfieImage = selfieImage;
   }
 

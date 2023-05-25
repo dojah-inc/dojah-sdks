@@ -34,6 +34,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -82,6 +83,10 @@ public class GetBanksResponseEntityInner {
   }
 
   public GetBanksResponseEntityInner name(String name) {
+
+    
+    
+    
     
     this.name = name;
     return this;
@@ -100,11 +105,19 @@ public class GetBanksResponseEntityInner {
 
 
   public void setName(String name) {
+
+    
+    
+    
     this.name = name;
   }
 
 
   public GetBanksResponseEntityInner code(String code) {
+
+    
+    
+    
     
     this.code = code;
     return this;
@@ -123,11 +136,19 @@ public class GetBanksResponseEntityInner {
 
 
   public void setCode(String code) {
+
+    
+    
+    
     this.code = code;
   }
 
 
   public GetBanksResponseEntityInner longcode(String longcode) {
+
+    
+    
+    
     
     this.longcode = longcode;
     return this;
@@ -146,11 +167,19 @@ public class GetBanksResponseEntityInner {
 
 
   public void setLongcode(String longcode) {
+
+    
+    
+    
     this.longcode = longcode;
   }
 
 
   public GetBanksResponseEntityInner gateway(String gateway) {
+
+    
+    
+    
     
     this.gateway = gateway;
     return this;
@@ -169,11 +198,19 @@ public class GetBanksResponseEntityInner {
 
 
   public void setGateway(String gateway) {
+
+    
+    
+    
     this.gateway = gateway;
   }
 
 
   public GetBanksResponseEntityInner slug(String slug) {
+
+    
+    
+    
     
     this.slug = slug;
     return this;
@@ -192,11 +229,19 @@ public class GetBanksResponseEntityInner {
 
 
   public void setSlug(String slug) {
+
+    
+    
+    
     this.slug = slug;
   }
 
 
   public GetBanksResponseEntityInner country(String country) {
+
+    
+    
+    
     
     this.country = country;
     return this;
@@ -215,11 +260,19 @@ public class GetBanksResponseEntityInner {
 
 
   public void setCountry(String country) {
+
+    
+    
+    
     this.country = country;
   }
 
 
   public GetBanksResponseEntityInner currency(String currency) {
+
+    
+    
+    
     
     this.currency = currency;
     return this;
@@ -238,6 +291,10 @@ public class GetBanksResponseEntityInner {
 
 
   public void setCurrency(String currency) {
+
+    
+    
+    
     this.currency = currency;
   }
 

@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -52,22 +52,36 @@ import com.konfigthis.dojah.client.JSON;
 public class GetSpendingPatternResponseEntityPatternFood {
   public static final String SERIALIZED_NAME_SUM = "sum";
   @SerializedName(SERIALIZED_NAME_SUM)
-  private BigDecimal sum;
+  private Double sum;
 
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
-  private BigDecimal count;
+  private Double count;
 
   public static final String SERIALIZED_NAME_PERCENTAGE = "percentage";
   @SerializedName(SERIALIZED_NAME_PERCENTAGE)
-  private BigDecimal percentage;
+  private Double percentage;
 
   public GetSpendingPatternResponseEntityPatternFood() {
   }
 
-  public GetSpendingPatternResponseEntityPatternFood sum(BigDecimal sum) {
+  public GetSpendingPatternResponseEntityPatternFood sum(Double sum) {
+
+    
+    
+    
     
     this.sum = sum;
+    return this;
+  }
+
+  public GetSpendingPatternResponseEntityPatternFood sum(Integer sum) {
+
+    
+    
+    
+    
+    this.sum = sum.doubleValue();
     return this;
   }
 
@@ -78,19 +92,37 @@ public class GetSpendingPatternResponseEntityPatternFood {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "20000", value = "")
 
-  public BigDecimal getSum() {
+  public Double getSum() {
     return sum;
   }
 
 
-  public void setSum(BigDecimal sum) {
+  public void setSum(Double sum) {
+
+    
+    
+    
     this.sum = sum;
   }
 
 
-  public GetSpendingPatternResponseEntityPatternFood count(BigDecimal count) {
+  public GetSpendingPatternResponseEntityPatternFood count(Double count) {
+
+    
+    
+    
     
     this.count = count;
+    return this;
+  }
+
+  public GetSpendingPatternResponseEntityPatternFood count(Integer count) {
+
+    
+    
+    
+    
+    this.count = count.doubleValue();
     return this;
   }
 
@@ -101,19 +133,37 @@ public class GetSpendingPatternResponseEntityPatternFood {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1", value = "")
 
-  public BigDecimal getCount() {
+  public Double getCount() {
     return count;
   }
 
 
-  public void setCount(BigDecimal count) {
+  public void setCount(Double count) {
+
+    
+    
+    
     this.count = count;
   }
 
 
-  public GetSpendingPatternResponseEntityPatternFood percentage(BigDecimal percentage) {
+  public GetSpendingPatternResponseEntityPatternFood percentage(Double percentage) {
+
+    
+    
+    
     
     this.percentage = percentage;
+    return this;
+  }
+
+  public GetSpendingPatternResponseEntityPatternFood percentage(Integer percentage) {
+
+    
+    
+    
+    
+    this.percentage = percentage.doubleValue();
     return this;
   }
 
@@ -124,12 +174,16 @@ public class GetSpendingPatternResponseEntityPatternFood {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "4.4670404224498", value = "")
 
-  public BigDecimal getPercentage() {
+  public Double getPercentage() {
     return percentage;
   }
 
 
-  public void setPercentage(BigDecimal percentage) {
+  public void setPercentage(Double percentage) {
+
+    
+    
+    
     this.percentage = percentage;
   }
 

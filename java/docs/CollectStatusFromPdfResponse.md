@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**entity** | [**CollectTransactionsResponseEntity**](CollectTransactionsResponseEntity.md) |  |  [optional] |
+|**entity** | [**CollectStatusFromPdfResponseEntity**](CollectStatusFromPdfResponseEntity.md) |  |  [optional] |
 
 
 

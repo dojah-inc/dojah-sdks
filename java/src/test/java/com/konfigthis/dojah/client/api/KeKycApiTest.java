@@ -13,9 +13,13 @@
 package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.model.GetNationalIdResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,7 +32,14 @@ import java.util.Map;
 @Disabled
 public class KeKycApiTest {
 
-    private final KeKycApi api = new KeKycApi();
+    private static KeKycApi api;
+
+    
+    @BeforeAll
+    public static void beforeClass() {
+        ApiClient apiClient = Configuration.getDefaultApiClient();
+        api = new KeKycApi(apiClient);
+    }
 
     /**
      * KYC - National ID
@@ -43,7 +54,14 @@ public class KeKycApiTest {
         String middleName = null;
         String dateOfBirth = null;
         String gender = null;
-        GetNationalIdResponse response = api.getNationalId(id, firstName, lastName, middleName, dateOfBirth, gender);
+        GetNationalIdResponse response = api.getNationalId()
+                .id(id)
+                .firstName(firstName)
+                .lastName(lastName)
+                .middleName(middleName)
+                .dateOfBirth(dateOfBirth)
+                .gender(gender)
+                .execute();
         // TODO: test validations
     }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Entity** | Pointer to [**CollectTransactionsResponseEntity**](CollectTransactionsResponseEntity.md) |  | [optional] 
+**Entity** | Pointer to [**CollectStatusFromPdfResponseEntity**](CollectStatusFromPdfResponseEntity.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEntity
 
-`func (o *CollectStatusFromPdfResponse) GetEntity() CollectTransactionsResponseEntity`
+`func (o *CollectStatusFromPdfResponse) GetEntity() CollectStatusFromPdfResponseEntity`
 
 GetEntity returns the Entity field if non-nil, zero value otherwise.
 
 ### GetEntityOk
 
-`func (o *CollectStatusFromPdfResponse) GetEntityOk() (*CollectTransactionsResponseEntity, bool)`
+`func (o *CollectStatusFromPdfResponse) GetEntityOk() (*CollectStatusFromPdfResponseEntity, bool)`
 
 GetEntityOk returns a tuple with the Entity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntity
 
-`func (o *CollectStatusFromPdfResponse) SetEntity(v CollectTransactionsResponseEntity)`
+`func (o *CollectStatusFromPdfResponse) SetEntity(v CollectStatusFromPdfResponseEntity)`
 
 SetEntity sets Entity field to given value.
 

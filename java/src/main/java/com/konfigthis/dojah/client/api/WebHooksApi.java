@@ -29,6 +29,7 @@ import java.io.IOException;
 import com.konfigthis.dojah.client.model.DeleteWebhookResponse;
 import com.konfigthis.dojah.client.model.GetWebhooksResponse;
 import com.konfigthis.dojah.client.model.NotifyWebhookRequest;
+import com.konfigthis.dojah.client.model.NotifyWebhookRequestData;
 import com.konfigthis.dojah.client.model.NotifyWebhookResponse;
 import com.konfigthis.dojah.client.model.SubscribeServiceRequest;
 import com.konfigthis.dojah.client.model.SubscribeServiceResponse;
@@ -45,11 +46,14 @@ public class WebHooksApi {
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public WebHooksApi() {
+    public WebHooksApi() throws IllegalArgumentException {
         this(Configuration.getDefaultApiClient());
     }
 
-    public WebHooksApi(ApiClient apiClient) {
+    public WebHooksApi(ApiClient apiClient) throws IllegalArgumentException {
+        if (apiClient.getApikeyAuth() == null) {
+            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
+        }
         this.localVarApiClient = apiClient;
     }
 
@@ -77,18 +81,7 @@ public class WebHooksApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    /**
-     * Build call for deleteWebhook
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call deleteWebhookCall(final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWebhookCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,70 +131,101 @@ public class WebHooksApi {
 
     }
 
-    /**
-     * Delete Webhook
-     * 
-     * @return DeleteWebhookResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public DeleteWebhookResponse deleteWebhook() throws ApiException {
-        ApiResponse<DeleteWebhookResponse> localVarResp = deleteWebhookWithHttpInfo();
-        return localVarResp.getData();
-    }
 
-    /**
-     * Delete Webhook
-     * 
-     * @return ApiResponse&lt;DeleteWebhookResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<DeleteWebhookResponse> deleteWebhookWithHttpInfo() throws ApiException {
+    private ApiResponse<DeleteWebhookResponse> deleteWebhookWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = deleteWebhookValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<DeleteWebhookResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Delete Webhook (asynchronously)
-     * 
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call deleteWebhookAsync(final ApiCallback<DeleteWebhookResponse> _callback) throws ApiException {
+    private okhttp3.Call deleteWebhookAsync(final ApiCallback<DeleteWebhookResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWebhookValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<DeleteWebhookResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class DeleteWebhookRequestBuilder {
+
+        private DeleteWebhookRequestBuilder() {
+        }
+
+        /**
+         * Build call for deleteWebhook
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return deleteWebhookCall(_callback);
+        }
+
+
+        /**
+         * Execute deleteWebhook request
+         * @return DeleteWebhookResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public DeleteWebhookResponse execute() throws ApiException {
+            ApiResponse<DeleteWebhookResponse> localVarResp = deleteWebhookWithHttpInfo();
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute deleteWebhook request with HTTP info returned
+         * @return ApiResponse&lt;DeleteWebhookResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<DeleteWebhookResponse> executeWithHttpInfo() throws ApiException {
+            return deleteWebhookWithHttpInfo();
+        }
+
+        /**
+         * Execute deleteWebhook request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<DeleteWebhookResponse> _callback) throws ApiException {
+            return deleteWebhookAsync(_callback);
+        }
+    }
+
     /**
-     * Build call for getWebhooks
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Delete Webhook
+     * 
+     * @return DeleteWebhookRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhooksCall(final ApiCallback _callback) throws ApiException {
+    public DeleteWebhookRequestBuilder deleteWebhook() throws IllegalArgumentException {
+        return new DeleteWebhookRequestBuilder();
+    }
+    private okhttp3.Call getWebhooksCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -251,71 +275,101 @@ public class WebHooksApi {
 
     }
 
-    /**
-     * Fetch All Webhooks
-     * 
-     * @return GetWebhooksResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public GetWebhooksResponse getWebhooks() throws ApiException {
-        ApiResponse<GetWebhooksResponse> localVarResp = getWebhooksWithHttpInfo();
-        return localVarResp.getData();
-    }
 
-    /**
-     * Fetch All Webhooks
-     * 
-     * @return ApiResponse&lt;GetWebhooksResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetWebhooksResponse> getWebhooksWithHttpInfo() throws ApiException {
+    private ApiResponse<GetWebhooksResponse> getWebhooksWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = getWebhooksValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<GetWebhooksResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Fetch All Webhooks (asynchronously)
-     * 
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getWebhooksAsync(final ApiCallback<GetWebhooksResponse> _callback) throws ApiException {
+    private okhttp3.Call getWebhooksAsync(final ApiCallback<GetWebhooksResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWebhooksValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<GetWebhooksResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetWebhooksRequestBuilder {
+
+        private GetWebhooksRequestBuilder() {
+        }
+
+        /**
+         * Build call for getWebhooks
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getWebhooksCall(_callback);
+        }
+
+
+        /**
+         * Execute getWebhooks request
+         * @return GetWebhooksResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public GetWebhooksResponse execute() throws ApiException {
+            ApiResponse<GetWebhooksResponse> localVarResp = getWebhooksWithHttpInfo();
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getWebhooks request with HTTP info returned
+         * @return ApiResponse&lt;GetWebhooksResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetWebhooksResponse> executeWithHttpInfo() throws ApiException {
+            return getWebhooksWithHttpInfo();
+        }
+
+        /**
+         * Execute getWebhooks request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetWebhooksResponse> _callback) throws ApiException {
+            return getWebhooksAsync(_callback);
+        }
+    }
+
     /**
-     * Build call for notifyWebhook
-     * @param notifyWebhookRequest  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Fetch All Webhooks
+     * 
+     * @return GetWebhooksRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call notifyWebhookCall(NotifyWebhookRequest notifyWebhookRequest, final ApiCallback _callback) throws ApiException {
+    public GetWebhooksRequestBuilder getWebhooks() throws IllegalArgumentException {
+        return new GetWebhooksRequestBuilder();
+    }
+    private okhttp3.Call notifyWebhookCall(NotifyWebhookRequest notifyWebhookRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -366,74 +420,133 @@ public class WebHooksApi {
 
     }
 
-    /**
-     * Post Hook
-     * 
-     * @param notifyWebhookRequest  (optional)
-     * @return NotifyWebhookResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public NotifyWebhookResponse notifyWebhook(NotifyWebhookRequest notifyWebhookRequest) throws ApiException {
-        ApiResponse<NotifyWebhookResponse> localVarResp = notifyWebhookWithHttpInfo(notifyWebhookRequest);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Post Hook
-     * 
-     * @param notifyWebhookRequest  (optional)
-     * @return ApiResponse&lt;NotifyWebhookResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<NotifyWebhookResponse> notifyWebhookWithHttpInfo(NotifyWebhookRequest notifyWebhookRequest) throws ApiException {
+    private ApiResponse<NotifyWebhookResponse> notifyWebhookWithHttpInfo(NotifyWebhookRequest notifyWebhookRequest) throws ApiException {
         okhttp3.Call localVarCall = notifyWebhookValidateBeforeCall(notifyWebhookRequest, null);
         Type localVarReturnType = new TypeToken<NotifyWebhookResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Post Hook (asynchronously)
-     * 
-     * @param notifyWebhookRequest  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call notifyWebhookAsync(NotifyWebhookRequest notifyWebhookRequest, final ApiCallback<NotifyWebhookResponse> _callback) throws ApiException {
+    private okhttp3.Call notifyWebhookAsync(NotifyWebhookRequest notifyWebhookRequest, final ApiCallback<NotifyWebhookResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = notifyWebhookValidateBeforeCall(notifyWebhookRequest, _callback);
         Type localVarReturnType = new TypeToken<NotifyWebhookResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class NotifyWebhookRequestBuilder {
+        private String subject;
+        private NotifyWebhookRequestData data;
+
+        private NotifyWebhookRequestBuilder() {
+        }
+
+        /**
+         * Set subject
+         * @param subject  (optional)
+         * @return NotifyWebhookRequestBuilder
+         */
+        public NotifyWebhookRequestBuilder subject(String subject) {
+            this.subject = subject;
+            return this;
+        }
+        
+        /**
+         * Set data
+         * @param data  (optional)
+         * @return NotifyWebhookRequestBuilder
+         */
+        public NotifyWebhookRequestBuilder data(NotifyWebhookRequestData data) {
+            this.data = data;
+            return this;
+        }
+        
+        /**
+         * Build call for notifyWebhook
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            NotifyWebhookRequest notifyWebhookRequest = buildBodyParams();
+            return notifyWebhookCall(notifyWebhookRequest, _callback);
+        }
+
+        private NotifyWebhookRequest buildBodyParams() {
+            NotifyWebhookRequest notifyWebhookRequest = new NotifyWebhookRequest();
+            notifyWebhookRequest.subject(this.subject);
+            notifyWebhookRequest.data(this.data);
+            return notifyWebhookRequest;
+        }
+
+        /**
+         * Execute notifyWebhook request
+         * @return NotifyWebhookResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public NotifyWebhookResponse execute() throws ApiException {
+            NotifyWebhookRequest notifyWebhookRequest = buildBodyParams();
+            ApiResponse<NotifyWebhookResponse> localVarResp = notifyWebhookWithHttpInfo(notifyWebhookRequest);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute notifyWebhook request with HTTP info returned
+         * @return ApiResponse&lt;NotifyWebhookResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<NotifyWebhookResponse> executeWithHttpInfo() throws ApiException {
+            NotifyWebhookRequest notifyWebhookRequest = buildBodyParams();
+            return notifyWebhookWithHttpInfo(notifyWebhookRequest);
+        }
+
+        /**
+         * Execute notifyWebhook request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<NotifyWebhookResponse> _callback) throws ApiException {
+            NotifyWebhookRequest notifyWebhookRequest = buildBodyParams();
+            return notifyWebhookAsync(notifyWebhookRequest, _callback);
+        }
+    }
+
     /**
-     * Build call for subscribeService
-     * @param subscribeServiceRequest  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Post Hook
+     * 
+     * @return NotifyWebhookRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call subscribeServiceCall(SubscribeServiceRequest subscribeServiceRequest, final ApiCallback _callback) throws ApiException {
+    public NotifyWebhookRequestBuilder notifyWebhook() throws IllegalArgumentException {
+        return new NotifyWebhookRequestBuilder();
+    }
+    private okhttp3.Call subscribeServiceCall(SubscribeServiceRequest subscribeServiceRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -484,59 +597,130 @@ public class WebHooksApi {
 
     }
 
-    /**
-     * Subscribe to service
-     * 
-     * @param subscribeServiceRequest  (optional)
-     * @return SubscribeServiceResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public SubscribeServiceResponse subscribeService(SubscribeServiceRequest subscribeServiceRequest) throws ApiException {
-        ApiResponse<SubscribeServiceResponse> localVarResp = subscribeServiceWithHttpInfo(subscribeServiceRequest);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Subscribe to service
-     * 
-     * @param subscribeServiceRequest  (optional)
-     * @return ApiResponse&lt;SubscribeServiceResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<SubscribeServiceResponse> subscribeServiceWithHttpInfo(SubscribeServiceRequest subscribeServiceRequest) throws ApiException {
+    private ApiResponse<SubscribeServiceResponse> subscribeServiceWithHttpInfo(SubscribeServiceRequest subscribeServiceRequest) throws ApiException {
         okhttp3.Call localVarCall = subscribeServiceValidateBeforeCall(subscribeServiceRequest, null);
         Type localVarReturnType = new TypeToken<SubscribeServiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Subscribe to service (asynchronously)
-     * 
-     * @param subscribeServiceRequest  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call subscribeServiceAsync(SubscribeServiceRequest subscribeServiceRequest, final ApiCallback<SubscribeServiceResponse> _callback) throws ApiException {
+    private okhttp3.Call subscribeServiceAsync(SubscribeServiceRequest subscribeServiceRequest, final ApiCallback<SubscribeServiceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = subscribeServiceValidateBeforeCall(subscribeServiceRequest, _callback);
         Type localVarReturnType = new TypeToken<SubscribeServiceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
+    }
+
+    public class SubscribeServiceRequestBuilder {
+        private String webhook;
+        private String service;
+
+        private SubscribeServiceRequestBuilder() {
+        }
+
+        /**
+         * Set webhook
+         * @param webhook  (optional)
+         * @return SubscribeServiceRequestBuilder
+         */
+        public SubscribeServiceRequestBuilder webhook(String webhook) {
+            this.webhook = webhook;
+            return this;
+        }
+        
+        /**
+         * Set service
+         * @param service  (optional)
+         * @return SubscribeServiceRequestBuilder
+         */
+        public SubscribeServiceRequestBuilder service(String service) {
+            this.service = service;
+            return this;
+        }
+        
+        /**
+         * Build call for subscribeService
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            SubscribeServiceRequest subscribeServiceRequest = buildBodyParams();
+            return subscribeServiceCall(subscribeServiceRequest, _callback);
+        }
+
+        private SubscribeServiceRequest buildBodyParams() {
+            SubscribeServiceRequest subscribeServiceRequest = new SubscribeServiceRequest();
+            subscribeServiceRequest.webhook(this.webhook);
+            subscribeServiceRequest.service(this.service);
+            return subscribeServiceRequest;
+        }
+
+        /**
+         * Execute subscribeService request
+         * @return SubscribeServiceResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public SubscribeServiceResponse execute() throws ApiException {
+            SubscribeServiceRequest subscribeServiceRequest = buildBodyParams();
+            ApiResponse<SubscribeServiceResponse> localVarResp = subscribeServiceWithHttpInfo(subscribeServiceRequest);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute subscribeService request with HTTP info returned
+         * @return ApiResponse&lt;SubscribeServiceResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<SubscribeServiceResponse> executeWithHttpInfo() throws ApiException {
+            SubscribeServiceRequest subscribeServiceRequest = buildBodyParams();
+            return subscribeServiceWithHttpInfo(subscribeServiceRequest);
+        }
+
+        /**
+         * Execute subscribeService request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<SubscribeServiceResponse> _callback) throws ApiException {
+            SubscribeServiceRequest subscribeServiceRequest = buildBodyParams();
+            return subscribeServiceAsync(subscribeServiceRequest, _callback);
+        }
+    }
+
+    /**
+     * Subscribe to service
+     * 
+     * @return SubscribeServiceRequestBuilder
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+     </table>
+     */
+    public SubscribeServiceRequestBuilder subscribeService() throws IllegalArgumentException {
+        return new SubscribeServiceRequestBuilder();
     }
 }

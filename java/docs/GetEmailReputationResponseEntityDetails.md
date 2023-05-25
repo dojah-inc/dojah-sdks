@@ -18,7 +18,7 @@
 |**domainExists** | **Boolean** |  |  [optional] |
 |**domainReputation** | **String** |  |  [optional] |
 |**newDomain** | **Boolean** |  |  [optional] |
-|**daysSinceDomainCreation** | **BigDecimal** |  |  [optional] |
+|**daysSinceDomainCreation** | **Double** |  |  [optional] |
 |**suspiciousTld** | **Boolean** |  |  [optional] |
 |**spam** | **Boolean** |  |  [optional] |
 |**freeProvider** | **Boolean** |  |  [optional] |

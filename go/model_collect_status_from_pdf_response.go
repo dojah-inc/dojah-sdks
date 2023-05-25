@@ -16,7 +16,7 @@ import (
 
 // CollectStatusFromPdfResponse struct for CollectStatusFromPdfResponse
 type CollectStatusFromPdfResponse struct {
-	Entity *CollectTransactionsResponseEntity `json:"entity,omitempty"`
+	Entity *CollectStatusFromPdfResponseEntity `json:"entity,omitempty"`
 }
 
 // NewCollectStatusFromPdfResponse instantiates a new CollectStatusFromPdfResponse object
@@ -37,9 +37,9 @@ func NewCollectStatusFromPdfResponseWithDefaults() *CollectStatusFromPdfResponse
 }
 
 // GetEntity returns the Entity field value if set, zero value otherwise.
-func (o *CollectStatusFromPdfResponse) GetEntity() CollectTransactionsResponseEntity {
+func (o *CollectStatusFromPdfResponse) GetEntity() CollectStatusFromPdfResponseEntity {
 	if o == nil || isNil(o.Entity) {
-		var ret CollectTransactionsResponseEntity
+		var ret CollectStatusFromPdfResponseEntity
 		return ret
 	}
 	return *o.Entity
@@ -47,7 +47,7 @@ func (o *CollectStatusFromPdfResponse) GetEntity() CollectTransactionsResponseEn
 
 // GetEntityOk returns a tuple with the Entity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CollectStatusFromPdfResponse) GetEntityOk() (*CollectTransactionsResponseEntity, bool) {
+func (o *CollectStatusFromPdfResponse) GetEntityOk() (*CollectStatusFromPdfResponseEntity, bool) {
 	if o == nil || isNil(o.Entity) {
     return nil, false
 	}
@@ -63,8 +63,8 @@ func (o *CollectStatusFromPdfResponse) HasEntity() bool {
 	return false
 }
 
-// SetEntity gets a reference to the given CollectTransactionsResponseEntity and assigns it to the Entity field.
-func (o *CollectStatusFromPdfResponse) SetEntity(v CollectTransactionsResponseEntity) {
+// SetEntity gets a reference to the given CollectStatusFromPdfResponseEntity and assigns it to the Entity field.
+func (o *CollectStatusFromPdfResponse) SetEntity(v CollectStatusFromPdfResponseEntity) {
 	o.Entity = &v
 }
 

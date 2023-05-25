@@ -839,8 +839,8 @@ namespace Dojah.Net.Api
                 Dojah.Net.Client.GlobalConfiguration.Instance,
                 new Dojah.Net.Client.Configuration { BasePath = basePath }
             );
-            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
+            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration);
+            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration);
             this.ExceptionFactory = Dojah.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
@@ -858,9 +858,9 @@ namespace Dojah.Net.Api
                 Dojah.Net.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Dojah.Net.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new Dojah.Net.Client.ApiClient(this.Configuration);
+            this.AsynchronousClient = new Dojah.Net.Client.ApiClient(this.Configuration);
+            this.ExceptionFactory = Dojah.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -1115,7 +1115,7 @@ namespace Dojah.Net.Api
 
             if (bvn != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetBasicBvn";
@@ -1195,7 +1195,7 @@ namespace Dojah.Net.Api
 
             if (bvn != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetBasicBvn";
@@ -1273,7 +1273,7 @@ namespace Dojah.Net.Api
 
             if (phoneNumber != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "phone_number", phoneNumber));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "phone_number", phoneNumber, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetBasicPhoneNumber";
@@ -1353,7 +1353,7 @@ namespace Dojah.Net.Api
 
             if (phoneNumber != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "phone_number", phoneNumber));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "phone_number", phoneNumber, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetBasicPhoneNumber";
@@ -1431,7 +1431,7 @@ namespace Dojah.Net.Api
 
             if (licenseNumber != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "license_number", licenseNumber));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "license_number", licenseNumber, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetDriversLicense";
@@ -1511,7 +1511,7 @@ namespace Dojah.Net.Api
 
             if (licenseNumber != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "license_number", licenseNumber));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "license_number", licenseNumber, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetDriversLicense";
@@ -1589,7 +1589,7 @@ namespace Dojah.Net.Api
 
             if (email != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "email", email));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "email", email, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetEmailReputation";
@@ -1669,7 +1669,7 @@ namespace Dojah.Net.Api
 
             if (email != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "email", email));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "email", email, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetEmailReputation";
@@ -1747,7 +1747,7 @@ namespace Dojah.Net.Api
 
             if (bvn != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetFullBvn";
@@ -1827,7 +1827,7 @@ namespace Dojah.Net.Api
 
             if (bvn != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetFullBvn";
@@ -1907,11 +1907,11 @@ namespace Dojah.Net.Api
 
             if (bankCode != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bank_code", bankCode));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bank_code", bankCode, ""));
             }
             if (accountNumber != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_number", accountNumber));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_number", accountNumber, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetNuban";
@@ -1993,11 +1993,11 @@ namespace Dojah.Net.Api
 
             if (bankCode != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bank_code", bankCode));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bank_code", bankCode, ""));
             }
             if (accountNumber != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_number", accountNumber));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_number", accountNumber, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetNuban";
@@ -2077,11 +2077,11 @@ namespace Dojah.Net.Api
 
             if (passportNumber != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "passport_number", passportNumber));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "passport_number", passportNumber, ""));
             }
             if (surname != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "surname", surname));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "surname", surname, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetPassport";
@@ -2163,11 +2163,11 @@ namespace Dojah.Net.Api
 
             if (passportNumber != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "passport_number", passportNumber));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "passport_number", passportNumber, ""));
             }
             if (surname != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "surname", surname));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "surname", surname, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetPassport";
@@ -2245,7 +2245,7 @@ namespace Dojah.Net.Api
 
             if (phoneNumber != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "phone_number", phoneNumber));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "phone_number", phoneNumber, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetPhoneNumber";
@@ -2325,7 +2325,7 @@ namespace Dojah.Net.Api
 
             if (phoneNumber != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "phone_number", phoneNumber));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "phone_number", phoneNumber, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetPhoneNumber";
@@ -2403,7 +2403,7 @@ namespace Dojah.Net.Api
 
             if (bvn != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetPremiumBvn";
@@ -2483,7 +2483,7 @@ namespace Dojah.Net.Api
 
             if (bvn != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetPremiumBvn";
@@ -2569,23 +2569,23 @@ namespace Dojah.Net.Api
 
             if (mode != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "mode", mode));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "mode", mode, ""));
             }
             if (firstname != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "firstname", firstname));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "firstname", firstname, ""));
             }
             if (lastname != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "lastname", lastname));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "lastname", lastname, ""));
             }
             if (vin != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "vin", vin));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "vin", vin, ""));
             }
             if (state != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "state", state));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "state", state, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetVIN";
@@ -2673,23 +2673,23 @@ namespace Dojah.Net.Api
 
             if (mode != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "mode", mode));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "mode", mode, ""));
             }
             if (firstname != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "firstname", firstname));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "firstname", firstname, ""));
             }
             if (lastname != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "lastname", lastname));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "lastname", lastname, ""));
             }
             if (vin != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "vin", vin));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "vin", vin, ""));
             }
             if (state != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "state", state));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "state", state, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetVIN";
@@ -2767,7 +2767,7 @@ namespace Dojah.Net.Api
 
             if (vnin != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "vnin", vnin));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "vnin", vnin, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetVnin";
@@ -2847,7 +2847,7 @@ namespace Dojah.Net.Api
 
             if (vnin != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "vnin", vnin));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "vnin", vnin, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.GetVnin";
@@ -2929,15 +2929,15 @@ namespace Dojah.Net.Api
 
             if (bvn != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
             if (firstName != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "first_name", firstName));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "first_name", firstName, ""));
             }
             if (dob != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "dob", dob));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "dob", dob, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.ValidateBvn";
@@ -3021,15 +3021,15 @@ namespace Dojah.Net.Api
 
             if (bvn != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
             if (firstName != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "first_name", firstName));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "first_name", firstName, ""));
             }
             if (dob != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "dob", dob));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "dob", dob, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.ValidateBvn";
@@ -3117,27 +3117,27 @@ namespace Dojah.Net.Api
 
             if (mode != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "mode", mode));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "mode", mode, ""));
             }
             if (accountNumber != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_number", accountNumber));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_number", accountNumber, ""));
             }
             if (bankCode != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bank_code", bankCode));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bank_code", bankCode, ""));
             }
             if (dob != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "dob", dob));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "dob", dob, ""));
             }
             if (firstName != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "first_name", firstName));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "first_name", firstName, ""));
             }
             if (lastName != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "last_name", lastName));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "last_name", lastName, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.VerifyAge";
@@ -3227,27 +3227,27 @@ namespace Dojah.Net.Api
 
             if (mode != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "mode", mode));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "mode", mode, ""));
             }
             if (accountNumber != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_number", accountNumber));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_number", accountNumber, ""));
             }
             if (bankCode != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bank_code", bankCode));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bank_code", bankCode, ""));
             }
             if (dob != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "dob", dob));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "dob", dob, ""));
             }
             if (firstName != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "first_name", firstName));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "first_name", firstName, ""));
             }
             if (lastName != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "last_name", lastName));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "last_name", lastName, ""));
             }
 
             localVarRequestOptions.Operation = "KYCApi.VerifyAge";

@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -89,6 +90,10 @@ public class GetVninResponseEntity {
   }
 
   public GetVninResponseEntity vnin(String vnin) {
+
+    
+    
+    
     
     this.vnin = vnin;
     return this;
@@ -107,11 +112,19 @@ public class GetVninResponseEntity {
 
 
   public void setVnin(String vnin) {
+
+    
+    
+    
     this.vnin = vnin;
   }
 
 
   public GetVninResponseEntity firstname(String firstname) {
+
+    
+    
+    
     
     this.firstname = firstname;
     return this;
@@ -130,11 +143,19 @@ public class GetVninResponseEntity {
 
 
   public void setFirstname(String firstname) {
+
+    
+    
+    
     this.firstname = firstname;
   }
 
 
   public GetVninResponseEntity middlename(String middlename) {
+
+    
+    
+    
     
     this.middlename = middlename;
     return this;
@@ -153,11 +174,19 @@ public class GetVninResponseEntity {
 
 
   public void setMiddlename(String middlename) {
+
+    
+    
+    
     this.middlename = middlename;
   }
 
 
   public GetVninResponseEntity surname(String surname) {
+
+    
+    
+    
     
     this.surname = surname;
     return this;
@@ -176,11 +205,19 @@ public class GetVninResponseEntity {
 
 
   public void setSurname(String surname) {
+
+    
+    
+    
     this.surname = surname;
   }
 
 
   public GetVninResponseEntity userId(String userId) {
+
+    
+    
+    
     
     this.userId = userId;
     return this;
@@ -199,11 +236,19 @@ public class GetVninResponseEntity {
 
 
   public void setUserId(String userId) {
+
+    
+    
+    
     this.userId = userId;
   }
 
 
   public GetVninResponseEntity gender(String gender) {
+
+    
+    
+    
     
     this.gender = gender;
     return this;
@@ -222,11 +267,19 @@ public class GetVninResponseEntity {
 
 
   public void setGender(String gender) {
+
+    
+    
+    
     this.gender = gender;
   }
 
 
   public GetVninResponseEntity mobile(String mobile) {
+
+    
+    
+    
     
     this.mobile = mobile;
     return this;
@@ -245,11 +298,19 @@ public class GetVninResponseEntity {
 
 
   public void setMobile(String mobile) {
+
+    
+    
+    
     this.mobile = mobile;
   }
 
 
   public GetVninResponseEntity dateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     
     this.dateOfBirth = dateOfBirth;
     return this;
@@ -268,11 +329,19 @@ public class GetVninResponseEntity {
 
 
   public void setDateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     this.dateOfBirth = dateOfBirth;
   }
 
 
   public GetVninResponseEntity photo(String photo) {
+
+    
+    
+    
     
     this.photo = photo;
     return this;
@@ -291,6 +360,10 @@ public class GetVninResponseEntity {
 
 
   public void setPhoto(String photo) {
+
+    
+    
+    
     this.photo = photo;
   }
 

@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -69,6 +70,10 @@ public class SendSmsResponseEntity {
   }
 
   public SendSmsResponseEntity status(Boolean status) {
+
+    
+    
+    
     
     this.status = status;
     return this;
@@ -87,11 +92,19 @@ public class SendSmsResponseEntity {
 
 
   public void setStatus(Boolean status) {
+
+    
+    
+    
     this.status = status;
   }
 
 
   public SendSmsResponseEntity mobile(String mobile) {
+
+    
+    
+    
     
     this.mobile = mobile;
     return this;
@@ -110,11 +123,19 @@ public class SendSmsResponseEntity {
 
 
   public void setMobile(String mobile) {
+
+    
+    
+    
     this.mobile = mobile;
   }
 
 
   public SendSmsResponseEntity messageId(String messageId) {
+
+    
+    
+    
     
     this.messageId = messageId;
     return this;
@@ -133,11 +154,19 @@ public class SendSmsResponseEntity {
 
 
   public void setMessageId(String messageId) {
+
+    
+    
+    
     this.messageId = messageId;
   }
 
 
   public SendSmsResponseEntity batchId(String batchId) {
+
+    
+    
+    
     
     this.batchId = batchId;
     return this;
@@ -156,6 +185,10 @@ public class SendSmsResponseEntity {
 
 
   public void setBatchId(String batchId) {
+
+    
+    
+    
     this.batchId = batchId;
   }
 

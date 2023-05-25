@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -61,6 +62,10 @@ public class VerifySelfieNinRequest {
   }
 
   public VerifySelfieNinRequest nin(String nin) {
+
+    
+    
+    
     
     this.nin = nin;
     return this;
@@ -79,11 +84,19 @@ public class VerifySelfieNinRequest {
 
 
   public void setNin(String nin) {
+
+    
+    
+    
     this.nin = nin;
   }
 
 
   public VerifySelfieNinRequest selfieImage(String selfieImage) {
+
+    
+    
+    
     
     this.selfieImage = selfieImage;
     return this;
@@ -102,6 +115,10 @@ public class VerifySelfieNinRequest {
 
 
   public void setSelfieImage(String selfieImage) {
+
+    
+    
+    
     this.selfieImage = selfieImage;
   }
 

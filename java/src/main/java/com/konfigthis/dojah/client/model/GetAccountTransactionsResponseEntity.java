@@ -23,7 +23,6 @@ import com.konfigthis.dojah.client.model.GetAccountTransactionsResponseEntityTra
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +36,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -59,7 +59,7 @@ public class GetAccountTransactionsResponseEntity {
 
   public static final String SERIALIZED_NAME_TOTAL = "total";
   @SerializedName(SERIALIZED_NAME_TOTAL)
-  private BigDecimal total;
+  private Double total;
 
   public static final String SERIALIZED_NAME_PREVIOUS_PAGE = "previous_page";
   @SerializedName(SERIALIZED_NAME_PREVIOUS_PAGE)
@@ -67,20 +67,24 @@ public class GetAccountTransactionsResponseEntity {
 
   public static final String SERIALIZED_NAME_NEXT_PAGE = "next_page";
   @SerializedName(SERIALIZED_NAME_NEXT_PAGE)
-  private BigDecimal nextPage;
+  private Double nextPage;
 
   public static final String SERIALIZED_NAME_TOTAL_PAGES = "total_pages";
   @SerializedName(SERIALIZED_NAME_TOTAL_PAGES)
-  private BigDecimal totalPages;
+  private Double totalPages;
 
   public static final String SERIALIZED_NAME_CURRENT_PAGE = "current_page";
   @SerializedName(SERIALIZED_NAME_CURRENT_PAGE)
-  private BigDecimal currentPage;
+  private Double currentPage;
 
   public GetAccountTransactionsResponseEntity() {
   }
 
   public GetAccountTransactionsResponseEntity transactions(List<GetAccountTransactionsResponseEntityTransactionsInner> transactions) {
+
+    
+    
+    
     
     this.transactions = transactions;
     return this;
@@ -107,13 +111,31 @@ public class GetAccountTransactionsResponseEntity {
 
 
   public void setTransactions(List<GetAccountTransactionsResponseEntityTransactionsInner> transactions) {
+
+    
+    
+    
     this.transactions = transactions;
   }
 
 
-  public GetAccountTransactionsResponseEntity total(BigDecimal total) {
+  public GetAccountTransactionsResponseEntity total(Double total) {
+
+    
+    
+    
     
     this.total = total;
+    return this;
+  }
+
+  public GetAccountTransactionsResponseEntity total(Integer total) {
+
+    
+    
+    
+    
+    this.total = total.doubleValue();
     return this;
   }
 
@@ -124,17 +146,25 @@ public class GetAccountTransactionsResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "521", value = "")
 
-  public BigDecimal getTotal() {
+  public Double getTotal() {
     return total;
   }
 
 
-  public void setTotal(BigDecimal total) {
+  public void setTotal(Double total) {
+
+    
+    
+    
     this.total = total;
   }
 
 
   public GetAccountTransactionsResponseEntity previousPage(String previousPage) {
+
+    
+    
+    
     
     this.previousPage = previousPage;
     return this;
@@ -153,13 +183,31 @@ public class GetAccountTransactionsResponseEntity {
 
 
   public void setPreviousPage(String previousPage) {
+
+    
+    
+    
     this.previousPage = previousPage;
   }
 
 
-  public GetAccountTransactionsResponseEntity nextPage(BigDecimal nextPage) {
+  public GetAccountTransactionsResponseEntity nextPage(Double nextPage) {
+
+    
+    
+    
     
     this.nextPage = nextPage;
+    return this;
+  }
+
+  public GetAccountTransactionsResponseEntity nextPage(Integer nextPage) {
+
+    
+    
+    
+    
+    this.nextPage = nextPage.doubleValue();
     return this;
   }
 
@@ -170,19 +218,37 @@ public class GetAccountTransactionsResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "2", value = "")
 
-  public BigDecimal getNextPage() {
+  public Double getNextPage() {
     return nextPage;
   }
 
 
-  public void setNextPage(BigDecimal nextPage) {
+  public void setNextPage(Double nextPage) {
+
+    
+    
+    
     this.nextPage = nextPage;
   }
 
 
-  public GetAccountTransactionsResponseEntity totalPages(BigDecimal totalPages) {
+  public GetAccountTransactionsResponseEntity totalPages(Double totalPages) {
+
+    
+    
+    
     
     this.totalPages = totalPages;
+    return this;
+  }
+
+  public GetAccountTransactionsResponseEntity totalPages(Integer totalPages) {
+
+    
+    
+    
+    
+    this.totalPages = totalPages.doubleValue();
     return this;
   }
 
@@ -193,19 +259,37 @@ public class GetAccountTransactionsResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "53", value = "")
 
-  public BigDecimal getTotalPages() {
+  public Double getTotalPages() {
     return totalPages;
   }
 
 
-  public void setTotalPages(BigDecimal totalPages) {
+  public void setTotalPages(Double totalPages) {
+
+    
+    
+    
     this.totalPages = totalPages;
   }
 
 
-  public GetAccountTransactionsResponseEntity currentPage(BigDecimal currentPage) {
+  public GetAccountTransactionsResponseEntity currentPage(Double currentPage) {
+
+    
+    
+    
     
     this.currentPage = currentPage;
+    return this;
+  }
+
+  public GetAccountTransactionsResponseEntity currentPage(Integer currentPage) {
+
+    
+    
+    
+    
+    this.currentPage = currentPage.doubleValue();
     return this;
   }
 
@@ -216,12 +300,16 @@ public class GetAccountTransactionsResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1", value = "")
 
-  public BigDecimal getCurrentPage() {
+  public Double getCurrentPage() {
     return currentPage;
   }
 
 
-  public void setCurrentPage(BigDecimal currentPage) {
+  public void setCurrentPage(Double currentPage) {
+
+    
+    
+    
     this.currentPage = currentPage;
   }
 

@@ -40,11 +40,14 @@ public class UgKycApi {
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public UgKycApi() {
+    public UgKycApi() throws IllegalArgumentException {
         this(Configuration.getDefaultApiClient());
     }
 
-    public UgKycApi(ApiClient apiClient) {
+    public UgKycApi(ApiClient apiClient) throws IllegalArgumentException {
+        if (apiClient.getApikeyAuth() == null) {
+            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
+        }
         this.localVarApiClient = apiClient;
     }
 
@@ -72,21 +75,7 @@ public class UgKycApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    /**
-     * Build call for getVoter
-     * @param id  (optional)
-     * @param firstName  (optional)
-     * @param lastName  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getVoterCall(Integer id, String firstName, String lastName, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getVoterCall(Integer id, String firstName, String lastName, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -148,65 +137,131 @@ public class UgKycApi {
 
     }
 
-    /**
-     * Voters ID
-     * 
-     * @param id  (optional)
-     * @param firstName  (optional)
-     * @param lastName  (optional)
-     * @return GetVoterResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetVoterResponse getVoter(Integer id, String firstName, String lastName) throws ApiException {
-        ApiResponse<GetVoterResponse> localVarResp = getVoterWithHttpInfo(id, firstName, lastName);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Voters ID
-     * 
-     * @param id  (optional)
-     * @param firstName  (optional)
-     * @param lastName  (optional)
-     * @return ApiResponse&lt;GetVoterResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetVoterResponse> getVoterWithHttpInfo(Integer id, String firstName, String lastName) throws ApiException {
+    private ApiResponse<GetVoterResponse> getVoterWithHttpInfo(Integer id, String firstName, String lastName) throws ApiException {
         okhttp3.Call localVarCall = getVoterValidateBeforeCall(id, firstName, lastName, null);
         Type localVarReturnType = new TypeToken<GetVoterResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
+    private okhttp3.Call getVoterAsync(Integer id, String firstName, String lastName, final ApiCallback<GetVoterResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getVoterValidateBeforeCall(id, firstName, lastName, _callback);
+        Type localVarReturnType = new TypeToken<GetVoterResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+
+    public class GetVoterRequestBuilder {
+        private Integer id;
+        private String firstName;
+        private String lastName;
+
+        private GetVoterRequestBuilder() {
+        }
+
+        /**
+         * Set id
+         * @param id  (optional)
+         * @return GetVoterRequestBuilder
+         */
+        public GetVoterRequestBuilder id(Integer id) {
+            this.id = id;
+            return this;
+        }
+        
+        /**
+         * Set firstName
+         * @param firstName  (optional)
+         * @return GetVoterRequestBuilder
+         */
+        public GetVoterRequestBuilder firstName(String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+        
+        /**
+         * Set lastName
+         * @param lastName  (optional)
+         * @return GetVoterRequestBuilder
+         */
+        public GetVoterRequestBuilder lastName(String lastName) {
+            this.lastName = lastName;
+            return this;
+        }
+        
+        /**
+         * Build call for getVoter
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getVoterCall(id, firstName, lastName, _callback);
+        }
+
+
+        /**
+         * Execute getVoter request
+         * @return GetVoterResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public GetVoterResponse execute() throws ApiException {
+            ApiResponse<GetVoterResponse> localVarResp = getVoterWithHttpInfo(id, firstName, lastName);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getVoter request with HTTP info returned
+         * @return ApiResponse&lt;GetVoterResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetVoterResponse> executeWithHttpInfo() throws ApiException {
+            return getVoterWithHttpInfo(id, firstName, lastName);
+        }
+
+        /**
+         * Execute getVoter request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetVoterResponse> _callback) throws ApiException {
+            return getVoterAsync(id, firstName, lastName, _callback);
+        }
+    }
+
     /**
-     * Voters ID (asynchronously)
+     * Voters ID
      * 
-     * @param id  (optional)
-     * @param firstName  (optional)
-     * @param lastName  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @return GetVoterRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getVoterAsync(Integer id, String firstName, String lastName, final ApiCallback<GetVoterResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = getVoterValidateBeforeCall(id, firstName, lastName, _callback);
-        Type localVarReturnType = new TypeToken<GetVoterResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
+    public GetVoterRequestBuilder getVoter() throws IllegalArgumentException {
+        return new GetVoterRequestBuilder();
     }
 }

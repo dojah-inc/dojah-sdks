@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -52,22 +52,36 @@ import com.konfigthis.dojah.client.JSON;
 public class GetSpendingPatternResponseEntityPatternAirtimeData {
   public static final String SERIALIZED_NAME_SUM = "sum";
   @SerializedName(SERIALIZED_NAME_SUM)
-  private BigDecimal sum;
+  private Double sum;
 
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
-  private BigDecimal count;
+  private Double count;
 
   public static final String SERIALIZED_NAME_PERCENTAGE = "percentage";
   @SerializedName(SERIALIZED_NAME_PERCENTAGE)
-  private BigDecimal percentage;
+  private Double percentage;
 
   public GetSpendingPatternResponseEntityPatternAirtimeData() {
   }
 
-  public GetSpendingPatternResponseEntityPatternAirtimeData sum(BigDecimal sum) {
+  public GetSpendingPatternResponseEntityPatternAirtimeData sum(Double sum) {
+
+    
+    
+    
     
     this.sum = sum;
+    return this;
+  }
+
+  public GetSpendingPatternResponseEntityPatternAirtimeData sum(Integer sum) {
+
+    
+    
+    
+    
+    this.sum = sum.doubleValue();
     return this;
   }
 
@@ -78,19 +92,37 @@ public class GetSpendingPatternResponseEntityPatternAirtimeData {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "14598.01", value = "")
 
-  public BigDecimal getSum() {
+  public Double getSum() {
     return sum;
   }
 
 
-  public void setSum(BigDecimal sum) {
+  public void setSum(Double sum) {
+
+    
+    
+    
     this.sum = sum;
   }
 
 
-  public GetSpendingPatternResponseEntityPatternAirtimeData count(BigDecimal count) {
+  public GetSpendingPatternResponseEntityPatternAirtimeData count(Double count) {
+
+    
+    
+    
     
     this.count = count;
+    return this;
+  }
+
+  public GetSpendingPatternResponseEntityPatternAirtimeData count(Integer count) {
+
+    
+    
+    
+    
+    this.count = count.doubleValue();
     return this;
   }
 
@@ -101,19 +133,37 @@ public class GetSpendingPatternResponseEntityPatternAirtimeData {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "25", value = "")
 
-  public BigDecimal getCount() {
+  public Double getCount() {
     return count;
   }
 
 
-  public void setCount(BigDecimal count) {
+  public void setCount(Double count) {
+
+    
+    
+    
     this.count = count;
   }
 
 
-  public GetSpendingPatternResponseEntityPatternAirtimeData percentage(BigDecimal percentage) {
+  public GetSpendingPatternResponseEntityPatternAirtimeData percentage(Double percentage) {
+
+    
+    
+    
     
     this.percentage = percentage;
+    return this;
+  }
+
+  public GetSpendingPatternResponseEntityPatternAirtimeData percentage(Integer percentage) {
+
+    
+    
+    
+    
+    this.percentage = percentage.doubleValue();
     return this;
   }
 
@@ -124,12 +174,16 @@ public class GetSpendingPatternResponseEntityPatternAirtimeData {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "3.26049503786632", value = "")
 
-  public BigDecimal getPercentage() {
+  public Double getPercentage() {
     return percentage;
   }
 
 
-  public void setPercentage(BigDecimal percentage) {
+  public void setPercentage(Double percentage) {
+
+    
+    
+    
     this.percentage = percentage;
   }
 

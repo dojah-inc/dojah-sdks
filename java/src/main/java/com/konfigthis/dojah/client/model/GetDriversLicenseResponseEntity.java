@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -96,12 +96,16 @@ public class GetDriversLicenseResponseEntity {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private BigDecimal status;
+  private Double status;
 
   public GetDriversLicenseResponseEntity() {
   }
 
   public GetDriversLicenseResponseEntity certificateDate(String certificateDate) {
+
+    
+    
+    
     
     this.certificateDate = certificateDate;
     return this;
@@ -120,11 +124,19 @@ public class GetDriversLicenseResponseEntity {
 
 
   public void setCertificateDate(String certificateDate) {
+
+    
+    
+    
     this.certificateDate = certificateDate;
   }
 
 
   public GetDriversLicenseResponseEntity dateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     
     this.dateOfBirth = dateOfBirth;
     return this;
@@ -143,11 +155,19 @@ public class GetDriversLicenseResponseEntity {
 
 
   public void setDateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     this.dateOfBirth = dateOfBirth;
   }
 
 
   public GetDriversLicenseResponseEntity expiryDate(String expiryDate) {
+
+    
+    
+    
     
     this.expiryDate = expiryDate;
     return this;
@@ -166,11 +186,19 @@ public class GetDriversLicenseResponseEntity {
 
 
   public void setExpiryDate(String expiryDate) {
+
+    
+    
+    
     this.expiryDate = expiryDate;
   }
 
 
   public GetDriversLicenseResponseEntity fullName(String fullName) {
+
+    
+    
+    
     
     this.fullName = fullName;
     return this;
@@ -189,11 +217,19 @@ public class GetDriversLicenseResponseEntity {
 
 
   public void setFullName(String fullName) {
+
+    
+    
+    
     this.fullName = fullName;
   }
 
 
   public GetDriversLicenseResponseEntity id(String id) {
+
+    
+    
+    
     
     this.id = id;
     return this;
@@ -212,11 +248,19 @@ public class GetDriversLicenseResponseEntity {
 
 
   public void setId(String id) {
+
+    
+    
+    
     this.id = id;
   }
 
 
   public GetDriversLicenseResponseEntity isDateOfBirthMatch(Boolean isDateOfBirthMatch) {
+
+    
+    
+    
     
     this.isDateOfBirthMatch = isDateOfBirthMatch;
     return this;
@@ -235,11 +279,19 @@ public class GetDriversLicenseResponseEntity {
 
 
   public void setIsDateOfBirthMatch(Boolean isDateOfBirthMatch) {
+
+    
+    
+    
     this.isDateOfBirthMatch = isDateOfBirthMatch;
   }
 
 
   public GetDriversLicenseResponseEntity isFullNameMatch(Boolean isFullNameMatch) {
+
+    
+    
+    
     
     this.isFullNameMatch = isFullNameMatch;
     return this;
@@ -258,11 +310,19 @@ public class GetDriversLicenseResponseEntity {
 
 
   public void setIsFullNameMatch(Boolean isFullNameMatch) {
+
+    
+    
+    
     this.isFullNameMatch = isFullNameMatch;
   }
 
 
   public GetDriversLicenseResponseEntity issueDate(String issueDate) {
+
+    
+    
+    
     
     this.issueDate = issueDate;
     return this;
@@ -281,11 +341,19 @@ public class GetDriversLicenseResponseEntity {
 
 
   public void setIssueDate(String issueDate) {
+
+    
+    
+    
     this.issueDate = issueDate;
   }
 
 
   public GetDriversLicenseResponseEntity picture(String picture) {
+
+    
+    
+    
     
     this.picture = picture;
     return this;
@@ -304,11 +372,19 @@ public class GetDriversLicenseResponseEntity {
 
 
   public void setPicture(String picture) {
+
+    
+    
+    
     this.picture = picture;
   }
 
 
   public GetDriversLicenseResponseEntity pin(String pin) {
+
+    
+    
+    
     
     this.pin = pin;
     return this;
@@ -327,11 +403,19 @@ public class GetDriversLicenseResponseEntity {
 
 
   public void setPin(String pin) {
+
+    
+    
+    
     this.pin = pin;
   }
 
 
   public GetDriversLicenseResponseEntity processingCenter(String processingCenter) {
+
+    
+    
+    
     
     this.processingCenter = processingCenter;
     return this;
@@ -350,13 +434,31 @@ public class GetDriversLicenseResponseEntity {
 
 
   public void setProcessingCenter(String processingCenter) {
+
+    
+    
+    
     this.processingCenter = processingCenter;
   }
 
 
-  public GetDriversLicenseResponseEntity status(BigDecimal status) {
+  public GetDriversLicenseResponseEntity status(Double status) {
+
+    
+    
+    
     
     this.status = status;
+    return this;
+  }
+
+  public GetDriversLicenseResponseEntity status(Integer status) {
+
+    
+    
+    
+    
+    this.status = status.doubleValue();
     return this;
   }
 
@@ -367,12 +469,16 @@ public class GetDriversLicenseResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "200", value = "")
 
-  public BigDecimal getStatus() {
+  public Double getStatus() {
     return status;
   }
 
 
-  public void setStatus(BigDecimal status) {
+  public void setStatus(Double status) {
+
+    
+    
+    
     this.status = status;
   }
 

@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -84,12 +84,16 @@ public class GetSsnitResponseEntity {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private BigDecimal status;
+  private Double status;
 
   public GetSsnitResponseEntity() {
   }
 
   public GetSsnitResponseEntity cardSerial(String cardSerial) {
+
+    
+    
+    
     
     this.cardSerial = cardSerial;
     return this;
@@ -108,11 +112,19 @@ public class GetSsnitResponseEntity {
 
 
   public void setCardSerial(String cardSerial) {
+
+    
+    
+    
     this.cardSerial = cardSerial;
   }
 
 
   public GetSsnitResponseEntity dateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     
     this.dateOfBirth = dateOfBirth;
     return this;
@@ -131,11 +143,19 @@ public class GetSsnitResponseEntity {
 
 
   public void setDateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     this.dateOfBirth = dateOfBirth;
   }
 
 
   public GetSsnitResponseEntity fullName(String fullName) {
+
+    
+    
+    
     
     this.fullName = fullName;
     return this;
@@ -154,11 +174,19 @@ public class GetSsnitResponseEntity {
 
 
   public void setFullName(String fullName) {
+
+    
+    
+    
     this.fullName = fullName;
   }
 
 
   public GetSsnitResponseEntity gender(String gender) {
+
+    
+    
+    
     
     this.gender = gender;
     return this;
@@ -177,11 +205,19 @@ public class GetSsnitResponseEntity {
 
 
   public void setGender(String gender) {
+
+    
+    
+    
     this.gender = gender;
   }
 
 
   public GetSsnitResponseEntity id(String id) {
+
+    
+    
+    
     
     this.id = id;
     return this;
@@ -200,11 +236,19 @@ public class GetSsnitResponseEntity {
 
 
   public void setId(String id) {
+
+    
+    
+    
     this.id = id;
   }
 
 
   public GetSsnitResponseEntity isDateOfBirthMatch(Boolean isDateOfBirthMatch) {
+
+    
+    
+    
     
     this.isDateOfBirthMatch = isDateOfBirthMatch;
     return this;
@@ -223,11 +267,19 @@ public class GetSsnitResponseEntity {
 
 
   public void setIsDateOfBirthMatch(Boolean isDateOfBirthMatch) {
+
+    
+    
+    
     this.isDateOfBirthMatch = isDateOfBirthMatch;
   }
 
 
   public GetSsnitResponseEntity isFullNameMatch(Boolean isFullNameMatch) {
+
+    
+    
+    
     
     this.isFullNameMatch = isFullNameMatch;
     return this;
@@ -246,11 +298,19 @@ public class GetSsnitResponseEntity {
 
 
   public void setIsFullNameMatch(Boolean isFullNameMatch) {
+
+    
+    
+    
     this.isFullNameMatch = isFullNameMatch;
   }
 
 
   public GetSsnitResponseEntity picture(String picture) {
+
+    
+    
+    
     
     this.picture = picture;
     return this;
@@ -269,13 +329,31 @@ public class GetSsnitResponseEntity {
 
 
   public void setPicture(String picture) {
+
+    
+    
+    
     this.picture = picture;
   }
 
 
-  public GetSsnitResponseEntity status(BigDecimal status) {
+  public GetSsnitResponseEntity status(Double status) {
+
+    
+    
+    
     
     this.status = status;
+    return this;
+  }
+
+  public GetSsnitResponseEntity status(Integer status) {
+
+    
+    
+    
+    
+    this.status = status.doubleValue();
     return this;
   }
 
@@ -286,12 +364,16 @@ public class GetSsnitResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "200", value = "")
 
-  public BigDecimal getStatus() {
+  public Double getStatus() {
     return status;
   }
 
 
-  public void setStatus(BigDecimal status) {
+  public void setStatus(Double status) {
+
+    
+    
+    
     this.status = status;
   }
 

@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -157,6 +158,10 @@ public class GetFullBvnResponseEntity {
   }
 
   public GetFullBvnResponseEntity title(String title) {
+
+    
+    
+    
     
     this.title = title;
     return this;
@@ -175,11 +180,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setTitle(String title) {
+
+    
+    
+    
     this.title = title;
   }
 
 
   public GetFullBvnResponseEntity bvn(String bvn) {
+
+    
+    
+    
     
     this.bvn = bvn;
     return this;
@@ -198,11 +211,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setBvn(String bvn) {
+
+    
+    
+    
     this.bvn = bvn;
   }
 
 
   public GetFullBvnResponseEntity dateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     
     this.dateOfBirth = dateOfBirth;
     return this;
@@ -221,11 +242,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setDateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     this.dateOfBirth = dateOfBirth;
   }
 
 
   public GetFullBvnResponseEntity email(String email) {
+
+    
+    
+    
     
     this.email = email;
     return this;
@@ -244,11 +273,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setEmail(String email) {
+
+    
+    
+    
     this.email = email;
   }
 
 
   public GetFullBvnResponseEntity enrollmentBank(String enrollmentBank) {
+
+    
+    
+    
     
     this.enrollmentBank = enrollmentBank;
     return this;
@@ -267,11 +304,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setEnrollmentBank(String enrollmentBank) {
+
+    
+    
+    
     this.enrollmentBank = enrollmentBank;
   }
 
 
   public GetFullBvnResponseEntity enrollmentBranch(String enrollmentBranch) {
+
+    
+    
+    
     
     this.enrollmentBranch = enrollmentBranch;
     return this;
@@ -290,11 +335,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setEnrollmentBranch(String enrollmentBranch) {
+
+    
+    
+    
     this.enrollmentBranch = enrollmentBranch;
   }
 
 
   public GetFullBvnResponseEntity firstName(String firstName) {
+
+    
+    
+    
     
     this.firstName = firstName;
     return this;
@@ -313,11 +366,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setFirstName(String firstName) {
+
+    
+    
+    
     this.firstName = firstName;
   }
 
 
   public GetFullBvnResponseEntity gender(String gender) {
+
+    
+    
+    
     
     this.gender = gender;
     return this;
@@ -336,11 +397,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setGender(String gender) {
+
+    
+    
+    
     this.gender = gender;
   }
 
 
   public GetFullBvnResponseEntity image(String image) {
+
+    
+    
+    
     
     this.image = image;
     return this;
@@ -359,11 +428,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setImage(String image) {
+
+    
+    
+    
     this.image = image;
   }
 
 
   public GetFullBvnResponseEntity lastName(String lastName) {
+
+    
+    
+    
     
     this.lastName = lastName;
     return this;
@@ -382,11 +459,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setLastName(String lastName) {
+
+    
+    
+    
     this.lastName = lastName;
   }
 
 
   public GetFullBvnResponseEntity levelOfAccount(String levelOfAccount) {
+
+    
+    
+    
     
     this.levelOfAccount = levelOfAccount;
     return this;
@@ -405,11 +490,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setLevelOfAccount(String levelOfAccount) {
+
+    
+    
+    
     this.levelOfAccount = levelOfAccount;
   }
 
 
   public GetFullBvnResponseEntity lgaOfOrigin(String lgaOfOrigin) {
+
+    
+    
+    
     
     this.lgaOfOrigin = lgaOfOrigin;
     return this;
@@ -428,11 +521,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setLgaOfOrigin(String lgaOfOrigin) {
+
+    
+    
+    
     this.lgaOfOrigin = lgaOfOrigin;
   }
 
 
   public GetFullBvnResponseEntity lgaOfResidence(String lgaOfResidence) {
+
+    
+    
+    
     
     this.lgaOfResidence = lgaOfResidence;
     return this;
@@ -451,11 +552,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setLgaOfResidence(String lgaOfResidence) {
+
+    
+    
+    
     this.lgaOfResidence = lgaOfResidence;
   }
 
 
   public GetFullBvnResponseEntity maritalStatus(String maritalStatus) {
+
+    
+    
+    
     
     this.maritalStatus = maritalStatus;
     return this;
@@ -474,11 +583,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setMaritalStatus(String maritalStatus) {
+
+    
+    
+    
     this.maritalStatus = maritalStatus;
   }
 
 
   public GetFullBvnResponseEntity middleName(String middleName) {
+
+    
+    
+    
     
     this.middleName = middleName;
     return this;
@@ -497,11 +614,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setMiddleName(String middleName) {
+
+    
+    
+    
     this.middleName = middleName;
   }
 
 
   public GetFullBvnResponseEntity nameOnCard(String nameOnCard) {
+
+    
+    
+    
     
     this.nameOnCard = nameOnCard;
     return this;
@@ -520,11 +645,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setNameOnCard(String nameOnCard) {
+
+    
+    
+    
     this.nameOnCard = nameOnCard;
   }
 
 
   public GetFullBvnResponseEntity nationality(String nationality) {
+
+    
+    
+    
     
     this.nationality = nationality;
     return this;
@@ -543,11 +676,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setNationality(String nationality) {
+
+    
+    
+    
     this.nationality = nationality;
   }
 
 
   public GetFullBvnResponseEntity nin(String nin) {
+
+    
+    
+    
     
     this.nin = nin;
     return this;
@@ -566,11 +707,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setNin(String nin) {
+
+    
+    
+    
     this.nin = nin;
   }
 
 
   public GetFullBvnResponseEntity phoneNumber1(String phoneNumber1) {
+
+    
+    
+    
     
     this.phoneNumber1 = phoneNumber1;
     return this;
@@ -589,11 +738,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setPhoneNumber1(String phoneNumber1) {
+
+    
+    
+    
     this.phoneNumber1 = phoneNumber1;
   }
 
 
   public GetFullBvnResponseEntity phoneNumber2(String phoneNumber2) {
+
+    
+    
+    
     
     this.phoneNumber2 = phoneNumber2;
     return this;
@@ -612,11 +769,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setPhoneNumber2(String phoneNumber2) {
+
+    
+    
+    
     this.phoneNumber2 = phoneNumber2;
   }
 
 
   public GetFullBvnResponseEntity reference(String reference) {
+
+    
+    
+    
     
     this.reference = reference;
     return this;
@@ -635,11 +800,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setReference(String reference) {
+
+    
+    
+    
     this.reference = reference;
   }
 
 
   public GetFullBvnResponseEntity registrationDate(String registrationDate) {
+
+    
+    
+    
     
     this.registrationDate = registrationDate;
     return this;
@@ -658,11 +831,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setRegistrationDate(String registrationDate) {
+
+    
+    
+    
     this.registrationDate = registrationDate;
   }
 
 
   public GetFullBvnResponseEntity residentialAddress(String residentialAddress) {
+
+    
+    
+    
     
     this.residentialAddress = residentialAddress;
     return this;
@@ -681,11 +862,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setResidentialAddress(String residentialAddress) {
+
+    
+    
+    
     this.residentialAddress = residentialAddress;
   }
 
 
   public GetFullBvnResponseEntity stateOfOrigin(String stateOfOrigin) {
+
+    
+    
+    
     
     this.stateOfOrigin = stateOfOrigin;
     return this;
@@ -704,11 +893,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setStateOfOrigin(String stateOfOrigin) {
+
+    
+    
+    
     this.stateOfOrigin = stateOfOrigin;
   }
 
 
   public GetFullBvnResponseEntity stateOfResidence(String stateOfResidence) {
+
+    
+    
+    
     
     this.stateOfResidence = stateOfResidence;
     return this;
@@ -727,11 +924,19 @@ public class GetFullBvnResponseEntity {
 
 
   public void setStateOfResidence(String stateOfResidence) {
+
+    
+    
+    
     this.stateOfResidence = stateOfResidence;
   }
 
 
   public GetFullBvnResponseEntity watchListed(String watchListed) {
+
+    
+    
+    
     
     this.watchListed = watchListed;
     return this;
@@ -750,6 +955,10 @@ public class GetFullBvnResponseEntity {
 
 
   public void setWatchListed(String watchListed) {
+
+    
+    
+    
     this.watchListed = watchListed;
   }
 

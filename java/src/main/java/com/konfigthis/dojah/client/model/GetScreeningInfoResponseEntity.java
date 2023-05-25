@@ -34,6 +34,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -62,6 +63,10 @@ public class GetScreeningInfoResponseEntity {
   }
 
   public GetScreeningInfoResponseEntity result(GetScreeningInfoResponseEntityResult result) {
+
+    
+    
+    
     
     this.result = result;
     return this;
@@ -80,11 +85,19 @@ public class GetScreeningInfoResponseEntity {
 
 
   public void setResult(GetScreeningInfoResponseEntityResult result) {
+
+    
+    
+    
     this.result = result;
   }
 
 
   public GetScreeningInfoResponseEntity uuid(String uuid) {
+
+    
+    
+    
     
     this.uuid = uuid;
     return this;
@@ -103,6 +116,10 @@ public class GetScreeningInfoResponseEntity {
 
 
   public void setUuid(String uuid) {
+
+    
+    
+    
     this.uuid = uuid;
   }
 

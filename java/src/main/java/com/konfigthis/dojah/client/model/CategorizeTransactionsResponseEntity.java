@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -60,11 +60,11 @@ public class CategorizeTransactionsResponseEntity {
 
   public static final String SERIALIZED_NAME_SERVICE_ID = "service_id";
   @SerializedName(SERIALIZED_NAME_SERVICE_ID)
-  private BigDecimal serviceId;
+  private Double serviceId;
 
   public static final String SERIALIZED_NAME_IS_SUBSCRIPTION = "is_subscription";
   @SerializedName(SERIALIZED_NAME_IS_SUBSCRIPTION)
-  private BigDecimal isSubscription;
+  private Double isSubscription;
 
   public static final String SERIALIZED_NAME_DURATION = "duration";
   @SerializedName(SERIALIZED_NAME_DURATION)
@@ -86,6 +86,10 @@ public class CategorizeTransactionsResponseEntity {
   }
 
   public CategorizeTransactionsResponseEntity category(String category) {
+
+    
+    
+    
     
     this.category = category;
     return this;
@@ -104,11 +108,19 @@ public class CategorizeTransactionsResponseEntity {
 
 
   public void setCategory(String category) {
+
+    
+    
+    
     this.category = category;
   }
 
 
   public CategorizeTransactionsResponseEntity subCategory(String subCategory) {
+
+    
+    
+    
     
     this.subCategory = subCategory;
     return this;
@@ -127,13 +139,31 @@ public class CategorizeTransactionsResponseEntity {
 
 
   public void setSubCategory(String subCategory) {
+
+    
+    
+    
     this.subCategory = subCategory;
   }
 
 
-  public CategorizeTransactionsResponseEntity serviceId(BigDecimal serviceId) {
+  public CategorizeTransactionsResponseEntity serviceId(Double serviceId) {
+
+    
+    
+    
     
     this.serviceId = serviceId;
+    return this;
+  }
+
+  public CategorizeTransactionsResponseEntity serviceId(Integer serviceId) {
+
+    
+    
+    
+    
+    this.serviceId = serviceId.doubleValue();
     return this;
   }
 
@@ -144,19 +174,37 @@ public class CategorizeTransactionsResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getServiceId() {
+  public Double getServiceId() {
     return serviceId;
   }
 
 
-  public void setServiceId(BigDecimal serviceId) {
+  public void setServiceId(Double serviceId) {
+
+    
+    
+    
     this.serviceId = serviceId;
   }
 
 
-  public CategorizeTransactionsResponseEntity isSubscription(BigDecimal isSubscription) {
+  public CategorizeTransactionsResponseEntity isSubscription(Double isSubscription) {
+
+    
+    
+    
     
     this.isSubscription = isSubscription;
+    return this;
+  }
+
+  public CategorizeTransactionsResponseEntity isSubscription(Integer isSubscription) {
+
+    
+    
+    
+    
+    this.isSubscription = isSubscription.doubleValue();
     return this;
   }
 
@@ -167,17 +215,25 @@ public class CategorizeTransactionsResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getIsSubscription() {
+  public Double getIsSubscription() {
     return isSubscription;
   }
 
 
-  public void setIsSubscription(BigDecimal isSubscription) {
+  public void setIsSubscription(Double isSubscription) {
+
+    
+    
+    
     this.isSubscription = isSubscription;
   }
 
 
   public CategorizeTransactionsResponseEntity duration(String duration) {
+
+    
+    
+    
     
     this.duration = duration;
     return this;
@@ -196,11 +252,19 @@ public class CategorizeTransactionsResponseEntity {
 
 
   public void setDuration(String duration) {
+
+    
+    
+    
     this.duration = duration;
   }
 
 
   public CategorizeTransactionsResponseEntity serviceName(String serviceName) {
+
+    
+    
+    
     
     this.serviceName = serviceName;
     return this;
@@ -219,11 +283,19 @@ public class CategorizeTransactionsResponseEntity {
 
 
   public void setServiceName(String serviceName) {
+
+    
+    
+    
     this.serviceName = serviceName;
   }
 
 
   public CategorizeTransactionsResponseEntity label(String label) {
+
+    
+    
+    
     
     this.label = label;
     return this;
@@ -242,11 +314,19 @@ public class CategorizeTransactionsResponseEntity {
 
 
   public void setLabel(String label) {
+
+    
+    
+    
     this.label = label;
   }
 
 
   public CategorizeTransactionsResponseEntity modeOfPayment(String modeOfPayment) {
+
+    
+    
+    
     
     this.modeOfPayment = modeOfPayment;
     return this;
@@ -265,6 +345,10 @@ public class CategorizeTransactionsResponseEntity {
 
 
   public void setModeOfPayment(String modeOfPayment) {
+
+    
+    
+    
     this.modeOfPayment = modeOfPayment;
   }
 

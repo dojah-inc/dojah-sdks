@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -52,39 +52,39 @@ import com.konfigthis.dojah.client.JSON;
 public class GetAccountAnalysisResponseEntityAccountBreakdown {
   public static final String SERIALIZED_NAME_TOTAL_CREDIT_ENTRY = "TotalCreditEntry";
   @SerializedName(SERIALIZED_NAME_TOTAL_CREDIT_ENTRY)
-  private BigDecimal totalCreditEntry;
+  private Double totalCreditEntry;
 
   public static final String SERIALIZED_NAME_TOTAL_DEBIT_MADE = "TotalDebitMade";
   @SerializedName(SERIALIZED_NAME_TOTAL_DEBIT_MADE)
-  private BigDecimal totalDebitMade;
+  private Double totalDebitMade;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_BALANCE = "averageMonthlyBalance";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_BALANCE)
-  private BigDecimal averageMonthlyBalance;
+  private Double averageMonthlyBalance;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_CREDITS = "averageMonthlyCredits";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_CREDITS)
-  private BigDecimal averageMonthlyCredits;
+  private Double averageMonthlyCredits;
 
   public static final String SERIALIZED_NAME_AVERAGE_MONTHLY_DEBITS = "averageMonthlyDebits";
   @SerializedName(SERIALIZED_NAME_AVERAGE_MONTHLY_DEBITS)
-  private BigDecimal averageMonthlyDebits;
+  private Double averageMonthlyDebits;
 
   public static final String SERIALIZED_NAME_AVERAGE_WEEKLY_BALANCE = "averageWeeklyBalance";
   @SerializedName(SERIALIZED_NAME_AVERAGE_WEEKLY_BALANCE)
-  private BigDecimal averageWeeklyBalance;
+  private Double averageWeeklyBalance;
 
   public static final String SERIALIZED_NAME_AVERAGE_WEEKLY_CREDITS = "averageWeeklyCredits";
   @SerializedName(SERIALIZED_NAME_AVERAGE_WEEKLY_CREDITS)
-  private BigDecimal averageWeeklyCredits;
+  private Double averageWeeklyCredits;
 
   public static final String SERIALIZED_NAME_AVERAGE_WEEKLY_DEBITS = "averageWeeklyDebits";
   @SerializedName(SERIALIZED_NAME_AVERAGE_WEEKLY_DEBITS)
-  private BigDecimal averageWeeklyDebits;
+  private Double averageWeeklyDebits;
 
   public static final String SERIALIZED_NAME_CLOSING_BALANCE = "closingBalance";
   @SerializedName(SERIALIZED_NAME_CLOSING_BALANCE)
-  private BigDecimal closingBalance;
+  private Double closingBalance;
 
   public static final String SERIALIZED_NAME_FIRST_DATE_IN_STATEMENT = "firstDateInStatement";
   @SerializedName(SERIALIZED_NAME_FIRST_DATE_IN_STATEMENT)
@@ -96,7 +96,7 @@ public class GetAccountAnalysisResponseEntityAccountBreakdown {
 
   public static final String SERIALIZED_NAME_NUMBER_OF_TRANSACTING_MONTHS = "numberOfTransactingMonths";
   @SerializedName(SERIALIZED_NAME_NUMBER_OF_TRANSACTING_MONTHS)
-  private BigDecimal numberOfTransactingMonths;
+  private Double numberOfTransactingMonths;
 
   public static final String SERIALIZED_NAME_PERIOD_IN_STATEMENT = "periodInStatement";
   @SerializedName(SERIALIZED_NAME_PERIOD_IN_STATEMENT)
@@ -109,9 +109,23 @@ public class GetAccountAnalysisResponseEntityAccountBreakdown {
   public GetAccountAnalysisResponseEntityAccountBreakdown() {
   }
 
-  public GetAccountAnalysisResponseEntityAccountBreakdown totalCreditEntry(BigDecimal totalCreditEntry) {
+  public GetAccountAnalysisResponseEntityAccountBreakdown totalCreditEntry(Double totalCreditEntry) {
+
+    
+    
+    
     
     this.totalCreditEntry = totalCreditEntry;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityAccountBreakdown totalCreditEntry(Integer totalCreditEntry) {
+
+    
+    
+    
+    
+    this.totalCreditEntry = totalCreditEntry.doubleValue();
     return this;
   }
 
@@ -122,19 +136,37 @@ public class GetAccountAnalysisResponseEntityAccountBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "306935.75", value = "")
 
-  public BigDecimal getTotalCreditEntry() {
+  public Double getTotalCreditEntry() {
     return totalCreditEntry;
   }
 
 
-  public void setTotalCreditEntry(BigDecimal totalCreditEntry) {
+  public void setTotalCreditEntry(Double totalCreditEntry) {
+
+    
+    
+    
     this.totalCreditEntry = totalCreditEntry;
   }
 
 
-  public GetAccountAnalysisResponseEntityAccountBreakdown totalDebitMade(BigDecimal totalDebitMade) {
+  public GetAccountAnalysisResponseEntityAccountBreakdown totalDebitMade(Double totalDebitMade) {
+
+    
+    
+    
     
     this.totalDebitMade = totalDebitMade;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityAccountBreakdown totalDebitMade(Integer totalDebitMade) {
+
+    
+    
+    
+    
+    this.totalDebitMade = totalDebitMade.doubleValue();
     return this;
   }
 
@@ -145,19 +177,37 @@ public class GetAccountAnalysisResponseEntityAccountBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "321986.57", value = "")
 
-  public BigDecimal getTotalDebitMade() {
+  public Double getTotalDebitMade() {
     return totalDebitMade;
   }
 
 
-  public void setTotalDebitMade(BigDecimal totalDebitMade) {
+  public void setTotalDebitMade(Double totalDebitMade) {
+
+    
+    
+    
     this.totalDebitMade = totalDebitMade;
   }
 
 
-  public GetAccountAnalysisResponseEntityAccountBreakdown averageMonthlyBalance(BigDecimal averageMonthlyBalance) {
+  public GetAccountAnalysisResponseEntityAccountBreakdown averageMonthlyBalance(Double averageMonthlyBalance) {
+
+    
+    
+    
     
     this.averageMonthlyBalance = averageMonthlyBalance;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityAccountBreakdown averageMonthlyBalance(Integer averageMonthlyBalance) {
+
+    
+    
+    
+    
+    this.averageMonthlyBalance = averageMonthlyBalance.doubleValue();
     return this;
   }
 
@@ -168,19 +218,37 @@ public class GetAccountAnalysisResponseEntityAccountBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getAverageMonthlyBalance() {
+  public Double getAverageMonthlyBalance() {
     return averageMonthlyBalance;
   }
 
 
-  public void setAverageMonthlyBalance(BigDecimal averageMonthlyBalance) {
+  public void setAverageMonthlyBalance(Double averageMonthlyBalance) {
+
+    
+    
+    
     this.averageMonthlyBalance = averageMonthlyBalance;
   }
 
 
-  public GetAccountAnalysisResponseEntityAccountBreakdown averageMonthlyCredits(BigDecimal averageMonthlyCredits) {
+  public GetAccountAnalysisResponseEntityAccountBreakdown averageMonthlyCredits(Double averageMonthlyCredits) {
+
+    
+    
+    
     
     this.averageMonthlyCredits = averageMonthlyCredits;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityAccountBreakdown averageMonthlyCredits(Integer averageMonthlyCredits) {
+
+    
+    
+    
+    
+    this.averageMonthlyCredits = averageMonthlyCredits.doubleValue();
     return this;
   }
 
@@ -191,19 +259,37 @@ public class GetAccountAnalysisResponseEntityAccountBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "25577.98", value = "")
 
-  public BigDecimal getAverageMonthlyCredits() {
+  public Double getAverageMonthlyCredits() {
     return averageMonthlyCredits;
   }
 
 
-  public void setAverageMonthlyCredits(BigDecimal averageMonthlyCredits) {
+  public void setAverageMonthlyCredits(Double averageMonthlyCredits) {
+
+    
+    
+    
     this.averageMonthlyCredits = averageMonthlyCredits;
   }
 
 
-  public GetAccountAnalysisResponseEntityAccountBreakdown averageMonthlyDebits(BigDecimal averageMonthlyDebits) {
+  public GetAccountAnalysisResponseEntityAccountBreakdown averageMonthlyDebits(Double averageMonthlyDebits) {
+
+    
+    
+    
     
     this.averageMonthlyDebits = averageMonthlyDebits;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityAccountBreakdown averageMonthlyDebits(Integer averageMonthlyDebits) {
+
+    
+    
+    
+    
+    this.averageMonthlyDebits = averageMonthlyDebits.doubleValue();
     return this;
   }
 
@@ -214,19 +300,37 @@ public class GetAccountAnalysisResponseEntityAccountBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "20124.16", value = "")
 
-  public BigDecimal getAverageMonthlyDebits() {
+  public Double getAverageMonthlyDebits() {
     return averageMonthlyDebits;
   }
 
 
-  public void setAverageMonthlyDebits(BigDecimal averageMonthlyDebits) {
+  public void setAverageMonthlyDebits(Double averageMonthlyDebits) {
+
+    
+    
+    
     this.averageMonthlyDebits = averageMonthlyDebits;
   }
 
 
-  public GetAccountAnalysisResponseEntityAccountBreakdown averageWeeklyBalance(BigDecimal averageWeeklyBalance) {
+  public GetAccountAnalysisResponseEntityAccountBreakdown averageWeeklyBalance(Double averageWeeklyBalance) {
+
+    
+    
+    
     
     this.averageWeeklyBalance = averageWeeklyBalance;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityAccountBreakdown averageWeeklyBalance(Integer averageWeeklyBalance) {
+
+    
+    
+    
+    
+    this.averageWeeklyBalance = averageWeeklyBalance.doubleValue();
     return this;
   }
 
@@ -237,19 +341,37 @@ public class GetAccountAnalysisResponseEntityAccountBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getAverageWeeklyBalance() {
+  public Double getAverageWeeklyBalance() {
     return averageWeeklyBalance;
   }
 
 
-  public void setAverageWeeklyBalance(BigDecimal averageWeeklyBalance) {
+  public void setAverageWeeklyBalance(Double averageWeeklyBalance) {
+
+    
+    
+    
     this.averageWeeklyBalance = averageWeeklyBalance;
   }
 
 
-  public GetAccountAnalysisResponseEntityAccountBreakdown averageWeeklyCredits(BigDecimal averageWeeklyCredits) {
+  public GetAccountAnalysisResponseEntityAccountBreakdown averageWeeklyCredits(Double averageWeeklyCredits) {
+
+    
+    
+    
     
     this.averageWeeklyCredits = averageWeeklyCredits;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityAccountBreakdown averageWeeklyCredits(Integer averageWeeklyCredits) {
+
+    
+    
+    
+    
+    this.averageWeeklyCredits = averageWeeklyCredits.doubleValue();
     return this;
   }
 
@@ -260,19 +382,37 @@ public class GetAccountAnalysisResponseEntityAccountBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "6530.55", value = "")
 
-  public BigDecimal getAverageWeeklyCredits() {
+  public Double getAverageWeeklyCredits() {
     return averageWeeklyCredits;
   }
 
 
-  public void setAverageWeeklyCredits(BigDecimal averageWeeklyCredits) {
+  public void setAverageWeeklyCredits(Double averageWeeklyCredits) {
+
+    
+    
+    
     this.averageWeeklyCredits = averageWeeklyCredits;
   }
 
 
-  public GetAccountAnalysisResponseEntityAccountBreakdown averageWeeklyDebits(BigDecimal averageWeeklyDebits) {
+  public GetAccountAnalysisResponseEntityAccountBreakdown averageWeeklyDebits(Double averageWeeklyDebits) {
+
+    
+    
+    
     
     this.averageWeeklyDebits = averageWeeklyDebits;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityAccountBreakdown averageWeeklyDebits(Integer averageWeeklyDebits) {
+
+    
+    
+    
+    
+    this.averageWeeklyDebits = averageWeeklyDebits.doubleValue();
     return this;
   }
 
@@ -283,19 +423,37 @@ public class GetAccountAnalysisResponseEntityAccountBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "5031.04", value = "")
 
-  public BigDecimal getAverageWeeklyDebits() {
+  public Double getAverageWeeklyDebits() {
     return averageWeeklyDebits;
   }
 
 
-  public void setAverageWeeklyDebits(BigDecimal averageWeeklyDebits) {
+  public void setAverageWeeklyDebits(Double averageWeeklyDebits) {
+
+    
+    
+    
     this.averageWeeklyDebits = averageWeeklyDebits;
   }
 
 
-  public GetAccountAnalysisResponseEntityAccountBreakdown closingBalance(BigDecimal closingBalance) {
+  public GetAccountAnalysisResponseEntityAccountBreakdown closingBalance(Double closingBalance) {
+
+    
+    
+    
     
     this.closingBalance = closingBalance;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityAccountBreakdown closingBalance(Integer closingBalance) {
+
+    
+    
+    
+    
+    this.closingBalance = closingBalance.doubleValue();
     return this;
   }
 
@@ -306,17 +464,25 @@ public class GetAccountAnalysisResponseEntityAccountBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getClosingBalance() {
+  public Double getClosingBalance() {
     return closingBalance;
   }
 
 
-  public void setClosingBalance(BigDecimal closingBalance) {
+  public void setClosingBalance(Double closingBalance) {
+
+    
+    
+    
     this.closingBalance = closingBalance;
   }
 
 
   public GetAccountAnalysisResponseEntityAccountBreakdown firstDateInStatement(String firstDateInStatement) {
+
+    
+    
+    
     
     this.firstDateInStatement = firstDateInStatement;
     return this;
@@ -335,11 +501,19 @@ public class GetAccountAnalysisResponseEntityAccountBreakdown {
 
 
   public void setFirstDateInStatement(String firstDateInStatement) {
+
+    
+    
+    
     this.firstDateInStatement = firstDateInStatement;
   }
 
 
   public GetAccountAnalysisResponseEntityAccountBreakdown lastDateInStatement(String lastDateInStatement) {
+
+    
+    
+    
     
     this.lastDateInStatement = lastDateInStatement;
     return this;
@@ -358,13 +532,31 @@ public class GetAccountAnalysisResponseEntityAccountBreakdown {
 
 
   public void setLastDateInStatement(String lastDateInStatement) {
+
+    
+    
+    
     this.lastDateInStatement = lastDateInStatement;
   }
 
 
-  public GetAccountAnalysisResponseEntityAccountBreakdown numberOfTransactingMonths(BigDecimal numberOfTransactingMonths) {
+  public GetAccountAnalysisResponseEntityAccountBreakdown numberOfTransactingMonths(Double numberOfTransactingMonths) {
+
+    
+    
+    
     
     this.numberOfTransactingMonths = numberOfTransactingMonths;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityAccountBreakdown numberOfTransactingMonths(Integer numberOfTransactingMonths) {
+
+    
+    
+    
+    
+    this.numberOfTransactingMonths = numberOfTransactingMonths.doubleValue();
     return this;
   }
 
@@ -375,17 +567,25 @@ public class GetAccountAnalysisResponseEntityAccountBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "6", value = "")
 
-  public BigDecimal getNumberOfTransactingMonths() {
+  public Double getNumberOfTransactingMonths() {
     return numberOfTransactingMonths;
   }
 
 
-  public void setNumberOfTransactingMonths(BigDecimal numberOfTransactingMonths) {
+  public void setNumberOfTransactingMonths(Double numberOfTransactingMonths) {
+
+    
+    
+    
     this.numberOfTransactingMonths = numberOfTransactingMonths;
   }
 
 
   public GetAccountAnalysisResponseEntityAccountBreakdown periodInStatement(String periodInStatement) {
+
+    
+    
+    
     
     this.periodInStatement = periodInStatement;
     return this;
@@ -404,11 +604,19 @@ public class GetAccountAnalysisResponseEntityAccountBreakdown {
 
 
   public void setPeriodInStatement(String periodInStatement) {
+
+    
+    
+    
     this.periodInStatement = periodInStatement;
   }
 
 
   public GetAccountAnalysisResponseEntityAccountBreakdown yearInStatement(String yearInStatement) {
+
+    
+    
+    
     
     this.yearInStatement = yearInStatement;
     return this;
@@ -427,6 +635,10 @@ public class GetAccountAnalysisResponseEntityAccountBreakdown {
 
 
   public void setYearInStatement(String yearInStatement) {
+
+    
+    
+    
     this.yearInStatement = yearInStatement;
   }
 

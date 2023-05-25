@@ -13,10 +13,14 @@
 package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.model.CategorizeTransactionsRequest;
 import com.konfigthis.dojah.client.model.CategorizeTransactionsResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,7 +33,14 @@ import java.util.Map;
 @Disabled
 public class ServicesApiTest {
 
-    private final ServicesApi api = new ServicesApi();
+    private static ServicesApi api;
+
+    
+    @BeforeAll
+    public static void beforeClass() {
+        ApiClient apiClient = Configuration.getDefaultApiClient();
+        api = new ServicesApi(apiClient);
+    }
 
     /**
      * Categorize Transactions
@@ -38,8 +49,12 @@ public class ServicesApiTest {
      */
     @Test
     public void categorizeTransactionsTest() throws ApiException {
-        CategorizeTransactionsRequest categorizeTransactionsRequest = null;
-        CategorizeTransactionsResponse response = api.categorizeTransactions(categorizeTransactionsRequest);
+        String description = null;
+        String transType = null;
+        CategorizeTransactionsResponse response = api.categorizeTransactions()
+                .description(description)
+                .transType(transType)
+                .execute();
         // TODO: test validations
     }
 

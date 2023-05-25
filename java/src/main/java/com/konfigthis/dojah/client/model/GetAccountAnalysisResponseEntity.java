@@ -27,7 +27,6 @@ import com.konfigthis.dojah.client.model.GetAccountAnalysisResponseEntityTransac
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -39,6 +38,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -77,12 +77,16 @@ public class GetAccountAnalysisResponseEntity {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private BigDecimal status;
+  private Double status;
 
   public GetAccountAnalysisResponseEntity() {
   }
 
   public GetAccountAnalysisResponseEntity accountBreakdown(GetAccountAnalysisResponseEntityAccountBreakdown accountBreakdown) {
+
+    
+    
+    
     
     this.accountBreakdown = accountBreakdown;
     return this;
@@ -101,11 +105,19 @@ public class GetAccountAnalysisResponseEntity {
 
 
   public void setAccountBreakdown(GetAccountAnalysisResponseEntityAccountBreakdown accountBreakdown) {
+
+    
+    
+    
     this.accountBreakdown = accountBreakdown;
   }
 
 
   public GetAccountAnalysisResponseEntity expenseBreakdown(GetAccountAnalysisResponseEntityExpenseBreakdown expenseBreakdown) {
+
+    
+    
+    
     
     this.expenseBreakdown = expenseBreakdown;
     return this;
@@ -124,11 +136,19 @@ public class GetAccountAnalysisResponseEntity {
 
 
   public void setExpenseBreakdown(GetAccountAnalysisResponseEntityExpenseBreakdown expenseBreakdown) {
+
+    
+    
+    
     this.expenseBreakdown = expenseBreakdown;
   }
 
 
   public GetAccountAnalysisResponseEntity fundsManagement(GetAccountAnalysisResponseEntityFundsManagement fundsManagement) {
+
+    
+    
+    
     
     this.fundsManagement = fundsManagement;
     return this;
@@ -147,11 +167,19 @@ public class GetAccountAnalysisResponseEntity {
 
 
   public void setFundsManagement(GetAccountAnalysisResponseEntityFundsManagement fundsManagement) {
+
+    
+    
+    
     this.fundsManagement = fundsManagement;
   }
 
 
   public GetAccountAnalysisResponseEntity inflowBreakdown(GetAccountAnalysisResponseEntityInflowBreakdown inflowBreakdown) {
+
+    
+    
+    
     
     this.inflowBreakdown = inflowBreakdown;
     return this;
@@ -170,11 +198,19 @@ public class GetAccountAnalysisResponseEntity {
 
 
   public void setInflowBreakdown(GetAccountAnalysisResponseEntityInflowBreakdown inflowBreakdown) {
+
+    
+    
+    
     this.inflowBreakdown = inflowBreakdown;
   }
 
 
   public GetAccountAnalysisResponseEntity transactionRoutineBreakdown(GetAccountAnalysisResponseEntityTransactionRoutineBreakdown transactionRoutineBreakdown) {
+
+    
+    
+    
     
     this.transactionRoutineBreakdown = transactionRoutineBreakdown;
     return this;
@@ -193,13 +229,31 @@ public class GetAccountAnalysisResponseEntity {
 
 
   public void setTransactionRoutineBreakdown(GetAccountAnalysisResponseEntityTransactionRoutineBreakdown transactionRoutineBreakdown) {
+
+    
+    
+    
     this.transactionRoutineBreakdown = transactionRoutineBreakdown;
   }
 
 
-  public GetAccountAnalysisResponseEntity status(BigDecimal status) {
+  public GetAccountAnalysisResponseEntity status(Double status) {
+
+    
+    
+    
     
     this.status = status;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntity status(Integer status) {
+
+    
+    
+    
+    
+    this.status = status.doubleValue();
     return this;
   }
 
@@ -210,12 +264,16 @@ public class GetAccountAnalysisResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "200", value = "")
 
-  public BigDecimal getStatus() {
+  public Double getStatus() {
     return status;
   }
 
 
-  public void setStatus(BigDecimal status) {
+  public void setStatus(Double status) {
+
+    
+    
+    
     this.status = status;
   }
 

@@ -7,27 +7,27 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**maximumExpense** | **BigDecimal** |  |  [optional] |
+|**maximumExpense** | **Double** |  |  [optional] |
 |**lastCreditReceived** | **String** |  |  [optional] |
 |**lastDebitMade** | **String** |  |  [optional] |
 |**mostFrequentBalanceRange** | **String** |  |  [optional] |
 |**mostFrequentTransactionRange** | **String** |  |  [optional] |
-|**numberOfCardRequests** | **BigDecimal** |  |  [optional] |
-|**percentNumberOfDaysBalanceWasLessThan10ThousandNaira** | **BigDecimal** |  |  [optional] |
-|**percentNumberOfDaysTransactionsWasLessThan10ThousandNaira** | **BigDecimal** |  |  [optional] |
-|**percentOfBalancesBetween100ThousandTo500ThousandNaira** | **BigDecimal** |  |  [optional] |
-|**percentOfBalancesBetween10ThousandTo100ThousandNaira** | **BigDecimal** |  |  [optional] |
-|**percentOfBalancesBetween500ThousandToOneMillionNaira** | **BigDecimal** |  |  [optional] |
-|**percentOfBalancesGreaterThanOneMillionNaira** | **BigDecimal** |  |  [optional] |
-|**percentOfBalancesLessThan10ThousandNaira** | **BigDecimal** |  |  [optional] |
-|**percentOfTransactionsBetween100ThousandTo500ThousandNaira** | **BigDecimal** |  |  [optional] |
-|**percentOfTransactionsBetween10ThousandTo100ThousandNaira** | **BigDecimal** |  |  [optional] |
-|**percentOfTransactionsBetween500ThousandToOneMillionNaira** | **BigDecimal** |  |  [optional] |
-|**percentOfTransactionsGreaterThanOneMillionNaira** | **BigDecimal** |  |  [optional] |
-|**percentOfTransactionsLessThan10ThousandNaira** | **BigDecimal** |  |  [optional] |
-|**percentofCreditTransactions** | **BigDecimal** |  |  [optional] |
-|**percentofDebitTransactions** | **BigDecimal** |  |  [optional] |
-|**totalAmountOfTransactions** | **BigDecimal** |  |  [optional] |
+|**numberOfCardRequests** | **Double** |  |  [optional] |
+|**percentNumberOfDaysBalanceWasLessThan10ThousandNaira** | **Double** |  |  [optional] |
+|**percentNumberOfDaysTransactionsWasLessThan10ThousandNaira** | **Double** |  |  [optional] |
+|**percentOfBalancesBetween100ThousandTo500ThousandNaira** | **Double** |  |  [optional] |
+|**percentOfBalancesBetween10ThousandTo100ThousandNaira** | **Double** |  |  [optional] |
+|**percentOfBalancesBetween500ThousandToOneMillionNaira** | **Double** |  |  [optional] |
+|**percentOfBalancesGreaterThanOneMillionNaira** | **Double** |  |  [optional] |
+|**percentOfBalancesLessThan10ThousandNaira** | **Double** |  |  [optional] |
+|**percentOfTransactionsBetween100ThousandTo500ThousandNaira** | **Double** |  |  [optional] |
+|**percentOfTransactionsBetween10ThousandTo100ThousandNaira** | **Double** |  |  [optional] |
+|**percentOfTransactionsBetween500ThousandToOneMillionNaira** | **Double** |  |  [optional] |
+|**percentOfTransactionsGreaterThanOneMillionNaira** | **Double** |  |  [optional] |
+|**percentOfTransactionsLessThan10ThousandNaira** | **Double** |  |  [optional] |
+|**percentofCreditTransactions** | **Double** |  |  [optional] |
+|**percentofDebitTransactions** | **Double** |  |  [optional] |
+|**totalAmountOfTransactions** | **Double** |  |  [optional] |
 
 
 

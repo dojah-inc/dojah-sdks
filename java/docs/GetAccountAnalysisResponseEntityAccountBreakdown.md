@@ -7,18 +7,18 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**totalCreditEntry** | **BigDecimal** |  |  [optional] |
-|**totalDebitMade** | **BigDecimal** |  |  [optional] |
-|**averageMonthlyBalance** | **BigDecimal** |  |  [optional] |
-|**averageMonthlyCredits** | **BigDecimal** |  |  [optional] |
-|**averageMonthlyDebits** | **BigDecimal** |  |  [optional] |
-|**averageWeeklyBalance** | **BigDecimal** |  |  [optional] |
-|**averageWeeklyCredits** | **BigDecimal** |  |  [optional] |
-|**averageWeeklyDebits** | **BigDecimal** |  |  [optional] |
-|**closingBalance** | **BigDecimal** |  |  [optional] |
+|**totalCreditEntry** | **Double** |  |  [optional] |
+|**totalDebitMade** | **Double** |  |  [optional] |
+|**averageMonthlyBalance** | **Double** |  |  [optional] |
+|**averageMonthlyCredits** | **Double** |  |  [optional] |
+|**averageMonthlyDebits** | **Double** |  |  [optional] |
+|**averageWeeklyBalance** | **Double** |  |  [optional] |
+|**averageWeeklyCredits** | **Double** |  |  [optional] |
+|**averageWeeklyDebits** | **Double** |  |  [optional] |
+|**closingBalance** | **Double** |  |  [optional] |
 |**firstDateInStatement** | **String** |  |  [optional] |
 |**lastDateInStatement** | **String** |  |  [optional] |
-|**numberOfTransactingMonths** | **BigDecimal** |  |  [optional] |
+|**numberOfTransactingMonths** | **Double** |  |  [optional] |
 |**periodInStatement** | **String** |  |  [optional] |
 |**yearInStatement** | **String** |  |  [optional] |
 

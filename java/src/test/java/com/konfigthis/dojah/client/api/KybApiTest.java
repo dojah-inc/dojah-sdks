@@ -13,12 +13,16 @@
 package com.konfigthis.dojah.client.api;
 
 import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.ApiClient;
+import com.konfigthis.dojah.client.ApiException;
+import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.model.GetAdvancedCacResponse;
 import com.konfigthis.dojah.client.model.GetBasicCacResponse;
 import com.konfigthis.dojah.client.model.GetCacResponse;
 import com.konfigthis.dojah.client.model.GetTinResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,7 +35,14 @@ import java.util.Map;
 @Disabled
 public class KybApiTest {
 
-    private final KybApi api = new KybApi();
+    private static KybApi api;
+
+    
+    @BeforeAll
+    public static void beforeClass() {
+        ApiClient apiClient = Configuration.getDefaultApiClient();
+        api = new KybApi(apiClient);
+    }
 
     /**
      * KYC - Get CAC Advanced
@@ -43,7 +54,11 @@ public class KybApiTest {
         Integer rc = null;
         String type = null;
         String propertyClass = null;
-        GetAdvancedCacResponse response = api.getAdvancedCac(rc, type, propertyClass);
+        GetAdvancedCacResponse response = api.getAdvancedCac()
+                .rc(rc)
+                .type(type)
+                .propertyClass(propertyClass)
+                .execute();
         // TODO: test validations
     }
 
@@ -56,7 +71,10 @@ public class KybApiTest {
     public void getBasicCacTest() throws ApiException {
         Integer rc = null;
         String type = null;
-        GetBasicCacResponse response = api.getBasicCac(rc, type);
+        GetBasicCacResponse response = api.getBasicCac()
+                .rc(rc)
+                .type(type)
+                .execute();
         // TODO: test validations
     }
 
@@ -69,7 +87,10 @@ public class KybApiTest {
     public void getCacTest() throws ApiException {
         Integer rcNumber = null;
         String companyName = null;
-        GetCacResponse response = api.getCac(rcNumber, companyName);
+        GetCacResponse response = api.getCac()
+                .rcNumber(rcNumber)
+                .companyName(companyName)
+                .execute();
         // TODO: test validations
     }
 
@@ -81,7 +102,9 @@ public class KybApiTest {
     @Test
     public void getTinTest() throws ApiException {
         String tin = null;
-        GetTinResponse response = api.getTin(tin);
+        GetTinResponse response = api.getTin()
+                .tin(tin)
+                .execute();
         // TODO: test validations
     }
 

@@ -42,11 +42,14 @@ public class AmlApi {
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public AmlApi() {
+    public AmlApi() throws IllegalArgumentException {
         this(Configuration.getDefaultApiClient());
     }
 
-    public AmlApi(ApiClient apiClient) {
+    public AmlApi(ApiClient apiClient) throws IllegalArgumentException {
+        if (apiClient.getApikeyAuth() == null) {
+            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
+        }
         this.localVarApiClient = apiClient;
     }
 
@@ -74,19 +77,7 @@ public class AmlApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    /**
-     * Build call for getScreeningInfo
-     * @param referenceId  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getScreeningInfoCall(String referenceId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getScreeningInfoCall(String referenceId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -140,74 +131,112 @@ public class AmlApi {
 
     }
 
-    /**
-     * Get AML Info
-     * 
-     * @param referenceId  (optional)
-     * @return GetScreeningInfoResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetScreeningInfoResponse getScreeningInfo(String referenceId) throws ApiException {
-        ApiResponse<GetScreeningInfoResponse> localVarResp = getScreeningInfoWithHttpInfo(referenceId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Get AML Info
-     * 
-     * @param referenceId  (optional)
-     * @return ApiResponse&lt;GetScreeningInfoResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetScreeningInfoResponse> getScreeningInfoWithHttpInfo(String referenceId) throws ApiException {
+    private ApiResponse<GetScreeningInfoResponse> getScreeningInfoWithHttpInfo(String referenceId) throws ApiException {
         okhttp3.Call localVarCall = getScreeningInfoValidateBeforeCall(referenceId, null);
         Type localVarReturnType = new TypeToken<GetScreeningInfoResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Get AML Info (asynchronously)
-     * 
-     * @param referenceId  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getScreeningInfoAsync(String referenceId, final ApiCallback<GetScreeningInfoResponse> _callback) throws ApiException {
+    private okhttp3.Call getScreeningInfoAsync(String referenceId, final ApiCallback<GetScreeningInfoResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getScreeningInfoValidateBeforeCall(referenceId, _callback);
         Type localVarReturnType = new TypeToken<GetScreeningInfoResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetScreeningInfoRequestBuilder {
+        private String referenceId;
+
+        private GetScreeningInfoRequestBuilder() {
+        }
+
+        /**
+         * Set referenceId
+         * @param referenceId  (optional)
+         * @return GetScreeningInfoRequestBuilder
+         */
+        public GetScreeningInfoRequestBuilder referenceId(String referenceId) {
+            this.referenceId = referenceId;
+            return this;
+        }
+        
+        /**
+         * Build call for getScreeningInfo
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getScreeningInfoCall(referenceId, _callback);
+        }
+
+
+        /**
+         * Execute getScreeningInfo request
+         * @return GetScreeningInfoResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public GetScreeningInfoResponse execute() throws ApiException {
+            ApiResponse<GetScreeningInfoResponse> localVarResp = getScreeningInfoWithHttpInfo(referenceId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getScreeningInfo request with HTTP info returned
+         * @return ApiResponse&lt;GetScreeningInfoResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetScreeningInfoResponse> executeWithHttpInfo() throws ApiException {
+            return getScreeningInfoWithHttpInfo(referenceId);
+        }
+
+        /**
+         * Execute getScreeningInfo request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetScreeningInfoResponse> _callback) throws ApiException {
+            return getScreeningInfoAsync(referenceId, _callback);
+        }
+    }
+
     /**
-     * Build call for screenAml
-     * @param screenAmlRequest  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Get AML Info
+     * 
+     * @return GetScreeningInfoRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call screenAmlCall(ScreenAmlRequest screenAmlRequest, final ApiCallback _callback) throws ApiException {
+    public GetScreeningInfoRequestBuilder getScreeningInfo() throws IllegalArgumentException {
+        return new GetScreeningInfoRequestBuilder();
+    }
+    private okhttp3.Call screenAmlCall(ScreenAmlRequest screenAmlRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -258,59 +287,142 @@ public class AmlApi {
 
     }
 
-    /**
-     * AML Screening
-     * 
-     * @param screenAmlRequest  (optional)
-     * @return ScreenAmlResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
-     </table>
-     */
-    public ScreenAmlResponse screenAml(ScreenAmlRequest screenAmlRequest) throws ApiException {
-        ApiResponse<ScreenAmlResponse> localVarResp = screenAmlWithHttpInfo(screenAmlRequest);
-        return localVarResp.getData();
-    }
 
-    /**
-     * AML Screening
-     * 
-     * @param screenAmlRequest  (optional)
-     * @return ApiResponse&lt;ScreenAmlResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<ScreenAmlResponse> screenAmlWithHttpInfo(ScreenAmlRequest screenAmlRequest) throws ApiException {
+    private ApiResponse<ScreenAmlResponse> screenAmlWithHttpInfo(ScreenAmlRequest screenAmlRequest) throws ApiException {
         okhttp3.Call localVarCall = screenAmlValidateBeforeCall(screenAmlRequest, null);
         Type localVarReturnType = new TypeToken<ScreenAmlResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * AML Screening (asynchronously)
-     * 
-     * @param screenAmlRequest  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call screenAmlAsync(ScreenAmlRequest screenAmlRequest, final ApiCallback<ScreenAmlResponse> _callback) throws ApiException {
+    private okhttp3.Call screenAmlAsync(ScreenAmlRequest screenAmlRequest, final ApiCallback<ScreenAmlResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = screenAmlValidateBeforeCall(screenAmlRequest, _callback);
         Type localVarReturnType = new TypeToken<ScreenAmlResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
+    }
+
+    public class ScreenAmlRequestBuilder {
+        private String firstName;
+        private String lastName;
+        private String dateOfBirth;
+
+        private ScreenAmlRequestBuilder() {
+        }
+
+        /**
+         * Set firstName
+         * @param firstName  (optional)
+         * @return ScreenAmlRequestBuilder
+         */
+        public ScreenAmlRequestBuilder firstName(String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+        
+        /**
+         * Set lastName
+         * @param lastName  (optional)
+         * @return ScreenAmlRequestBuilder
+         */
+        public ScreenAmlRequestBuilder lastName(String lastName) {
+            this.lastName = lastName;
+            return this;
+        }
+        
+        /**
+         * Set dateOfBirth
+         * @param dateOfBirth  (optional)
+         * @return ScreenAmlRequestBuilder
+         */
+        public ScreenAmlRequestBuilder dateOfBirth(String dateOfBirth) {
+            this.dateOfBirth = dateOfBirth;
+            return this;
+        }
+        
+        /**
+         * Build call for screenAml
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            ScreenAmlRequest screenAmlRequest = buildBodyParams();
+            return screenAmlCall(screenAmlRequest, _callback);
+        }
+
+        private ScreenAmlRequest buildBodyParams() {
+            ScreenAmlRequest screenAmlRequest = new ScreenAmlRequest();
+            screenAmlRequest.firstName(this.firstName);
+            screenAmlRequest.lastName(this.lastName);
+            screenAmlRequest.dateOfBirth(this.dateOfBirth);
+            return screenAmlRequest;
+        }
+
+        /**
+         * Execute screenAml request
+         * @return ScreenAmlResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
+         </table>
+         */
+        public ScreenAmlResponse execute() throws ApiException {
+            ScreenAmlRequest screenAmlRequest = buildBodyParams();
+            ApiResponse<ScreenAmlResponse> localVarResp = screenAmlWithHttpInfo(screenAmlRequest);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute screenAml request with HTTP info returned
+         * @return ApiResponse&lt;ScreenAmlResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<ScreenAmlResponse> executeWithHttpInfo() throws ApiException {
+            ScreenAmlRequest screenAmlRequest = buildBodyParams();
+            return screenAmlWithHttpInfo(screenAmlRequest);
+        }
+
+        /**
+         * Execute screenAml request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<ScreenAmlResponse> _callback) throws ApiException {
+            ScreenAmlRequest screenAmlRequest = buildBodyParams();
+            return screenAmlAsync(screenAmlRequest, _callback);
+        }
+    }
+
+    /**
+     * AML Screening
+     * 
+     * @return ScreenAmlRequestBuilder
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
+     </table>
+     */
+    public ScreenAmlRequestBuilder screenAml() throws IllegalArgumentException {
+        return new ScreenAmlRequestBuilder();
     }
 }

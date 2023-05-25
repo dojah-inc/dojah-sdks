@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -52,7 +52,7 @@ import com.konfigthis.dojah.client.JSON;
 public class GetAccountTransactionsResponseEntityTransactionsInner {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private BigDecimal id;
+  private Double id;
 
   public static final String SERIALIZED_NAME_TRANSACTION_DATE = "transaction_date";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_DATE)
@@ -85,9 +85,23 @@ public class GetAccountTransactionsResponseEntityTransactionsInner {
   public GetAccountTransactionsResponseEntityTransactionsInner() {
   }
 
-  public GetAccountTransactionsResponseEntityTransactionsInner id(BigDecimal id) {
+  public GetAccountTransactionsResponseEntityTransactionsInner id(Double id) {
+
+    
+    
+    
     
     this.id = id;
+    return this;
+  }
+
+  public GetAccountTransactionsResponseEntityTransactionsInner id(Integer id) {
+
+    
+    
+    
+    
+    this.id = id.doubleValue();
     return this;
   }
 
@@ -98,17 +112,25 @@ public class GetAccountTransactionsResponseEntityTransactionsInner {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1870", value = "")
 
-  public BigDecimal getId() {
+  public Double getId() {
     return id;
   }
 
 
-  public void setId(BigDecimal id) {
+  public void setId(Double id) {
+
+    
+    
+    
     this.id = id;
   }
 
 
   public GetAccountTransactionsResponseEntityTransactionsInner transactionDate(String transactionDate) {
+
+    
+    
+    
     
     this.transactionDate = transactionDate;
     return this;
@@ -127,11 +149,19 @@ public class GetAccountTransactionsResponseEntityTransactionsInner {
 
 
   public void setTransactionDate(String transactionDate) {
+
+    
+    
+    
     this.transactionDate = transactionDate;
   }
 
 
   public GetAccountTransactionsResponseEntityTransactionsInner valueDate(String valueDate) {
+
+    
+    
+    
     
     this.valueDate = valueDate;
     return this;
@@ -150,11 +180,19 @@ public class GetAccountTransactionsResponseEntityTransactionsInner {
 
 
   public void setValueDate(String valueDate) {
+
+    
+    
+    
     this.valueDate = valueDate;
   }
 
 
   public GetAccountTransactionsResponseEntityTransactionsInner transType(String transType) {
+
+    
+    
+    
     
     this.transType = transType;
     return this;
@@ -173,11 +211,19 @@ public class GetAccountTransactionsResponseEntityTransactionsInner {
 
 
   public void setTransType(String transType) {
+
+    
+    
+    
     this.transType = transType;
   }
 
 
   public GetAccountTransactionsResponseEntityTransactionsInner bankName(String bankName) {
+
+    
+    
+    
     
     this.bankName = bankName;
     return this;
@@ -196,11 +242,19 @@ public class GetAccountTransactionsResponseEntityTransactionsInner {
 
 
   public void setBankName(String bankName) {
+
+    
+    
+    
     this.bankName = bankName;
   }
 
 
   public GetAccountTransactionsResponseEntityTransactionsInner amount(String amount) {
+
+    
+    
+    
     
     this.amount = amount;
     return this;
@@ -219,11 +273,19 @@ public class GetAccountTransactionsResponseEntityTransactionsInner {
 
 
   public void setAmount(String amount) {
+
+    
+    
+    
     this.amount = amount;
   }
 
 
   public GetAccountTransactionsResponseEntityTransactionsInner reference(String reference) {
+
+    
+    
+    
     
     this.reference = reference;
     return this;
@@ -242,11 +304,19 @@ public class GetAccountTransactionsResponseEntityTransactionsInner {
 
 
   public void setReference(String reference) {
+
+    
+    
+    
     this.reference = reference;
   }
 
 
   public GetAccountTransactionsResponseEntityTransactionsInner narration(String narration) {
+
+    
+    
+    
     
     this.narration = narration;
     return this;
@@ -265,6 +335,10 @@ public class GetAccountTransactionsResponseEntityTransactionsInner {
 
 
   public void setNarration(String narration) {
+
+    
+    
+    
     this.narration = narration;
   }
 

@@ -16,7 +16,7 @@ import (
 
 // GetPhoneNumber404Response struct for GetPhoneNumber404Response
 type GetPhoneNumber404Response struct {
-	Entity *GetPhoneNumberResponseEntity `json:"entity,omitempty"`
+	Entity *GetPhoneNumber404ResponseEntity `json:"entity,omitempty"`
 }
 
 // NewGetPhoneNumber404Response instantiates a new GetPhoneNumber404Response object
@@ -37,9 +37,9 @@ func NewGetPhoneNumber404ResponseWithDefaults() *GetPhoneNumber404Response {
 }
 
 // GetEntity returns the Entity field value if set, zero value otherwise.
-func (o *GetPhoneNumber404Response) GetEntity() GetPhoneNumberResponseEntity {
+func (o *GetPhoneNumber404Response) GetEntity() GetPhoneNumber404ResponseEntity {
 	if o == nil || isNil(o.Entity) {
-		var ret GetPhoneNumberResponseEntity
+		var ret GetPhoneNumber404ResponseEntity
 		return ret
 	}
 	return *o.Entity
@@ -47,7 +47,7 @@ func (o *GetPhoneNumber404Response) GetEntity() GetPhoneNumberResponseEntity {
 
 // GetEntityOk returns a tuple with the Entity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetPhoneNumber404Response) GetEntityOk() (*GetPhoneNumberResponseEntity, bool) {
+func (o *GetPhoneNumber404Response) GetEntityOk() (*GetPhoneNumber404ResponseEntity, bool) {
 	if o == nil || isNil(o.Entity) {
     return nil, false
 	}
@@ -63,8 +63,8 @@ func (o *GetPhoneNumber404Response) HasEntity() bool {
 	return false
 }
 
-// SetEntity gets a reference to the given GetPhoneNumberResponseEntity and assigns it to the Entity field.
-func (o *GetPhoneNumber404Response) SetEntity(v GetPhoneNumberResponseEntity) {
+// SetEntity gets a reference to the given GetPhoneNumber404ResponseEntity and assigns it to the Entity field.
+func (o *GetPhoneNumber404Response) SetEntity(v GetPhoneNumber404ResponseEntity) {
 	o.Entity = &v
 }
 

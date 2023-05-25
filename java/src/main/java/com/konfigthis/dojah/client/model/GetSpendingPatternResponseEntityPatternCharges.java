@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -52,22 +52,36 @@ import com.konfigthis.dojah.client.JSON;
 public class GetSpendingPatternResponseEntityPatternCharges {
   public static final String SERIALIZED_NAME_SUM = "sum";
   @SerializedName(SERIALIZED_NAME_SUM)
-  private BigDecimal sum;
+  private Double sum;
 
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
-  private BigDecimal count;
+  private Double count;
 
   public static final String SERIALIZED_NAME_PERCENTAGE = "percentage";
   @SerializedName(SERIALIZED_NAME_PERCENTAGE)
-  private BigDecimal percentage;
+  private Double percentage;
 
   public GetSpendingPatternResponseEntityPatternCharges() {
   }
 
-  public GetSpendingPatternResponseEntityPatternCharges sum(BigDecimal sum) {
+  public GetSpendingPatternResponseEntityPatternCharges sum(Double sum) {
+
+    
+    
+    
     
     this.sum = sum;
+    return this;
+  }
+
+  public GetSpendingPatternResponseEntityPatternCharges sum(Integer sum) {
+
+    
+    
+    
+    
+    this.sum = sum.doubleValue();
     return this;
   }
 
@@ -78,19 +92,37 @@ public class GetSpendingPatternResponseEntityPatternCharges {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "886", value = "")
 
-  public BigDecimal getSum() {
+  public Double getSum() {
     return sum;
   }
 
 
-  public void setSum(BigDecimal sum) {
+  public void setSum(Double sum) {
+
+    
+    
+    
     this.sum = sum;
   }
 
 
-  public GetSpendingPatternResponseEntityPatternCharges count(BigDecimal count) {
+  public GetSpendingPatternResponseEntityPatternCharges count(Double count) {
+
+    
+    
+    
     
     this.count = count;
+    return this;
+  }
+
+  public GetSpendingPatternResponseEntityPatternCharges count(Integer count) {
+
+    
+    
+    
+    
+    this.count = count.doubleValue();
     return this;
   }
 
@@ -101,19 +133,37 @@ public class GetSpendingPatternResponseEntityPatternCharges {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "27", value = "")
 
-  public BigDecimal getCount() {
+  public Double getCount() {
     return count;
   }
 
 
-  public void setCount(BigDecimal count) {
+  public void setCount(Double count) {
+
+    
+    
+    
     this.count = count;
   }
 
 
-  public GetSpendingPatternResponseEntityPatternCharges percentage(BigDecimal percentage) {
+  public GetSpendingPatternResponseEntityPatternCharges percentage(Double percentage) {
+
+    
+    
+    
     
     this.percentage = percentage;
+    return this;
+  }
+
+  public GetSpendingPatternResponseEntityPatternCharges percentage(Integer percentage) {
+
+    
+    
+    
+    
+    this.percentage = percentage.doubleValue();
     return this;
   }
 
@@ -124,12 +174,16 @@ public class GetSpendingPatternResponseEntityPatternCharges {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0.19788989071452615", value = "")
 
-  public BigDecimal getPercentage() {
+  public Double getPercentage() {
     return percentage;
   }
 
 
-  public void setPercentage(BigDecimal percentage) {
+  public void setPercentage(Double percentage) {
+
+    
+    
+    
     this.percentage = percentage;
   }
 

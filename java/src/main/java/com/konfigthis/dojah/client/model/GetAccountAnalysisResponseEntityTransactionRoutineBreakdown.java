@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -52,7 +52,7 @@ import com.konfigthis.dojah.client.JSON;
 public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   public static final String SERIALIZED_NAME_MAXIMUM_EXPENSE = "MaximumExpense";
   @SerializedName(SERIALIZED_NAME_MAXIMUM_EXPENSE)
-  private BigDecimal maximumExpense;
+  private Double maximumExpense;
 
   public static final String SERIALIZED_NAME_LAST_CREDIT_RECEIVED = "lastCreditReceived";
   @SerializedName(SERIALIZED_NAME_LAST_CREDIT_RECEIVED)
@@ -72,74 +72,88 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
 
   public static final String SERIALIZED_NAME_NUMBER_OF_CARD_REQUESTS = "numberOfCardRequests";
   @SerializedName(SERIALIZED_NAME_NUMBER_OF_CARD_REQUESTS)
-  private BigDecimal numberOfCardRequests;
+  private Double numberOfCardRequests;
 
   public static final String SERIALIZED_NAME_PERCENT_NUMBER_OF_DAYS_BALANCE_WAS_LESS_THAN10_THOUSAND_NAIRA = "percentNumberOfDaysBalanceWasLessThan10ThousandNaira";
   @SerializedName(SERIALIZED_NAME_PERCENT_NUMBER_OF_DAYS_BALANCE_WAS_LESS_THAN10_THOUSAND_NAIRA)
-  private BigDecimal percentNumberOfDaysBalanceWasLessThan10ThousandNaira;
+  private Double percentNumberOfDaysBalanceWasLessThan10ThousandNaira;
 
   public static final String SERIALIZED_NAME_PERCENT_NUMBER_OF_DAYS_TRANSACTIONS_WAS_LESS_THAN10_THOUSAND_NAIRA = "percentNumberOfDaysTransactionsWasLessThan10ThousandNaira";
   @SerializedName(SERIALIZED_NAME_PERCENT_NUMBER_OF_DAYS_TRANSACTIONS_WAS_LESS_THAN10_THOUSAND_NAIRA)
-  private BigDecimal percentNumberOfDaysTransactionsWasLessThan10ThousandNaira;
+  private Double percentNumberOfDaysTransactionsWasLessThan10ThousandNaira;
 
   public static final String SERIALIZED_NAME_PERCENT_OF_BALANCES_BETWEEN100_THOUSAND_TO500_THOUSAND_NAIRA = "percentOfBalancesBetween100ThousandTo500ThousandNaira";
   @SerializedName(SERIALIZED_NAME_PERCENT_OF_BALANCES_BETWEEN100_THOUSAND_TO500_THOUSAND_NAIRA)
-  private BigDecimal percentOfBalancesBetween100ThousandTo500ThousandNaira;
+  private Double percentOfBalancesBetween100ThousandTo500ThousandNaira;
 
   public static final String SERIALIZED_NAME_PERCENT_OF_BALANCES_BETWEEN10_THOUSAND_TO100_THOUSAND_NAIRA = "percentOfBalancesBetween10ThousandTo100ThousandNaira";
   @SerializedName(SERIALIZED_NAME_PERCENT_OF_BALANCES_BETWEEN10_THOUSAND_TO100_THOUSAND_NAIRA)
-  private BigDecimal percentOfBalancesBetween10ThousandTo100ThousandNaira;
+  private Double percentOfBalancesBetween10ThousandTo100ThousandNaira;
 
   public static final String SERIALIZED_NAME_PERCENT_OF_BALANCES_BETWEEN500_THOUSAND_TO_ONE_MILLION_NAIRA = "percentOfBalancesBetween500ThousandToOneMillionNaira";
   @SerializedName(SERIALIZED_NAME_PERCENT_OF_BALANCES_BETWEEN500_THOUSAND_TO_ONE_MILLION_NAIRA)
-  private BigDecimal percentOfBalancesBetween500ThousandToOneMillionNaira;
+  private Double percentOfBalancesBetween500ThousandToOneMillionNaira;
 
   public static final String SERIALIZED_NAME_PERCENT_OF_BALANCES_GREATER_THAN_ONE_MILLION_NAIRA = "percentOfBalancesGreaterThanOneMillionNaira";
   @SerializedName(SERIALIZED_NAME_PERCENT_OF_BALANCES_GREATER_THAN_ONE_MILLION_NAIRA)
-  private BigDecimal percentOfBalancesGreaterThanOneMillionNaira;
+  private Double percentOfBalancesGreaterThanOneMillionNaira;
 
   public static final String SERIALIZED_NAME_PERCENT_OF_BALANCES_LESS_THAN10_THOUSAND_NAIRA = "percentOfBalancesLessThan10ThousandNaira";
   @SerializedName(SERIALIZED_NAME_PERCENT_OF_BALANCES_LESS_THAN10_THOUSAND_NAIRA)
-  private BigDecimal percentOfBalancesLessThan10ThousandNaira;
+  private Double percentOfBalancesLessThan10ThousandNaira;
 
   public static final String SERIALIZED_NAME_PERCENT_OF_TRANSACTIONS_BETWEEN100_THOUSAND_TO500_THOUSAND_NAIRA = "percentOfTransactionsBetween100ThousandTo500ThousandNaira";
   @SerializedName(SERIALIZED_NAME_PERCENT_OF_TRANSACTIONS_BETWEEN100_THOUSAND_TO500_THOUSAND_NAIRA)
-  private BigDecimal percentOfTransactionsBetween100ThousandTo500ThousandNaira;
+  private Double percentOfTransactionsBetween100ThousandTo500ThousandNaira;
 
   public static final String SERIALIZED_NAME_PERCENT_OF_TRANSACTIONS_BETWEEN10_THOUSAND_TO100_THOUSAND_NAIRA = "percentOfTransactionsBetween10ThousandTo100ThousandNaira";
   @SerializedName(SERIALIZED_NAME_PERCENT_OF_TRANSACTIONS_BETWEEN10_THOUSAND_TO100_THOUSAND_NAIRA)
-  private BigDecimal percentOfTransactionsBetween10ThousandTo100ThousandNaira;
+  private Double percentOfTransactionsBetween10ThousandTo100ThousandNaira;
 
   public static final String SERIALIZED_NAME_PERCENT_OF_TRANSACTIONS_BETWEEN500_THOUSAND_TO_ONE_MILLION_NAIRA = "percentOfTransactionsBetween500ThousandToOneMillionNaira";
   @SerializedName(SERIALIZED_NAME_PERCENT_OF_TRANSACTIONS_BETWEEN500_THOUSAND_TO_ONE_MILLION_NAIRA)
-  private BigDecimal percentOfTransactionsBetween500ThousandToOneMillionNaira;
+  private Double percentOfTransactionsBetween500ThousandToOneMillionNaira;
 
   public static final String SERIALIZED_NAME_PERCENT_OF_TRANSACTIONS_GREATER_THAN_ONE_MILLION_NAIRA = "percentOfTransactionsGreaterThanOneMillionNaira";
   @SerializedName(SERIALIZED_NAME_PERCENT_OF_TRANSACTIONS_GREATER_THAN_ONE_MILLION_NAIRA)
-  private BigDecimal percentOfTransactionsGreaterThanOneMillionNaira;
+  private Double percentOfTransactionsGreaterThanOneMillionNaira;
 
   public static final String SERIALIZED_NAME_PERCENT_OF_TRANSACTIONS_LESS_THAN10_THOUSAND_NAIRA = "percentOfTransactionsLessThan10ThousandNaira";
   @SerializedName(SERIALIZED_NAME_PERCENT_OF_TRANSACTIONS_LESS_THAN10_THOUSAND_NAIRA)
-  private BigDecimal percentOfTransactionsLessThan10ThousandNaira;
+  private Double percentOfTransactionsLessThan10ThousandNaira;
 
   public static final String SERIALIZED_NAME_PERCENTOF_CREDIT_TRANSACTIONS = "percentofCreditTransactions";
   @SerializedName(SERIALIZED_NAME_PERCENTOF_CREDIT_TRANSACTIONS)
-  private BigDecimal percentofCreditTransactions;
+  private Double percentofCreditTransactions;
 
   public static final String SERIALIZED_NAME_PERCENTOF_DEBIT_TRANSACTIONS = "percentofDebitTransactions";
   @SerializedName(SERIALIZED_NAME_PERCENTOF_DEBIT_TRANSACTIONS)
-  private BigDecimal percentofDebitTransactions;
+  private Double percentofDebitTransactions;
 
   public static final String SERIALIZED_NAME_TOTAL_AMOUNT_OF_TRANSACTIONS = "totalAmountOfTransactions";
   @SerializedName(SERIALIZED_NAME_TOTAL_AMOUNT_OF_TRANSACTIONS)
-  private BigDecimal totalAmountOfTransactions;
+  private Double totalAmountOfTransactions;
 
   public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown() {
   }
 
-  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown maximumExpense(BigDecimal maximumExpense) {
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown maximumExpense(Double maximumExpense) {
+
+    
+    
+    
     
     this.maximumExpense = maximumExpense;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown maximumExpense(Integer maximumExpense) {
+
+    
+    
+    
+    
+    this.maximumExpense = maximumExpense.doubleValue();
     return this;
   }
 
@@ -150,17 +164,25 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getMaximumExpense() {
+  public Double getMaximumExpense() {
     return maximumExpense;
   }
 
 
-  public void setMaximumExpense(BigDecimal maximumExpense) {
+  public void setMaximumExpense(Double maximumExpense) {
+
+    
+    
+    
     this.maximumExpense = maximumExpense;
   }
 
 
   public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown lastCreditReceived(String lastCreditReceived) {
+
+    
+    
+    
     
     this.lastCreditReceived = lastCreditReceived;
     return this;
@@ -179,11 +201,19 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
 
 
   public void setLastCreditReceived(String lastCreditReceived) {
+
+    
+    
+    
     this.lastCreditReceived = lastCreditReceived;
   }
 
 
   public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown lastDebitMade(String lastDebitMade) {
+
+    
+    
+    
     
     this.lastDebitMade = lastDebitMade;
     return this;
@@ -202,11 +232,19 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
 
 
   public void setLastDebitMade(String lastDebitMade) {
+
+    
+    
+    
     this.lastDebitMade = lastDebitMade;
   }
 
 
   public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown mostFrequentBalanceRange(String mostFrequentBalanceRange) {
+
+    
+    
+    
     
     this.mostFrequentBalanceRange = mostFrequentBalanceRange;
     return this;
@@ -225,11 +263,19 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
 
 
   public void setMostFrequentBalanceRange(String mostFrequentBalanceRange) {
+
+    
+    
+    
     this.mostFrequentBalanceRange = mostFrequentBalanceRange;
   }
 
 
   public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown mostFrequentTransactionRange(String mostFrequentTransactionRange) {
+
+    
+    
+    
     
     this.mostFrequentTransactionRange = mostFrequentTransactionRange;
     return this;
@@ -248,13 +294,31 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
 
 
   public void setMostFrequentTransactionRange(String mostFrequentTransactionRange) {
+
+    
+    
+    
     this.mostFrequentTransactionRange = mostFrequentTransactionRange;
   }
 
 
-  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown numberOfCardRequests(BigDecimal numberOfCardRequests) {
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown numberOfCardRequests(Double numberOfCardRequests) {
+
+    
+    
+    
     
     this.numberOfCardRequests = numberOfCardRequests;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown numberOfCardRequests(Integer numberOfCardRequests) {
+
+    
+    
+    
+    
+    this.numberOfCardRequests = numberOfCardRequests.doubleValue();
     return this;
   }
 
@@ -265,19 +329,37 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getNumberOfCardRequests() {
+  public Double getNumberOfCardRequests() {
     return numberOfCardRequests;
   }
 
 
-  public void setNumberOfCardRequests(BigDecimal numberOfCardRequests) {
+  public void setNumberOfCardRequests(Double numberOfCardRequests) {
+
+    
+    
+    
     this.numberOfCardRequests = numberOfCardRequests;
   }
 
 
-  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentNumberOfDaysBalanceWasLessThan10ThousandNaira(BigDecimal percentNumberOfDaysBalanceWasLessThan10ThousandNaira) {
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentNumberOfDaysBalanceWasLessThan10ThousandNaira(Double percentNumberOfDaysBalanceWasLessThan10ThousandNaira) {
+
+    
+    
+    
     
     this.percentNumberOfDaysBalanceWasLessThan10ThousandNaira = percentNumberOfDaysBalanceWasLessThan10ThousandNaira;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentNumberOfDaysBalanceWasLessThan10ThousandNaira(Integer percentNumberOfDaysBalanceWasLessThan10ThousandNaira) {
+
+    
+    
+    
+    
+    this.percentNumberOfDaysBalanceWasLessThan10ThousandNaira = percentNumberOfDaysBalanceWasLessThan10ThousandNaira.doubleValue();
     return this;
   }
 
@@ -288,19 +370,37 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1", value = "")
 
-  public BigDecimal getPercentNumberOfDaysBalanceWasLessThan10ThousandNaira() {
+  public Double getPercentNumberOfDaysBalanceWasLessThan10ThousandNaira() {
     return percentNumberOfDaysBalanceWasLessThan10ThousandNaira;
   }
 
 
-  public void setPercentNumberOfDaysBalanceWasLessThan10ThousandNaira(BigDecimal percentNumberOfDaysBalanceWasLessThan10ThousandNaira) {
+  public void setPercentNumberOfDaysBalanceWasLessThan10ThousandNaira(Double percentNumberOfDaysBalanceWasLessThan10ThousandNaira) {
+
+    
+    
+    
     this.percentNumberOfDaysBalanceWasLessThan10ThousandNaira = percentNumberOfDaysBalanceWasLessThan10ThousandNaira;
   }
 
 
-  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentNumberOfDaysTransactionsWasLessThan10ThousandNaira(BigDecimal percentNumberOfDaysTransactionsWasLessThan10ThousandNaira) {
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentNumberOfDaysTransactionsWasLessThan10ThousandNaira(Double percentNumberOfDaysTransactionsWasLessThan10ThousandNaira) {
+
+    
+    
+    
     
     this.percentNumberOfDaysTransactionsWasLessThan10ThousandNaira = percentNumberOfDaysTransactionsWasLessThan10ThousandNaira;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentNumberOfDaysTransactionsWasLessThan10ThousandNaira(Integer percentNumberOfDaysTransactionsWasLessThan10ThousandNaira) {
+
+    
+    
+    
+    
+    this.percentNumberOfDaysTransactionsWasLessThan10ThousandNaira = percentNumberOfDaysTransactionsWasLessThan10ThousandNaira.doubleValue();
     return this;
   }
 
@@ -311,19 +411,37 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0.96", value = "")
 
-  public BigDecimal getPercentNumberOfDaysTransactionsWasLessThan10ThousandNaira() {
+  public Double getPercentNumberOfDaysTransactionsWasLessThan10ThousandNaira() {
     return percentNumberOfDaysTransactionsWasLessThan10ThousandNaira;
   }
 
 
-  public void setPercentNumberOfDaysTransactionsWasLessThan10ThousandNaira(BigDecimal percentNumberOfDaysTransactionsWasLessThan10ThousandNaira) {
+  public void setPercentNumberOfDaysTransactionsWasLessThan10ThousandNaira(Double percentNumberOfDaysTransactionsWasLessThan10ThousandNaira) {
+
+    
+    
+    
     this.percentNumberOfDaysTransactionsWasLessThan10ThousandNaira = percentNumberOfDaysTransactionsWasLessThan10ThousandNaira;
   }
 
 
-  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfBalancesBetween100ThousandTo500ThousandNaira(BigDecimal percentOfBalancesBetween100ThousandTo500ThousandNaira) {
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfBalancesBetween100ThousandTo500ThousandNaira(Double percentOfBalancesBetween100ThousandTo500ThousandNaira) {
+
+    
+    
+    
     
     this.percentOfBalancesBetween100ThousandTo500ThousandNaira = percentOfBalancesBetween100ThousandTo500ThousandNaira;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfBalancesBetween100ThousandTo500ThousandNaira(Integer percentOfBalancesBetween100ThousandTo500ThousandNaira) {
+
+    
+    
+    
+    
+    this.percentOfBalancesBetween100ThousandTo500ThousandNaira = percentOfBalancesBetween100ThousandTo500ThousandNaira.doubleValue();
     return this;
   }
 
@@ -334,19 +452,37 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getPercentOfBalancesBetween100ThousandTo500ThousandNaira() {
+  public Double getPercentOfBalancesBetween100ThousandTo500ThousandNaira() {
     return percentOfBalancesBetween100ThousandTo500ThousandNaira;
   }
 
 
-  public void setPercentOfBalancesBetween100ThousandTo500ThousandNaira(BigDecimal percentOfBalancesBetween100ThousandTo500ThousandNaira) {
+  public void setPercentOfBalancesBetween100ThousandTo500ThousandNaira(Double percentOfBalancesBetween100ThousandTo500ThousandNaira) {
+
+    
+    
+    
     this.percentOfBalancesBetween100ThousandTo500ThousandNaira = percentOfBalancesBetween100ThousandTo500ThousandNaira;
   }
 
 
-  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfBalancesBetween10ThousandTo100ThousandNaira(BigDecimal percentOfBalancesBetween10ThousandTo100ThousandNaira) {
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfBalancesBetween10ThousandTo100ThousandNaira(Double percentOfBalancesBetween10ThousandTo100ThousandNaira) {
+
+    
+    
+    
     
     this.percentOfBalancesBetween10ThousandTo100ThousandNaira = percentOfBalancesBetween10ThousandTo100ThousandNaira;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfBalancesBetween10ThousandTo100ThousandNaira(Integer percentOfBalancesBetween10ThousandTo100ThousandNaira) {
+
+    
+    
+    
+    
+    this.percentOfBalancesBetween10ThousandTo100ThousandNaira = percentOfBalancesBetween10ThousandTo100ThousandNaira.doubleValue();
     return this;
   }
 
@@ -357,19 +493,37 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getPercentOfBalancesBetween10ThousandTo100ThousandNaira() {
+  public Double getPercentOfBalancesBetween10ThousandTo100ThousandNaira() {
     return percentOfBalancesBetween10ThousandTo100ThousandNaira;
   }
 
 
-  public void setPercentOfBalancesBetween10ThousandTo100ThousandNaira(BigDecimal percentOfBalancesBetween10ThousandTo100ThousandNaira) {
+  public void setPercentOfBalancesBetween10ThousandTo100ThousandNaira(Double percentOfBalancesBetween10ThousandTo100ThousandNaira) {
+
+    
+    
+    
     this.percentOfBalancesBetween10ThousandTo100ThousandNaira = percentOfBalancesBetween10ThousandTo100ThousandNaira;
   }
 
 
-  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfBalancesBetween500ThousandToOneMillionNaira(BigDecimal percentOfBalancesBetween500ThousandToOneMillionNaira) {
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfBalancesBetween500ThousandToOneMillionNaira(Double percentOfBalancesBetween500ThousandToOneMillionNaira) {
+
+    
+    
+    
     
     this.percentOfBalancesBetween500ThousandToOneMillionNaira = percentOfBalancesBetween500ThousandToOneMillionNaira;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfBalancesBetween500ThousandToOneMillionNaira(Integer percentOfBalancesBetween500ThousandToOneMillionNaira) {
+
+    
+    
+    
+    
+    this.percentOfBalancesBetween500ThousandToOneMillionNaira = percentOfBalancesBetween500ThousandToOneMillionNaira.doubleValue();
     return this;
   }
 
@@ -380,19 +534,37 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getPercentOfBalancesBetween500ThousandToOneMillionNaira() {
+  public Double getPercentOfBalancesBetween500ThousandToOneMillionNaira() {
     return percentOfBalancesBetween500ThousandToOneMillionNaira;
   }
 
 
-  public void setPercentOfBalancesBetween500ThousandToOneMillionNaira(BigDecimal percentOfBalancesBetween500ThousandToOneMillionNaira) {
+  public void setPercentOfBalancesBetween500ThousandToOneMillionNaira(Double percentOfBalancesBetween500ThousandToOneMillionNaira) {
+
+    
+    
+    
     this.percentOfBalancesBetween500ThousandToOneMillionNaira = percentOfBalancesBetween500ThousandToOneMillionNaira;
   }
 
 
-  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfBalancesGreaterThanOneMillionNaira(BigDecimal percentOfBalancesGreaterThanOneMillionNaira) {
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfBalancesGreaterThanOneMillionNaira(Double percentOfBalancesGreaterThanOneMillionNaira) {
+
+    
+    
+    
     
     this.percentOfBalancesGreaterThanOneMillionNaira = percentOfBalancesGreaterThanOneMillionNaira;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfBalancesGreaterThanOneMillionNaira(Integer percentOfBalancesGreaterThanOneMillionNaira) {
+
+    
+    
+    
+    
+    this.percentOfBalancesGreaterThanOneMillionNaira = percentOfBalancesGreaterThanOneMillionNaira.doubleValue();
     return this;
   }
 
@@ -403,19 +575,37 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getPercentOfBalancesGreaterThanOneMillionNaira() {
+  public Double getPercentOfBalancesGreaterThanOneMillionNaira() {
     return percentOfBalancesGreaterThanOneMillionNaira;
   }
 
 
-  public void setPercentOfBalancesGreaterThanOneMillionNaira(BigDecimal percentOfBalancesGreaterThanOneMillionNaira) {
+  public void setPercentOfBalancesGreaterThanOneMillionNaira(Double percentOfBalancesGreaterThanOneMillionNaira) {
+
+    
+    
+    
     this.percentOfBalancesGreaterThanOneMillionNaira = percentOfBalancesGreaterThanOneMillionNaira;
   }
 
 
-  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfBalancesLessThan10ThousandNaira(BigDecimal percentOfBalancesLessThan10ThousandNaira) {
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfBalancesLessThan10ThousandNaira(Double percentOfBalancesLessThan10ThousandNaira) {
+
+    
+    
+    
     
     this.percentOfBalancesLessThan10ThousandNaira = percentOfBalancesLessThan10ThousandNaira;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfBalancesLessThan10ThousandNaira(Integer percentOfBalancesLessThan10ThousandNaira) {
+
+    
+    
+    
+    
+    this.percentOfBalancesLessThan10ThousandNaira = percentOfBalancesLessThan10ThousandNaira.doubleValue();
     return this;
   }
 
@@ -426,19 +616,37 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1", value = "")
 
-  public BigDecimal getPercentOfBalancesLessThan10ThousandNaira() {
+  public Double getPercentOfBalancesLessThan10ThousandNaira() {
     return percentOfBalancesLessThan10ThousandNaira;
   }
 
 
-  public void setPercentOfBalancesLessThan10ThousandNaira(BigDecimal percentOfBalancesLessThan10ThousandNaira) {
+  public void setPercentOfBalancesLessThan10ThousandNaira(Double percentOfBalancesLessThan10ThousandNaira) {
+
+    
+    
+    
     this.percentOfBalancesLessThan10ThousandNaira = percentOfBalancesLessThan10ThousandNaira;
   }
 
 
-  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfTransactionsBetween100ThousandTo500ThousandNaira(BigDecimal percentOfTransactionsBetween100ThousandTo500ThousandNaira) {
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfTransactionsBetween100ThousandTo500ThousandNaira(Double percentOfTransactionsBetween100ThousandTo500ThousandNaira) {
+
+    
+    
+    
     
     this.percentOfTransactionsBetween100ThousandTo500ThousandNaira = percentOfTransactionsBetween100ThousandTo500ThousandNaira;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfTransactionsBetween100ThousandTo500ThousandNaira(Integer percentOfTransactionsBetween100ThousandTo500ThousandNaira) {
+
+    
+    
+    
+    
+    this.percentOfTransactionsBetween100ThousandTo500ThousandNaira = percentOfTransactionsBetween100ThousandTo500ThousandNaira.doubleValue();
     return this;
   }
 
@@ -449,19 +657,37 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getPercentOfTransactionsBetween100ThousandTo500ThousandNaira() {
+  public Double getPercentOfTransactionsBetween100ThousandTo500ThousandNaira() {
     return percentOfTransactionsBetween100ThousandTo500ThousandNaira;
   }
 
 
-  public void setPercentOfTransactionsBetween100ThousandTo500ThousandNaira(BigDecimal percentOfTransactionsBetween100ThousandTo500ThousandNaira) {
+  public void setPercentOfTransactionsBetween100ThousandTo500ThousandNaira(Double percentOfTransactionsBetween100ThousandTo500ThousandNaira) {
+
+    
+    
+    
     this.percentOfTransactionsBetween100ThousandTo500ThousandNaira = percentOfTransactionsBetween100ThousandTo500ThousandNaira;
   }
 
 
-  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfTransactionsBetween10ThousandTo100ThousandNaira(BigDecimal percentOfTransactionsBetween10ThousandTo100ThousandNaira) {
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfTransactionsBetween10ThousandTo100ThousandNaira(Double percentOfTransactionsBetween10ThousandTo100ThousandNaira) {
+
+    
+    
+    
     
     this.percentOfTransactionsBetween10ThousandTo100ThousandNaira = percentOfTransactionsBetween10ThousandTo100ThousandNaira;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfTransactionsBetween10ThousandTo100ThousandNaira(Integer percentOfTransactionsBetween10ThousandTo100ThousandNaira) {
+
+    
+    
+    
+    
+    this.percentOfTransactionsBetween10ThousandTo100ThousandNaira = percentOfTransactionsBetween10ThousandTo100ThousandNaira.doubleValue();
     return this;
   }
 
@@ -472,19 +698,37 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0.12", value = "")
 
-  public BigDecimal getPercentOfTransactionsBetween10ThousandTo100ThousandNaira() {
+  public Double getPercentOfTransactionsBetween10ThousandTo100ThousandNaira() {
     return percentOfTransactionsBetween10ThousandTo100ThousandNaira;
   }
 
 
-  public void setPercentOfTransactionsBetween10ThousandTo100ThousandNaira(BigDecimal percentOfTransactionsBetween10ThousandTo100ThousandNaira) {
+  public void setPercentOfTransactionsBetween10ThousandTo100ThousandNaira(Double percentOfTransactionsBetween10ThousandTo100ThousandNaira) {
+
+    
+    
+    
     this.percentOfTransactionsBetween10ThousandTo100ThousandNaira = percentOfTransactionsBetween10ThousandTo100ThousandNaira;
   }
 
 
-  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfTransactionsBetween500ThousandToOneMillionNaira(BigDecimal percentOfTransactionsBetween500ThousandToOneMillionNaira) {
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfTransactionsBetween500ThousandToOneMillionNaira(Double percentOfTransactionsBetween500ThousandToOneMillionNaira) {
+
+    
+    
+    
     
     this.percentOfTransactionsBetween500ThousandToOneMillionNaira = percentOfTransactionsBetween500ThousandToOneMillionNaira;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfTransactionsBetween500ThousandToOneMillionNaira(Integer percentOfTransactionsBetween500ThousandToOneMillionNaira) {
+
+    
+    
+    
+    
+    this.percentOfTransactionsBetween500ThousandToOneMillionNaira = percentOfTransactionsBetween500ThousandToOneMillionNaira.doubleValue();
     return this;
   }
 
@@ -495,19 +739,37 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getPercentOfTransactionsBetween500ThousandToOneMillionNaira() {
+  public Double getPercentOfTransactionsBetween500ThousandToOneMillionNaira() {
     return percentOfTransactionsBetween500ThousandToOneMillionNaira;
   }
 
 
-  public void setPercentOfTransactionsBetween500ThousandToOneMillionNaira(BigDecimal percentOfTransactionsBetween500ThousandToOneMillionNaira) {
+  public void setPercentOfTransactionsBetween500ThousandToOneMillionNaira(Double percentOfTransactionsBetween500ThousandToOneMillionNaira) {
+
+    
+    
+    
     this.percentOfTransactionsBetween500ThousandToOneMillionNaira = percentOfTransactionsBetween500ThousandToOneMillionNaira;
   }
 
 
-  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfTransactionsGreaterThanOneMillionNaira(BigDecimal percentOfTransactionsGreaterThanOneMillionNaira) {
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfTransactionsGreaterThanOneMillionNaira(Double percentOfTransactionsGreaterThanOneMillionNaira) {
+
+    
+    
+    
     
     this.percentOfTransactionsGreaterThanOneMillionNaira = percentOfTransactionsGreaterThanOneMillionNaira;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfTransactionsGreaterThanOneMillionNaira(Integer percentOfTransactionsGreaterThanOneMillionNaira) {
+
+    
+    
+    
+    
+    this.percentOfTransactionsGreaterThanOneMillionNaira = percentOfTransactionsGreaterThanOneMillionNaira.doubleValue();
     return this;
   }
 
@@ -518,19 +780,37 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getPercentOfTransactionsGreaterThanOneMillionNaira() {
+  public Double getPercentOfTransactionsGreaterThanOneMillionNaira() {
     return percentOfTransactionsGreaterThanOneMillionNaira;
   }
 
 
-  public void setPercentOfTransactionsGreaterThanOneMillionNaira(BigDecimal percentOfTransactionsGreaterThanOneMillionNaira) {
+  public void setPercentOfTransactionsGreaterThanOneMillionNaira(Double percentOfTransactionsGreaterThanOneMillionNaira) {
+
+    
+    
+    
     this.percentOfTransactionsGreaterThanOneMillionNaira = percentOfTransactionsGreaterThanOneMillionNaira;
   }
 
 
-  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfTransactionsLessThan10ThousandNaira(BigDecimal percentOfTransactionsLessThan10ThousandNaira) {
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfTransactionsLessThan10ThousandNaira(Double percentOfTransactionsLessThan10ThousandNaira) {
+
+    
+    
+    
     
     this.percentOfTransactionsLessThan10ThousandNaira = percentOfTransactionsLessThan10ThousandNaira;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentOfTransactionsLessThan10ThousandNaira(Integer percentOfTransactionsLessThan10ThousandNaira) {
+
+    
+    
+    
+    
+    this.percentOfTransactionsLessThan10ThousandNaira = percentOfTransactionsLessThan10ThousandNaira.doubleValue();
     return this;
   }
 
@@ -541,19 +821,37 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0.88", value = "")
 
-  public BigDecimal getPercentOfTransactionsLessThan10ThousandNaira() {
+  public Double getPercentOfTransactionsLessThan10ThousandNaira() {
     return percentOfTransactionsLessThan10ThousandNaira;
   }
 
 
-  public void setPercentOfTransactionsLessThan10ThousandNaira(BigDecimal percentOfTransactionsLessThan10ThousandNaira) {
+  public void setPercentOfTransactionsLessThan10ThousandNaira(Double percentOfTransactionsLessThan10ThousandNaira) {
+
+    
+    
+    
     this.percentOfTransactionsLessThan10ThousandNaira = percentOfTransactionsLessThan10ThousandNaira;
   }
 
 
-  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentofCreditTransactions(BigDecimal percentofCreditTransactions) {
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentofCreditTransactions(Double percentofCreditTransactions) {
+
+    
+    
+    
     
     this.percentofCreditTransactions = percentofCreditTransactions;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentofCreditTransactions(Integer percentofCreditTransactions) {
+
+    
+    
+    
+    
+    this.percentofCreditTransactions = percentofCreditTransactions.doubleValue();
     return this;
   }
 
@@ -564,19 +862,37 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0.19", value = "")
 
-  public BigDecimal getPercentofCreditTransactions() {
+  public Double getPercentofCreditTransactions() {
     return percentofCreditTransactions;
   }
 
 
-  public void setPercentofCreditTransactions(BigDecimal percentofCreditTransactions) {
+  public void setPercentofCreditTransactions(Double percentofCreditTransactions) {
+
+    
+    
+    
     this.percentofCreditTransactions = percentofCreditTransactions;
   }
 
 
-  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentofDebitTransactions(BigDecimal percentofDebitTransactions) {
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentofDebitTransactions(Double percentofDebitTransactions) {
+
+    
+    
+    
     
     this.percentofDebitTransactions = percentofDebitTransactions;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown percentofDebitTransactions(Integer percentofDebitTransactions) {
+
+    
+    
+    
+    
+    this.percentofDebitTransactions = percentofDebitTransactions.doubleValue();
     return this;
   }
 
@@ -587,19 +903,37 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0.81", value = "")
 
-  public BigDecimal getPercentofDebitTransactions() {
+  public Double getPercentofDebitTransactions() {
     return percentofDebitTransactions;
   }
 
 
-  public void setPercentofDebitTransactions(BigDecimal percentofDebitTransactions) {
+  public void setPercentofDebitTransactions(Double percentofDebitTransactions) {
+
+    
+    
+    
     this.percentofDebitTransactions = percentofDebitTransactions;
   }
 
 
-  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown totalAmountOfTransactions(BigDecimal totalAmountOfTransactions) {
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown totalAmountOfTransactions(Double totalAmountOfTransactions) {
+
+    
+    
+    
     
     this.totalAmountOfTransactions = totalAmountOfTransactions;
+    return this;
+  }
+
+  public GetAccountAnalysisResponseEntityTransactionRoutineBreakdown totalAmountOfTransactions(Integer totalAmountOfTransactions) {
+
+    
+    
+    
+    
+    this.totalAmountOfTransactions = totalAmountOfTransactions.doubleValue();
     return this;
   }
 
@@ -610,12 +944,16 @@ public class GetAccountAnalysisResponseEntityTransactionRoutineBreakdown {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "129", value = "")
 
-  public BigDecimal getTotalAmountOfTransactions() {
+  public Double getTotalAmountOfTransactions() {
     return totalAmountOfTransactions;
   }
 
 
-  public void setTotalAmountOfTransactions(BigDecimal totalAmountOfTransactions) {
+  public void setTotalAmountOfTransactions(Double totalAmountOfTransactions) {
+
+    
+    
+    
     this.totalAmountOfTransactions = totalAmountOfTransactions;
   }
 

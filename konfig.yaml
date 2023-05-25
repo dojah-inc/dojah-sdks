@@ -1,8 +1,10 @@
+# yaml-language-server: $schema=https://unpkg.com/konfig-lib@latest/konfig-yaml.schema.json
+
 outputDirectory: /tmp/dojah-sdks-out
 specPath: api.yaml
 generators:
   java:
-    version: 3.0.0
+    version: 4.0.0
     groupId: com.konfigthis.dojah
     artifactId: dojah-java-sdk
     outputDirectory: java
@@ -10,7 +12,7 @@ generators:
       userId: dojah-inc
       repoId: dojah-sdks/tree/main/java
   typescript:
-    version: 3.0.0
+    version: 4.0.0
     npmName: dojah-typescript-sdk
     readmeSnippet: snippets/typescript.ts
     outputDirectory: typescript
@@ -19,7 +21,7 @@ generators:
       userId: dojah-inc
       repoId: dojah-sdks/tree/main/typescript
   python:
-    version: 3.0.0
+    version: 4.0.0
     packageName: dojah_client
     projectName: dojah-python-sdk
     outputDirectory: python
@@ -28,7 +30,7 @@ generators:
       userId: dojah-inc
       repoId: dojah-sdks/tree/main/python
   php:
-    version: 2.0.0
+    version: 4.0.0
     packageName: dojah-php-sdk
     invokerPackage: Dojah
     outputDirectory: php
@@ -36,7 +38,7 @@ generators:
       userId: dojah-inc
       repoId: dojah-php-sdk
   csharp:
-    version: 3.0.0
+    version: 4.0.0
     packageName: Dojah.Net
     outputDirectory: csharp
     logoPath: logo.png
@@ -44,7 +46,7 @@ generators:
       userId: dojah-inc
       repoId: dojah-sdks/tree/main/csharp
   go:
-    version: 3.0.0
+    version: 4.0.0
     packageName: dojah
     outputDirectory: go
     git:

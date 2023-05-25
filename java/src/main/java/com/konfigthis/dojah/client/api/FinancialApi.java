@@ -28,6 +28,7 @@ import java.io.IOException;
 
 import com.konfigthis.dojah.client.model.CollectStatusFromPdfResponse;
 import com.konfigthis.dojah.client.model.CollectTransactionsRequest;
+import com.konfigthis.dojah.client.model.CollectTransactionsRequestTransactionsInner;
 import com.konfigthis.dojah.client.model.CollectTransactionsResponse;
 import java.io.File;
 import com.konfigthis.dojah.client.model.FinancialGetBasicBvnResponse;
@@ -51,11 +52,14 @@ public class FinancialApi {
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public FinancialApi() {
+    public FinancialApi() throws IllegalArgumentException {
         this(Configuration.getDefaultApiClient());
     }
 
-    public FinancialApi(ApiClient apiClient) {
+    public FinancialApi(ApiClient apiClient) throws IllegalArgumentException {
+        if (apiClient.getApikeyAuth() == null) {
+            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
+        }
         this.localVarApiClient = apiClient;
     }
 
@@ -83,20 +87,7 @@ public class FinancialApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    /**
-     * Build call for collectStatusFromPdf
-     * @param statement  (optional)
-     * @param bankCode  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call collectStatusFromPdfCall(File statement, Integer bankCode, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call collectStatusFromPdfCall(File statement, Integer bankCode, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -155,77 +146,123 @@ public class FinancialApi {
 
     }
 
-    /**
-     * Collect Status via PDF Statement
-     * 
-     * @param statement  (optional)
-     * @param bankCode  (optional)
-     * @return CollectStatusFromPdfResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public CollectStatusFromPdfResponse collectStatusFromPdf(File statement, Integer bankCode) throws ApiException {
-        ApiResponse<CollectStatusFromPdfResponse> localVarResp = collectStatusFromPdfWithHttpInfo(statement, bankCode);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Collect Status via PDF Statement
-     * 
-     * @param statement  (optional)
-     * @param bankCode  (optional)
-     * @return ApiResponse&lt;CollectStatusFromPdfResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<CollectStatusFromPdfResponse> collectStatusFromPdfWithHttpInfo(File statement, Integer bankCode) throws ApiException {
+    private ApiResponse<CollectStatusFromPdfResponse> collectStatusFromPdfWithHttpInfo(File statement, Integer bankCode) throws ApiException {
         okhttp3.Call localVarCall = collectStatusFromPdfValidateBeforeCall(statement, bankCode, null);
         Type localVarReturnType = new TypeToken<CollectStatusFromPdfResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Collect Status via PDF Statement (asynchronously)
-     * 
-     * @param statement  (optional)
-     * @param bankCode  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call collectStatusFromPdfAsync(File statement, Integer bankCode, final ApiCallback<CollectStatusFromPdfResponse> _callback) throws ApiException {
+    private okhttp3.Call collectStatusFromPdfAsync(File statement, Integer bankCode, final ApiCallback<CollectStatusFromPdfResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = collectStatusFromPdfValidateBeforeCall(statement, bankCode, _callback);
         Type localVarReturnType = new TypeToken<CollectStatusFromPdfResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class CollectStatusFromPdfRequestBuilder {
+        private File statement;
+        private Integer bankCode;
+
+        private CollectStatusFromPdfRequestBuilder() {
+        }
+
+        /**
+         * Set statement
+         * @param statement  (optional)
+         * @return CollectStatusFromPdfRequestBuilder
+         */
+        public CollectStatusFromPdfRequestBuilder statement(File statement) {
+            this.statement = statement;
+            return this;
+        }
+        
+        /**
+         * Set bankCode
+         * @param bankCode  (optional)
+         * @return CollectStatusFromPdfRequestBuilder
+         */
+        public CollectStatusFromPdfRequestBuilder bankCode(Integer bankCode) {
+            this.bankCode = bankCode;
+            return this;
+        }
+        
+        /**
+         * Build call for collectStatusFromPdf
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return collectStatusFromPdfCall(statement, bankCode, _callback);
+        }
+
+
+        /**
+         * Execute collectStatusFromPdf request
+         * @return CollectStatusFromPdfResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public CollectStatusFromPdfResponse execute() throws ApiException {
+            ApiResponse<CollectStatusFromPdfResponse> localVarResp = collectStatusFromPdfWithHttpInfo(statement, bankCode);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute collectStatusFromPdf request with HTTP info returned
+         * @return ApiResponse&lt;CollectStatusFromPdfResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<CollectStatusFromPdfResponse> executeWithHttpInfo() throws ApiException {
+            return collectStatusFromPdfWithHttpInfo(statement, bankCode);
+        }
+
+        /**
+         * Execute collectStatusFromPdf request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<CollectStatusFromPdfResponse> _callback) throws ApiException {
+            return collectStatusFromPdfAsync(statement, bankCode, _callback);
+        }
+    }
+
     /**
-     * Build call for collectTransactions
-     * @param collectTransactionsRequest  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Collect Status via PDF Statement
+     * 
+     * @return CollectStatusFromPdfRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call collectTransactionsCall(CollectTransactionsRequest collectTransactionsRequest, final ApiCallback _callback) throws ApiException {
+    public CollectStatusFromPdfRequestBuilder collectStatusFromPdf() throws IllegalArgumentException {
+        return new CollectStatusFromPdfRequestBuilder();
+    }
+    private okhttp3.Call collectTransactionsCall(CollectTransactionsRequest collectTransactionsRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -276,74 +313,133 @@ public class FinancialApi {
 
     }
 
-    /**
-     * Collect Transactions
-     * 
-     * @param collectTransactionsRequest  (optional)
-     * @return CollectTransactionsResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public CollectTransactionsResponse collectTransactions(CollectTransactionsRequest collectTransactionsRequest) throws ApiException {
-        ApiResponse<CollectTransactionsResponse> localVarResp = collectTransactionsWithHttpInfo(collectTransactionsRequest);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Collect Transactions
-     * 
-     * @param collectTransactionsRequest  (optional)
-     * @return ApiResponse&lt;CollectTransactionsResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<CollectTransactionsResponse> collectTransactionsWithHttpInfo(CollectTransactionsRequest collectTransactionsRequest) throws ApiException {
+    private ApiResponse<CollectTransactionsResponse> collectTransactionsWithHttpInfo(CollectTransactionsRequest collectTransactionsRequest) throws ApiException {
         okhttp3.Call localVarCall = collectTransactionsValidateBeforeCall(collectTransactionsRequest, null);
         Type localVarReturnType = new TypeToken<CollectTransactionsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Collect Transactions (asynchronously)
-     * 
-     * @param collectTransactionsRequest  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call collectTransactionsAsync(CollectTransactionsRequest collectTransactionsRequest, final ApiCallback<CollectTransactionsResponse> _callback) throws ApiException {
+    private okhttp3.Call collectTransactionsAsync(CollectTransactionsRequest collectTransactionsRequest, final ApiCallback<CollectTransactionsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = collectTransactionsValidateBeforeCall(collectTransactionsRequest, _callback);
         Type localVarReturnType = new TypeToken<CollectTransactionsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class CollectTransactionsRequestBuilder {
+        private List<CollectTransactionsRequestTransactionsInner> transactions;
+        private String appId;
+
+        private CollectTransactionsRequestBuilder() {
+        }
+
+        /**
+         * Set transactions
+         * @param transactions  (optional)
+         * @return CollectTransactionsRequestBuilder
+         */
+        public CollectTransactionsRequestBuilder transactions(List<CollectTransactionsRequestTransactionsInner> transactions) {
+            this.transactions = transactions;
+            return this;
+        }
+        
+        /**
+         * Set appId
+         * @param appId  (optional)
+         * @return CollectTransactionsRequestBuilder
+         */
+        public CollectTransactionsRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
+        /**
+         * Build call for collectTransactions
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            CollectTransactionsRequest collectTransactionsRequest = buildBodyParams();
+            return collectTransactionsCall(collectTransactionsRequest, _callback);
+        }
+
+        private CollectTransactionsRequest buildBodyParams() {
+            CollectTransactionsRequest collectTransactionsRequest = new CollectTransactionsRequest();
+            collectTransactionsRequest.transactions(this.transactions);
+            collectTransactionsRequest.appId(this.appId);
+            return collectTransactionsRequest;
+        }
+
+        /**
+         * Execute collectTransactions request
+         * @return CollectTransactionsResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public CollectTransactionsResponse execute() throws ApiException {
+            CollectTransactionsRequest collectTransactionsRequest = buildBodyParams();
+            ApiResponse<CollectTransactionsResponse> localVarResp = collectTransactionsWithHttpInfo(collectTransactionsRequest);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute collectTransactions request with HTTP info returned
+         * @return ApiResponse&lt;CollectTransactionsResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<CollectTransactionsResponse> executeWithHttpInfo() throws ApiException {
+            CollectTransactionsRequest collectTransactionsRequest = buildBodyParams();
+            return collectTransactionsWithHttpInfo(collectTransactionsRequest);
+        }
+
+        /**
+         * Execute collectTransactions request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<CollectTransactionsResponse> _callback) throws ApiException {
+            CollectTransactionsRequest collectTransactionsRequest = buildBodyParams();
+            return collectTransactionsAsync(collectTransactionsRequest, _callback);
+        }
+    }
+
     /**
-     * Build call for getAccount
-     * @param accountId  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Collect Transactions
+     * 
+     * @return CollectTransactionsRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAccountCall(String accountId, final ApiCallback _callback) throws ApiException {
+    public CollectTransactionsRequestBuilder collectTransactions() throws IllegalArgumentException {
+        return new CollectTransactionsRequestBuilder();
+    }
+    private okhttp3.Call getAccountCall(String accountId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -397,73 +493,112 @@ public class FinancialApi {
 
     }
 
-    /**
-     * Get Account Information
-     * /services/@app_id/account/@account_id
-     * @param accountId  (optional)
-     * @return GetAccountResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public GetAccountResponse getAccount(String accountId) throws ApiException {
-        ApiResponse<GetAccountResponse> localVarResp = getAccountWithHttpInfo(accountId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Get Account Information
-     * /services/@app_id/account/@account_id
-     * @param accountId  (optional)
-     * @return ApiResponse&lt;GetAccountResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetAccountResponse> getAccountWithHttpInfo(String accountId) throws ApiException {
+    private ApiResponse<GetAccountResponse> getAccountWithHttpInfo(String accountId) throws ApiException {
         okhttp3.Call localVarCall = getAccountValidateBeforeCall(accountId, null);
         Type localVarReturnType = new TypeToken<GetAccountResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Get Account Information (asynchronously)
-     * /services/@app_id/account/@account_id
-     * @param accountId  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getAccountAsync(String accountId, final ApiCallback<GetAccountResponse> _callback) throws ApiException {
+    private okhttp3.Call getAccountAsync(String accountId, final ApiCallback<GetAccountResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAccountValidateBeforeCall(accountId, _callback);
         Type localVarReturnType = new TypeToken<GetAccountResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetAccountRequestBuilder {
+        private String accountId;
+
+        private GetAccountRequestBuilder() {
+        }
+
+        /**
+         * Set accountId
+         * @param accountId  (optional)
+         * @return GetAccountRequestBuilder
+         */
+        public GetAccountRequestBuilder accountId(String accountId) {
+            this.accountId = accountId;
+            return this;
+        }
+        
+        /**
+         * Build call for getAccount
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getAccountCall(accountId, _callback);
+        }
+
+
+        /**
+         * Execute getAccount request
+         * @return GetAccountResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public GetAccountResponse execute() throws ApiException {
+            ApiResponse<GetAccountResponse> localVarResp = getAccountWithHttpInfo(accountId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getAccount request with HTTP info returned
+         * @return ApiResponse&lt;GetAccountResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetAccountResponse> executeWithHttpInfo() throws ApiException {
+            return getAccountWithHttpInfo(accountId);
+        }
+
+        /**
+         * Execute getAccount request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetAccountResponse> _callback) throws ApiException {
+            return getAccountAsync(accountId, _callback);
+        }
+    }
+
     /**
-     * Build call for getAccountAnalysis
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Get Account Information
+     * /services/@app_id/account/@account_id
+     * @return GetAccountRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * uuid -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getAccountAnalysisCall(final ApiCallback _callback) throws ApiException {
+    public GetAccountRequestBuilder getAccount() throws IllegalArgumentException {
+        return new GetAccountRequestBuilder();
+    }
+    private okhttp3.Call getAccountAnalysisCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -513,71 +648,101 @@ public class FinancialApi {
 
     }
 
-    /**
-     * Get Account Analysis
-     * 
-     * @return GetAccountAnalysisResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * uuid -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public GetAccountAnalysisResponse getAccountAnalysis() throws ApiException {
-        ApiResponse<GetAccountAnalysisResponse> localVarResp = getAccountAnalysisWithHttpInfo();
-        return localVarResp.getData();
-    }
 
-    /**
-     * Get Account Analysis
-     * 
-     * @return ApiResponse&lt;GetAccountAnalysisResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * uuid -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetAccountAnalysisResponse> getAccountAnalysisWithHttpInfo() throws ApiException {
+    private ApiResponse<GetAccountAnalysisResponse> getAccountAnalysisWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = getAccountAnalysisValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<GetAccountAnalysisResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Get Account Analysis (asynchronously)
-     * 
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * uuid -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getAccountAnalysisAsync(final ApiCallback<GetAccountAnalysisResponse> _callback) throws ApiException {
+    private okhttp3.Call getAccountAnalysisAsync(final ApiCallback<GetAccountAnalysisResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAccountAnalysisValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<GetAccountAnalysisResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetAccountAnalysisRequestBuilder {
+
+        private GetAccountAnalysisRequestBuilder() {
+        }
+
+        /**
+         * Build call for getAccountAnalysis
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * uuid -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getAccountAnalysisCall(_callback);
+        }
+
+
+        /**
+         * Execute getAccountAnalysis request
+         * @return GetAccountAnalysisResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * uuid -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public GetAccountAnalysisResponse execute() throws ApiException {
+            ApiResponse<GetAccountAnalysisResponse> localVarResp = getAccountAnalysisWithHttpInfo();
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getAccountAnalysis request with HTTP info returned
+         * @return ApiResponse&lt;GetAccountAnalysisResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * uuid -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetAccountAnalysisResponse> executeWithHttpInfo() throws ApiException {
+            return getAccountAnalysisWithHttpInfo();
+        }
+
+        /**
+         * Execute getAccountAnalysis request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * uuid -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetAccountAnalysisResponse> _callback) throws ApiException {
+            return getAccountAnalysisAsync(_callback);
+        }
+    }
+
     /**
-     * Build call for getAccountSubscriptions
-     * @param accountId  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Get Account Analysis
+     * 
+     * @return GetAccountAnalysisRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * uuid -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getAccountSubscriptionsCall(String accountId, final ApiCallback _callback) throws ApiException {
+    public GetAccountAnalysisRequestBuilder getAccountAnalysis() throws IllegalArgumentException {
+        return new GetAccountAnalysisRequestBuilder();
+    }
+    private okhttp3.Call getAccountSubscriptionsCall(String accountId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -631,75 +796,112 @@ public class FinancialApi {
 
     }
 
-    /**
-     * Get Account Subscriptions
-     * 
-     * @param accountId  (optional)
-     * @return GetAccountSubscriptionsResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public GetAccountSubscriptionsResponse getAccountSubscriptions(String accountId) throws ApiException {
-        ApiResponse<GetAccountSubscriptionsResponse> localVarResp = getAccountSubscriptionsWithHttpInfo(accountId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Get Account Subscriptions
-     * 
-     * @param accountId  (optional)
-     * @return ApiResponse&lt;GetAccountSubscriptionsResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetAccountSubscriptionsResponse> getAccountSubscriptionsWithHttpInfo(String accountId) throws ApiException {
+    private ApiResponse<GetAccountSubscriptionsResponse> getAccountSubscriptionsWithHttpInfo(String accountId) throws ApiException {
         okhttp3.Call localVarCall = getAccountSubscriptionsValidateBeforeCall(accountId, null);
         Type localVarReturnType = new TypeToken<GetAccountSubscriptionsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Get Account Subscriptions (asynchronously)
-     * 
-     * @param accountId  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getAccountSubscriptionsAsync(String accountId, final ApiCallback<GetAccountSubscriptionsResponse> _callback) throws ApiException {
+    private okhttp3.Call getAccountSubscriptionsAsync(String accountId, final ApiCallback<GetAccountSubscriptionsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAccountSubscriptionsValidateBeforeCall(accountId, _callback);
         Type localVarReturnType = new TypeToken<GetAccountSubscriptionsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetAccountSubscriptionsRequestBuilder {
+        private String accountId;
+
+        private GetAccountSubscriptionsRequestBuilder() {
+        }
+
+        /**
+         * Set accountId
+         * @param accountId  (optional)
+         * @return GetAccountSubscriptionsRequestBuilder
+         */
+        public GetAccountSubscriptionsRequestBuilder accountId(String accountId) {
+            this.accountId = accountId;
+            return this;
+        }
+        
+        /**
+         * Build call for getAccountSubscriptions
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getAccountSubscriptionsCall(accountId, _callback);
+        }
+
+
+        /**
+         * Execute getAccountSubscriptions request
+         * @return GetAccountSubscriptionsResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public GetAccountSubscriptionsResponse execute() throws ApiException {
+            ApiResponse<GetAccountSubscriptionsResponse> localVarResp = getAccountSubscriptionsWithHttpInfo(accountId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getAccountSubscriptions request with HTTP info returned
+         * @return ApiResponse&lt;GetAccountSubscriptionsResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetAccountSubscriptionsResponse> executeWithHttpInfo() throws ApiException {
+            return getAccountSubscriptionsWithHttpInfo(accountId);
+        }
+
+        /**
+         * Execute getAccountSubscriptions request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetAccountSubscriptionsResponse> _callback) throws ApiException {
+            return getAccountSubscriptionsAsync(accountId, _callback);
+        }
+    }
+
     /**
-     * Build call for getAccountTransactions
-     * @param accountId  (optional)
-     * @param length  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Get Account Subscriptions
+     * 
+     * @return GetAccountSubscriptionsRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getAccountTransactionsCall(String accountId, Integer length, final ApiCallback _callback) throws ApiException {
+    public GetAccountSubscriptionsRequestBuilder getAccountSubscriptions() throws IllegalArgumentException {
+        return new GetAccountSubscriptionsRequestBuilder();
+    }
+    private okhttp3.Call getAccountTransactionsCall(String accountId, Integer length, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -757,77 +959,123 @@ public class FinancialApi {
 
     }
 
-    /**
-     * Get Account Transactions
-     * 
-     * @param accountId  (optional)
-     * @param length  (optional)
-     * @return GetAccountTransactionsResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public GetAccountTransactionsResponse getAccountTransactions(String accountId, Integer length) throws ApiException {
-        ApiResponse<GetAccountTransactionsResponse> localVarResp = getAccountTransactionsWithHttpInfo(accountId, length);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Get Account Transactions
-     * 
-     * @param accountId  (optional)
-     * @param length  (optional)
-     * @return ApiResponse&lt;GetAccountTransactionsResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetAccountTransactionsResponse> getAccountTransactionsWithHttpInfo(String accountId, Integer length) throws ApiException {
+    private ApiResponse<GetAccountTransactionsResponse> getAccountTransactionsWithHttpInfo(String accountId, Integer length) throws ApiException {
         okhttp3.Call localVarCall = getAccountTransactionsValidateBeforeCall(accountId, length, null);
         Type localVarReturnType = new TypeToken<GetAccountTransactionsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Get Account Transactions (asynchronously)
-     * 
-     * @param accountId  (optional)
-     * @param length  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getAccountTransactionsAsync(String accountId, Integer length, final ApiCallback<GetAccountTransactionsResponse> _callback) throws ApiException {
+    private okhttp3.Call getAccountTransactionsAsync(String accountId, Integer length, final ApiCallback<GetAccountTransactionsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAccountTransactionsValidateBeforeCall(accountId, length, _callback);
         Type localVarReturnType = new TypeToken<GetAccountTransactionsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetAccountTransactionsRequestBuilder {
+        private String accountId;
+        private Integer length;
+
+        private GetAccountTransactionsRequestBuilder() {
+        }
+
+        /**
+         * Set accountId
+         * @param accountId  (optional)
+         * @return GetAccountTransactionsRequestBuilder
+         */
+        public GetAccountTransactionsRequestBuilder accountId(String accountId) {
+            this.accountId = accountId;
+            return this;
+        }
+        
+        /**
+         * Set length
+         * @param length  (optional)
+         * @return GetAccountTransactionsRequestBuilder
+         */
+        public GetAccountTransactionsRequestBuilder length(Integer length) {
+            this.length = length;
+            return this;
+        }
+        
+        /**
+         * Build call for getAccountTransactions
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getAccountTransactionsCall(accountId, length, _callback);
+        }
+
+
+        /**
+         * Execute getAccountTransactions request
+         * @return GetAccountTransactionsResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public GetAccountTransactionsResponse execute() throws ApiException {
+            ApiResponse<GetAccountTransactionsResponse> localVarResp = getAccountTransactionsWithHttpInfo(accountId, length);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getAccountTransactions request with HTTP info returned
+         * @return ApiResponse&lt;GetAccountTransactionsResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetAccountTransactionsResponse> executeWithHttpInfo() throws ApiException {
+            return getAccountTransactionsWithHttpInfo(accountId, length);
+        }
+
+        /**
+         * Execute getAccountTransactions request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetAccountTransactionsResponse> _callback) throws ApiException {
+            return getAccountTransactionsAsync(accountId, length, _callback);
+        }
+    }
+
     /**
-     * Build call for getBasicBvn
-     * @param accountId  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Get Account Transactions
+     * 
+     * @return GetAccountTransactionsRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getBasicBvnCall(String accountId, final ApiCallback _callback) throws ApiException {
+    public GetAccountTransactionsRequestBuilder getAccountTransactions() throws IllegalArgumentException {
+        return new GetAccountTransactionsRequestBuilder();
+    }
+    private okhttp3.Call getBasicBvnCall(String accountId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -881,74 +1129,112 @@ public class FinancialApi {
 
     }
 
-    /**
-     * Get BVN Information Basic
-     * 
-     * @param accountId  (optional)
-     * @return FinancialGetBasicBvnResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public FinancialGetBasicBvnResponse getBasicBvn(String accountId) throws ApiException {
-        ApiResponse<FinancialGetBasicBvnResponse> localVarResp = getBasicBvnWithHttpInfo(accountId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Get BVN Information Basic
-     * 
-     * @param accountId  (optional)
-     * @return ApiResponse&lt;FinancialGetBasicBvnResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<FinancialGetBasicBvnResponse> getBasicBvnWithHttpInfo(String accountId) throws ApiException {
+    private ApiResponse<FinancialGetBasicBvnResponse> getBasicBvnWithHttpInfo(String accountId) throws ApiException {
         okhttp3.Call localVarCall = getBasicBvnValidateBeforeCall(accountId, null);
         Type localVarReturnType = new TypeToken<FinancialGetBasicBvnResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Get BVN Information Basic (asynchronously)
-     * 
-     * @param accountId  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getBasicBvnAsync(String accountId, final ApiCallback<FinancialGetBasicBvnResponse> _callback) throws ApiException {
+    private okhttp3.Call getBasicBvnAsync(String accountId, final ApiCallback<FinancialGetBasicBvnResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getBasicBvnValidateBeforeCall(accountId, _callback);
         Type localVarReturnType = new TypeToken<FinancialGetBasicBvnResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetBasicBvnRequestBuilder {
+        private String accountId;
+
+        private GetBasicBvnRequestBuilder() {
+        }
+
+        /**
+         * Set accountId
+         * @param accountId  (optional)
+         * @return GetBasicBvnRequestBuilder
+         */
+        public GetBasicBvnRequestBuilder accountId(String accountId) {
+            this.accountId = accountId;
+            return this;
+        }
+        
+        /**
+         * Build call for getBasicBvn
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getBasicBvnCall(accountId, _callback);
+        }
+
+
+        /**
+         * Execute getBasicBvn request
+         * @return FinancialGetBasicBvnResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public FinancialGetBasicBvnResponse execute() throws ApiException {
+            ApiResponse<FinancialGetBasicBvnResponse> localVarResp = getBasicBvnWithHttpInfo(accountId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getBasicBvn request with HTTP info returned
+         * @return ApiResponse&lt;FinancialGetBasicBvnResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<FinancialGetBasicBvnResponse> executeWithHttpInfo() throws ApiException {
+            return getBasicBvnWithHttpInfo(accountId);
+        }
+
+        /**
+         * Execute getBasicBvn request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FinancialGetBasicBvnResponse> _callback) throws ApiException {
+            return getBasicBvnAsync(accountId, _callback);
+        }
+    }
+
     /**
-     * Build call for getEarningStructure
-     * @param accountId  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Get BVN Information Basic
+     * 
+     * @return GetBasicBvnRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getEarningStructureCall(String accountId, final ApiCallback _callback) throws ApiException {
+    public GetBasicBvnRequestBuilder getBasicBvn() throws IllegalArgumentException {
+        return new GetBasicBvnRequestBuilder();
+    }
+    private okhttp3.Call getEarningStructureCall(String accountId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1002,74 +1288,112 @@ public class FinancialApi {
 
     }
 
-    /**
-     * Get Earning Structure
-     * 
-     * @param accountId  (optional)
-     * @return GetEarningStructureResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public GetEarningStructureResponse getEarningStructure(String accountId) throws ApiException {
-        ApiResponse<GetEarningStructureResponse> localVarResp = getEarningStructureWithHttpInfo(accountId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Get Earning Structure
-     * 
-     * @param accountId  (optional)
-     * @return ApiResponse&lt;GetEarningStructureResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetEarningStructureResponse> getEarningStructureWithHttpInfo(String accountId) throws ApiException {
+    private ApiResponse<GetEarningStructureResponse> getEarningStructureWithHttpInfo(String accountId) throws ApiException {
         okhttp3.Call localVarCall = getEarningStructureValidateBeforeCall(accountId, null);
         Type localVarReturnType = new TypeToken<GetEarningStructureResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Get Earning Structure (asynchronously)
-     * 
-     * @param accountId  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getEarningStructureAsync(String accountId, final ApiCallback<GetEarningStructureResponse> _callback) throws ApiException {
+    private okhttp3.Call getEarningStructureAsync(String accountId, final ApiCallback<GetEarningStructureResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getEarningStructureValidateBeforeCall(accountId, _callback);
         Type localVarReturnType = new TypeToken<GetEarningStructureResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetEarningStructureRequestBuilder {
+        private String accountId;
+
+        private GetEarningStructureRequestBuilder() {
+        }
+
+        /**
+         * Set accountId
+         * @param accountId  (optional)
+         * @return GetEarningStructureRequestBuilder
+         */
+        public GetEarningStructureRequestBuilder accountId(String accountId) {
+            this.accountId = accountId;
+            return this;
+        }
+        
+        /**
+         * Build call for getEarningStructure
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getEarningStructureCall(accountId, _callback);
+        }
+
+
+        /**
+         * Execute getEarningStructure request
+         * @return GetEarningStructureResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public GetEarningStructureResponse execute() throws ApiException {
+            ApiResponse<GetEarningStructureResponse> localVarResp = getEarningStructureWithHttpInfo(accountId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getEarningStructure request with HTTP info returned
+         * @return ApiResponse&lt;GetEarningStructureResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetEarningStructureResponse> executeWithHttpInfo() throws ApiException {
+            return getEarningStructureWithHttpInfo(accountId);
+        }
+
+        /**
+         * Execute getEarningStructure request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetEarningStructureResponse> _callback) throws ApiException {
+            return getEarningStructureAsync(accountId, _callback);
+        }
+    }
+
     /**
-     * Build call for getFullBvn
-     * @param accountId  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Get Earning Structure
+     * 
+     * @return GetEarningStructureRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getFullBvnCall(String accountId, final ApiCallback _callback) throws ApiException {
+    public GetEarningStructureRequestBuilder getEarningStructure() throws IllegalArgumentException {
+        return new GetEarningStructureRequestBuilder();
+    }
+    private okhttp3.Call getFullBvnCall(String accountId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1123,74 +1447,112 @@ public class FinancialApi {
 
     }
 
-    /**
-     * Get BVN Information Full
-     * 
-     * @param accountId  (optional)
-     * @return FinancialGetFullBvnResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public FinancialGetFullBvnResponse getFullBvn(String accountId) throws ApiException {
-        ApiResponse<FinancialGetFullBvnResponse> localVarResp = getFullBvnWithHttpInfo(accountId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Get BVN Information Full
-     * 
-     * @param accountId  (optional)
-     * @return ApiResponse&lt;FinancialGetFullBvnResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<FinancialGetFullBvnResponse> getFullBvnWithHttpInfo(String accountId) throws ApiException {
+    private ApiResponse<FinancialGetFullBvnResponse> getFullBvnWithHttpInfo(String accountId) throws ApiException {
         okhttp3.Call localVarCall = getFullBvnValidateBeforeCall(accountId, null);
         Type localVarReturnType = new TypeToken<FinancialGetFullBvnResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Get BVN Information Full (asynchronously)
-     * 
-     * @param accountId  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getFullBvnAsync(String accountId, final ApiCallback<FinancialGetFullBvnResponse> _callback) throws ApiException {
+    private okhttp3.Call getFullBvnAsync(String accountId, final ApiCallback<FinancialGetFullBvnResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFullBvnValidateBeforeCall(accountId, _callback);
         Type localVarReturnType = new TypeToken<FinancialGetFullBvnResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetFullBvnRequestBuilder {
+        private String accountId;
+
+        private GetFullBvnRequestBuilder() {
+        }
+
+        /**
+         * Set accountId
+         * @param accountId  (optional)
+         * @return GetFullBvnRequestBuilder
+         */
+        public GetFullBvnRequestBuilder accountId(String accountId) {
+            this.accountId = accountId;
+            return this;
+        }
+        
+        /**
+         * Build call for getFullBvn
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getFullBvnCall(accountId, _callback);
+        }
+
+
+        /**
+         * Execute getFullBvn request
+         * @return FinancialGetFullBvnResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public FinancialGetFullBvnResponse execute() throws ApiException {
+            ApiResponse<FinancialGetFullBvnResponse> localVarResp = getFullBvnWithHttpInfo(accountId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getFullBvn request with HTTP info returned
+         * @return ApiResponse&lt;FinancialGetFullBvnResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<FinancialGetFullBvnResponse> executeWithHttpInfo() throws ApiException {
+            return getFullBvnWithHttpInfo(accountId);
+        }
+
+        /**
+         * Execute getFullBvn request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FinancialGetFullBvnResponse> _callback) throws ApiException {
+            return getFullBvnAsync(accountId, _callback);
+        }
+    }
+
     /**
-     * Build call for getSpendingPattern
-     * @param accountId  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Get BVN Information Full
+     * 
+     * @return GetFullBvnRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getSpendingPatternCall(String accountId, final ApiCallback _callback) throws ApiException {
+    public GetFullBvnRequestBuilder getFullBvn() throws IllegalArgumentException {
+        return new GetFullBvnRequestBuilder();
+    }
+    private okhttp3.Call getSpendingPatternCall(String accountId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1244,59 +1606,109 @@ public class FinancialApi {
 
     }
 
-    /**
-     * Get Spending Pattern
-     * 
-     * @param accountId  (optional)
-     * @return GetSpendingPatternResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public GetSpendingPatternResponse getSpendingPattern(String accountId) throws ApiException {
-        ApiResponse<GetSpendingPatternResponse> localVarResp = getSpendingPatternWithHttpInfo(accountId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Get Spending Pattern
-     * 
-     * @param accountId  (optional)
-     * @return ApiResponse&lt;GetSpendingPatternResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetSpendingPatternResponse> getSpendingPatternWithHttpInfo(String accountId) throws ApiException {
+    private ApiResponse<GetSpendingPatternResponse> getSpendingPatternWithHttpInfo(String accountId) throws ApiException {
         okhttp3.Call localVarCall = getSpendingPatternValidateBeforeCall(accountId, null);
         Type localVarReturnType = new TypeToken<GetSpendingPatternResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Get Spending Pattern (asynchronously)
-     * 
-     * @param accountId  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getSpendingPatternAsync(String accountId, final ApiCallback<GetSpendingPatternResponse> _callback) throws ApiException {
+    private okhttp3.Call getSpendingPatternAsync(String accountId, final ApiCallback<GetSpendingPatternResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSpendingPatternValidateBeforeCall(accountId, _callback);
         Type localVarReturnType = new TypeToken<GetSpendingPatternResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
+    }
+
+    public class GetSpendingPatternRequestBuilder {
+        private String accountId;
+
+        private GetSpendingPatternRequestBuilder() {
+        }
+
+        /**
+         * Set accountId
+         * @param accountId  (optional)
+         * @return GetSpendingPatternRequestBuilder
+         */
+        public GetSpendingPatternRequestBuilder accountId(String accountId) {
+            this.accountId = accountId;
+            return this;
+        }
+        
+        /**
+         * Build call for getSpendingPattern
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getSpendingPatternCall(accountId, _callback);
+        }
+
+
+        /**
+         * Execute getSpendingPattern request
+         * @return GetSpendingPatternResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public GetSpendingPatternResponse execute() throws ApiException {
+            ApiResponse<GetSpendingPatternResponse> localVarResp = getSpendingPatternWithHttpInfo(accountId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getSpendingPattern request with HTTP info returned
+         * @return ApiResponse&lt;GetSpendingPatternResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetSpendingPatternResponse> executeWithHttpInfo() throws ApiException {
+            return getSpendingPatternWithHttpInfo(accountId);
+        }
+
+        /**
+         * Execute getSpendingPattern request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetSpendingPatternResponse> _callback) throws ApiException {
+            return getSpendingPatternAsync(accountId, _callback);
+        }
+    }
+
+    /**
+     * Get Spending Pattern
+     * 
+     * @return GetSpendingPatternRequestBuilder
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+     </table>
+     */
+    public GetSpendingPatternRequestBuilder getSpendingPattern() throws IllegalArgumentException {
+        return new GetSpendingPatternRequestBuilder();
     }
 }

@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -112,12 +112,16 @@ public class GetPassportResponseEntity {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private BigDecimal status;
+  private Double status;
 
   public GetPassportResponseEntity() {
   }
 
   public GetPassportResponseEntity dateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     
     this.dateOfBirth = dateOfBirth;
     return this;
@@ -136,11 +140,19 @@ public class GetPassportResponseEntity {
 
 
   public void setDateOfBirth(String dateOfBirth) {
+
+    
+    
+    
     this.dateOfBirth = dateOfBirth;
   }
 
 
   public GetPassportResponseEntity expiryDate(String expiryDate) {
+
+    
+    
+    
     
     this.expiryDate = expiryDate;
     return this;
@@ -159,11 +171,19 @@ public class GetPassportResponseEntity {
 
 
   public void setExpiryDate(String expiryDate) {
+
+    
+    
+    
     this.expiryDate = expiryDate;
   }
 
 
   public GetPassportResponseEntity firstName(String firstName) {
+
+    
+    
+    
     
     this.firstName = firstName;
     return this;
@@ -182,11 +202,19 @@ public class GetPassportResponseEntity {
 
 
   public void setFirstName(String firstName) {
+
+    
+    
+    
     this.firstName = firstName;
   }
 
 
   public GetPassportResponseEntity gender(String gender) {
+
+    
+    
+    
     
     this.gender = gender;
     return this;
@@ -205,11 +233,19 @@ public class GetPassportResponseEntity {
 
 
   public void setGender(String gender) {
+
+    
+    
+    
     this.gender = gender;
   }
 
 
   public GetPassportResponseEntity id(String id) {
+
+    
+    
+    
     
     this.id = id;
     return this;
@@ -228,11 +264,19 @@ public class GetPassportResponseEntity {
 
 
   public void setId(String id) {
+
+    
+    
+    
     this.id = id;
   }
 
 
   public GetPassportResponseEntity isDateOfBirthMatch(Boolean isDateOfBirthMatch) {
+
+    
+    
+    
     
     this.isDateOfBirthMatch = isDateOfBirthMatch;
     return this;
@@ -251,11 +295,19 @@ public class GetPassportResponseEntity {
 
 
   public void setIsDateOfBirthMatch(Boolean isDateOfBirthMatch) {
+
+    
+    
+    
     this.isDateOfBirthMatch = isDateOfBirthMatch;
   }
 
 
   public GetPassportResponseEntity isFirstNameMatch(Boolean isFirstNameMatch) {
+
+    
+    
+    
     
     this.isFirstNameMatch = isFirstNameMatch;
     return this;
@@ -274,11 +326,19 @@ public class GetPassportResponseEntity {
 
 
   public void setIsFirstNameMatch(Boolean isFirstNameMatch) {
+
+    
+    
+    
     this.isFirstNameMatch = isFirstNameMatch;
   }
 
 
   public GetPassportResponseEntity isLastNameMatch(Boolean isLastNameMatch) {
+
+    
+    
+    
     
     this.isLastNameMatch = isLastNameMatch;
     return this;
@@ -297,11 +357,19 @@ public class GetPassportResponseEntity {
 
 
   public void setIsLastNameMatch(Boolean isLastNameMatch) {
+
+    
+    
+    
     this.isLastNameMatch = isLastNameMatch;
   }
 
 
   public GetPassportResponseEntity isMiddleNameMatch(Boolean isMiddleNameMatch) {
+
+    
+    
+    
     
     this.isMiddleNameMatch = isMiddleNameMatch;
     return this;
@@ -320,11 +388,19 @@ public class GetPassportResponseEntity {
 
 
   public void setIsMiddleNameMatch(Boolean isMiddleNameMatch) {
+
+    
+    
+    
     this.isMiddleNameMatch = isMiddleNameMatch;
   }
 
 
   public GetPassportResponseEntity issueDate(String issueDate) {
+
+    
+    
+    
     
     this.issueDate = issueDate;
     return this;
@@ -343,11 +419,19 @@ public class GetPassportResponseEntity {
 
 
   public void setIssueDate(String issueDate) {
+
+    
+    
+    
     this.issueDate = issueDate;
   }
 
 
   public GetPassportResponseEntity lastName(String lastName) {
+
+    
+    
+    
     
     this.lastName = lastName;
     return this;
@@ -366,11 +450,19 @@ public class GetPassportResponseEntity {
 
 
   public void setLastName(String lastName) {
+
+    
+    
+    
     this.lastName = lastName;
   }
 
 
   public GetPassportResponseEntity middleName(String middleName) {
+
+    
+    
+    
     
     this.middleName = middleName;
     return this;
@@ -389,11 +481,19 @@ public class GetPassportResponseEntity {
 
 
   public void setMiddleName(String middleName) {
+
+    
+    
+    
     this.middleName = middleName;
   }
 
 
   public GetPassportResponseEntity picture(String picture) {
+
+    
+    
+    
     
     this.picture = picture;
     return this;
@@ -412,11 +512,19 @@ public class GetPassportResponseEntity {
 
 
   public void setPicture(String picture) {
+
+    
+    
+    
     this.picture = picture;
   }
 
 
   public GetPassportResponseEntity placeOfBirth(String placeOfBirth) {
+
+    
+    
+    
     
     this.placeOfBirth = placeOfBirth;
     return this;
@@ -435,11 +543,19 @@ public class GetPassportResponseEntity {
 
 
   public void setPlaceOfBirth(String placeOfBirth) {
+
+    
+    
+    
     this.placeOfBirth = placeOfBirth;
   }
 
 
   public GetPassportResponseEntity placeOfIssue(String placeOfIssue) {
+
+    
+    
+    
     
     this.placeOfIssue = placeOfIssue;
     return this;
@@ -458,13 +574,31 @@ public class GetPassportResponseEntity {
 
 
   public void setPlaceOfIssue(String placeOfIssue) {
+
+    
+    
+    
     this.placeOfIssue = placeOfIssue;
   }
 
 
-  public GetPassportResponseEntity status(BigDecimal status) {
+  public GetPassportResponseEntity status(Double status) {
+
+    
+    
+    
     
     this.status = status;
+    return this;
+  }
+
+  public GetPassportResponseEntity status(Integer status) {
+
+    
+    
+    
+    
+    this.status = status.doubleValue();
     return this;
   }
 
@@ -475,12 +609,16 @@ public class GetPassportResponseEntity {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "200", value = "")
 
-  public BigDecimal getStatus() {
+  public Double getStatus() {
     return status;
   }
 
 
-  public void setStatus(BigDecimal status) {
+  public void setStatus(Double status) {
+
+    
+    
+    
     this.status = status;
   }
 

@@ -33,6 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -133,6 +134,10 @@ public class GetDocumentAnalysisResponseEntityData {
   }
 
   public GetDocumentAnalysisResponseEntityData ADDRESS(String ADDRESS) {
+
+    
+    
+    
     
     this.ADDRESS = ADDRESS;
     return this;
@@ -151,11 +156,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setADDRESS(String ADDRESS) {
+
+    
+    
+    
     this.ADDRESS = ADDRESS;
   }
 
 
   public GetDocumentAnalysisResponseEntityData CITY_IN_ADDRESS(String CITY_IN_ADDRESS) {
+
+    
+    
+    
     
     this.CITY_IN_ADDRESS = CITY_IN_ADDRESS;
     return this;
@@ -174,11 +187,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setCITYINADDRESS(String CITY_IN_ADDRESS) {
+
+    
+    
+    
     this.CITY_IN_ADDRESS = CITY_IN_ADDRESS;
   }
 
 
   public GetDocumentAnalysisResponseEntityData propertyClass(String propertyClass) {
+
+    
+    
+    
     
     this.propertyClass = propertyClass;
     return this;
@@ -197,11 +218,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setPropertyClass(String propertyClass) {
+
+    
+    
+    
     this.propertyClass = propertyClass;
   }
 
 
   public GetDocumentAnalysisResponseEntityData COUNTY(String COUNTY) {
+
+    
+    
+    
     
     this.COUNTY = COUNTY;
     return this;
@@ -220,11 +249,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setCOUNTY(String COUNTY) {
+
+    
+    
+    
     this.COUNTY = COUNTY;
   }
 
 
   public GetDocumentAnalysisResponseEntityData DATE_OF_BIRTH(String DATE_OF_BIRTH) {
+
+    
+    
+    
     
     this.DATE_OF_BIRTH = DATE_OF_BIRTH;
     return this;
@@ -243,11 +280,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setDATEOFBIRTH(String DATE_OF_BIRTH) {
+
+    
+    
+    
     this.DATE_OF_BIRTH = DATE_OF_BIRTH;
   }
 
 
   public GetDocumentAnalysisResponseEntityData DATE_OF_ISSUE(String DATE_OF_ISSUE) {
+
+    
+    
+    
     
     this.DATE_OF_ISSUE = DATE_OF_ISSUE;
     return this;
@@ -266,11 +311,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setDATEOFISSUE(String DATE_OF_ISSUE) {
+
+    
+    
+    
     this.DATE_OF_ISSUE = DATE_OF_ISSUE;
   }
 
 
   public GetDocumentAnalysisResponseEntityData DOCUMENT_NUMBER(String DOCUMENT_NUMBER) {
+
+    
+    
+    
     
     this.DOCUMENT_NUMBER = DOCUMENT_NUMBER;
     return this;
@@ -289,11 +342,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setDOCUMENTNUMBER(String DOCUMENT_NUMBER) {
+
+    
+    
+    
     this.DOCUMENT_NUMBER = DOCUMENT_NUMBER;
   }
 
 
   public GetDocumentAnalysisResponseEntityData ENDORSEMENTS(String ENDORSEMENTS) {
+
+    
+    
+    
     
     this.ENDORSEMENTS = ENDORSEMENTS;
     return this;
@@ -312,11 +373,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setENDORSEMENTS(String ENDORSEMENTS) {
+
+    
+    
+    
     this.ENDORSEMENTS = ENDORSEMENTS;
   }
 
 
   public GetDocumentAnalysisResponseEntityData EXPIRATION_DATE(String EXPIRATION_DATE) {
+
+    
+    
+    
     
     this.EXPIRATION_DATE = EXPIRATION_DATE;
     return this;
@@ -335,11 +404,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setEXPIRATIONDATE(String EXPIRATION_DATE) {
+
+    
+    
+    
     this.EXPIRATION_DATE = EXPIRATION_DATE;
   }
 
 
   public GetDocumentAnalysisResponseEntityData FIRST_NAME(String FIRST_NAME) {
+
+    
+    
+    
     
     this.FIRST_NAME = FIRST_NAME;
     return this;
@@ -358,11 +435,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setFIRSTNAME(String FIRST_NAME) {
+
+    
+    
+    
     this.FIRST_NAME = FIRST_NAME;
   }
 
 
   public GetDocumentAnalysisResponseEntityData ID_TYPE(String ID_TYPE) {
+
+    
+    
+    
     
     this.ID_TYPE = ID_TYPE;
     return this;
@@ -381,11 +466,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setIDTYPE(String ID_TYPE) {
+
+    
+    
+    
     this.ID_TYPE = ID_TYPE;
   }
 
 
   public GetDocumentAnalysisResponseEntityData LAST_NAME(String LAST_NAME) {
+
+    
+    
+    
     
     this.LAST_NAME = LAST_NAME;
     return this;
@@ -404,11 +497,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setLASTNAME(String LAST_NAME) {
+
+    
+    
+    
     this.LAST_NAME = LAST_NAME;
   }
 
 
   public GetDocumentAnalysisResponseEntityData MIDDLE_NAME(String MIDDLE_NAME) {
+
+    
+    
+    
     
     this.MIDDLE_NAME = MIDDLE_NAME;
     return this;
@@ -427,11 +528,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setMIDDLENAME(String MIDDLE_NAME) {
+
+    
+    
+    
     this.MIDDLE_NAME = MIDDLE_NAME;
   }
 
 
   public GetDocumentAnalysisResponseEntityData PLACE_OF_BIRTH(String PLACE_OF_BIRTH) {
+
+    
+    
+    
     
     this.PLACE_OF_BIRTH = PLACE_OF_BIRTH;
     return this;
@@ -450,11 +559,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setPLACEOFBIRTH(String PLACE_OF_BIRTH) {
+
+    
+    
+    
     this.PLACE_OF_BIRTH = PLACE_OF_BIRTH;
   }
 
 
   public GetDocumentAnalysisResponseEntityData RESTRICTIONS(String RESTRICTIONS) {
+
+    
+    
+    
     
     this.RESTRICTIONS = RESTRICTIONS;
     return this;
@@ -473,11 +590,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setRESTRICTIONS(String RESTRICTIONS) {
+
+    
+    
+    
     this.RESTRICTIONS = RESTRICTIONS;
   }
 
 
   public GetDocumentAnalysisResponseEntityData STATE_IN_ADDRESS(String STATE_IN_ADDRESS) {
+
+    
+    
+    
     
     this.STATE_IN_ADDRESS = STATE_IN_ADDRESS;
     return this;
@@ -496,11 +621,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setSTATEINADDRESS(String STATE_IN_ADDRESS) {
+
+    
+    
+    
     this.STATE_IN_ADDRESS = STATE_IN_ADDRESS;
   }
 
 
   public GetDocumentAnalysisResponseEntityData STATE_NAME(String STATE_NAME) {
+
+    
+    
+    
     
     this.STATE_NAME = STATE_NAME;
     return this;
@@ -519,11 +652,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setSTATENAME(String STATE_NAME) {
+
+    
+    
+    
     this.STATE_NAME = STATE_NAME;
   }
 
 
   public GetDocumentAnalysisResponseEntityData SUFFIX(String SUFFIX) {
+
+    
+    
+    
     
     this.SUFFIX = SUFFIX;
     return this;
@@ -542,11 +683,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setSUFFIX(String SUFFIX) {
+
+    
+    
+    
     this.SUFFIX = SUFFIX;
   }
 
 
   public GetDocumentAnalysisResponseEntityData VETERAN(String VETERAN) {
+
+    
+    
+    
     
     this.VETERAN = VETERAN;
     return this;
@@ -565,11 +714,19 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setVETERAN(String VETERAN) {
+
+    
+    
+    
     this.VETERAN = VETERAN;
   }
 
 
   public GetDocumentAnalysisResponseEntityData ZIP_CODE_IN_ADDRESS(String ZIP_CODE_IN_ADDRESS) {
+
+    
+    
+    
     
     this.ZIP_CODE_IN_ADDRESS = ZIP_CODE_IN_ADDRESS;
     return this;
@@ -588,6 +745,10 @@ public class GetDocumentAnalysisResponseEntityData {
 
 
   public void setZIPCODEINADDRESS(String ZIP_CODE_IN_ADDRESS) {
+
+    
+    
+    
     this.ZIP_CODE_IN_ADDRESS = ZIP_CODE_IN_ADDRESS;
   }
 

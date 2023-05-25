@@ -42,11 +42,14 @@ public class GhKycApi {
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public GhKycApi() {
+    public GhKycApi() throws IllegalArgumentException {
         this(Configuration.getDefaultApiClient());
     }
 
-    public GhKycApi(ApiClient apiClient) {
+    public GhKycApi(ApiClient apiClient) throws IllegalArgumentException {
+        if (apiClient.getApikeyAuth() == null) {
+            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
+        }
         this.localVarApiClient = apiClient;
     }
 
@@ -74,21 +77,7 @@ public class GhKycApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    /**
-     * Build call for getDriversLicense
-     * @param id  (optional)
-     * @param fullName  (optional)
-     * @param dateOfBirth  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * Content-Type -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getDriversLicenseCall(String id, String fullName, String dateOfBirth, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDriversLicenseCall(String id, String fullName, String dateOfBirth, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -150,84 +139,134 @@ public class GhKycApi {
 
     }
 
-    /**
-     * Driver&#39;s License
-     * 
-     * @param id  (optional)
-     * @param fullName  (optional)
-     * @param dateOfBirth  (optional)
-     * @return GetDriversLicenseResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * Content-Type -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
-     </table>
-     */
-    public GetDriversLicenseResponse getDriversLicense(String id, String fullName, String dateOfBirth) throws ApiException {
-        ApiResponse<GetDriversLicenseResponse> localVarResp = getDriversLicenseWithHttpInfo(id, fullName, dateOfBirth);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Driver&#39;s License
-     * 
-     * @param id  (optional)
-     * @param fullName  (optional)
-     * @param dateOfBirth  (optional)
-     * @return ApiResponse&lt;GetDriversLicenseResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * Content-Type -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetDriversLicenseResponse> getDriversLicenseWithHttpInfo(String id, String fullName, String dateOfBirth) throws ApiException {
+    private ApiResponse<GetDriversLicenseResponse> getDriversLicenseWithHttpInfo(String id, String fullName, String dateOfBirth) throws ApiException {
         okhttp3.Call localVarCall = getDriversLicenseValidateBeforeCall(id, fullName, dateOfBirth, null);
         Type localVarReturnType = new TypeToken<GetDriversLicenseResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Driver&#39;s License (asynchronously)
-     * 
-     * @param id  (optional)
-     * @param fullName  (optional)
-     * @param dateOfBirth  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * Content-Type -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getDriversLicenseAsync(String id, String fullName, String dateOfBirth, final ApiCallback<GetDriversLicenseResponse> _callback) throws ApiException {
+    private okhttp3.Call getDriversLicenseAsync(String id, String fullName, String dateOfBirth, final ApiCallback<GetDriversLicenseResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getDriversLicenseValidateBeforeCall(id, fullName, dateOfBirth, _callback);
         Type localVarReturnType = new TypeToken<GetDriversLicenseResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetDriversLicenseRequestBuilder {
+        private String id;
+        private String fullName;
+        private String dateOfBirth;
+
+        private GetDriversLicenseRequestBuilder() {
+        }
+
+        /**
+         * Set id
+         * @param id  (optional)
+         * @return GetDriversLicenseRequestBuilder
+         */
+        public GetDriversLicenseRequestBuilder id(String id) {
+            this.id = id;
+            return this;
+        }
+        
+        /**
+         * Set fullName
+         * @param fullName  (optional)
+         * @return GetDriversLicenseRequestBuilder
+         */
+        public GetDriversLicenseRequestBuilder fullName(String fullName) {
+            this.fullName = fullName;
+            return this;
+        }
+        
+        /**
+         * Set dateOfBirth
+         * @param dateOfBirth  (optional)
+         * @return GetDriversLicenseRequestBuilder
+         */
+        public GetDriversLicenseRequestBuilder dateOfBirth(String dateOfBirth) {
+            this.dateOfBirth = dateOfBirth;
+            return this;
+        }
+        
+        /**
+         * Build call for getDriversLicense
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getDriversLicenseCall(id, fullName, dateOfBirth, _callback);
+        }
+
+
+        /**
+         * Execute getDriversLicense request
+         * @return GetDriversLicenseResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
+         </table>
+         */
+        public GetDriversLicenseResponse execute() throws ApiException {
+            ApiResponse<GetDriversLicenseResponse> localVarResp = getDriversLicenseWithHttpInfo(id, fullName, dateOfBirth);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getDriversLicense request with HTTP info returned
+         * @return ApiResponse&lt;GetDriversLicenseResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetDriversLicenseResponse> executeWithHttpInfo() throws ApiException {
+            return getDriversLicenseWithHttpInfo(id, fullName, dateOfBirth);
+        }
+
+        /**
+         * Execute getDriversLicense request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetDriversLicenseResponse> _callback) throws ApiException {
+            return getDriversLicenseAsync(id, fullName, dateOfBirth, _callback);
+        }
+    }
+
     /**
-     * Build call for getPassport
-     * @param id  (optional)
-     * @param firstName  (optional)
-     * @param lastName  (optional)
-     * @param middleName  (optional)
-     * @param dateOfBirth  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Driver&#39;s License
+     * 
+     * @return GetDriversLicenseRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * Content-Type -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getPassportCall(String id, String firstName, String lastName, String middleName, String dateOfBirth, final ApiCallback _callback) throws ApiException {
+    public GetDriversLicenseRequestBuilder getDriversLicense() throws IllegalArgumentException {
+        return new GetDriversLicenseRequestBuilder();
+    }
+    private okhttp3.Call getPassportCall(String id, String firstName, String lastName, String middleName, String dateOfBirth, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -297,88 +336,156 @@ public class GhKycApi {
 
     }
 
-    /**
-     * Passport
-     * 
-     * @param id  (optional)
-     * @param firstName  (optional)
-     * @param lastName  (optional)
-     * @param middleName  (optional)
-     * @param dateOfBirth  (optional)
-     * @return GetPassportResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * Content-Type -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
-     </table>
-     */
-    public GetPassportResponse getPassport(String id, String firstName, String lastName, String middleName, String dateOfBirth) throws ApiException {
-        ApiResponse<GetPassportResponse> localVarResp = getPassportWithHttpInfo(id, firstName, lastName, middleName, dateOfBirth);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Passport
-     * 
-     * @param id  (optional)
-     * @param firstName  (optional)
-     * @param lastName  (optional)
-     * @param middleName  (optional)
-     * @param dateOfBirth  (optional)
-     * @return ApiResponse&lt;GetPassportResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * Content-Type -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetPassportResponse> getPassportWithHttpInfo(String id, String firstName, String lastName, String middleName, String dateOfBirth) throws ApiException {
+    private ApiResponse<GetPassportResponse> getPassportWithHttpInfo(String id, String firstName, String lastName, String middleName, String dateOfBirth) throws ApiException {
         okhttp3.Call localVarCall = getPassportValidateBeforeCall(id, firstName, lastName, middleName, dateOfBirth, null);
         Type localVarReturnType = new TypeToken<GetPassportResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Passport (asynchronously)
-     * 
-     * @param id  (optional)
-     * @param firstName  (optional)
-     * @param lastName  (optional)
-     * @param middleName  (optional)
-     * @param dateOfBirth  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * Content-Type -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getPassportAsync(String id, String firstName, String lastName, String middleName, String dateOfBirth, final ApiCallback<GetPassportResponse> _callback) throws ApiException {
+    private okhttp3.Call getPassportAsync(String id, String firstName, String lastName, String middleName, String dateOfBirth, final ApiCallback<GetPassportResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getPassportValidateBeforeCall(id, firstName, lastName, middleName, dateOfBirth, _callback);
         Type localVarReturnType = new TypeToken<GetPassportResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class GetPassportRequestBuilder {
+        private String id;
+        private String firstName;
+        private String lastName;
+        private String middleName;
+        private String dateOfBirth;
+
+        private GetPassportRequestBuilder() {
+        }
+
+        /**
+         * Set id
+         * @param id  (optional)
+         * @return GetPassportRequestBuilder
+         */
+        public GetPassportRequestBuilder id(String id) {
+            this.id = id;
+            return this;
+        }
+        
+        /**
+         * Set firstName
+         * @param firstName  (optional)
+         * @return GetPassportRequestBuilder
+         */
+        public GetPassportRequestBuilder firstName(String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+        
+        /**
+         * Set lastName
+         * @param lastName  (optional)
+         * @return GetPassportRequestBuilder
+         */
+        public GetPassportRequestBuilder lastName(String lastName) {
+            this.lastName = lastName;
+            return this;
+        }
+        
+        /**
+         * Set middleName
+         * @param middleName  (optional)
+         * @return GetPassportRequestBuilder
+         */
+        public GetPassportRequestBuilder middleName(String middleName) {
+            this.middleName = middleName;
+            return this;
+        }
+        
+        /**
+         * Set dateOfBirth
+         * @param dateOfBirth  (optional)
+         * @return GetPassportRequestBuilder
+         */
+        public GetPassportRequestBuilder dateOfBirth(String dateOfBirth) {
+            this.dateOfBirth = dateOfBirth;
+            return this;
+        }
+        
+        /**
+         * Build call for getPassport
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getPassportCall(id, firstName, lastName, middleName, dateOfBirth, _callback);
+        }
+
+
+        /**
+         * Execute getPassport request
+         * @return GetPassportResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
+         </table>
+         */
+        public GetPassportResponse execute() throws ApiException {
+            ApiResponse<GetPassportResponse> localVarResp = getPassportWithHttpInfo(id, firstName, lastName, middleName, dateOfBirth);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getPassport request with HTTP info returned
+         * @return ApiResponse&lt;GetPassportResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetPassportResponse> executeWithHttpInfo() throws ApiException {
+            return getPassportWithHttpInfo(id, firstName, lastName, middleName, dateOfBirth);
+        }
+
+        /**
+         * Execute getPassport request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetPassportResponse> _callback) throws ApiException {
+            return getPassportAsync(id, firstName, lastName, middleName, dateOfBirth, _callback);
+        }
+    }
+
     /**
-     * Build call for getSsnit
-     * @param id  (optional)
-     * @param fullName  (optional)
-     * @param dateOfBirth  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Passport
+     * 
+     * @return GetPassportRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * Content-Encoding -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  * Transfer-Encoding -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call getSsnitCall(String id, String fullName, String dateOfBirth, final ApiCallback _callback) throws ApiException {
+    public GetPassportRequestBuilder getPassport() throws IllegalArgumentException {
+        return new GetPassportRequestBuilder();
+    }
+    private okhttp3.Call getSsnitCall(String id, String fullName, String dateOfBirth, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -440,65 +547,131 @@ public class GhKycApi {
 
     }
 
-    /**
-     * SSNIT
-     * 
-     * @param id  (optional)
-     * @param fullName  (optional)
-     * @param dateOfBirth  (optional)
-     * @return GetSsnitResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetSsnitResponse getSsnit(String id, String fullName, String dateOfBirth) throws ApiException {
-        ApiResponse<GetSsnitResponse> localVarResp = getSsnitWithHttpInfo(id, fullName, dateOfBirth);
-        return localVarResp.getData();
-    }
 
-    /**
-     * SSNIT
-     * 
-     * @param id  (optional)
-     * @param fullName  (optional)
-     * @param dateOfBirth  (optional)
-     * @return ApiResponse&lt;GetSsnitResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetSsnitResponse> getSsnitWithHttpInfo(String id, String fullName, String dateOfBirth) throws ApiException {
+    private ApiResponse<GetSsnitResponse> getSsnitWithHttpInfo(String id, String fullName, String dateOfBirth) throws ApiException {
         okhttp3.Call localVarCall = getSsnitValidateBeforeCall(id, fullName, dateOfBirth, null);
         Type localVarReturnType = new TypeToken<GetSsnitResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
+    private okhttp3.Call getSsnitAsync(String id, String fullName, String dateOfBirth, final ApiCallback<GetSsnitResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getSsnitValidateBeforeCall(id, fullName, dateOfBirth, _callback);
+        Type localVarReturnType = new TypeToken<GetSsnitResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+
+    public class GetSsnitRequestBuilder {
+        private String id;
+        private String fullName;
+        private String dateOfBirth;
+
+        private GetSsnitRequestBuilder() {
+        }
+
+        /**
+         * Set id
+         * @param id  (optional)
+         * @return GetSsnitRequestBuilder
+         */
+        public GetSsnitRequestBuilder id(String id) {
+            this.id = id;
+            return this;
+        }
+        
+        /**
+         * Set fullName
+         * @param fullName  (optional)
+         * @return GetSsnitRequestBuilder
+         */
+        public GetSsnitRequestBuilder fullName(String fullName) {
+            this.fullName = fullName;
+            return this;
+        }
+        
+        /**
+         * Set dateOfBirth
+         * @param dateOfBirth  (optional)
+         * @return GetSsnitRequestBuilder
+         */
+        public GetSsnitRequestBuilder dateOfBirth(String dateOfBirth) {
+            this.dateOfBirth = dateOfBirth;
+            return this;
+        }
+        
+        /**
+         * Build call for getSsnit
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getSsnitCall(id, fullName, dateOfBirth, _callback);
+        }
+
+
+        /**
+         * Execute getSsnit request
+         * @return GetSsnitResponse
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public GetSsnitResponse execute() throws ApiException {
+            ApiResponse<GetSsnitResponse> localVarResp = getSsnitWithHttpInfo(id, fullName, dateOfBirth);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute getSsnit request with HTTP info returned
+         * @return ApiResponse&lt;GetSsnitResponse&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<GetSsnitResponse> executeWithHttpInfo() throws ApiException {
+            return getSsnitWithHttpInfo(id, fullName, dateOfBirth);
+        }
+
+        /**
+         * Execute getSsnit request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<GetSsnitResponse> _callback) throws ApiException {
+            return getSsnitAsync(id, fullName, dateOfBirth, _callback);
+        }
+    }
+
     /**
-     * SSNIT (asynchronously)
+     * SSNIT
      * 
-     * @param id  (optional)
-     * @param fullName  (optional)
-     * @param dateOfBirth  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @return GetSsnitRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSsnitAsync(String id, String fullName, String dateOfBirth, final ApiCallback<GetSsnitResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = getSsnitValidateBeforeCall(id, fullName, dateOfBirth, _callback);
-        Type localVarReturnType = new TypeToken<GetSsnitResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
+    public GetSsnitRequestBuilder getSsnit() throws IllegalArgumentException {
+        return new GetSsnitRequestBuilder();
     }
 }

@@ -22,7 +22,7 @@
 |**picture** | **String** |  |  [optional] |
 |**placeOfBirth** | **String** |  |  [optional] |
 |**placeOfIssue** | **String** |  |  [optional] |
-|**status** | **BigDecimal** |  |  [optional] |
+|**status** | **Double** |  |  [optional] |
 
 
 

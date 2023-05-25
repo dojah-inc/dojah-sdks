@@ -15,7 +15,7 @@
 |**isDateOfBirthMatch** | **Boolean** |  |  [optional] |
 |**isFullNameMatch** | **Boolean** |  |  [optional] |
 |**picture** | **String** |  |  [optional] |
-|**status** | **BigDecimal** |  |  [optional] |
+|**status** | **Double** |  |  [optional] |
 
 
 

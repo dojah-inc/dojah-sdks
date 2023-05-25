@@ -38,7 +38,7 @@ import (
     "context"
     "fmt"
     "os"
-    dojah "github.com/konfig-dev/dojah-sdks/go"
+    dojah "github.com/dojah-inc/dojah-sdks/go"
 )
 
 func main() {
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    dojah "github.com/konfig-dev/dojah-sdks/go"
+    dojah "github.com/dojah-inc/dojah-sdks/go"
 )
 
 func main() {
@@ -161,7 +161,7 @@ import (
     "context"
     "fmt"
     "os"
-    dojah "github.com/konfig-dev/dojah-sdks/go"
+    dojah "github.com/dojah-inc/dojah-sdks/go"
 )
 
 func main() {
@@ -225,7 +225,7 @@ import (
     "context"
     "fmt"
     "os"
-    dojah "github.com/konfig-dev/dojah-sdks/go"
+    dojah "github.com/dojah-inc/dojah-sdks/go"
 )
 
 func main() {
@@ -289,7 +289,7 @@ import (
     "context"
     "fmt"
     "os"
-    dojah "github.com/konfig-dev/dojah-sdks/go"
+    dojah "github.com/dojah-inc/dojah-sdks/go"
 )
 
 func main() {
@@ -353,7 +353,7 @@ import (
     "context"
     "fmt"
     "os"
-    dojah "github.com/konfig-dev/dojah-sdks/go"
+    dojah "github.com/dojah-inc/dojah-sdks/go"
 )
 
 func main() {
@@ -417,7 +417,7 @@ import (
     "context"
     "fmt"
     "os"
-    dojah "github.com/konfig-dev/dojah-sdks/go"
+    dojah "github.com/dojah-inc/dojah-sdks/go"
 )
 
 func main() {
@@ -483,7 +483,7 @@ import (
     "context"
     "fmt"
     "os"
-    dojah "github.com/konfig-dev/dojah-sdks/go"
+    dojah "github.com/dojah-inc/dojah-sdks/go"
 )
 
 func main() {
@@ -549,7 +549,7 @@ import (
     "context"
     "fmt"
     "os"
-    dojah "github.com/konfig-dev/dojah-sdks/go"
+    dojah "github.com/dojah-inc/dojah-sdks/go"
 )
 
 func main() {
@@ -613,7 +613,7 @@ import (
     "context"
     "fmt"
     "os"
-    dojah "github.com/konfig-dev/dojah-sdks/go"
+    dojah "github.com/dojah-inc/dojah-sdks/go"
 )
 
 func main() {
@@ -677,7 +677,7 @@ import (
     "context"
     "fmt"
     "os"
-    dojah "github.com/konfig-dev/dojah-sdks/go"
+    dojah "github.com/dojah-inc/dojah-sdks/go"
 )
 
 func main() {
@@ -749,7 +749,7 @@ import (
     "context"
     "fmt"
     "os"
-    dojah "github.com/konfig-dev/dojah-sdks/go"
+    dojah "github.com/dojah-inc/dojah-sdks/go"
 )
 
 func main() {
@@ -813,7 +813,7 @@ import (
     "context"
     "fmt"
     "os"
-    dojah "github.com/konfig-dev/dojah-sdks/go"
+    dojah "github.com/dojah-inc/dojah-sdks/go"
 )
 
 func main() {
@@ -881,7 +881,7 @@ import (
     "context"
     "fmt"
     "os"
-    dojah "github.com/konfig-dev/dojah-sdks/go"
+    dojah "github.com/dojah-inc/dojah-sdks/go"
 )
 
 func main() {
@@ -955,7 +955,7 @@ import (
     "context"
     "fmt"
     "os"
-    dojah "github.com/konfig-dev/dojah-sdks/go"
+    dojah "github.com/dojah-inc/dojah-sdks/go"
 )
 
 func main() {
@@ -1019,7 +1019,7 @@ import (
     "context"
     "fmt"
     "os"
-    dojah "github.com/konfig-dev/dojah-sdks/go"
+    dojah "github.com/dojah-inc/dojah-sdks/go"
 )
 
 func main() {
