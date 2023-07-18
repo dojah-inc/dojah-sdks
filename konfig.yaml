@@ -5,6 +5,7 @@ specPath: api.yaml
 generators:
   java:
     version: 4.0.0
+    clientName: Dojah
     groupId: com.konfigthis.dojah
     artifactId: dojah-java-sdk
     outputDirectory: java
