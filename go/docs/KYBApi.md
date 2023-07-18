@@ -4,18 +4,18 @@ All URIs are relative to *https://api.dojah.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAdvancedCac**](KYBApi.md#GetAdvancedCac) | **Get** /v1/kyc/cac/advance | KYC - Get CAC Advanced
-[**GetBasicCac**](KYBApi.md#GetBasicCac) | **Get** /v1/kyc/cac/basic | KYB - Get CAC 2
-[**GetCac**](KYBApi.md#GetCac) | **Get** /v1/kyc/cac | KYC - Get CAC 
-[**GetTin**](KYBApi.md#GetTin) | **Get** /v1/kyc/tin | KYC - Fetch Tin
+[**BusinessDetail**](KYBApi.md#BusinessDetail) | **Get** /api/v1/kyb/business/detail | Business Detail
+[**BusinessSearch**](KYBApi.md#BusinessSearch) | **Get** /api/v1/kyb/business/search | Business Search
+[**GetCac**](KYBApi.md#GetCac) | **Get** /api/v1/kyc/cac | KYC - Get CAC 
+[**GetTin**](KYBApi.md#GetTin) | **Get** /api/v1/kyc/tin | KYC - Fetch Tin
 
 
 
-## GetAdvancedCac
+## BusinessDetail
 
-> GetAdvancedCacResponse GetAdvancedCac(ctx).Rc(rc).Type_(type_).Class(class).Execute()
+> map[string]interface{} BusinessDetail(ctx).AppId(appId).InternationalNumber(internationalNumber).CountryCode(countryCode).Full(full).Execute()
 
-KYC - Get CAC Advanced
+Business Detail
 
 ### Example
 
@@ -30,19 +30,20 @@ import (
 )
 
 func main() {
-    rc := int32(1432074) // int32 |  (optional)
-    type_ := "co" // string |  (optional)
-    class := "advance" // string |  (optional)
+    appId := "{{app_id}}" // string |  (optional)
+    internationalNumber := "RC-1885308" // string |  (optional)
+    countryCode := "NG" // string |  (optional)
+    full := true // bool |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.KYBApi.GetAdvancedCac(context.Background()).Rc(rc).Type_(type_).Class(class).Execute()
+    resp, r, err := apiClient.KYBApi.BusinessDetail(context.Background()).AppId(appId).InternationalNumber(internationalNumber).CountryCode(countryCode).Full(full).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KYBApi.GetAdvancedCac``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KYBApi.BusinessDetail``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetAdvancedCac`: GetAdvancedCacResponse
-    fmt.Fprintf(os.Stdout, "Response from `KYBApi.GetAdvancedCac`: %v\n", resp)
+    // response from `BusinessDetail`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `KYBApi.BusinessDetail`: %v\n", resp)
 }
 ```
 
@@ -52,22 +53,23 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAdvancedCacRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiBusinessDetailRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rc** | **int32** |  | 
- **type_** | **string** |  | 
- **class** | **string** |  | 
+ **appId** | **string** |  | 
+ **internationalNumber** | **string** |  | 
+ **countryCode** | **string** |  | 
+ **full** | **bool** |  | 
 
 ### Return type
 
-[**GetAdvancedCacResponse**](GetAdvancedCacResponse.md)
+**map[string]interface{}**
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -79,11 +81,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetBasicCac
+## BusinessSearch
 
-> GetBasicCacResponse GetBasicCac(ctx).Rc(rc).Type_(type_).Execute()
+> map[string]interface{} BusinessSearch(ctx).AppId(appId).CountryCode(countryCode).Company(company).Execute()
 
-KYB - Get CAC 2
+Business Search
 
 ### Example
 
@@ -98,18 +100,19 @@ import (
 )
 
 func main() {
-    rc := int32(3330883) // int32 |  (optional)
-    type_ := "bn" // string |  (optional)
+    appId := "{{app_id}}" // string |  (optional)
+    countryCode := "NG" // string |  (optional)
+    company := int32(1885308) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.KYBApi.GetBasicCac(context.Background()).Rc(rc).Type_(type_).Execute()
+    resp, r, err := apiClient.KYBApi.BusinessSearch(context.Background()).AppId(appId).CountryCode(countryCode).Company(company).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KYBApi.GetBasicCac``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KYBApi.BusinessSearch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetBasicCac`: GetBasicCacResponse
-    fmt.Fprintf(os.Stdout, "Response from `KYBApi.GetBasicCac`: %v\n", resp)
+    // response from `BusinessSearch`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `KYBApi.BusinessSearch`: %v\n", resp)
 }
 ```
 
@@ -119,21 +122,22 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetBasicCacRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiBusinessSearchRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rc** | **int32** |  | 
- **type_** | **string** |  | 
+ **appId** | **string** |  | 
+ **countryCode** | **string** |  | 
+ **company** | **int32** |  | 
 
 ### Return type
 
-[**GetBasicCacResponse**](GetBasicCacResponse.md)
+**map[string]interface{}**
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -147,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GetCac
 
-> GetCacResponse GetCac(ctx).RcNumber(rcNumber).CompanyName(companyName).Execute()
+> KybGetCacResponse GetCac(ctx).AppId(appId).RcNumber(rcNumber).CompanyName(companyName).Execute()
 
 KYC - Get CAC 
 
@@ -164,17 +168,18 @@ import (
 )
 
 func main() {
+    appId := "{{app_id}}" // string |  (optional)
     rcNumber := int32(1432074) // int32 |  (optional)
     companyName := "ELTA SOLUTIONS LIMITED" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.KYBApi.GetCac(context.Background()).RcNumber(rcNumber).CompanyName(companyName).Execute()
+    resp, r, err := apiClient.KYBApi.GetCac(context.Background()).AppId(appId).RcNumber(rcNumber).CompanyName(companyName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KYBApi.GetCac``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetCac`: GetCacResponse
+    // response from `GetCac`: KybGetCacResponse
     fmt.Fprintf(os.Stdout, "Response from `KYBApi.GetCac`: %v\n", resp)
 }
 ```
@@ -190,16 +195,17 @@ Other parameters are passed through a pointer to a apiGetCacRequest struct via t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **appId** | **string** |  | 
  **rcNumber** | **int32** |  | 
  **companyName** | **string** |  | 
 
 ### Return type
 
-[**GetCacResponse**](GetCacResponse.md)
+[**KybGetCacResponse**](KybGetCacResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -213,7 +219,7 @@ Name | Type | Description  | Notes
 
 ## GetTin
 
-> GetTinResponse GetTin(ctx).Tin(tin).Execute()
+> KybGetTinResponse GetTin(ctx).AppId(appId).Tin(tin).Execute()
 
 KYC - Fetch Tin
 
@@ -230,16 +236,17 @@ import (
 )
 
 func main() {
-    tin := "21148119-0001" // string |  (optional)
+    appId := "{{app_id}}" // string |  (optional)
+    tin := "24111697-0001" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.KYBApi.GetTin(context.Background()).Tin(tin).Execute()
+    resp, r, err := apiClient.KYBApi.GetTin(context.Background()).AppId(appId).Tin(tin).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KYBApi.GetTin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetTin`: GetTinResponse
+    // response from `GetTin`: KybGetTinResponse
     fmt.Fprintf(os.Stdout, "Response from `KYBApi.GetTin`: %v\n", resp)
 }
 ```
@@ -255,15 +262,16 @@ Other parameters are passed through a pointer to a apiGetTinRequest struct via t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **appId** | **string** |  | 
  **tin** | **string** |  | 
 
 ### Return type
 
-[**GetTinResponse**](GetTinResponse.md)
+[**KybGetTinResponse**](KybGetTinResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 

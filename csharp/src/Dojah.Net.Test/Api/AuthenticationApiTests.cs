@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -61,7 +61,8 @@ namespace Dojah.Net.Test.Api
         public void GetSenderIdTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.GetSenderId();
+            //string appId = null;
+            //var response = instance.GetSenderId(appId);
             //Assert.IsType<GetSenderIdResponse>(response);
         }
 
@@ -72,8 +73,9 @@ namespace Dojah.Net.Test.Api
         public void GetSmsStatusTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
+            //string appId = null;
             //string messageId = null;
-            //var response = instance.GetSmsStatus(messageId);
+            //var response = instance.GetSmsStatus(appId, messageId);
             //Assert.IsType<GetSmsStatusResponse>(response);
         }
 
@@ -85,7 +87,8 @@ namespace Dojah.Net.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //RequestSenderIdRequest requestSenderIdRequest = null;
-            //var response = instance.RequestSenderId(requestSenderIdRequest);
+            //string appId = null;
+            //var response = instance.RequestSenderId(requestSenderIdRequest, appId);
             //Assert.IsType<RequestSenderIdResponse>(response);
         }
 
@@ -96,9 +99,10 @@ namespace Dojah.Net.Test.Api
         public void SendOtpTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //SendOtpRequest sendOtpRequest = null;
-            //var response = instance.SendOtp(sendOtpRequest);
-            //Assert.IsType<SendOtpResponse>(response);
+            //AuthenticationSendOtpRequest authenticationSendOtpRequest = null;
+            //string appId = null;
+            //var response = instance.SendOtp(authenticationSendOtpRequest, appId);
+            //Assert.IsType<AuthenticationSendOtpResponse>(response);
         }
 
         /// <summary>
@@ -109,7 +113,8 @@ namespace Dojah.Net.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //SendSmsRequest sendSmsRequest = null;
-            //var response = instance.SendSms(sendSmsRequest);
+            //string appId = null;
+            //var response = instance.SendSms(sendSmsRequest, appId);
             //Assert.IsType<SendSmsResponse>(response);
         }
 
@@ -120,10 +125,11 @@ namespace Dojah.Net.Test.Api
         public void ValidateOtpTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
+            //string appId = null;
             //string referenceId = null;
             //int? code = null;
-            //var response = instance.ValidateOtp(referenceId, code);
-            //Assert.IsType<ValidateOtpResponse>(response);
+            //var response = instance.ValidateOtp(appId, referenceId, code);
+            //Assert.IsType<AuthenticationValidateOtpResponse>(response);
         }
     }
 }

@@ -4,12 +4,12 @@ All URIs are relative to *https://api.dojah.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetScreeningInfo**](AMLApi.md#getscreeninginfo) | **GET** /v1/aml/screening/info | Get AML Info |
-| [**ScreenAml**](AMLApi.md#screenaml) | **POST** /api/v1/aml/screening | AML Screening |
+| [**GetScreeningInfo**](AMLApi.md#getscreeninginfo) | **GET** /api/v1/aml/screening/info | Get AML Info |
+| [**ScreenAml**](AMLApi.md#screenaml) | **POST** /api/v1/aml/screening/platform | AML Screening |
 
 <a name="getscreeninginfo"></a>
 # **GetScreeningInfo**
-> GetScreeningInfoResponse GetScreeningInfo (string referenceId = null)
+> Object GetScreeningInfo (string profileId = null)
 
 Get AML Info
 
@@ -33,22 +33,18 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("Appid", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("Appid", "Bearer");
 
             var apiInstance = new AMLApi(config);
-            var referenceId = c574a3c8-dc27-4013-8bbc-462e7ed87d55;  // string |  (optional) 
+            var profileId = WC7117469;  // string |  (optional) 
 
             try
             {
                 // Get AML Info
-                GetScreeningInfoResponse result = apiInstance.GetScreeningInfo(referenceId);
+                Object result = apiInstance.GetScreeningInfo(profileId);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -75,7 +71,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get AML Info
-    ApiResponse<GetScreeningInfoResponse> response = apiInstance.GetScreeningInfoWithHttpInfo(referenceId);
+    ApiResponse<Object> response = apiInstance.GetScreeningInfoWithHttpInfo(profileId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -92,15 +88,15 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **referenceId** | **string** |  | [optional]  |
+| **profileId** | **string** |  | [optional]  |
 
 ### Return type
 
-[**GetScreeningInfoResponse**](GetScreeningInfoResponse.md)
+**Object**
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -117,7 +113,7 @@ catch (ApiException e)
 
 <a name="screenaml"></a>
 # **ScreenAml**
-> ScreenAmlResponse ScreenAml (ScreenAmlRequest screenAmlRequest = null)
+> AmlScreenAmlResponse ScreenAml (AmlScreenAmlRequest amlScreenAmlRequest)
 
 AML Screening
 
@@ -141,22 +137,18 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
             // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
+            config.ApiKey.Add("Appid", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
+            // config.ApiKeyPrefix.Add("Appid", "Bearer");
 
             var apiInstance = new AMLApi(config);
-            var screenAmlRequest = new ScreenAmlRequest(); // ScreenAmlRequest |  (optional) 
+            var amlScreenAmlRequest = new AmlScreenAmlRequest(); // AmlScreenAmlRequest | 
 
             try
             {
                 // AML Screening
-                ScreenAmlResponse result = apiInstance.ScreenAml(screenAmlRequest);
+                AmlScreenAmlResponse result = apiInstance.ScreenAml(amlScreenAmlRequest);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -183,7 +175,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // AML Screening
-    ApiResponse<ScreenAmlResponse> response = apiInstance.ScreenAmlWithHttpInfo(screenAmlRequest);
+    ApiResponse<AmlScreenAmlResponse> response = apiInstance.ScreenAmlWithHttpInfo(amlScreenAmlRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -200,15 +192,15 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **screenAmlRequest** | [**ScreenAmlRequest**](ScreenAmlRequest.md) |  | [optional]  |
+| **amlScreenAmlRequest** | [**AmlScreenAmlRequest**](AmlScreenAmlRequest.md) |  |  |
 
 ### Return type
 
-[**ScreenAmlResponse**](ScreenAmlResponse.md)
+[**AmlScreenAmlResponse**](AmlScreenAmlResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

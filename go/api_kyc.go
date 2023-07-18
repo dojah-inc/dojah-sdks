@@ -1,5 +1,5 @@
 /*
-DOJAH APIs
+DOJAH Publilc APIs
 
 Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -22,51 +22,66 @@ import (
 // KYCApiService KYCApi service
 type KYCApiService service
 
-type KYCApiAnalyzeDocumentRequest struct {
+type KYCApiCheckLivenessRequest struct {
 	ctx context.Context
 	ApiService *KYCApiService
+	kycCheckLivenessRequest *KycCheckLivenessRequest
+	appId *string
 }
 
-func (r KYCApiAnalyzeDocumentRequest) Execute() (*AnalyzeDocumentResponse, *http.Response, error) {
-	return r.ApiService.AnalyzeDocumentExecute(r)
+func (r KYCApiCheckLivenessRequest) KycCheckLivenessRequest(kycCheckLivenessRequest KycCheckLivenessRequest) KYCApiCheckLivenessRequest {
+	r.kycCheckLivenessRequest = &kycCheckLivenessRequest
+	return r
+}
+
+func (r KYCApiCheckLivenessRequest) AppId(appId string) KYCApiCheckLivenessRequest {
+	r.appId = &appId
+	return r
+}
+
+func (r KYCApiCheckLivenessRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.CheckLivenessExecute(r)
 }
 
 /*
-AnalyzeDocument KYC - Document Analysis
+CheckLiveness Liveness Check
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYCApiAnalyzeDocumentRequest
+ @return KYCApiCheckLivenessRequest
 */
-func (a *KYCApiService) AnalyzeDocument() KYCApiAnalyzeDocumentRequest {
-	return KYCApiAnalyzeDocumentRequest{
+func (a *KYCApiService) CheckLiveness() KYCApiCheckLivenessRequest {
+	return KYCApiCheckLivenessRequest{
 		ApiService: a,
 		ctx: a.client.cfg.Context,
 	}
 }
 
 // Execute executes the request
-//  @return AnalyzeDocumentResponse
-func (a *KYCApiService) AnalyzeDocumentExecute(r KYCApiAnalyzeDocumentRequest) (*AnalyzeDocumentResponse, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *KYCApiService) CheckLivenessExecute(r KYCApiCheckLivenessRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AnalyzeDocumentResponse
+		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.AnalyzeDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.CheckLiveness")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v1/document/analysis"
+	localVarPath := localBasePath + "/api/v1/ml/liveness"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.kycCheckLivenessRequest == nil {
+		return localVarReturnValue, nil, reportError("kycCheckLivenessRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -82,34 +97,11 @@ func (a *KYCApiService) AnalyzeDocumentExecute(r KYCApiAnalyzeDocumentRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
+	if r.appId != nil {
+		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
 	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
+	// body params
+	localVarPostBody = r.kycCheckLivenessRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -147,50 +139,56 @@ func (a *KYCApiService) AnalyzeDocumentExecute(r KYCApiAnalyzeDocumentRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type KYCApiGetBasicBvnRequest struct {
+type KYCApiGetAccountsRequest struct {
 	ctx context.Context
 	ApiService *KYCApiService
-	bvn *int32
+	appId *string
+	bvn *string
 }
 
-func (r KYCApiGetBasicBvnRequest) Bvn(bvn int32) KYCApiGetBasicBvnRequest {
+func (r KYCApiGetAccountsRequest) AppId(appId string) KYCApiGetAccountsRequest {
+	r.appId = &appId
+	return r
+}
+
+func (r KYCApiGetAccountsRequest) Bvn(bvn string) KYCApiGetAccountsRequest {
 	r.bvn = &bvn
 	return r
 }
 
-func (r KYCApiGetBasicBvnRequest) Execute() (*GetBasicBvnResponse, *http.Response, error) {
-	return r.ApiService.GetBasicBvnExecute(r)
+func (r KYCApiGetAccountsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.GetAccountsExecute(r)
 }
 
 /*
-GetBasicBvn KYC - Get Basic BVN Info
+GetAccounts KYC - Fetch Accounts 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYCApiGetBasicBvnRequest
+ @return KYCApiGetAccountsRequest
 */
-func (a *KYCApiService) GetBasicBvn() KYCApiGetBasicBvnRequest {
-	return KYCApiGetBasicBvnRequest{
+func (a *KYCApiService) GetAccounts() KYCApiGetAccountsRequest {
+	return KYCApiGetAccountsRequest{
 		ApiService: a,
 		ctx: a.client.cfg.Context,
 	}
 }
 
 // Execute executes the request
-//  @return GetBasicBvnResponse
-func (a *KYCApiService) GetBasicBvnExecute(r KYCApiGetBasicBvnRequest) (*GetBasicBvnResponse, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *KYCApiService) GetAccountsExecute(r KYCApiGetAccountsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetBasicBvnResponse
+		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.GetBasicBvn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.GetAccounts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v1/kyc/bvn/basic"
+	localVarPath := localBasePath + "/api/v1/kyc/accounts"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -216,33 +214,8 @@ func (a *KYCApiService) GetBasicBvnExecute(r KYCApiGetBasicBvnRequest) (*GetBasi
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
+	if r.appId != nil {
+		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -281,57 +254,63 @@ func (a *KYCApiService) GetBasicBvnExecute(r KYCApiGetBasicBvnRequest) (*GetBasi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type KYCApiGetBasicPhoneNumberRequest struct {
+type KYCApiGetAddressVerificationRequest struct {
 	ctx context.Context
 	ApiService *KYCApiService
-	phoneNumber *int32
+	appId *string
+	referenceId *string
 }
 
-func (r KYCApiGetBasicPhoneNumberRequest) PhoneNumber(phoneNumber int32) KYCApiGetBasicPhoneNumberRequest {
-	r.phoneNumber = &phoneNumber
+func (r KYCApiGetAddressVerificationRequest) AppId(appId string) KYCApiGetAddressVerificationRequest {
+	r.appId = &appId
 	return r
 }
 
-func (r KYCApiGetBasicPhoneNumberRequest) Execute() (*GetBasicPhoneNumberResponse, *http.Response, error) {
-	return r.ApiService.GetBasicPhoneNumberExecute(r)
+func (r KYCApiGetAddressVerificationRequest) ReferenceId(referenceId string) KYCApiGetAddressVerificationRequest {
+	r.referenceId = &referenceId
+	return r
+}
+
+func (r KYCApiGetAddressVerificationRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.GetAddressVerificationExecute(r)
 }
 
 /*
-GetBasicPhoneNumber KYC Lookup Phone Number Basic
+GetAddressVerification Fetch Address Verification Data
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYCApiGetBasicPhoneNumberRequest
+ @return KYCApiGetAddressVerificationRequest
 */
-func (a *KYCApiService) GetBasicPhoneNumber() KYCApiGetBasicPhoneNumberRequest {
-	return KYCApiGetBasicPhoneNumberRequest{
+func (a *KYCApiService) GetAddressVerification() KYCApiGetAddressVerificationRequest {
+	return KYCApiGetAddressVerificationRequest{
 		ApiService: a,
 		ctx: a.client.cfg.Context,
 	}
 }
 
 // Execute executes the request
-//  @return GetBasicPhoneNumberResponse
-func (a *KYCApiService) GetBasicPhoneNumberExecute(r KYCApiGetBasicPhoneNumberRequest) (*GetBasicPhoneNumberResponse, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *KYCApiService) GetAddressVerificationExecute(r KYCApiGetAddressVerificationRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetBasicPhoneNumberResponse
+		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.GetBasicPhoneNumber")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.GetAddressVerification")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/kyc/phone_number/basic"
+	localVarPath := localBasePath + "/api/v1/kyc/address"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.phoneNumber != nil {
-		localVarQueryParams.Add("phone_number", parameterToString(*r.phoneNumber, ""))
+	if r.referenceId != nil {
+		localVarQueryParams.Add("reference_id", parameterToString(*r.referenceId, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -350,33 +329,8 @@ func (a *KYCApiService) GetBasicPhoneNumberExecute(r KYCApiGetBasicPhoneNumberRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
+	if r.appId != nil {
+		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -415,458 +369,62 @@ func (a *KYCApiService) GetBasicPhoneNumberExecute(r KYCApiGetBasicPhoneNumberRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type KYCApiGetDriversLicenseRequest struct {
+type KYCApiGetBvnFromNubanRequest struct {
 	ctx context.Context
 	ApiService *KYCApiService
-	licenseNumber *string
-}
-
-func (r KYCApiGetDriversLicenseRequest) LicenseNumber(licenseNumber string) KYCApiGetDriversLicenseRequest {
-	r.licenseNumber = &licenseNumber
-	return r
-}
-
-func (r KYCApiGetDriversLicenseRequest) Execute() (*GetKycDriversLicenseResponse, *http.Response, error) {
-	return r.ApiService.GetDriversLicenseExecute(r)
-}
-
-/*
-GetDriversLicense KYC - Get Drivers License Info
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYCApiGetDriversLicenseRequest
-*/
-func (a *KYCApiService) GetDriversLicense() KYCApiGetDriversLicenseRequest {
-	return KYCApiGetDriversLicenseRequest{
-		ApiService: a,
-		ctx: a.client.cfg.Context,
-	}
-}
-
-// Execute executes the request
-//  @return GetKycDriversLicenseResponse
-func (a *KYCApiService) GetDriversLicenseExecute(r KYCApiGetDriversLicenseRequest) (*GetKycDriversLicenseResponse, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetKycDriversLicenseResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.GetDriversLicense")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/api/v1/kyc/dl"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if r.licenseNumber != nil {
-		localVarQueryParams.Add("license_number", parameterToString(*r.licenseNumber, ""))
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type KYCApiGetEmailReputationRequest struct {
-	ctx context.Context
-	ApiService *KYCApiService
-	email *string
-}
-
-func (r KYCApiGetEmailReputationRequest) Email(email string) KYCApiGetEmailReputationRequest {
-	r.email = &email
-	return r
-}
-
-func (r KYCApiGetEmailReputationRequest) Execute() (*GetEmailReputationResponse, *http.Response, error) {
-	return r.ApiService.GetEmailReputationExecute(r)
-}
-
-/*
-GetEmailReputation KYC - Get Email Reputation
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYCApiGetEmailReputationRequest
-*/
-func (a *KYCApiService) GetEmailReputation() KYCApiGetEmailReputationRequest {
-	return KYCApiGetEmailReputationRequest{
-		ApiService: a,
-		ctx: a.client.cfg.Context,
-	}
-}
-
-// Execute executes the request
-//  @return GetEmailReputationResponse
-func (a *KYCApiService) GetEmailReputationExecute(r KYCApiGetEmailReputationRequest) (*GetEmailReputationResponse, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetEmailReputationResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.GetEmailReputation")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/v1/kyc/email"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if r.email != nil {
-		localVarQueryParams.Add("email", parameterToString(*r.email, ""))
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type KYCApiGetFullBvnRequest struct {
-	ctx context.Context
-	ApiService *KYCApiService
-	bvn *int32
-}
-
-func (r KYCApiGetFullBvnRequest) Bvn(bvn int32) KYCApiGetFullBvnRequest {
-	r.bvn = &bvn
-	return r
-}
-
-func (r KYCApiGetFullBvnRequest) Execute() (*GetFullBvnResponse, *http.Response, error) {
-	return r.ApiService.GetFullBvnExecute(r)
-}
-
-/*
-GetFullBvn KYC - Lookup BVN Basic
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYCApiGetFullBvnRequest
-*/
-func (a *KYCApiService) GetFullBvn() KYCApiGetFullBvnRequest {
-	return KYCApiGetFullBvnRequest{
-		ApiService: a,
-		ctx: a.client.cfg.Context,
-	}
-}
-
-// Execute executes the request
-//  @return GetFullBvnResponse
-func (a *KYCApiService) GetFullBvnExecute(r KYCApiGetFullBvnRequest) (*GetFullBvnResponse, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetFullBvnResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.GetFullBvn")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/api/v1/kyc/bvn/full"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if r.bvn != nil {
-		localVarQueryParams.Add("bvn", parameterToString(*r.bvn, ""))
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type KYCApiGetNubanRequest struct {
-	ctx context.Context
-	ApiService *KYCApiService
+	appId *string
 	bankCode *int32
 	accountNumber *int32
 }
 
-func (r KYCApiGetNubanRequest) BankCode(bankCode int32) KYCApiGetNubanRequest {
+func (r KYCApiGetBvnFromNubanRequest) AppId(appId string) KYCApiGetBvnFromNubanRequest {
+	r.appId = &appId
+	return r
+}
+
+func (r KYCApiGetBvnFromNubanRequest) BankCode(bankCode int32) KYCApiGetBvnFromNubanRequest {
 	r.bankCode = &bankCode
 	return r
 }
 
-func (r KYCApiGetNubanRequest) AccountNumber(accountNumber int32) KYCApiGetNubanRequest {
+func (r KYCApiGetBvnFromNubanRequest) AccountNumber(accountNumber int32) KYCApiGetBvnFromNubanRequest {
 	r.accountNumber = &accountNumber
 	return r
 }
 
-func (r KYCApiGetNubanRequest) Execute() (*GetNubanResponse, *http.Response, error) {
-	return r.ApiService.GetNubanExecute(r)
+func (r KYCApiGetBvnFromNubanRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.GetBvnFromNubanExecute(r)
 }
 
 /*
-GetNuban KYC - Get NUBAN Information
+GetBvnFromNuban Lookup BVN from NUBAN
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYCApiGetNubanRequest
+ @return KYCApiGetBvnFromNubanRequest
 */
-func (a *KYCApiService) GetNuban() KYCApiGetNubanRequest {
-	return KYCApiGetNubanRequest{
+func (a *KYCApiService) GetBvnFromNuban() KYCApiGetBvnFromNubanRequest {
+	return KYCApiGetBvnFromNubanRequest{
 		ApiService: a,
 		ctx: a.client.cfg.Context,
 	}
 }
 
 // Execute executes the request
-//  @return GetNubanResponse
-func (a *KYCApiService) GetNubanExecute(r KYCApiGetNubanRequest) (*GetNubanResponse, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *KYCApiService) GetBvnFromNubanExecute(r KYCApiGetBvnFromNubanRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetNubanResponse
+		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.GetNuban")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.GetBvnFromNuban")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v1/kyc/nuban"
+	localVarPath := localBasePath + "/api/v1/kyc/nuban/bvn"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -895,33 +453,8 @@ func (a *KYCApiService) GetNubanExecute(r KYCApiGetNubanRequest) (*GetNubanRespo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
+	if r.appId != nil {
+		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -960,474 +493,35 @@ func (a *KYCApiService) GetNubanExecute(r KYCApiGetNubanRequest) (*GetNubanRespo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type KYCApiGetPassportRequest struct {
+type KYCApiGetVinRequest struct {
 	ctx context.Context
 	ApiService *KYCApiService
-	passportNumber *int32
-	surname *string
+	appId *string
+	vin *string
 }
 
-func (r KYCApiGetPassportRequest) PassportNumber(passportNumber int32) KYCApiGetPassportRequest {
-	r.passportNumber = &passportNumber
+func (r KYCApiGetVinRequest) AppId(appId string) KYCApiGetVinRequest {
+	r.appId = &appId
 	return r
 }
 
-func (r KYCApiGetPassportRequest) Surname(surname string) KYCApiGetPassportRequest {
-	r.surname = &surname
-	return r
-}
-
-func (r KYCApiGetPassportRequest) Execute() (*GetKycPassportResponse, *http.Response, error) {
-	return r.ApiService.GetPassportExecute(r)
-}
-
-/*
-GetPassport KYC - Passport
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYCApiGetPassportRequest
-*/
-func (a *KYCApiService) GetPassport() KYCApiGetPassportRequest {
-	return KYCApiGetPassportRequest{
-		ApiService: a,
-		ctx: a.client.cfg.Context,
-	}
-}
-
-// Execute executes the request
-//  @return GetKycPassportResponse
-func (a *KYCApiService) GetPassportExecute(r KYCApiGetPassportRequest) (*GetKycPassportResponse, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetKycPassportResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.GetPassport")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/api/v1/kyc/passport"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if r.passportNumber != nil {
-		localVarQueryParams.Add("passport_number", parameterToString(*r.passportNumber, ""))
-	}
-	if r.surname != nil {
-		localVarQueryParams.Add("surname", parameterToString(*r.surname, ""))
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type KYCApiGetPhoneNumberRequest struct {
-	ctx context.Context
-	ApiService *KYCApiService
-	phoneNumber *int32
-}
-
-func (r KYCApiGetPhoneNumberRequest) PhoneNumber(phoneNumber int32) KYCApiGetPhoneNumberRequest {
-	r.phoneNumber = &phoneNumber
-	return r
-}
-
-func (r KYCApiGetPhoneNumberRequest) Execute() (*GetPhoneNumberResponse, *http.Response, error) {
-	return r.ApiService.GetPhoneNumberExecute(r)
-}
-
-/*
-GetPhoneNumber KYC - Lookup Phone Number
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYCApiGetPhoneNumberRequest
-*/
-func (a *KYCApiService) GetPhoneNumber() KYCApiGetPhoneNumberRequest {
-	return KYCApiGetPhoneNumberRequest{
-		ApiService: a,
-		ctx: a.client.cfg.Context,
-	}
-}
-
-// Execute executes the request
-//  @return GetPhoneNumberResponse
-func (a *KYCApiService) GetPhoneNumberExecute(r KYCApiGetPhoneNumberRequest) (*GetPhoneNumberResponse, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetPhoneNumberResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.GetPhoneNumber")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/api/v1/kyc/phone_number"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if r.phoneNumber != nil {
-		localVarQueryParams.Add("phone_number", parameterToString(*r.phoneNumber, ""))
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		if localVarHTTPResponse.StatusCode == 404 {
-			var v GetPhoneNumber404Response
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-            		newErr.model = v
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type KYCApiGetPremiumBvnRequest struct {
-	ctx context.Context
-	ApiService *KYCApiService
-	bvn *int32
-}
-
-func (r KYCApiGetPremiumBvnRequest) Bvn(bvn int32) KYCApiGetPremiumBvnRequest {
-	r.bvn = &bvn
-	return r
-}
-
-func (r KYCApiGetPremiumBvnRequest) Execute() (*GetPremiumBvnResponse, *http.Response, error) {
-	return r.ApiService.GetPremiumBvnExecute(r)
-}
-
-/*
-GetPremiumBvn KYC - Lookup BVN Premium
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYCApiGetPremiumBvnRequest
-*/
-func (a *KYCApiService) GetPremiumBvn() KYCApiGetPremiumBvnRequest {
-	return KYCApiGetPremiumBvnRequest{
-		ApiService: a,
-		ctx: a.client.cfg.Context,
-	}
-}
-
-// Execute executes the request
-//  @return GetPremiumBvnResponse
-func (a *KYCApiService) GetPremiumBvnExecute(r KYCApiGetPremiumBvnRequest) (*GetPremiumBvnResponse, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetPremiumBvnResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.GetPremiumBvn")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/api/v1/kyc/bvn/advance"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if r.bvn != nil {
-		localVarQueryParams.Add("bvn", parameterToString(*r.bvn, ""))
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type KYCApiGetVINRequest struct {
-	ctx context.Context
-	ApiService *KYCApiService
-	mode *string
-	firstname *string
-	lastname *string
-	vin *int32
-	state *string
-}
-
-func (r KYCApiGetVINRequest) Mode(mode string) KYCApiGetVINRequest {
-	r.mode = &mode
-	return r
-}
-
-func (r KYCApiGetVINRequest) Firstname(firstname string) KYCApiGetVINRequest {
-	r.firstname = &firstname
-	return r
-}
-
-func (r KYCApiGetVINRequest) Lastname(lastname string) KYCApiGetVINRequest {
-	r.lastname = &lastname
-	return r
-}
-
-func (r KYCApiGetVINRequest) Vin(vin int32) KYCApiGetVINRequest {
+func (r KYCApiGetVinRequest) Vin(vin string) KYCApiGetVinRequest {
 	r.vin = &vin
 	return r
 }
 
-func (r KYCApiGetVINRequest) State(state string) KYCApiGetVINRequest {
-	r.state = &state
-	return r
-}
-
-func (r KYCApiGetVINRequest) Execute() (*GetVinResponse, *http.Response, error) {
-	return r.ApiService.GetVINExecute(r)
+func (r KYCApiGetVinRequest) Execute() (*GetVinResponse, *http.Response, error) {
+	return r.ApiService.GetVinExecute(r)
 }
 
 /*
-GetVIN KYC - Get VIN
+GetVin KYC - Get VIN
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYCApiGetVINRequest
+ @return KYCApiGetVinRequest
 */
-func (a *KYCApiService) GetVIN() KYCApiGetVINRequest {
-	return KYCApiGetVINRequest{
+func (a *KYCApiService) GetVin() KYCApiGetVinRequest {
+	return KYCApiGetVinRequest{
 		ApiService: a,
 		ctx: a.client.cfg.Context,
 	}
@@ -1435,7 +529,7 @@ func (a *KYCApiService) GetVIN() KYCApiGetVINRequest {
 
 // Execute executes the request
 //  @return GetVinResponse
-func (a *KYCApiService) GetVINExecute(r KYCApiGetVINRequest) (*GetVinResponse, *http.Response, error) {
+func (a *KYCApiService) GetVinExecute(r KYCApiGetVinRequest) (*GetVinResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1443,7 +537,7 @@ func (a *KYCApiService) GetVINExecute(r KYCApiGetVINRequest) (*GetVinResponse, *
 		localVarReturnValue  *GetVinResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.GetVIN")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.GetVin")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1454,21 +548,9 @@ func (a *KYCApiService) GetVINExecute(r KYCApiGetVINRequest) (*GetVinResponse, *
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.mode != nil {
-		localVarQueryParams.Add("mode", parameterToString(*r.mode, ""))
-	}
-	if r.firstname != nil {
-		localVarQueryParams.Add("firstname", parameterToString(*r.firstname, ""))
-	}
-	if r.lastname != nil {
-		localVarQueryParams.Add("lastname", parameterToString(*r.lastname, ""))
-	}
 	if r.vin != nil {
 		localVarQueryParams.Add("vin", parameterToString(*r.vin, ""))
 	}
-	if r.state != nil {
-		localVarQueryParams.Add("state", parameterToString(*r.state, ""))
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1486,33 +568,8 @@ func (a *KYCApiService) GetVINExecute(r KYCApiGetVINRequest) (*GetVinResponse, *
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
+	if r.appId != nil {
+		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -1551,515 +608,56 @@ func (a *KYCApiService) GetVINExecute(r KYCApiGetVINRequest) (*GetVinResponse, *
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type KYCApiGetVninRequest struct {
+type KYCApiSubmitAddressRequest struct {
 	ctx context.Context
 	ApiService *KYCApiService
-	vnin *string
+	appId *string
+	kycSubmitAddressRequest *KycSubmitAddressRequest
 }
 
-func (r KYCApiGetVninRequest) Vnin(vnin string) KYCApiGetVninRequest {
-	r.vnin = &vnin
+func (r KYCApiSubmitAddressRequest) AppId(appId string) KYCApiSubmitAddressRequest {
+	r.appId = &appId
 	return r
 }
 
-func (r KYCApiGetVninRequest) Execute() (*GetVninResponse, *http.Response, error) {
-	return r.ApiService.GetVninExecute(r)
+func (r KYCApiSubmitAddressRequest) KycSubmitAddressRequest(kycSubmitAddressRequest KycSubmitAddressRequest) KYCApiSubmitAddressRequest {
+	r.kycSubmitAddressRequest = &kycSubmitAddressRequest
+	return r
+}
+
+func (r KYCApiSubmitAddressRequest) Execute() (*KycSubmitAddressResponse, *http.Response, error) {
+	return r.ApiService.SubmitAddressExecute(r)
 }
 
 /*
-GetVnin Lookup VNIN
+SubmitAddress Submit Address
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYCApiGetVninRequest
+ @return KYCApiSubmitAddressRequest
 */
-func (a *KYCApiService) GetVnin() KYCApiGetVninRequest {
-	return KYCApiGetVninRequest{
+func (a *KYCApiService) SubmitAddress() KYCApiSubmitAddressRequest {
+	return KYCApiSubmitAddressRequest{
 		ApiService: a,
 		ctx: a.client.cfg.Context,
 	}
 }
 
 // Execute executes the request
-//  @return GetVninResponse
-func (a *KYCApiService) GetVninExecute(r KYCApiGetVninRequest) (*GetVninResponse, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetVninResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.GetVnin")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/api/v1/kyc/vnin"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if r.vnin != nil {
-		localVarQueryParams.Add("vnin", parameterToString(*r.vnin, ""))
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type KYCApiValidateBvnRequest struct {
-	ctx context.Context
-	ApiService *KYCApiService
-	bvn *int32
-	firstName *string
-	dob *string
-}
-
-func (r KYCApiValidateBvnRequest) Bvn(bvn int32) KYCApiValidateBvnRequest {
-	r.bvn = &bvn
-	return r
-}
-
-func (r KYCApiValidateBvnRequest) FirstName(firstName string) KYCApiValidateBvnRequest {
-	r.firstName = &firstName
-	return r
-}
-
-func (r KYCApiValidateBvnRequest) Dob(dob string) KYCApiValidateBvnRequest {
-	r.dob = &dob
-	return r
-}
-
-func (r KYCApiValidateBvnRequest) Execute() (*ValidateBvnResponse, *http.Response, error) {
-	return r.ApiService.ValidateBvnExecute(r)
-}
-
-/*
-ValidateBvn KYC - Validate BVN
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYCApiValidateBvnRequest
-*/
-func (a *KYCApiService) ValidateBvn() KYCApiValidateBvnRequest {
-	return KYCApiValidateBvnRequest{
-		ApiService: a,
-		ctx: a.client.cfg.Context,
-	}
-}
-
-// Execute executes the request
-//  @return ValidateBvnResponse
-func (a *KYCApiService) ValidateBvnExecute(r KYCApiValidateBvnRequest) (*ValidateBvnResponse, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ValidateBvnResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.ValidateBvn")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/api/v1/kyc/bvn"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if r.bvn != nil {
-		localVarQueryParams.Add("bvn", parameterToString(*r.bvn, ""))
-	}
-	if r.firstName != nil {
-		localVarQueryParams.Add("first_name", parameterToString(*r.firstName, ""))
-	}
-	if r.dob != nil {
-		localVarQueryParams.Add("dob", parameterToString(*r.dob, ""))
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type KYCApiVerifyAgeRequest struct {
-	ctx context.Context
-	ApiService *KYCApiService
-	mode *string
-	accountNumber *int32
-	bankCode *int32
-	dob *string
-	firstName *string
-	lastName *string
-}
-
-func (r KYCApiVerifyAgeRequest) Mode(mode string) KYCApiVerifyAgeRequest {
-	r.mode = &mode
-	return r
-}
-
-func (r KYCApiVerifyAgeRequest) AccountNumber(accountNumber int32) KYCApiVerifyAgeRequest {
-	r.accountNumber = &accountNumber
-	return r
-}
-
-func (r KYCApiVerifyAgeRequest) BankCode(bankCode int32) KYCApiVerifyAgeRequest {
-	r.bankCode = &bankCode
-	return r
-}
-
-func (r KYCApiVerifyAgeRequest) Dob(dob string) KYCApiVerifyAgeRequest {
-	r.dob = &dob
-	return r
-}
-
-func (r KYCApiVerifyAgeRequest) FirstName(firstName string) KYCApiVerifyAgeRequest {
-	r.firstName = &firstName
-	return r
-}
-
-func (r KYCApiVerifyAgeRequest) LastName(lastName string) KYCApiVerifyAgeRequest {
-	r.lastName = &lastName
-	return r
-}
-
-func (r KYCApiVerifyAgeRequest) Execute() (*VerifyAgeResponse, *http.Response, error) {
-	return r.ApiService.VerifyAgeExecute(r)
-}
-
-/*
-VerifyAge KYC - Age Verification
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYCApiVerifyAgeRequest
-*/
-func (a *KYCApiService) VerifyAge() KYCApiVerifyAgeRequest {
-	return KYCApiVerifyAgeRequest{
-		ApiService: a,
-		ctx: a.client.cfg.Context,
-	}
-}
-
-// Execute executes the request
-//  @return VerifyAgeResponse
-func (a *KYCApiService) VerifyAgeExecute(r KYCApiVerifyAgeRequest) (*VerifyAgeResponse, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *VerifyAgeResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.VerifyAge")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/v1/kyc/age_verification"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if r.mode != nil {
-		localVarQueryParams.Add("mode", parameterToString(*r.mode, ""))
-	}
-	if r.accountNumber != nil {
-		localVarQueryParams.Add("account_number", parameterToString(*r.accountNumber, ""))
-	}
-	if r.bankCode != nil {
-		localVarQueryParams.Add("bank_code", parameterToString(*r.bankCode, ""))
-	}
-	if r.dob != nil {
-		localVarQueryParams.Add("dob", parameterToString(*r.dob, ""))
-	}
-	if r.firstName != nil {
-		localVarQueryParams.Add("first_name", parameterToString(*r.firstName, ""))
-	}
-	if r.lastName != nil {
-		localVarQueryParams.Add("last_name", parameterToString(*r.lastName, ""))
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type KYCApiVerifySelfieBvnRequest struct {
-	ctx context.Context
-	ApiService *KYCApiService
-	verifySelfieBvnRequest *VerifySelfieBvnRequest
-}
-
-func (r KYCApiVerifySelfieBvnRequest) VerifySelfieBvnRequest(verifySelfieBvnRequest VerifySelfieBvnRequest) KYCApiVerifySelfieBvnRequest {
-	r.verifySelfieBvnRequest = &verifySelfieBvnRequest
-	return r
-}
-
-func (r KYCApiVerifySelfieBvnRequest) Execute() (*VerifySelfieBvnResponse, *http.Response, error) {
-	return r.ApiService.VerifySelfieBvnExecute(r)
-}
-
-/*
-VerifySelfieBvn KYC - Selfie BVN Verificatoin
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYCApiVerifySelfieBvnRequest
-*/
-func (a *KYCApiService) VerifySelfieBvn() KYCApiVerifySelfieBvnRequest {
-	return KYCApiVerifySelfieBvnRequest{
-		ApiService: a,
-		ctx: a.client.cfg.Context,
-	}
-}
-
-// Execute executes the request
-//  @return VerifySelfieBvnResponse
-func (a *KYCApiService) VerifySelfieBvnExecute(r KYCApiVerifySelfieBvnRequest) (*VerifySelfieBvnResponse, *http.Response, error) {
+//  @return KycSubmitAddressResponse
+func (a *KYCApiService) SubmitAddressExecute(r KYCApiSubmitAddressRequest) (*KycSubmitAddressResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *VerifySelfieBvnResponse
+		localVarReturnValue  *KycSubmitAddressResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.VerifySelfieBvn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.SubmitAddress")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/kyc/bvn/verify"
+	localVarPath := localBasePath + "/api/v1/kyc/address"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2082,169 +680,11 @@ func (a *KYCApiService) VerifySelfieBvnExecute(r KYCApiVerifySelfieBvnRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.verifySelfieBvnRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type KYCApiVerifySelfieNinRequest struct {
-	ctx context.Context
-	ApiService *KYCApiService
-	verifySelfieNinRequest *VerifySelfieNinRequest
-}
-
-func (r KYCApiVerifySelfieNinRequest) VerifySelfieNinRequest(verifySelfieNinRequest VerifySelfieNinRequest) KYCApiVerifySelfieNinRequest {
-	r.verifySelfieNinRequest = &verifySelfieNinRequest
-	return r
-}
-
-func (r KYCApiVerifySelfieNinRequest) Execute() (*VerifySelfieNinResponse, *http.Response, error) {
-	return r.ApiService.VerifySelfieNinExecute(r)
-}
-
-/*
-VerifySelfieNin KYC - Selfie NIN Verification
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYCApiVerifySelfieNinRequest
-*/
-func (a *KYCApiService) VerifySelfieNin() KYCApiVerifySelfieNinRequest {
-	return KYCApiVerifySelfieNinRequest{
-		ApiService: a,
-		ctx: a.client.cfg.Context,
-	}
-}
-
-// Execute executes the request
-//  @return VerifySelfieNinResponse
-func (a *KYCApiService) VerifySelfieNinExecute(r KYCApiVerifySelfieNinRequest) (*VerifySelfieNinResponse, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *VerifySelfieNinResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYCApiService.VerifySelfieNin")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/v1/kyc/nin/verify"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	if r.appId != nil {
+		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
 	}
 	// body params
-	localVarPostBody = r.verifySelfieNinRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
+	localVarPostBody = r.kycSubmitAddressRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

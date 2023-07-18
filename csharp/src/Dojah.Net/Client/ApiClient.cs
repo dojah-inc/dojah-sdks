@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -453,6 +453,10 @@ namespace Dojah.Net.Client
                 MaxTimeout = configuration.Timeout,
                 Proxy = configuration.Proxy,
             };
+            if (!configuration.VerifySsl)
+            {
+                clientOptions.RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+            };
 
             RestClient client = new RestClient(clientOptions)
                 .UseSerializer(() => new CustomJsonCodec(SerializerSettings, configuration));
@@ -547,6 +551,10 @@ namespace Dojah.Net.Client
                 ClientCertificates = configuration.ClientCertificates,
                 MaxTimeout = configuration.Timeout,
                 Proxy = configuration.Proxy,
+            };
+            if (!configuration.VerifySsl)
+            {
+                clientOptions.RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
             };
 
             RestClient client = new RestClient(clientOptions)

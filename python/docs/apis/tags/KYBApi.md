@@ -5,14 +5,14 @@ All URIs are relative to *https://api.dojah.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_advanced_cac**](#get_advanced_cac) | **get** /v1/kyc/cac/advance | KYC - Get CAC Advanced
-[**get_basic_cac**](#get_basic_cac) | **get** /v1/kyc/cac/basic | KYB - Get CAC 2
-[**get_cac**](#get_cac) | **get** /v1/kyc/cac | KYC - Get CAC 
-[**get_tin**](#get_tin) | **get** /v1/kyc/tin | KYC - Fetch Tin
+[**business_detail**](#business_detail) | **get** /api/v1/kyb/business/detail | Business Detail
+[**business_search**](#business_search) | **get** /api/v1/kyb/business/search | Business Search
+[**get_cac**](#get_cac) | **get** /api/v1/kyc/cac | KYC - Get CAC 
+[**get_tin**](#get_tin) | **get** /api/v1/kyc/tin | KYC - Fetch Tin
 
-# **get_advanced_cac**
+# **business_detail**
 
-KYC - Get CAC Advanced
+Business Detail
 
 ### Example
 
@@ -24,30 +24,21 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
-    # Configure API key authorization: apikeyAuth
-    authorization="YOUR_API_KEY",
-    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    # api_key_prefix = {'apikeyAuth': 'Bearer'},
-    # Configure API key authorization: appIdAuth
-    app_id="YOUR_API_KEY",
-    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
-    # KYC - Get CAC Advanced
-    get_advanced_cac_response = dojah.kyb.get_advanced_cac(
-        rc=1432074,  # optional
-        type="co",  # optional
-        _class="advance",  # optional
+    # Business Detail
+    business_detail_response = dojah.kyb.business_detail(
+        app_id="{{app_id}}",  # optional
+        international_number="RC-1885308",  # optional
+        country_code="NG",  # optional
+        full=True,  # optional
     )
-    pprint(get_advanced_cac_response.body)
-    pprint(get_advanced_cac_response.body["entity"])
-    pprint(get_advanced_cac_response.headers)
-    pprint(get_advanced_cac_response.status)
-    pprint(get_advanced_cac_response.round_trip_time)
+    pprint(business_detail_response.headers)
+    pprint(business_detail_response.status)
+    pprint(business_detail_response.round_trip_time)
 except ApiException as e:
-    print("Exception when calling KYBApi.get_advanced_cac: %s\n" % e)
+    print("Exception when calling KYBApi.business_detail: %s\n" % e)
     pprint(e.body)
     pprint(e.headers)
     pprint(e.status)
@@ -59,6 +50,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
+header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -69,26 +61,40 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-rc | RcSchema | | optional
-type | TypeSchema | | optional
-class | ModelClassSchema | | optional
+international_number | InternationalNumberSchema | | optional
+country_code | CountryCodeSchema | | optional
+full | FullSchema | | optional
 
 
-# RcSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-decimal.Decimal, int,  | decimal.Decimal,  |  | 
-
-# TypeSchema
+# InternationalNumberSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 str,  | str,  |  | 
 
-# ModelClassSchema
+# CountryCodeSchema
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+str,  | str,  |  | 
+
+# FullSchema
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+bool,  | BoolClass,  |  | 
+
+### header_params
+#### RequestHeaderParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+AppId | AppIdSchema | | optional
+
+# AppIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
@@ -100,9 +106,9 @@ str,  | str,  |  |
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | [ApiResponseFor200](#get_advanced_cac.ApiResponseFor200) | Successful response
+200 | [ApiResponseFor200](#business_detail.ApiResponseFor200) | Successful response
 
-#### get_advanced_cac.ApiResponseFor200
+#### business_detail.ApiResponseFor200
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -110,20 +116,21 @@ body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 # SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**GetAdvancedCacResponse**](../../models/GetAdvancedCacResponse.md) |  | 
 
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
+No authorization required
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
-# **get_basic_cac**
+# **business_search**
 
-KYB - Get CAC 2
+Business Search
 
 ### Example
 
@@ -135,29 +142,20 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
-    # Configure API key authorization: apikeyAuth
-    authorization="YOUR_API_KEY",
-    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    # api_key_prefix = {'apikeyAuth': 'Bearer'},
-    # Configure API key authorization: appIdAuth
-    app_id="YOUR_API_KEY",
-    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
-    # KYB - Get CAC 2
-    get_basic_cac_response = dojah.kyb.get_basic_cac(
-        rc=3330883,  # optional
-        type="bn",  # optional
+    # Business Search
+    business_search_response = dojah.kyb.business_search(
+        app_id="{{app_id}}",  # optional
+        country_code="NG",  # optional
+        company=1885308,  # optional
     )
-    pprint(get_basic_cac_response.body)
-    pprint(get_basic_cac_response.body["entity"])
-    pprint(get_basic_cac_response.headers)
-    pprint(get_basic_cac_response.status)
-    pprint(get_basic_cac_response.round_trip_time)
+    pprint(business_search_response.headers)
+    pprint(business_search_response.status)
+    pprint(business_search_response.round_trip_time)
 except ApiException as e:
-    print("Exception when calling KYBApi.get_basic_cac: %s\n" % e)
+    print("Exception when calling KYBApi.business_search: %s\n" % e)
     pprint(e.body)
     pprint(e.headers)
     pprint(e.status)
@@ -169,6 +167,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
+header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -179,18 +178,32 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-rc | RcSchema | | optional
-type | TypeSchema | | optional
+country_code | CountryCodeSchema | | optional
+company | CompanySchema | | optional
 
 
-# RcSchema
+# CountryCodeSchema
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+str,  | str,  |  | 
+
+# CompanySchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 decimal.Decimal, int,  | decimal.Decimal,  |  | 
 
-# TypeSchema
+### header_params
+#### RequestHeaderParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+AppId | AppIdSchema | | optional
+
+# AppIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
@@ -202,9 +215,9 @@ str,  | str,  |  |
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | [ApiResponseFor200](#get_basic_cac.ApiResponseFor200) | Successful response
+200 | [ApiResponseFor200](#business_search.ApiResponseFor200) | Successful response
 
-#### get_basic_cac.ApiResponseFor200
+#### business_search.ApiResponseFor200
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -212,14 +225,15 @@ body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 # SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**GetBasicCacResponse**](../../models/GetBasicCacResponse.md) |  | 
 
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
+No authorization required
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -237,19 +251,14 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
-    # Configure API key authorization: apikeyAuth
-    authorization="YOUR_API_KEY",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'apikeyAuth': 'Bearer'},
-    # Configure API key authorization: appIdAuth
-    app_id="YOUR_API_KEY",
-    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # KYC - Get CAC
     get_cac_response = dojah.kyb.get_cac(
+        app_id="{{app_id}}",  # optional
         rc_number=1432074,  # optional
         company_name="ELTA SOLUTIONS LIMITED",  # optional
     )
@@ -271,6 +280,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
+header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -299,6 +309,20 @@ Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 str,  | str,  |  | 
 
+### header_params
+#### RequestHeaderParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+AppId | AppIdSchema | | optional
+
+# AppIdSchema
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+str,  | str,  |  | 
+
 ### Return Types, Responses
 
 Code | Class | Description
@@ -316,7 +340,7 @@ headers | ResponseHeadersFor200 |  |
 # SchemaFor200ResponseBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**GetCacResponse**](../../models/GetCacResponse.md) |  | 
+[**KybGetCacResponse**](../../models/KybGetCacResponse.md) |  | 
 
 #### ResponseHeadersFor200
 
@@ -374,7 +398,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
+[apikeyAuth](../../../README.md#apikeyAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -392,20 +416,15 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
-    # Configure API key authorization: apikeyAuth
-    authorization="YOUR_API_KEY",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'apikeyAuth': 'Bearer'},
-    # Configure API key authorization: appIdAuth
-    app_id="YOUR_API_KEY",
-    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # KYC - Fetch Tin
     get_tin_response = dojah.kyb.get_tin(
-        tin="21148119-0001",  # optional
+        app_id="{{app_id}}",  # optional
+        tin="24111697-0001",  # optional
     )
     pprint(get_tin_response.body)
     pprint(get_tin_response.body["entity"])
@@ -425,6 +444,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
+header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -439,6 +459,20 @@ tin | TinSchema | | optional
 
 
 # TinSchema
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+str,  | str,  |  | 
+
+### header_params
+#### RequestHeaderParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+AppId | AppIdSchema | | optional
+
+# AppIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
@@ -462,7 +496,7 @@ headers | ResponseHeadersFor200 |  |
 # SchemaFor200ResponseBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**GetTinResponse**](../../models/GetTinResponse.md) |  | 
+[**KybGetTinResponse**](../../models/KybGetTinResponse.md) |  | 
 
 #### ResponseHeadersFor200
 
@@ -520,7 +554,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
+[apikeyAuth](../../../README.md#apikeyAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 

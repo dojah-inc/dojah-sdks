@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -15,14 +15,13 @@ from enum import Enum
 from typing_extensions import TypedDict, Literal
 
 
-RequiredVerifySelfieBvnRequest = TypedDict("RequiredVerifySelfieBvnRequest", {
-    })
+class RequiredVerifySelfieBvnRequest(TypedDict):
+    pass
 
-OptionalVerifySelfieBvnRequest = TypedDict("OptionalVerifySelfieBvnRequest", {
-    "bvn": str,
+class OptionalVerifySelfieBvnRequest(TypedDict, total=False):
+    bvn: str
 
-    "selfie_image": str,
-    }, total=False)
+    selfie_image: str
 
 class VerifySelfieBvnRequest(RequiredVerifySelfieBvnRequest, OptionalVerifySelfieBvnRequest):
     pass

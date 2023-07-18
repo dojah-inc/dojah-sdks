@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -55,15 +55,15 @@ namespace Dojah.Net.Test.Api
         }
 
         /// <summary>
-        /// Test CategorizeTransactions
+        /// Test GetWalletBalance
         /// </summary>
         [Fact]
-        public void CategorizeTransactionsTest()
+        public void GetWalletBalanceTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //CategorizeTransactionsRequest categorizeTransactionsRequest = null;
-            //var response = instance.CategorizeTransactions(categorizeTransactionsRequest);
-            //Assert.IsType<CategorizeTransactionsResponse>(response);
+            //string appId = null;
+            //var response = instance.GetWalletBalance(appId);
+            //Assert.IsType<GetWalletBalanceResponse>(response);
         }
     }
 }

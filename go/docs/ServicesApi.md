@@ -4,15 +4,15 @@ All URIs are relative to *https://api.dojah.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CategorizeTransactions**](ServicesApi.md#CategorizeTransactions) | **Post** /v1/ml/categorize_transaction | Categorize Transactions
+[**GetWalletBalance**](ServicesApi.md#GetWalletBalance) | **Get** /api/v1/balance | Get Dojah Wallet Balance
 
 
 
-## CategorizeTransactions
+## GetWalletBalance
 
-> CategorizeTransactionsResponse CategorizeTransactions(ctx).CategorizeTransactionsRequest(categorizeTransactionsRequest).Execute()
+> GetWalletBalanceResponse GetWalletBalance(ctx).AppId(appId).Execute()
 
-Categorize Transactions
+Get Dojah Wallet Balance
 
 ### Example
 
@@ -27,17 +27,17 @@ import (
 )
 
 func main() {
-    categorizeTransactionsRequest := *dojah.NewCategorizeTransactionsRequest() // CategorizeTransactionsRequest |  (optional)
+    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServicesApi.CategorizeTransactions(context.Background()).CategorizeTransactionsRequest(categorizeTransactionsRequest).Execute()
+    resp, r, err := apiClient.ServicesApi.GetWalletBalance(context.Background()).AppId(appId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServicesApi.CategorizeTransactions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServicesApi.GetWalletBalance``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CategorizeTransactions`: CategorizeTransactionsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ServicesApi.CategorizeTransactions`: %v\n", resp)
+    // response from `GetWalletBalance`: GetWalletBalanceResponse
+    fmt.Fprintf(os.Stdout, "Response from `ServicesApi.GetWalletBalance`: %v\n", resp)
 }
 ```
 
@@ -47,24 +47,24 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCategorizeTransactionsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetWalletBalanceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categorizeTransactionsRequest** | [**CategorizeTransactionsRequest**](CategorizeTransactionsRequest.md) |  | 
+ **appId** | **string** |  | 
 
 ### Return type
 
-[**CategorizeTransactionsResponse**](CategorizeTransactionsResponse.md)
+[**GetWalletBalanceResponse**](GetWalletBalanceResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

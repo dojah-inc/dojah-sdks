@@ -4,12 +4,12 @@ All URIs are relative to *https://api.dojah.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**categorizeTransactions**](ServicesApi.md#categorizeTransactions) | **POST** /v1/ml/categorize_transaction | Categorize Transactions
+[**getWalletBalance**](ServicesApi.md#getWalletBalance) | **GET** /api/v1/balance | Get Dojah Wallet Balance
 
 
-# **categorizeTransactions**
+# **getWalletBalance**
 
-#### **POST** /v1/ml/categorize_transaction
+#### **GET** /api/v1/balance
 
 
 ### Example
@@ -21,18 +21,11 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
 });
 
-const categorizeTransactionsResponse =
-  await dojah.services.categorizeTransactions({
-    description:
-      "POS/WEB PURCHASE TRANSACTION -047608- -253842-MUNCHIES BY MOE OY OYNG",
-    trans_type: "debit",
-  });
+const getWalletBalanceResponse = await dojah.services.getWalletBalance({});
 
-console.log(categorizeTransactionsResponse);
+console.log(getWalletBalanceResponse);
 ```
 
 
@@ -40,16 +33,16 @@ console.log(categorizeTransactionsResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categorizeTransactionsRequest** | **CategorizeTransactionsRequest**|  |
+ **appId** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
 
-**CategorizeTransactionsResponse**
+**GetWalletBalanceResponse**
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

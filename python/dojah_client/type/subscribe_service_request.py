@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -15,14 +15,13 @@ from enum import Enum
 from typing_extensions import TypedDict, Literal
 
 
-RequiredSubscribeServiceRequest = TypedDict("RequiredSubscribeServiceRequest", {
-    })
+class RequiredSubscribeServiceRequest(TypedDict):
+    pass
 
-OptionalSubscribeServiceRequest = TypedDict("OptionalSubscribeServiceRequest", {
-    "webhook": str,
+class OptionalSubscribeServiceRequest(TypedDict, total=False):
+    webhook: str
 
-    "service": str,
-    }, total=False)
+    service: str
 
 class SubscribeServiceRequest(RequiredSubscribeServiceRequest, OptionalSubscribeServiceRequest):
     pass

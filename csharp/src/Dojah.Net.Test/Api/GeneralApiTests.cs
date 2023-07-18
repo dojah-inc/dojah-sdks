@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -61,7 +61,8 @@ namespace Dojah.Net.Test.Api
         public void GetBanksTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.GetBanks();
+            //string appId = null;
+            //var response = instance.GetBanks(appId);
             //Assert.IsType<GetBanksResponse>(response);
         }
 
@@ -72,20 +73,10 @@ namespace Dojah.Net.Test.Api
         public void GetBinTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
+            //string appId = null;
             //int? cardBin = null;
-            //var response = instance.GetBin(cardBin);
+            //var response = instance.GetBin(appId, cardBin);
             //Assert.IsType<GetBinResponse>(response);
-        }
-
-        /// <summary>
-        /// Test GetDataPlans
-        /// </summary>
-        [Fact]
-        public void GetDataPlansTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.GetDataPlans();
-            //Assert.IsType<GetDataPlansResponse>(response);
         }
 
         /// <summary>
@@ -95,45 +86,11 @@ namespace Dojah.Net.Test.Api
         public void GetNubanTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
+            //string appId = null;
             //int? bankCode = null;
             //int? accountNumber = null;
-            //var response = instance.GetNuban(bankCode, accountNumber);
+            //var response = instance.GetNuban(appId, bankCode, accountNumber);
             //Assert.IsType<GeneralGetNubanResponse>(response);
-        }
-
-        /// <summary>
-        /// Test GetWalletBalance
-        /// </summary>
-        [Fact]
-        public void GetWalletBalanceTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.GetWalletBalance();
-            //Assert.IsType<GetWalletBalanceResponse>(response);
-        }
-
-        /// <summary>
-        /// Test PurchaseAirtime
-        /// </summary>
-        [Fact]
-        public void PurchaseAirtimeTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //PurchaseAirtimeRequest purchaseAirtimeRequest = null;
-            //var response = instance.PurchaseAirtime(purchaseAirtimeRequest);
-            //Assert.IsType<PurchaseAirtimeResponse>(response);
-        }
-
-        /// <summary>
-        /// Test PurchaseData
-        /// </summary>
-        [Fact]
-        public void PurchaseDataTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //PurchaseDataRequest purchaseDataRequest = null;
-            //var response = instance.PurchaseData(purchaseDataRequest);
-            //Assert.IsType<PurchaseDataResponse>(response);
         }
     }
 }

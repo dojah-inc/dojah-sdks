@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -56,7 +56,7 @@ public class ApiResponse<T> {
      *
      * @return a {@link java.util.Map} of headers 
      */
-    public Map<String, List<String>> getHeaders() {
+    public Map<String, List<String>> getResponseHeaders() {
         return headers;
     }
 
@@ -65,7 +65,7 @@ public class ApiResponse<T> {
      *
      * @return the data
      */
-    public T getData() {
+    public T getResponseBody() {
         return data;
     }
 

@@ -4,15 +4,15 @@ All URIs are relative to *https://api.dojah.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAdvancedCac**](KybApi.md#getAdvancedCac) | **GET** /v1/kyc/cac/advance | KYC - Get CAC Advanced
-[**getBasicCac**](KybApi.md#getBasicCac) | **GET** /v1/kyc/cac/basic | KYB - Get CAC 2
-[**getCac**](KybApi.md#getCac) | **GET** /v1/kyc/cac | KYC - Get CAC 
-[**getTin**](KybApi.md#getTin) | **GET** /v1/kyc/tin | KYC - Fetch Tin
+[**businessDetail**](KybApi.md#businessDetail) | **GET** /api/v1/kyb/business/detail | Business Detail
+[**businessSearch**](KybApi.md#businessSearch) | **GET** /api/v1/kyb/business/search | Business Search
+[**getCac**](KybApi.md#getCac) | **GET** /api/v1/kyc/cac | KYC - Get CAC 
+[**getTin**](KybApi.md#getTin) | **GET** /api/v1/kyc/tin | KYC - Fetch Tin
 
 
-# **getAdvancedCac**
+# **businessDetail**
 
-#### **GET** /v1/kyc/cac/advance
+#### **GET** /api/v1/kyb/business/detail
 
 
 ### Example
@@ -24,13 +24,11 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
 });
 
-const getAdvancedCacResponse = await dojah.kyb.getAdvancedCac({});
+const businessDetailResponse = await dojah.kyb.businessDetail({});
 
-console.log(getAdvancedCacResponse);
+console.log(businessDetailResponse);
 ```
 
 
@@ -38,14 +36,15 @@ console.log(getAdvancedCacResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rc** | [**number**] |  | (optional) defaults to undefined
- **type** | [**string**] |  | (optional) defaults to undefined
- **_class** | [**string**] |  | (optional) defaults to undefined
+ **appId** | [**string**] |  | (optional) defaults to undefined
+ **internationalNumber** | [**string**] |  | (optional) defaults to undefined
+ **countryCode** | [**string**] |  | (optional) defaults to undefined
+ **full** | [**boolean**] |  | (optional) defaults to undefined
 
 
 ### Return type
 
-**GetAdvancedCacResponse**
+**object**
 
 ### HTTP request headers
 
@@ -60,9 +59,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
-# **getBasicCac**
+# **businessSearch**
 
-#### **GET** /v1/kyc/cac/basic
+#### **GET** /api/v1/kyb/business/search
 
 
 ### Example
@@ -74,13 +73,11 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
 });
 
-const getBasicCacResponse = await dojah.kyb.getBasicCac({});
+const businessSearchResponse = await dojah.kyb.businessSearch({});
 
-console.log(getBasicCacResponse);
+console.log(businessSearchResponse);
 ```
 
 
@@ -88,13 +85,14 @@ console.log(getBasicCacResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rc** | [**number**] |  | (optional) defaults to undefined
- **type** | [**string**] |  | (optional) defaults to undefined
+ **appId** | [**string**] |  | (optional) defaults to undefined
+ **countryCode** | [**string**] |  | (optional) defaults to undefined
+ **company** | [**number**] |  | (optional) defaults to undefined
 
 
 ### Return type
 
-**GetBasicCacResponse**
+**object**
 
 ### HTTP request headers
 
@@ -111,7 +109,7 @@ Name | Type | Description  | Notes
 
 # **getCac**
 
-#### **GET** /v1/kyc/cac
+#### **GET** /api/v1/kyc/cac
 
 
 ### Example
@@ -123,8 +121,6 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
 });
 
 const getCacResponse = await dojah.kyb.getCac({});
@@ -137,13 +133,14 @@ console.log(getCacResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **appId** | [**string**] |  | (optional) defaults to undefined
  **rcNumber** | [**number**] |  | (optional) defaults to undefined
  **companyName** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
 
-**GetCacResponse**
+**KybGetCacResponse**
 
 ### HTTP request headers
 
@@ -160,7 +157,7 @@ Name | Type | Description  | Notes
 
 # **getTin**
 
-#### **GET** /v1/kyc/tin
+#### **GET** /api/v1/kyc/tin
 
 
 ### Example
@@ -172,8 +169,6 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
 });
 
 const getTinResponse = await dojah.kyb.getTin({});
@@ -186,12 +181,13 @@ console.log(getTinResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **appId** | [**string**] |  | (optional) defaults to undefined
  **tin** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
 
-**GetTinResponse**
+**KybGetTinResponse**
 
 ### HTTP request headers
 

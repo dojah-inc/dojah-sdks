@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -16,24 +16,10 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.Configuration;
-import com.konfigthis.dojah.client.model.AnalyzeDocumentResponse;
-import com.konfigthis.dojah.client.model.GetBasicBvnResponse;
-import com.konfigthis.dojah.client.model.GetBasicPhoneNumberResponse;
-import com.konfigthis.dojah.client.model.GetEmailReputationResponse;
-import com.konfigthis.dojah.client.model.GetFullBvnResponse;
-import com.konfigthis.dojah.client.model.GetKycDriversLicenseResponse;
-import com.konfigthis.dojah.client.model.GetKycPassportResponse;
-import com.konfigthis.dojah.client.model.GetNubanResponse;
-import com.konfigthis.dojah.client.model.GetPhoneNumberResponse;
-import com.konfigthis.dojah.client.model.GetPremiumBvnResponse;
 import com.konfigthis.dojah.client.model.GetVinResponse;
-import com.konfigthis.dojah.client.model.GetVninResponse;
-import com.konfigthis.dojah.client.model.ValidateBvnResponse;
-import com.konfigthis.dojah.client.model.VerifyAgeResponse;
-import com.konfigthis.dojah.client.model.VerifySelfieBvnRequest;
-import com.konfigthis.dojah.client.model.VerifySelfieBvnResponse;
-import com.konfigthis.dojah.client.model.VerifySelfieNinRequest;
-import com.konfigthis.dojah.client.model.VerifySelfieNinResponse;
+import com.konfigthis.dojah.client.model.KycCheckLivenessRequest;
+import com.konfigthis.dojah.client.model.KycSubmitAddressRequest;
+import com.konfigthis.dojah.client.model.KycSubmitAddressResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
@@ -59,143 +45,67 @@ public class KycApiTest {
     }
 
     /**
-     * KYC - Document Analysis
+     * Liveness Check
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void analyzeDocumentTest() throws ApiException {
-        AnalyzeDocumentResponse response = api.analyzeDocument()
+    public void checkLivenessTest() throws ApiException {
+        String image = null;
+        String appId = null;
+        Object response = api.checkLiveness()
+                .image(image)
+                .appId(appId)
                 .execute();
         // TODO: test validations
     }
 
     /**
-     * KYC - Get Basic BVN Info
+     * KYC - Fetch Accounts 
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void getBasicBvnTest() throws ApiException {
-        Integer bvn = null;
-        GetBasicBvnResponse response = api.getBasicBvn()
+    public void getAccountsTest() throws ApiException {
+        String appId = null;
+        String bvn = null;
+        Object response = api.getAccounts()
+                .appId(appId)
                 .bvn(bvn)
                 .execute();
         // TODO: test validations
     }
 
     /**
-     * KYC Lookup Phone Number Basic
+     * Fetch Address Verification Data
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void getBasicPhoneNumberTest() throws ApiException {
-        Integer phoneNumber = null;
-        GetBasicPhoneNumberResponse response = api.getBasicPhoneNumber()
-                .phoneNumber(phoneNumber)
+    public void getAddressVerificationTest() throws ApiException {
+        String appId = null;
+        String referenceId = null;
+        Object response = api.getAddressVerification()
+                .appId(appId)
+                .referenceId(referenceId)
                 .execute();
         // TODO: test validations
     }
 
     /**
-     * KYC - Get Drivers License Info
+     * Lookup BVN from NUBAN
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void getDriversLicenseTest() throws ApiException {
-        String licenseNumber = null;
-        GetKycDriversLicenseResponse response = api.getDriversLicense()
-                .licenseNumber(licenseNumber)
-                .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * KYC - Get Email Reputation
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getEmailReputationTest() throws ApiException {
-        String email = null;
-        GetEmailReputationResponse response = api.getEmailReputation()
-                .email(email)
-                .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * KYC - Lookup BVN Basic
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getFullBvnTest() throws ApiException {
-        Integer bvn = null;
-        GetFullBvnResponse response = api.getFullBvn()
-                .bvn(bvn)
-                .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * KYC - Get NUBAN Information
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getNubanTest() throws ApiException {
+    public void getBvnFromNubanTest() throws ApiException {
+        String appId = null;
         Integer bankCode = null;
         Integer accountNumber = null;
-        GetNubanResponse response = api.getNuban()
+        Object response = api.getBvnFromNuban()
+                .appId(appId)
                 .bankCode(bankCode)
                 .accountNumber(accountNumber)
-                .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * KYC - Passport
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getPassportTest() throws ApiException {
-        Integer passportNumber = null;
-        String surname = null;
-        GetKycPassportResponse response = api.getPassport()
-                .passportNumber(passportNumber)
-                .surname(surname)
-                .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * KYC - Lookup Phone Number
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getPhoneNumberTest() throws ApiException {
-        Integer phoneNumber = null;
-        GetPhoneNumberResponse response = api.getPhoneNumber()
-                .phoneNumber(phoneNumber)
-                .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * KYC - Lookup BVN Premium
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getPremiumBvnTest() throws ApiException {
-        Integer bvn = null;
-        GetPremiumBvnResponse response = api.getPremiumBvn()
-                .bvn(bvn)
                 .execute();
         // TODO: test validations
     }
@@ -206,106 +116,46 @@ public class KycApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void getVINTest() throws ApiException {
-        String mode = null;
-        String firstname = null;
-        String lastname = null;
-        Integer vin = null;
-        String state = null;
-        GetVinResponse response = api.getVIN()
-                .mode(mode)
-                .firstname(firstname)
-                .lastname(lastname)
+    public void getVinTest() throws ApiException {
+        String appId = null;
+        String vin = null;
+        GetVinResponse response = api.getVin()
+                .appId(appId)
                 .vin(vin)
-                .state(state)
                 .execute();
         // TODO: test validations
     }
 
     /**
-     * Lookup VNIN
+     * Submit Address
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void getVninTest() throws ApiException {
-        String vnin = null;
-        GetVninResponse response = api.getVnin()
-                .vnin(vnin)
-                .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * KYC - Validate BVN
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void validateBvnTest() throws ApiException {
-        Integer bvn = null;
-        String firstName = null;
-        String dob = null;
-        ValidateBvnResponse response = api.validateBvn()
-                .bvn(bvn)
-                .firstName(firstName)
-                .dob(dob)
-                .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * KYC - Age Verification
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void verifyAgeTest() throws ApiException {
-        String mode = null;
-        Integer accountNumber = null;
-        Integer bankCode = null;
-        String dob = null;
+    public void submitAddressTest() throws ApiException {
+        String street = null;
+        String lga = null;
+        String state = null;
+        String landmark = null;
         String firstName = null;
         String lastName = null;
-        VerifyAgeResponse response = api.verifyAge()
-                .mode(mode)
-                .accountNumber(accountNumber)
-                .bankCode(bankCode)
-                .dob(dob)
+        String middleName = null;
+        String dob = null;
+        String gender = null;
+        String mobile = null;
+        String appId = null;
+        KycSubmitAddressResponse response = api.submitAddress()
+                .street(street)
+                .lga(lga)
+                .state(state)
+                .landmark(landmark)
                 .firstName(firstName)
                 .lastName(lastName)
-                .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * KYC - Selfie BVN Verificatoin
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void verifySelfieBvnTest() throws ApiException {
-        String bvn = null;
-        String selfieImage = null;
-        VerifySelfieBvnResponse response = api.verifySelfieBvn()
-                .bvn(bvn)
-                .selfieImage(selfieImage)
-                .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * KYC - Selfie NIN Verification
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void verifySelfieNinTest() throws ApiException {
-        String nin = null;
-        String selfieImage = null;
-        VerifySelfieNinResponse response = api.verifySelfieNin()
-                .nin(nin)
-                .selfieImage(selfieImage)
+                .middleName(middleName)
+                .dob(dob)
+                .gender(gender)
+                .mobile(mobile)
+                .appId(appId)
                 .execute();
         // TODO: test validations
     }

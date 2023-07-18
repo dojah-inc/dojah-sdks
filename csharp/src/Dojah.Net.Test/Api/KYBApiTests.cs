@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -55,30 +55,32 @@ namespace Dojah.Net.Test.Api
         }
 
         /// <summary>
-        /// Test GetAdvancedCac
+        /// Test BusinessDetail
         /// </summary>
         [Fact]
-        public void GetAdvancedCacTest()
+        public void BusinessDetailTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //int? rc = null;
-            //string type = null;
-            //string _class = null;
-            //var response = instance.GetAdvancedCac(rc, type, _class);
-            //Assert.IsType<GetAdvancedCacResponse>(response);
+            //string appId = null;
+            //string internationalNumber = null;
+            //string countryCode = null;
+            //bool? full = null;
+            //var response = instance.BusinessDetail(appId, internationalNumber, countryCode, full);
+            //Assert.IsType<Object>(response);
         }
 
         /// <summary>
-        /// Test GetBasicCac
+        /// Test BusinessSearch
         /// </summary>
         [Fact]
-        public void GetBasicCacTest()
+        public void BusinessSearchTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //int? rc = null;
-            //string type = null;
-            //var response = instance.GetBasicCac(rc, type);
-            //Assert.IsType<GetBasicCacResponse>(response);
+            //string appId = null;
+            //string countryCode = null;
+            //int? company = null;
+            //var response = instance.BusinessSearch(appId, countryCode, company);
+            //Assert.IsType<Object>(response);
         }
 
         /// <summary>
@@ -88,10 +90,11 @@ namespace Dojah.Net.Test.Api
         public void GetCacTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
+            //string appId = null;
             //int? rcNumber = null;
             //string companyName = null;
-            //var response = instance.GetCac(rcNumber, companyName);
-            //Assert.IsType<GetCacResponse>(response);
+            //var response = instance.GetCac(appId, rcNumber, companyName);
+            //Assert.IsType<KybGetCacResponse>(response);
         }
 
         /// <summary>
@@ -101,9 +104,10 @@ namespace Dojah.Net.Test.Api
         public void GetTinTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
+            //string appId = null;
             //string tin = null;
-            //var response = instance.GetTin(tin);
-            //Assert.IsType<GetTinResponse>(response);
+            //var response = instance.GetTin(appId, tin);
+            //Assert.IsType<KybGetTinResponse>(response);
         }
     }
 }

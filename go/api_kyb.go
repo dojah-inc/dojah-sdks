@@ -1,5 +1,5 @@
 /*
-DOJAH APIs
+DOJAH Publilc APIs
 
 Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -22,75 +22,81 @@ import (
 // KYBApiService KYBApi service
 type KYBApiService service
 
-type KYBApiGetAdvancedCacRequest struct {
+type KYBApiBusinessDetailRequest struct {
 	ctx context.Context
 	ApiService *KYBApiService
-	rc *int32
-	type_ *string
-	class *string
+	appId *string
+	internationalNumber *string
+	countryCode *string
+	full *bool
 }
 
-func (r KYBApiGetAdvancedCacRequest) Rc(rc int32) KYBApiGetAdvancedCacRequest {
-	r.rc = &rc
+func (r KYBApiBusinessDetailRequest) AppId(appId string) KYBApiBusinessDetailRequest {
+	r.appId = &appId
 	return r
 }
 
-func (r KYBApiGetAdvancedCacRequest) Type_(type_ string) KYBApiGetAdvancedCacRequest {
-	r.type_ = &type_
+func (r KYBApiBusinessDetailRequest) InternationalNumber(internationalNumber string) KYBApiBusinessDetailRequest {
+	r.internationalNumber = &internationalNumber
 	return r
 }
 
-func (r KYBApiGetAdvancedCacRequest) Class(class string) KYBApiGetAdvancedCacRequest {
-	r.class = &class
+func (r KYBApiBusinessDetailRequest) CountryCode(countryCode string) KYBApiBusinessDetailRequest {
+	r.countryCode = &countryCode
 	return r
 }
 
-func (r KYBApiGetAdvancedCacRequest) Execute() (*GetAdvancedCacResponse, *http.Response, error) {
-	return r.ApiService.GetAdvancedCacExecute(r)
+func (r KYBApiBusinessDetailRequest) Full(full bool) KYBApiBusinessDetailRequest {
+	r.full = &full
+	return r
+}
+
+func (r KYBApiBusinessDetailRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.BusinessDetailExecute(r)
 }
 
 /*
-GetAdvancedCac KYC - Get CAC Advanced
+BusinessDetail Business Detail
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYBApiGetAdvancedCacRequest
+ @return KYBApiBusinessDetailRequest
 */
-func (a *KYBApiService) GetAdvancedCac() KYBApiGetAdvancedCacRequest {
-	return KYBApiGetAdvancedCacRequest{
+func (a *KYBApiService) BusinessDetail() KYBApiBusinessDetailRequest {
+	return KYBApiBusinessDetailRequest{
 		ApiService: a,
 		ctx: a.client.cfg.Context,
 	}
 }
 
 // Execute executes the request
-//  @return GetAdvancedCacResponse
-func (a *KYBApiService) GetAdvancedCacExecute(r KYBApiGetAdvancedCacRequest) (*GetAdvancedCacResponse, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *KYBApiService) BusinessDetailExecute(r KYBApiBusinessDetailRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetAdvancedCacResponse
+		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYBApiService.GetAdvancedCac")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYBApiService.BusinessDetail")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/kyc/cac/advance"
+	localVarPath := localBasePath + "/api/v1/kyb/business/detail"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.rc != nil {
-		localVarQueryParams.Add("rc", parameterToString(*r.rc, ""))
+	if r.internationalNumber != nil {
+		localVarQueryParams.Add("international_number", parameterToString(*r.internationalNumber, ""))
 	}
-	if r.type_ != nil {
-		localVarQueryParams.Add("type", parameterToString(*r.type_, ""))
+	if r.countryCode != nil {
+		localVarQueryParams.Add("country_code", parameterToString(*r.countryCode, ""))
 	}
-	if r.class != nil {
-		localVarQueryParams.Add("class", parameterToString(*r.class, ""))
+	if r.full != nil {
+		localVarQueryParams.Add("full", parameterToString(*r.full, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -109,33 +115,8 @@ func (a *KYBApiService) GetAdvancedCacExecute(r KYBApiGetAdvancedCacRequest) (*G
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
+	if r.appId != nil {
+		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -174,66 +155,72 @@ func (a *KYBApiService) GetAdvancedCacExecute(r KYBApiGetAdvancedCacRequest) (*G
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type KYBApiGetBasicCacRequest struct {
+type KYBApiBusinessSearchRequest struct {
 	ctx context.Context
 	ApiService *KYBApiService
-	rc *int32
-	type_ *string
+	appId *string
+	countryCode *string
+	company *int32
 }
 
-func (r KYBApiGetBasicCacRequest) Rc(rc int32) KYBApiGetBasicCacRequest {
-	r.rc = &rc
+func (r KYBApiBusinessSearchRequest) AppId(appId string) KYBApiBusinessSearchRequest {
+	r.appId = &appId
 	return r
 }
 
-func (r KYBApiGetBasicCacRequest) Type_(type_ string) KYBApiGetBasicCacRequest {
-	r.type_ = &type_
+func (r KYBApiBusinessSearchRequest) CountryCode(countryCode string) KYBApiBusinessSearchRequest {
+	r.countryCode = &countryCode
 	return r
 }
 
-func (r KYBApiGetBasicCacRequest) Execute() (*GetBasicCacResponse, *http.Response, error) {
-	return r.ApiService.GetBasicCacExecute(r)
+func (r KYBApiBusinessSearchRequest) Company(company int32) KYBApiBusinessSearchRequest {
+	r.company = &company
+	return r
+}
+
+func (r KYBApiBusinessSearchRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.BusinessSearchExecute(r)
 }
 
 /*
-GetBasicCac KYB - Get CAC 2
+BusinessSearch Business Search
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KYBApiGetBasicCacRequest
+ @return KYBApiBusinessSearchRequest
 */
-func (a *KYBApiService) GetBasicCac() KYBApiGetBasicCacRequest {
-	return KYBApiGetBasicCacRequest{
+func (a *KYBApiService) BusinessSearch() KYBApiBusinessSearchRequest {
+	return KYBApiBusinessSearchRequest{
 		ApiService: a,
 		ctx: a.client.cfg.Context,
 	}
 }
 
 // Execute executes the request
-//  @return GetBasicCacResponse
-func (a *KYBApiService) GetBasicCacExecute(r KYBApiGetBasicCacRequest) (*GetBasicCacResponse, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *KYBApiService) BusinessSearchExecute(r KYBApiBusinessSearchRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetBasicCacResponse
+		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYBApiService.GetBasicCac")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYBApiService.BusinessSearch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/kyc/cac/basic"
+	localVarPath := localBasePath + "/api/v1/kyb/business/search"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.rc != nil {
-		localVarQueryParams.Add("rc", parameterToString(*r.rc, ""))
+	if r.countryCode != nil {
+		localVarQueryParams.Add("country_code", parameterToString(*r.countryCode, ""))
 	}
-	if r.type_ != nil {
-		localVarQueryParams.Add("type", parameterToString(*r.type_, ""))
+	if r.company != nil {
+		localVarQueryParams.Add("company", parameterToString(*r.company, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -252,33 +239,8 @@ func (a *KYBApiService) GetBasicCacExecute(r KYBApiGetBasicCacRequest) (*GetBasi
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
+	if r.appId != nil {
+		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -320,8 +282,14 @@ func (a *KYBApiService) GetBasicCacExecute(r KYBApiGetBasicCacRequest) (*GetBasi
 type KYBApiGetCacRequest struct {
 	ctx context.Context
 	ApiService *KYBApiService
+	appId *string
 	rcNumber *int32
 	companyName *string
+}
+
+func (r KYBApiGetCacRequest) AppId(appId string) KYBApiGetCacRequest {
+	r.appId = &appId
+	return r
 }
 
 func (r KYBApiGetCacRequest) RcNumber(rcNumber int32) KYBApiGetCacRequest {
@@ -334,7 +302,7 @@ func (r KYBApiGetCacRequest) CompanyName(companyName string) KYBApiGetCacRequest
 	return r
 }
 
-func (r KYBApiGetCacRequest) Execute() (*GetCacResponse, *http.Response, error) {
+func (r KYBApiGetCacRequest) Execute() (*KybGetCacResponse, *http.Response, error) {
 	return r.ApiService.GetCacExecute(r)
 }
 
@@ -352,13 +320,13 @@ func (a *KYBApiService) GetCac() KYBApiGetCacRequest {
 }
 
 // Execute executes the request
-//  @return GetCacResponse
-func (a *KYBApiService) GetCacExecute(r KYBApiGetCacRequest) (*GetCacResponse, *http.Response, error) {
+//  @return KybGetCacResponse
+func (a *KYBApiService) GetCacExecute(r KYBApiGetCacRequest) (*KybGetCacResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetCacResponse
+		localVarReturnValue  *KybGetCacResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYBApiService.GetCac")
@@ -366,7 +334,7 @@ func (a *KYBApiService) GetCacExecute(r KYBApiGetCacRequest) (*GetCacResponse, *
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/kyc/cac"
+	localVarPath := localBasePath + "/api/v1/kyc/cac"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -395,33 +363,8 @@ func (a *KYBApiService) GetCacExecute(r KYBApiGetCacRequest) (*GetCacResponse, *
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
+	if r.appId != nil {
+		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -463,7 +406,13 @@ func (a *KYBApiService) GetCacExecute(r KYBApiGetCacRequest) (*GetCacResponse, *
 type KYBApiGetTinRequest struct {
 	ctx context.Context
 	ApiService *KYBApiService
+	appId *string
 	tin *string
+}
+
+func (r KYBApiGetTinRequest) AppId(appId string) KYBApiGetTinRequest {
+	r.appId = &appId
+	return r
 }
 
 func (r KYBApiGetTinRequest) Tin(tin string) KYBApiGetTinRequest {
@@ -471,7 +420,7 @@ func (r KYBApiGetTinRequest) Tin(tin string) KYBApiGetTinRequest {
 	return r
 }
 
-func (r KYBApiGetTinRequest) Execute() (*GetTinResponse, *http.Response, error) {
+func (r KYBApiGetTinRequest) Execute() (*KybGetTinResponse, *http.Response, error) {
 	return r.ApiService.GetTinExecute(r)
 }
 
@@ -489,13 +438,13 @@ func (a *KYBApiService) GetTin() KYBApiGetTinRequest {
 }
 
 // Execute executes the request
-//  @return GetTinResponse
-func (a *KYBApiService) GetTinExecute(r KYBApiGetTinRequest) (*GetTinResponse, *http.Response, error) {
+//  @return KybGetTinResponse
+func (a *KYBApiService) GetTinExecute(r KYBApiGetTinRequest) (*KybGetTinResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetTinResponse
+		localVarReturnValue  *KybGetTinResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KYBApiService.GetTin")
@@ -503,7 +452,7 @@ func (a *KYBApiService) GetTinExecute(r KYBApiGetTinRequest) (*GetTinResponse, *
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/kyc/tin"
+	localVarPath := localBasePath + "/api/v1/kyc/tin"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -529,33 +478,8 @@ func (a *KYBApiService) GetTinExecute(r KYBApiGetTinRequest) (*GetTinResponse, *
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
+	if r.appId != nil {
+		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

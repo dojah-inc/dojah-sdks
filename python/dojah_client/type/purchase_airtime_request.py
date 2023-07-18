@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -15,14 +15,13 @@ from enum import Enum
 from typing_extensions import TypedDict, Literal
 
 
-RequiredPurchaseAirtimeRequest = TypedDict("RequiredPurchaseAirtimeRequest", {
-    })
+class RequiredPurchaseAirtimeRequest(TypedDict):
+    pass
 
-OptionalPurchaseAirtimeRequest = TypedDict("OptionalPurchaseAirtimeRequest", {
-    "destination": str,
+class OptionalPurchaseAirtimeRequest(TypedDict, total=False):
+    destination: str
 
-    "amount": str,
-    }, total=False)
+    amount: str
 
 class PurchaseAirtimeRequest(RequiredPurchaseAirtimeRequest, OptionalPurchaseAirtimeRequest):
     pass

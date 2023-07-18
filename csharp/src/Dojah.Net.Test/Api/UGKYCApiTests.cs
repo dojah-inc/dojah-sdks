@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -18,8 +18,6 @@ using Xunit;
 
 using Dojah.Net.Client;
 using Dojah.Net.Api;
-// uncomment below to import models
-//using Dojah.Net.Model;
 
 namespace Dojah.Net.Test.Api
 {
@@ -61,11 +59,12 @@ namespace Dojah.Net.Test.Api
         public void GetVoterTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
+            //string appId = null;
             //int? id = null;
             //string firstName = null;
             //string lastName = null;
-            //var response = instance.GetVoter(id, firstName, lastName);
-            //Assert.IsType<GetVoterResponse>(response);
+            //var response = instance.GetVoter(appId, id, firstName, lastName);
+            //Assert.IsType<Object>(response);
         }
     }
 }

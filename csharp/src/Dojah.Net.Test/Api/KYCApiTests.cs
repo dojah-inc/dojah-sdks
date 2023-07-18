@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -55,207 +55,82 @@ namespace Dojah.Net.Test.Api
         }
 
         /// <summary>
-        /// Test AnalyzeDocument
+        /// Test CheckLiveness
         /// </summary>
         [Fact]
-        public void AnalyzeDocumentTest()
+        public void CheckLivenessTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.AnalyzeDocument();
-            //Assert.IsType<AnalyzeDocumentResponse>(response);
+            //KycCheckLivenessRequest kycCheckLivenessRequest = null;
+            //string appId = null;
+            //var response = instance.CheckLiveness(kycCheckLivenessRequest, appId);
+            //Assert.IsType<Object>(response);
         }
 
         /// <summary>
-        /// Test GetBasicBvn
+        /// Test GetAccounts
         /// </summary>
         [Fact]
-        public void GetBasicBvnTest()
+        public void GetAccountsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //int? bvn = null;
-            //var response = instance.GetBasicBvn(bvn);
-            //Assert.IsType<GetBasicBvnResponse>(response);
+            //string appId = null;
+            //string bvn = null;
+            //var response = instance.GetAccounts(appId, bvn);
+            //Assert.IsType<Object>(response);
         }
 
         /// <summary>
-        /// Test GetBasicPhoneNumber
+        /// Test GetAddressVerification
         /// </summary>
         [Fact]
-        public void GetBasicPhoneNumberTest()
+        public void GetAddressVerificationTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //int? phoneNumber = null;
-            //var response = instance.GetBasicPhoneNumber(phoneNumber);
-            //Assert.IsType<GetBasicPhoneNumberResponse>(response);
+            //string appId = null;
+            //string referenceId = null;
+            //var response = instance.GetAddressVerification(appId, referenceId);
+            //Assert.IsType<Object>(response);
         }
 
         /// <summary>
-        /// Test GetDriversLicense
+        /// Test GetBvnFromNuban
         /// </summary>
         [Fact]
-        public void GetDriversLicenseTest()
+        public void GetBvnFromNubanTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string licenseNumber = null;
-            //var response = instance.GetDriversLicense(licenseNumber);
-            //Assert.IsType<GetKycDriversLicenseResponse>(response);
-        }
-
-        /// <summary>
-        /// Test GetEmailReputation
-        /// </summary>
-        [Fact]
-        public void GetEmailReputationTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string email = null;
-            //var response = instance.GetEmailReputation(email);
-            //Assert.IsType<GetEmailReputationResponse>(response);
-        }
-
-        /// <summary>
-        /// Test GetFullBvn
-        /// </summary>
-        [Fact]
-        public void GetFullBvnTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //int? bvn = null;
-            //var response = instance.GetFullBvn(bvn);
-            //Assert.IsType<GetFullBvnResponse>(response);
-        }
-
-        /// <summary>
-        /// Test GetNuban
-        /// </summary>
-        [Fact]
-        public void GetNubanTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
+            //string appId = null;
             //int? bankCode = null;
             //int? accountNumber = null;
-            //var response = instance.GetNuban(bankCode, accountNumber);
-            //Assert.IsType<GetNubanResponse>(response);
+            //var response = instance.GetBvnFromNuban(appId, bankCode, accountNumber);
+            //Assert.IsType<Object>(response);
         }
 
         /// <summary>
-        /// Test GetPassport
+        /// Test GetVin
         /// </summary>
         [Fact]
-        public void GetPassportTest()
+        public void GetVinTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //int? passportNumber = null;
-            //string surname = null;
-            //var response = instance.GetPassport(passportNumber, surname);
-            //Assert.IsType<GetKycPassportResponse>(response);
-        }
-
-        /// <summary>
-        /// Test GetPhoneNumber
-        /// </summary>
-        [Fact]
-        public void GetPhoneNumberTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //int? phoneNumber = null;
-            //var response = instance.GetPhoneNumber(phoneNumber);
-            //Assert.IsType<GetPhoneNumberResponse>(response);
-        }
-
-        /// <summary>
-        /// Test GetPremiumBvn
-        /// </summary>
-        [Fact]
-        public void GetPremiumBvnTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //int? bvn = null;
-            //var response = instance.GetPremiumBvn(bvn);
-            //Assert.IsType<GetPremiumBvnResponse>(response);
-        }
-
-        /// <summary>
-        /// Test GetVIN
-        /// </summary>
-        [Fact]
-        public void GetVINTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string mode = null;
-            //string firstname = null;
-            //string lastname = null;
-            //int? vin = null;
-            //string state = null;
-            //var response = instance.GetVIN(mode, firstname, lastname, vin, state);
+            //string appId = null;
+            //string vin = null;
+            //var response = instance.GetVin(appId, vin);
             //Assert.IsType<GetVinResponse>(response);
         }
 
         /// <summary>
-        /// Test GetVnin
+        /// Test SubmitAddress
         /// </summary>
         [Fact]
-        public void GetVninTest()
+        public void SubmitAddressTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string vnin = null;
-            //var response = instance.GetVnin(vnin);
-            //Assert.IsType<GetVninResponse>(response);
-        }
-
-        /// <summary>
-        /// Test ValidateBvn
-        /// </summary>
-        [Fact]
-        public void ValidateBvnTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //int? bvn = null;
-            //string firstName = null;
-            //string dob = null;
-            //var response = instance.ValidateBvn(bvn, firstName, dob);
-            //Assert.IsType<ValidateBvnResponse>(response);
-        }
-
-        /// <summary>
-        /// Test VerifyAge
-        /// </summary>
-        [Fact]
-        public void VerifyAgeTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string mode = null;
-            //int? accountNumber = null;
-            //int? bankCode = null;
-            //string dob = null;
-            //string firstName = null;
-            //string lastName = null;
-            //var response = instance.VerifyAge(mode, accountNumber, bankCode, dob, firstName, lastName);
-            //Assert.IsType<VerifyAgeResponse>(response);
-        }
-
-        /// <summary>
-        /// Test VerifySelfieBvn
-        /// </summary>
-        [Fact]
-        public void VerifySelfieBvnTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //VerifySelfieBvnRequest verifySelfieBvnRequest = null;
-            //var response = instance.VerifySelfieBvn(verifySelfieBvnRequest);
-            //Assert.IsType<VerifySelfieBvnResponse>(response);
-        }
-
-        /// <summary>
-        /// Test VerifySelfieNin
-        /// </summary>
-        [Fact]
-        public void VerifySelfieNinTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //VerifySelfieNinRequest verifySelfieNinRequest = null;
-            //var response = instance.VerifySelfieNin(verifySelfieNinRequest);
-            //Assert.IsType<VerifySelfieNinResponse>(response);
+            //string appId = null;
+            //KycSubmitAddressRequest kycSubmitAddressRequest = null;
+            //var response = instance.SubmitAddress(appId, kycSubmitAddressRequest);
+            //Assert.IsType<KycSubmitAddressResponse>(response);
         }
     }
 }

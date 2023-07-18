@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -12,6 +12,7 @@
 from dataclasses import dataclass
 import typing_extensions
 import urllib3
+from dojah_client.request_before_hook import request_before_hook
 import json
 from urllib3._collections import HTTPHeaderDict
 
@@ -36,6 +37,31 @@ from dojah_client.model.subscribe_service_request import SubscribeServiceRequest
 from dojah_client.type.subscribe_service_response import SubscribeServiceResponse
 from dojah_client.type.subscribe_service_request import SubscribeServiceRequest
 
+# Header params
+AppIdSchema = schemas.StrSchema
+RequestRequiredHeaderParams = typing_extensions.TypedDict(
+    'RequestRequiredHeaderParams',
+    {
+    }
+)
+RequestOptionalHeaderParams = typing_extensions.TypedDict(
+    'RequestOptionalHeaderParams',
+    {
+        'AppId': typing.Union[AppIdSchema, str, ],
+    },
+    total=False
+)
+
+
+class RequestHeaderParams(RequestRequiredHeaderParams, RequestOptionalHeaderParams):
+    pass
+
+
+request_header_app_id = api_client.HeaderParameter(
+    name="AppId",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=AppIdSchema,
+)
 # body param
 SchemaForRequestBodyApplicationJson = SubscribeServiceRequestSchema
 
@@ -45,6 +71,7 @@ request_body_subscribe_service_request = api_client.RequestBody(
         'application/json': api_client.MediaType(
             schema=SchemaForRequestBodyApplicationJson),
     },
+    required=True,
 )
 XPoweredBySchema = schemas.StrSchema
 AccessControlAllowOriginSchema = schemas.StrSchema
@@ -103,19 +130,25 @@ class BaseApi(api_client.Api):
         self,
         webhook: typing.Optional[str] = None,
         service: typing.Optional[str] = None,
+        app_id: typing.Optional[str] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
+        _header_params = {}
         _body = {}
         if webhook is not None:
             _body["webhook"] = webhook
         if service is not None:
             _body["service"] = service
         args.body = _body
+        if app_id is not None:
+            _header_params["AppId"] = app_id
+        args.header = _header_params
         return args
 
     async def _asubscribe_service_oapg(
         self,
         body: typing.Any = None,
+            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -132,26 +165,47 @@ class BaseApi(api_client.Api):
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
+        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         _headers = HTTPHeaderDict()
+        for parameter in (
+            request_header_app_id,
+        ):
+            parameter_data = header_params.get(parameter.name, schemas.unset)
+            if parameter_data is schemas.unset:
+                continue
+            serialized_data = parameter.serialize(parameter_data)
+            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
                 _headers.add('Accept', accept_content_type)
+        method = 'post'.upper()
+        _headers.add('Content-Type', content_type)
     
+        if body is schemas.unset:
+            raise exceptions.ApiValueError(
+                'The required body parameter has an invalid value of: unset. Set a valid value instead')
         _fields = None
         _body = None
-        if body is not schemas.unset:
-            serialized_data = request_body_subscribe_service_request.serialize(body, content_type)
-            _headers.add('Content-Type', content_type)
-            if 'fields' in serialized_data:
-                _fields = serialized_data['fields']
-            elif 'body' in serialized_data:
-                _body = serialized_data['body']    
+        request_before_hook(
+            resource_path=used_path,
+            method=method,
+            configuration=self.api_client.configuration,
+            body=body,
+            auth_settings=_auth,
+            headers=_headers,
+        )
+        serialized_data = request_body_subscribe_service_request.serialize(body, content_type)
+        if 'fields' in serialized_data:
+            _fields = serialized_data['fields']
+        elif 'body' in serialized_data:
+            _body = serialized_data['body']
+    
         response = await self.api_client.async_call_api(
             resource_path=used_path,
-            method='post'.upper(),
+            method=method,
             headers=_headers,
             fields=_fields,
             serialized_body=_body,
@@ -159,8 +213,16 @@ class BaseApi(api_client.Api):
             auth_settings=_auth,
             timeout=timeout,
         )
-        
+    
         if stream:
+            if not 200 <= response.http_response.status <= 299:
+                body = (await response.http_response.content.read()).decode("utf-8")
+                raise exceptions.ApiStreamingException(
+                    status=response.http_response.status,
+                    reason=response.http_response.reason,
+                    body=body,
+                )
+    
             async def stream_iterator():
                 """
                 iterates over response.http_response.content and closes connection once iteration has finished
@@ -205,9 +267,11 @@ class BaseApi(api_client.Api):
     
         return api_response
 
+
     def _subscribe_service_oapg(
         self,
         body: typing.Any = None,
+            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -223,26 +287,47 @@ class BaseApi(api_client.Api):
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
+        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         _headers = HTTPHeaderDict()
+        for parameter in (
+            request_header_app_id,
+        ):
+            parameter_data = header_params.get(parameter.name, schemas.unset)
+            if parameter_data is schemas.unset:
+                continue
+            serialized_data = parameter.serialize(parameter_data)
+            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
                 _headers.add('Accept', accept_content_type)
+        method = 'post'.upper()
+        _headers.add('Content-Type', content_type)
     
+        if body is schemas.unset:
+            raise exceptions.ApiValueError(
+                'The required body parameter has an invalid value of: unset. Set a valid value instead')
         _fields = None
         _body = None
-        if body is not schemas.unset:
-            serialized_data = request_body_subscribe_service_request.serialize(body, content_type)
-            _headers.add('Content-Type', content_type)
-            if 'fields' in serialized_data:
-                _fields = serialized_data['fields']
-            elif 'body' in serialized_data:
-                _body = serialized_data['body']    
+        request_before_hook(
+            resource_path=used_path,
+            method=method,
+            configuration=self.api_client.configuration,
+            body=body,
+            auth_settings=_auth,
+            headers=_headers,
+        )
+        serialized_data = request_body_subscribe_service_request.serialize(body, content_type)
+        if 'fields' in serialized_data:
+            _fields = serialized_data['fields']
+        elif 'body' in serialized_data:
+            _body = serialized_data['body']
+    
         response = self.api_client.call_api(
             resource_path=used_path,
-            method='post'.upper(),
+            method=method,
             headers=_headers,
             fields=_fields,
             serialized_body=_body,
@@ -274,6 +359,7 @@ class BaseApi(api_client.Api):
     
         return api_response
 
+
 class SubscribeService(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
@@ -281,6 +367,7 @@ class SubscribeService(BaseApi):
         self,
         webhook: typing.Optional[str] = None,
         service: typing.Optional[str] = None,
+        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -289,15 +376,18 @@ class SubscribeService(BaseApi):
         args = self._subscribe_service_mapped_args(
             webhook=webhook,
             service=service,
+            app_id=app_id,
         )
         return await self._asubscribe_service_oapg(
             body=args.body,
+            header_params=args.header,
         )
     
     def subscribe_service(
         self,
         webhook: typing.Optional[str] = None,
         service: typing.Optional[str] = None,
+        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -305,9 +395,11 @@ class SubscribeService(BaseApi):
         args = self._subscribe_service_mapped_args(
             webhook=webhook,
             service=service,
+            app_id=app_id,
         )
         return self._subscribe_service_oapg(
             body=args.body,
+            header_params=args.header,
         )
 
 class ApiForpost(BaseApi):
@@ -317,6 +409,7 @@ class ApiForpost(BaseApi):
         self,
         webhook: typing.Optional[str] = None,
         service: typing.Optional[str] = None,
+        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -325,15 +418,18 @@ class ApiForpost(BaseApi):
         args = self._subscribe_service_mapped_args(
             webhook=webhook,
             service=service,
+            app_id=app_id,
         )
         return await self._asubscribe_service_oapg(
             body=args.body,
+            header_params=args.header,
         )
     
     def post(
         self,
         webhook: typing.Optional[str] = None,
         service: typing.Optional[str] = None,
+        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -341,8 +437,10 @@ class ApiForpost(BaseApi):
         args = self._subscribe_service_mapped_args(
             webhook=webhook,
             service=service,
+            app_id=app_id,
         )
         return self._subscribe_service_oapg(
             body=args.body,
+            header_params=args.header,
         )
 

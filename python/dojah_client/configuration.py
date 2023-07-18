@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -107,8 +107,7 @@ conf = dojah_client.Configuration(
                  api_key=None, api_key_prefix=None,
                  username=None, password=None,
                  discard_unknown_keys=False,
-                 authorization=None,
-                 app_id=None,
+                 appid=None,
                  disabled_client_side_validations="",
                  server_index=None, server_variables=None,
                  server_operation_index=None, server_operation_variables=None,
@@ -133,15 +132,11 @@ conf = dojah_client.Configuration(
         self.api_key = {}
         if api_key:
             if (isinstance(api_key, str)):
-                self.api_key = {'apikeyAuth': api_key}
+                self.api_key = {'appIdAuth': api_key}
             else:
                 self.api_key = api_key
-        if authorization:
-            self.api_key['apikeyAuth'] = authorization
-        else:
-            raise ClientConfigurationError('API Key "apikeyAuth" is required')
-        if app_id:
-            self.api_key['appIdAuth'] = app_id
+        if appid:
+            self.api_key['appIdAuth'] = appid
         """dict to store API key(s)
         """
         self.api_key_prefix = {}
@@ -397,20 +392,11 @@ conf = dojah_client.Configuration(
         :return: The Auth Settings information dict.
         """
         auth = {}
-        if 'apikeyAuth' in self.api_key:
-            auth['apikeyAuth'] = {
-                'type': 'api_key',
-                'in': 'header',
-                'key': 'Authorization',
-                'value': self.get_api_key_with_prefix(
-                    'apikeyAuth',
-                ),
-            }
         if 'appIdAuth' in self.api_key:
             auth['appIdAuth'] = {
                 'type': 'api_key',
                 'in': 'header',
-                'key': 'AppId',
+                'key': 'Appid',
                 'value': self.get_api_key_with_prefix(
                     'appIdAuth',
                 ),
@@ -494,7 +480,7 @@ conf = dojah_client.Configuration(
         """Fix base path."""
         self._base_path = check_url(value)
         self.server_index = None
-        
+
 def check_url(url: str):
     parsed = urlparse(url)
     if parsed.query != '':

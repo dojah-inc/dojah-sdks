@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -12,6 +12,7 @@
 from dataclasses import dataclass
 import typing_extensions
 import urllib3
+from dojah_client.request_before_hook import request_before_hook
 import json
 from urllib3._collections import HTTPHeaderDict
 
@@ -36,11 +37,6 @@ from dojah_client.type.get_national_id_response import GetNationalIdResponse
 
 # Query params
 IdSchema = schemas.IntSchema
-FirstNameSchema = schemas.StrSchema
-LastNameSchema = schemas.StrSchema
-MiddleNameSchema = schemas.StrSchema
-DateOfBirthSchema = schemas.StrSchema
-GenderSchema = schemas.StrSchema
 RequestRequiredQueryParams = typing_extensions.TypedDict(
     'RequestRequiredQueryParams',
     {
@@ -50,11 +46,6 @@ RequestOptionalQueryParams = typing_extensions.TypedDict(
     'RequestOptionalQueryParams',
     {
         'id': typing.Union[IdSchema, decimal.Decimal, int, ],
-        'first_name': typing.Union[FirstNameSchema, str, ],
-        'last_name': typing.Union[LastNameSchema, str, ],
-        'middle_name': typing.Union[MiddleNameSchema, str, ],
-        'date_of_birth': typing.Union[DateOfBirthSchema, str, ],
-        'gender': typing.Union[GenderSchema, str, ],
     },
     total=False
 )
@@ -70,35 +61,30 @@ request_query_id = api_client.QueryParameter(
     schema=IdSchema,
     explode=True,
 )
-request_query_first_name = api_client.QueryParameter(
-    name="first_name",
-    style=api_client.ParameterStyle.FORM,
-    schema=FirstNameSchema,
-    explode=True,
+# Header params
+AppIdSchema = schemas.StrSchema
+RequestRequiredHeaderParams = typing_extensions.TypedDict(
+    'RequestRequiredHeaderParams',
+    {
+    }
 )
-request_query_last_name = api_client.QueryParameter(
-    name="last_name",
-    style=api_client.ParameterStyle.FORM,
-    schema=LastNameSchema,
-    explode=True,
+RequestOptionalHeaderParams = typing_extensions.TypedDict(
+    'RequestOptionalHeaderParams',
+    {
+        'AppId': typing.Union[AppIdSchema, str, ],
+    },
+    total=False
 )
-request_query_middle_name = api_client.QueryParameter(
-    name="middle_name",
-    style=api_client.ParameterStyle.FORM,
-    schema=MiddleNameSchema,
-    explode=True,
-)
-request_query_date_of_birth = api_client.QueryParameter(
-    name="date_of_birth",
-    style=api_client.ParameterStyle.FORM,
-    schema=DateOfBirthSchema,
-    explode=True,
-)
-request_query_gender = api_client.QueryParameter(
-    name="gender",
-    style=api_client.ParameterStyle.FORM,
-    schema=GenderSchema,
-    explode=True,
+
+
+class RequestHeaderParams(RequestRequiredHeaderParams, RequestOptionalHeaderParams):
+    pass
+
+
+request_header_app_id = api_client.HeaderParameter(
+    name="AppId",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=AppIdSchema,
 )
 SchemaFor200ResponseBodyApplicationJson = GetNationalIdResponseSchema
 
@@ -130,33 +116,24 @@ class BaseApi(api_client.Api):
 
     def _get_national_id_mapped_args(
         self,
+        app_id: typing.Optional[str] = None,
         id: typing.Optional[int] = None,
-        first_name: typing.Optional[str] = None,
-        last_name: typing.Optional[str] = None,
-        middle_name: typing.Optional[str] = None,
-        date_of_birth: typing.Optional[str] = None,
-        gender: typing.Optional[str] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
         _query_params = {}
+        _header_params = {}
         if id is not None:
             _query_params["id"] = id
-        if first_name is not None:
-            _query_params["first_name"] = first_name
-        if last_name is not None:
-            _query_params["last_name"] = last_name
-        if middle_name is not None:
-            _query_params["middle_name"] = middle_name
-        if date_of_birth is not None:
-            _query_params["date_of_birth"] = date_of_birth
-        if gender is not None:
-            _query_params["gender"] = gender
+        if app_id is not None:
+            _header_params["AppId"] = app_id
         args.query = _query_params
+        args.header = _header_params
         return args
 
     async def _aget_national_id_oapg(
         self,
             query_params: typing.Optional[dict] = {},
+            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -173,16 +150,12 @@ class BaseApi(api_client.Api):
             class instances
         """
         self._verify_typed_dict_inputs_oapg(RequestQueryParams, query_params)
+        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         prefix_separator_iterator = None
         for parameter in (
             request_query_id,
-            request_query_first_name,
-            request_query_last_name,
-            request_query_middle_name,
-            request_query_date_of_birth,
-            request_query_gender,
         ):
             parameter_data = query_params.get(parameter.name, schemas.unset)
             if parameter_data is schemas.unset:
@@ -194,21 +167,43 @@ class BaseApi(api_client.Api):
                 used_path += serialized_value
     
         _headers = HTTPHeaderDict()
+        for parameter in (
+            request_header_app_id,
+        ):
+            parameter_data = header_params.get(parameter.name, schemas.unset)
+            if parameter_data is schemas.unset:
+                continue
+            serialized_data = parameter.serialize(parameter_data)
+            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
                 _headers.add('Accept', accept_content_type)
+        method = 'get'.upper()
+        request_before_hook(
+            resource_path=used_path,
+            method=method,
+            configuration=self.api_client.configuration,
+            headers=_headers,
+        )
     
         response = await self.api_client.async_call_api(
             resource_path=used_path,
-            method='get'.upper(),
+            method=method,
             headers=_headers,
-            auth_settings=_auth,
             prefix_separator_iterator=prefix_separator_iterator,
             timeout=timeout,
         )
-        
+    
         if stream:
+            if not 200 <= response.http_response.status <= 299:
+                body = (await response.http_response.content.read()).decode("utf-8")
+                raise exceptions.ApiStreamingException(
+                    status=response.http_response.status,
+                    reason=response.http_response.reason,
+                    body=body,
+                )
+    
             async def stream_iterator():
                 """
                 iterates over response.http_response.content and closes connection once iteration has finished
@@ -253,9 +248,11 @@ class BaseApi(api_client.Api):
     
         return api_response
 
+
     def _get_national_id_oapg(
         self,
             query_params: typing.Optional[dict] = {},
+            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -271,16 +268,12 @@ class BaseApi(api_client.Api):
             class instances
         """
         self._verify_typed_dict_inputs_oapg(RequestQueryParams, query_params)
+        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         prefix_separator_iterator = None
         for parameter in (
             request_query_id,
-            request_query_first_name,
-            request_query_last_name,
-            request_query_middle_name,
-            request_query_date_of_birth,
-            request_query_gender,
         ):
             parameter_data = query_params.get(parameter.name, schemas.unset)
             if parameter_data is schemas.unset:
@@ -292,16 +285,30 @@ class BaseApi(api_client.Api):
                 used_path += serialized_value
     
         _headers = HTTPHeaderDict()
+        for parameter in (
+            request_header_app_id,
+        ):
+            parameter_data = header_params.get(parameter.name, schemas.unset)
+            if parameter_data is schemas.unset:
+                continue
+            serialized_data = parameter.serialize(parameter_data)
+            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
                 _headers.add('Accept', accept_content_type)
+        method = 'get'.upper()
+        request_before_hook(
+            resource_path=used_path,
+            method=method,
+            configuration=self.api_client.configuration,
+            headers=_headers,
+        )
     
         response = self.api_client.call_api(
             resource_path=used_path,
-            method='get'.upper(),
+            method=method,
             headers=_headers,
-            auth_settings=_auth,
             prefix_separator_iterator=prefix_separator_iterator,
             timeout=timeout,
         )
@@ -329,56 +336,43 @@ class BaseApi(api_client.Api):
     
         return api_response
 
+
 class GetNationalId(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     async def aget_national_id(
         self,
+        app_id: typing.Optional[str] = None,
         id: typing.Optional[int] = None,
-        first_name: typing.Optional[str] = None,
-        last_name: typing.Optional[str] = None,
-        middle_name: typing.Optional[str] = None,
-        date_of_birth: typing.Optional[str] = None,
-        gender: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
         AsyncGeneratorResponse,
     ]:
         args = self._get_national_id_mapped_args(
+            app_id=app_id,
             id=id,
-            first_name=first_name,
-            last_name=last_name,
-            middle_name=middle_name,
-            date_of_birth=date_of_birth,
-            gender=gender,
         )
         return await self._aget_national_id_oapg(
             query_params=args.query,
+            header_params=args.header,
         )
     
     def get_national_id(
         self,
+        app_id: typing.Optional[str] = None,
         id: typing.Optional[int] = None,
-        first_name: typing.Optional[str] = None,
-        last_name: typing.Optional[str] = None,
-        middle_name: typing.Optional[str] = None,
-        date_of_birth: typing.Optional[str] = None,
-        gender: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
     ]:
         args = self._get_national_id_mapped_args(
+            app_id=app_id,
             id=id,
-            first_name=first_name,
-            last_name=last_name,
-            middle_name=middle_name,
-            date_of_birth=date_of_birth,
-            gender=gender,
         )
         return self._get_national_id_oapg(
             query_params=args.query,
+            header_params=args.header,
         )
 
 class ApiForget(BaseApi):
@@ -386,50 +380,36 @@ class ApiForget(BaseApi):
 
     async def aget(
         self,
+        app_id: typing.Optional[str] = None,
         id: typing.Optional[int] = None,
-        first_name: typing.Optional[str] = None,
-        last_name: typing.Optional[str] = None,
-        middle_name: typing.Optional[str] = None,
-        date_of_birth: typing.Optional[str] = None,
-        gender: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
         AsyncGeneratorResponse,
     ]:
         args = self._get_national_id_mapped_args(
+            app_id=app_id,
             id=id,
-            first_name=first_name,
-            last_name=last_name,
-            middle_name=middle_name,
-            date_of_birth=date_of_birth,
-            gender=gender,
         )
         return await self._aget_national_id_oapg(
             query_params=args.query,
+            header_params=args.header,
         )
     
     def get(
         self,
+        app_id: typing.Optional[str] = None,
         id: typing.Optional[int] = None,
-        first_name: typing.Optional[str] = None,
-        last_name: typing.Optional[str] = None,
-        middle_name: typing.Optional[str] = None,
-        date_of_birth: typing.Optional[str] = None,
-        gender: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
     ]:
         args = self._get_national_id_mapped_args(
+            app_id=app_id,
             id=id,
-            first_name=first_name,
-            last_name=last_name,
-            middle_name=middle_name,
-            date_of_birth=date_of_birth,
-            gender=gender,
         )
         return self._get_national_id_oapg(
             query_params=args.query,
+            header_params=args.header,
         )
 

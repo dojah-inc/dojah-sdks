@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -27,73 +27,14 @@ namespace Dojah.Net.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Document Analysis Drivers License
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getDocumentAnalysisRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetDocumentAnalysisResponse</returns>
-        GetDocumentAnalysisResponse GetDocumentAnalysis(GetDocumentAnalysisRequest getDocumentAnalysisRequest = default(GetDocumentAnalysisRequest), int operationIndex = 0);
-
-        /// <summary>
-        /// Document Analysis Drivers License
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getDocumentAnalysisRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetDocumentAnalysisResponse</returns>
-        ApiResponse<GetDocumentAnalysisResponse> GetDocumentAnalysisWithHttpInfo(GetDocumentAnalysisRequest getDocumentAnalysisRequest = default(GetDocumentAnalysisRequest), int operationIndex = 0);
-        /// <summary>
-        /// Generic OCR Service
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getGenericOcrTextRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetGenericOcrTextResponse</returns>
-        GetGenericOcrTextResponse GetGenericOcrText(GetGenericOcrTextRequest getGenericOcrTextRequest = default(GetGenericOcrTextRequest), int operationIndex = 0);
-
-        /// <summary>
-        /// Generic OCR Service
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getGenericOcrTextRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetGenericOcrTextResponse</returns>
-        ApiResponse<GetGenericOcrTextResponse> GetGenericOcrTextWithHttpInfo(GetGenericOcrTextRequest getGenericOcrTextRequest = default(GetGenericOcrTextRequest), int operationIndex = 0);
-        /// <summary>
-        /// BVN Ocr
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getOcrTextRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetOcrTextResponse</returns>
-        GetOcrTextResponse GetOcrText(GetOcrTextRequest getOcrTextRequest = default(GetOcrTextRequest), int operationIndex = 0);
-
-        /// <summary>
-        /// BVN Ocr
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getOcrTextRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetOcrTextResponse</returns>
-        ApiResponse<GetOcrTextResponse> GetOcrTextWithHttpInfo(GetOcrTextRequest getOcrTextRequest = default(GetOcrTextRequest), int operationIndex = 0);
-        /// <summary>
         /// KYC - Selfie Photo ID Verification
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="verifyPhotoIdWithSelfieRequest"> (optional)</param>
+        /// <param name="mlVerifyPhotoIdWithSelfieRequest"></param>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>VerifyPhotoIdWithSelfieResponse</returns>
-        VerifyPhotoIdWithSelfieResponse VerifyPhotoIdWithSelfie(VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest = default(VerifyPhotoIdWithSelfieRequest), int operationIndex = 0);
+        /// <returns>Object</returns>
+        Object VerifyPhotoIdWithSelfie(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, string appId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// KYC - Selfie Photo ID Verification
@@ -102,10 +43,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="verifyPhotoIdWithSelfieRequest"> (optional)</param>
+        /// <param name="mlVerifyPhotoIdWithSelfieRequest"></param>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of VerifyPhotoIdWithSelfieResponse</returns>
-        ApiResponse<VerifyPhotoIdWithSelfieResponse> VerifyPhotoIdWithSelfieWithHttpInfo(VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest = default(VerifyPhotoIdWithSelfieRequest), int operationIndex = 0);
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> VerifyPhotoIdWithSelfieWithHttpInfo(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, string appId = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -116,92 +58,18 @@ namespace Dojah.Net.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Document Analysis Drivers License
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getDocumentAnalysisRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetDocumentAnalysisResponse</returns>
-        System.Threading.Tasks.Task<GetDocumentAnalysisResponse> GetDocumentAnalysisAsync(GetDocumentAnalysisRequest getDocumentAnalysisRequest = default(GetDocumentAnalysisRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Document Analysis Drivers License
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getDocumentAnalysisRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetDocumentAnalysisResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetDocumentAnalysisResponse>> GetDocumentAnalysisWithHttpInfoAsync(GetDocumentAnalysisRequest getDocumentAnalysisRequest = default(GetDocumentAnalysisRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Generic OCR Service
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getGenericOcrTextRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetGenericOcrTextResponse</returns>
-        System.Threading.Tasks.Task<GetGenericOcrTextResponse> GetGenericOcrTextAsync(GetGenericOcrTextRequest getGenericOcrTextRequest = default(GetGenericOcrTextRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Generic OCR Service
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getGenericOcrTextRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetGenericOcrTextResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetGenericOcrTextResponse>> GetGenericOcrTextWithHttpInfoAsync(GetGenericOcrTextRequest getGenericOcrTextRequest = default(GetGenericOcrTextRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// BVN Ocr
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getOcrTextRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetOcrTextResponse</returns>
-        System.Threading.Tasks.Task<GetOcrTextResponse> GetOcrTextAsync(GetOcrTextRequest getOcrTextRequest = default(GetOcrTextRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// BVN Ocr
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getOcrTextRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetOcrTextResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetOcrTextResponse>> GetOcrTextWithHttpInfoAsync(GetOcrTextRequest getOcrTextRequest = default(GetOcrTextRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
         /// KYC - Selfie Photo ID Verification
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="verifyPhotoIdWithSelfieRequest"> (optional)</param>
+        /// <param name="mlVerifyPhotoIdWithSelfieRequest"></param>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of VerifyPhotoIdWithSelfieResponse</returns>
-        System.Threading.Tasks.Task<VerifyPhotoIdWithSelfieResponse> VerifyPhotoIdWithSelfieAsync(VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest = default(VerifyPhotoIdWithSelfieRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> VerifyPhotoIdWithSelfieAsync(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Selfie Photo ID Verification
@@ -210,11 +78,12 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="verifyPhotoIdWithSelfieRequest"> (optional)</param>
+        /// <param name="mlVerifyPhotoIdWithSelfieRequest"></param>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (VerifyPhotoIdWithSelfieResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<VerifyPhotoIdWithSelfieResponse>> VerifyPhotoIdWithSelfieWithHttpInfoAsync(VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest = default(VerifyPhotoIdWithSelfieRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> VerifyPhotoIdWithSelfieWithHttpInfoAsync(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -336,477 +205,16 @@ namespace Dojah.Net.Api
         }
 
         /// <summary>
-        /// Document Analysis Drivers License 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getDocumentAnalysisRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetDocumentAnalysisResponse</returns>
-        public GetDocumentAnalysisResponse GetDocumentAnalysis(GetDocumentAnalysisRequest getDocumentAnalysisRequest = default(GetDocumentAnalysisRequest), int operationIndex = 0)
-        {
-            Dojah.Net.Client.ApiResponse<GetDocumentAnalysisResponse> localVarResponse = GetDocumentAnalysisWithHttpInfo(getDocumentAnalysisRequest);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Document Analysis Drivers License 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getDocumentAnalysisRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetDocumentAnalysisResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetDocumentAnalysisResponse> GetDocumentAnalysisWithHttpInfo(GetDocumentAnalysisRequest getDocumentAnalysisRequest = default(GetDocumentAnalysisRequest), int operationIndex = 0)
-        {
-            Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Dojah.Net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Dojah.Net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = getDocumentAnalysisRequest;
-
-            localVarRequestOptions.Operation = "MLApi.GetDocumentAnalysis";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<GetDocumentAnalysisResponse>("/v1/document/analysis/dl", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetDocumentAnalysis", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Document Analysis Drivers License 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getDocumentAnalysisRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetDocumentAnalysisResponse</returns>
-        public async System.Threading.Tasks.Task<GetDocumentAnalysisResponse> GetDocumentAnalysisAsync(GetDocumentAnalysisRequest getDocumentAnalysisRequest = default(GetDocumentAnalysisRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Dojah.Net.Client.ApiResponse<GetDocumentAnalysisResponse> localVarResponse = await GetDocumentAnalysisWithHttpInfoAsync(getDocumentAnalysisRequest, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Document Analysis Drivers License 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getDocumentAnalysisRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetDocumentAnalysisResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetDocumentAnalysisResponse>> GetDocumentAnalysisWithHttpInfoAsync(GetDocumentAnalysisRequest getDocumentAnalysisRequest = default(GetDocumentAnalysisRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Dojah.Net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Dojah.Net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = getDocumentAnalysisRequest;
-
-            localVarRequestOptions.Operation = "MLApi.GetDocumentAnalysis";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<GetDocumentAnalysisResponse>("/v1/document/analysis/dl", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetDocumentAnalysis", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Generic OCR Service 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getGenericOcrTextRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetGenericOcrTextResponse</returns>
-        public GetGenericOcrTextResponse GetGenericOcrText(GetGenericOcrTextRequest getGenericOcrTextRequest = default(GetGenericOcrTextRequest), int operationIndex = 0)
-        {
-            Dojah.Net.Client.ApiResponse<GetGenericOcrTextResponse> localVarResponse = GetGenericOcrTextWithHttpInfo(getGenericOcrTextRequest);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Generic OCR Service 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getGenericOcrTextRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetGenericOcrTextResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetGenericOcrTextResponse> GetGenericOcrTextWithHttpInfo(GetGenericOcrTextRequest getGenericOcrTextRequest = default(GetGenericOcrTextRequest), int operationIndex = 0)
-        {
-            Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Dojah.Net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Dojah.Net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = getGenericOcrTextRequest;
-
-            localVarRequestOptions.Operation = "MLApi.GetGenericOcrText";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<GetGenericOcrTextResponse>("/v1/ml/ocr/generic", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetGenericOcrText", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Generic OCR Service 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getGenericOcrTextRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetGenericOcrTextResponse</returns>
-        public async System.Threading.Tasks.Task<GetGenericOcrTextResponse> GetGenericOcrTextAsync(GetGenericOcrTextRequest getGenericOcrTextRequest = default(GetGenericOcrTextRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Dojah.Net.Client.ApiResponse<GetGenericOcrTextResponse> localVarResponse = await GetGenericOcrTextWithHttpInfoAsync(getGenericOcrTextRequest, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Generic OCR Service 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getGenericOcrTextRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetGenericOcrTextResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetGenericOcrTextResponse>> GetGenericOcrTextWithHttpInfoAsync(GetGenericOcrTextRequest getGenericOcrTextRequest = default(GetGenericOcrTextRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Dojah.Net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Dojah.Net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = getGenericOcrTextRequest;
-
-            localVarRequestOptions.Operation = "MLApi.GetGenericOcrText";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<GetGenericOcrTextResponse>("/v1/ml/ocr/generic", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetGenericOcrText", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// BVN Ocr 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getOcrTextRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetOcrTextResponse</returns>
-        public GetOcrTextResponse GetOcrText(GetOcrTextRequest getOcrTextRequest = default(GetOcrTextRequest), int operationIndex = 0)
-        {
-            Dojah.Net.Client.ApiResponse<GetOcrTextResponse> localVarResponse = GetOcrTextWithHttpInfo(getOcrTextRequest);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// BVN Ocr 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getOcrTextRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetOcrTextResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetOcrTextResponse> GetOcrTextWithHttpInfo(GetOcrTextRequest getOcrTextRequest = default(GetOcrTextRequest), int operationIndex = 0)
-        {
-            Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Dojah.Net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Dojah.Net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = getOcrTextRequest;
-
-            localVarRequestOptions.Operation = "MLApi.GetOcrText";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<GetOcrTextResponse>("/v1/ml/ocr", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetOcrText", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// BVN Ocr 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getOcrTextRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetOcrTextResponse</returns>
-        public async System.Threading.Tasks.Task<GetOcrTextResponse> GetOcrTextAsync(GetOcrTextRequest getOcrTextRequest = default(GetOcrTextRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Dojah.Net.Client.ApiResponse<GetOcrTextResponse> localVarResponse = await GetOcrTextWithHttpInfoAsync(getOcrTextRequest, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// BVN Ocr 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getOcrTextRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetOcrTextResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetOcrTextResponse>> GetOcrTextWithHttpInfoAsync(GetOcrTextRequest getOcrTextRequest = default(GetOcrTextRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Dojah.Net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Dojah.Net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = getOcrTextRequest;
-
-            localVarRequestOptions.Operation = "MLApi.GetOcrText";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<GetOcrTextResponse>("/v1/ml/ocr", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetOcrText", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
         /// KYC - Selfie Photo ID Verification 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="verifyPhotoIdWithSelfieRequest"> (optional)</param>
+        /// <param name="mlVerifyPhotoIdWithSelfieRequest"></param>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>VerifyPhotoIdWithSelfieResponse</returns>
-        public VerifyPhotoIdWithSelfieResponse VerifyPhotoIdWithSelfie(VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest = default(VerifyPhotoIdWithSelfieRequest), int operationIndex = 0)
+        /// <returns>Object</returns>
+        public Object VerifyPhotoIdWithSelfie(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, string appId = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<VerifyPhotoIdWithSelfieResponse> localVarResponse = VerifyPhotoIdWithSelfieWithHttpInfo(verifyPhotoIdWithSelfieRequest);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = VerifyPhotoIdWithSelfieWithHttpInfo(mlVerifyPhotoIdWithSelfieRequest, appId);
             return localVarResponse.Data;
         }
 
@@ -814,11 +222,18 @@ namespace Dojah.Net.Api
         /// KYC - Selfie Photo ID Verification 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="verifyPhotoIdWithSelfieRequest"> (optional)</param>
+        /// <param name="mlVerifyPhotoIdWithSelfieRequest"></param>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of VerifyPhotoIdWithSelfieResponse</returns>
-        public Dojah.Net.Client.ApiResponse<VerifyPhotoIdWithSelfieResponse> VerifyPhotoIdWithSelfieWithHttpInfo(VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest = default(VerifyPhotoIdWithSelfieRequest), int operationIndex = 0)
+        /// <returns>ApiResponse of Object</returns>
+        public Dojah.Net.Client.ApiResponse<Object> VerifyPhotoIdWithSelfieWithHttpInfo(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, string appId = default(string), int operationIndex = 0)
         {
+            // verify the required parameter 'mlVerifyPhotoIdWithSelfieRequest' is set
+            if (mlVerifyPhotoIdWithSelfieRequest == null)
+            {
+                throw new Dojah.Net.Client.ApiException(400, "Missing required parameter 'mlVerifyPhotoIdWithSelfieRequest' when calling MLApi->VerifyPhotoIdWithSelfie");
+            }
+
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -842,24 +257,19 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = verifyPhotoIdWithSelfieRequest;
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
+            localVarRequestOptions.Data = mlVerifyPhotoIdWithSelfieRequest;
 
             localVarRequestOptions.Operation = "MLApi.VerifyPhotoIdWithSelfie";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<VerifyPhotoIdWithSelfieResponse>("/v1/kyc/photoid/verify", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<Object>("/api/v1/kyc/photoid/verify", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("VerifyPhotoIdWithSelfie", localVarResponse);
@@ -876,13 +286,14 @@ namespace Dojah.Net.Api
         /// KYC - Selfie Photo ID Verification 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="verifyPhotoIdWithSelfieRequest"> (optional)</param>
+        /// <param name="mlVerifyPhotoIdWithSelfieRequest"></param>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of VerifyPhotoIdWithSelfieResponse</returns>
-        public async System.Threading.Tasks.Task<VerifyPhotoIdWithSelfieResponse> VerifyPhotoIdWithSelfieAsync(VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest = default(VerifyPhotoIdWithSelfieRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> VerifyPhotoIdWithSelfieAsync(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<VerifyPhotoIdWithSelfieResponse> localVarResponse = await VerifyPhotoIdWithSelfieWithHttpInfoAsync(verifyPhotoIdWithSelfieRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await VerifyPhotoIdWithSelfieWithHttpInfoAsync(mlVerifyPhotoIdWithSelfieRequest, appId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -890,12 +301,19 @@ namespace Dojah.Net.Api
         /// KYC - Selfie Photo ID Verification 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="verifyPhotoIdWithSelfieRequest"> (optional)</param>
+        /// <param name="mlVerifyPhotoIdWithSelfieRequest"></param>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (VerifyPhotoIdWithSelfieResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<VerifyPhotoIdWithSelfieResponse>> VerifyPhotoIdWithSelfieWithHttpInfoAsync(VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest = default(VerifyPhotoIdWithSelfieRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> VerifyPhotoIdWithSelfieWithHttpInfoAsync(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
+            // verify the required parameter 'mlVerifyPhotoIdWithSelfieRequest' is set
+            if (mlVerifyPhotoIdWithSelfieRequest == null)
+            {
+                throw new Dojah.Net.Client.ApiException(400, "Missing required parameter 'mlVerifyPhotoIdWithSelfieRequest' when calling MLApi->VerifyPhotoIdWithSelfie");
+            }
+
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -920,24 +338,19 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = verifyPhotoIdWithSelfieRequest;
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
+            }
+            localVarRequestOptions.Data = mlVerifyPhotoIdWithSelfieRequest;
 
             localVarRequestOptions.Operation = "MLApi.VerifyPhotoIdWithSelfie";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<VerifyPhotoIdWithSelfieResponse>("/v1/kyc/photoid/verify", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v1/kyc/photoid/verify", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

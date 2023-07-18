@@ -1,5 +1,5 @@
 /*
-DOJAH APIs
+DOJAH Publilc APIs
 
 Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -22,417 +22,24 @@ import (
 // MLApiService MLApi service
 type MLApiService service
 
-type MLApiGetDocumentAnalysisRequest struct {
-	ctx context.Context
-	ApiService *MLApiService
-	getDocumentAnalysisRequest *GetDocumentAnalysisRequest
-}
-
-func (r MLApiGetDocumentAnalysisRequest) GetDocumentAnalysisRequest(getDocumentAnalysisRequest GetDocumentAnalysisRequest) MLApiGetDocumentAnalysisRequest {
-	r.getDocumentAnalysisRequest = &getDocumentAnalysisRequest
-	return r
-}
-
-func (r MLApiGetDocumentAnalysisRequest) Execute() (*GetDocumentAnalysisResponse, *http.Response, error) {
-	return r.ApiService.GetDocumentAnalysisExecute(r)
-}
-
-/*
-GetDocumentAnalysis Document Analysis Drivers License
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MLApiGetDocumentAnalysisRequest
-*/
-func (a *MLApiService) GetDocumentAnalysis() MLApiGetDocumentAnalysisRequest {
-	return MLApiGetDocumentAnalysisRequest{
-		ApiService: a,
-		ctx: a.client.cfg.Context,
-	}
-}
-
-// Execute executes the request
-//  @return GetDocumentAnalysisResponse
-func (a *MLApiService) GetDocumentAnalysisExecute(r MLApiGetDocumentAnalysisRequest) (*GetDocumentAnalysisResponse, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetDocumentAnalysisResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MLApiService.GetDocumentAnalysis")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/v1/document/analysis/dl"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.getDocumentAnalysisRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type MLApiGetGenericOcrTextRequest struct {
-	ctx context.Context
-	ApiService *MLApiService
-	getGenericOcrTextRequest *GetGenericOcrTextRequest
-}
-
-func (r MLApiGetGenericOcrTextRequest) GetGenericOcrTextRequest(getGenericOcrTextRequest GetGenericOcrTextRequest) MLApiGetGenericOcrTextRequest {
-	r.getGenericOcrTextRequest = &getGenericOcrTextRequest
-	return r
-}
-
-func (r MLApiGetGenericOcrTextRequest) Execute() (*GetGenericOcrTextResponse, *http.Response, error) {
-	return r.ApiService.GetGenericOcrTextExecute(r)
-}
-
-/*
-GetGenericOcrText Generic OCR Service
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MLApiGetGenericOcrTextRequest
-*/
-func (a *MLApiService) GetGenericOcrText() MLApiGetGenericOcrTextRequest {
-	return MLApiGetGenericOcrTextRequest{
-		ApiService: a,
-		ctx: a.client.cfg.Context,
-	}
-}
-
-// Execute executes the request
-//  @return GetGenericOcrTextResponse
-func (a *MLApiService) GetGenericOcrTextExecute(r MLApiGetGenericOcrTextRequest) (*GetGenericOcrTextResponse, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetGenericOcrTextResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MLApiService.GetGenericOcrText")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/v1/ml/ocr/generic"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.getGenericOcrTextRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type MLApiGetOcrTextRequest struct {
-	ctx context.Context
-	ApiService *MLApiService
-	getOcrTextRequest *GetOcrTextRequest
-}
-
-func (r MLApiGetOcrTextRequest) GetOcrTextRequest(getOcrTextRequest GetOcrTextRequest) MLApiGetOcrTextRequest {
-	r.getOcrTextRequest = &getOcrTextRequest
-	return r
-}
-
-func (r MLApiGetOcrTextRequest) Execute() (*GetOcrTextResponse, *http.Response, error) {
-	return r.ApiService.GetOcrTextExecute(r)
-}
-
-/*
-GetOcrText BVN Ocr
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MLApiGetOcrTextRequest
-*/
-func (a *MLApiService) GetOcrText() MLApiGetOcrTextRequest {
-	return MLApiGetOcrTextRequest{
-		ApiService: a,
-		ctx: a.client.cfg.Context,
-	}
-}
-
-// Execute executes the request
-//  @return GetOcrTextResponse
-func (a *MLApiService) GetOcrTextExecute(r MLApiGetOcrTextRequest) (*GetOcrTextResponse, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetOcrTextResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MLApiService.GetOcrText")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/v1/ml/ocr"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.getOcrTextRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type MLApiVerifyPhotoIdWithSelfieRequest struct {
 	ctx context.Context
 	ApiService *MLApiService
-	verifyPhotoIdWithSelfieRequest *VerifyPhotoIdWithSelfieRequest
+	mlVerifyPhotoIdWithSelfieRequest *MlVerifyPhotoIdWithSelfieRequest
+	appId *string
 }
 
-func (r MLApiVerifyPhotoIdWithSelfieRequest) VerifyPhotoIdWithSelfieRequest(verifyPhotoIdWithSelfieRequest VerifyPhotoIdWithSelfieRequest) MLApiVerifyPhotoIdWithSelfieRequest {
-	r.verifyPhotoIdWithSelfieRequest = &verifyPhotoIdWithSelfieRequest
+func (r MLApiVerifyPhotoIdWithSelfieRequest) MlVerifyPhotoIdWithSelfieRequest(mlVerifyPhotoIdWithSelfieRequest MlVerifyPhotoIdWithSelfieRequest) MLApiVerifyPhotoIdWithSelfieRequest {
+	r.mlVerifyPhotoIdWithSelfieRequest = &mlVerifyPhotoIdWithSelfieRequest
 	return r
 }
 
-func (r MLApiVerifyPhotoIdWithSelfieRequest) Execute() (*VerifyPhotoIdWithSelfieResponse, *http.Response, error) {
+func (r MLApiVerifyPhotoIdWithSelfieRequest) AppId(appId string) MLApiVerifyPhotoIdWithSelfieRequest {
+	r.appId = &appId
+	return r
+}
+
+func (r MLApiVerifyPhotoIdWithSelfieRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.VerifyPhotoIdWithSelfieExecute(r)
 }
 
@@ -450,13 +57,13 @@ func (a *MLApiService) VerifyPhotoIdWithSelfie() MLApiVerifyPhotoIdWithSelfieReq
 }
 
 // Execute executes the request
-//  @return VerifyPhotoIdWithSelfieResponse
-func (a *MLApiService) VerifyPhotoIdWithSelfieExecute(r MLApiVerifyPhotoIdWithSelfieRequest) (*VerifyPhotoIdWithSelfieResponse, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *MLApiService) VerifyPhotoIdWithSelfieExecute(r MLApiVerifyPhotoIdWithSelfieRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *VerifyPhotoIdWithSelfieResponse
+		localVarReturnValue  map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MLApiService.VerifyPhotoIdWithSelfie")
@@ -464,11 +71,14 @@ func (a *MLApiService) VerifyPhotoIdWithSelfieExecute(r MLApiVerifyPhotoIdWithSe
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/kyc/photoid/verify"
+	localVarPath := localBasePath + "/api/v1/kyc/photoid/verify"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.mlVerifyPhotoIdWithSelfieRequest == nil {
+		return localVarReturnValue, nil, reportError("mlVerifyPhotoIdWithSelfieRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -487,36 +97,11 @@ func (a *MLApiService) VerifyPhotoIdWithSelfieExecute(r MLApiVerifyPhotoIdWithSe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if r.appId != nil {
+		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	}
 	// body params
-	localVarPostBody = r.verifyPhotoIdWithSelfieRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
+	localVarPostBody = r.mlVerifyPhotoIdWithSelfieRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

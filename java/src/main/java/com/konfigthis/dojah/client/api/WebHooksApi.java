@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -51,9 +51,6 @@ public class WebHooksApi {
     }
 
     public WebHooksApi(ApiClient apiClient) throws IllegalArgumentException {
-        if (apiClient.getApikeyAuth() == null) {
-            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
-        }
         this.localVarApiClient = apiClient;
     }
 
@@ -81,7 +78,7 @@ public class WebHooksApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call deleteWebhookCall(final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWebhookCall(String appId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -106,6 +103,10 @@ public class WebHooksApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -121,36 +122,47 @@ public class WebHooksApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] { "apikeyAuth" };
         return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWebhookValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return deleteWebhookCall(_callback);
+    private okhttp3.Call deleteWebhookValidateBeforeCall(String appId, final ApiCallback _callback) throws ApiException {
+        return deleteWebhookCall(appId, _callback);
 
     }
 
 
-    private ApiResponse<DeleteWebhookResponse> deleteWebhookWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = deleteWebhookValidateBeforeCall(null);
+    private ApiResponse<DeleteWebhookResponse> deleteWebhookWithHttpInfo(String appId) throws ApiException {
+        okhttp3.Call localVarCall = deleteWebhookValidateBeforeCall(appId, null);
         Type localVarReturnType = new TypeToken<DeleteWebhookResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call deleteWebhookAsync(final ApiCallback<DeleteWebhookResponse> _callback) throws ApiException {
+    private okhttp3.Call deleteWebhookAsync(String appId, final ApiCallback<DeleteWebhookResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteWebhookValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = deleteWebhookValidateBeforeCall(appId, _callback);
         Type localVarReturnType = new TypeToken<DeleteWebhookResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
     public class DeleteWebhookRequestBuilder {
+        private String appId;
 
         private DeleteWebhookRequestBuilder() {
         }
 
+        /**
+         * Set appId
+         * @param appId  (optional)
+         * @return DeleteWebhookRequestBuilder
+         */
+        public DeleteWebhookRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
         /**
          * Build call for deleteWebhook
          * @param _callback ApiCallback API callback
@@ -163,7 +175,7 @@ public class WebHooksApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return deleteWebhookCall(_callback);
+            return deleteWebhookCall(appId, _callback);
         }
 
 
@@ -178,8 +190,8 @@ public class WebHooksApi {
          </table>
          */
         public DeleteWebhookResponse execute() throws ApiException {
-            ApiResponse<DeleteWebhookResponse> localVarResp = deleteWebhookWithHttpInfo();
-            return localVarResp.getData();
+            ApiResponse<DeleteWebhookResponse> localVarResp = deleteWebhookWithHttpInfo(appId);
+            return localVarResp.getResponseBody();
         }
 
         /**
@@ -193,7 +205,7 @@ public class WebHooksApi {
          </table>
          */
         public ApiResponse<DeleteWebhookResponse> executeWithHttpInfo() throws ApiException {
-            return deleteWebhookWithHttpInfo();
+            return deleteWebhookWithHttpInfo(appId);
         }
 
         /**
@@ -208,7 +220,7 @@ public class WebHooksApi {
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<DeleteWebhookResponse> _callback) throws ApiException {
-            return deleteWebhookAsync(_callback);
+            return deleteWebhookAsync(appId, _callback);
         }
     }
 
@@ -225,7 +237,7 @@ public class WebHooksApi {
     public DeleteWebhookRequestBuilder deleteWebhook() throws IllegalArgumentException {
         return new DeleteWebhookRequestBuilder();
     }
-    private okhttp3.Call getWebhooksCall(final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWebhooksCall(String appId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -250,6 +262,10 @@ public class WebHooksApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -265,36 +281,47 @@ public class WebHooksApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] { "apikeyAuth" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWebhooksValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getWebhooksCall(_callback);
+    private okhttp3.Call getWebhooksValidateBeforeCall(String appId, final ApiCallback _callback) throws ApiException {
+        return getWebhooksCall(appId, _callback);
 
     }
 
 
-    private ApiResponse<GetWebhooksResponse> getWebhooksWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = getWebhooksValidateBeforeCall(null);
+    private ApiResponse<GetWebhooksResponse> getWebhooksWithHttpInfo(String appId) throws ApiException {
+        okhttp3.Call localVarCall = getWebhooksValidateBeforeCall(appId, null);
         Type localVarReturnType = new TypeToken<GetWebhooksResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getWebhooksAsync(final ApiCallback<GetWebhooksResponse> _callback) throws ApiException {
+    private okhttp3.Call getWebhooksAsync(String appId, final ApiCallback<GetWebhooksResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getWebhooksValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getWebhooksValidateBeforeCall(appId, _callback);
         Type localVarReturnType = new TypeToken<GetWebhooksResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
     public class GetWebhooksRequestBuilder {
+        private String appId;
 
         private GetWebhooksRequestBuilder() {
         }
 
+        /**
+         * Set appId
+         * @param appId  (optional)
+         * @return GetWebhooksRequestBuilder
+         */
+        public GetWebhooksRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
         /**
          * Build call for getWebhooks
          * @param _callback ApiCallback API callback
@@ -307,7 +334,7 @@ public class WebHooksApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getWebhooksCall(_callback);
+            return getWebhooksCall(appId, _callback);
         }
 
 
@@ -322,8 +349,8 @@ public class WebHooksApi {
          </table>
          */
         public GetWebhooksResponse execute() throws ApiException {
-            ApiResponse<GetWebhooksResponse> localVarResp = getWebhooksWithHttpInfo();
-            return localVarResp.getData();
+            ApiResponse<GetWebhooksResponse> localVarResp = getWebhooksWithHttpInfo(appId);
+            return localVarResp.getResponseBody();
         }
 
         /**
@@ -337,7 +364,7 @@ public class WebHooksApi {
          </table>
          */
         public ApiResponse<GetWebhooksResponse> executeWithHttpInfo() throws ApiException {
-            return getWebhooksWithHttpInfo();
+            return getWebhooksWithHttpInfo(appId);
         }
 
         /**
@@ -352,7 +379,7 @@ public class WebHooksApi {
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<GetWebhooksResponse> _callback) throws ApiException {
-            return getWebhooksAsync(_callback);
+            return getWebhooksAsync(appId, _callback);
         }
     }
 
@@ -369,7 +396,7 @@ public class WebHooksApi {
     public GetWebhooksRequestBuilder getWebhooks() throws IllegalArgumentException {
         return new GetWebhooksRequestBuilder();
     }
-    private okhttp3.Call notifyWebhookCall(NotifyWebhookRequest notifyWebhookRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call notifyWebhookCall(NotifyWebhookRequest notifyWebhookRequest, String appId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -394,6 +421,10 @@ public class WebHooksApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -410,26 +441,31 @@ public class WebHooksApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call notifyWebhookValidateBeforeCall(NotifyWebhookRequest notifyWebhookRequest, final ApiCallback _callback) throws ApiException {
-        return notifyWebhookCall(notifyWebhookRequest, _callback);
+    private okhttp3.Call notifyWebhookValidateBeforeCall(NotifyWebhookRequest notifyWebhookRequest, String appId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'notifyWebhookRequest' is set
+        if (notifyWebhookRequest == null) {
+            throw new ApiException("Missing the required parameter 'notifyWebhookRequest' when calling notifyWebhook(Async)");
+        }
+
+        return notifyWebhookCall(notifyWebhookRequest, appId, _callback);
 
     }
 
 
-    private ApiResponse<NotifyWebhookResponse> notifyWebhookWithHttpInfo(NotifyWebhookRequest notifyWebhookRequest) throws ApiException {
-        okhttp3.Call localVarCall = notifyWebhookValidateBeforeCall(notifyWebhookRequest, null);
+    private ApiResponse<NotifyWebhookResponse> notifyWebhookWithHttpInfo(NotifyWebhookRequest notifyWebhookRequest, String appId) throws ApiException {
+        okhttp3.Call localVarCall = notifyWebhookValidateBeforeCall(notifyWebhookRequest, appId, null);
         Type localVarReturnType = new TypeToken<NotifyWebhookResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call notifyWebhookAsync(NotifyWebhookRequest notifyWebhookRequest, final ApiCallback<NotifyWebhookResponse> _callback) throws ApiException {
+    private okhttp3.Call notifyWebhookAsync(NotifyWebhookRequest notifyWebhookRequest, String appId, final ApiCallback<NotifyWebhookResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = notifyWebhookValidateBeforeCall(notifyWebhookRequest, _callback);
+        okhttp3.Call localVarCall = notifyWebhookValidateBeforeCall(notifyWebhookRequest, appId, _callback);
         Type localVarReturnType = new TypeToken<NotifyWebhookResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -438,6 +474,7 @@ public class WebHooksApi {
     public class NotifyWebhookRequestBuilder {
         private String subject;
         private NotifyWebhookRequestData data;
+        private String appId;
 
         private NotifyWebhookRequestBuilder() {
         }
@@ -463,6 +500,16 @@ public class WebHooksApi {
         }
         
         /**
+         * Set appId
+         * @param appId  (optional)
+         * @return NotifyWebhookRequestBuilder
+         */
+        public NotifyWebhookRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
+        /**
          * Build call for notifyWebhook
          * @param _callback ApiCallback API callback
          * @return Call to execute
@@ -475,7 +522,7 @@ public class WebHooksApi {
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
             NotifyWebhookRequest notifyWebhookRequest = buildBodyParams();
-            return notifyWebhookCall(notifyWebhookRequest, _callback);
+            return notifyWebhookCall(notifyWebhookRequest, appId, _callback);
         }
 
         private NotifyWebhookRequest buildBodyParams() {
@@ -497,8 +544,8 @@ public class WebHooksApi {
          */
         public NotifyWebhookResponse execute() throws ApiException {
             NotifyWebhookRequest notifyWebhookRequest = buildBodyParams();
-            ApiResponse<NotifyWebhookResponse> localVarResp = notifyWebhookWithHttpInfo(notifyWebhookRequest);
-            return localVarResp.getData();
+            ApiResponse<NotifyWebhookResponse> localVarResp = notifyWebhookWithHttpInfo(notifyWebhookRequest, appId);
+            return localVarResp.getResponseBody();
         }
 
         /**
@@ -513,7 +560,7 @@ public class WebHooksApi {
          */
         public ApiResponse<NotifyWebhookResponse> executeWithHttpInfo() throws ApiException {
             NotifyWebhookRequest notifyWebhookRequest = buildBodyParams();
-            return notifyWebhookWithHttpInfo(notifyWebhookRequest);
+            return notifyWebhookWithHttpInfo(notifyWebhookRequest, appId);
         }
 
         /**
@@ -529,13 +576,14 @@ public class WebHooksApi {
          */
         public okhttp3.Call executeAsync(final ApiCallback<NotifyWebhookResponse> _callback) throws ApiException {
             NotifyWebhookRequest notifyWebhookRequest = buildBodyParams();
-            return notifyWebhookAsync(notifyWebhookRequest, _callback);
+            return notifyWebhookAsync(notifyWebhookRequest, appId, _callback);
         }
     }
 
     /**
      * Post Hook
      * 
+     * @param notifyWebhookRequest  (required)
      * @return NotifyWebhookRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -546,7 +594,7 @@ public class WebHooksApi {
     public NotifyWebhookRequestBuilder notifyWebhook() throws IllegalArgumentException {
         return new NotifyWebhookRequestBuilder();
     }
-    private okhttp3.Call subscribeServiceCall(SubscribeServiceRequest subscribeServiceRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call subscribeServiceCall(SubscribeServiceRequest subscribeServiceRequest, String appId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -571,6 +619,10 @@ public class WebHooksApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -587,26 +639,31 @@ public class WebHooksApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] { "noauthAuth" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call subscribeServiceValidateBeforeCall(SubscribeServiceRequest subscribeServiceRequest, final ApiCallback _callback) throws ApiException {
-        return subscribeServiceCall(subscribeServiceRequest, _callback);
+    private okhttp3.Call subscribeServiceValidateBeforeCall(SubscribeServiceRequest subscribeServiceRequest, String appId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'subscribeServiceRequest' is set
+        if (subscribeServiceRequest == null) {
+            throw new ApiException("Missing the required parameter 'subscribeServiceRequest' when calling subscribeService(Async)");
+        }
+
+        return subscribeServiceCall(subscribeServiceRequest, appId, _callback);
 
     }
 
 
-    private ApiResponse<SubscribeServiceResponse> subscribeServiceWithHttpInfo(SubscribeServiceRequest subscribeServiceRequest) throws ApiException {
-        okhttp3.Call localVarCall = subscribeServiceValidateBeforeCall(subscribeServiceRequest, null);
+    private ApiResponse<SubscribeServiceResponse> subscribeServiceWithHttpInfo(SubscribeServiceRequest subscribeServiceRequest, String appId) throws ApiException {
+        okhttp3.Call localVarCall = subscribeServiceValidateBeforeCall(subscribeServiceRequest, appId, null);
         Type localVarReturnType = new TypeToken<SubscribeServiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call subscribeServiceAsync(SubscribeServiceRequest subscribeServiceRequest, final ApiCallback<SubscribeServiceResponse> _callback) throws ApiException {
+    private okhttp3.Call subscribeServiceAsync(SubscribeServiceRequest subscribeServiceRequest, String appId, final ApiCallback<SubscribeServiceResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = subscribeServiceValidateBeforeCall(subscribeServiceRequest, _callback);
+        okhttp3.Call localVarCall = subscribeServiceValidateBeforeCall(subscribeServiceRequest, appId, _callback);
         Type localVarReturnType = new TypeToken<SubscribeServiceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -615,6 +672,7 @@ public class WebHooksApi {
     public class SubscribeServiceRequestBuilder {
         private String webhook;
         private String service;
+        private String appId;
 
         private SubscribeServiceRequestBuilder() {
         }
@@ -640,6 +698,16 @@ public class WebHooksApi {
         }
         
         /**
+         * Set appId
+         * @param appId  (optional)
+         * @return SubscribeServiceRequestBuilder
+         */
+        public SubscribeServiceRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
+        /**
          * Build call for subscribeService
          * @param _callback ApiCallback API callback
          * @return Call to execute
@@ -652,7 +720,7 @@ public class WebHooksApi {
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
             SubscribeServiceRequest subscribeServiceRequest = buildBodyParams();
-            return subscribeServiceCall(subscribeServiceRequest, _callback);
+            return subscribeServiceCall(subscribeServiceRequest, appId, _callback);
         }
 
         private SubscribeServiceRequest buildBodyParams() {
@@ -674,8 +742,8 @@ public class WebHooksApi {
          */
         public SubscribeServiceResponse execute() throws ApiException {
             SubscribeServiceRequest subscribeServiceRequest = buildBodyParams();
-            ApiResponse<SubscribeServiceResponse> localVarResp = subscribeServiceWithHttpInfo(subscribeServiceRequest);
-            return localVarResp.getData();
+            ApiResponse<SubscribeServiceResponse> localVarResp = subscribeServiceWithHttpInfo(subscribeServiceRequest, appId);
+            return localVarResp.getResponseBody();
         }
 
         /**
@@ -690,7 +758,7 @@ public class WebHooksApi {
          */
         public ApiResponse<SubscribeServiceResponse> executeWithHttpInfo() throws ApiException {
             SubscribeServiceRequest subscribeServiceRequest = buildBodyParams();
-            return subscribeServiceWithHttpInfo(subscribeServiceRequest);
+            return subscribeServiceWithHttpInfo(subscribeServiceRequest, appId);
         }
 
         /**
@@ -706,13 +774,14 @@ public class WebHooksApi {
          */
         public okhttp3.Call executeAsync(final ApiCallback<SubscribeServiceResponse> _callback) throws ApiException {
             SubscribeServiceRequest subscribeServiceRequest = buildBodyParams();
-            return subscribeServiceAsync(subscribeServiceRequest, _callback);
+            return subscribeServiceAsync(subscribeServiceRequest, appId, _callback);
         }
     }
 
     /**
      * Subscribe to service
      * 
+     * @param subscribeServiceRequest  (required)
      * @return SubscribeServiceRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">

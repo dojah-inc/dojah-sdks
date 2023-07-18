@@ -1,5 +1,5 @@
 /*
-DOJAH APIs
+DOJAH Publilc APIs
 
 Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -25,9 +25,15 @@ type UGKYCApiService service
 type UGKYCApiGetVoterRequest struct {
 	ctx context.Context
 	ApiService *UGKYCApiService
+	appId *string
 	id *int32
 	firstName *string
 	lastName *string
+}
+
+func (r UGKYCApiGetVoterRequest) AppId(appId string) UGKYCApiGetVoterRequest {
+	r.appId = &appId
+	return r
 }
 
 func (r UGKYCApiGetVoterRequest) Id(id int32) UGKYCApiGetVoterRequest {
@@ -45,7 +51,7 @@ func (r UGKYCApiGetVoterRequest) LastName(lastName string) UGKYCApiGetVoterReque
 	return r
 }
 
-func (r UGKYCApiGetVoterRequest) Execute() (*GetVoterResponse, *http.Response, error) {
+func (r UGKYCApiGetVoterRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetVoterExecute(r)
 }
 
@@ -63,13 +69,13 @@ func (a *UGKYCApiService) GetVoter() UGKYCApiGetVoterRequest {
 }
 
 // Execute executes the request
-//  @return GetVoterResponse
-func (a *UGKYCApiService) GetVoterExecute(r UGKYCApiGetVoterRequest) (*GetVoterResponse, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *UGKYCApiService) GetVoterExecute(r UGKYCApiGetVoterRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetVoterResponse
+		localVarReturnValue  map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UGKYCApiService.GetVoter")
@@ -109,33 +115,8 @@ func (a *UGKYCApiService) GetVoterExecute(r UGKYCApiGetVoterRequest) (*GetVoterR
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
+	if r.appId != nil {
+		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

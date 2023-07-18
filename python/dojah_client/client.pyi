@@ -1,6 +1,6 @@
 # coding: utf-8
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -17,17 +17,24 @@ from dojah_client.api_client import ApiClient
 from dojah_client.type_util import copy_signature
 from dojah_client.apis.tags.aml_api import AMLApi
 from dojah_client.apis.tags.authentication_api import AuthenticationApi
-from dojah_client.apis.tags.financial_api import FinancialApi
+from dojah_client.apis.tags.document_analysis_api import DocumentAnalysisApi
+from dojah_client.apis.tags.fraud_api import FraudApi
 from dojah_client.apis.tags.ghkyc_api import GHKYCApi
 from dojah_client.apis.tags.general_api import GeneralApi
+from dojah_client.apis.tags.global_kyc_api import GlobalKYCApi
 from dojah_client.apis.tags.kekyc_api import KEKYCApi
 from dojah_client.apis.tags.kyb_api import KYBApi
 from dojah_client.apis.tags.kyc_api import KYCApi
 from dojah_client.apis.tags.ml_api import MLApi
+from dojah_client.apis.tags.nigeria_kyc_api import NigeriaKYCApi
+from dojah_client.apis.tags.purchase_api import PurchaseApi
 from dojah_client.apis.tags.services_api import ServicesApi
+from dojah_client.apis.tags.tzkyc_api import TZKYCApi
 from dojah_client.apis.tags.ugkyc_api import UGKYCApi
-from dojah_client.apis.tags.wallet_api import WalletApi
+from dojah_client.apis.tags.verifications_api import VerificationsApi
 from dojah_client.apis.tags.web_hooks_api import WebHooksApi
+from dojah_client.apis.tags.zafkyc_api import ZAFKYCApi
+from dojah_client.apis.tags.zwkyc_api import ZWKYCApi
 
 
 
@@ -42,14 +49,21 @@ class Dojah(ClientCustom):
         api_client = ApiClient(configuration)
         self.aml: AMLApi = AMLApi(api_client)
         self.authentication: AuthenticationApi = AuthenticationApi(api_client)
-        self.financial: FinancialApi = FinancialApi(api_client)
+        self.document_analysis: DocumentAnalysisApi = DocumentAnalysisApi(api_client)
+        self.fraud: FraudApi = FraudApi(api_client)
         self.gh_kyc: GHKYCApi = GHKYCApi(api_client)
         self.general: GeneralApi = GeneralApi(api_client)
+        self.global_kyc: GlobalKYCApi = GlobalKYCApi(api_client)
         self.ke_kyc: KEKYCApi = KEKYCApi(api_client)
         self.kyb: KYBApi = KYBApi(api_client)
         self.kyc: KYCApi = KYCApi(api_client)
         self.ml: MLApi = MLApi(api_client)
+        self.nigeria_kyc: NigeriaKYCApi = NigeriaKYCApi(api_client)
+        self.purchase: PurchaseApi = PurchaseApi(api_client)
         self.services: ServicesApi = ServicesApi(api_client)
+        self.tz_kyc: TZKYCApi = TZKYCApi(api_client)
         self.ug_kyc: UGKYCApi = UGKYCApi(api_client)
-        self.wallet: WalletApi = WalletApi(api_client)
+        self.verifications: VerificationsApi = VerificationsApi(api_client)
         self.web_hooks: WebHooksApi = WebHooksApi(api_client)
+        self.zaf_kyc: ZAFKYCApi = ZAFKYCApi(api_client)
+        self.zw_kyc: ZWKYCApi = ZWKYCApi(api_client)

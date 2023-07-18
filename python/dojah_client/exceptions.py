@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -53,6 +53,18 @@ class ApiKeyError(OpenApiException, KeyError):
         if path_to_item:
             full_msg = "{0} at {1}".format(msg, render_path(path_to_item))
         super(ApiKeyError, self).__init__(full_msg)
+
+
+class ApiStreamingException(OpenApiException):
+
+    def __init__(self, status=None, reason=None, body=None):
+        self.status = status
+        self.reason = reason
+        self.body = body
+
+    def __str__(self):
+        """Custom error messages for exception"""
+        return "({0})\n Reason: {1}\n Body: {2}".format(self.status, self.reason, self.body)
 
 
 class ApiException(OpenApiException):

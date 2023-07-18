@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -15,18 +15,17 @@ from enum import Enum
 from typing_extensions import TypedDict, Literal
 
 
-RequiredSendSmsRequest = TypedDict("RequiredSendSmsRequest", {
-    })
+class RequiredSendSmsRequest(TypedDict):
+    pass
 
-OptionalSendSmsRequest = TypedDict("OptionalSendSmsRequest", {
-    "destination": str,
+class OptionalSendSmsRequest(TypedDict, total=False):
+    destination: str
 
-    "message": str,
+    message: str
 
-    "channel": str,
+    channel: str
 
-    "sender_id": str,
-    }, total=False)
+    sender_id: str
 
 class SendSmsRequest(RequiredSendSmsRequest, OptionalSendSmsRequest):
     pass

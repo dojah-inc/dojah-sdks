@@ -81,151 +81,126 @@ All URIs are relative to *https://api.dojah.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AMLApi* | [**GetScreeningInfo**](docs/AMLApi.md#getscreeninginfo) | **Get** /v1/aml/screening/info | Get AML Info
-*AMLApi* | [**ScreenAml**](docs/AMLApi.md#screenaml) | **Post** /api/v1/aml/screening | AML Screening
+*AMLApi* | [**GetScreeningInfo**](docs/AMLApi.md#getscreeninginfo) | **Get** /api/v1/aml/screening/info | Get AML Info
+*AMLApi* | [**ScreenAml**](docs/AMLApi.md#screenaml) | **Post** /api/v1/aml/screening/platform | AML Screening
 *AuthenticationApi* | [**GetSenderId**](docs/AuthenticationApi.md#getsenderid) | **Get** /api/v1/messaging/sender_ids | Messaging - Get Sender IDs
 *AuthenticationApi* | [**GetSmsStatus**](docs/AuthenticationApi.md#getsmsstatus) | **Get** /v1/messaging/sms/get_status | Messaging - Get SMS Status
 *AuthenticationApi* | [**RequestSenderId**](docs/AuthenticationApi.md#requestsenderid) | **Post** /api/v1/messaging/sender_id | Messaging - Request Sender ID
-*AuthenticationApi* | [**SendOtp**](docs/AuthenticationApi.md#sendotp) | **Post** /v1/messaging/otp | Messaging - Send OTP
+*AuthenticationApi* | [**SendOtp**](docs/AuthenticationApi.md#sendotp) | **Post** /api/v1/messaging/otp | Messaging - Send OTP
 *AuthenticationApi* | [**SendSms**](docs/AuthenticationApi.md#sendsms) | **Post** /api/v1/messaging/sms | Messaging - Send SMS
-*AuthenticationApi* | [**ValidateOtp**](docs/AuthenticationApi.md#validateotp) | **Get** /v1/messaging/otp/validate | Messaging - Validate OTP
-*FinancialApi* | [**CollectStatusFromPdf**](docs/FinancialApi.md#collectstatusfrompdf) | **Post** /api/v1/financial/transactions/pdf | Collect Status via PDF Statement
-*FinancialApi* | [**CollectTransactions**](docs/FinancialApi.md#collecttransactions) | **Post** /v1/financial/transactions | Collect Transactions
-*FinancialApi* | [**GetAccount**](docs/FinancialApi.md#getaccount) | **Get** /api/v1/financial/account_information | Get Account Information
-*FinancialApi* | [**GetAccountAnalysis**](docs/FinancialApi.md#getaccountanalysis) | **Get** /api/v1/financial/analysis | Get Account Analysis
-*FinancialApi* | [**GetAccountSubscriptions**](docs/FinancialApi.md#getaccountsubscriptions) | **Get** /v1/financial/account_subscription | Get Account Subscriptions
-*FinancialApi* | [**GetAccountTransactions**](docs/FinancialApi.md#getaccounttransactions) | **Get** /api/v1/financial/account_transactions | Get Account Transactions
-*FinancialApi* | [**GetBasicBvn**](docs/FinancialApi.md#getbasicbvn) | **Get** /v1/financial/bvn_information/basic | Get BVN Information Basic
-*FinancialApi* | [**GetEarningStructure**](docs/FinancialApi.md#getearningstructure) | **Get** /v1/financial/earning_structure | Get Earning Structure
-*FinancialApi* | [**GetFullBvn**](docs/FinancialApi.md#getfullbvn) | **Get** /v1/financial/bvn_information/full | Get BVN Information Full
-*FinancialApi* | [**GetSpendingPattern**](docs/FinancialApi.md#getspendingpattern) | **Get** /v1/financial/spending_pattern | Get Spending Pattern
+*AuthenticationApi* | [**ValidateOtp**](docs/AuthenticationApi.md#validateotp) | **Get** /api/v1/messaging/otp/validate | Messaging - Validate OTP
+*DocumentAnalysisApi* | [**AnalyzeDocument**](docs/DocumentAnalysisApi.md#analyzedocument) | **Post** /api/v1/document/analysis | KYC - Document Analysis
+*FraudApi* | [**GetEmailReputation**](docs/FraudApi.md#getemailreputation) | **Get** /api/v1/kyc/email | Email Reputation
+*FraudApi* | [**GetIpReputation**](docs/FraudApi.md#getipreputation) | **Get** /api/v1/fraud/ip | IP Reputation
+*FraudApi* | [**ScreenPhone**](docs/FraudApi.md#screenphone) | **Get** /api/v1/fraud/phone | Phone Screening
+*FraudApi* | [**ScreenUser**](docs/FraudApi.md#screenuser) | **Get** /api/v1/fraud/user | User Screening
 *GHKYCApi* | [**GetDriversLicense**](docs/GHKYCApi.md#getdriverslicense) | **Get** /api/v1/gh/kyc/dl | Driver&#39;s License
 *GHKYCApi* | [**GetPassport**](docs/GHKYCApi.md#getpassport) | **Get** /api/v1/gh/kyc/passport | Passport
 *GHKYCApi* | [**GetSsnit**](docs/GHKYCApi.md#getssnit) | **Get** /api/v1/gh/kyc/ssnit | SSNIT
+*GHKYCApi* | [**GetVoter**](docs/GHKYCApi.md#getvoter) | **Get** /api/v1/gh/kyc/voter | Voter ID Lookup
 *GeneralApi* | [**GetBanks**](docs/GeneralApi.md#getbanks) | **Get** /v1/general/banks | General - Get Banks
 *GeneralApi* | [**GetBin**](docs/GeneralApi.md#getbin) | **Get** /v1/general/bin | General Resolve BIN
-*GeneralApi* | [**GetDataPlans**](docs/GeneralApi.md#getdataplans) | **Get** /v1/purchase/data/plans | Purchase - Get Data Plans
-*GeneralApi* | [**GetNuban**](docs/GeneralApi.md#getnuban) | **Get** /v1/general/account | General Resolve NUBAN
-*GeneralApi* | [**GetWalletBalance**](docs/GeneralApi.md#getwalletbalance) | **Get** /api/v1/balance | Get Dojah Wallet Balance
-*GeneralApi* | [**PurchaseAirtime**](docs/GeneralApi.md#purchaseairtime) | **Post** /v1/purchase/airtime | Purchase - Send Airtime
-*GeneralApi* | [**PurchaseData**](docs/GeneralApi.md#purchasedata) | **Post** /v1/purchase/data | Purchase - Buy Data
+*GeneralApi* | [**GetNuban**](docs/GeneralApi.md#getnuban) | **Get** /api/v1/general/account | General Resolve NUBAN
+*GlobalKYCApi* | [**CaEkyc**](docs/GlobalKYCApi.md#caekyc) | **Get** /api/v1/ca/kyc | Canada Ekyc
+*GlobalKYCApi* | [**GetUsSsn**](docs/GlobalKYCApi.md#getusssn) | **Get** /api/v1/us/kyc | US SSN
+*GlobalKYCApi* | [**UkTwoPlusTwo**](docs/GlobalKYCApi.md#uktwoplustwo) | **Get** /api/v1/uk/kyc | UK 2+2
 *KEKYCApi* | [**GetNationalId**](docs/KEKYCApi.md#getnationalid) | **Get** /api/v1/ke/kyc/id | KYC - National ID
-*KYBApi* | [**GetAdvancedCac**](docs/KYBApi.md#getadvancedcac) | **Get** /v1/kyc/cac/advance | KYC - Get CAC Advanced
-*KYBApi* | [**GetBasicCac**](docs/KYBApi.md#getbasiccac) | **Get** /v1/kyc/cac/basic | KYB - Get CAC 2
-*KYBApi* | [**GetCac**](docs/KYBApi.md#getcac) | **Get** /v1/kyc/cac | KYC - Get CAC 
-*KYBApi* | [**GetTin**](docs/KYBApi.md#gettin) | **Get** /v1/kyc/tin | KYC - Fetch Tin
-*KYCApi* | [**AnalyzeDocument**](docs/KYCApi.md#analyzedocument) | **Post** /api/v1/document/analysis | KYC - Document Analysis
-*KYCApi* | [**GetBasicBvn**](docs/KYCApi.md#getbasicbvn) | **Get** /api/v1/kyc/bvn/basic | KYC - Get Basic BVN Info
-*KYCApi* | [**GetBasicPhoneNumber**](docs/KYCApi.md#getbasicphonenumber) | **Get** /v1/kyc/phone_number/basic | KYC Lookup Phone Number Basic
-*KYCApi* | [**GetDriversLicense**](docs/KYCApi.md#getdriverslicense) | **Get** /api/v1/kyc/dl | KYC - Get Drivers License Info
-*KYCApi* | [**GetEmailReputation**](docs/KYCApi.md#getemailreputation) | **Get** /v1/kyc/email | KYC - Get Email Reputation
-*KYCApi* | [**GetFullBvn**](docs/KYCApi.md#getfullbvn) | **Get** /api/v1/kyc/bvn/full | KYC - Lookup BVN Basic
-*KYCApi* | [**GetNuban**](docs/KYCApi.md#getnuban) | **Get** /api/v1/kyc/nuban | KYC - Get NUBAN Information
-*KYCApi* | [**GetPassport**](docs/KYCApi.md#getpassport) | **Get** /api/v1/kyc/passport | KYC - Passport
-*KYCApi* | [**GetPhoneNumber**](docs/KYCApi.md#getphonenumber) | **Get** /api/v1/kyc/phone_number | KYC - Lookup Phone Number
-*KYCApi* | [**GetPremiumBvn**](docs/KYCApi.md#getpremiumbvn) | **Get** /api/v1/kyc/bvn/advance | KYC - Lookup BVN Premium
-*KYCApi* | [**GetVIN**](docs/KYCApi.md#getvin) | **Get** /api/v1/kyc/vin | KYC - Get VIN
-*KYCApi* | [**GetVnin**](docs/KYCApi.md#getvnin) | **Get** /api/v1/kyc/vnin | Lookup VNIN
-*KYCApi* | [**ValidateBvn**](docs/KYCApi.md#validatebvn) | **Get** /api/v1/kyc/bvn | KYC - Validate BVN
-*KYCApi* | [**VerifyAge**](docs/KYCApi.md#verifyage) | **Get** /v1/kyc/age_verification | KYC - Age Verification
-*KYCApi* | [**VerifySelfieBvn**](docs/KYCApi.md#verifyselfiebvn) | **Post** /v1/kyc/bvn/verify | KYC - Selfie BVN Verificatoin
-*KYCApi* | [**VerifySelfieNin**](docs/KYCApi.md#verifyselfienin) | **Post** /v1/kyc/nin/verify | KYC - Selfie NIN Verification
-*MLApi* | [**GetDocumentAnalysis**](docs/MLApi.md#getdocumentanalysis) | **Post** /v1/document/analysis/dl | Document Analysis Drivers License
-*MLApi* | [**GetGenericOcrText**](docs/MLApi.md#getgenericocrtext) | **Post** /v1/ml/ocr/generic | Generic OCR Service
-*MLApi* | [**GetOcrText**](docs/MLApi.md#getocrtext) | **Post** /v1/ml/ocr | BVN Ocr
-*MLApi* | [**VerifyPhotoIdWithSelfie**](docs/MLApi.md#verifyphotoidwithselfie) | **Post** /v1/kyc/photoid/verify | KYC - Selfie Photo ID Verification
-*ServicesApi* | [**CategorizeTransactions**](docs/ServicesApi.md#categorizetransactions) | **Post** /v1/ml/categorize_transaction | Categorize Transactions
+*KEKYCApi* | [**GetPassport**](docs/KEKYCApi.md#getpassport) | **Get** /api/v1/ke/kyc/passport | KYC - Passport
+*KYBApi* | [**BusinessDetail**](docs/KYBApi.md#businessdetail) | **Get** /api/v1/kyb/business/detail | Business Detail
+*KYBApi* | [**BusinessSearch**](docs/KYBApi.md#businesssearch) | **Get** /api/v1/kyb/business/search | Business Search
+*KYBApi* | [**GetCac**](docs/KYBApi.md#getcac) | **Get** /api/v1/kyc/cac | KYC - Get CAC 
+*KYBApi* | [**GetTin**](docs/KYBApi.md#gettin) | **Get** /api/v1/kyc/tin | KYC - Fetch Tin
+*KYCApi* | [**CheckLiveness**](docs/KYCApi.md#checkliveness) | **Post** /api/v1/ml/liveness | Liveness Check
+*KYCApi* | [**GetAccounts**](docs/KYCApi.md#getaccounts) | **Get** /api/v1/kyc/accounts | KYC - Fetch Accounts 
+*KYCApi* | [**GetAddressVerification**](docs/KYCApi.md#getaddressverification) | **Get** /api/v1/kyc/address | Fetch Address Verification Data
+*KYCApi* | [**GetBvnFromNuban**](docs/KYCApi.md#getbvnfromnuban) | **Get** /api/v1/kyc/nuban/bvn | Lookup BVN from NUBAN
+*KYCApi* | [**GetVin**](docs/KYCApi.md#getvin) | **Get** /api/v1/kyc/vin | KYC - Get VIN
+*KYCApi* | [**SubmitAddress**](docs/KYCApi.md#submitaddress) | **Post** /api/v1/kyc/address | Submit Address
+*MLApi* | [**VerifyPhotoIdWithSelfie**](docs/MLApi.md#verifyphotoidwithselfie) | **Post** /api/v1/kyc/photoid/verify | KYC - Selfie Photo ID Verification
+*NigeriaKYCApi* | [**GetBasicBvn**](docs/NigeriaKYCApi.md#getbasicbvn) | **Get** /api/v1/kyc/bvn | KYC - Get Basic BVN Info
+*NigeriaKYCApi* | [**GetBasicBvn1**](docs/NigeriaKYCApi.md#getbasicbvn1) | **Get** /api/v1/kyc/bvn/basic | KYC - Lookup BVN Basic 1
+*NigeriaKYCApi* | [**GetBasicPhoneNumber**](docs/NigeriaKYCApi.md#getbasicphonenumber) | **Get** /api/v1/kyc/phone_number/basic | KYC Lookup Phone Number Basic
+*NigeriaKYCApi* | [**GetDriversLicense**](docs/NigeriaKYCApi.md#getdriverslicense) | **Get** /api/v1/kyc/dl | KYC - Get Drivers License Info
+*NigeriaKYCApi* | [**GetNin**](docs/NigeriaKYCApi.md#getnin) | **Get** /api/v1/kyc/nin | KYC - Get NIN Info
+*NigeriaKYCApi* | [**GetNormalBvn**](docs/NigeriaKYCApi.md#getnormalbvn) | **Get** /api/v1/kyc/bvn/full | KYC - Lookup BVN Normal
+*NigeriaKYCApi* | [**GetNuban**](docs/NigeriaKYCApi.md#getnuban) | **Get** /api/v1/kyc/nuban | KYC - Get NUBAN Information
+*NigeriaKYCApi* | [**GetPassport**](docs/NigeriaKYCApi.md#getpassport) | **Get** /api/v1/kyc/passport | KYC - Passport
+*NigeriaKYCApi* | [**GetPhoneNumber**](docs/NigeriaKYCApi.md#getphonenumber) | **Get** /api/v1/kyc/phone_number | KYC - Lookup Phone Number
+*NigeriaKYCApi* | [**GetPremiumBvn**](docs/NigeriaKYCApi.md#getpremiumbvn) | **Get** /api/v1/kyc/bvn/advance | KYC - Lookup BVN Premium
+*NigeriaKYCApi* | [**GetVnin**](docs/NigeriaKYCApi.md#getvnin) | **Get** /api/v1/kyc/vnin | Lookup VNIN
+*PurchaseApi* | [**SendAirtime**](docs/PurchaseApi.md#sendairtime) | **Post** /v1/purchase/airtime | Purchase - Send Airtime
+*ServicesApi* | [**GetWalletBalance**](docs/ServicesApi.md#getwalletbalance) | **Get** /api/v1/balance | Get Dojah Wallet Balance
+*TZKYCApi* | [**GetNin**](docs/TZKYCApi.md#getnin) | **Get** /api/v1/tz/kyc/nin | Lookup TZ NIN
 *UGKYCApi* | [**GetVoter**](docs/UGKYCApi.md#getvoter) | **Get** /api/v1/ug/kyc/voter | Voters ID
-*WalletApi* | [**CreateWallet**](docs/WalletApi.md#createwallet) | **Post** /v1/wallet/ngn/create | Create NGN Wallet
-*WalletApi* | [**CreditSubwallet**](docs/WalletApi.md#creditsubwallet) | **Post** /v1/wallet/ngn/credit | Credit Sub-wallet
-*WalletApi* | [**GetTransaction**](docs/WalletApi.md#gettransaction) | **Get** /v1/wallet/ngn/transaction | Retrieve Transaction Details
-*WalletApi* | [**GetWallet**](docs/WalletApi.md#getwallet) | **Get** /v1/wallet/ngn/retrieve | Retrieve Wallet Details
-*WalletApi* | [**GetWallets**](docs/WalletApi.md#getwallets) | **Get** /v1/wallet/ngn/accounts | Get Wallets
-*WalletApi* | [**TransferFunds**](docs/WalletApi.md#transferfunds) | **Post** /v1/wallet/ngn/transfer | Transfer Funds
+*VerificationsApi* | [**ValidateBvn**](docs/VerificationsApi.md#validatebvn) | **Get** /v1/kyc/bvn | KYC - Validate BVN
+*VerificationsApi* | [**VerifyAge**](docs/VerificationsApi.md#verifyage) | **Get** /v1/kyc/age_verification | KYC - Age Verification
+*VerificationsApi* | [**VerifySelfieBvn**](docs/VerificationsApi.md#verifyselfiebvn) | **Post** /v1/kyc/bvn/verify | KYV - Selfie BVN Verificatoin
+*VerificationsApi* | [**VerifySelfieNin**](docs/VerificationsApi.md#verifyselfienin) | **Post** /api/v1/kyc/nin/verify | KYC - Selfie NIN Verification
+*VerificationsApi* | [**VerifySelfieVnin**](docs/VerificationsApi.md#verifyselfievnin) | **Post** /api/v1/kyc/vnin/verify | KYC - Selfie vNIN verification
 *WebHooksApi* | [**DeleteWebhook**](docs/WebHooksApi.md#deletewebhook) | **Delete** /api/v1/webhook/delete | Delete Webhook
 *WebHooksApi* | [**GetWebhooks**](docs/WebHooksApi.md#getwebhooks) | **Get** /api/v1/webhook/fetch | Fetch All Webhooks
 *WebHooksApi* | [**NotifyWebhook**](docs/WebHooksApi.md#notifywebhook) | **Post** /api/v1/webhook/notify | Post Hook
 *WebHooksApi* | [**SubscribeService**](docs/WebHooksApi.md#subscribeservice) | **Post** /api/v1/webhook/subscribe | Subscribe to service
+*ZAFKYCApi* | [**GetId**](docs/ZAFKYCApi.md#getid) | **Get** /api/v1/za/kyc/id | KYC - Lookup ID
+*ZWKYCApi* | [**CheckCredit**](docs/ZWKYCApi.md#checkcredit) | **Get** /api/v1/zw/kyc/fcb | Credit Check
+*ZWKYCApi* | [**VerifyId**](docs/ZWKYCApi.md#verifyid) | **Get** /api/v1/zw/kyc/nin | National ID Verification
 
 
 ## Documentation For Models
 
+ - [AmlScreenAmlRequest](docs/AmlScreenAmlRequest.md)
+ - [AmlScreenAmlResponse](docs/AmlScreenAmlResponse.md)
+ - [AmlScreenAmlResponseEntity](docs/AmlScreenAmlResponseEntity.md)
  - [AnalyzeDocumentResponse](docs/AnalyzeDocumentResponse.md)
  - [AnalyzeDocumentResponseEntity](docs/AnalyzeDocumentResponseEntity.md)
  - [AnalyzeDocumentResponseEntityDocumentImages](docs/AnalyzeDocumentResponseEntityDocumentImages.md)
  - [AnalyzeDocumentResponseEntityDocumentType](docs/AnalyzeDocumentResponseEntityDocumentType.md)
  - [AnalyzeDocumentResponseEntityStatus](docs/AnalyzeDocumentResponseEntityStatus.md)
  - [AnalyzeDocumentResponseEntityTextDataInner](docs/AnalyzeDocumentResponseEntityTextDataInner.md)
- - [CategorizeTransactionsRequest](docs/CategorizeTransactionsRequest.md)
- - [CategorizeTransactionsResponse](docs/CategorizeTransactionsResponse.md)
- - [CategorizeTransactionsResponseEntity](docs/CategorizeTransactionsResponseEntity.md)
- - [CollectStatusFromPdfRequest](docs/CollectStatusFromPdfRequest.md)
- - [CollectStatusFromPdfResponse](docs/CollectStatusFromPdfResponse.md)
- - [CollectStatusFromPdfResponseEntity](docs/CollectStatusFromPdfResponseEntity.md)
- - [CollectTransactionsRequest](docs/CollectTransactionsRequest.md)
- - [CollectTransactionsRequestTransactionsInner](docs/CollectTransactionsRequestTransactionsInner.md)
- - [CollectTransactionsResponse](docs/CollectTransactionsResponse.md)
- - [CollectTransactionsResponseEntity](docs/CollectTransactionsResponseEntity.md)
- - [CreateWalletRequest](docs/CreateWalletRequest.md)
- - [CreateWalletResponse](docs/CreateWalletResponse.md)
- - [CreateWalletResponseEntity](docs/CreateWalletResponseEntity.md)
- - [CreditSubwalletRequest](docs/CreditSubwalletRequest.md)
- - [CreditSubwalletResponse](docs/CreditSubwalletResponse.md)
- - [CreditSubwalletResponseEntity](docs/CreditSubwalletResponseEntity.md)
+ - [AuthenticationSendOtpRequest](docs/AuthenticationSendOtpRequest.md)
+ - [AuthenticationSendOtpResponse](docs/AuthenticationSendOtpResponse.md)
+ - [AuthenticationSendOtpResponseEntityInner](docs/AuthenticationSendOtpResponseEntityInner.md)
+ - [AuthenticationValidateOtpResponse](docs/AuthenticationValidateOtpResponse.md)
+ - [AuthenticationValidateOtpResponseEntity](docs/AuthenticationValidateOtpResponseEntity.md)
  - [DeleteWebhookResponse](docs/DeleteWebhookResponse.md)
- - [FinancialGetBasicBvnResponse](docs/FinancialGetBasicBvnResponse.md)
- - [FinancialGetBasicBvnResponseEntity](docs/FinancialGetBasicBvnResponseEntity.md)
- - [FinancialGetFullBvnResponse](docs/FinancialGetFullBvnResponse.md)
- - [FinancialGetFullBvnResponseEntity](docs/FinancialGetFullBvnResponseEntity.md)
+ - [FraudGetEmailReputationResponse](docs/FraudGetEmailReputationResponse.md)
+ - [FraudGetEmailReputationResponseEntity](docs/FraudGetEmailReputationResponseEntity.md)
+ - [FraudGetEmailReputationResponseEntityBreachDetails](docs/FraudGetEmailReputationResponseEntityBreachDetails.md)
+ - [FraudGetEmailReputationResponseEntityDetails](docs/FraudGetEmailReputationResponseEntityDetails.md)
+ - [FraudGetEmailReputationResponseEntityDomainDetails](docs/FraudGetEmailReputationResponseEntityDomainDetails.md)
+ - [FraudGetIpReputationResponse](docs/FraudGetIpReputationResponse.md)
+ - [FraudGetIpReputationResponseEntity](docs/FraudGetIpReputationResponseEntity.md)
+ - [FraudGetIpReputationResponseEntityReport](docs/FraudGetIpReputationResponseEntityReport.md)
+ - [FraudGetIpReputationResponseEntityReportAnonymity](docs/FraudGetIpReputationResponseEntityReportAnonymity.md)
+ - [FraudGetIpReputationResponseEntityReportBlacklists](docs/FraudGetIpReputationResponseEntityReportBlacklists.md)
+ - [FraudGetIpReputationResponseEntityReportInformation](docs/FraudGetIpReputationResponseEntityReportInformation.md)
+ - [FraudGetIpReputationResponseEntityReportRiskScore](docs/FraudGetIpReputationResponseEntityReportRiskScore.md)
+ - [FraudScreenPhoneResponse](docs/FraudScreenPhoneResponse.md)
+ - [FraudScreenPhoneResponseEntity](docs/FraudScreenPhoneResponseEntity.md)
+ - [FraudScreenUserResponse](docs/FraudScreenUserResponse.md)
+ - [FraudScreenUserResponseEntity](docs/FraudScreenUserResponseEntity.md)
+ - [FraudScreenUserResponseEntityEmailCheckResult](docs/FraudScreenUserResponseEntityEmailCheckResult.md)
+ - [FraudScreenUserResponseEntityEmailCheckResultBreachDetails](docs/FraudScreenUserResponseEntityEmailCheckResultBreachDetails.md)
+ - [FraudScreenUserResponseEntityEmailCheckResultBreachDetailsBreachesInner](docs/FraudScreenUserResponseEntityEmailCheckResultBreachDetailsBreachesInner.md)
+ - [FraudScreenUserResponseEntityEmailCheckResultDomainDetails](docs/FraudScreenUserResponseEntityEmailCheckResultDomainDetails.md)
+ - [FraudScreenUserResponseEntityIpCheckResult](docs/FraudScreenUserResponseEntityIpCheckResult.md)
+ - [FraudScreenUserResponseEntityIpCheckResultAnonymity](docs/FraudScreenUserResponseEntityIpCheckResultAnonymity.md)
+ - [FraudScreenUserResponseEntityIpCheckResultBlacklists](docs/FraudScreenUserResponseEntityIpCheckResultBlacklists.md)
+ - [FraudScreenUserResponseEntityIpCheckResultIpDetails](docs/FraudScreenUserResponseEntityIpCheckResultIpDetails.md)
+ - [FraudScreenUserResponseEntityIpCheckResultRiskScore](docs/FraudScreenUserResponseEntityIpCheckResultRiskScore.md)
+ - [FraudScreenUserResponseEntityPhoneCheckResult](docs/FraudScreenUserResponseEntityPhoneCheckResult.md)
  - [GeneralGetNubanResponse](docs/GeneralGetNubanResponse.md)
  - [GeneralGetNubanResponseEntity](docs/GeneralGetNubanResponseEntity.md)
- - [GeneralGetWalletBalanceResponse](docs/GeneralGetWalletBalanceResponse.md)
- - [GeneralGetWalletBalanceResponseEntity](docs/GeneralGetWalletBalanceResponseEntity.md)
- - [GetAccountAnalysisResponse](docs/GetAccountAnalysisResponse.md)
- - [GetAccountAnalysisResponseEntity](docs/GetAccountAnalysisResponseEntity.md)
- - [GetAccountAnalysisResponseEntityAccountBreakdown](docs/GetAccountAnalysisResponseEntityAccountBreakdown.md)
- - [GetAccountAnalysisResponseEntityExpenseBreakdown](docs/GetAccountAnalysisResponseEntityExpenseBreakdown.md)
- - [GetAccountAnalysisResponseEntityFundsManagement](docs/GetAccountAnalysisResponseEntityFundsManagement.md)
- - [GetAccountAnalysisResponseEntityInflowBreakdown](docs/GetAccountAnalysisResponseEntityInflowBreakdown.md)
- - [GetAccountAnalysisResponseEntityTransactionRoutineBreakdown](docs/GetAccountAnalysisResponseEntityTransactionRoutineBreakdown.md)
- - [GetAccountResponse](docs/GetAccountResponse.md)
- - [GetAccountSubscriptionsResponse](docs/GetAccountSubscriptionsResponse.md)
- - [GetAccountSubscriptionsResponseEntity](docs/GetAccountSubscriptionsResponseEntity.md)
- - [GetAccountTransactionsResponse](docs/GetAccountTransactionsResponse.md)
- - [GetAccountTransactionsResponseEntity](docs/GetAccountTransactionsResponseEntity.md)
- - [GetAccountTransactionsResponseEntityTransactionsInner](docs/GetAccountTransactionsResponseEntityTransactionsInner.md)
- - [GetAdvancedCacResponse](docs/GetAdvancedCacResponse.md)
- - [GetAdvancedCacResponseEntity](docs/GetAdvancedCacResponseEntity.md)
  - [GetBanksResponse](docs/GetBanksResponse.md)
  - [GetBanksResponseEntityInner](docs/GetBanksResponseEntityInner.md)
  - [GetBasicBvnResponse](docs/GetBasicBvnResponse.md)
  - [GetBasicBvnResponseEntity](docs/GetBasicBvnResponseEntity.md)
- - [GetBasicCacResponse](docs/GetBasicCacResponse.md)
- - [GetBasicCacResponseEntity](docs/GetBasicCacResponseEntity.md)
- - [GetBasicPhoneNumberResponse](docs/GetBasicPhoneNumberResponse.md)
- - [GetBasicPhoneNumberResponseEntity](docs/GetBasicPhoneNumberResponseEntity.md)
  - [GetBinResponse](docs/GetBinResponse.md)
  - [GetBinResponseEntity](docs/GetBinResponseEntity.md)
- - [GetCacResponse](docs/GetCacResponse.md)
- - [GetCacResponseEntity](docs/GetCacResponseEntity.md)
- - [GetDataPlansResponse](docs/GetDataPlansResponse.md)
- - [GetDataPlansResponseEntityInner](docs/GetDataPlansResponseEntityInner.md)
- - [GetDocumentAnalysisRequest](docs/GetDocumentAnalysisRequest.md)
- - [GetDocumentAnalysisResponse](docs/GetDocumentAnalysisResponse.md)
- - [GetDocumentAnalysisResponseEntity](docs/GetDocumentAnalysisResponseEntity.md)
- - [GetDocumentAnalysisResponseEntityData](docs/GetDocumentAnalysisResponseEntityData.md)
  - [GetDriversLicenseResponse](docs/GetDriversLicenseResponse.md)
  - [GetDriversLicenseResponseEntity](docs/GetDriversLicenseResponseEntity.md)
- - [GetEarningStructureResponse](docs/GetEarningStructureResponse.md)
- - [GetEarningStructureResponseEntity](docs/GetEarningStructureResponseEntity.md)
- - [GetEmailReputationResponse](docs/GetEmailReputationResponse.md)
- - [GetEmailReputationResponseEntity](docs/GetEmailReputationResponseEntity.md)
- - [GetEmailReputationResponseEntityDetails](docs/GetEmailReputationResponseEntityDetails.md)
  - [GetFullBvnResponse](docs/GetFullBvnResponse.md)
  - [GetFullBvnResponseEntity](docs/GetFullBvnResponseEntity.md)
- - [GetGenericOcrTextRequest](docs/GetGenericOcrTextRequest.md)
- - [GetGenericOcrTextResponse](docs/GetGenericOcrTextResponse.md)
- - [GetGenericOcrTextResponseEntity](docs/GetGenericOcrTextResponseEntity.md)
  - [GetKycDriversLicenseResponse](docs/GetKycDriversLicenseResponse.md)
  - [GetKycDriversLicenseResponseEntity](docs/GetKycDriversLicenseResponseEntity.md)
  - [GetKycDriversLicenseResponseEntityPersonalDetails](docs/GetKycDriversLicenseResponseEntityPersonalDetails.md)
@@ -235,9 +210,6 @@ Class | Method | HTTP request | Description
  - [GetNationalIdResponseEntity](docs/GetNationalIdResponseEntity.md)
  - [GetNubanResponse](docs/GetNubanResponse.md)
  - [GetNubanResponseEntity](docs/GetNubanResponseEntity.md)
- - [GetOcrTextRequest](docs/GetOcrTextRequest.md)
- - [GetOcrTextResponse](docs/GetOcrTextResponse.md)
- - [GetOcrTextResponseEntity](docs/GetOcrTextResponseEntity.md)
  - [GetPassportResponse](docs/GetPassportResponse.md)
  - [GetPassportResponseEntity](docs/GetPassportResponseEntity.md)
  - [GetPhoneNumber404Response](docs/GetPhoneNumber404Response.md)
@@ -246,42 +218,34 @@ Class | Method | HTTP request | Description
  - [GetPhoneNumberResponseEntity](docs/GetPhoneNumberResponseEntity.md)
  - [GetPremiumBvnResponse](docs/GetPremiumBvnResponse.md)
  - [GetPremiumBvnResponseEntity](docs/GetPremiumBvnResponseEntity.md)
- - [GetScreeningInfoResponse](docs/GetScreeningInfoResponse.md)
- - [GetScreeningInfoResponseEntity](docs/GetScreeningInfoResponseEntity.md)
- - [GetScreeningInfoResponseEntityResult](docs/GetScreeningInfoResponseEntityResult.md)
  - [GetSenderIdResponse](docs/GetSenderIdResponse.md)
  - [GetSenderIdResponseEntityInner](docs/GetSenderIdResponseEntityInner.md)
  - [GetSmsStatusResponse](docs/GetSmsStatusResponse.md)
  - [GetSmsStatusResponseEntity](docs/GetSmsStatusResponseEntity.md)
- - [GetSpendingPatternResponse](docs/GetSpendingPatternResponse.md)
- - [GetSpendingPatternResponseEntity](docs/GetSpendingPatternResponseEntity.md)
- - [GetSpendingPatternResponseEntityPattern](docs/GetSpendingPatternResponseEntityPattern.md)
- - [GetSpendingPatternResponseEntityPatternAirtimeData](docs/GetSpendingPatternResponseEntityPatternAirtimeData.md)
- - [GetSpendingPatternResponseEntityPatternBankTransfer](docs/GetSpendingPatternResponseEntityPatternBankTransfer.md)
- - [GetSpendingPatternResponseEntityPatternCharges](docs/GetSpendingPatternResponseEntityPatternCharges.md)
- - [GetSpendingPatternResponseEntityPatternFood](docs/GetSpendingPatternResponseEntityPatternFood.md)
- - [GetSpendingPatternResponseEntityPatternOthers](docs/GetSpendingPatternResponseEntityPatternOthers.md)
  - [GetSsnitResponse](docs/GetSsnitResponse.md)
  - [GetSsnitResponseEntity](docs/GetSsnitResponseEntity.md)
- - [GetTinResponse](docs/GetTinResponse.md)
- - [GetTinResponseEntity](docs/GetTinResponseEntity.md)
- - [GetTransactionResponse](docs/GetTransactionResponse.md)
- - [GetTransactionResponseEntity](docs/GetTransactionResponseEntity.md)
  - [GetVinResponse](docs/GetVinResponse.md)
  - [GetVinResponseEntity](docs/GetVinResponseEntity.md)
  - [GetVninResponse](docs/GetVninResponse.md)
  - [GetVninResponseEntity](docs/GetVninResponseEntity.md)
- - [GetVoterResponse](docs/GetVoterResponse.md)
- - [GetVoterResponseEntity](docs/GetVoterResponseEntity.md)
  - [GetWalletBalanceResponse](docs/GetWalletBalanceResponse.md)
  - [GetWalletBalanceResponseEntity](docs/GetWalletBalanceResponseEntity.md)
- - [GetWalletResponse](docs/GetWalletResponse.md)
- - [GetWalletResponseEntity](docs/GetWalletResponseEntity.md)
- - [GetWalletsResponse](docs/GetWalletsResponse.md)
- - [GetWalletsResponseEntity](docs/GetWalletsResponseEntity.md)
- - [GetWalletsResponseEntityClientWalletsInner](docs/GetWalletsResponseEntityClientWalletsInner.md)
  - [GetWebhooksResponse](docs/GetWebhooksResponse.md)
  - [GetWebhooksResponseEntityInner](docs/GetWebhooksResponseEntityInner.md)
+ - [KybGetCacResponse](docs/KybGetCacResponse.md)
+ - [KybGetCacResponseEntity](docs/KybGetCacResponseEntity.md)
+ - [KybGetTinResponse](docs/KybGetTinResponse.md)
+ - [KybGetTinResponseEntity](docs/KybGetTinResponseEntity.md)
+ - [KycCheckLivenessRequest](docs/KycCheckLivenessRequest.md)
+ - [KycSubmitAddressRequest](docs/KycSubmitAddressRequest.md)
+ - [KycSubmitAddressResponse](docs/KycSubmitAddressResponse.md)
+ - [KycSubmitAddressResponseEntity](docs/KycSubmitAddressResponseEntity.md)
+ - [KycSubmitAddressResponseEntityData](docs/KycSubmitAddressResponseEntityData.md)
+ - [KycSubmitAddressResponseEntityDataApplicant](docs/KycSubmitAddressResponseEntityDataApplicant.md)
+ - [KycSubmitAddressResponseEntityDataNeighbor](docs/KycSubmitAddressResponseEntityDataNeighbor.md)
+ - [MlVerifyPhotoIdWithSelfieRequest](docs/MlVerifyPhotoIdWithSelfieRequest.md)
+ - [NigeriaKycGetNinResponse](docs/NigeriaKycGetNinResponse.md)
+ - [NigeriaKycGetNinResponseEntity](docs/NigeriaKycGetNinResponseEntity.md)
  - [NotifyWebhookRequest](docs/NotifyWebhookRequest.md)
  - [NotifyWebhookRequestData](docs/NotifyWebhookRequestData.md)
  - [NotifyWebhookResponse](docs/NotifyWebhookResponse.md)
@@ -289,46 +253,32 @@ Class | Method | HTTP request | Description
  - [PurchaseAirtimeResponse](docs/PurchaseAirtimeResponse.md)
  - [PurchaseAirtimeResponseEntity](docs/PurchaseAirtimeResponseEntity.md)
  - [PurchaseAirtimeResponseEntityDataInner](docs/PurchaseAirtimeResponseEntityDataInner.md)
- - [PurchaseDataRequest](docs/PurchaseDataRequest.md)
- - [PurchaseDataResponse](docs/PurchaseDataResponse.md)
- - [PurchaseDataResponseEntityInner](docs/PurchaseDataResponseEntityInner.md)
  - [RequestSenderIdRequest](docs/RequestSenderIdRequest.md)
  - [RequestSenderIdResponse](docs/RequestSenderIdResponse.md)
  - [RequestSenderIdResponseEntityInner](docs/RequestSenderIdResponseEntityInner.md)
- - [ScreenAmlRequest](docs/ScreenAmlRequest.md)
- - [ScreenAmlResponse](docs/ScreenAmlResponse.md)
- - [ScreenAmlResponseEntity](docs/ScreenAmlResponseEntity.md)
- - [SendOtpRequest](docs/SendOtpRequest.md)
- - [SendOtpResponse](docs/SendOtpResponse.md)
- - [SendOtpResponseEntityInner](docs/SendOtpResponseEntityInner.md)
  - [SendSmsRequest](docs/SendSmsRequest.md)
  - [SendSmsResponse](docs/SendSmsResponse.md)
  - [SendSmsResponseEntity](docs/SendSmsResponseEntity.md)
  - [SubscribeServiceRequest](docs/SubscribeServiceRequest.md)
  - [SubscribeServiceResponse](docs/SubscribeServiceResponse.md)
- - [TransferFundsRequest](docs/TransferFundsRequest.md)
- - [TransferFundsResponse](docs/TransferFundsResponse.md)
- - [TransferFundsResponseEntity](docs/TransferFundsResponseEntity.md)
  - [ValidateBvnResponse](docs/ValidateBvnResponse.md)
  - [ValidateBvnResponseEntity](docs/ValidateBvnResponseEntity.md)
  - [ValidateBvnResponseEntityBvn](docs/ValidateBvnResponseEntityBvn.md)
  - [ValidateBvnResponseEntityFirstName](docs/ValidateBvnResponseEntityFirstName.md)
- - [ValidateOtpResponse](docs/ValidateOtpResponse.md)
- - [ValidateOtpResponseEntity](docs/ValidateOtpResponseEntity.md)
+ - [VerificationsVerifySelfieNinRequest](docs/VerificationsVerifySelfieNinRequest.md)
+ - [VerificationsVerifySelfieVninRequest](docs/VerificationsVerifySelfieVninRequest.md)
  - [VerifyAgeResponse](docs/VerifyAgeResponse.md)
  - [VerifyAgeResponseEntity](docs/VerifyAgeResponseEntity.md)
- - [VerifyPhotoIdWithSelfieRequest](docs/VerifyPhotoIdWithSelfieRequest.md)
- - [VerifyPhotoIdWithSelfieResponse](docs/VerifyPhotoIdWithSelfieResponse.md)
- - [VerifyPhotoIdWithSelfieResponseEntity](docs/VerifyPhotoIdWithSelfieResponseEntity.md)
- - [VerifyPhotoIdWithSelfieResponseEntitySelfie](docs/VerifyPhotoIdWithSelfieResponseEntitySelfie.md)
  - [VerifySelfieBvnRequest](docs/VerifySelfieBvnRequest.md)
  - [VerifySelfieBvnResponse](docs/VerifySelfieBvnResponse.md)
  - [VerifySelfieBvnResponseEntity](docs/VerifySelfieBvnResponseEntity.md)
  - [VerifySelfieBvnResponseEntitySelfieVerification](docs/VerifySelfieBvnResponseEntitySelfieVerification.md)
- - [VerifySelfieNinRequest](docs/VerifySelfieNinRequest.md)
- - [VerifySelfieNinResponse](docs/VerifySelfieNinResponse.md)
- - [VerifySelfieNinResponseEntity](docs/VerifySelfieNinResponseEntity.md)
- - [VerifySelfieNinResponseEntitySelfieVerification](docs/VerifySelfieNinResponseEntitySelfieVerification.md)
+ - [ZafKycGetIdResponse](docs/ZafKycGetIdResponse.md)
+ - [ZafKycGetIdResponseEntity](docs/ZafKycGetIdResponseEntity.md)
+ - [ZwKycCheckCreditResponse](docs/ZwKycCheckCreditResponse.md)
+ - [ZwKycCheckCreditResponseEntity](docs/ZwKycCheckCreditResponseEntity.md)
+ - [ZwKycVerifyIdResponse](docs/ZwKycVerifyIdResponse.md)
+ - [ZwKycVerifyIdResponseEntity](docs/ZwKycVerifyIdResponseEntity.md)
 
 
 ## Documentation For Authorization
@@ -337,30 +287,11 @@ Class | Method | HTTP request | Description
 
 ### apikeyAuth
 
-- **Type**: API key
-- **API key parameter name**: Authorization
-- **Location**: HTTP header
-
-Note, each API key must be added to a map of `map[string]APIKey` where the key is: "apikeyAuth" and passed in as the auth context for each request.
-
-Example
-
-```golang
-import dojah "github.com/dojah-inc/dojah-sdks/go"
-apiKey := os.Getenv("API_KEY")
-configuration := dojah.NewConfiguration()
-configuration.Context = context.WithValue(configuration.Context, dojah.ContextAPIKeys, map[string]newscatcherapi.APIKey{
-    "apikeyAuth": {Key: apiKey}
-})
-client := dojah.NewAPIClient(configuration)
-resp, httpRes, err := client.Service.Operation(args).Execute()
-```
-
 
 ### appIdAuth
 
 - **Type**: API key
-- **API key parameter name**: AppId
+- **API key parameter name**: Appid
 - **Location**: HTTP header
 
 Note, each API key must be added to a map of `map[string]APIKey` where the key is: "appIdAuth" and passed in as the auth context for each request.
@@ -379,6 +310,9 @@ resp, httpRes, err := client.Service.Operation(args).Execute()
 ```
 
 
+### noauthAuth
+
+
 ## Documentation for Utility Methods
 
 Due to the fact that model structure members are all pointers, this package contains
@@ -394,8 +328,3 @@ Each of these functions takes a value of the given basic type and returns a poin
 * `PtrFloat64`
 * `PtrString`
 * `PtrTime`
-
-## Author
-
-
-

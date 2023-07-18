@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -27,25 +27,25 @@ namespace Dojah.Net.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Categorize Transactions
+        /// Get Dojah Wallet Balance
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="categorizeTransactionsRequest"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>CategorizeTransactionsResponse</returns>
-        CategorizeTransactionsResponse CategorizeTransactions(CategorizeTransactionsRequest categorizeTransactionsRequest = default(CategorizeTransactionsRequest), int operationIndex = 0);
+        /// <returns>GetWalletBalanceResponse</returns>
+        GetWalletBalanceResponse GetWalletBalance(string appId = default(string), int operationIndex = 0);
 
         /// <summary>
-        /// Categorize Transactions
+        /// Get Dojah Wallet Balance
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="categorizeTransactionsRequest"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of CategorizeTransactionsResponse</returns>
-        ApiResponse<CategorizeTransactionsResponse> CategorizeTransactionsWithHttpInfo(CategorizeTransactionsRequest categorizeTransactionsRequest = default(CategorizeTransactionsRequest), int operationIndex = 0);
+        /// <returns>ApiResponse of GetWalletBalanceResponse</returns>
+        ApiResponse<GetWalletBalanceResponse> GetWalletBalanceWithHttpInfo(string appId = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -56,30 +56,30 @@ namespace Dojah.Net.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Categorize Transactions
+        /// Get Dojah Wallet Balance
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="categorizeTransactionsRequest"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of CategorizeTransactionsResponse</returns>
-        System.Threading.Tasks.Task<CategorizeTransactionsResponse> CategorizeTransactionsAsync(CategorizeTransactionsRequest categorizeTransactionsRequest = default(CategorizeTransactionsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of GetWalletBalanceResponse</returns>
+        System.Threading.Tasks.Task<GetWalletBalanceResponse> GetWalletBalanceAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Categorize Transactions
+        /// Get Dojah Wallet Balance
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="categorizeTransactionsRequest"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (CategorizeTransactionsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CategorizeTransactionsResponse>> CategorizeTransactionsWithHttpInfoAsync(CategorizeTransactionsRequest categorizeTransactionsRequest = default(CategorizeTransactionsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (GetWalletBalanceResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetWalletBalanceResponse>> GetWalletBalanceWithHttpInfoAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -201,31 +201,30 @@ namespace Dojah.Net.Api
         }
 
         /// <summary>
-        /// Categorize Transactions 
+        /// Get Dojah Wallet Balance 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="categorizeTransactionsRequest"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>CategorizeTransactionsResponse</returns>
-        public CategorizeTransactionsResponse CategorizeTransactions(CategorizeTransactionsRequest categorizeTransactionsRequest = default(CategorizeTransactionsRequest), int operationIndex = 0)
+        /// <returns>GetWalletBalanceResponse</returns>
+        public GetWalletBalanceResponse GetWalletBalance(string appId = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<CategorizeTransactionsResponse> localVarResponse = CategorizeTransactionsWithHttpInfo(categorizeTransactionsRequest);
+            Dojah.Net.Client.ApiResponse<GetWalletBalanceResponse> localVarResponse = GetWalletBalanceWithHttpInfo(appId);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Categorize Transactions 
+        /// Get Dojah Wallet Balance 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="categorizeTransactionsRequest"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of CategorizeTransactionsResponse</returns>
-        public Dojah.Net.Client.ApiResponse<CategorizeTransactionsResponse> CategorizeTransactionsWithHttpInfo(CategorizeTransactionsRequest categorizeTransactionsRequest = default(CategorizeTransactionsRequest), int operationIndex = 0)
+        /// <returns>ApiResponse of GetWalletBalanceResponse</returns>
+        public Dojah.Net.Client.ApiResponse<GetWalletBalanceResponse> GetWalletBalanceWithHttpInfo(string appId = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json"
             };
 
             // to determine the Accept header
@@ -245,27 +244,21 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = categorizeTransactionsRequest;
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
 
-            localVarRequestOptions.Operation = "ServicesApi.CategorizeTransactions";
+            localVarRequestOptions.Operation = "ServicesApi.GetWalletBalance";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
+            // authentication (noauthAuth) required
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<CategorizeTransactionsResponse>("/v1/ml/categorize_transaction", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<GetWalletBalanceResponse>("/api/v1/balance", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CategorizeTransactions", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetWalletBalance", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -276,34 +269,33 @@ namespace Dojah.Net.Api
         }
 
         /// <summary>
-        /// Categorize Transactions 
+        /// Get Dojah Wallet Balance 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="categorizeTransactionsRequest"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of CategorizeTransactionsResponse</returns>
-        public async System.Threading.Tasks.Task<CategorizeTransactionsResponse> CategorizeTransactionsAsync(CategorizeTransactionsRequest categorizeTransactionsRequest = default(CategorizeTransactionsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of GetWalletBalanceResponse</returns>
+        public async System.Threading.Tasks.Task<GetWalletBalanceResponse> GetWalletBalanceAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<CategorizeTransactionsResponse> localVarResponse = await CategorizeTransactionsWithHttpInfoAsync(categorizeTransactionsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetWalletBalanceResponse> localVarResponse = await GetWalletBalanceWithHttpInfoAsync(appId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Categorize Transactions 
+        /// Get Dojah Wallet Balance 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="categorizeTransactionsRequest"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (CategorizeTransactionsResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<CategorizeTransactionsResponse>> CategorizeTransactionsWithHttpInfoAsync(CategorizeTransactionsRequest categorizeTransactionsRequest = default(CategorizeTransactionsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (GetWalletBalanceResponse)</returns>
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetWalletBalanceResponse>> GetWalletBalanceWithHttpInfoAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json"
             };
 
             // to determine the Accept header
@@ -323,28 +315,22 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = categorizeTransactionsRequest;
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
+            }
 
-            localVarRequestOptions.Operation = "ServicesApi.CategorizeTransactions";
+            localVarRequestOptions.Operation = "ServicesApi.GetWalletBalance";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
+            // authentication (noauthAuth) required
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<CategorizeTransactionsResponse>("/v1/ml/categorize_transaction", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetWalletBalanceResponse>("/api/v1/balance", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CategorizeTransactions", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetWalletBalance", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

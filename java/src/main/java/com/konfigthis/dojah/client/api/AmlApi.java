@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -26,9 +26,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.konfigthis.dojah.client.model.GetScreeningInfoResponse;
-import com.konfigthis.dojah.client.model.ScreenAmlRequest;
-import com.konfigthis.dojah.client.model.ScreenAmlResponse;
+import com.konfigthis.dojah.client.model.AmlScreenAmlRequest;
+import com.konfigthis.dojah.client.model.AmlScreenAmlResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -47,9 +46,6 @@ public class AmlApi {
     }
 
     public AmlApi(ApiClient apiClient) throws IllegalArgumentException {
-        if (apiClient.getApikeyAuth() == null) {
-            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
-        }
         this.localVarApiClient = apiClient;
     }
 
@@ -77,7 +73,7 @@ public class AmlApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call getScreeningInfoCall(String referenceId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getScreeningInfoCall(String profileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -94,7 +90,7 @@ public class AmlApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v1/aml/screening/info";
+        String localVarPath = "/api/v1/aml/screening/info";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -102,8 +98,8 @@ public class AmlApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (referenceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("reference_id", referenceId));
+        if (profileId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("profileId", profileId));
         }
 
         final String[] localVarAccepts = {
@@ -121,44 +117,44 @@ public class AmlApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] { "appIdAuth" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getScreeningInfoValidateBeforeCall(String referenceId, final ApiCallback _callback) throws ApiException {
-        return getScreeningInfoCall(referenceId, _callback);
+    private okhttp3.Call getScreeningInfoValidateBeforeCall(String profileId, final ApiCallback _callback) throws ApiException {
+        return getScreeningInfoCall(profileId, _callback);
 
     }
 
 
-    private ApiResponse<GetScreeningInfoResponse> getScreeningInfoWithHttpInfo(String referenceId) throws ApiException {
-        okhttp3.Call localVarCall = getScreeningInfoValidateBeforeCall(referenceId, null);
-        Type localVarReturnType = new TypeToken<GetScreeningInfoResponse>(){}.getType();
+    private ApiResponse<Object> getScreeningInfoWithHttpInfo(String profileId) throws ApiException {
+        okhttp3.Call localVarCall = getScreeningInfoValidateBeforeCall(profileId, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getScreeningInfoAsync(String referenceId, final ApiCallback<GetScreeningInfoResponse> _callback) throws ApiException {
+    private okhttp3.Call getScreeningInfoAsync(String profileId, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getScreeningInfoValidateBeforeCall(referenceId, _callback);
-        Type localVarReturnType = new TypeToken<GetScreeningInfoResponse>(){}.getType();
+        okhttp3.Call localVarCall = getScreeningInfoValidateBeforeCall(profileId, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
     public class GetScreeningInfoRequestBuilder {
-        private String referenceId;
+        private String profileId;
 
         private GetScreeningInfoRequestBuilder() {
         }
 
         /**
-         * Set referenceId
-         * @param referenceId  (optional)
+         * Set profileId
+         * @param profileId  (optional)
          * @return GetScreeningInfoRequestBuilder
          */
-        public GetScreeningInfoRequestBuilder referenceId(String referenceId) {
-            this.referenceId = referenceId;
+        public GetScreeningInfoRequestBuilder profileId(String profileId) {
+            this.profileId = profileId;
             return this;
         }
         
@@ -174,13 +170,13 @@ public class AmlApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getScreeningInfoCall(referenceId, _callback);
+            return getScreeningInfoCall(profileId, _callback);
         }
 
 
         /**
          * Execute getScreeningInfo request
-         * @return GetScreeningInfoResponse
+         * @return Object
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -188,14 +184,14 @@ public class AmlApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public GetScreeningInfoResponse execute() throws ApiException {
-            ApiResponse<GetScreeningInfoResponse> localVarResp = getScreeningInfoWithHttpInfo(referenceId);
-            return localVarResp.getData();
+        public Object execute() throws ApiException {
+            ApiResponse<Object> localVarResp = getScreeningInfoWithHttpInfo(profileId);
+            return localVarResp.getResponseBody();
         }
 
         /**
          * Execute getScreeningInfo request with HTTP info returned
-         * @return ApiResponse&lt;GetScreeningInfoResponse&gt;
+         * @return ApiResponse&lt;Object&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -203,8 +199,8 @@ public class AmlApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<GetScreeningInfoResponse> executeWithHttpInfo() throws ApiException {
-            return getScreeningInfoWithHttpInfo(referenceId);
+        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+            return getScreeningInfoWithHttpInfo(profileId);
         }
 
         /**
@@ -218,8 +214,8 @@ public class AmlApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<GetScreeningInfoResponse> _callback) throws ApiException {
-            return getScreeningInfoAsync(referenceId, _callback);
+        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
+            return getScreeningInfoAsync(profileId, _callback);
         }
     }
 
@@ -236,7 +232,7 @@ public class AmlApi {
     public GetScreeningInfoRequestBuilder getScreeningInfo() throws IllegalArgumentException {
         return new GetScreeningInfoRequestBuilder();
     }
-    private okhttp3.Call screenAmlCall(ScreenAmlRequest screenAmlRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call screenAmlCall(AmlScreenAmlRequest amlScreenAmlRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -250,10 +246,10 @@ public class AmlApi {
             basePath = null;
         }
 
-        Object localVarPostBody = screenAmlRequest;
+        Object localVarPostBody = amlScreenAmlRequest;
 
         // create path and map variables
-        String localVarPath = "/api/v1/aml/screening";
+        String localVarPath = "/api/v1/aml/screening/platform";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -277,27 +273,32 @@ public class AmlApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] { "appIdAuth" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call screenAmlValidateBeforeCall(ScreenAmlRequest screenAmlRequest, final ApiCallback _callback) throws ApiException {
-        return screenAmlCall(screenAmlRequest, _callback);
+    private okhttp3.Call screenAmlValidateBeforeCall(AmlScreenAmlRequest amlScreenAmlRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'amlScreenAmlRequest' is set
+        if (amlScreenAmlRequest == null) {
+            throw new ApiException("Missing the required parameter 'amlScreenAmlRequest' when calling screenAml(Async)");
+        }
+
+        return screenAmlCall(amlScreenAmlRequest, _callback);
 
     }
 
 
-    private ApiResponse<ScreenAmlResponse> screenAmlWithHttpInfo(ScreenAmlRequest screenAmlRequest) throws ApiException {
-        okhttp3.Call localVarCall = screenAmlValidateBeforeCall(screenAmlRequest, null);
-        Type localVarReturnType = new TypeToken<ScreenAmlResponse>(){}.getType();
+    private ApiResponse<AmlScreenAmlResponse> screenAmlWithHttpInfo(AmlScreenAmlRequest amlScreenAmlRequest) throws ApiException {
+        okhttp3.Call localVarCall = screenAmlValidateBeforeCall(amlScreenAmlRequest, null);
+        Type localVarReturnType = new TypeToken<AmlScreenAmlResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call screenAmlAsync(ScreenAmlRequest screenAmlRequest, final ApiCallback<ScreenAmlResponse> _callback) throws ApiException {
+    private okhttp3.Call screenAmlAsync(AmlScreenAmlRequest amlScreenAmlRequest, final ApiCallback<AmlScreenAmlResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = screenAmlValidateBeforeCall(screenAmlRequest, _callback);
-        Type localVarReturnType = new TypeToken<ScreenAmlResponse>(){}.getType();
+        okhttp3.Call localVarCall = screenAmlValidateBeforeCall(amlScreenAmlRequest, _callback);
+        Type localVarReturnType = new TypeToken<AmlScreenAmlResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -306,6 +307,7 @@ public class AmlApi {
         private String firstName;
         private String lastName;
         private String dateOfBirth;
+        private String nameQueryMatchThreshold;
 
         private ScreenAmlRequestBuilder() {
         }
@@ -341,6 +343,16 @@ public class AmlApi {
         }
         
         /**
+         * Set nameQueryMatchThreshold
+         * @param nameQueryMatchThreshold  (optional)
+         * @return ScreenAmlRequestBuilder
+         */
+        public ScreenAmlRequestBuilder nameQueryMatchThreshold(String nameQueryMatchThreshold) {
+            this.nameQueryMatchThreshold = nameQueryMatchThreshold;
+            return this;
+        }
+        
+        /**
          * Build call for screenAml
          * @param _callback ApiCallback API callback
          * @return Call to execute
@@ -352,21 +364,22 @@ public class AmlApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            ScreenAmlRequest screenAmlRequest = buildBodyParams();
-            return screenAmlCall(screenAmlRequest, _callback);
+            AmlScreenAmlRequest amlScreenAmlRequest = buildBodyParams();
+            return screenAmlCall(amlScreenAmlRequest, _callback);
         }
 
-        private ScreenAmlRequest buildBodyParams() {
-            ScreenAmlRequest screenAmlRequest = new ScreenAmlRequest();
-            screenAmlRequest.firstName(this.firstName);
-            screenAmlRequest.lastName(this.lastName);
-            screenAmlRequest.dateOfBirth(this.dateOfBirth);
-            return screenAmlRequest;
+        private AmlScreenAmlRequest buildBodyParams() {
+            AmlScreenAmlRequest amlScreenAmlRequest = new AmlScreenAmlRequest();
+            amlScreenAmlRequest.firstName(this.firstName);
+            amlScreenAmlRequest.lastName(this.lastName);
+            amlScreenAmlRequest.dateOfBirth(this.dateOfBirth);
+            amlScreenAmlRequest.nameQueryMatchThreshold(this.nameQueryMatchThreshold);
+            return amlScreenAmlRequest;
         }
 
         /**
          * Execute screenAml request
-         * @return ScreenAmlResponse
+         * @return AmlScreenAmlResponse
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -374,15 +387,15 @@ public class AmlApi {
             <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
          </table>
          */
-        public ScreenAmlResponse execute() throws ApiException {
-            ScreenAmlRequest screenAmlRequest = buildBodyParams();
-            ApiResponse<ScreenAmlResponse> localVarResp = screenAmlWithHttpInfo(screenAmlRequest);
-            return localVarResp.getData();
+        public AmlScreenAmlResponse execute() throws ApiException {
+            AmlScreenAmlRequest amlScreenAmlRequest = buildBodyParams();
+            ApiResponse<AmlScreenAmlResponse> localVarResp = screenAmlWithHttpInfo(amlScreenAmlRequest);
+            return localVarResp.getResponseBody();
         }
 
         /**
          * Execute screenAml request with HTTP info returned
-         * @return ApiResponse&lt;ScreenAmlResponse&gt;
+         * @return ApiResponse&lt;AmlScreenAmlResponse&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -390,9 +403,9 @@ public class AmlApi {
             <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
          </table>
          */
-        public ApiResponse<ScreenAmlResponse> executeWithHttpInfo() throws ApiException {
-            ScreenAmlRequest screenAmlRequest = buildBodyParams();
-            return screenAmlWithHttpInfo(screenAmlRequest);
+        public ApiResponse<AmlScreenAmlResponse> executeWithHttpInfo() throws ApiException {
+            AmlScreenAmlRequest amlScreenAmlRequest = buildBodyParams();
+            return screenAmlWithHttpInfo(amlScreenAmlRequest);
         }
 
         /**
@@ -406,15 +419,16 @@ public class AmlApi {
             <tr><td> 200 </td><td> OK </td><td>  * Access-Control-Allow-Origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * price -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Vary -  <br>  * Date -  <br>  * Connection -  <br>  * Keep-Alive -  <br>  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<ScreenAmlResponse> _callback) throws ApiException {
-            ScreenAmlRequest screenAmlRequest = buildBodyParams();
-            return screenAmlAsync(screenAmlRequest, _callback);
+        public okhttp3.Call executeAsync(final ApiCallback<AmlScreenAmlResponse> _callback) throws ApiException {
+            AmlScreenAmlRequest amlScreenAmlRequest = buildBodyParams();
+            return screenAmlAsync(amlScreenAmlRequest, _callback);
         }
     }
 
     /**
      * AML Screening
      * 
+     * @param amlScreenAmlRequest  (required)
      * @return ScreenAmlRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">

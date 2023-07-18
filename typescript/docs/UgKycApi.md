@@ -21,8 +21,6 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
 });
 
 const getVoterResponse = await dojah.ugKyc.getVoter({});
@@ -35,6 +33,7 @@ console.log(getVoterResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **appId** | [**string**] |  | (optional) defaults to undefined
  **id** | [**number**] |  | (optional) defaults to undefined
  **firstName** | [**string**] |  | (optional) defaults to undefined
  **lastName** | [**string**] |  | (optional) defaults to undefined
@@ -42,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**GetVoterResponse**
+**object**
 
 ### HTTP request headers
 

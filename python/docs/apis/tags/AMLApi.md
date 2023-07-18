@@ -5,8 +5,8 @@ All URIs are relative to *https://api.dojah.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_screening_info**](#get_screening_info) | **get** /v1/aml/screening/info | Get AML Info
-[**screen_aml**](#screen_aml) | **post** /api/v1/aml/screening | AML Screening
+[**get_screening_info**](#get_screening_info) | **get** /api/v1/aml/screening/info | Get AML Info
+[**screen_aml**](#screen_aml) | **post** /api/v1/aml/screening/platform | AML Screening
 
 # **get_screening_info**
 
@@ -22,12 +22,8 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
-    # Configure API key authorization: apikeyAuth
-    authorization="YOUR_API_KEY",
-    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    # api_key_prefix = {'apikeyAuth': 'Bearer'},
     # Configure API key authorization: appIdAuth
-    app_id="YOUR_API_KEY",
+    api_key="YOUR_API_KEY",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
@@ -35,10 +31,8 @@ dojah = Dojah(
 try:
     # Get AML Info
     get_screening_info_response = dojah.aml.get_screening_info(
-        reference_id="c574a3c8-dc27-4013-8bbc-462e7ed87d55",  # optional
+        profile_id="WC7117469",  # optional
     )
-    pprint(get_screening_info_response.body)
-    pprint(get_screening_info_response.body["entity"])
     pprint(get_screening_info_response.headers)
     pprint(get_screening_info_response.status)
     pprint(get_screening_info_response.round_trip_time)
@@ -65,10 +59,10 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-reference_id | ReferenceIdSchema | | optional
+profileId | ProfileIdSchema | | optional
 
 
-# ReferenceIdSchema
+# ProfileIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
@@ -90,14 +84,15 @@ body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 # SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**GetScreeningInfoResponse**](../../models/GetScreeningInfoResponse.md) |  | 
 
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
+[appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -115,12 +110,8 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
-    # Configure API key authorization: apikeyAuth
-    authorization="YOUR_API_KEY",
-    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    # api_key_prefix = {'apikeyAuth': 'Bearer'},
     # Configure API key authorization: appIdAuth
-    app_id="YOUR_API_KEY",
+    api_key="YOUR_API_KEY",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
@@ -128,9 +119,10 @@ dojah = Dojah(
 try:
     # AML Screening
     screen_aml_response = dojah.aml.screen_aml(
-        first_name="Obama ",  # optional
-        last_name=" ",  # optional
+        first_name="Tinubu ",  # optional
+        last_name="Bola",  # optional
         date_of_birth="1997-08-18",  # optional
+        name_query_match_threshold="80",  # optional
     )
     pprint(screen_aml_response.body)
     pprint(screen_aml_response.body["entity"])
@@ -149,7 +141,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson, Unset] | optional, default is unset |
+body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
 content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
@@ -161,7 +153,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**ScreenAmlRequest**](../../models/ScreenAmlRequest.md) |  | 
+[**AmlScreenAmlRequest**](../../models/AmlScreenAmlRequest.md) |  | 
 
 
 ### Return Types, Responses
@@ -181,7 +173,7 @@ headers | ResponseHeadersFor200 |  |
 # SchemaFor200ResponseBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**ScreenAmlResponse**](../../models/ScreenAmlResponse.md) |  | 
+[**AmlScreenAmlResponse**](../../models/AmlScreenAmlResponse.md) |  | 
 
 #### ResponseHeadersFor200
 
@@ -279,7 +271,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
+[appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 

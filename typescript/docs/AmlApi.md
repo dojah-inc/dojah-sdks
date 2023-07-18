@@ -4,13 +4,13 @@ All URIs are relative to *https://api.dojah.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getScreeningInfo**](AmlApi.md#getScreeningInfo) | **GET** /v1/aml/screening/info | Get AML Info
-[**screenAml**](AmlApi.md#screenAml) | **POST** /api/v1/aml/screening | AML Screening
+[**getScreeningInfo**](AmlApi.md#getScreeningInfo) | **GET** /api/v1/aml/screening/info | Get AML Info
+[**screenAml**](AmlApi.md#screenAml) | **POST** /api/v1/aml/screening/platform | AML Screening
 
 
 # **getScreeningInfo**
 
-#### **GET** /v1/aml/screening/info
+#### **GET** /api/v1/aml/screening/info
 
 
 ### Example
@@ -22,8 +22,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
+  apiKey: "API_KEY",
 });
 
 const getScreeningInfoResponse = await dojah.aml.getScreeningInfo({});
@@ -36,12 +35,12 @@ console.log(getScreeningInfoResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **referenceId** | [**string**] |  | (optional) defaults to undefined
+ **profileId** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
 
-**GetScreeningInfoResponse**
+**object**
 
 ### HTTP request headers
 
@@ -58,7 +57,7 @@ Name | Type | Description  | Notes
 
 # **screenAml**
 
-#### **POST** /api/v1/aml/screening
+#### **POST** /api/v1/aml/screening/platform
 
 
 ### Example
@@ -70,14 +69,14 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
+  apiKey: "API_KEY",
 });
 
 const screenAmlResponse = await dojah.aml.screenAml({
-  first_name: "Obama ",
-  last_name: " ",
+  first_name: "Tinubu ",
+  last_name: "Bola",
   date_of_birth: "1997-08-18",
+  name_query_match_threshold: "80",
 });
 
 console.log(screenAmlResponse);
@@ -88,12 +87,12 @@ console.log(screenAmlResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **screenAmlRequest** | **ScreenAmlRequest**|  |
+ **amlScreenAmlRequest** | **AmlScreenAmlRequest**|  |
 
 
 ### Return type
 
-**ScreenAmlResponse**
+**AmlScreenAmlResponse**
 
 ### HTTP request headers
 

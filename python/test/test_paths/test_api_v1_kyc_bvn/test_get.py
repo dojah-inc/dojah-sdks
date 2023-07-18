@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -24,7 +24,7 @@ from .. import ApiTestMixin
 class TestApiV1KycBvn(ApiTestMixin, unittest.TestCase):
     """
     ApiV1KycBvn unit test stubs
-        KYC - Validate BVN
+        KYC - Get Basic BVN Info
     """
 
     def setUp(self):

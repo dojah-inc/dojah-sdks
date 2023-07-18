@@ -4,16 +4,16 @@ All URIs are relative to *https://api.dojah.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetAdvancedCac**](KYBApi.md#getadvancedcac) | **GET** /v1/kyc/cac/advance | KYC - Get CAC Advanced |
-| [**GetBasicCac**](KYBApi.md#getbasiccac) | **GET** /v1/kyc/cac/basic | KYB - Get CAC 2 |
-| [**GetCac**](KYBApi.md#getcac) | **GET** /v1/kyc/cac | KYC - Get CAC  |
-| [**GetTin**](KYBApi.md#gettin) | **GET** /v1/kyc/tin | KYC - Fetch Tin |
+| [**BusinessDetail**](KYBApi.md#businessdetail) | **GET** /api/v1/kyb/business/detail | Business Detail |
+| [**BusinessSearch**](KYBApi.md#businesssearch) | **GET** /api/v1/kyb/business/search | Business Search |
+| [**GetCac**](KYBApi.md#getcac) | **GET** /api/v1/kyc/cac | KYC - Get CAC  |
+| [**GetTin**](KYBApi.md#gettin) | **GET** /api/v1/kyc/tin | KYC - Fetch Tin |
 
-<a name="getadvancedcac"></a>
-# **GetAdvancedCac**
-> GetAdvancedCacResponse GetAdvancedCac (int? rc = null, string type = null, string _class = null)
+<a name="businessdetail"></a>
+# **BusinessDetail**
+> Object BusinessDetail (string appId = null, string internationalNumber = null, string countryCode = null, bool? full = null)
 
-KYC - Get CAC Advanced
+Business Detail
 
 ### Example
 ```csharp
@@ -26,7 +26,7 @@ using Dojah.Net.Model;
 
 namespace Example
 {
-    public class GetAdvancedCacExample
+    public class BusinessDetailExample
     {
         public static void Main()
         {
@@ -35,29 +35,21 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
             var apiInstance = new KYBApi(config);
-            var rc = 1432074;  // int? |  (optional) 
-            var type = co;  // string |  (optional) 
-            var _class = advance;  // string |  (optional) 
+            var appId = {{app_id}};  // string |  (optional) 
+            var internationalNumber = RC-1885308;  // string |  (optional) 
+            var countryCode = NG;  // string |  (optional) 
+            var full = true;  // bool? |  (optional) 
 
             try
             {
-                // KYC - Get CAC Advanced
-                GetAdvancedCacResponse result = apiInstance.GetAdvancedCac(rc, type, _class);
+                // Business Detail
+                Object result = apiInstance.BusinessDetail(appId, internationalNumber, countryCode, full);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
             {
-                Console.WriteLine("Exception when calling KYBApi.GetAdvancedCac: " + e.Message);
+                Console.WriteLine("Exception when calling KYBApi.BusinessDetail: " + e.Message);
                 Console.WriteLine("Status Code: "+ e.ErrorCode);
                 Console.WriteLine(e.StackTrace);
             }
@@ -72,21 +64,21 @@ namespace Example
 }
 ```
 
-#### Using the GetAdvancedCacWithHttpInfo variant
+#### Using the BusinessDetailWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // KYC - Get CAC Advanced
-    ApiResponse<GetAdvancedCacResponse> response = apiInstance.GetAdvancedCacWithHttpInfo(rc, type, _class);
+    // Business Detail
+    ApiResponse<Object> response = apiInstance.BusinessDetailWithHttpInfo(appId, internationalNumber, countryCode, full);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling KYBApi.GetAdvancedCacWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling KYBApi.BusinessDetailWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -96,17 +88,18 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **rc** | **int?** |  | [optional]  |
-| **type** | **string** |  | [optional]  |
-| **_class** | **string** |  | [optional]  |
+| **appId** | **string** |  | [optional]  |
+| **internationalNumber** | **string** |  | [optional]  |
+| **countryCode** | **string** |  | [optional]  |
+| **full** | **bool?** |  | [optional]  |
 
 ### Return type
 
-[**GetAdvancedCacResponse**](GetAdvancedCacResponse.md)
+**Object**
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -121,11 +114,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getbasiccac"></a>
-# **GetBasicCac**
-> GetBasicCacResponse GetBasicCac (int? rc = null, string type = null)
+<a name="businesssearch"></a>
+# **BusinessSearch**
+> Object BusinessSearch (string appId = null, string countryCode = null, int? company = null)
 
-KYB - Get CAC 2
+Business Search
 
 ### Example
 ```csharp
@@ -138,7 +131,7 @@ using Dojah.Net.Model;
 
 namespace Example
 {
-    public class GetBasicCacExample
+    public class BusinessSearchExample
     {
         public static void Main()
         {
@@ -147,28 +140,20 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
             var apiInstance = new KYBApi(config);
-            var rc = 3330883;  // int? |  (optional) 
-            var type = bn;  // string |  (optional) 
+            var appId = {{app_id}};  // string |  (optional) 
+            var countryCode = NG;  // string |  (optional) 
+            var company = 1885308;  // int? |  (optional) 
 
             try
             {
-                // KYB - Get CAC 2
-                GetBasicCacResponse result = apiInstance.GetBasicCac(rc, type);
+                // Business Search
+                Object result = apiInstance.BusinessSearch(appId, countryCode, company);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
             {
-                Console.WriteLine("Exception when calling KYBApi.GetBasicCac: " + e.Message);
+                Console.WriteLine("Exception when calling KYBApi.BusinessSearch: " + e.Message);
                 Console.WriteLine("Status Code: "+ e.ErrorCode);
                 Console.WriteLine(e.StackTrace);
             }
@@ -183,21 +168,21 @@ namespace Example
 }
 ```
 
-#### Using the GetBasicCacWithHttpInfo variant
+#### Using the BusinessSearchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // KYB - Get CAC 2
-    ApiResponse<GetBasicCacResponse> response = apiInstance.GetBasicCacWithHttpInfo(rc, type);
+    // Business Search
+    ApiResponse<Object> response = apiInstance.BusinessSearchWithHttpInfo(appId, countryCode, company);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling KYBApi.GetBasicCacWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling KYBApi.BusinessSearchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -207,16 +192,17 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **rc** | **int?** |  | [optional]  |
-| **type** | **string** |  | [optional]  |
+| **appId** | **string** |  | [optional]  |
+| **countryCode** | **string** |  | [optional]  |
+| **company** | **int?** |  | [optional]  |
 
 ### Return type
 
-[**GetBasicCacResponse**](GetBasicCacResponse.md)
+**Object**
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -233,7 +219,7 @@ catch (ApiException e)
 
 <a name="getcac"></a>
 # **GetCac**
-> GetCacResponse GetCac (int? rcNumber = null, string companyName = null)
+> KybGetCacResponse GetCac (string appId = null, int? rcNumber = null, string companyName = null)
 
 KYC - Get CAC 
 
@@ -257,23 +243,16 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYBApi(config);
+            var appId = {{app_id}};  // string |  (optional) 
             var rcNumber = 1432074;  // int? |  (optional) 
             var companyName = ELTA SOLUTIONS LIMITED;  // string |  (optional) 
 
             try
             {
                 // KYC - Get CAC 
-                GetCacResponse result = apiInstance.GetCac(rcNumber, companyName);
+                KybGetCacResponse result = apiInstance.GetCac(appId, rcNumber, companyName);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -300,7 +279,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Get CAC 
-    ApiResponse<GetCacResponse> response = apiInstance.GetCacWithHttpInfo(rcNumber, companyName);
+    ApiResponse<KybGetCacResponse> response = apiInstance.GetCacWithHttpInfo(appId, rcNumber, companyName);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -317,16 +296,17 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
+| **appId** | **string** |  | [optional]  |
 | **rcNumber** | **int?** |  | [optional]  |
 | **companyName** | **string** |  | [optional]  |
 
 ### Return type
 
-[**GetCacResponse**](GetCacResponse.md)
+[**KybGetCacResponse**](KybGetCacResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -343,7 +323,7 @@ catch (ApiException e)
 
 <a name="gettin"></a>
 # **GetTin**
-> GetTinResponse GetTin (string tin = null)
+> KybGetTinResponse GetTin (string appId = null, string tin = null)
 
 KYC - Fetch Tin
 
@@ -367,22 +347,15 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYBApi(config);
-            var tin = 21148119-0001;  // string |  (optional) 
+            var appId = {{app_id}};  // string |  (optional) 
+            var tin = 24111697-0001;  // string |  (optional) 
 
             try
             {
                 // KYC - Fetch Tin
-                GetTinResponse result = apiInstance.GetTin(tin);
+                KybGetTinResponse result = apiInstance.GetTin(appId, tin);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -409,7 +382,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Fetch Tin
-    ApiResponse<GetTinResponse> response = apiInstance.GetTinWithHttpInfo(tin);
+    ApiResponse<KybGetTinResponse> response = apiInstance.GetTinWithHttpInfo(appId, tin);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -426,15 +399,16 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
+| **appId** | **string** |  | [optional]  |
 | **tin** | **string** |  | [optional]  |
 
 ### Return type
 
-[**GetTinResponse**](GetTinResponse.md)
+[**KybGetTinResponse**](KybGetTinResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 

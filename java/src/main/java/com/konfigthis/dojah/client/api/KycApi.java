@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -26,24 +26,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.konfigthis.dojah.client.model.AnalyzeDocumentResponse;
-import com.konfigthis.dojah.client.model.GetBasicBvnResponse;
-import com.konfigthis.dojah.client.model.GetBasicPhoneNumberResponse;
-import com.konfigthis.dojah.client.model.GetEmailReputationResponse;
-import com.konfigthis.dojah.client.model.GetFullBvnResponse;
-import com.konfigthis.dojah.client.model.GetKycDriversLicenseResponse;
-import com.konfigthis.dojah.client.model.GetKycPassportResponse;
-import com.konfigthis.dojah.client.model.GetNubanResponse;
-import com.konfigthis.dojah.client.model.GetPhoneNumberResponse;
-import com.konfigthis.dojah.client.model.GetPremiumBvnResponse;
 import com.konfigthis.dojah.client.model.GetVinResponse;
-import com.konfigthis.dojah.client.model.GetVninResponse;
-import com.konfigthis.dojah.client.model.ValidateBvnResponse;
-import com.konfigthis.dojah.client.model.VerifyAgeResponse;
-import com.konfigthis.dojah.client.model.VerifySelfieBvnRequest;
-import com.konfigthis.dojah.client.model.VerifySelfieBvnResponse;
-import com.konfigthis.dojah.client.model.VerifySelfieNinRequest;
-import com.konfigthis.dojah.client.model.VerifySelfieNinResponse;
+import com.konfigthis.dojah.client.model.KycCheckLivenessRequest;
+import com.konfigthis.dojah.client.model.KycSubmitAddressRequest;
+import com.konfigthis.dojah.client.model.KycSubmitAddressResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -62,9 +48,6 @@ public class KycApi {
     }
 
     public KycApi(ApiClient apiClient) throws IllegalArgumentException {
-        if (apiClient.getApikeyAuth() == null) {
-            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
-        }
         this.localVarApiClient = apiClient;
     }
 
@@ -92,7 +75,7 @@ public class KycApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call analyzeDocumentCall(final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call checkLivenessCall(KycCheckLivenessRequest kycCheckLivenessRequest, String appId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -106,16 +89,20 @@ public class KycApi {
             basePath = null;
         }
 
-        Object localVarPostBody = null;
+        Object localVarPostBody = kycCheckLivenessRequest;
 
         // create path and map variables
-        String localVarPath = "/api/v1/document/analysis";
+        String localVarPath = "/api/v1/ml/liveness";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -126,44 +113,72 @@ public class KycApi {
         }
 
         final String[] localVarContentTypes = {
+            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call analyzeDocumentValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return analyzeDocumentCall(_callback);
+    private okhttp3.Call checkLivenessValidateBeforeCall(KycCheckLivenessRequest kycCheckLivenessRequest, String appId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'kycCheckLivenessRequest' is set
+        if (kycCheckLivenessRequest == null) {
+            throw new ApiException("Missing the required parameter 'kycCheckLivenessRequest' when calling checkLiveness(Async)");
+        }
+
+        return checkLivenessCall(kycCheckLivenessRequest, appId, _callback);
 
     }
 
 
-    private ApiResponse<AnalyzeDocumentResponse> analyzeDocumentWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = analyzeDocumentValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<AnalyzeDocumentResponse>(){}.getType();
+    private ApiResponse<Object> checkLivenessWithHttpInfo(KycCheckLivenessRequest kycCheckLivenessRequest, String appId) throws ApiException {
+        okhttp3.Call localVarCall = checkLivenessValidateBeforeCall(kycCheckLivenessRequest, appId, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call analyzeDocumentAsync(final ApiCallback<AnalyzeDocumentResponse> _callback) throws ApiException {
+    private okhttp3.Call checkLivenessAsync(KycCheckLivenessRequest kycCheckLivenessRequest, String appId, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = analyzeDocumentValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<AnalyzeDocumentResponse>(){}.getType();
+        okhttp3.Call localVarCall = checkLivenessValidateBeforeCall(kycCheckLivenessRequest, appId, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
-    public class AnalyzeDocumentRequestBuilder {
+    public class CheckLivenessRequestBuilder {
+        private String image;
+        private String appId;
 
-        private AnalyzeDocumentRequestBuilder() {
+        private CheckLivenessRequestBuilder() {
         }
 
         /**
-         * Build call for analyzeDocument
+         * Set image
+         * @param image  (optional)
+         * @return CheckLivenessRequestBuilder
+         */
+        public CheckLivenessRequestBuilder image(String image) {
+            this.image = image;
+            return this;
+        }
+        
+        /**
+         * Set appId
+         * @param appId  (optional)
+         * @return CheckLivenessRequestBuilder
+         */
+        public CheckLivenessRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
+        /**
+         * Build call for checkLiveness
          * @param _callback ApiCallback API callback
          * @return Call to execute
          * @throws ApiException If fail to serialize the request body object
@@ -174,13 +189,19 @@ public class KycApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return analyzeDocumentCall(_callback);
+            KycCheckLivenessRequest kycCheckLivenessRequest = buildBodyParams();
+            return checkLivenessCall(kycCheckLivenessRequest, appId, _callback);
         }
 
+        private KycCheckLivenessRequest buildBodyParams() {
+            KycCheckLivenessRequest kycCheckLivenessRequest = new KycCheckLivenessRequest();
+            kycCheckLivenessRequest.image(this.image);
+            return kycCheckLivenessRequest;
+        }
 
         /**
-         * Execute analyzeDocument request
-         * @return AnalyzeDocumentResponse
+         * Execute checkLiveness request
+         * @return Object
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -188,14 +209,15 @@ public class KycApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public AnalyzeDocumentResponse execute() throws ApiException {
-            ApiResponse<AnalyzeDocumentResponse> localVarResp = analyzeDocumentWithHttpInfo();
-            return localVarResp.getData();
+        public Object execute() throws ApiException {
+            KycCheckLivenessRequest kycCheckLivenessRequest = buildBodyParams();
+            ApiResponse<Object> localVarResp = checkLivenessWithHttpInfo(kycCheckLivenessRequest, appId);
+            return localVarResp.getResponseBody();
         }
 
         /**
-         * Execute analyzeDocument request with HTTP info returned
-         * @return ApiResponse&lt;AnalyzeDocumentResponse&gt;
+         * Execute checkLiveness request with HTTP info returned
+         * @return ApiResponse&lt;Object&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -203,12 +225,13 @@ public class KycApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<AnalyzeDocumentResponse> executeWithHttpInfo() throws ApiException {
-            return analyzeDocumentWithHttpInfo();
+        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+            KycCheckLivenessRequest kycCheckLivenessRequest = buildBodyParams();
+            return checkLivenessWithHttpInfo(kycCheckLivenessRequest, appId);
         }
 
         /**
-         * Execute analyzeDocument request (asynchronously)
+         * Execute checkLiveness request (asynchronously)
          * @param _callback The callback to be executed when the API call finishes
          * @return The request call
          * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -218,25 +241,27 @@ public class KycApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<AnalyzeDocumentResponse> _callback) throws ApiException {
-            return analyzeDocumentAsync(_callback);
+        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
+            KycCheckLivenessRequest kycCheckLivenessRequest = buildBodyParams();
+            return checkLivenessAsync(kycCheckLivenessRequest, appId, _callback);
         }
     }
 
     /**
-     * KYC - Document Analysis
+     * Liveness Check
      * 
-     * @return AnalyzeDocumentRequestBuilder
+     * @param kycCheckLivenessRequest  (required)
+     * @return CheckLivenessRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public AnalyzeDocumentRequestBuilder analyzeDocument() throws IllegalArgumentException {
-        return new AnalyzeDocumentRequestBuilder();
+    public CheckLivenessRequestBuilder checkLiveness() throws IllegalArgumentException {
+        return new CheckLivenessRequestBuilder();
     }
-    private okhttp3.Call getBasicBvnCall(Integer bvn, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAccountsCall(String appId, String bvn, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -253,7 +278,7 @@ public class KycApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/kyc/bvn/basic";
+        String localVarPath = "/api/v1/kyc/accounts";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -265,6 +290,10 @@ public class KycApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("bvn", bvn));
         }
 
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -280,122 +309,133 @@ public class KycApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getBasicBvnValidateBeforeCall(Integer bvn, final ApiCallback _callback) throws ApiException {
-        return getBasicBvnCall(bvn, _callback);
+    private okhttp3.Call getAccountsValidateBeforeCall(String appId, String bvn, final ApiCallback _callback) throws ApiException {
+        return getAccountsCall(appId, bvn, _callback);
 
     }
 
 
-    private ApiResponse<GetBasicBvnResponse> getBasicBvnWithHttpInfo(Integer bvn) throws ApiException {
-        okhttp3.Call localVarCall = getBasicBvnValidateBeforeCall(bvn, null);
-        Type localVarReturnType = new TypeToken<GetBasicBvnResponse>(){}.getType();
+    private ApiResponse<Object> getAccountsWithHttpInfo(String appId, String bvn) throws ApiException {
+        okhttp3.Call localVarCall = getAccountsValidateBeforeCall(appId, bvn, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getBasicBvnAsync(Integer bvn, final ApiCallback<GetBasicBvnResponse> _callback) throws ApiException {
+    private okhttp3.Call getAccountsAsync(String appId, String bvn, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getBasicBvnValidateBeforeCall(bvn, _callback);
-        Type localVarReturnType = new TypeToken<GetBasicBvnResponse>(){}.getType();
+        okhttp3.Call localVarCall = getAccountsValidateBeforeCall(appId, bvn, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
-    public class GetBasicBvnRequestBuilder {
-        private Integer bvn;
+    public class GetAccountsRequestBuilder {
+        private String appId;
+        private String bvn;
 
-        private GetBasicBvnRequestBuilder() {
+        private GetAccountsRequestBuilder() {
         }
 
         /**
+         * Set appId
+         * @param appId  (optional)
+         * @return GetAccountsRequestBuilder
+         */
+        public GetAccountsRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
+        /**
          * Set bvn
          * @param bvn  (optional)
-         * @return GetBasicBvnRequestBuilder
+         * @return GetAccountsRequestBuilder
          */
-        public GetBasicBvnRequestBuilder bvn(Integer bvn) {
+        public GetAccountsRequestBuilder bvn(String bvn) {
             this.bvn = bvn;
             return this;
         }
         
         /**
-         * Build call for getBasicBvn
+         * Build call for getAccounts
          * @param _callback ApiCallback API callback
          * @return Call to execute
          * @throws ApiException If fail to serialize the request body object
          * @http.response.details
          <table summary="Response Details" border="1">
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getBasicBvnCall(bvn, _callback);
+            return getAccountsCall(appId, bvn, _callback);
         }
 
 
         /**
-         * Execute getBasicBvn request
-         * @return GetBasicBvnResponse
+         * Execute getAccounts request
+         * @return Object
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public GetBasicBvnResponse execute() throws ApiException {
-            ApiResponse<GetBasicBvnResponse> localVarResp = getBasicBvnWithHttpInfo(bvn);
-            return localVarResp.getData();
+        public Object execute() throws ApiException {
+            ApiResponse<Object> localVarResp = getAccountsWithHttpInfo(appId, bvn);
+            return localVarResp.getResponseBody();
         }
 
         /**
-         * Execute getBasicBvn request with HTTP info returned
-         * @return ApiResponse&lt;GetBasicBvnResponse&gt;
+         * Execute getAccounts request with HTTP info returned
+         * @return ApiResponse&lt;Object&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<GetBasicBvnResponse> executeWithHttpInfo() throws ApiException {
-            return getBasicBvnWithHttpInfo(bvn);
+        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+            return getAccountsWithHttpInfo(appId, bvn);
         }
 
         /**
-         * Execute getBasicBvn request (asynchronously)
+         * Execute getAccounts request (asynchronously)
          * @param _callback The callback to be executed when the API call finishes
          * @return The request call
          * @throws ApiException If fail to process the API call, e.g. serializing the request body object
          * @http.response.details
          <table summary="Response Details" border="1">
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<GetBasicBvnResponse> _callback) throws ApiException {
-            return getBasicBvnAsync(bvn, _callback);
+        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
+            return getAccountsAsync(appId, bvn, _callback);
         }
     }
 
     /**
-     * KYC - Get Basic BVN Info
+     * KYC - Fetch Accounts 
      * 
-     * @return GetBasicBvnRequestBuilder
+     * @return GetAccountsRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public GetBasicBvnRequestBuilder getBasicBvn() throws IllegalArgumentException {
-        return new GetBasicBvnRequestBuilder();
+    public GetAccountsRequestBuilder getAccounts() throws IllegalArgumentException {
+        return new GetAccountsRequestBuilder();
     }
-    private okhttp3.Call getBasicPhoneNumberCall(Integer phoneNumber, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAddressVerificationCall(String appId, String referenceId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -412,7 +452,7 @@ public class KycApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v1/kyc/phone_number/basic";
+        String localVarPath = "/api/v1/kyc/address";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -420,8 +460,12 @@ public class KycApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (phoneNumber != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("phone_number", phoneNumber));
+        if (referenceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("reference_id", referenceId));
+        }
+
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
         }
 
         final String[] localVarAccepts = {
@@ -439,122 +483,133 @@ public class KycApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getBasicPhoneNumberValidateBeforeCall(Integer phoneNumber, final ApiCallback _callback) throws ApiException {
-        return getBasicPhoneNumberCall(phoneNumber, _callback);
+    private okhttp3.Call getAddressVerificationValidateBeforeCall(String appId, String referenceId, final ApiCallback _callback) throws ApiException {
+        return getAddressVerificationCall(appId, referenceId, _callback);
 
     }
 
 
-    private ApiResponse<GetBasicPhoneNumberResponse> getBasicPhoneNumberWithHttpInfo(Integer phoneNumber) throws ApiException {
-        okhttp3.Call localVarCall = getBasicPhoneNumberValidateBeforeCall(phoneNumber, null);
-        Type localVarReturnType = new TypeToken<GetBasicPhoneNumberResponse>(){}.getType();
+    private ApiResponse<Object> getAddressVerificationWithHttpInfo(String appId, String referenceId) throws ApiException {
+        okhttp3.Call localVarCall = getAddressVerificationValidateBeforeCall(appId, referenceId, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getBasicPhoneNumberAsync(Integer phoneNumber, final ApiCallback<GetBasicPhoneNumberResponse> _callback) throws ApiException {
+    private okhttp3.Call getAddressVerificationAsync(String appId, String referenceId, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getBasicPhoneNumberValidateBeforeCall(phoneNumber, _callback);
-        Type localVarReturnType = new TypeToken<GetBasicPhoneNumberResponse>(){}.getType();
+        okhttp3.Call localVarCall = getAddressVerificationValidateBeforeCall(appId, referenceId, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
-    public class GetBasicPhoneNumberRequestBuilder {
-        private Integer phoneNumber;
+    public class GetAddressVerificationRequestBuilder {
+        private String appId;
+        private String referenceId;
 
-        private GetBasicPhoneNumberRequestBuilder() {
+        private GetAddressVerificationRequestBuilder() {
         }
 
         /**
-         * Set phoneNumber
-         * @param phoneNumber  (optional)
-         * @return GetBasicPhoneNumberRequestBuilder
+         * Set appId
+         * @param appId  (optional)
+         * @return GetAddressVerificationRequestBuilder
          */
-        public GetBasicPhoneNumberRequestBuilder phoneNumber(Integer phoneNumber) {
-            this.phoneNumber = phoneNumber;
+        public GetAddressVerificationRequestBuilder appId(String appId) {
+            this.appId = appId;
             return this;
         }
         
         /**
-         * Build call for getBasicPhoneNumber
+         * Set referenceId
+         * @param referenceId  (optional)
+         * @return GetAddressVerificationRequestBuilder
+         */
+        public GetAddressVerificationRequestBuilder referenceId(String referenceId) {
+            this.referenceId = referenceId;
+            return this;
+        }
+        
+        /**
+         * Build call for getAddressVerification
          * @param _callback ApiCallback API callback
          * @return Call to execute
          * @throws ApiException If fail to serialize the request body object
          * @http.response.details
          <table summary="Response Details" border="1">
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getBasicPhoneNumberCall(phoneNumber, _callback);
+            return getAddressVerificationCall(appId, referenceId, _callback);
         }
 
 
         /**
-         * Execute getBasicPhoneNumber request
-         * @return GetBasicPhoneNumberResponse
+         * Execute getAddressVerification request
+         * @return Object
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public GetBasicPhoneNumberResponse execute() throws ApiException {
-            ApiResponse<GetBasicPhoneNumberResponse> localVarResp = getBasicPhoneNumberWithHttpInfo(phoneNumber);
-            return localVarResp.getData();
+        public Object execute() throws ApiException {
+            ApiResponse<Object> localVarResp = getAddressVerificationWithHttpInfo(appId, referenceId);
+            return localVarResp.getResponseBody();
         }
 
         /**
-         * Execute getBasicPhoneNumber request with HTTP info returned
-         * @return ApiResponse&lt;GetBasicPhoneNumberResponse&gt;
+         * Execute getAddressVerification request with HTTP info returned
+         * @return ApiResponse&lt;Object&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<GetBasicPhoneNumberResponse> executeWithHttpInfo() throws ApiException {
-            return getBasicPhoneNumberWithHttpInfo(phoneNumber);
+        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+            return getAddressVerificationWithHttpInfo(appId, referenceId);
         }
 
         /**
-         * Execute getBasicPhoneNumber request (asynchronously)
+         * Execute getAddressVerification request (asynchronously)
          * @param _callback The callback to be executed when the API call finishes
          * @return The request call
          * @throws ApiException If fail to process the API call, e.g. serializing the request body object
          * @http.response.details
          <table summary="Response Details" border="1">
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<GetBasicPhoneNumberResponse> _callback) throws ApiException {
-            return getBasicPhoneNumberAsync(phoneNumber, _callback);
+        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
+            return getAddressVerificationAsync(appId, referenceId, _callback);
         }
     }
 
     /**
-     * KYC Lookup Phone Number Basic
+     * Fetch Address Verification Data
      * 
-     * @return GetBasicPhoneNumberRequestBuilder
+     * @return GetAddressVerificationRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public GetBasicPhoneNumberRequestBuilder getBasicPhoneNumber() throws IllegalArgumentException {
-        return new GetBasicPhoneNumberRequestBuilder();
+    public GetAddressVerificationRequestBuilder getAddressVerification() throws IllegalArgumentException {
+        return new GetAddressVerificationRequestBuilder();
     }
-    private okhttp3.Call getDriversLicenseCall(String licenseNumber, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getBvnFromNubanCall(String appId, Integer bankCode, Integer accountNumber, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -571,484 +626,7 @@ public class KycApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/kyc/dl";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (licenseNumber != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("license_number", licenseNumber));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDriversLicenseValidateBeforeCall(String licenseNumber, final ApiCallback _callback) throws ApiException {
-        return getDriversLicenseCall(licenseNumber, _callback);
-
-    }
-
-
-    private ApiResponse<GetKycDriversLicenseResponse> getDriversLicenseWithHttpInfo(String licenseNumber) throws ApiException {
-        okhttp3.Call localVarCall = getDriversLicenseValidateBeforeCall(licenseNumber, null);
-        Type localVarReturnType = new TypeToken<GetKycDriversLicenseResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    private okhttp3.Call getDriversLicenseAsync(String licenseNumber, final ApiCallback<GetKycDriversLicenseResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = getDriversLicenseValidateBeforeCall(licenseNumber, _callback);
-        Type localVarReturnType = new TypeToken<GetKycDriversLicenseResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-
-    public class GetDriversLicenseRequestBuilder {
-        private String licenseNumber;
-
-        private GetDriversLicenseRequestBuilder() {
-        }
-
-        /**
-         * Set licenseNumber
-         * @param licenseNumber  (optional)
-         * @return GetDriversLicenseRequestBuilder
-         */
-        public GetDriversLicenseRequestBuilder licenseNumber(String licenseNumber) {
-            this.licenseNumber = licenseNumber;
-            return this;
-        }
-        
-        /**
-         * Build call for getDriversLicense
-         * @param _callback ApiCallback API callback
-         * @return Call to execute
-         * @throws ApiException If fail to serialize the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-         </table>
-         */
-        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getDriversLicenseCall(licenseNumber, _callback);
-        }
-
-
-        /**
-         * Execute getDriversLicense request
-         * @return GetKycDriversLicenseResponse
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-         </table>
-         */
-        public GetKycDriversLicenseResponse execute() throws ApiException {
-            ApiResponse<GetKycDriversLicenseResponse> localVarResp = getDriversLicenseWithHttpInfo(licenseNumber);
-            return localVarResp.getData();
-        }
-
-        /**
-         * Execute getDriversLicense request with HTTP info returned
-         * @return ApiResponse&lt;GetKycDriversLicenseResponse&gt;
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-         </table>
-         */
-        public ApiResponse<GetKycDriversLicenseResponse> executeWithHttpInfo() throws ApiException {
-            return getDriversLicenseWithHttpInfo(licenseNumber);
-        }
-
-        /**
-         * Execute getDriversLicense request (asynchronously)
-         * @param _callback The callback to be executed when the API call finishes
-         * @return The request call
-         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-         </table>
-         */
-        public okhttp3.Call executeAsync(final ApiCallback<GetKycDriversLicenseResponse> _callback) throws ApiException {
-            return getDriversLicenseAsync(licenseNumber, _callback);
-        }
-    }
-
-    /**
-     * KYC - Get Drivers License Info
-     * 
-     * @return GetDriversLicenseRequestBuilder
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetDriversLicenseRequestBuilder getDriversLicense() throws IllegalArgumentException {
-        return new GetDriversLicenseRequestBuilder();
-    }
-    private okhttp3.Call getEmailReputationCall(String email, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v1/kyc/email";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (email != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("email", email));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call getEmailReputationValidateBeforeCall(String email, final ApiCallback _callback) throws ApiException {
-        return getEmailReputationCall(email, _callback);
-
-    }
-
-
-    private ApiResponse<GetEmailReputationResponse> getEmailReputationWithHttpInfo(String email) throws ApiException {
-        okhttp3.Call localVarCall = getEmailReputationValidateBeforeCall(email, null);
-        Type localVarReturnType = new TypeToken<GetEmailReputationResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    private okhttp3.Call getEmailReputationAsync(String email, final ApiCallback<GetEmailReputationResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = getEmailReputationValidateBeforeCall(email, _callback);
-        Type localVarReturnType = new TypeToken<GetEmailReputationResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-
-    public class GetEmailReputationRequestBuilder {
-        private String email;
-
-        private GetEmailReputationRequestBuilder() {
-        }
-
-        /**
-         * Set email
-         * @param email  (optional)
-         * @return GetEmailReputationRequestBuilder
-         */
-        public GetEmailReputationRequestBuilder email(String email) {
-            this.email = email;
-            return this;
-        }
-        
-        /**
-         * Build call for getEmailReputation
-         * @param _callback ApiCallback API callback
-         * @return Call to execute
-         * @throws ApiException If fail to serialize the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-         </table>
-         */
-        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getEmailReputationCall(email, _callback);
-        }
-
-
-        /**
-         * Execute getEmailReputation request
-         * @return GetEmailReputationResponse
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-         </table>
-         */
-        public GetEmailReputationResponse execute() throws ApiException {
-            ApiResponse<GetEmailReputationResponse> localVarResp = getEmailReputationWithHttpInfo(email);
-            return localVarResp.getData();
-        }
-
-        /**
-         * Execute getEmailReputation request with HTTP info returned
-         * @return ApiResponse&lt;GetEmailReputationResponse&gt;
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-         </table>
-         */
-        public ApiResponse<GetEmailReputationResponse> executeWithHttpInfo() throws ApiException {
-            return getEmailReputationWithHttpInfo(email);
-        }
-
-        /**
-         * Execute getEmailReputation request (asynchronously)
-         * @param _callback The callback to be executed when the API call finishes
-         * @return The request call
-         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-         </table>
-         */
-        public okhttp3.Call executeAsync(final ApiCallback<GetEmailReputationResponse> _callback) throws ApiException {
-            return getEmailReputationAsync(email, _callback);
-        }
-    }
-
-    /**
-     * KYC - Get Email Reputation
-     * 
-     * @return GetEmailReputationRequestBuilder
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public GetEmailReputationRequestBuilder getEmailReputation() throws IllegalArgumentException {
-        return new GetEmailReputationRequestBuilder();
-    }
-    private okhttp3.Call getFullBvnCall(Integer bvn, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/kyc/bvn/full";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (bvn != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("bvn", bvn));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFullBvnValidateBeforeCall(Integer bvn, final ApiCallback _callback) throws ApiException {
-        return getFullBvnCall(bvn, _callback);
-
-    }
-
-
-    private ApiResponse<GetFullBvnResponse> getFullBvnWithHttpInfo(Integer bvn) throws ApiException {
-        okhttp3.Call localVarCall = getFullBvnValidateBeforeCall(bvn, null);
-        Type localVarReturnType = new TypeToken<GetFullBvnResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    private okhttp3.Call getFullBvnAsync(Integer bvn, final ApiCallback<GetFullBvnResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = getFullBvnValidateBeforeCall(bvn, _callback);
-        Type localVarReturnType = new TypeToken<GetFullBvnResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-
-    public class GetFullBvnRequestBuilder {
-        private Integer bvn;
-
-        private GetFullBvnRequestBuilder() {
-        }
-
-        /**
-         * Set bvn
-         * @param bvn  (optional)
-         * @return GetFullBvnRequestBuilder
-         */
-        public GetFullBvnRequestBuilder bvn(Integer bvn) {
-            this.bvn = bvn;
-            return this;
-        }
-        
-        /**
-         * Build call for getFullBvn
-         * @param _callback ApiCallback API callback
-         * @return Call to execute
-         * @throws ApiException If fail to serialize the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-         </table>
-         */
-        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getFullBvnCall(bvn, _callback);
-        }
-
-
-        /**
-         * Execute getFullBvn request
-         * @return GetFullBvnResponse
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-         </table>
-         */
-        public GetFullBvnResponse execute() throws ApiException {
-            ApiResponse<GetFullBvnResponse> localVarResp = getFullBvnWithHttpInfo(bvn);
-            return localVarResp.getData();
-        }
-
-        /**
-         * Execute getFullBvn request with HTTP info returned
-         * @return ApiResponse&lt;GetFullBvnResponse&gt;
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-         </table>
-         */
-        public ApiResponse<GetFullBvnResponse> executeWithHttpInfo() throws ApiException {
-            return getFullBvnWithHttpInfo(bvn);
-        }
-
-        /**
-         * Execute getFullBvn request (asynchronously)
-         * @param _callback The callback to be executed when the API call finishes
-         * @return The request call
-         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-         </table>
-         */
-        public okhttp3.Call executeAsync(final ApiCallback<GetFullBvnResponse> _callback) throws ApiException {
-            return getFullBvnAsync(bvn, _callback);
-        }
-    }
-
-    /**
-     * KYC - Lookup BVN Basic
-     * 
-     * @return GetFullBvnRequestBuilder
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetFullBvnRequestBuilder getFullBvn() throws IllegalArgumentException {
-        return new GetFullBvnRequestBuilder();
-    }
-    private okhttp3.Call getNubanCall(Integer bankCode, Integer accountNumber, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/kyc/nuban";
+        String localVarPath = "/api/v1/kyc/nuban/bvn";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1064,6 +642,10 @@ public class KycApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("account_number", accountNumber));
         }
 
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1079,44 +661,55 @@ public class KycApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] { "apikeyAuth" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getNubanValidateBeforeCall(Integer bankCode, Integer accountNumber, final ApiCallback _callback) throws ApiException {
-        return getNubanCall(bankCode, accountNumber, _callback);
+    private okhttp3.Call getBvnFromNubanValidateBeforeCall(String appId, Integer bankCode, Integer accountNumber, final ApiCallback _callback) throws ApiException {
+        return getBvnFromNubanCall(appId, bankCode, accountNumber, _callback);
 
     }
 
 
-    private ApiResponse<GetNubanResponse> getNubanWithHttpInfo(Integer bankCode, Integer accountNumber) throws ApiException {
-        okhttp3.Call localVarCall = getNubanValidateBeforeCall(bankCode, accountNumber, null);
-        Type localVarReturnType = new TypeToken<GetNubanResponse>(){}.getType();
+    private ApiResponse<Object> getBvnFromNubanWithHttpInfo(String appId, Integer bankCode, Integer accountNumber) throws ApiException {
+        okhttp3.Call localVarCall = getBvnFromNubanValidateBeforeCall(appId, bankCode, accountNumber, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getNubanAsync(Integer bankCode, Integer accountNumber, final ApiCallback<GetNubanResponse> _callback) throws ApiException {
+    private okhttp3.Call getBvnFromNubanAsync(String appId, Integer bankCode, Integer accountNumber, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getNubanValidateBeforeCall(bankCode, accountNumber, _callback);
-        Type localVarReturnType = new TypeToken<GetNubanResponse>(){}.getType();
+        okhttp3.Call localVarCall = getBvnFromNubanValidateBeforeCall(appId, bankCode, accountNumber, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
-    public class GetNubanRequestBuilder {
+    public class GetBvnFromNubanRequestBuilder {
+        private String appId;
         private Integer bankCode;
         private Integer accountNumber;
 
-        private GetNubanRequestBuilder() {
+        private GetBvnFromNubanRequestBuilder() {
         }
 
         /**
+         * Set appId
+         * @param appId  (optional)
+         * @return GetBvnFromNubanRequestBuilder
+         */
+        public GetBvnFromNubanRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
+        /**
          * Set bankCode
          * @param bankCode  (optional)
-         * @return GetNubanRequestBuilder
+         * @return GetBvnFromNubanRequestBuilder
          */
-        public GetNubanRequestBuilder bankCode(Integer bankCode) {
+        public GetBvnFromNubanRequestBuilder bankCode(Integer bankCode) {
             this.bankCode = bankCode;
             return this;
         }
@@ -1124,189 +717,15 @@ public class KycApi {
         /**
          * Set accountNumber
          * @param accountNumber  (optional)
-         * @return GetNubanRequestBuilder
+         * @return GetBvnFromNubanRequestBuilder
          */
-        public GetNubanRequestBuilder accountNumber(Integer accountNumber) {
+        public GetBvnFromNubanRequestBuilder accountNumber(Integer accountNumber) {
             this.accountNumber = accountNumber;
             return this;
         }
         
         /**
-         * Build call for getNuban
-         * @param _callback ApiCallback API callback
-         * @return Call to execute
-         * @throws ApiException If fail to serialize the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-         </table>
-         */
-        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getNubanCall(bankCode, accountNumber, _callback);
-        }
-
-
-        /**
-         * Execute getNuban request
-         * @return GetNubanResponse
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-         </table>
-         */
-        public GetNubanResponse execute() throws ApiException {
-            ApiResponse<GetNubanResponse> localVarResp = getNubanWithHttpInfo(bankCode, accountNumber);
-            return localVarResp.getData();
-        }
-
-        /**
-         * Execute getNuban request with HTTP info returned
-         * @return ApiResponse&lt;GetNubanResponse&gt;
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-         </table>
-         */
-        public ApiResponse<GetNubanResponse> executeWithHttpInfo() throws ApiException {
-            return getNubanWithHttpInfo(bankCode, accountNumber);
-        }
-
-        /**
-         * Execute getNuban request (asynchronously)
-         * @param _callback The callback to be executed when the API call finishes
-         * @return The request call
-         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-         </table>
-         */
-        public okhttp3.Call executeAsync(final ApiCallback<GetNubanResponse> _callback) throws ApiException {
-            return getNubanAsync(bankCode, accountNumber, _callback);
-        }
-    }
-
-    /**
-     * KYC - Get NUBAN Information
-     * 
-     * @return GetNubanRequestBuilder
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
-     </table>
-     */
-    public GetNubanRequestBuilder getNuban() throws IllegalArgumentException {
-        return new GetNubanRequestBuilder();
-    }
-    private okhttp3.Call getPassportCall(Integer passportNumber, String surname, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/kyc/passport";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (passportNumber != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("passport_number", passportNumber));
-        }
-
-        if (surname != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("surname", surname));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPassportValidateBeforeCall(Integer passportNumber, String surname, final ApiCallback _callback) throws ApiException {
-        return getPassportCall(passportNumber, surname, _callback);
-
-    }
-
-
-    private ApiResponse<GetKycPassportResponse> getPassportWithHttpInfo(Integer passportNumber, String surname) throws ApiException {
-        okhttp3.Call localVarCall = getPassportValidateBeforeCall(passportNumber, surname, null);
-        Type localVarReturnType = new TypeToken<GetKycPassportResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    private okhttp3.Call getPassportAsync(Integer passportNumber, String surname, final ApiCallback<GetKycPassportResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = getPassportValidateBeforeCall(passportNumber, surname, _callback);
-        Type localVarReturnType = new TypeToken<GetKycPassportResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-
-    public class GetPassportRequestBuilder {
-        private Integer passportNumber;
-        private String surname;
-
-        private GetPassportRequestBuilder() {
-        }
-
-        /**
-         * Set passportNumber
-         * @param passportNumber  (optional)
-         * @return GetPassportRequestBuilder
-         */
-        public GetPassportRequestBuilder passportNumber(Integer passportNumber) {
-            this.passportNumber = passportNumber;
-            return this;
-        }
-        
-        /**
-         * Set surname
-         * @param surname  (optional)
-         * @return GetPassportRequestBuilder
-         */
-        public GetPassportRequestBuilder surname(String surname) {
-            this.surname = surname;
-            return this;
-        }
-        
-        /**
-         * Build call for getPassport
+         * Build call for getBvnFromNuban
          * @param _callback ApiCallback API callback
          * @return Call to execute
          * @throws ApiException If fail to serialize the request body object
@@ -1317,13 +736,13 @@ public class KycApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getPassportCall(passportNumber, surname, _callback);
+            return getBvnFromNubanCall(appId, bankCode, accountNumber, _callback);
         }
 
 
         /**
-         * Execute getPassport request
-         * @return GetKycPassportResponse
+         * Execute getBvnFromNuban request
+         * @return Object
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -1331,14 +750,14 @@ public class KycApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public GetKycPassportResponse execute() throws ApiException {
-            ApiResponse<GetKycPassportResponse> localVarResp = getPassportWithHttpInfo(passportNumber, surname);
-            return localVarResp.getData();
+        public Object execute() throws ApiException {
+            ApiResponse<Object> localVarResp = getBvnFromNubanWithHttpInfo(appId, bankCode, accountNumber);
+            return localVarResp.getResponseBody();
         }
 
         /**
-         * Execute getPassport request with HTTP info returned
-         * @return ApiResponse&lt;GetKycPassportResponse&gt;
+         * Execute getBvnFromNuban request with HTTP info returned
+         * @return ApiResponse&lt;Object&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -1346,12 +765,12 @@ public class KycApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<GetKycPassportResponse> executeWithHttpInfo() throws ApiException {
-            return getPassportWithHttpInfo(passportNumber, surname);
+        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+            return getBvnFromNubanWithHttpInfo(appId, bankCode, accountNumber);
         }
 
         /**
-         * Execute getPassport request (asynchronously)
+         * Execute getBvnFromNuban request (asynchronously)
          * @param _callback The callback to be executed when the API call finishes
          * @return The request call
          * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1361,343 +780,25 @@ public class KycApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<GetKycPassportResponse> _callback) throws ApiException {
-            return getPassportAsync(passportNumber, surname, _callback);
+        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
+            return getBvnFromNubanAsync(appId, bankCode, accountNumber, _callback);
         }
     }
 
     /**
-     * KYC - Passport
+     * Lookup BVN from NUBAN
      * 
-     * @return GetPassportRequestBuilder
+     * @return GetBvnFromNubanRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public GetPassportRequestBuilder getPassport() throws IllegalArgumentException {
-        return new GetPassportRequestBuilder();
+    public GetBvnFromNubanRequestBuilder getBvnFromNuban() throws IllegalArgumentException {
+        return new GetBvnFromNubanRequestBuilder();
     }
-    private okhttp3.Call getPhoneNumberCall(Integer phoneNumber, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/kyc/phone_number";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (phoneNumber != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("phone_number", phoneNumber));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPhoneNumberValidateBeforeCall(Integer phoneNumber, final ApiCallback _callback) throws ApiException {
-        return getPhoneNumberCall(phoneNumber, _callback);
-
-    }
-
-
-    private ApiResponse<GetPhoneNumberResponse> getPhoneNumberWithHttpInfo(Integer phoneNumber) throws ApiException {
-        okhttp3.Call localVarCall = getPhoneNumberValidateBeforeCall(phoneNumber, null);
-        Type localVarReturnType = new TypeToken<GetPhoneNumberResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    private okhttp3.Call getPhoneNumberAsync(Integer phoneNumber, final ApiCallback<GetPhoneNumberResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = getPhoneNumberValidateBeforeCall(phoneNumber, _callback);
-        Type localVarReturnType = new TypeToken<GetPhoneNumberResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-
-    public class GetPhoneNumberRequestBuilder {
-        private Integer phoneNumber;
-
-        private GetPhoneNumberRequestBuilder() {
-        }
-
-        /**
-         * Set phoneNumber
-         * @param phoneNumber  (optional)
-         * @return GetPhoneNumberRequestBuilder
-         */
-        public GetPhoneNumberRequestBuilder phoneNumber(Integer phoneNumber) {
-            this.phoneNumber = phoneNumber;
-            return this;
-        }
-        
-        /**
-         * Build call for getPhoneNumber
-         * @param _callback ApiCallback API callback
-         * @return Call to execute
-         * @throws ApiException If fail to serialize the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-         </table>
-         */
-        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getPhoneNumberCall(phoneNumber, _callback);
-        }
-
-
-        /**
-         * Execute getPhoneNumber request
-         * @return GetPhoneNumberResponse
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-         </table>
-         */
-        public GetPhoneNumberResponse execute() throws ApiException {
-            ApiResponse<GetPhoneNumberResponse> localVarResp = getPhoneNumberWithHttpInfo(phoneNumber);
-            return localVarResp.getData();
-        }
-
-        /**
-         * Execute getPhoneNumber request with HTTP info returned
-         * @return ApiResponse&lt;GetPhoneNumberResponse&gt;
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-         </table>
-         */
-        public ApiResponse<GetPhoneNumberResponse> executeWithHttpInfo() throws ApiException {
-            return getPhoneNumberWithHttpInfo(phoneNumber);
-        }
-
-        /**
-         * Execute getPhoneNumber request (asynchronously)
-         * @param _callback The callback to be executed when the API call finishes
-         * @return The request call
-         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-         </table>
-         */
-        public okhttp3.Call executeAsync(final ApiCallback<GetPhoneNumberResponse> _callback) throws ApiException {
-            return getPhoneNumberAsync(phoneNumber, _callback);
-        }
-    }
-
-    /**
-     * KYC - Lookup Phone Number
-     * 
-     * @return GetPhoneNumberRequestBuilder
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetPhoneNumberRequestBuilder getPhoneNumber() throws IllegalArgumentException {
-        return new GetPhoneNumberRequestBuilder();
-    }
-    private okhttp3.Call getPremiumBvnCall(Integer bvn, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/kyc/bvn/advance";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (bvn != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("bvn", bvn));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPremiumBvnValidateBeforeCall(Integer bvn, final ApiCallback _callback) throws ApiException {
-        return getPremiumBvnCall(bvn, _callback);
-
-    }
-
-
-    private ApiResponse<GetPremiumBvnResponse> getPremiumBvnWithHttpInfo(Integer bvn) throws ApiException {
-        okhttp3.Call localVarCall = getPremiumBvnValidateBeforeCall(bvn, null);
-        Type localVarReturnType = new TypeToken<GetPremiumBvnResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    private okhttp3.Call getPremiumBvnAsync(Integer bvn, final ApiCallback<GetPremiumBvnResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = getPremiumBvnValidateBeforeCall(bvn, _callback);
-        Type localVarReturnType = new TypeToken<GetPremiumBvnResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-
-    public class GetPremiumBvnRequestBuilder {
-        private Integer bvn;
-
-        private GetPremiumBvnRequestBuilder() {
-        }
-
-        /**
-         * Set bvn
-         * @param bvn  (optional)
-         * @return GetPremiumBvnRequestBuilder
-         */
-        public GetPremiumBvnRequestBuilder bvn(Integer bvn) {
-            this.bvn = bvn;
-            return this;
-        }
-        
-        /**
-         * Build call for getPremiumBvn
-         * @param _callback ApiCallback API callback
-         * @return Call to execute
-         * @throws ApiException If fail to serialize the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-         </table>
-         */
-        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getPremiumBvnCall(bvn, _callback);
-        }
-
-
-        /**
-         * Execute getPremiumBvn request
-         * @return GetPremiumBvnResponse
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-         </table>
-         */
-        public GetPremiumBvnResponse execute() throws ApiException {
-            ApiResponse<GetPremiumBvnResponse> localVarResp = getPremiumBvnWithHttpInfo(bvn);
-            return localVarResp.getData();
-        }
-
-        /**
-         * Execute getPremiumBvn request with HTTP info returned
-         * @return ApiResponse&lt;GetPremiumBvnResponse&gt;
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-         </table>
-         */
-        public ApiResponse<GetPremiumBvnResponse> executeWithHttpInfo() throws ApiException {
-            return getPremiumBvnWithHttpInfo(bvn);
-        }
-
-        /**
-         * Execute getPremiumBvn request (asynchronously)
-         * @param _callback The callback to be executed when the API call finishes
-         * @return The request call
-         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-         </table>
-         */
-        public okhttp3.Call executeAsync(final ApiCallback<GetPremiumBvnResponse> _callback) throws ApiException {
-            return getPremiumBvnAsync(bvn, _callback);
-        }
-    }
-
-    /**
-     * KYC - Lookup BVN Premium
-     * 
-     * @return GetPremiumBvnRequestBuilder
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
-     </table>
-     */
-    public GetPremiumBvnRequestBuilder getPremiumBvn() throws IllegalArgumentException {
-        return new GetPremiumBvnRequestBuilder();
-    }
-    private okhttp3.Call getVINCall(String mode, String firstname, String lastname, Integer vin, String state, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getVinCall(String appId, String vin, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1722,24 +823,12 @@ public class KycApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (mode != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("mode", mode));
-        }
-
-        if (firstname != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("firstname", firstname));
-        }
-
-        if (lastname != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("lastname", lastname));
-        }
-
         if (vin != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("vin", vin));
         }
 
-        if (state != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("state", state));
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
         }
 
         final String[] localVarAccepts = {
@@ -1757,93 +846,60 @@ public class KycApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] { "noauthAuth" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getVINValidateBeforeCall(String mode, String firstname, String lastname, Integer vin, String state, final ApiCallback _callback) throws ApiException {
-        return getVINCall(mode, firstname, lastname, vin, state, _callback);
+    private okhttp3.Call getVinValidateBeforeCall(String appId, String vin, final ApiCallback _callback) throws ApiException {
+        return getVinCall(appId, vin, _callback);
 
     }
 
 
-    private ApiResponse<GetVinResponse> getVINWithHttpInfo(String mode, String firstname, String lastname, Integer vin, String state) throws ApiException {
-        okhttp3.Call localVarCall = getVINValidateBeforeCall(mode, firstname, lastname, vin, state, null);
+    private ApiResponse<GetVinResponse> getVinWithHttpInfo(String appId, String vin) throws ApiException {
+        okhttp3.Call localVarCall = getVinValidateBeforeCall(appId, vin, null);
         Type localVarReturnType = new TypeToken<GetVinResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getVINAsync(String mode, String firstname, String lastname, Integer vin, String state, final ApiCallback<GetVinResponse> _callback) throws ApiException {
+    private okhttp3.Call getVinAsync(String appId, String vin, final ApiCallback<GetVinResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getVINValidateBeforeCall(mode, firstname, lastname, vin, state, _callback);
+        okhttp3.Call localVarCall = getVinValidateBeforeCall(appId, vin, _callback);
         Type localVarReturnType = new TypeToken<GetVinResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
-    public class GetVINRequestBuilder {
-        private String mode;
-        private String firstname;
-        private String lastname;
-        private Integer vin;
-        private String state;
+    public class GetVinRequestBuilder {
+        private String appId;
+        private String vin;
 
-        private GetVINRequestBuilder() {
+        private GetVinRequestBuilder() {
         }
 
         /**
-         * Set mode
-         * @param mode  (optional)
-         * @return GetVINRequestBuilder
+         * Set appId
+         * @param appId  (optional)
+         * @return GetVinRequestBuilder
          */
-        public GetVINRequestBuilder mode(String mode) {
-            this.mode = mode;
-            return this;
-        }
-        
-        /**
-         * Set firstname
-         * @param firstname  (optional)
-         * @return GetVINRequestBuilder
-         */
-        public GetVINRequestBuilder firstname(String firstname) {
-            this.firstname = firstname;
-            return this;
-        }
-        
-        /**
-         * Set lastname
-         * @param lastname  (optional)
-         * @return GetVINRequestBuilder
-         */
-        public GetVINRequestBuilder lastname(String lastname) {
-            this.lastname = lastname;
+        public GetVinRequestBuilder appId(String appId) {
+            this.appId = appId;
             return this;
         }
         
         /**
          * Set vin
          * @param vin  (optional)
-         * @return GetVINRequestBuilder
+         * @return GetVinRequestBuilder
          */
-        public GetVINRequestBuilder vin(Integer vin) {
+        public GetVinRequestBuilder vin(String vin) {
             this.vin = vin;
             return this;
         }
         
         /**
-         * Set state
-         * @param state  (optional)
-         * @return GetVINRequestBuilder
-         */
-        public GetVINRequestBuilder state(String state) {
-            this.state = state;
-            return this;
-        }
-        
-        /**
-         * Build call for getVIN
+         * Build call for getVin
          * @param _callback ApiCallback API callback
          * @return Call to execute
          * @throws ApiException If fail to serialize the request body object
@@ -1854,12 +910,12 @@ public class KycApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getVINCall(mode, firstname, lastname, vin, state, _callback);
+            return getVinCall(appId, vin, _callback);
         }
 
 
         /**
-         * Execute getVIN request
+         * Execute getVin request
          * @return GetVinResponse
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
@@ -1869,12 +925,12 @@ public class KycApi {
          </table>
          */
         public GetVinResponse execute() throws ApiException {
-            ApiResponse<GetVinResponse> localVarResp = getVINWithHttpInfo(mode, firstname, lastname, vin, state);
-            return localVarResp.getData();
+            ApiResponse<GetVinResponse> localVarResp = getVinWithHttpInfo(appId, vin);
+            return localVarResp.getResponseBody();
         }
 
         /**
-         * Execute getVIN request with HTTP info returned
+         * Execute getVin request with HTTP info returned
          * @return ApiResponse&lt;GetVinResponse&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
@@ -1884,11 +940,11 @@ public class KycApi {
          </table>
          */
         public ApiResponse<GetVinResponse> executeWithHttpInfo() throws ApiException {
-            return getVINWithHttpInfo(mode, firstname, lastname, vin, state);
+            return getVinWithHttpInfo(appId, vin);
         }
 
         /**
-         * Execute getVIN request (asynchronously)
+         * Execute getVin request (asynchronously)
          * @param _callback The callback to be executed when the API call finishes
          * @return The request call
          * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1899,24 +955,24 @@ public class KycApi {
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<GetVinResponse> _callback) throws ApiException {
-            return getVINAsync(mode, firstname, lastname, vin, state, _callback);
+            return getVinAsync(appId, vin, _callback);
         }
     }
 
     /**
      * KYC - Get VIN
      * 
-     * @return GetVINRequestBuilder
+     * @return GetVinRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * cf-request-id -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public GetVINRequestBuilder getVIN() throws IllegalArgumentException {
-        return new GetVINRequestBuilder();
+    public GetVinRequestBuilder getVin() throws IllegalArgumentException {
+        return new GetVinRequestBuilder();
     }
-    private okhttp3.Call getVninCall(String vnin, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call submitAddressCall(String appId, KycSubmitAddressRequest kycSubmitAddressRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1930,10 +986,10 @@ public class KycApi {
             basePath = null;
         }
 
-        Object localVarPostBody = null;
+        Object localVarPostBody = kycSubmitAddressRequest;
 
         // create path and map variables
-        String localVarPath = "/api/v1/kyc/vnin";
+        String localVarPath = "/api/v1/kyc/address";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1941,8 +997,8 @@ public class KycApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (vnin != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("vnin", vnin));
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
         }
 
         final String[] localVarAccepts = {
@@ -1954,462 +1010,100 @@ public class KycApi {
         }
 
         final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call getVninValidateBeforeCall(String vnin, final ApiCallback _callback) throws ApiException {
-        return getVninCall(vnin, _callback);
-
-    }
-
-
-    private ApiResponse<GetVninResponse> getVninWithHttpInfo(String vnin) throws ApiException {
-        okhttp3.Call localVarCall = getVninValidateBeforeCall(vnin, null);
-        Type localVarReturnType = new TypeToken<GetVninResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    private okhttp3.Call getVninAsync(String vnin, final ApiCallback<GetVninResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = getVninValidateBeforeCall(vnin, _callback);
-        Type localVarReturnType = new TypeToken<GetVninResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-
-    public class GetVninRequestBuilder {
-        private String vnin;
-
-        private GetVninRequestBuilder() {
-        }
-
-        /**
-         * Set vnin
-         * @param vnin  (optional)
-         * @return GetVninRequestBuilder
-         */
-        public GetVninRequestBuilder vnin(String vnin) {
-            this.vnin = vnin;
-            return this;
-        }
-        
-        /**
-         * Build call for getVnin
-         * @param _callback ApiCallback API callback
-         * @return Call to execute
-         * @throws ApiException If fail to serialize the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-         </table>
-         */
-        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getVninCall(vnin, _callback);
-        }
-
-
-        /**
-         * Execute getVnin request
-         * @return GetVninResponse
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-         </table>
-         */
-        public GetVninResponse execute() throws ApiException {
-            ApiResponse<GetVninResponse> localVarResp = getVninWithHttpInfo(vnin);
-            return localVarResp.getData();
-        }
-
-        /**
-         * Execute getVnin request with HTTP info returned
-         * @return ApiResponse&lt;GetVninResponse&gt;
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-         </table>
-         */
-        public ApiResponse<GetVninResponse> executeWithHttpInfo() throws ApiException {
-            return getVninWithHttpInfo(vnin);
-        }
-
-        /**
-         * Execute getVnin request (asynchronously)
-         * @param _callback The callback to be executed when the API call finishes
-         * @return The request call
-         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-         </table>
-         */
-        public okhttp3.Call executeAsync(final ApiCallback<GetVninResponse> _callback) throws ApiException {
-            return getVninAsync(vnin, _callback);
-        }
-    }
-
-    /**
-     * Lookup VNIN
-     * 
-     * @return GetVninRequestBuilder
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetVninRequestBuilder getVnin() throws IllegalArgumentException {
-        return new GetVninRequestBuilder();
-    }
-    private okhttp3.Call validateBvnCall(Integer bvn, String firstName, String dob, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/kyc/bvn";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (bvn != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("bvn", bvn));
-        }
-
-        if (firstName != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("first_name", firstName));
-        }
-
-        if (dob != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("dob", dob));
-        }
-
-        final String[] localVarAccepts = {
             "application/json"
         };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call validateBvnValidateBeforeCall(Integer bvn, String firstName, String dob, final ApiCallback _callback) throws ApiException {
-        return validateBvnCall(bvn, firstName, dob, _callback);
+    private okhttp3.Call submitAddressValidateBeforeCall(String appId, KycSubmitAddressRequest kycSubmitAddressRequest, final ApiCallback _callback) throws ApiException {
+        return submitAddressCall(appId, kycSubmitAddressRequest, _callback);
 
     }
 
 
-    private ApiResponse<ValidateBvnResponse> validateBvnWithHttpInfo(Integer bvn, String firstName, String dob) throws ApiException {
-        okhttp3.Call localVarCall = validateBvnValidateBeforeCall(bvn, firstName, dob, null);
-        Type localVarReturnType = new TypeToken<ValidateBvnResponse>(){}.getType();
+    private ApiResponse<KycSubmitAddressResponse> submitAddressWithHttpInfo(String appId, KycSubmitAddressRequest kycSubmitAddressRequest) throws ApiException {
+        okhttp3.Call localVarCall = submitAddressValidateBeforeCall(appId, kycSubmitAddressRequest, null);
+        Type localVarReturnType = new TypeToken<KycSubmitAddressResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call validateBvnAsync(Integer bvn, String firstName, String dob, final ApiCallback<ValidateBvnResponse> _callback) throws ApiException {
+    private okhttp3.Call submitAddressAsync(String appId, KycSubmitAddressRequest kycSubmitAddressRequest, final ApiCallback<KycSubmitAddressResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = validateBvnValidateBeforeCall(bvn, firstName, dob, _callback);
-        Type localVarReturnType = new TypeToken<ValidateBvnResponse>(){}.getType();
+        okhttp3.Call localVarCall = submitAddressValidateBeforeCall(appId, kycSubmitAddressRequest, _callback);
+        Type localVarReturnType = new TypeToken<KycSubmitAddressResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
-    public class ValidateBvnRequestBuilder {
-        private Integer bvn;
-        private String firstName;
-        private String dob;
-
-        private ValidateBvnRequestBuilder() {
-        }
-
-        /**
-         * Set bvn
-         * @param bvn  (optional)
-         * @return ValidateBvnRequestBuilder
-         */
-        public ValidateBvnRequestBuilder bvn(Integer bvn) {
-            this.bvn = bvn;
-            return this;
-        }
-        
-        /**
-         * Set firstName
-         * @param firstName  (optional)
-         * @return ValidateBvnRequestBuilder
-         */
-        public ValidateBvnRequestBuilder firstName(String firstName) {
-            this.firstName = firstName;
-            return this;
-        }
-        
-        /**
-         * Set dob
-         * @param dob  (optional)
-         * @return ValidateBvnRequestBuilder
-         */
-        public ValidateBvnRequestBuilder dob(String dob) {
-            this.dob = dob;
-            return this;
-        }
-        
-        /**
-         * Build call for validateBvn
-         * @param _callback ApiCallback API callback
-         * @return Call to execute
-         * @throws ApiException If fail to serialize the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-         </table>
-         */
-        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return validateBvnCall(bvn, firstName, dob, _callback);
-        }
-
-
-        /**
-         * Execute validateBvn request
-         * @return ValidateBvnResponse
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-         </table>
-         */
-        public ValidateBvnResponse execute() throws ApiException {
-            ApiResponse<ValidateBvnResponse> localVarResp = validateBvnWithHttpInfo(bvn, firstName, dob);
-            return localVarResp.getData();
-        }
-
-        /**
-         * Execute validateBvn request with HTTP info returned
-         * @return ApiResponse&lt;ValidateBvnResponse&gt;
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-         </table>
-         */
-        public ApiResponse<ValidateBvnResponse> executeWithHttpInfo() throws ApiException {
-            return validateBvnWithHttpInfo(bvn, firstName, dob);
-        }
-
-        /**
-         * Execute validateBvn request (asynchronously)
-         * @param _callback The callback to be executed when the API call finishes
-         * @return The request call
-         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-         </table>
-         */
-        public okhttp3.Call executeAsync(final ApiCallback<ValidateBvnResponse> _callback) throws ApiException {
-            return validateBvnAsync(bvn, firstName, dob, _callback);
-        }
-    }
-
-    /**
-     * KYC - Validate BVN
-     * 
-     * @return ValidateBvnRequestBuilder
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ValidateBvnRequestBuilder validateBvn() throws IllegalArgumentException {
-        return new ValidateBvnRequestBuilder();
-    }
-    private okhttp3.Call verifyAgeCall(String mode, Integer accountNumber, Integer bankCode, String dob, String firstName, String lastName, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v1/kyc/age_verification";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (mode != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("mode", mode));
-        }
-
-        if (accountNumber != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("account_number", accountNumber));
-        }
-
-        if (bankCode != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("bank_code", bankCode));
-        }
-
-        if (dob != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("dob", dob));
-        }
-
-        if (firstName != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("first_name", firstName));
-        }
-
-        if (lastName != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("last_name", lastName));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call verifyAgeValidateBeforeCall(String mode, Integer accountNumber, Integer bankCode, String dob, String firstName, String lastName, final ApiCallback _callback) throws ApiException {
-        return verifyAgeCall(mode, accountNumber, bankCode, dob, firstName, lastName, _callback);
-
-    }
-
-
-    private ApiResponse<VerifyAgeResponse> verifyAgeWithHttpInfo(String mode, Integer accountNumber, Integer bankCode, String dob, String firstName, String lastName) throws ApiException {
-        okhttp3.Call localVarCall = verifyAgeValidateBeforeCall(mode, accountNumber, bankCode, dob, firstName, lastName, null);
-        Type localVarReturnType = new TypeToken<VerifyAgeResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    private okhttp3.Call verifyAgeAsync(String mode, Integer accountNumber, Integer bankCode, String dob, String firstName, String lastName, final ApiCallback<VerifyAgeResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = verifyAgeValidateBeforeCall(mode, accountNumber, bankCode, dob, firstName, lastName, _callback);
-        Type localVarReturnType = new TypeToken<VerifyAgeResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-
-    public class VerifyAgeRequestBuilder {
-        private String mode;
-        private Integer accountNumber;
-        private Integer bankCode;
-        private String dob;
+    public class SubmitAddressRequestBuilder {
+        private String street;
+        private String lga;
+        private String state;
+        private String landmark;
         private String firstName;
         private String lastName;
+        private String middleName;
+        private String dob;
+        private String gender;
+        private String mobile;
+        private String appId;
 
-        private VerifyAgeRequestBuilder() {
+        private SubmitAddressRequestBuilder() {
         }
 
         /**
-         * Set mode
-         * @param mode  (optional)
-         * @return VerifyAgeRequestBuilder
+         * Set street
+         * @param street  (optional)
+         * @return SubmitAddressRequestBuilder
          */
-        public VerifyAgeRequestBuilder mode(String mode) {
-            this.mode = mode;
+        public SubmitAddressRequestBuilder street(String street) {
+            this.street = street;
             return this;
         }
         
         /**
-         * Set accountNumber
-         * @param accountNumber  (optional)
-         * @return VerifyAgeRequestBuilder
+         * Set lga
+         * @param lga  (optional)
+         * @return SubmitAddressRequestBuilder
          */
-        public VerifyAgeRequestBuilder accountNumber(Integer accountNumber) {
-            this.accountNumber = accountNumber;
+        public SubmitAddressRequestBuilder lga(String lga) {
+            this.lga = lga;
             return this;
         }
         
         /**
-         * Set bankCode
-         * @param bankCode  (optional)
-         * @return VerifyAgeRequestBuilder
+         * Set state
+         * @param state  (optional)
+         * @return SubmitAddressRequestBuilder
          */
-        public VerifyAgeRequestBuilder bankCode(Integer bankCode) {
-            this.bankCode = bankCode;
+        public SubmitAddressRequestBuilder state(String state) {
+            this.state = state;
             return this;
         }
         
         /**
-         * Set dob
-         * @param dob  (optional)
-         * @return VerifyAgeRequestBuilder
+         * Set landmark
+         * @param landmark  (optional)
+         * @return SubmitAddressRequestBuilder
          */
-        public VerifyAgeRequestBuilder dob(String dob) {
-            this.dob = dob;
+        public SubmitAddressRequestBuilder landmark(String landmark) {
+            this.landmark = landmark;
             return this;
         }
         
         /**
          * Set firstName
          * @param firstName  (optional)
-         * @return VerifyAgeRequestBuilder
+         * @return SubmitAddressRequestBuilder
          */
-        public VerifyAgeRequestBuilder firstName(String firstName) {
+        public SubmitAddressRequestBuilder firstName(String firstName) {
             this.firstName = firstName;
             return this;
         }
@@ -2417,439 +1111,153 @@ public class KycApi {
         /**
          * Set lastName
          * @param lastName  (optional)
-         * @return VerifyAgeRequestBuilder
+         * @return SubmitAddressRequestBuilder
          */
-        public VerifyAgeRequestBuilder lastName(String lastName) {
+        public SubmitAddressRequestBuilder lastName(String lastName) {
             this.lastName = lastName;
             return this;
         }
         
         /**
-         * Build call for verifyAge
+         * Set middleName
+         * @param middleName  (optional)
+         * @return SubmitAddressRequestBuilder
+         */
+        public SubmitAddressRequestBuilder middleName(String middleName) {
+            this.middleName = middleName;
+            return this;
+        }
+        
+        /**
+         * Set dob
+         * @param dob  (optional)
+         * @return SubmitAddressRequestBuilder
+         */
+        public SubmitAddressRequestBuilder dob(String dob) {
+            this.dob = dob;
+            return this;
+        }
+        
+        /**
+         * Set gender
+         * @param gender  (optional)
+         * @return SubmitAddressRequestBuilder
+         */
+        public SubmitAddressRequestBuilder gender(String gender) {
+            this.gender = gender;
+            return this;
+        }
+        
+        /**
+         * Set mobile
+         * @param mobile  (optional)
+         * @return SubmitAddressRequestBuilder
+         */
+        public SubmitAddressRequestBuilder mobile(String mobile) {
+            this.mobile = mobile;
+            return this;
+        }
+        
+        /**
+         * Set appId
+         * @param appId  (optional)
+         * @return SubmitAddressRequestBuilder
+         */
+        public SubmitAddressRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
+        /**
+         * Build call for submitAddress
          * @param _callback ApiCallback API callback
          * @return Call to execute
          * @throws ApiException If fail to serialize the request body object
          * @http.response.details
          <table summary="Response Details" border="1">
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * uuid -  <br>  * x-moesif-transaction-id -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return verifyAgeCall(mode, accountNumber, bankCode, dob, firstName, lastName, _callback);
+            KycSubmitAddressRequest kycSubmitAddressRequest = buildBodyParams();
+            return submitAddressCall(appId, kycSubmitAddressRequest, _callback);
         }
 
+        private KycSubmitAddressRequest buildBodyParams() {
+            KycSubmitAddressRequest kycSubmitAddressRequest = new KycSubmitAddressRequest();
+            kycSubmitAddressRequest.street(this.street);
+            kycSubmitAddressRequest.lga(this.lga);
+            kycSubmitAddressRequest.state(this.state);
+            kycSubmitAddressRequest.landmark(this.landmark);
+            kycSubmitAddressRequest.firstName(this.firstName);
+            kycSubmitAddressRequest.lastName(this.lastName);
+            kycSubmitAddressRequest.middleName(this.middleName);
+            kycSubmitAddressRequest.dob(this.dob);
+            kycSubmitAddressRequest.gender(this.gender);
+            kycSubmitAddressRequest.mobile(this.mobile);
+            return kycSubmitAddressRequest;
+        }
 
         /**
-         * Execute verifyAge request
-         * @return VerifyAgeResponse
+         * Execute submitAddress request
+         * @return KycSubmitAddressResponse
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * uuid -  <br>  * x-moesif-transaction-id -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
          </table>
          */
-        public VerifyAgeResponse execute() throws ApiException {
-            ApiResponse<VerifyAgeResponse> localVarResp = verifyAgeWithHttpInfo(mode, accountNumber, bankCode, dob, firstName, lastName);
-            return localVarResp.getData();
+        public KycSubmitAddressResponse execute() throws ApiException {
+            KycSubmitAddressRequest kycSubmitAddressRequest = buildBodyParams();
+            ApiResponse<KycSubmitAddressResponse> localVarResp = submitAddressWithHttpInfo(appId, kycSubmitAddressRequest);
+            return localVarResp.getResponseBody();
         }
 
         /**
-         * Execute verifyAge request with HTTP info returned
-         * @return ApiResponse&lt;VerifyAgeResponse&gt;
+         * Execute submitAddress request with HTTP info returned
+         * @return ApiResponse&lt;KycSubmitAddressResponse&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * uuid -  <br>  * x-moesif-transaction-id -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
          </table>
          */
-        public ApiResponse<VerifyAgeResponse> executeWithHttpInfo() throws ApiException {
-            return verifyAgeWithHttpInfo(mode, accountNumber, bankCode, dob, firstName, lastName);
+        public ApiResponse<KycSubmitAddressResponse> executeWithHttpInfo() throws ApiException {
+            KycSubmitAddressRequest kycSubmitAddressRequest = buildBodyParams();
+            return submitAddressWithHttpInfo(appId, kycSubmitAddressRequest);
         }
 
         /**
-         * Execute verifyAge request (asynchronously)
+         * Execute submitAddress request (asynchronously)
          * @param _callback The callback to be executed when the API call finishes
          * @return The request call
          * @throws ApiException If fail to process the API call, e.g. serializing the request body object
          * @http.response.details
          <table summary="Response Details" border="1">
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+            <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * uuid -  <br>  * x-moesif-transaction-id -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<VerifyAgeResponse> _callback) throws ApiException {
-            return verifyAgeAsync(mode, accountNumber, bankCode, dob, firstName, lastName, _callback);
+        public okhttp3.Call executeAsync(final ApiCallback<KycSubmitAddressResponse> _callback) throws ApiException {
+            KycSubmitAddressRequest kycSubmitAddressRequest = buildBodyParams();
+            return submitAddressAsync(appId, kycSubmitAddressRequest, _callback);
         }
     }
 
     /**
-     * KYC - Age Verification
+     * Submit Address
      * 
-     * @return VerifyAgeRequestBuilder
+     * @return SubmitAddressRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * uuid -  <br>  * x-moesif-transaction-id -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
      </table>
      */
-    public VerifyAgeRequestBuilder verifyAge() throws IllegalArgumentException {
-        return new VerifyAgeRequestBuilder();
-    }
-    private okhttp3.Call verifySelfieBvnCall(VerifySelfieBvnRequest verifySelfieBvnRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = verifySelfieBvnRequest;
-
-        // create path and map variables
-        String localVarPath = "/v1/kyc/bvn/verify";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call verifySelfieBvnValidateBeforeCall(VerifySelfieBvnRequest verifySelfieBvnRequest, final ApiCallback _callback) throws ApiException {
-        return verifySelfieBvnCall(verifySelfieBvnRequest, _callback);
-
-    }
-
-
-    private ApiResponse<VerifySelfieBvnResponse> verifySelfieBvnWithHttpInfo(VerifySelfieBvnRequest verifySelfieBvnRequest) throws ApiException {
-        okhttp3.Call localVarCall = verifySelfieBvnValidateBeforeCall(verifySelfieBvnRequest, null);
-        Type localVarReturnType = new TypeToken<VerifySelfieBvnResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    private okhttp3.Call verifySelfieBvnAsync(VerifySelfieBvnRequest verifySelfieBvnRequest, final ApiCallback<VerifySelfieBvnResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = verifySelfieBvnValidateBeforeCall(verifySelfieBvnRequest, _callback);
-        Type localVarReturnType = new TypeToken<VerifySelfieBvnResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-
-    public class VerifySelfieBvnRequestBuilder {
-        private String bvn;
-        private String selfieImage;
-
-        private VerifySelfieBvnRequestBuilder() {
-        }
-
-        /**
-         * Set bvn
-         * @param bvn  (optional)
-         * @return VerifySelfieBvnRequestBuilder
-         */
-        public VerifySelfieBvnRequestBuilder bvn(String bvn) {
-            this.bvn = bvn;
-            return this;
-        }
-        
-        /**
-         * Set selfieImage
-         * @param selfieImage  (optional)
-         * @return VerifySelfieBvnRequestBuilder
-         */
-        public VerifySelfieBvnRequestBuilder selfieImage(String selfieImage) {
-            this.selfieImage = selfieImage;
-            return this;
-        }
-        
-        /**
-         * Build call for verifySelfieBvn
-         * @param _callback ApiCallback API callback
-         * @return Call to execute
-         * @throws ApiException If fail to serialize the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-         </table>
-         */
-        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            VerifySelfieBvnRequest verifySelfieBvnRequest = buildBodyParams();
-            return verifySelfieBvnCall(verifySelfieBvnRequest, _callback);
-        }
-
-        private VerifySelfieBvnRequest buildBodyParams() {
-            VerifySelfieBvnRequest verifySelfieBvnRequest = new VerifySelfieBvnRequest();
-            verifySelfieBvnRequest.bvn(this.bvn);
-            verifySelfieBvnRequest.selfieImage(this.selfieImage);
-            return verifySelfieBvnRequest;
-        }
-
-        /**
-         * Execute verifySelfieBvn request
-         * @return VerifySelfieBvnResponse
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-         </table>
-         */
-        public VerifySelfieBvnResponse execute() throws ApiException {
-            VerifySelfieBvnRequest verifySelfieBvnRequest = buildBodyParams();
-            ApiResponse<VerifySelfieBvnResponse> localVarResp = verifySelfieBvnWithHttpInfo(verifySelfieBvnRequest);
-            return localVarResp.getData();
-        }
-
-        /**
-         * Execute verifySelfieBvn request with HTTP info returned
-         * @return ApiResponse&lt;VerifySelfieBvnResponse&gt;
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-         </table>
-         */
-        public ApiResponse<VerifySelfieBvnResponse> executeWithHttpInfo() throws ApiException {
-            VerifySelfieBvnRequest verifySelfieBvnRequest = buildBodyParams();
-            return verifySelfieBvnWithHttpInfo(verifySelfieBvnRequest);
-        }
-
-        /**
-         * Execute verifySelfieBvn request (asynchronously)
-         * @param _callback The callback to be executed when the API call finishes
-         * @return The request call
-         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-         </table>
-         */
-        public okhttp3.Call executeAsync(final ApiCallback<VerifySelfieBvnResponse> _callback) throws ApiException {
-            VerifySelfieBvnRequest verifySelfieBvnRequest = buildBodyParams();
-            return verifySelfieBvnAsync(verifySelfieBvnRequest, _callback);
-        }
-    }
-
-    /**
-     * KYC - Selfie BVN Verificatoin
-     * 
-     * @return VerifySelfieBvnRequestBuilder
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public VerifySelfieBvnRequestBuilder verifySelfieBvn() throws IllegalArgumentException {
-        return new VerifySelfieBvnRequestBuilder();
-    }
-    private okhttp3.Call verifySelfieNinCall(VerifySelfieNinRequest verifySelfieNinRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = verifySelfieNinRequest;
-
-        // create path and map variables
-        String localVarPath = "/v1/kyc/nin/verify";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call verifySelfieNinValidateBeforeCall(VerifySelfieNinRequest verifySelfieNinRequest, final ApiCallback _callback) throws ApiException {
-        return verifySelfieNinCall(verifySelfieNinRequest, _callback);
-
-    }
-
-
-    private ApiResponse<VerifySelfieNinResponse> verifySelfieNinWithHttpInfo(VerifySelfieNinRequest verifySelfieNinRequest) throws ApiException {
-        okhttp3.Call localVarCall = verifySelfieNinValidateBeforeCall(verifySelfieNinRequest, null);
-        Type localVarReturnType = new TypeToken<VerifySelfieNinResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    private okhttp3.Call verifySelfieNinAsync(VerifySelfieNinRequest verifySelfieNinRequest, final ApiCallback<VerifySelfieNinResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = verifySelfieNinValidateBeforeCall(verifySelfieNinRequest, _callback);
-        Type localVarReturnType = new TypeToken<VerifySelfieNinResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-
-    public class VerifySelfieNinRequestBuilder {
-        private String nin;
-        private String selfieImage;
-
-        private VerifySelfieNinRequestBuilder() {
-        }
-
-        /**
-         * Set nin
-         * @param nin  (optional)
-         * @return VerifySelfieNinRequestBuilder
-         */
-        public VerifySelfieNinRequestBuilder nin(String nin) {
-            this.nin = nin;
-            return this;
-        }
-        
-        /**
-         * Set selfieImage
-         * @param selfieImage  (optional)
-         * @return VerifySelfieNinRequestBuilder
-         */
-        public VerifySelfieNinRequestBuilder selfieImage(String selfieImage) {
-            this.selfieImage = selfieImage;
-            return this;
-        }
-        
-        /**
-         * Build call for verifySelfieNin
-         * @param _callback ApiCallback API callback
-         * @return Call to execute
-         * @throws ApiException If fail to serialize the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-         </table>
-         */
-        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            VerifySelfieNinRequest verifySelfieNinRequest = buildBodyParams();
-            return verifySelfieNinCall(verifySelfieNinRequest, _callback);
-        }
-
-        private VerifySelfieNinRequest buildBodyParams() {
-            VerifySelfieNinRequest verifySelfieNinRequest = new VerifySelfieNinRequest();
-            verifySelfieNinRequest.nin(this.nin);
-            verifySelfieNinRequest.selfieImage(this.selfieImage);
-            return verifySelfieNinRequest;
-        }
-
-        /**
-         * Execute verifySelfieNin request
-         * @return VerifySelfieNinResponse
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-         </table>
-         */
-        public VerifySelfieNinResponse execute() throws ApiException {
-            VerifySelfieNinRequest verifySelfieNinRequest = buildBodyParams();
-            ApiResponse<VerifySelfieNinResponse> localVarResp = verifySelfieNinWithHttpInfo(verifySelfieNinRequest);
-            return localVarResp.getData();
-        }
-
-        /**
-         * Execute verifySelfieNin request with HTTP info returned
-         * @return ApiResponse&lt;VerifySelfieNinResponse&gt;
-         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-         </table>
-         */
-        public ApiResponse<VerifySelfieNinResponse> executeWithHttpInfo() throws ApiException {
-            VerifySelfieNinRequest verifySelfieNinRequest = buildBodyParams();
-            return verifySelfieNinWithHttpInfo(verifySelfieNinRequest);
-        }
-
-        /**
-         * Execute verifySelfieNin request (asynchronously)
-         * @param _callback The callback to be executed when the API call finishes
-         * @return The request call
-         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-         * @http.response.details
-         <table summary="Response Details" border="1">
-            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-         </table>
-         */
-        public okhttp3.Call executeAsync(final ApiCallback<VerifySelfieNinResponse> _callback) throws ApiException {
-            VerifySelfieNinRequest verifySelfieNinRequest = buildBodyParams();
-            return verifySelfieNinAsync(verifySelfieNinRequest, _callback);
-        }
-    }
-
-    /**
-     * KYC - Selfie NIN Verification
-     * 
-     * @return VerifySelfieNinRequestBuilder
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public VerifySelfieNinRequestBuilder verifySelfieNin() throws IllegalArgumentException {
-        return new VerifySelfieNinRequestBuilder();
+    public SubmitAddressRequestBuilder submitAddress() throws IllegalArgumentException {
+        return new SubmitAddressRequestBuilder();
     }
 }

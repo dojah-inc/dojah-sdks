@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -61,7 +61,8 @@ namespace Dojah.Net.Test.Api
         public void DeleteWebhookTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.DeleteWebhook();
+            //string appId = null;
+            //var response = instance.DeleteWebhook(appId);
             //Assert.IsType<DeleteWebhookResponse>(response);
         }
 
@@ -72,7 +73,8 @@ namespace Dojah.Net.Test.Api
         public void GetWebhooksTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.GetWebhooks();
+            //string appId = null;
+            //var response = instance.GetWebhooks(appId);
             //Assert.IsType<GetWebhooksResponse>(response);
         }
 
@@ -84,7 +86,8 @@ namespace Dojah.Net.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //NotifyWebhookRequest notifyWebhookRequest = null;
-            //var response = instance.NotifyWebhook(notifyWebhookRequest);
+            //string appId = null;
+            //var response = instance.NotifyWebhook(notifyWebhookRequest, appId);
             //Assert.IsType<NotifyWebhookResponse>(response);
         }
 
@@ -96,7 +99,8 @@ namespace Dojah.Net.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //SubscribeServiceRequest subscribeServiceRequest = null;
-            //var response = instance.SubscribeService(subscribeServiceRequest);
+            //string appId = null;
+            //var response = instance.SubscribeService(subscribeServiceRequest, appId);
             //Assert.IsType<SubscribeServiceResponse>(response);
         }
     }

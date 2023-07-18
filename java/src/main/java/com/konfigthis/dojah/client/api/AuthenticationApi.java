@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -26,15 +26,15 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.konfigthis.dojah.client.model.AuthenticationSendOtpRequest;
+import com.konfigthis.dojah.client.model.AuthenticationSendOtpResponse;
+import com.konfigthis.dojah.client.model.AuthenticationValidateOtpResponse;
 import com.konfigthis.dojah.client.model.GetSenderIdResponse;
 import com.konfigthis.dojah.client.model.GetSmsStatusResponse;
 import com.konfigthis.dojah.client.model.RequestSenderIdRequest;
 import com.konfigthis.dojah.client.model.RequestSenderIdResponse;
-import com.konfigthis.dojah.client.model.SendOtpRequest;
-import com.konfigthis.dojah.client.model.SendOtpResponse;
 import com.konfigthis.dojah.client.model.SendSmsRequest;
 import com.konfigthis.dojah.client.model.SendSmsResponse;
-import com.konfigthis.dojah.client.model.ValidateOtpResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -53,9 +53,6 @@ public class AuthenticationApi {
     }
 
     public AuthenticationApi(ApiClient apiClient) throws IllegalArgumentException {
-        if (apiClient.getApikeyAuth() == null) {
-            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
-        }
         this.localVarApiClient = apiClient;
     }
 
@@ -83,7 +80,7 @@ public class AuthenticationApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call getSenderIdCall(final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSenderIdCall(String appId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -108,6 +105,10 @@ public class AuthenticationApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -123,36 +124,47 @@ public class AuthenticationApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] { "apikeyAuth" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSenderIdValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getSenderIdCall(_callback);
+    private okhttp3.Call getSenderIdValidateBeforeCall(String appId, final ApiCallback _callback) throws ApiException {
+        return getSenderIdCall(appId, _callback);
 
     }
 
 
-    private ApiResponse<GetSenderIdResponse> getSenderIdWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = getSenderIdValidateBeforeCall(null);
+    private ApiResponse<GetSenderIdResponse> getSenderIdWithHttpInfo(String appId) throws ApiException {
+        okhttp3.Call localVarCall = getSenderIdValidateBeforeCall(appId, null);
         Type localVarReturnType = new TypeToken<GetSenderIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getSenderIdAsync(final ApiCallback<GetSenderIdResponse> _callback) throws ApiException {
+    private okhttp3.Call getSenderIdAsync(String appId, final ApiCallback<GetSenderIdResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getSenderIdValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getSenderIdValidateBeforeCall(appId, _callback);
         Type localVarReturnType = new TypeToken<GetSenderIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
     public class GetSenderIdRequestBuilder {
+        private String appId;
 
         private GetSenderIdRequestBuilder() {
         }
 
+        /**
+         * Set appId
+         * @param appId  (optional)
+         * @return GetSenderIdRequestBuilder
+         */
+        public GetSenderIdRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
         /**
          * Build call for getSenderId
          * @param _callback ApiCallback API callback
@@ -165,7 +177,7 @@ public class AuthenticationApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getSenderIdCall(_callback);
+            return getSenderIdCall(appId, _callback);
         }
 
 
@@ -180,8 +192,8 @@ public class AuthenticationApi {
          </table>
          */
         public GetSenderIdResponse execute() throws ApiException {
-            ApiResponse<GetSenderIdResponse> localVarResp = getSenderIdWithHttpInfo();
-            return localVarResp.getData();
+            ApiResponse<GetSenderIdResponse> localVarResp = getSenderIdWithHttpInfo(appId);
+            return localVarResp.getResponseBody();
         }
 
         /**
@@ -195,7 +207,7 @@ public class AuthenticationApi {
          </table>
          */
         public ApiResponse<GetSenderIdResponse> executeWithHttpInfo() throws ApiException {
-            return getSenderIdWithHttpInfo();
+            return getSenderIdWithHttpInfo(appId);
         }
 
         /**
@@ -210,7 +222,7 @@ public class AuthenticationApi {
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<GetSenderIdResponse> _callback) throws ApiException {
-            return getSenderIdAsync(_callback);
+            return getSenderIdAsync(appId, _callback);
         }
     }
 
@@ -227,7 +239,7 @@ public class AuthenticationApi {
     public GetSenderIdRequestBuilder getSenderId() throws IllegalArgumentException {
         return new GetSenderIdRequestBuilder();
     }
-    private okhttp3.Call getSmsStatusCall(String messageId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSmsStatusCall(String appId, String messageId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -256,6 +268,10 @@ public class AuthenticationApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("message_id", messageId));
         }
 
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -271,37 +287,48 @@ public class AuthenticationApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] { "apikeyAuth" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSmsStatusValidateBeforeCall(String messageId, final ApiCallback _callback) throws ApiException {
-        return getSmsStatusCall(messageId, _callback);
+    private okhttp3.Call getSmsStatusValidateBeforeCall(String appId, String messageId, final ApiCallback _callback) throws ApiException {
+        return getSmsStatusCall(appId, messageId, _callback);
 
     }
 
 
-    private ApiResponse<GetSmsStatusResponse> getSmsStatusWithHttpInfo(String messageId) throws ApiException {
-        okhttp3.Call localVarCall = getSmsStatusValidateBeforeCall(messageId, null);
+    private ApiResponse<GetSmsStatusResponse> getSmsStatusWithHttpInfo(String appId, String messageId) throws ApiException {
+        okhttp3.Call localVarCall = getSmsStatusValidateBeforeCall(appId, messageId, null);
         Type localVarReturnType = new TypeToken<GetSmsStatusResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getSmsStatusAsync(String messageId, final ApiCallback<GetSmsStatusResponse> _callback) throws ApiException {
+    private okhttp3.Call getSmsStatusAsync(String appId, String messageId, final ApiCallback<GetSmsStatusResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getSmsStatusValidateBeforeCall(messageId, _callback);
+        okhttp3.Call localVarCall = getSmsStatusValidateBeforeCall(appId, messageId, _callback);
         Type localVarReturnType = new TypeToken<GetSmsStatusResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
     public class GetSmsStatusRequestBuilder {
+        private String appId;
         private String messageId;
 
         private GetSmsStatusRequestBuilder() {
         }
 
+        /**
+         * Set appId
+         * @param appId  (optional)
+         * @return GetSmsStatusRequestBuilder
+         */
+        public GetSmsStatusRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
         /**
          * Set messageId
          * @param messageId  (optional)
@@ -324,7 +351,7 @@ public class AuthenticationApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getSmsStatusCall(messageId, _callback);
+            return getSmsStatusCall(appId, messageId, _callback);
         }
 
 
@@ -339,8 +366,8 @@ public class AuthenticationApi {
          </table>
          */
         public GetSmsStatusResponse execute() throws ApiException {
-            ApiResponse<GetSmsStatusResponse> localVarResp = getSmsStatusWithHttpInfo(messageId);
-            return localVarResp.getData();
+            ApiResponse<GetSmsStatusResponse> localVarResp = getSmsStatusWithHttpInfo(appId, messageId);
+            return localVarResp.getResponseBody();
         }
 
         /**
@@ -354,7 +381,7 @@ public class AuthenticationApi {
          </table>
          */
         public ApiResponse<GetSmsStatusResponse> executeWithHttpInfo() throws ApiException {
-            return getSmsStatusWithHttpInfo(messageId);
+            return getSmsStatusWithHttpInfo(appId, messageId);
         }
 
         /**
@@ -369,7 +396,7 @@ public class AuthenticationApi {
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<GetSmsStatusResponse> _callback) throws ApiException {
-            return getSmsStatusAsync(messageId, _callback);
+            return getSmsStatusAsync(appId, messageId, _callback);
         }
     }
 
@@ -386,7 +413,7 @@ public class AuthenticationApi {
     public GetSmsStatusRequestBuilder getSmsStatus() throws IllegalArgumentException {
         return new GetSmsStatusRequestBuilder();
     }
-    private okhttp3.Call requestSenderIdCall(RequestSenderIdRequest requestSenderIdRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call requestSenderIdCall(RequestSenderIdRequest requestSenderIdRequest, String appId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -411,6 +438,10 @@ public class AuthenticationApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -427,26 +458,31 @@ public class AuthenticationApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call requestSenderIdValidateBeforeCall(RequestSenderIdRequest requestSenderIdRequest, final ApiCallback _callback) throws ApiException {
-        return requestSenderIdCall(requestSenderIdRequest, _callback);
+    private okhttp3.Call requestSenderIdValidateBeforeCall(RequestSenderIdRequest requestSenderIdRequest, String appId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'requestSenderIdRequest' is set
+        if (requestSenderIdRequest == null) {
+            throw new ApiException("Missing the required parameter 'requestSenderIdRequest' when calling requestSenderId(Async)");
+        }
+
+        return requestSenderIdCall(requestSenderIdRequest, appId, _callback);
 
     }
 
 
-    private ApiResponse<RequestSenderIdResponse> requestSenderIdWithHttpInfo(RequestSenderIdRequest requestSenderIdRequest) throws ApiException {
-        okhttp3.Call localVarCall = requestSenderIdValidateBeforeCall(requestSenderIdRequest, null);
+    private ApiResponse<RequestSenderIdResponse> requestSenderIdWithHttpInfo(RequestSenderIdRequest requestSenderIdRequest, String appId) throws ApiException {
+        okhttp3.Call localVarCall = requestSenderIdValidateBeforeCall(requestSenderIdRequest, appId, null);
         Type localVarReturnType = new TypeToken<RequestSenderIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call requestSenderIdAsync(RequestSenderIdRequest requestSenderIdRequest, final ApiCallback<RequestSenderIdResponse> _callback) throws ApiException {
+    private okhttp3.Call requestSenderIdAsync(RequestSenderIdRequest requestSenderIdRequest, String appId, final ApiCallback<RequestSenderIdResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = requestSenderIdValidateBeforeCall(requestSenderIdRequest, _callback);
+        okhttp3.Call localVarCall = requestSenderIdValidateBeforeCall(requestSenderIdRequest, appId, _callback);
         Type localVarReturnType = new TypeToken<RequestSenderIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -454,6 +490,7 @@ public class AuthenticationApi {
 
     public class RequestSenderIdRequestBuilder {
         private String senderId;
+        private String appId;
 
         private RequestSenderIdRequestBuilder() {
         }
@@ -465,6 +502,16 @@ public class AuthenticationApi {
          */
         public RequestSenderIdRequestBuilder senderId(String senderId) {
             this.senderId = senderId;
+            return this;
+        }
+        
+        /**
+         * Set appId
+         * @param appId  (optional)
+         * @return RequestSenderIdRequestBuilder
+         */
+        public RequestSenderIdRequestBuilder appId(String appId) {
+            this.appId = appId;
             return this;
         }
         
@@ -481,7 +528,7 @@ public class AuthenticationApi {
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
             RequestSenderIdRequest requestSenderIdRequest = buildBodyParams();
-            return requestSenderIdCall(requestSenderIdRequest, _callback);
+            return requestSenderIdCall(requestSenderIdRequest, appId, _callback);
         }
 
         private RequestSenderIdRequest buildBodyParams() {
@@ -502,8 +549,8 @@ public class AuthenticationApi {
          */
         public RequestSenderIdResponse execute() throws ApiException {
             RequestSenderIdRequest requestSenderIdRequest = buildBodyParams();
-            ApiResponse<RequestSenderIdResponse> localVarResp = requestSenderIdWithHttpInfo(requestSenderIdRequest);
-            return localVarResp.getData();
+            ApiResponse<RequestSenderIdResponse> localVarResp = requestSenderIdWithHttpInfo(requestSenderIdRequest, appId);
+            return localVarResp.getResponseBody();
         }
 
         /**
@@ -518,7 +565,7 @@ public class AuthenticationApi {
          */
         public ApiResponse<RequestSenderIdResponse> executeWithHttpInfo() throws ApiException {
             RequestSenderIdRequest requestSenderIdRequest = buildBodyParams();
-            return requestSenderIdWithHttpInfo(requestSenderIdRequest);
+            return requestSenderIdWithHttpInfo(requestSenderIdRequest, appId);
         }
 
         /**
@@ -534,13 +581,14 @@ public class AuthenticationApi {
          */
         public okhttp3.Call executeAsync(final ApiCallback<RequestSenderIdResponse> _callback) throws ApiException {
             RequestSenderIdRequest requestSenderIdRequest = buildBodyParams();
-            return requestSenderIdAsync(requestSenderIdRequest, _callback);
+            return requestSenderIdAsync(requestSenderIdRequest, appId, _callback);
         }
     }
 
     /**
      * Messaging - Request Sender ID
      * 
+     * @param requestSenderIdRequest  (required)
      * @return RequestSenderIdRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -551,7 +599,7 @@ public class AuthenticationApi {
     public RequestSenderIdRequestBuilder requestSenderId() throws IllegalArgumentException {
         return new RequestSenderIdRequestBuilder();
     }
-    private okhttp3.Call sendOtpCall(SendOtpRequest sendOtpRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call sendOtpCall(AuthenticationSendOtpRequest authenticationSendOtpRequest, String appId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -565,16 +613,20 @@ public class AuthenticationApi {
             basePath = null;
         }
 
-        Object localVarPostBody = sendOtpRequest;
+        Object localVarPostBody = authenticationSendOtpRequest;
 
         // create path and map variables
-        String localVarPath = "/v1/messaging/otp";
+        String localVarPath = "/api/v1/messaging/otp";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -592,27 +644,32 @@ public class AuthenticationApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] { "apikeyAuth" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendOtpValidateBeforeCall(SendOtpRequest sendOtpRequest, final ApiCallback _callback) throws ApiException {
-        return sendOtpCall(sendOtpRequest, _callback);
+    private okhttp3.Call sendOtpValidateBeforeCall(AuthenticationSendOtpRequest authenticationSendOtpRequest, String appId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'authenticationSendOtpRequest' is set
+        if (authenticationSendOtpRequest == null) {
+            throw new ApiException("Missing the required parameter 'authenticationSendOtpRequest' when calling sendOtp(Async)");
+        }
+
+        return sendOtpCall(authenticationSendOtpRequest, appId, _callback);
 
     }
 
 
-    private ApiResponse<SendOtpResponse> sendOtpWithHttpInfo(SendOtpRequest sendOtpRequest) throws ApiException {
-        okhttp3.Call localVarCall = sendOtpValidateBeforeCall(sendOtpRequest, null);
-        Type localVarReturnType = new TypeToken<SendOtpResponse>(){}.getType();
+    private ApiResponse<AuthenticationSendOtpResponse> sendOtpWithHttpInfo(AuthenticationSendOtpRequest authenticationSendOtpRequest, String appId) throws ApiException {
+        okhttp3.Call localVarCall = sendOtpValidateBeforeCall(authenticationSendOtpRequest, appId, null);
+        Type localVarReturnType = new TypeToken<AuthenticationSendOtpResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call sendOtpAsync(SendOtpRequest sendOtpRequest, final ApiCallback<SendOtpResponse> _callback) throws ApiException {
+    private okhttp3.Call sendOtpAsync(AuthenticationSendOtpRequest authenticationSendOtpRequest, String appId, final ApiCallback<AuthenticationSendOtpResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = sendOtpValidateBeforeCall(sendOtpRequest, _callback);
-        Type localVarReturnType = new TypeToken<SendOtpResponse>(){}.getType();
+        okhttp3.Call localVarCall = sendOtpValidateBeforeCall(authenticationSendOtpRequest, appId, _callback);
+        Type localVarReturnType = new TypeToken<AuthenticationSendOtpResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -623,6 +680,7 @@ public class AuthenticationApi {
         private String channel;
         private String senderId;
         private Boolean priority;
+        private String appId;
 
         private SendOtpRequestBuilder() {
         }
@@ -678,6 +736,16 @@ public class AuthenticationApi {
         }
         
         /**
+         * Set appId
+         * @param appId  (optional)
+         * @return SendOtpRequestBuilder
+         */
+        public SendOtpRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
+        /**
          * Build call for sendOtp
          * @param _callback ApiCallback API callback
          * @return Call to execute
@@ -689,23 +757,23 @@ public class AuthenticationApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            SendOtpRequest sendOtpRequest = buildBodyParams();
-            return sendOtpCall(sendOtpRequest, _callback);
+            AuthenticationSendOtpRequest authenticationSendOtpRequest = buildBodyParams();
+            return sendOtpCall(authenticationSendOtpRequest, appId, _callback);
         }
 
-        private SendOtpRequest buildBodyParams() {
-            SendOtpRequest sendOtpRequest = new SendOtpRequest();
-            sendOtpRequest.destination(this.destination);
-            sendOtpRequest.length(this.length);
-            sendOtpRequest.channel(this.channel);
-            sendOtpRequest.senderId(this.senderId);
-            sendOtpRequest.priority(this.priority);
-            return sendOtpRequest;
+        private AuthenticationSendOtpRequest buildBodyParams() {
+            AuthenticationSendOtpRequest authenticationSendOtpRequest = new AuthenticationSendOtpRequest();
+            authenticationSendOtpRequest.destination(this.destination);
+            authenticationSendOtpRequest.length(this.length);
+            authenticationSendOtpRequest.channel(this.channel);
+            authenticationSendOtpRequest.senderId(this.senderId);
+            authenticationSendOtpRequest.priority(this.priority);
+            return authenticationSendOtpRequest;
         }
 
         /**
          * Execute sendOtp request
-         * @return SendOtpResponse
+         * @return AuthenticationSendOtpResponse
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -713,15 +781,15 @@ public class AuthenticationApi {
             <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
          </table>
          */
-        public SendOtpResponse execute() throws ApiException {
-            SendOtpRequest sendOtpRequest = buildBodyParams();
-            ApiResponse<SendOtpResponse> localVarResp = sendOtpWithHttpInfo(sendOtpRequest);
-            return localVarResp.getData();
+        public AuthenticationSendOtpResponse execute() throws ApiException {
+            AuthenticationSendOtpRequest authenticationSendOtpRequest = buildBodyParams();
+            ApiResponse<AuthenticationSendOtpResponse> localVarResp = sendOtpWithHttpInfo(authenticationSendOtpRequest, appId);
+            return localVarResp.getResponseBody();
         }
 
         /**
          * Execute sendOtp request with HTTP info returned
-         * @return ApiResponse&lt;SendOtpResponse&gt;
+         * @return ApiResponse&lt;AuthenticationSendOtpResponse&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -729,9 +797,9 @@ public class AuthenticationApi {
             <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
          </table>
          */
-        public ApiResponse<SendOtpResponse> executeWithHttpInfo() throws ApiException {
-            SendOtpRequest sendOtpRequest = buildBodyParams();
-            return sendOtpWithHttpInfo(sendOtpRequest);
+        public ApiResponse<AuthenticationSendOtpResponse> executeWithHttpInfo() throws ApiException {
+            AuthenticationSendOtpRequest authenticationSendOtpRequest = buildBodyParams();
+            return sendOtpWithHttpInfo(authenticationSendOtpRequest, appId);
         }
 
         /**
@@ -745,15 +813,16 @@ public class AuthenticationApi {
             <tr><td> 200 </td><td> OK </td><td>  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<SendOtpResponse> _callback) throws ApiException {
-            SendOtpRequest sendOtpRequest = buildBodyParams();
-            return sendOtpAsync(sendOtpRequest, _callback);
+        public okhttp3.Call executeAsync(final ApiCallback<AuthenticationSendOtpResponse> _callback) throws ApiException {
+            AuthenticationSendOtpRequest authenticationSendOtpRequest = buildBodyParams();
+            return sendOtpAsync(authenticationSendOtpRequest, appId, _callback);
         }
     }
 
     /**
      * Messaging - Send OTP
      * 
+     * @param authenticationSendOtpRequest  (required)
      * @return SendOtpRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -764,7 +833,7 @@ public class AuthenticationApi {
     public SendOtpRequestBuilder sendOtp() throws IllegalArgumentException {
         return new SendOtpRequestBuilder();
     }
-    private okhttp3.Call sendSmsCall(SendSmsRequest sendSmsRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call sendSmsCall(SendSmsRequest sendSmsRequest, String appId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -789,6 +858,10 @@ public class AuthenticationApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -805,26 +878,31 @@ public class AuthenticationApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] { "apikeyAuth" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendSmsValidateBeforeCall(SendSmsRequest sendSmsRequest, final ApiCallback _callback) throws ApiException {
-        return sendSmsCall(sendSmsRequest, _callback);
+    private okhttp3.Call sendSmsValidateBeforeCall(SendSmsRequest sendSmsRequest, String appId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'sendSmsRequest' is set
+        if (sendSmsRequest == null) {
+            throw new ApiException("Missing the required parameter 'sendSmsRequest' when calling sendSms(Async)");
+        }
+
+        return sendSmsCall(sendSmsRequest, appId, _callback);
 
     }
 
 
-    private ApiResponse<SendSmsResponse> sendSmsWithHttpInfo(SendSmsRequest sendSmsRequest) throws ApiException {
-        okhttp3.Call localVarCall = sendSmsValidateBeforeCall(sendSmsRequest, null);
+    private ApiResponse<SendSmsResponse> sendSmsWithHttpInfo(SendSmsRequest sendSmsRequest, String appId) throws ApiException {
+        okhttp3.Call localVarCall = sendSmsValidateBeforeCall(sendSmsRequest, appId, null);
         Type localVarReturnType = new TypeToken<SendSmsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call sendSmsAsync(SendSmsRequest sendSmsRequest, final ApiCallback<SendSmsResponse> _callback) throws ApiException {
+    private okhttp3.Call sendSmsAsync(SendSmsRequest sendSmsRequest, String appId, final ApiCallback<SendSmsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = sendSmsValidateBeforeCall(sendSmsRequest, _callback);
+        okhttp3.Call localVarCall = sendSmsValidateBeforeCall(sendSmsRequest, appId, _callback);
         Type localVarReturnType = new TypeToken<SendSmsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -835,6 +913,7 @@ public class AuthenticationApi {
         private String message;
         private String channel;
         private String senderId;
+        private String appId;
 
         private SendSmsRequestBuilder() {
         }
@@ -880,6 +959,16 @@ public class AuthenticationApi {
         }
         
         /**
+         * Set appId
+         * @param appId  (optional)
+         * @return SendSmsRequestBuilder
+         */
+        public SendSmsRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
+        /**
          * Build call for sendSms
          * @param _callback ApiCallback API callback
          * @return Call to execute
@@ -892,7 +981,7 @@ public class AuthenticationApi {
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
             SendSmsRequest sendSmsRequest = buildBodyParams();
-            return sendSmsCall(sendSmsRequest, _callback);
+            return sendSmsCall(sendSmsRequest, appId, _callback);
         }
 
         private SendSmsRequest buildBodyParams() {
@@ -916,8 +1005,8 @@ public class AuthenticationApi {
          */
         public SendSmsResponse execute() throws ApiException {
             SendSmsRequest sendSmsRequest = buildBodyParams();
-            ApiResponse<SendSmsResponse> localVarResp = sendSmsWithHttpInfo(sendSmsRequest);
-            return localVarResp.getData();
+            ApiResponse<SendSmsResponse> localVarResp = sendSmsWithHttpInfo(sendSmsRequest, appId);
+            return localVarResp.getResponseBody();
         }
 
         /**
@@ -932,7 +1021,7 @@ public class AuthenticationApi {
          */
         public ApiResponse<SendSmsResponse> executeWithHttpInfo() throws ApiException {
             SendSmsRequest sendSmsRequest = buildBodyParams();
-            return sendSmsWithHttpInfo(sendSmsRequest);
+            return sendSmsWithHttpInfo(sendSmsRequest, appId);
         }
 
         /**
@@ -948,13 +1037,14 @@ public class AuthenticationApi {
          */
         public okhttp3.Call executeAsync(final ApiCallback<SendSmsResponse> _callback) throws ApiException {
             SendSmsRequest sendSmsRequest = buildBodyParams();
-            return sendSmsAsync(sendSmsRequest, _callback);
+            return sendSmsAsync(sendSmsRequest, appId, _callback);
         }
     }
 
     /**
      * Messaging - Send SMS
      * 
+     * @param sendSmsRequest  (required)
      * @return SendSmsRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -965,7 +1055,7 @@ public class AuthenticationApi {
     public SendSmsRequestBuilder sendSms() throws IllegalArgumentException {
         return new SendSmsRequestBuilder();
     }
-    private okhttp3.Call validateOtpCall(String referenceId, Integer code, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call validateOtpCall(String appId, String referenceId, Integer code, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -982,7 +1072,7 @@ public class AuthenticationApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v1/messaging/otp/validate";
+        String localVarPath = "/api/v1/messaging/otp/validate";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -996,6 +1086,10 @@ public class AuthenticationApi {
 
         if (code != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("code", code));
+        }
+
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
         }
 
         final String[] localVarAccepts = {
@@ -1013,38 +1107,49 @@ public class AuthenticationApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] { "apikeyAuth" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call validateOtpValidateBeforeCall(String referenceId, Integer code, final ApiCallback _callback) throws ApiException {
-        return validateOtpCall(referenceId, code, _callback);
+    private okhttp3.Call validateOtpValidateBeforeCall(String appId, String referenceId, Integer code, final ApiCallback _callback) throws ApiException {
+        return validateOtpCall(appId, referenceId, code, _callback);
 
     }
 
 
-    private ApiResponse<ValidateOtpResponse> validateOtpWithHttpInfo(String referenceId, Integer code) throws ApiException {
-        okhttp3.Call localVarCall = validateOtpValidateBeforeCall(referenceId, code, null);
-        Type localVarReturnType = new TypeToken<ValidateOtpResponse>(){}.getType();
+    private ApiResponse<AuthenticationValidateOtpResponse> validateOtpWithHttpInfo(String appId, String referenceId, Integer code) throws ApiException {
+        okhttp3.Call localVarCall = validateOtpValidateBeforeCall(appId, referenceId, code, null);
+        Type localVarReturnType = new TypeToken<AuthenticationValidateOtpResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call validateOtpAsync(String referenceId, Integer code, final ApiCallback<ValidateOtpResponse> _callback) throws ApiException {
+    private okhttp3.Call validateOtpAsync(String appId, String referenceId, Integer code, final ApiCallback<AuthenticationValidateOtpResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = validateOtpValidateBeforeCall(referenceId, code, _callback);
-        Type localVarReturnType = new TypeToken<ValidateOtpResponse>(){}.getType();
+        okhttp3.Call localVarCall = validateOtpValidateBeforeCall(appId, referenceId, code, _callback);
+        Type localVarReturnType = new TypeToken<AuthenticationValidateOtpResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
     public class ValidateOtpRequestBuilder {
+        private String appId;
         private String referenceId;
         private Integer code;
 
         private ValidateOtpRequestBuilder() {
         }
 
+        /**
+         * Set appId
+         * @param appId  (optional)
+         * @return ValidateOtpRequestBuilder
+         */
+        public ValidateOtpRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
         /**
          * Set referenceId
          * @param referenceId  (optional)
@@ -1077,13 +1182,13 @@ public class AuthenticationApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return validateOtpCall(referenceId, code, _callback);
+            return validateOtpCall(appId, referenceId, code, _callback);
         }
 
 
         /**
          * Execute validateOtp request
-         * @return ValidateOtpResponse
+         * @return AuthenticationValidateOtpResponse
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -1091,14 +1196,14 @@ public class AuthenticationApi {
             <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
          </table>
          */
-        public ValidateOtpResponse execute() throws ApiException {
-            ApiResponse<ValidateOtpResponse> localVarResp = validateOtpWithHttpInfo(referenceId, code);
-            return localVarResp.getData();
+        public AuthenticationValidateOtpResponse execute() throws ApiException {
+            ApiResponse<AuthenticationValidateOtpResponse> localVarResp = validateOtpWithHttpInfo(appId, referenceId, code);
+            return localVarResp.getResponseBody();
         }
 
         /**
          * Execute validateOtp request with HTTP info returned
-         * @return ApiResponse&lt;ValidateOtpResponse&gt;
+         * @return ApiResponse&lt;AuthenticationValidateOtpResponse&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -1106,8 +1211,8 @@ public class AuthenticationApi {
             <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
          </table>
          */
-        public ApiResponse<ValidateOtpResponse> executeWithHttpInfo() throws ApiException {
-            return validateOtpWithHttpInfo(referenceId, code);
+        public ApiResponse<AuthenticationValidateOtpResponse> executeWithHttpInfo() throws ApiException {
+            return validateOtpWithHttpInfo(appId, referenceId, code);
         }
 
         /**
@@ -1121,8 +1226,8 @@ public class AuthenticationApi {
             <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<ValidateOtpResponse> _callback) throws ApiException {
-            return validateOtpAsync(referenceId, code, _callback);
+        public okhttp3.Call executeAsync(final ApiCallback<AuthenticationValidateOtpResponse> _callback) throws ApiException {
+            return validateOtpAsync(appId, referenceId, code, _callback);
         }
     }
 

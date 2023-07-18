@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -26,10 +26,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.konfigthis.dojah.client.model.GetAdvancedCacResponse;
-import com.konfigthis.dojah.client.model.GetBasicCacResponse;
-import com.konfigthis.dojah.client.model.GetCacResponse;
-import com.konfigthis.dojah.client.model.GetTinResponse;
+import com.konfigthis.dojah.client.model.KybGetCacResponse;
+import com.konfigthis.dojah.client.model.KybGetTinResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -48,9 +46,6 @@ public class KybApi {
     }
 
     public KybApi(ApiClient apiClient) throws IllegalArgumentException {
-        if (apiClient.getApikeyAuth() == null) {
-            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
-        }
         this.localVarApiClient = apiClient;
     }
 
@@ -78,7 +73,7 @@ public class KybApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call getAdvancedCacCall(Integer rc, String type, String propertyClass, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call businessDetailCall(String appId, String internationalNumber, String countryCode, Boolean full, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -95,7 +90,7 @@ public class KybApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v1/kyc/cac/advance";
+        String localVarPath = "/api/v1/kyb/business/detail";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -103,16 +98,20 @@ public class KybApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (rc != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("rc", rc));
+        if (internationalNumber != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("international_number", internationalNumber));
         }
 
-        if (type != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("type", type));
+        if (countryCode != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("country_code", countryCode));
         }
 
-        if (propertyClass != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("class", propertyClass));
+        if (full != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("full", full));
+        }
+
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
         }
 
         final String[] localVarAccepts = {
@@ -130,71 +129,82 @@ public class KybApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAdvancedCacValidateBeforeCall(Integer rc, String type, String propertyClass, final ApiCallback _callback) throws ApiException {
-        return getAdvancedCacCall(rc, type, propertyClass, _callback);
+    private okhttp3.Call businessDetailValidateBeforeCall(String appId, String internationalNumber, String countryCode, Boolean full, final ApiCallback _callback) throws ApiException {
+        return businessDetailCall(appId, internationalNumber, countryCode, full, _callback);
 
     }
 
 
-    private ApiResponse<GetAdvancedCacResponse> getAdvancedCacWithHttpInfo(Integer rc, String type, String propertyClass) throws ApiException {
-        okhttp3.Call localVarCall = getAdvancedCacValidateBeforeCall(rc, type, propertyClass, null);
-        Type localVarReturnType = new TypeToken<GetAdvancedCacResponse>(){}.getType();
+    private ApiResponse<Object> businessDetailWithHttpInfo(String appId, String internationalNumber, String countryCode, Boolean full) throws ApiException {
+        okhttp3.Call localVarCall = businessDetailValidateBeforeCall(appId, internationalNumber, countryCode, full, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getAdvancedCacAsync(Integer rc, String type, String propertyClass, final ApiCallback<GetAdvancedCacResponse> _callback) throws ApiException {
+    private okhttp3.Call businessDetailAsync(String appId, String internationalNumber, String countryCode, Boolean full, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getAdvancedCacValidateBeforeCall(rc, type, propertyClass, _callback);
-        Type localVarReturnType = new TypeToken<GetAdvancedCacResponse>(){}.getType();
+        okhttp3.Call localVarCall = businessDetailValidateBeforeCall(appId, internationalNumber, countryCode, full, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
-    public class GetAdvancedCacRequestBuilder {
-        private Integer rc;
-        private String type;
-        private String propertyClass;
+    public class BusinessDetailRequestBuilder {
+        private String appId;
+        private String internationalNumber;
+        private String countryCode;
+        private Boolean full;
 
-        private GetAdvancedCacRequestBuilder() {
+        private BusinessDetailRequestBuilder() {
         }
 
         /**
-         * Set rc
-         * @param rc  (optional)
-         * @return GetAdvancedCacRequestBuilder
+         * Set appId
+         * @param appId  (optional)
+         * @return BusinessDetailRequestBuilder
          */
-        public GetAdvancedCacRequestBuilder rc(Integer rc) {
-            this.rc = rc;
+        public BusinessDetailRequestBuilder appId(String appId) {
+            this.appId = appId;
             return this;
         }
         
         /**
-         * Set type
-         * @param type  (optional)
-         * @return GetAdvancedCacRequestBuilder
+         * Set internationalNumber
+         * @param internationalNumber  (optional)
+         * @return BusinessDetailRequestBuilder
          */
-        public GetAdvancedCacRequestBuilder type(String type) {
-            this.type = type;
+        public BusinessDetailRequestBuilder internationalNumber(String internationalNumber) {
+            this.internationalNumber = internationalNumber;
             return this;
         }
         
         /**
-         * Set propertyClass
-         * @param propertyClass  (optional)
-         * @return GetAdvancedCacRequestBuilder
+         * Set countryCode
+         * @param countryCode  (optional)
+         * @return BusinessDetailRequestBuilder
          */
-        public GetAdvancedCacRequestBuilder propertyClass(String propertyClass) {
-            this.propertyClass = propertyClass;
+        public BusinessDetailRequestBuilder countryCode(String countryCode) {
+            this.countryCode = countryCode;
             return this;
         }
         
         /**
-         * Build call for getAdvancedCac
+         * Set full
+         * @param full  (optional)
+         * @return BusinessDetailRequestBuilder
+         */
+        public BusinessDetailRequestBuilder full(Boolean full) {
+            this.full = full;
+            return this;
+        }
+        
+        /**
+         * Build call for businessDetail
          * @param _callback ApiCallback API callback
          * @return Call to execute
          * @throws ApiException If fail to serialize the request body object
@@ -205,13 +215,13 @@ public class KybApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getAdvancedCacCall(rc, type, propertyClass, _callback);
+            return businessDetailCall(appId, internationalNumber, countryCode, full, _callback);
         }
 
 
         /**
-         * Execute getAdvancedCac request
-         * @return GetAdvancedCacResponse
+         * Execute businessDetail request
+         * @return Object
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -219,14 +229,14 @@ public class KybApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public GetAdvancedCacResponse execute() throws ApiException {
-            ApiResponse<GetAdvancedCacResponse> localVarResp = getAdvancedCacWithHttpInfo(rc, type, propertyClass);
-            return localVarResp.getData();
+        public Object execute() throws ApiException {
+            ApiResponse<Object> localVarResp = businessDetailWithHttpInfo(appId, internationalNumber, countryCode, full);
+            return localVarResp.getResponseBody();
         }
 
         /**
-         * Execute getAdvancedCac request with HTTP info returned
-         * @return ApiResponse&lt;GetAdvancedCacResponse&gt;
+         * Execute businessDetail request with HTTP info returned
+         * @return ApiResponse&lt;Object&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -234,12 +244,12 @@ public class KybApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<GetAdvancedCacResponse> executeWithHttpInfo() throws ApiException {
-            return getAdvancedCacWithHttpInfo(rc, type, propertyClass);
+        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+            return businessDetailWithHttpInfo(appId, internationalNumber, countryCode, full);
         }
 
         /**
-         * Execute getAdvancedCac request (asynchronously)
+         * Execute businessDetail request (asynchronously)
          * @param _callback The callback to be executed when the API call finishes
          * @return The request call
          * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -249,25 +259,25 @@ public class KybApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<GetAdvancedCacResponse> _callback) throws ApiException {
-            return getAdvancedCacAsync(rc, type, propertyClass, _callback);
+        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
+            return businessDetailAsync(appId, internationalNumber, countryCode, full, _callback);
         }
     }
 
     /**
-     * KYC - Get CAC Advanced
+     * Business Detail
      * 
-     * @return GetAdvancedCacRequestBuilder
+     * @return BusinessDetailRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public GetAdvancedCacRequestBuilder getAdvancedCac() throws IllegalArgumentException {
-        return new GetAdvancedCacRequestBuilder();
+    public BusinessDetailRequestBuilder businessDetail() throws IllegalArgumentException {
+        return new BusinessDetailRequestBuilder();
     }
-    private okhttp3.Call getBasicCacCall(Integer rc, String type, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call businessSearchCall(String appId, String countryCode, Integer company, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -284,7 +294,7 @@ public class KybApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v1/kyc/cac/basic";
+        String localVarPath = "/api/v1/kyb/business/search";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -292,12 +302,16 @@ public class KybApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (rc != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("rc", rc));
+        if (countryCode != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("country_code", countryCode));
         }
 
-        if (type != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("type", type));
+        if (company != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("company", company));
+        }
+
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
         }
 
         final String[] localVarAccepts = {
@@ -315,60 +329,71 @@ public class KybApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getBasicCacValidateBeforeCall(Integer rc, String type, final ApiCallback _callback) throws ApiException {
-        return getBasicCacCall(rc, type, _callback);
+    private okhttp3.Call businessSearchValidateBeforeCall(String appId, String countryCode, Integer company, final ApiCallback _callback) throws ApiException {
+        return businessSearchCall(appId, countryCode, company, _callback);
 
     }
 
 
-    private ApiResponse<GetBasicCacResponse> getBasicCacWithHttpInfo(Integer rc, String type) throws ApiException {
-        okhttp3.Call localVarCall = getBasicCacValidateBeforeCall(rc, type, null);
-        Type localVarReturnType = new TypeToken<GetBasicCacResponse>(){}.getType();
+    private ApiResponse<Object> businessSearchWithHttpInfo(String appId, String countryCode, Integer company) throws ApiException {
+        okhttp3.Call localVarCall = businessSearchValidateBeforeCall(appId, countryCode, company, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getBasicCacAsync(Integer rc, String type, final ApiCallback<GetBasicCacResponse> _callback) throws ApiException {
+    private okhttp3.Call businessSearchAsync(String appId, String countryCode, Integer company, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getBasicCacValidateBeforeCall(rc, type, _callback);
-        Type localVarReturnType = new TypeToken<GetBasicCacResponse>(){}.getType();
+        okhttp3.Call localVarCall = businessSearchValidateBeforeCall(appId, countryCode, company, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
-    public class GetBasicCacRequestBuilder {
-        private Integer rc;
-        private String type;
+    public class BusinessSearchRequestBuilder {
+        private String appId;
+        private String countryCode;
+        private Integer company;
 
-        private GetBasicCacRequestBuilder() {
+        private BusinessSearchRequestBuilder() {
         }
 
         /**
-         * Set rc
-         * @param rc  (optional)
-         * @return GetBasicCacRequestBuilder
+         * Set appId
+         * @param appId  (optional)
+         * @return BusinessSearchRequestBuilder
          */
-        public GetBasicCacRequestBuilder rc(Integer rc) {
-            this.rc = rc;
+        public BusinessSearchRequestBuilder appId(String appId) {
+            this.appId = appId;
             return this;
         }
         
         /**
-         * Set type
-         * @param type  (optional)
-         * @return GetBasicCacRequestBuilder
+         * Set countryCode
+         * @param countryCode  (optional)
+         * @return BusinessSearchRequestBuilder
          */
-        public GetBasicCacRequestBuilder type(String type) {
-            this.type = type;
+        public BusinessSearchRequestBuilder countryCode(String countryCode) {
+            this.countryCode = countryCode;
             return this;
         }
         
         /**
-         * Build call for getBasicCac
+         * Set company
+         * @param company  (optional)
+         * @return BusinessSearchRequestBuilder
+         */
+        public BusinessSearchRequestBuilder company(Integer company) {
+            this.company = company;
+            return this;
+        }
+        
+        /**
+         * Build call for businessSearch
          * @param _callback ApiCallback API callback
          * @return Call to execute
          * @throws ApiException If fail to serialize the request body object
@@ -379,13 +404,13 @@ public class KybApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getBasicCacCall(rc, type, _callback);
+            return businessSearchCall(appId, countryCode, company, _callback);
         }
 
 
         /**
-         * Execute getBasicCac request
-         * @return GetBasicCacResponse
+         * Execute businessSearch request
+         * @return Object
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -393,14 +418,14 @@ public class KybApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public GetBasicCacResponse execute() throws ApiException {
-            ApiResponse<GetBasicCacResponse> localVarResp = getBasicCacWithHttpInfo(rc, type);
-            return localVarResp.getData();
+        public Object execute() throws ApiException {
+            ApiResponse<Object> localVarResp = businessSearchWithHttpInfo(appId, countryCode, company);
+            return localVarResp.getResponseBody();
         }
 
         /**
-         * Execute getBasicCac request with HTTP info returned
-         * @return ApiResponse&lt;GetBasicCacResponse&gt;
+         * Execute businessSearch request with HTTP info returned
+         * @return ApiResponse&lt;Object&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -408,12 +433,12 @@ public class KybApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<GetBasicCacResponse> executeWithHttpInfo() throws ApiException {
-            return getBasicCacWithHttpInfo(rc, type);
+        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+            return businessSearchWithHttpInfo(appId, countryCode, company);
         }
 
         /**
-         * Execute getBasicCac request (asynchronously)
+         * Execute businessSearch request (asynchronously)
          * @param _callback The callback to be executed when the API call finishes
          * @return The request call
          * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -423,25 +448,25 @@ public class KybApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<GetBasicCacResponse> _callback) throws ApiException {
-            return getBasicCacAsync(rc, type, _callback);
+        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
+            return businessSearchAsync(appId, countryCode, company, _callback);
         }
     }
 
     /**
-     * KYB - Get CAC 2
+     * Business Search
      * 
-     * @return GetBasicCacRequestBuilder
+     * @return BusinessSearchRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public GetBasicCacRequestBuilder getBasicCac() throws IllegalArgumentException {
-        return new GetBasicCacRequestBuilder();
+    public BusinessSearchRequestBuilder businessSearch() throws IllegalArgumentException {
+        return new BusinessSearchRequestBuilder();
     }
-    private okhttp3.Call getCacCall(Integer rcNumber, String companyName, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCacCall(String appId, Integer rcNumber, String companyName, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -458,7 +483,7 @@ public class KybApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v1/kyc/cac";
+        String localVarPath = "/api/v1/kyc/cac";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -474,6 +499,10 @@ public class KybApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("company_name", companyName));
         }
 
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -489,38 +518,49 @@ public class KybApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] { "apikeyAuth" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCacValidateBeforeCall(Integer rcNumber, String companyName, final ApiCallback _callback) throws ApiException {
-        return getCacCall(rcNumber, companyName, _callback);
+    private okhttp3.Call getCacValidateBeforeCall(String appId, Integer rcNumber, String companyName, final ApiCallback _callback) throws ApiException {
+        return getCacCall(appId, rcNumber, companyName, _callback);
 
     }
 
 
-    private ApiResponse<GetCacResponse> getCacWithHttpInfo(Integer rcNumber, String companyName) throws ApiException {
-        okhttp3.Call localVarCall = getCacValidateBeforeCall(rcNumber, companyName, null);
-        Type localVarReturnType = new TypeToken<GetCacResponse>(){}.getType();
+    private ApiResponse<KybGetCacResponse> getCacWithHttpInfo(String appId, Integer rcNumber, String companyName) throws ApiException {
+        okhttp3.Call localVarCall = getCacValidateBeforeCall(appId, rcNumber, companyName, null);
+        Type localVarReturnType = new TypeToken<KybGetCacResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getCacAsync(Integer rcNumber, String companyName, final ApiCallback<GetCacResponse> _callback) throws ApiException {
+    private okhttp3.Call getCacAsync(String appId, Integer rcNumber, String companyName, final ApiCallback<KybGetCacResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getCacValidateBeforeCall(rcNumber, companyName, _callback);
-        Type localVarReturnType = new TypeToken<GetCacResponse>(){}.getType();
+        okhttp3.Call localVarCall = getCacValidateBeforeCall(appId, rcNumber, companyName, _callback);
+        Type localVarReturnType = new TypeToken<KybGetCacResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
     public class GetCacRequestBuilder {
+        private String appId;
         private Integer rcNumber;
         private String companyName;
 
         private GetCacRequestBuilder() {
         }
 
+        /**
+         * Set appId
+         * @param appId  (optional)
+         * @return GetCacRequestBuilder
+         */
+        public GetCacRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
         /**
          * Set rcNumber
          * @param rcNumber  (optional)
@@ -553,13 +593,13 @@ public class KybApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getCacCall(rcNumber, companyName, _callback);
+            return getCacCall(appId, rcNumber, companyName, _callback);
         }
 
 
         /**
          * Execute getCac request
-         * @return GetCacResponse
+         * @return KybGetCacResponse
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -567,14 +607,14 @@ public class KybApi {
             <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
          </table>
          */
-        public GetCacResponse execute() throws ApiException {
-            ApiResponse<GetCacResponse> localVarResp = getCacWithHttpInfo(rcNumber, companyName);
-            return localVarResp.getData();
+        public KybGetCacResponse execute() throws ApiException {
+            ApiResponse<KybGetCacResponse> localVarResp = getCacWithHttpInfo(appId, rcNumber, companyName);
+            return localVarResp.getResponseBody();
         }
 
         /**
          * Execute getCac request with HTTP info returned
-         * @return ApiResponse&lt;GetCacResponse&gt;
+         * @return ApiResponse&lt;KybGetCacResponse&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -582,8 +622,8 @@ public class KybApi {
             <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
          </table>
          */
-        public ApiResponse<GetCacResponse> executeWithHttpInfo() throws ApiException {
-            return getCacWithHttpInfo(rcNumber, companyName);
+        public ApiResponse<KybGetCacResponse> executeWithHttpInfo() throws ApiException {
+            return getCacWithHttpInfo(appId, rcNumber, companyName);
         }
 
         /**
@@ -597,8 +637,8 @@ public class KybApi {
             <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<GetCacResponse> _callback) throws ApiException {
-            return getCacAsync(rcNumber, companyName, _callback);
+        public okhttp3.Call executeAsync(final ApiCallback<KybGetCacResponse> _callback) throws ApiException {
+            return getCacAsync(appId, rcNumber, companyName, _callback);
         }
     }
 
@@ -615,7 +655,7 @@ public class KybApi {
     public GetCacRequestBuilder getCac() throws IllegalArgumentException {
         return new GetCacRequestBuilder();
     }
-    private okhttp3.Call getTinCall(String tin, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTinCall(String appId, String tin, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -632,7 +672,7 @@ public class KybApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v1/kyc/tin";
+        String localVarPath = "/api/v1/kyc/tin";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -642,6 +682,10 @@ public class KybApi {
 
         if (tin != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("tin", tin));
+        }
+
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
         }
 
         final String[] localVarAccepts = {
@@ -659,37 +703,48 @@ public class KybApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] { "apikeyAuth" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTinValidateBeforeCall(String tin, final ApiCallback _callback) throws ApiException {
-        return getTinCall(tin, _callback);
+    private okhttp3.Call getTinValidateBeforeCall(String appId, String tin, final ApiCallback _callback) throws ApiException {
+        return getTinCall(appId, tin, _callback);
 
     }
 
 
-    private ApiResponse<GetTinResponse> getTinWithHttpInfo(String tin) throws ApiException {
-        okhttp3.Call localVarCall = getTinValidateBeforeCall(tin, null);
-        Type localVarReturnType = new TypeToken<GetTinResponse>(){}.getType();
+    private ApiResponse<KybGetTinResponse> getTinWithHttpInfo(String appId, String tin) throws ApiException {
+        okhttp3.Call localVarCall = getTinValidateBeforeCall(appId, tin, null);
+        Type localVarReturnType = new TypeToken<KybGetTinResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getTinAsync(String tin, final ApiCallback<GetTinResponse> _callback) throws ApiException {
+    private okhttp3.Call getTinAsync(String appId, String tin, final ApiCallback<KybGetTinResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getTinValidateBeforeCall(tin, _callback);
-        Type localVarReturnType = new TypeToken<GetTinResponse>(){}.getType();
+        okhttp3.Call localVarCall = getTinValidateBeforeCall(appId, tin, _callback);
+        Type localVarReturnType = new TypeToken<KybGetTinResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
     public class GetTinRequestBuilder {
+        private String appId;
         private String tin;
 
         private GetTinRequestBuilder() {
         }
 
+        /**
+         * Set appId
+         * @param appId  (optional)
+         * @return GetTinRequestBuilder
+         */
+        public GetTinRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
         /**
          * Set tin
          * @param tin  (optional)
@@ -712,13 +767,13 @@ public class KybApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getTinCall(tin, _callback);
+            return getTinCall(appId, tin, _callback);
         }
 
 
         /**
          * Execute getTin request
-         * @return GetTinResponse
+         * @return KybGetTinResponse
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -726,14 +781,14 @@ public class KybApi {
             <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
          </table>
          */
-        public GetTinResponse execute() throws ApiException {
-            ApiResponse<GetTinResponse> localVarResp = getTinWithHttpInfo(tin);
-            return localVarResp.getData();
+        public KybGetTinResponse execute() throws ApiException {
+            ApiResponse<KybGetTinResponse> localVarResp = getTinWithHttpInfo(appId, tin);
+            return localVarResp.getResponseBody();
         }
 
         /**
          * Execute getTin request with HTTP info returned
-         * @return ApiResponse&lt;GetTinResponse&gt;
+         * @return ApiResponse&lt;KybGetTinResponse&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -741,8 +796,8 @@ public class KybApi {
             <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
          </table>
          */
-        public ApiResponse<GetTinResponse> executeWithHttpInfo() throws ApiException {
-            return getTinWithHttpInfo(tin);
+        public ApiResponse<KybGetTinResponse> executeWithHttpInfo() throws ApiException {
+            return getTinWithHttpInfo(appId, tin);
         }
 
         /**
@@ -756,8 +811,8 @@ public class KybApi {
             <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<GetTinResponse> _callback) throws ApiException {
-            return getTinAsync(tin, _callback);
+        public okhttp3.Call executeAsync(final ApiCallback<KybGetTinResponse> _callback) throws ApiException {
+            return getTinAsync(appId, tin, _callback);
         }
     }
 

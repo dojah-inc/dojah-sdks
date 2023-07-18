@@ -1,5 +1,5 @@
 /*
-DOJAH APIs
+DOJAH Publilc APIs
 
 Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -41,7 +41,7 @@ var (
 	xmlCheck  = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
 )
 
-// APIClient manages communication with the DOJAH APIs API v1.0.0
+// APIClient manages communication with the DOJAH Publilc APIs API v1.0.0
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -53,11 +53,15 @@ type APIClient struct {
 
 	AuthenticationApi *AuthenticationApiService
 
-	FinancialApi *FinancialApiService
+	DocumentAnalysisApi *DocumentAnalysisApiService
+
+	FraudApi *FraudApiService
 
 	GHKYCApi *GHKYCApiService
 
 	GeneralApi *GeneralApiService
+
+	GlobalKYCApi *GlobalKYCApiService
 
 	KEKYCApi *KEKYCApiService
 
@@ -67,13 +71,23 @@ type APIClient struct {
 
 	MLApi *MLApiService
 
+	NigeriaKYCApi *NigeriaKYCApiService
+
+	PurchaseApi *PurchaseApiService
+
 	ServicesApi *ServicesApiService
+
+	TZKYCApi *TZKYCApiService
 
 	UGKYCApi *UGKYCApiService
 
-	WalletApi *WalletApiService
+	VerificationsApi *VerificationsApiService
 
 	WebHooksApi *WebHooksApiService
+
+	ZAFKYCApi *ZAFKYCApiService
+
+	ZWKYCApi *ZWKYCApiService
 }
 
 type service struct {
@@ -94,17 +108,24 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	// API Services
 	c.AMLApi = (*AMLApiService)(&c.common)
 	c.AuthenticationApi = (*AuthenticationApiService)(&c.common)
-	c.FinancialApi = (*FinancialApiService)(&c.common)
+	c.DocumentAnalysisApi = (*DocumentAnalysisApiService)(&c.common)
+	c.FraudApi = (*FraudApiService)(&c.common)
 	c.GHKYCApi = (*GHKYCApiService)(&c.common)
 	c.GeneralApi = (*GeneralApiService)(&c.common)
+	c.GlobalKYCApi = (*GlobalKYCApiService)(&c.common)
 	c.KEKYCApi = (*KEKYCApiService)(&c.common)
 	c.KYBApi = (*KYBApiService)(&c.common)
 	c.KYCApi = (*KYCApiService)(&c.common)
 	c.MLApi = (*MLApiService)(&c.common)
+	c.NigeriaKYCApi = (*NigeriaKYCApiService)(&c.common)
+	c.PurchaseApi = (*PurchaseApiService)(&c.common)
 	c.ServicesApi = (*ServicesApiService)(&c.common)
+	c.TZKYCApi = (*TZKYCApiService)(&c.common)
 	c.UGKYCApi = (*UGKYCApiService)(&c.common)
-	c.WalletApi = (*WalletApiService)(&c.common)
+	c.VerificationsApi = (*VerificationsApiService)(&c.common)
 	c.WebHooksApi = (*WebHooksApiService)(&c.common)
+	c.ZAFKYCApi = (*ZAFKYCApiService)(&c.common)
+	c.ZWKYCApi = (*ZWKYCApiService)(&c.common)
 
 	return c
 }

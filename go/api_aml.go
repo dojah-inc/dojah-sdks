@@ -1,5 +1,5 @@
 /*
-DOJAH APIs
+DOJAH Publilc APIs
 
 Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -25,15 +25,15 @@ type AMLApiService service
 type AMLApiGetScreeningInfoRequest struct {
 	ctx context.Context
 	ApiService *AMLApiService
-	referenceId *string
+	profileId *string
 }
 
-func (r AMLApiGetScreeningInfoRequest) ReferenceId(referenceId string) AMLApiGetScreeningInfoRequest {
-	r.referenceId = &referenceId
+func (r AMLApiGetScreeningInfoRequest) ProfileId(profileId string) AMLApiGetScreeningInfoRequest {
+	r.profileId = &profileId
 	return r
 }
 
-func (r AMLApiGetScreeningInfoRequest) Execute() (*GetScreeningInfoResponse, *http.Response, error) {
+func (r AMLApiGetScreeningInfoRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetScreeningInfoExecute(r)
 }
 
@@ -51,13 +51,13 @@ func (a *AMLApiService) GetScreeningInfo() AMLApiGetScreeningInfoRequest {
 }
 
 // Execute executes the request
-//  @return GetScreeningInfoResponse
-func (a *AMLApiService) GetScreeningInfoExecute(r AMLApiGetScreeningInfoRequest) (*GetScreeningInfoResponse, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *AMLApiService) GetScreeningInfoExecute(r AMLApiGetScreeningInfoRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetScreeningInfoResponse
+		localVarReturnValue  map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AMLApiService.GetScreeningInfo")
@@ -65,14 +65,14 @@ func (a *AMLApiService) GetScreeningInfoExecute(r AMLApiGetScreeningInfoRequest)
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/aml/screening/info"
+	localVarPath := localBasePath + "/api/v1/aml/screening/info"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.referenceId != nil {
-		localVarQueryParams.Add("reference_id", parameterToString(*r.referenceId, ""))
+	if r.profileId != nil {
+		localVarQueryParams.Add("profileId", parameterToString(*r.profileId, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -94,20 +94,6 @@ func (a *AMLApiService) GetScreeningInfoExecute(r AMLApiGetScreeningInfoRequest)
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["appIdAuth"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -115,7 +101,7 @@ func (a *AMLApiService) GetScreeningInfoExecute(r AMLApiGetScreeningInfoRequest)
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["AppId"] = key
+				localVarHeaderParams["Appid"] = key
 			}
 		}
 	}
@@ -159,15 +145,15 @@ func (a *AMLApiService) GetScreeningInfoExecute(r AMLApiGetScreeningInfoRequest)
 type AMLApiScreenAmlRequest struct {
 	ctx context.Context
 	ApiService *AMLApiService
-	screenAmlRequest *ScreenAmlRequest
+	amlScreenAmlRequest *AmlScreenAmlRequest
 }
 
-func (r AMLApiScreenAmlRequest) ScreenAmlRequest(screenAmlRequest ScreenAmlRequest) AMLApiScreenAmlRequest {
-	r.screenAmlRequest = &screenAmlRequest
+func (r AMLApiScreenAmlRequest) AmlScreenAmlRequest(amlScreenAmlRequest AmlScreenAmlRequest) AMLApiScreenAmlRequest {
+	r.amlScreenAmlRequest = &amlScreenAmlRequest
 	return r
 }
 
-func (r AMLApiScreenAmlRequest) Execute() (*ScreenAmlResponse, *http.Response, error) {
+func (r AMLApiScreenAmlRequest) Execute() (*AmlScreenAmlResponse, *http.Response, error) {
 	return r.ApiService.ScreenAmlExecute(r)
 }
 
@@ -185,13 +171,13 @@ func (a *AMLApiService) ScreenAml() AMLApiScreenAmlRequest {
 }
 
 // Execute executes the request
-//  @return ScreenAmlResponse
-func (a *AMLApiService) ScreenAmlExecute(r AMLApiScreenAmlRequest) (*ScreenAmlResponse, *http.Response, error) {
+//  @return AmlScreenAmlResponse
+func (a *AMLApiService) ScreenAmlExecute(r AMLApiScreenAmlRequest) (*AmlScreenAmlResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ScreenAmlResponse
+		localVarReturnValue  *AmlScreenAmlResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AMLApiService.ScreenAml")
@@ -199,11 +185,14 @@ func (a *AMLApiService) ScreenAmlExecute(r AMLApiScreenAmlRequest) (*ScreenAmlRe
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v1/aml/screening"
+	localVarPath := localBasePath + "/api/v1/aml/screening/platform"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.amlScreenAmlRequest == nil {
+		return localVarReturnValue, nil, reportError("amlScreenAmlRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -223,21 +212,7 @@ func (a *AMLApiService) ScreenAmlExecute(r AMLApiScreenAmlRequest) (*ScreenAmlRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.screenAmlRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
+	localVarPostBody = r.amlScreenAmlRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -248,7 +223,7 @@ func (a *AMLApiService) ScreenAmlExecute(r AMLApiScreenAmlRequest) (*ScreenAmlRe
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["AppId"] = key
+				localVarHeaderParams["Appid"] = key
 			}
 		}
 	}

@@ -4,101 +4,101 @@ All URIs are relative to *https://api.dojah.io*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getAdvancedCac**](KybApi.md#getAdvancedCac) | **GET** /v1/kyc/cac/advance | KYC - Get CAC Advanced |
-| [**getBasicCac**](KybApi.md#getBasicCac) | **GET** /v1/kyc/cac/basic | KYB - Get CAC 2 |
-| [**getCac**](KybApi.md#getCac) | **GET** /v1/kyc/cac | KYC - Get CAC  |
-| [**getTin**](KybApi.md#getTin) | **GET** /v1/kyc/tin | KYC - Fetch Tin |
+| [**businessDetail**](KybApi.md#businessDetail) | **GET** /api/v1/kyb/business/detail | Business Detail |
+| [**businessSearch**](KybApi.md#businessSearch) | **GET** /api/v1/kyb/business/search | Business Search |
+| [**getCac**](KybApi.md#getCac) | **GET** /api/v1/kyc/cac | KYC - Get CAC  |
+| [**getTin**](KybApi.md#getTin) | **GET** /api/v1/kyc/tin | KYC - Fetch Tin |
 
 
-<a name="getAdvancedCac"></a>
-# **getAdvancedCac**
-> GetAdvancedCacResponse getAdvancedCac().rc(rc).type(type).propertyClass(propertyClass).execute();
+<a name="businessDetail"></a>
+# **businessDetail**
+> Object businessDetail().appId(appId).internationalNumber(internationalNumber).countryCode(countryCode).full(full).execute();
 
-KYC - Get CAC Advanced
+Business Detail
 
 ### Example
 ```java
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
+import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
-import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.KybApi;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class Example {
   public static void main(String[] args) {
+    Configuration configuration = new Configuration();
+    configuration.host = "https://api.dojah.io";
 
-    ApiClient apiClient = Configuration.getDefaultApiClient();
-    // Set custom base path if desired
-    // apiClient.setBasePath("https://api.dojah.io");
-    
-    // Configure API key authorization: apikeyAuth
-    apiClient.setApikeyAuth("YOUR API KEY");
-
-    // Configure API key authorization: appIdAuth
-    apiClient.setAppIdAuth("YOUR API KEY");
-
-    KybApi api = new KybApi(apiClient);
-    Integer rc = 1432074;
-    String type = "co";
-    String propertyClass = "advance";
+    Dojah client = new Dojah(configuration);
+    String appId = "{{app_id}}";
+    String internationalNumber = "RC-1885308";
+    String countryCode = "NG";
+    Boolean full = true;
     try {
-      GetAdvancedCacResponse result = api
-              .getAdvancedCac()
-              .rc(rc)
-              .type(type)
-              .propertyClass(propertyClass)
+      Object result = client
+              .kyb
+              .businessDetail()
+              .appId(appId)
+              .internationalNumber(internationalNumber)
+              .countryCode(countryCode)
+              .full(full)
               .execute();
-      System.out.println(result);
-      System.out.println(result.toJson()); // Serialize response back to JSON 
     } catch (ApiException e) {
-      System.err.println("Exception when calling KybApi#getAdvancedCac");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Exception when calling KybApi#businessDetail");
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
 
-    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<GetAdvancedCacResponse> response = api
-              .getAdvancedCac()
-              .rc(rc)
-              .type(type)
-              .propertyClass(propertyClass)
+      ApiResponse<Object> response = client
+              .kyb
+              .businessDetail()
+              .appId(appId)
+              .internationalNumber(internationalNumber)
+              .countryCode(countryCode)
+              .full(full)
               .executeWithHttpInfo();
-      System.out.println(response.getData());
-      System.out.println(response.getHeaders());
+      System.out.println(response.getResponseBody());
+      System.out.println(response.getResponseHeaders());
       System.out.println(response.getStatusCode());
       System.out.println(response.getRoundTripTime());
       System.out.println(response.getRequest());
     } catch (ApiException e) {
-      System.err.println("Exception when calling KybApi#getAdvancedCac");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Exception when calling KybApi#businessDetail");
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
+
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **rc** | **Integer**|  | [optional] |
-| **type** | **String**|  | [optional] |
-| **propertyClass** | **String**|  | [optional] |
+| **appId** | **String**|  | [optional] |
+| **internationalNumber** | **String**|  | [optional] |
+| **countryCode** | **String**|  | [optional] |
+| **full** | **Boolean**|  | [optional] |
 
 ### Return type
 
-[**GetAdvancedCacResponse**](GetAdvancedCacResponse.md)
+**Object**
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -110,91 +110,91 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="getBasicCac"></a>
-# **getBasicCac**
-> GetBasicCacResponse getBasicCac().rc(rc).type(type).execute();
+<a name="businessSearch"></a>
+# **businessSearch**
+> Object businessSearch().appId(appId).countryCode(countryCode).company(company).execute();
 
-KYB - Get CAC 2
+Business Search
 
 ### Example
 ```java
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
+import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
-import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.KybApi;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class Example {
   public static void main(String[] args) {
+    Configuration configuration = new Configuration();
+    configuration.host = "https://api.dojah.io";
 
-    ApiClient apiClient = Configuration.getDefaultApiClient();
-    // Set custom base path if desired
-    // apiClient.setBasePath("https://api.dojah.io");
-    
-    // Configure API key authorization: apikeyAuth
-    apiClient.setApikeyAuth("YOUR API KEY");
-
-    // Configure API key authorization: appIdAuth
-    apiClient.setAppIdAuth("YOUR API KEY");
-
-    KybApi api = new KybApi(apiClient);
-    Integer rc = 3330883;
-    String type = "bn";
+    Dojah client = new Dojah(configuration);
+    String appId = "{{app_id}}";
+    String countryCode = "NG";
+    Integer company = 1885308;
     try {
-      GetBasicCacResponse result = api
-              .getBasicCac()
-              .rc(rc)
-              .type(type)
+      Object result = client
+              .kyb
+              .businessSearch()
+              .appId(appId)
+              .countryCode(countryCode)
+              .company(company)
               .execute();
-      System.out.println(result);
-      System.out.println(result.toJson()); // Serialize response back to JSON 
     } catch (ApiException e) {
-      System.err.println("Exception when calling KybApi#getBasicCac");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Exception when calling KybApi#businessSearch");
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
 
-    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<GetBasicCacResponse> response = api
-              .getBasicCac()
-              .rc(rc)
-              .type(type)
+      ApiResponse<Object> response = client
+              .kyb
+              .businessSearch()
+              .appId(appId)
+              .countryCode(countryCode)
+              .company(company)
               .executeWithHttpInfo();
-      System.out.println(response.getData());
-      System.out.println(response.getHeaders());
+      System.out.println(response.getResponseBody());
+      System.out.println(response.getResponseHeaders());
       System.out.println(response.getStatusCode());
       System.out.println(response.getRoundTripTime());
       System.out.println(response.getRequest());
     } catch (ApiException e) {
-      System.err.println("Exception when calling KybApi#getBasicCac");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Exception when calling KybApi#businessSearch");
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
+
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **rc** | **Integer**|  | [optional] |
-| **type** | **String**|  | [optional] |
+| **appId** | **String**|  | [optional] |
+| **countryCode** | **String**|  | [optional] |
+| **company** | **Integer**|  | [optional] |
 
 ### Return type
 
-[**GetBasicCacResponse**](GetBasicCacResponse.md)
+**Object**
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -208,7 +208,7 @@ public class Example {
 
 <a name="getCac"></a>
 # **getCac**
-> GetCacResponse getCac().rcNumber(rcNumber).companyName(companyName).execute();
+> KybGetCacResponse getCac().appId(appId).rcNumber(rcNumber).companyName(companyName).execute();
 
 KYC - Get CAC 
 
@@ -217,80 +217,86 @@ KYC - Get CAC
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
+import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.KybApi;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class Example {
   public static void main(String[] args) {
-
-    ApiClient apiClient = Configuration.getDefaultApiClient();
-    // Set custom base path if desired
-    // apiClient.setBasePath("https://api.dojah.io");
+    Configuration configuration = new Configuration();
+    configuration.host = "https://api.dojah.io";
     
-    // Configure API key authorization: apikeyAuth
-    apiClient.setApikeyAuth("YOUR API KEY");
 
-    // Configure API key authorization: appIdAuth
-    apiClient.setAppIdAuth("YOUR API KEY");
-
-    KybApi api = new KybApi(apiClient);
+    Dojah client = new Dojah(configuration);
+    String appId = "{{app_id}}";
     Integer rcNumber = 1432074;
     String companyName = "ELTA SOLUTIONS LIMITED";
     try {
-      GetCacResponse result = api
+      KybGetCacResponse result = client
+              .kyb
               .getCac()
+              .appId(appId)
               .rcNumber(rcNumber)
               .companyName(companyName)
               .execute();
       System.out.println(result);
-      System.out.println(result.toJson()); // Serialize response back to JSON 
+
+      System.out.println(result.getEntity());
+
     } catch (ApiException e) {
       System.err.println("Exception when calling KybApi#getCac");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
 
-    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<GetCacResponse> response = api
+      ApiResponse<KybGetCacResponse> response = client
+              .kyb
               .getCac()
+              .appId(appId)
               .rcNumber(rcNumber)
               .companyName(companyName)
               .executeWithHttpInfo();
-      System.out.println(response.getData());
-      System.out.println(response.getHeaders());
+      System.out.println(response.getResponseBody());
+      System.out.println(response.getResponseHeaders());
       System.out.println(response.getStatusCode());
       System.out.println(response.getRoundTripTime());
       System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling KybApi#getCac");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
+
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **appId** | **String**|  | [optional] |
 | **rcNumber** | **Integer**|  | [optional] |
 | **companyName** | **String**|  | [optional] |
 
 ### Return type
 
-[**GetCacResponse**](GetCacResponse.md)
+[**KybGetCacResponse**](KybGetCacResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -304,7 +310,7 @@ public class Example {
 
 <a name="getTin"></a>
 # **getTin**
-> GetTinResponse getTin().tin(tin).execute();
+> KybGetTinResponse getTin().appId(appId).tin(tin).execute();
 
 KYC - Fetch Tin
 
@@ -313,76 +319,82 @@ KYC - Fetch Tin
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
+import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.KybApi;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class Example {
   public static void main(String[] args) {
-
-    ApiClient apiClient = Configuration.getDefaultApiClient();
-    // Set custom base path if desired
-    // apiClient.setBasePath("https://api.dojah.io");
+    Configuration configuration = new Configuration();
+    configuration.host = "https://api.dojah.io";
     
-    // Configure API key authorization: apikeyAuth
-    apiClient.setApikeyAuth("YOUR API KEY");
 
-    // Configure API key authorization: appIdAuth
-    apiClient.setAppIdAuth("YOUR API KEY");
-
-    KybApi api = new KybApi(apiClient);
-    String tin = "21148119-0001";
+    Dojah client = new Dojah(configuration);
+    String appId = "{{app_id}}";
+    String tin = "24111697-0001";
     try {
-      GetTinResponse result = api
+      KybGetTinResponse result = client
+              .kyb
               .getTin()
+              .appId(appId)
               .tin(tin)
               .execute();
       System.out.println(result);
-      System.out.println(result.toJson()); // Serialize response back to JSON 
+
+      System.out.println(result.getEntity());
+
     } catch (ApiException e) {
       System.err.println("Exception when calling KybApi#getTin");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
 
-    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<GetTinResponse> response = api
+      ApiResponse<KybGetTinResponse> response = client
+              .kyb
               .getTin()
+              .appId(appId)
               .tin(tin)
               .executeWithHttpInfo();
-      System.out.println(response.getData());
-      System.out.println(response.getHeaders());
+      System.out.println(response.getResponseBody());
+      System.out.println(response.getResponseHeaders());
       System.out.println(response.getStatusCode());
       System.out.println(response.getRoundTripTime());
       System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling KybApi#getTin");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
+
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **appId** | **String**|  | [optional] |
 | **tin** | **String**|  | [optional] |
 
 ### Return type
 
-[**GetTinResponse**](GetTinResponse.md)
+[**KybGetTinResponse**](KybGetTinResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 

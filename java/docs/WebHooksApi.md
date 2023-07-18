@@ -12,7 +12,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="deleteWebhook"></a>
 # **deleteWebhook**
-> DeleteWebhookResponse deleteWebhook().execute();
+> DeleteWebhookResponse deleteWebhook().appId(appId).execute();
 
 Delete Webhook
 
@@ -21,62 +21,70 @@ Delete Webhook
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
+import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.WebHooksApi;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class Example {
   public static void main(String[] args) {
-
-    ApiClient apiClient = Configuration.getDefaultApiClient();
-    // Set custom base path if desired
-    // apiClient.setBasePath("https://api.dojah.io");
+    Configuration configuration = new Configuration();
+    configuration.host = "https://api.dojah.io";
     
-    // Configure API key authorization: apikeyAuth
-    apiClient.setApikeyAuth("YOUR API KEY");
 
-    // Configure API key authorization: appIdAuth
-    apiClient.setAppIdAuth("YOUR API KEY");
-
-    WebHooksApi api = new WebHooksApi(apiClient);
+    Dojah client = new Dojah(configuration);
+    String appId = "{{app_id}}";
     try {
-      DeleteWebhookResponse result = api
+      DeleteWebhookResponse result = client
+              .webHooks
               .deleteWebhook()
+              .appId(appId)
               .execute();
       System.out.println(result);
-      System.out.println(result.toJson()); // Serialize response back to JSON 
+
+      System.out.println(result.getEntity());
+
     } catch (ApiException e) {
       System.err.println("Exception when calling WebHooksApi#deleteWebhook");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
 
-    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<DeleteWebhookResponse> response = api
+      ApiResponse<DeleteWebhookResponse> response = client
+              .webHooks
               .deleteWebhook()
+              .appId(appId)
               .executeWithHttpInfo();
-      System.out.println(response.getData());
-      System.out.println(response.getHeaders());
+      System.out.println(response.getResponseBody());
+      System.out.println(response.getResponseHeaders());
       System.out.println(response.getStatusCode());
       System.out.println(response.getRoundTripTime());
       System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling WebHooksApi#deleteWebhook");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
+
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -84,7 +92,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -98,7 +106,7 @@ This endpoint does not need any parameter.
 
 <a name="getWebhooks"></a>
 # **getWebhooks**
-> GetWebhooksResponse getWebhooks().execute();
+> GetWebhooksResponse getWebhooks().appId(appId).execute();
 
 Fetch All Webhooks
 
@@ -107,62 +115,70 @@ Fetch All Webhooks
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
+import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.WebHooksApi;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class Example {
   public static void main(String[] args) {
-
-    ApiClient apiClient = Configuration.getDefaultApiClient();
-    // Set custom base path if desired
-    // apiClient.setBasePath("https://api.dojah.io");
+    Configuration configuration = new Configuration();
+    configuration.host = "https://api.dojah.io";
     
-    // Configure API key authorization: apikeyAuth
-    apiClient.setApikeyAuth("YOUR API KEY");
 
-    // Configure API key authorization: appIdAuth
-    apiClient.setAppIdAuth("YOUR API KEY");
-
-    WebHooksApi api = new WebHooksApi(apiClient);
+    Dojah client = new Dojah(configuration);
+    String appId = "{{app_id}}";
     try {
-      GetWebhooksResponse result = api
+      GetWebhooksResponse result = client
+              .webHooks
               .getWebhooks()
+              .appId(appId)
               .execute();
       System.out.println(result);
-      System.out.println(result.toJson()); // Serialize response back to JSON 
+
+      System.out.println(result.getEntity());
+
     } catch (ApiException e) {
       System.err.println("Exception when calling WebHooksApi#getWebhooks");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
 
-    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<GetWebhooksResponse> response = api
+      ApiResponse<GetWebhooksResponse> response = client
+              .webHooks
               .getWebhooks()
+              .appId(appId)
               .executeWithHttpInfo();
-      System.out.println(response.getData());
-      System.out.println(response.getHeaders());
+      System.out.println(response.getResponseBody());
+      System.out.println(response.getResponseHeaders());
       System.out.println(response.getStatusCode());
       System.out.println(response.getRoundTripTime());
       System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling WebHooksApi#getWebhooks");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
+
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -170,7 +186,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -184,7 +200,7 @@ This endpoint does not need any parameter.
 
 <a name="notifyWebhook"></a>
 # **notifyWebhook**
-> NotifyWebhookResponse notifyWebhook().notifyWebhookRequest(notifyWebhookRequest).execute();
+> NotifyWebhookResponse notifyWebhook(notifyWebhookRequest).appId(appId).execute();
 
 Post Hook
 
@@ -193,71 +209,75 @@ Post Hook
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
+import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
-import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.WebHooksApi;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class Example {
   public static void main(String[] args) {
+    Configuration configuration = new Configuration();
+    configuration.host = "https://api.dojah.io";
 
-    ApiClient apiClient = Configuration.getDefaultApiClient();
-    // Set custom base path if desired
-    // apiClient.setBasePath("https://api.dojah.io");
-    
-    // Configure API key authorization: apikeyAuth
-    apiClient.setApikeyAuth("YOUR API KEY");
-
-    // Configure API key authorization: appIdAuth
-    apiClient.setAppIdAuth("YOUR API KEY");
-
-    WebHooksApi api = new WebHooksApi(apiClient);
+    Dojah client = new Dojah(configuration);
     String subject = "subject_example";
     NotifyWebhookRequestData data = new NotifyWebhookRequestData();
+    String appId = "{{app_id}}";
     try {
-      NotifyWebhookResponse result = api
+      NotifyWebhookResponse result = client
+              .webHooks
               .notifyWebhook()
               .subject(subject)
               .data(data)
+              .appId(appId)
               .execute();
       System.out.println(result);
-      System.out.println(result.toJson()); // Serialize response back to JSON 
+
+      System.out.println(result.getEntity());
+
     } catch (ApiException e) {
       System.err.println("Exception when calling WebHooksApi#notifyWebhook");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
 
-    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<NotifyWebhookResponse> response = api
+      ApiResponse<NotifyWebhookResponse> response = client
+              .webHooks
               .notifyWebhook()
               .subject(subject)
               .data(data)
+              .appId(appId)
               .executeWithHttpInfo();
-      System.out.println(response.getData());
-      System.out.println(response.getHeaders());
+      System.out.println(response.getResponseBody());
+      System.out.println(response.getResponseHeaders());
       System.out.println(response.getStatusCode());
       System.out.println(response.getRoundTripTime());
       System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling WebHooksApi#notifyWebhook");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
+
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **notifyWebhookRequest** | [**NotifyWebhookRequest**](NotifyWebhookRequest.md)|  | [optional] |
+| **notifyWebhookRequest** | [**NotifyWebhookRequest**](NotifyWebhookRequest.md)|  | |
+| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -265,7 +285,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -279,7 +299,7 @@ public class Example {
 
 <a name="subscribeService"></a>
 # **subscribeService**
-> SubscribeServiceResponse subscribeService().subscribeServiceRequest(subscribeServiceRequest).execute();
+> SubscribeServiceResponse subscribeService(subscribeServiceRequest).appId(appId).execute();
 
 Subscribe to service
 
@@ -288,71 +308,77 @@ Subscribe to service
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
+import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.WebHooksApi;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class Example {
   public static void main(String[] args) {
-
-    ApiClient apiClient = Configuration.getDefaultApiClient();
-    // Set custom base path if desired
-    // apiClient.setBasePath("https://api.dojah.io");
+    Configuration configuration = new Configuration();
+    configuration.host = "https://api.dojah.io";
     
-    // Configure API key authorization: apikeyAuth
-    apiClient.setApikeyAuth("YOUR API KEY");
 
-    // Configure API key authorization: appIdAuth
-    apiClient.setAppIdAuth("YOUR API KEY");
-
-    WebHooksApi api = new WebHooksApi(apiClient);
+    Dojah client = new Dojah(configuration);
     String webhook = "webhook_example";
     String service = "service_example";
+    String appId = "{{app_id}}";
     try {
-      SubscribeServiceResponse result = api
+      SubscribeServiceResponse result = client
+              .webHooks
               .subscribeService()
               .webhook(webhook)
               .service(service)
+              .appId(appId)
               .execute();
       System.out.println(result);
-      System.out.println(result.toJson()); // Serialize response back to JSON 
+
+      System.out.println(result.getEntity());
+
     } catch (ApiException e) {
       System.err.println("Exception when calling WebHooksApi#subscribeService");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
 
-    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<SubscribeServiceResponse> response = api
+      ApiResponse<SubscribeServiceResponse> response = client
+              .webHooks
               .subscribeService()
               .webhook(webhook)
               .service(service)
+              .appId(appId)
               .executeWithHttpInfo();
-      System.out.println(response.getData());
-      System.out.println(response.getHeaders());
+      System.out.println(response.getResponseBody());
+      System.out.println(response.getResponseHeaders());
       System.out.println(response.getStatusCode());
       System.out.println(response.getRoundTripTime());
       System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling WebHooksApi#subscribeService");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
+
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **subscribeServiceRequest** | [**SubscribeServiceRequest**](SubscribeServiceRequest.md)|  | [optional] |
+| **subscribeServiceRequest** | [**SubscribeServiceRequest**](SubscribeServiceRequest.md)|  | |
+| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -360,7 +386,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 

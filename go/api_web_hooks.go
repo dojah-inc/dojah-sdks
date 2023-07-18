@@ -1,5 +1,5 @@
 /*
-DOJAH APIs
+DOJAH Publilc APIs
 
 Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -25,6 +25,12 @@ type WebHooksApiService service
 type WebHooksApiDeleteWebhookRequest struct {
 	ctx context.Context
 	ApiService *WebHooksApiService
+	appId *string
+}
+
+func (r WebHooksApiDeleteWebhookRequest) AppId(appId string) WebHooksApiDeleteWebhookRequest {
+	r.appId = &appId
+	return r
 }
 
 func (r WebHooksApiDeleteWebhookRequest) Execute() (*DeleteWebhookResponse, *http.Response, error) {
@@ -82,33 +88,8 @@ func (a *WebHooksApiService) DeleteWebhookExecute(r WebHooksApiDeleteWebhookRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
+	if r.appId != nil {
+		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -150,6 +131,12 @@ func (a *WebHooksApiService) DeleteWebhookExecute(r WebHooksApiDeleteWebhookRequ
 type WebHooksApiGetWebhooksRequest struct {
 	ctx context.Context
 	ApiService *WebHooksApiService
+	appId *string
+}
+
+func (r WebHooksApiGetWebhooksRequest) AppId(appId string) WebHooksApiGetWebhooksRequest {
+	r.appId = &appId
+	return r
 }
 
 func (r WebHooksApiGetWebhooksRequest) Execute() (*GetWebhooksResponse, *http.Response, error) {
@@ -207,33 +194,8 @@ func (a *WebHooksApiService) GetWebhooksExecute(r WebHooksApiGetWebhooksRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
+	if r.appId != nil {
+		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -276,10 +238,16 @@ type WebHooksApiNotifyWebhookRequest struct {
 	ctx context.Context
 	ApiService *WebHooksApiService
 	notifyWebhookRequest *NotifyWebhookRequest
+	appId *string
 }
 
 func (r WebHooksApiNotifyWebhookRequest) NotifyWebhookRequest(notifyWebhookRequest NotifyWebhookRequest) WebHooksApiNotifyWebhookRequest {
 	r.notifyWebhookRequest = &notifyWebhookRequest
+	return r
+}
+
+func (r WebHooksApiNotifyWebhookRequest) AppId(appId string) WebHooksApiNotifyWebhookRequest {
+	r.appId = &appId
 	return r
 }
 
@@ -320,6 +288,9 @@ func (a *WebHooksApiService) NotifyWebhookExecute(r WebHooksApiNotifyWebhookRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.notifyWebhookRequest == nil {
+		return localVarReturnValue, nil, reportError("notifyWebhookRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -338,36 +309,11 @@ func (a *WebHooksApiService) NotifyWebhookExecute(r WebHooksApiNotifyWebhookRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if r.appId != nil {
+		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	}
 	// body params
 	localVarPostBody = r.notifyWebhookRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -409,10 +355,16 @@ type WebHooksApiSubscribeServiceRequest struct {
 	ctx context.Context
 	ApiService *WebHooksApiService
 	subscribeServiceRequest *SubscribeServiceRequest
+	appId *string
 }
 
 func (r WebHooksApiSubscribeServiceRequest) SubscribeServiceRequest(subscribeServiceRequest SubscribeServiceRequest) WebHooksApiSubscribeServiceRequest {
 	r.subscribeServiceRequest = &subscribeServiceRequest
+	return r
+}
+
+func (r WebHooksApiSubscribeServiceRequest) AppId(appId string) WebHooksApiSubscribeServiceRequest {
+	r.appId = &appId
 	return r
 }
 
@@ -453,6 +405,9 @@ func (a *WebHooksApiService) SubscribeServiceExecute(r WebHooksApiSubscribeServi
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.subscribeServiceRequest == nil {
+		return localVarReturnValue, nil, reportError("subscribeServiceRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -471,36 +426,11 @@ func (a *WebHooksApiService) SubscribeServiceExecute(r WebHooksApiSubscribeServi
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if r.appId != nil {
+		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	}
 	// body params
 	localVarPostBody = r.subscribeServiceRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -30,9 +30,10 @@ namespace Dojah.Net.Api
         /// General - Get Banks
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetBanksResponse</returns>
-        GetBanksResponse GetBanks(int operationIndex = 0);
+        GetBanksResponse GetBanks(string appId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// General - Get Banks
@@ -41,17 +42,19 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetBanksResponse</returns>
-        ApiResponse<GetBanksResponse> GetBanksWithHttpInfo(int operationIndex = 0);
+        ApiResponse<GetBanksResponse> GetBanksWithHttpInfo(string appId = default(string), int operationIndex = 0);
         /// <summary>
         /// General Resolve BIN
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="cardBin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetBinResponse</returns>
-        GetBinResponse GetBin(int? cardBin = default(int?), int operationIndex = 0);
+        GetBinResponse GetBin(string appId = default(string), int? cardBin = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// General Resolve BIN
@@ -60,37 +63,21 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="cardBin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetBinResponse</returns>
-        ApiResponse<GetBinResponse> GetBinWithHttpInfo(int? cardBin = default(int?), int operationIndex = 0);
-        /// <summary>
-        /// Purchase - Get Data Plans
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetDataPlansResponse</returns>
-        GetDataPlansResponse GetDataPlans(int operationIndex = 0);
-
-        /// <summary>
-        /// Purchase - Get Data Plans
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetDataPlansResponse</returns>
-        ApiResponse<GetDataPlansResponse> GetDataPlansWithHttpInfo(int operationIndex = 0);
+        ApiResponse<GetBinResponse> GetBinWithHttpInfo(string appId = default(string), int? cardBin = default(int?), int operationIndex = 0);
         /// <summary>
         /// General Resolve NUBAN
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GeneralGetNubanResponse</returns>
-        GeneralGetNubanResponse GetNuban(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0);
+        GeneralGetNubanResponse GetNuban(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// General Resolve NUBAN
@@ -99,69 +86,12 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GeneralGetNubanResponse</returns>
-        ApiResponse<GeneralGetNubanResponse> GetNubanWithHttpInfo(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0);
-        /// <summary>
-        /// Get Dojah Wallet Balance
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetWalletBalanceResponse</returns>
-        GetWalletBalanceResponse GetWalletBalance(int operationIndex = 0);
-
-        /// <summary>
-        /// Get Dojah Wallet Balance
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetWalletBalanceResponse</returns>
-        ApiResponse<GetWalletBalanceResponse> GetWalletBalanceWithHttpInfo(int operationIndex = 0);
-        /// <summary>
-        /// Purchase - Send Airtime
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseAirtimeRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>PurchaseAirtimeResponse</returns>
-        PurchaseAirtimeResponse PurchaseAirtime(PurchaseAirtimeRequest purchaseAirtimeRequest = default(PurchaseAirtimeRequest), int operationIndex = 0);
-
-        /// <summary>
-        /// Purchase - Send Airtime
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseAirtimeRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of PurchaseAirtimeResponse</returns>
-        ApiResponse<PurchaseAirtimeResponse> PurchaseAirtimeWithHttpInfo(PurchaseAirtimeRequest purchaseAirtimeRequest = default(PurchaseAirtimeRequest), int operationIndex = 0);
-        /// <summary>
-        /// Purchase - Buy Data
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseDataRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>PurchaseDataResponse</returns>
-        PurchaseDataResponse PurchaseData(PurchaseDataRequest purchaseDataRequest = default(PurchaseDataRequest), int operationIndex = 0);
-
-        /// <summary>
-        /// Purchase - Buy Data
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseDataRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of PurchaseDataResponse</returns>
-        ApiResponse<PurchaseDataResponse> PurchaseDataWithHttpInfo(PurchaseDataRequest purchaseDataRequest = default(PurchaseDataRequest), int operationIndex = 0);
+        ApiResponse<GeneralGetNubanResponse> GetNubanWithHttpInfo(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -178,10 +108,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetBanksResponse</returns>
-        System.Threading.Tasks.Task<GetBanksResponse> GetBanksAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetBanksResponse> GetBanksAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// General - Get Banks
@@ -190,10 +121,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetBanksResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetBanksResponse>> GetBanksWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetBanksResponse>> GetBanksWithHttpInfoAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// General Resolve BIN
         /// </summary>
@@ -201,11 +133,12 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="cardBin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetBinResponse</returns>
-        System.Threading.Tasks.Task<GetBinResponse> GetBinAsync(int? cardBin = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetBinResponse> GetBinAsync(string appId = default(string), int? cardBin = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// General Resolve BIN
@@ -214,34 +147,12 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="cardBin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetBinResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetBinResponse>> GetBinWithHttpInfoAsync(int? cardBin = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Purchase - Get Data Plans
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetDataPlansResponse</returns>
-        System.Threading.Tasks.Task<GetDataPlansResponse> GetDataPlansAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Purchase - Get Data Plans
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetDataPlansResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetDataPlansResponse>> GetDataPlansWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetBinResponse>> GetBinWithHttpInfoAsync(string appId = default(string), int? cardBin = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// General Resolve NUBAN
         /// </summary>
@@ -249,12 +160,13 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GeneralGetNubanResponse</returns>
-        System.Threading.Tasks.Task<GeneralGetNubanResponse> GetNubanAsync(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GeneralGetNubanResponse> GetNubanAsync(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// General Resolve NUBAN
@@ -263,85 +175,13 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GeneralGetNubanResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GeneralGetNubanResponse>> GetNubanWithHttpInfoAsync(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Get Dojah Wallet Balance
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetWalletBalanceResponse</returns>
-        System.Threading.Tasks.Task<GetWalletBalanceResponse> GetWalletBalanceAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Get Dojah Wallet Balance
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetWalletBalanceResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetWalletBalanceResponse>> GetWalletBalanceWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Purchase - Send Airtime
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseAirtimeRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of PurchaseAirtimeResponse</returns>
-        System.Threading.Tasks.Task<PurchaseAirtimeResponse> PurchaseAirtimeAsync(PurchaseAirtimeRequest purchaseAirtimeRequest = default(PurchaseAirtimeRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Purchase - Send Airtime
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseAirtimeRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (PurchaseAirtimeResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PurchaseAirtimeResponse>> PurchaseAirtimeWithHttpInfoAsync(PurchaseAirtimeRequest purchaseAirtimeRequest = default(PurchaseAirtimeRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Purchase - Buy Data
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseDataRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of PurchaseDataResponse</returns>
-        System.Threading.Tasks.Task<PurchaseDataResponse> PurchaseDataAsync(PurchaseDataRequest purchaseDataRequest = default(PurchaseDataRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Purchase - Buy Data
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseDataRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (PurchaseDataResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PurchaseDataResponse>> PurchaseDataWithHttpInfoAsync(PurchaseDataRequest purchaseDataRequest = default(PurchaseDataRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GeneralGetNubanResponse>> GetNubanWithHttpInfoAsync(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -466,11 +306,12 @@ namespace Dojah.Net.Api
         /// General - Get Banks 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetBanksResponse</returns>
-        public GetBanksResponse GetBanks(int operationIndex = 0)
+        public GetBanksResponse GetBanks(string appId = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetBanksResponse> localVarResponse = GetBanksWithHttpInfo();
+            Dojah.Net.Client.ApiResponse<GetBanksResponse> localVarResponse = GetBanksWithHttpInfo(appId);
             return localVarResponse.Data;
         }
 
@@ -478,9 +319,10 @@ namespace Dojah.Net.Api
         /// General - Get Banks 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetBanksResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetBanksResponse> GetBanksWithHttpInfo(int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GetBanksResponse> GetBanksWithHttpInfo(string appId = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -504,20 +346,15 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
 
             localVarRequestOptions.Operation = "GeneralApi.GetBanks";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<GetBanksResponse>("/v1/general/banks", localVarRequestOptions, this.Configuration);
@@ -537,12 +374,13 @@ namespace Dojah.Net.Api
         /// General - Get Banks 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetBanksResponse</returns>
-        public async System.Threading.Tasks.Task<GetBanksResponse> GetBanksAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetBanksResponse> GetBanksAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetBanksResponse> localVarResponse = await GetBanksWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetBanksResponse> localVarResponse = await GetBanksWithHttpInfoAsync(appId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -550,10 +388,11 @@ namespace Dojah.Net.Api
         /// General - Get Banks 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetBanksResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetBanksResponse>> GetBanksWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetBanksResponse>> GetBanksWithHttpInfoAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -578,20 +417,15 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
+            }
 
             localVarRequestOptions.Operation = "GeneralApi.GetBanks";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<GetBanksResponse>("/v1/general/banks", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -612,12 +446,13 @@ namespace Dojah.Net.Api
         /// General Resolve BIN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="cardBin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetBinResponse</returns>
-        public GetBinResponse GetBin(int? cardBin = default(int?), int operationIndex = 0)
+        public GetBinResponse GetBin(string appId = default(string), int? cardBin = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetBinResponse> localVarResponse = GetBinWithHttpInfo(cardBin);
+            Dojah.Net.Client.ApiResponse<GetBinResponse> localVarResponse = GetBinWithHttpInfo(appId, cardBin);
             return localVarResponse.Data;
         }
 
@@ -625,10 +460,11 @@ namespace Dojah.Net.Api
         /// General Resolve BIN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="cardBin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetBinResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetBinResponse> GetBinWithHttpInfo(int? cardBin = default(int?), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GetBinResponse> GetBinWithHttpInfo(string appId = default(string), int? cardBin = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -656,20 +492,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "card_bin", cardBin, ""));
             }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
 
             localVarRequestOptions.Operation = "GeneralApi.GetBin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<GetBinResponse>("/v1/general/bin", localVarRequestOptions, this.Configuration);
@@ -689,13 +520,14 @@ namespace Dojah.Net.Api
         /// General Resolve BIN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="cardBin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetBinResponse</returns>
-        public async System.Threading.Tasks.Task<GetBinResponse> GetBinAsync(int? cardBin = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetBinResponse> GetBinAsync(string appId = default(string), int? cardBin = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetBinResponse> localVarResponse = await GetBinWithHttpInfoAsync(cardBin, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetBinResponse> localVarResponse = await GetBinWithHttpInfoAsync(appId, cardBin, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -703,11 +535,12 @@ namespace Dojah.Net.Api
         /// General Resolve BIN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="cardBin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetBinResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetBinResponse>> GetBinWithHttpInfoAsync(int? cardBin = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetBinResponse>> GetBinWithHttpInfoAsync(string appId = default(string), int? cardBin = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -736,20 +569,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "card_bin", cardBin, ""));
             }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
+            }
 
             localVarRequestOptions.Operation = "GeneralApi.GetBin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<GetBinResponse>("/v1/general/bin", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -767,162 +595,17 @@ namespace Dojah.Net.Api
         }
 
         /// <summary>
-        /// Purchase - Get Data Plans 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetDataPlansResponse</returns>
-        public GetDataPlansResponse GetDataPlans(int operationIndex = 0)
-        {
-            Dojah.Net.Client.ApiResponse<GetDataPlansResponse> localVarResponse = GetDataPlansWithHttpInfo();
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Purchase - Get Data Plans 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetDataPlansResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetDataPlansResponse> GetDataPlansWithHttpInfo(int operationIndex = 0)
-        {
-            Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Dojah.Net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Dojah.Net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-
-            localVarRequestOptions.Operation = "GeneralApi.GetDataPlans";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<GetDataPlansResponse>("/v1/purchase/data/plans", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetDataPlans", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Purchase - Get Data Plans 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetDataPlansResponse</returns>
-        public async System.Threading.Tasks.Task<GetDataPlansResponse> GetDataPlansAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Dojah.Net.Client.ApiResponse<GetDataPlansResponse> localVarResponse = await GetDataPlansWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Purchase - Get Data Plans 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetDataPlansResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetDataPlansResponse>> GetDataPlansWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Dojah.Net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Dojah.Net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-
-            localVarRequestOptions.Operation = "GeneralApi.GetDataPlans";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<GetDataPlansResponse>("/v1/purchase/data/plans", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetDataPlans", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
         /// General Resolve NUBAN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GeneralGetNubanResponse</returns>
-        public GeneralGetNubanResponse GetNuban(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0)
+        public GeneralGetNubanResponse GetNuban(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GeneralGetNubanResponse> localVarResponse = GetNubanWithHttpInfo(bankCode, accountNumber);
+            Dojah.Net.Client.ApiResponse<GeneralGetNubanResponse> localVarResponse = GetNubanWithHttpInfo(appId, bankCode, accountNumber);
             return localVarResponse.Data;
         }
 
@@ -930,11 +613,12 @@ namespace Dojah.Net.Api
         /// General Resolve NUBAN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GeneralGetNubanResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GeneralGetNubanResponse> GetNubanWithHttpInfo(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GeneralGetNubanResponse> GetNubanWithHttpInfo(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -966,23 +650,18 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_number", accountNumber, ""));
             }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
 
             localVarRequestOptions.Operation = "GeneralApi.GetNuban";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<GeneralGetNubanResponse>("/v1/general/account", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<GeneralGetNubanResponse>("/api/v1/general/account", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetNuban", localVarResponse);
@@ -999,14 +678,15 @@ namespace Dojah.Net.Api
         /// General Resolve NUBAN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GeneralGetNubanResponse</returns>
-        public async System.Threading.Tasks.Task<GeneralGetNubanResponse> GetNubanAsync(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GeneralGetNubanResponse> GetNubanAsync(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GeneralGetNubanResponse> localVarResponse = await GetNubanWithHttpInfoAsync(bankCode, accountNumber, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GeneralGetNubanResponse> localVarResponse = await GetNubanWithHttpInfoAsync(appId, bankCode, accountNumber, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1014,12 +694,13 @@ namespace Dojah.Net.Api
         /// General Resolve NUBAN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GeneralGetNubanResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GeneralGetNubanResponse>> GetNubanWithHttpInfoAsync(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GeneralGetNubanResponse>> GetNubanWithHttpInfoAsync(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -1052,481 +733,22 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_number", accountNumber, ""));
             }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
+            }
 
             localVarRequestOptions.Operation = "GeneralApi.GetNuban";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<GeneralGetNubanResponse>("/v1/general/account", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GeneralGetNubanResponse>("/api/v1/general/account", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetNuban", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get Dojah Wallet Balance 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetWalletBalanceResponse</returns>
-        public GetWalletBalanceResponse GetWalletBalance(int operationIndex = 0)
-        {
-            Dojah.Net.Client.ApiResponse<GetWalletBalanceResponse> localVarResponse = GetWalletBalanceWithHttpInfo();
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get Dojah Wallet Balance 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetWalletBalanceResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetWalletBalanceResponse> GetWalletBalanceWithHttpInfo(int operationIndex = 0)
-        {
-            Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Dojah.Net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Dojah.Net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-
-            localVarRequestOptions.Operation = "GeneralApi.GetWalletBalance";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<GetWalletBalanceResponse>("/api/v1/balance", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetWalletBalance", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get Dojah Wallet Balance 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetWalletBalanceResponse</returns>
-        public async System.Threading.Tasks.Task<GetWalletBalanceResponse> GetWalletBalanceAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Dojah.Net.Client.ApiResponse<GetWalletBalanceResponse> localVarResponse = await GetWalletBalanceWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get Dojah Wallet Balance 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetWalletBalanceResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetWalletBalanceResponse>> GetWalletBalanceWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Dojah.Net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Dojah.Net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-
-            localVarRequestOptions.Operation = "GeneralApi.GetWalletBalance";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<GetWalletBalanceResponse>("/api/v1/balance", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetWalletBalance", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Purchase - Send Airtime 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseAirtimeRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>PurchaseAirtimeResponse</returns>
-        public PurchaseAirtimeResponse PurchaseAirtime(PurchaseAirtimeRequest purchaseAirtimeRequest = default(PurchaseAirtimeRequest), int operationIndex = 0)
-        {
-            Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse> localVarResponse = PurchaseAirtimeWithHttpInfo(purchaseAirtimeRequest);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Purchase - Send Airtime 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseAirtimeRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of PurchaseAirtimeResponse</returns>
-        public Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse> PurchaseAirtimeWithHttpInfo(PurchaseAirtimeRequest purchaseAirtimeRequest = default(PurchaseAirtimeRequest), int operationIndex = 0)
-        {
-            Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Dojah.Net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Dojah.Net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = purchaseAirtimeRequest;
-
-            localVarRequestOptions.Operation = "GeneralApi.PurchaseAirtime";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<PurchaseAirtimeResponse>("/v1/purchase/airtime", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("PurchaseAirtime", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Purchase - Send Airtime 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseAirtimeRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of PurchaseAirtimeResponse</returns>
-        public async System.Threading.Tasks.Task<PurchaseAirtimeResponse> PurchaseAirtimeAsync(PurchaseAirtimeRequest purchaseAirtimeRequest = default(PurchaseAirtimeRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse> localVarResponse = await PurchaseAirtimeWithHttpInfoAsync(purchaseAirtimeRequest, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Purchase - Send Airtime 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseAirtimeRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (PurchaseAirtimeResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse>> PurchaseAirtimeWithHttpInfoAsync(PurchaseAirtimeRequest purchaseAirtimeRequest = default(PurchaseAirtimeRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Dojah.Net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Dojah.Net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = purchaseAirtimeRequest;
-
-            localVarRequestOptions.Operation = "GeneralApi.PurchaseAirtime";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<PurchaseAirtimeResponse>("/v1/purchase/airtime", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("PurchaseAirtime", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Purchase - Buy Data 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseDataRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>PurchaseDataResponse</returns>
-        public PurchaseDataResponse PurchaseData(PurchaseDataRequest purchaseDataRequest = default(PurchaseDataRequest), int operationIndex = 0)
-        {
-            Dojah.Net.Client.ApiResponse<PurchaseDataResponse> localVarResponse = PurchaseDataWithHttpInfo(purchaseDataRequest);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Purchase - Buy Data 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseDataRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of PurchaseDataResponse</returns>
-        public Dojah.Net.Client.ApiResponse<PurchaseDataResponse> PurchaseDataWithHttpInfo(PurchaseDataRequest purchaseDataRequest = default(PurchaseDataRequest), int operationIndex = 0)
-        {
-            Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Dojah.Net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Dojah.Net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = purchaseDataRequest;
-
-            localVarRequestOptions.Operation = "GeneralApi.PurchaseData";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<PurchaseDataResponse>("/v1/purchase/data", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("PurchaseData", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Purchase - Buy Data 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseDataRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of PurchaseDataResponse</returns>
-        public async System.Threading.Tasks.Task<PurchaseDataResponse> PurchaseDataAsync(PurchaseDataRequest purchaseDataRequest = default(PurchaseDataRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Dojah.Net.Client.ApiResponse<PurchaseDataResponse> localVarResponse = await PurchaseDataWithHttpInfoAsync(purchaseDataRequest, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Purchase - Buy Data 
-        /// </summary>
-        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseDataRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (PurchaseDataResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<PurchaseDataResponse>> PurchaseDataWithHttpInfoAsync(PurchaseDataRequest purchaseDataRequest = default(PurchaseDataRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Dojah.Net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Dojah.Net.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = purchaseDataRequest;
-
-            localVarRequestOptions.Operation = "GeneralApi.PurchaseData";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<PurchaseDataResponse>("/v1/purchase/data", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("PurchaseData", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

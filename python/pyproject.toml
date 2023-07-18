@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "dojah-python-sdk"
 version = "4.0.0"
-description = "Client for DOJAH APIs"
+description = "Client for DOJAH Publilc APIs"
 authors = ["Konfig <engineering@konfigthis.com>"]
 license = "MIT"
 readme = "README.md"

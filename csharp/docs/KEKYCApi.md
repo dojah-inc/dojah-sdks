@@ -5,10 +5,11 @@ All URIs are relative to *https://api.dojah.io*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**GetNationalId**](KEKYCApi.md#getnationalid) | **GET** /api/v1/ke/kyc/id | KYC - National ID |
+| [**GetPassport**](KEKYCApi.md#getpassport) | **GET** /api/v1/ke/kyc/passport | KYC - Passport |
 
 <a name="getnationalid"></a>
 # **GetNationalId**
-> GetNationalIdResponse GetNationalId (int? id = null, string firstName = null, string lastName = null, string middleName = null, string dateOfBirth = null, string gender = null)
+> GetNationalIdResponse GetNationalId (string appId = null, int? id = null)
 
 KYC - National ID
 
@@ -32,27 +33,14 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
             var apiInstance = new KEKYCApi(config);
+            var appId = {{app_id}};  // string |  (optional) 
             var id = 24798402;  // int? |  (optional) 
-            var firstName = ZEDEKIAH;  // string |  (optional) 
-            var lastName = ANDENGA;  // string |  (optional) 
-            var middleName = "middleName_example";  // string |  (optional) 
-            var dateOfBirth = 1985-12-29;  // string |  (optional) 
-            var gender = M;  // string |  (optional) 
 
             try
             {
                 // KYC - National ID
-                GetNationalIdResponse result = apiInstance.GetNationalId(id, firstName, lastName, middleName, dateOfBirth, gender);
+                GetNationalIdResponse result = apiInstance.GetNationalId(appId, id);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -79,7 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - National ID
-    ApiResponse<GetNationalIdResponse> response = apiInstance.GetNationalIdWithHttpInfo(id, firstName, lastName, middleName, dateOfBirth, gender);
+    ApiResponse<GetNationalIdResponse> response = apiInstance.GetNationalIdWithHttpInfo(appId, id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -96,12 +84,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
+| **appId** | **string** |  | [optional]  |
 | **id** | **int?** |  | [optional]  |
-| **firstName** | **string** |  | [optional]  |
-| **lastName** | **string** |  | [optional]  |
-| **middleName** | **string** |  | [optional]  |
-| **dateOfBirth** | **string** |  | [optional]  |
-| **gender** | **string** |  | [optional]  |
 
 ### Return type
 
@@ -109,7 +93,106 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getpassport"></a>
+# **GetPassport**
+> Object GetPassport (string appId = null)
+
+KYC - Passport
+
+### Example
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using Dojah.Net.Api;
+using Dojah.Net.Client;
+using Dojah.Net.Model;
+
+namespace Example
+{
+    public class GetPassportExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
+            var apiInstance = new KEKYCApi(config);
+            var appId = {{app_id}};  // string |  (optional) 
+
+            try
+            {
+                // KYC - Passport
+                Object result = apiInstance.GetPassport(appId);
+                Console.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Console.WriteLine("Exception when calling KEKYCApi.GetPassport: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetPassportWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // KYC - Passport
+    ApiResponse<Object> response = apiInstance.GetPassportWithHttpInfo(appId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling KEKYCApi.GetPassportWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **appId** | **string** |  | [optional]  |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

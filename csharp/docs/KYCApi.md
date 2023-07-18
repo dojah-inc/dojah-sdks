@@ -4,28 +4,18 @@ All URIs are relative to *https://api.dojah.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**AnalyzeDocument**](KYCApi.md#analyzedocument) | **POST** /api/v1/document/analysis | KYC - Document Analysis |
-| [**GetBasicBvn**](KYCApi.md#getbasicbvn) | **GET** /api/v1/kyc/bvn/basic | KYC - Get Basic BVN Info |
-| [**GetBasicPhoneNumber**](KYCApi.md#getbasicphonenumber) | **GET** /v1/kyc/phone_number/basic | KYC Lookup Phone Number Basic |
-| [**GetDriversLicense**](KYCApi.md#getdriverslicense) | **GET** /api/v1/kyc/dl | KYC - Get Drivers License Info |
-| [**GetEmailReputation**](KYCApi.md#getemailreputation) | **GET** /v1/kyc/email | KYC - Get Email Reputation |
-| [**GetFullBvn**](KYCApi.md#getfullbvn) | **GET** /api/v1/kyc/bvn/full | KYC - Lookup BVN Basic |
-| [**GetNuban**](KYCApi.md#getnuban) | **GET** /api/v1/kyc/nuban | KYC - Get NUBAN Information |
-| [**GetPassport**](KYCApi.md#getpassport) | **GET** /api/v1/kyc/passport | KYC - Passport |
-| [**GetPhoneNumber**](KYCApi.md#getphonenumber) | **GET** /api/v1/kyc/phone_number | KYC - Lookup Phone Number |
-| [**GetPremiumBvn**](KYCApi.md#getpremiumbvn) | **GET** /api/v1/kyc/bvn/advance | KYC - Lookup BVN Premium |
-| [**GetVIN**](KYCApi.md#getvin) | **GET** /api/v1/kyc/vin | KYC - Get VIN |
-| [**GetVnin**](KYCApi.md#getvnin) | **GET** /api/v1/kyc/vnin | Lookup VNIN |
-| [**ValidateBvn**](KYCApi.md#validatebvn) | **GET** /api/v1/kyc/bvn | KYC - Validate BVN |
-| [**VerifyAge**](KYCApi.md#verifyage) | **GET** /v1/kyc/age_verification | KYC - Age Verification |
-| [**VerifySelfieBvn**](KYCApi.md#verifyselfiebvn) | **POST** /v1/kyc/bvn/verify | KYC - Selfie BVN Verificatoin |
-| [**VerifySelfieNin**](KYCApi.md#verifyselfienin) | **POST** /v1/kyc/nin/verify | KYC - Selfie NIN Verification |
+| [**CheckLiveness**](KYCApi.md#checkliveness) | **POST** /api/v1/ml/liveness | Liveness Check |
+| [**GetAccounts**](KYCApi.md#getaccounts) | **GET** /api/v1/kyc/accounts | KYC - Fetch Accounts  |
+| [**GetAddressVerification**](KYCApi.md#getaddressverification) | **GET** /api/v1/kyc/address | Fetch Address Verification Data |
+| [**GetBvnFromNuban**](KYCApi.md#getbvnfromnuban) | **GET** /api/v1/kyc/nuban/bvn | Lookup BVN from NUBAN |
+| [**GetVin**](KYCApi.md#getvin) | **GET** /api/v1/kyc/vin | KYC - Get VIN |
+| [**SubmitAddress**](KYCApi.md#submitaddress) | **POST** /api/v1/kyc/address | Submit Address |
 
-<a name="analyzedocument"></a>
-# **AnalyzeDocument**
-> AnalyzeDocumentResponse AnalyzeDocument ()
+<a name="checkliveness"></a>
+# **CheckLiveness**
+> Object CheckLiveness (KycCheckLivenessRequest kycCheckLivenessRequest, string appId = null)
 
-KYC - Document Analysis
+Liveness Check
 
 ### Example
 ```csharp
@@ -38,7 +28,7 @@ using Dojah.Net.Model;
 
 namespace Example
 {
-    public class AnalyzeDocumentExample
+    public class CheckLivenessExample
     {
         public static void Main()
         {
@@ -47,26 +37,19 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
             var apiInstance = new KYCApi(config);
+            var kycCheckLivenessRequest = new KycCheckLivenessRequest(); // KycCheckLivenessRequest | 
+            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
-                // KYC - Document Analysis
-                AnalyzeDocumentResponse result = apiInstance.AnalyzeDocument();
+                // Liveness Check
+                Object result = apiInstance.CheckLiveness(kycCheckLivenessRequest, appId);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
             {
-                Console.WriteLine("Exception when calling KYCApi.AnalyzeDocument: " + e.Message);
+                Console.WriteLine("Exception when calling KYCApi.CheckLiveness: " + e.Message);
                 Console.WriteLine("Status Code: "+ e.ErrorCode);
                 Console.WriteLine(e.StackTrace);
             }
@@ -81,35 +64,141 @@ namespace Example
 }
 ```
 
-#### Using the AnalyzeDocumentWithHttpInfo variant
+#### Using the CheckLivenessWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // KYC - Document Analysis
-    ApiResponse<AnalyzeDocumentResponse> response = apiInstance.AnalyzeDocumentWithHttpInfo();
+    // Liveness Check
+    ApiResponse<Object> response = apiInstance.CheckLivenessWithHttpInfo(kycCheckLivenessRequest, appId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling KYCApi.AnalyzeDocumentWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling KYCApi.CheckLivenessWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **kycCheckLivenessRequest** | [**KycCheckLivenessRequest**](KycCheckLivenessRequest.md) |  |  |
+| **appId** | **string** |  | [optional]  |
+
 ### Return type
 
-[**AnalyzeDocumentResponse**](AnalyzeDocumentResponse.md)
+**Object**
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getaccounts"></a>
+# **GetAccounts**
+> Object GetAccounts (string appId = null, string bvn = null)
+
+KYC - Fetch Accounts 
+
+### Example
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using Dojah.Net.Api;
+using Dojah.Net.Client;
+using Dojah.Net.Model;
+
+namespace Example
+{
+    public class GetAccountsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+
+            // Configure custom BasePath if desired
+            // config.BasePath = "https://api.dojah.io";
+
+            var apiInstance = new KYCApi(config);
+            var appId = {{app_id}};  // string |  (optional) 
+            var bvn = 22342291445 ;  // string |  (optional) 
+
+            try
+            {
+                // KYC - Fetch Accounts 
+                Object result = apiInstance.GetAccounts(appId, bvn);
+                Console.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Console.WriteLine("Exception when calling KYCApi.GetAccounts: " + e.Message);
+                Console.WriteLine("Status Code: "+ e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+            catch (ClientException e)
+            {
+                Console.WriteLine(e.Response.StatusCode);
+                Console.WriteLine(e.Response.RawContent);
+                Console.WriteLine(e.InnerException);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetAccountsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // KYC - Fetch Accounts 
+    ApiResponse<Object> response = apiInstance.GetAccountsWithHttpInfo(appId, bvn);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling KYCApi.GetAccountsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **appId** | **string** |  | [optional]  |
+| **bvn** | **string** |  | [optional]  |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -124,11 +213,11 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getbasicbvn"></a>
-# **GetBasicBvn**
-> GetBasicBvnResponse GetBasicBvn (int? bvn = null)
+<a name="getaddressverification"></a>
+# **GetAddressVerification**
+> Object GetAddressVerification (string appId = null, string referenceId = null)
 
-KYC - Get Basic BVN Info
+Fetch Address Verification Data
 
 ### Example
 ```csharp
@@ -141,7 +230,7 @@ using Dojah.Net.Model;
 
 namespace Example
 {
-    public class GetBasicBvnExample
+    public class GetAddressVerificationExample
     {
         public static void Main()
         {
@@ -150,27 +239,19 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
             var apiInstance = new KYCApi(config);
-            var bvn = 22468537919;  // int? |  (optional) 
+            var appId = {{app_id}};  // string |  (optional) 
+            var referenceId = 69e10264-4b90-64fe-b4b7-c9dddafd0241;  // string |  (optional) 
 
             try
             {
-                // KYC - Get Basic BVN Info
-                GetBasicBvnResponse result = apiInstance.GetBasicBvn(bvn);
+                // Fetch Address Verification Data
+                Object result = apiInstance.GetAddressVerification(appId, referenceId);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
             {
-                Console.WriteLine("Exception when calling KYCApi.GetBasicBvn: " + e.Message);
+                Console.WriteLine("Exception when calling KYCApi.GetAddressVerification: " + e.Message);
                 Console.WriteLine("Status Code: "+ e.ErrorCode);
                 Console.WriteLine(e.StackTrace);
             }
@@ -185,21 +266,21 @@ namespace Example
 }
 ```
 
-#### Using the GetBasicBvnWithHttpInfo variant
+#### Using the GetAddressVerificationWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // KYC - Get Basic BVN Info
-    ApiResponse<GetBasicBvnResponse> response = apiInstance.GetBasicBvnWithHttpInfo(bvn);
+    // Fetch Address Verification Data
+    ApiResponse<Object> response = apiInstance.GetAddressVerificationWithHttpInfo(appId, referenceId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling KYCApi.GetBasicBvnWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling KYCApi.GetAddressVerificationWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -209,15 +290,16 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **bvn** | **int?** |  | [optional]  |
+| **appId** | **string** |  | [optional]  |
+| **referenceId** | **string** |  | [optional]  |
 
 ### Return type
 
-[**GetBasicBvnResponse**](GetBasicBvnResponse.md)
+**Object**
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -228,15 +310,15 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** | Successful response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getbasicphonenumber"></a>
-# **GetBasicPhoneNumber**
-> GetBasicPhoneNumberResponse GetBasicPhoneNumber (int? phoneNumber = null)
+<a name="getbvnfromnuban"></a>
+# **GetBvnFromNuban**
+> Object GetBvnFromNuban (string appId = null, int? bankCode = null, int? accountNumber = null)
 
-KYC Lookup Phone Number Basic
+Lookup BVN from NUBAN
 
 ### Example
 ```csharp
@@ -249,7 +331,7 @@ using Dojah.Net.Model;
 
 namespace Example
 {
-    public class GetBasicPhoneNumberExample
+    public class GetBvnFromNubanExample
     {
         public static void Main()
         {
@@ -258,27 +340,21 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
-            var phoneNumber = 8068810228;  // int? |  (optional) 
+            var appId = {{app_id}};  // string |  (optional) 
+            var bankCode = 57;  // int? |  (optional) 
+            var accountNumber = 2174879334;  // int? |  (optional) 
 
             try
             {
-                // KYC Lookup Phone Number Basic
-                GetBasicPhoneNumberResponse result = apiInstance.GetBasicPhoneNumber(phoneNumber);
+                // Lookup BVN from NUBAN
+                Object result = apiInstance.GetBvnFromNuban(appId, bankCode, accountNumber);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
             {
-                Console.WriteLine("Exception when calling KYCApi.GetBasicPhoneNumber: " + e.Message);
+                Console.WriteLine("Exception when calling KYCApi.GetBvnFromNuban: " + e.Message);
                 Console.WriteLine("Status Code: "+ e.ErrorCode);
                 Console.WriteLine(e.StackTrace);
             }
@@ -293,21 +369,21 @@ namespace Example
 }
 ```
 
-#### Using the GetBasicPhoneNumberWithHttpInfo variant
+#### Using the GetBvnFromNubanWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // KYC Lookup Phone Number Basic
-    ApiResponse<GetBasicPhoneNumberResponse> response = apiInstance.GetBasicPhoneNumberWithHttpInfo(phoneNumber);
+    // Lookup BVN from NUBAN
+    ApiResponse<Object> response = apiInstance.GetBvnFromNubanWithHttpInfo(appId, bankCode, accountNumber);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling KYCApi.GetBasicPhoneNumberWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling KYCApi.GetBvnFromNubanWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -317,559 +393,17 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **phoneNumber** | **int?** |  | [optional]  |
-
-### Return type
-
-[**GetBasicPhoneNumberResponse**](GetBasicPhoneNumberResponse.md)
-
-### Authorization
-
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getdriverslicense"></a>
-# **GetDriversLicense**
-> GetKycDriversLicenseResponse GetDriversLicense (string licenseNumber = null)
-
-KYC - Get Drivers License Info
-
-### Example
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dojah.Net.Api;
-using Dojah.Net.Client;
-using Dojah.Net.Model;
-
-namespace Example
-{
-    public class GetDriversLicenseExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-
-            // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
-            var apiInstance = new KYCApi(config);
-            var licenseNumber = FKJ49409AB13;  // string |  (optional) 
-
-            try
-            {
-                // KYC - Get Drivers License Info
-                GetKycDriversLicenseResponse result = apiInstance.GetDriversLicense(licenseNumber);
-                Console.WriteLine(result);
-            }
-            catch (ApiException e)
-            {
-                Console.WriteLine("Exception when calling KYCApi.GetDriversLicense: " + e.Message);
-                Console.WriteLine("Status Code: "+ e.ErrorCode);
-                Console.WriteLine(e.StackTrace);
-            }
-            catch (ClientException e)
-            {
-                Console.WriteLine(e.Response.StatusCode);
-                Console.WriteLine(e.Response.RawContent);
-                Console.WriteLine(e.InnerException);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetDriversLicenseWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // KYC - Get Drivers License Info
-    ApiResponse<GetKycDriversLicenseResponse> response = apiInstance.GetDriversLicenseWithHttpInfo(licenseNumber);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling KYCApi.GetDriversLicenseWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **licenseNumber** | **string** |  | [optional]  |
-
-### Return type
-
-[**GetKycDriversLicenseResponse**](GetKycDriversLicenseResponse.md)
-
-### Authorization
-
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getemailreputation"></a>
-# **GetEmailReputation**
-> GetEmailReputationResponse GetEmailReputation (string email = null)
-
-KYC - Get Email Reputation
-
-### Example
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dojah.Net.Api;
-using Dojah.Net.Client;
-using Dojah.Net.Model;
-
-namespace Example
-{
-    public class GetEmailReputationExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-
-            // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
-            var apiInstance = new KYCApi(config);
-            var email = johndoe@gmail.com;  // string |  (optional) 
-
-            try
-            {
-                // KYC - Get Email Reputation
-                GetEmailReputationResponse result = apiInstance.GetEmailReputation(email);
-                Console.WriteLine(result);
-            }
-            catch (ApiException e)
-            {
-                Console.WriteLine("Exception when calling KYCApi.GetEmailReputation: " + e.Message);
-                Console.WriteLine("Status Code: "+ e.ErrorCode);
-                Console.WriteLine(e.StackTrace);
-            }
-            catch (ClientException e)
-            {
-                Console.WriteLine(e.Response.StatusCode);
-                Console.WriteLine(e.Response.RawContent);
-                Console.WriteLine(e.InnerException);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetEmailReputationWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // KYC - Get Email Reputation
-    ApiResponse<GetEmailReputationResponse> response = apiInstance.GetEmailReputationWithHttpInfo(email);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling KYCApi.GetEmailReputationWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **email** | **string** |  | [optional]  |
-
-### Return type
-
-[**GetEmailReputationResponse**](GetEmailReputationResponse.md)
-
-### Authorization
-
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * CF-Ray -  <br>  * Access-Control-Allow-Origin -  <br>  * ETag -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * X-Powered-By -  <br>  * Report-To -  <br>  * NEL -  <br>  * Vary -  <br>  * Server -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getfullbvn"></a>
-# **GetFullBvn**
-> GetFullBvnResponse GetFullBvn (int? bvn = null)
-
-KYC - Lookup BVN Basic
-
-### Example
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dojah.Net.Api;
-using Dojah.Net.Client;
-using Dojah.Net.Model;
-
-namespace Example
-{
-    public class GetFullBvnExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-
-            // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
-            var apiInstance = new KYCApi(config);
-            var bvn = 22222222222;  // int? |  (optional) 
-
-            try
-            {
-                // KYC - Lookup BVN Basic
-                GetFullBvnResponse result = apiInstance.GetFullBvn(bvn);
-                Console.WriteLine(result);
-            }
-            catch (ApiException e)
-            {
-                Console.WriteLine("Exception when calling KYCApi.GetFullBvn: " + e.Message);
-                Console.WriteLine("Status Code: "+ e.ErrorCode);
-                Console.WriteLine(e.StackTrace);
-            }
-            catch (ClientException e)
-            {
-                Console.WriteLine(e.Response.StatusCode);
-                Console.WriteLine(e.Response.RawContent);
-                Console.WriteLine(e.InnerException);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetFullBvnWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // KYC - Lookup BVN Basic
-    ApiResponse<GetFullBvnResponse> response = apiInstance.GetFullBvnWithHttpInfo(bvn);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling KYCApi.GetFullBvnWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **bvn** | **int?** |  | [optional]  |
-
-### Return type
-
-[**GetFullBvnResponse**](GetFullBvnResponse.md)
-
-### Authorization
-
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getnuban"></a>
-# **GetNuban**
-> GetNubanResponse GetNuban (int? bankCode = null, int? accountNumber = null)
-
-KYC - Get NUBAN Information
-
-### Example
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dojah.Net.Api;
-using Dojah.Net.Client;
-using Dojah.Net.Model;
-
-namespace Example
-{
-    public class GetNubanExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-
-            // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
-            var apiInstance = new KYCApi(config);
-            var bankCode = 58;  // int? |  (optional) 
-            var accountNumber = 11223344;  // int? |  (optional) 
-
-            try
-            {
-                // KYC - Get NUBAN Information
-                GetNubanResponse result = apiInstance.GetNuban(bankCode, accountNumber);
-                Console.WriteLine(result);
-            }
-            catch (ApiException e)
-            {
-                Console.WriteLine("Exception when calling KYCApi.GetNuban: " + e.Message);
-                Console.WriteLine("Status Code: "+ e.ErrorCode);
-                Console.WriteLine(e.StackTrace);
-            }
-            catch (ClientException e)
-            {
-                Console.WriteLine(e.Response.StatusCode);
-                Console.WriteLine(e.Response.RawContent);
-                Console.WriteLine(e.InnerException);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetNubanWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // KYC - Get NUBAN Information
-    ApiResponse<GetNubanResponse> response = apiInstance.GetNubanWithHttpInfo(bankCode, accountNumber);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling KYCApi.GetNubanWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
+| **appId** | **string** |  | [optional]  |
 | **bankCode** | **int?** |  | [optional]  |
 | **accountNumber** | **int?** |  | [optional]  |
 
 ### Return type
 
-[**GetNubanResponse**](GetNubanResponse.md)
+**Object**
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getpassport"></a>
-# **GetPassport**
-> GetKycPassportResponse GetPassport (int? passportNumber = null, string surname = null)
-
-KYC - Passport
-
-### Example
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dojah.Net.Api;
-using Dojah.Net.Client;
-using Dojah.Net.Model;
-
-namespace Example
-{
-    public class GetPassportExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-
-            // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
-            var apiInstance = new KYCApi(config);
-            var passportNumber = 70142502085;  // int? |  (optional) 
-            var surname = ololade;  // string |  (optional) 
-
-            try
-            {
-                // KYC - Passport
-                GetKycPassportResponse result = apiInstance.GetPassport(passportNumber, surname);
-                Console.WriteLine(result);
-            }
-            catch (ApiException e)
-            {
-                Console.WriteLine("Exception when calling KYCApi.GetPassport: " + e.Message);
-                Console.WriteLine("Status Code: "+ e.ErrorCode);
-                Console.WriteLine(e.StackTrace);
-            }
-            catch (ClientException e)
-            {
-                Console.WriteLine(e.Response.StatusCode);
-                Console.WriteLine(e.Response.RawContent);
-                Console.WriteLine(e.InnerException);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetPassportWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // KYC - Passport
-    ApiResponse<GetKycPassportResponse> response = apiInstance.GetPassportWithHttpInfo(passportNumber, surname);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling KYCApi.GetPassportWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **passportNumber** | **int?** |  | [optional]  |
-| **surname** | **string** |  | [optional]  |
-
-### Return type
-
-[**GetKycPassportResponse**](GetKycPassportResponse.md)
-
-### Authorization
-
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -884,226 +418,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getphonenumber"></a>
-# **GetPhoneNumber**
-> GetPhoneNumberResponse GetPhoneNumber (int? phoneNumber = null)
-
-KYC - Lookup Phone Number
-
-### Example
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dojah.Net.Api;
-using Dojah.Net.Client;
-using Dojah.Net.Model;
-
-namespace Example
-{
-    public class GetPhoneNumberExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-
-            // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
-            var apiInstance = new KYCApi(config);
-            var phoneNumber = 8011111111;  // int? |  (optional) 
-
-            try
-            {
-                // KYC - Lookup Phone Number
-                GetPhoneNumberResponse result = apiInstance.GetPhoneNumber(phoneNumber);
-                Console.WriteLine(result);
-            }
-            catch (ApiException e)
-            {
-                Console.WriteLine("Exception when calling KYCApi.GetPhoneNumber: " + e.Message);
-                Console.WriteLine("Status Code: "+ e.ErrorCode);
-                Console.WriteLine(e.StackTrace);
-            }
-            catch (ClientException e)
-            {
-                Console.WriteLine(e.Response.StatusCode);
-                Console.WriteLine(e.Response.RawContent);
-                Console.WriteLine(e.InnerException);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetPhoneNumberWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // KYC - Lookup Phone Number
-    ApiResponse<GetPhoneNumberResponse> response = apiInstance.GetPhoneNumberWithHttpInfo(phoneNumber);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling KYCApi.GetPhoneNumberWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **phoneNumber** | **int?** |  | [optional]  |
-
-### Return type
-
-[**GetPhoneNumberResponse**](GetPhoneNumberResponse.md)
-
-### Authorization
-
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **404** | Not Found |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getpremiumbvn"></a>
-# **GetPremiumBvn**
-> GetPremiumBvnResponse GetPremiumBvn (int? bvn = null)
-
-KYC - Lookup BVN Premium
-
-### Example
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dojah.Net.Api;
-using Dojah.Net.Client;
-using Dojah.Net.Model;
-
-namespace Example
-{
-    public class GetPremiumBvnExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-
-            // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
-            var apiInstance = new KYCApi(config);
-            var bvn = 22305638508;  // int? |  (optional) 
-
-            try
-            {
-                // KYC - Lookup BVN Premium
-                GetPremiumBvnResponse result = apiInstance.GetPremiumBvn(bvn);
-                Console.WriteLine(result);
-            }
-            catch (ApiException e)
-            {
-                Console.WriteLine("Exception when calling KYCApi.GetPremiumBvn: " + e.Message);
-                Console.WriteLine("Status Code: "+ e.ErrorCode);
-                Console.WriteLine(e.StackTrace);
-            }
-            catch (ClientException e)
-            {
-                Console.WriteLine(e.Response.StatusCode);
-                Console.WriteLine(e.Response.RawContent);
-                Console.WriteLine(e.InnerException);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetPremiumBvnWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // KYC - Lookup BVN Premium
-    ApiResponse<GetPremiumBvnResponse> response = apiInstance.GetPremiumBvnWithHttpInfo(bvn);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling KYCApi.GetPremiumBvnWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **bvn** | **int?** |  | [optional]  |
-
-### Return type
-
-[**GetPremiumBvnResponse**](GetPremiumBvnResponse.md)
-
-### Authorization
-
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * access-control-allow-origin -  <br>  * x-moesif-transaction-id -  <br>  * service -  <br>  * product -  <br>  * etag -  <br>  * vary -  <br>  * CF-Cache-Status -  <br>  * Expect-CT -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getvin"></a>
-# **GetVIN**
-> GetVinResponse GetVIN (string mode = null, string firstname = null, string lastname = null, int? vin = null, string state = null)
+# **GetVin**
+> GetVinResponse GetVin (string appId = null, string vin = null)
 
 KYC - Get VIN
 
@@ -1118,7 +435,7 @@ using Dojah.Net.Model;
 
 namespace Example
 {
-    public class GetVINExample
+    public class GetVinExample
     {
         public static void Main()
         {
@@ -1127,31 +444,20 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new KYCApi(config);
-            var mode = vin;  // string |  (optional) 
-            var firstname = moshood;  // string |  (optional) 
-            var lastname = saliu;  // string |  (optional) 
-            var vin = 55586;  // int? |  (optional) 
-            var state = ondo;  // string |  (optional) 
+            var appId = {{app_id}};  // string |  (optional) 
+            var vin = 90F5B20205096041114;  // string |  (optional) 
 
             try
             {
                 // KYC - Get VIN
-                GetVinResponse result = apiInstance.GetVIN(mode, firstname, lastname, vin, state);
+                GetVinResponse result = apiInstance.GetVin(appId, vin);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
             {
-                Console.WriteLine("Exception when calling KYCApi.GetVIN: " + e.Message);
+                Console.WriteLine("Exception when calling KYCApi.GetVin: " + e.Message);
                 Console.WriteLine("Status Code: "+ e.ErrorCode);
                 Console.WriteLine(e.StackTrace);
             }
@@ -1166,21 +472,21 @@ namespace Example
 }
 ```
 
-#### Using the GetVINWithHttpInfo variant
+#### Using the GetVinWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // KYC - Get VIN
-    ApiResponse<GetVinResponse> response = apiInstance.GetVINWithHttpInfo(mode, firstname, lastname, vin, state);
+    ApiResponse<GetVinResponse> response = apiInstance.GetVinWithHttpInfo(appId, vin);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling KYCApi.GetVINWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling KYCApi.GetVinWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -1190,11 +496,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **mode** | **string** |  | [optional]  |
-| **firstname** | **string** |  | [optional]  |
-| **lastname** | **string** |  | [optional]  |
-| **vin** | **int?** |  | [optional]  |
-| **state** | **string** |  | [optional]  |
+| **appId** | **string** |  | [optional]  |
+| **vin** | **string** |  | [optional]  |
 
 ### Return type
 
@@ -1202,7 +505,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 
@@ -1217,11 +520,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getvnin"></a>
-# **GetVnin**
-> GetVninResponse GetVnin (string vnin = null)
+<a name="submitaddress"></a>
+# **SubmitAddress**
+> KycSubmitAddressResponse SubmitAddress (string appId = null, KycSubmitAddressRequest kycSubmitAddressRequest = null)
 
-Lookup VNIN
+Submit Address
 
 ### Example
 ```csharp
@@ -1234,7 +537,7 @@ using Dojah.Net.Model;
 
 namespace Example
 {
-    public class GetVninExample
+    public class SubmitAddressExample
     {
         public static void Main()
         {
@@ -1243,27 +546,19 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
             var apiInstance = new KYCApi(config);
-            var vnin = AB012345678910YZ;  // string |  (optional) 
+            var appId = {{app_id}};  // string |  (optional) 
+            var kycSubmitAddressRequest = new KycSubmitAddressRequest(); // KycSubmitAddressRequest |  (optional) 
 
             try
             {
-                // Lookup VNIN
-                GetVninResponse result = apiInstance.GetVnin(vnin);
+                // Submit Address
+                KycSubmitAddressResponse result = apiInstance.SubmitAddress(appId, kycSubmitAddressRequest);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
             {
-                Console.WriteLine("Exception when calling KYCApi.GetVnin: " + e.Message);
+                Console.WriteLine("Exception when calling KYCApi.SubmitAddress: " + e.Message);
                 Console.WriteLine("Status Code: "+ e.ErrorCode);
                 Console.WriteLine(e.StackTrace);
             }
@@ -1278,21 +573,21 @@ namespace Example
 }
 ```
 
-#### Using the GetVninWithHttpInfo variant
+#### Using the SubmitAddressWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Lookup VNIN
-    ApiResponse<GetVninResponse> response = apiInstance.GetVninWithHttpInfo(vnin);
+    // Submit Address
+    ApiResponse<KycSubmitAddressResponse> response = apiInstance.SubmitAddressWithHttpInfo(appId, kycSubmitAddressRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling KYCApi.GetVninWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling KYCApi.SubmitAddressWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -1302,353 +597,16 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **vnin** | **string** |  | [optional]  |
+| **appId** | **string** |  | [optional]  |
+| **kycSubmitAddressRequest** | [**KycSubmitAddressRequest**](KycSubmitAddressRequest.md) |  | [optional]  |
 
 ### Return type
 
-[**GetVninResponse**](GetVninResponse.md)
+[**KycSubmitAddressResponse**](KycSubmitAddressResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="validatebvn"></a>
-# **ValidateBvn**
-> ValidateBvnResponse ValidateBvn (int? bvn = null, string firstName = null, string dob = null)
-
-KYC - Validate BVN
-
-### Example
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dojah.Net.Api;
-using Dojah.Net.Client;
-using Dojah.Net.Model;
-
-namespace Example
-{
-    public class ValidateBvnExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-
-            // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
-            var apiInstance = new KYCApi(config);
-            var bvn = 22250148240;  // int? |  (optional) 
-            var firstName = FRANCIS;  // string |  (optional) 
-            var dob = 1982-02-19;  // string |  (optional) 
-
-            try
-            {
-                // KYC - Validate BVN
-                ValidateBvnResponse result = apiInstance.ValidateBvn(bvn, firstName, dob);
-                Console.WriteLine(result);
-            }
-            catch (ApiException e)
-            {
-                Console.WriteLine("Exception when calling KYCApi.ValidateBvn: " + e.Message);
-                Console.WriteLine("Status Code: "+ e.ErrorCode);
-                Console.WriteLine(e.StackTrace);
-            }
-            catch (ClientException e)
-            {
-                Console.WriteLine(e.Response.StatusCode);
-                Console.WriteLine(e.Response.RawContent);
-                Console.WriteLine(e.InnerException);
-            }
-        }
-    }
-}
-```
-
-#### Using the ValidateBvnWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // KYC - Validate BVN
-    ApiResponse<ValidateBvnResponse> response = apiInstance.ValidateBvnWithHttpInfo(bvn, firstName, dob);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling KYCApi.ValidateBvnWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **bvn** | **int?** |  | [optional]  |
-| **firstName** | **string** |  | [optional]  |
-| **dob** | **string** |  | [optional]  |
-
-### Return type
-
-[**ValidateBvnResponse**](ValidateBvnResponse.md)
-
-### Authorization
-
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="verifyage"></a>
-# **VerifyAge**
-> VerifyAgeResponse VerifyAge (string mode = null, int? accountNumber = null, int? bankCode = null, string dob = null, string firstName = null, string lastName = null)
-
-KYC - Age Verification
-
-### Example
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dojah.Net.Api;
-using Dojah.Net.Client;
-using Dojah.Net.Model;
-
-namespace Example
-{
-    public class VerifyAgeExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-
-            // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
-            var apiInstance = new KYCApi(config);
-            var mode = account_number;  // string |  (optional) 
-            var accountNumber = 3046507407;  // int? |  (optional) 
-            var bankCode = 11;  // int? |  (optional) 
-            var dob = 1993-06-10;  // string |  (optional) 
-            var firstName = Mosh;  // string |  (optional) 
-            var lastName = Saliu;  // string |  (optional) 
-
-            try
-            {
-                // KYC - Age Verification
-                VerifyAgeResponse result = apiInstance.VerifyAge(mode, accountNumber, bankCode, dob, firstName, lastName);
-                Console.WriteLine(result);
-            }
-            catch (ApiException e)
-            {
-                Console.WriteLine("Exception when calling KYCApi.VerifyAge: " + e.Message);
-                Console.WriteLine("Status Code: "+ e.ErrorCode);
-                Console.WriteLine(e.StackTrace);
-            }
-            catch (ClientException e)
-            {
-                Console.WriteLine(e.Response.StatusCode);
-                Console.WriteLine(e.Response.RawContent);
-                Console.WriteLine(e.InnerException);
-            }
-        }
-    }
-}
-```
-
-#### Using the VerifyAgeWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // KYC - Age Verification
-    ApiResponse<VerifyAgeResponse> response = apiInstance.VerifyAgeWithHttpInfo(mode, accountNumber, bankCode, dob, firstName, lastName);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling KYCApi.VerifyAgeWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **mode** | **string** |  | [optional]  |
-| **accountNumber** | **int?** |  | [optional]  |
-| **bankCode** | **int?** |  | [optional]  |
-| **dob** | **string** |  | [optional]  |
-| **firstName** | **string** |  | [optional]  |
-| **lastName** | **string** |  | [optional]  |
-
-### Return type
-
-[**VerifyAgeResponse**](VerifyAgeResponse.md)
-
-### Authorization
-
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="verifyselfiebvn"></a>
-# **VerifySelfieBvn**
-> VerifySelfieBvnResponse VerifySelfieBvn (VerifySelfieBvnRequest verifySelfieBvnRequest = null)
-
-KYC - Selfie BVN Verificatoin
-
-### Example
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dojah.Net.Api;
-using Dojah.Net.Client;
-using Dojah.Net.Model;
-
-namespace Example
-{
-    public class VerifySelfieBvnExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-
-            // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
-            var apiInstance = new KYCApi(config);
-            var verifySelfieBvnRequest = new VerifySelfieBvnRequest(); // VerifySelfieBvnRequest |  (optional) 
-
-            try
-            {
-                // KYC - Selfie BVN Verificatoin
-                VerifySelfieBvnResponse result = apiInstance.VerifySelfieBvn(verifySelfieBvnRequest);
-                Console.WriteLine(result);
-            }
-            catch (ApiException e)
-            {
-                Console.WriteLine("Exception when calling KYCApi.VerifySelfieBvn: " + e.Message);
-                Console.WriteLine("Status Code: "+ e.ErrorCode);
-                Console.WriteLine(e.StackTrace);
-            }
-            catch (ClientException e)
-            {
-                Console.WriteLine(e.Response.StatusCode);
-                Console.WriteLine(e.Response.RawContent);
-                Console.WriteLine(e.InnerException);
-            }
-        }
-    }
-}
-```
-
-#### Using the VerifySelfieBvnWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // KYC - Selfie BVN Verificatoin
-    ApiResponse<VerifySelfieBvnResponse> response = apiInstance.VerifySelfieBvnWithHttpInfo(verifySelfieBvnRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling KYCApi.VerifySelfieBvnWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **verifySelfieBvnRequest** | [**VerifySelfieBvnRequest**](VerifySelfieBvnRequest.md) |  | [optional]  |
-
-### Return type
-
-[**VerifySelfieBvnResponse**](VerifySelfieBvnResponse.md)
-
-### Authorization
-
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -1659,115 +617,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="verifyselfienin"></a>
-# **VerifySelfieNin**
-> VerifySelfieNinResponse VerifySelfieNin (VerifySelfieNinRequest verifySelfieNinRequest = null)
-
-KYC - Selfie NIN Verification
-
-### Example
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dojah.Net.Api;
-using Dojah.Net.Client;
-using Dojah.Net.Model;
-
-namespace Example
-{
-    public class VerifySelfieNinExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-
-            // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
-            var apiInstance = new KYCApi(config);
-            var verifySelfieNinRequest = new VerifySelfieNinRequest(); // VerifySelfieNinRequest |  (optional) 
-
-            try
-            {
-                // KYC - Selfie NIN Verification
-                VerifySelfieNinResponse result = apiInstance.VerifySelfieNin(verifySelfieNinRequest);
-                Console.WriteLine(result);
-            }
-            catch (ApiException e)
-            {
-                Console.WriteLine("Exception when calling KYCApi.VerifySelfieNin: " + e.Message);
-                Console.WriteLine("Status Code: "+ e.ErrorCode);
-                Console.WriteLine(e.StackTrace);
-            }
-            catch (ClientException e)
-            {
-                Console.WriteLine(e.Response.StatusCode);
-                Console.WriteLine(e.Response.RawContent);
-                Console.WriteLine(e.InnerException);
-            }
-        }
-    }
-}
-```
-
-#### Using the VerifySelfieNinWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // KYC - Selfie NIN Verification
-    ApiResponse<VerifySelfieNinResponse> response = apiInstance.VerifySelfieNinWithHttpInfo(verifySelfieNinRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling KYCApi.VerifySelfieNinWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **verifySelfieNinRequest** | [**VerifySelfieNinRequest**](VerifySelfieNinRequest.md) |  | [optional]  |
-
-### Return type
-
-[**VerifySelfieNinResponse**](VerifySelfieNinResponse.md)
-
-### Authorization
-
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
+| **200** | OK |  * Date -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * uuid -  <br>  * x-moesif-transaction-id -  <br>  * RateLimit-Limit -  <br>  * RateLimit-Remaining -  <br>  * RateLimit-Reset -  <br>  * service -  <br>  * product -  <br>  * ETag -  <br>  * Vary -  <br>  * CF-Cache-Status -  <br>  * Report-To -  <br>  * NEL -  <br>  * Server -  <br>  * CF-RAY -  <br>  * Content-Encoding -  <br>  * alt-svc -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

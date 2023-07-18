@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -26,7 +26,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.konfigthis.dojah.client.model.GetVoterResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -45,9 +44,6 @@ public class UgKycApi {
     }
 
     public UgKycApi(ApiClient apiClient) throws IllegalArgumentException {
-        if (apiClient.getApikeyAuth() == null) {
-            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
-        }
         this.localVarApiClient = apiClient;
     }
 
@@ -75,7 +71,7 @@ public class UgKycApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call getVoterCall(Integer id, String firstName, String lastName, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getVoterCall(String appId, Integer id, String firstName, String lastName, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -112,6 +108,10 @@ public class UgKycApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("last_name", lastName));
         }
 
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -127,32 +127,33 @@ public class UgKycApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getVoterValidateBeforeCall(Integer id, String firstName, String lastName, final ApiCallback _callback) throws ApiException {
-        return getVoterCall(id, firstName, lastName, _callback);
+    private okhttp3.Call getVoterValidateBeforeCall(String appId, Integer id, String firstName, String lastName, final ApiCallback _callback) throws ApiException {
+        return getVoterCall(appId, id, firstName, lastName, _callback);
 
     }
 
 
-    private ApiResponse<GetVoterResponse> getVoterWithHttpInfo(Integer id, String firstName, String lastName) throws ApiException {
-        okhttp3.Call localVarCall = getVoterValidateBeforeCall(id, firstName, lastName, null);
-        Type localVarReturnType = new TypeToken<GetVoterResponse>(){}.getType();
+    private ApiResponse<Object> getVoterWithHttpInfo(String appId, Integer id, String firstName, String lastName) throws ApiException {
+        okhttp3.Call localVarCall = getVoterValidateBeforeCall(appId, id, firstName, lastName, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getVoterAsync(Integer id, String firstName, String lastName, final ApiCallback<GetVoterResponse> _callback) throws ApiException {
+    private okhttp3.Call getVoterAsync(String appId, Integer id, String firstName, String lastName, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getVoterValidateBeforeCall(id, firstName, lastName, _callback);
-        Type localVarReturnType = new TypeToken<GetVoterResponse>(){}.getType();
+        okhttp3.Call localVarCall = getVoterValidateBeforeCall(appId, id, firstName, lastName, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
     public class GetVoterRequestBuilder {
+        private String appId;
         private Integer id;
         private String firstName;
         private String lastName;
@@ -160,6 +161,16 @@ public class UgKycApi {
         private GetVoterRequestBuilder() {
         }
 
+        /**
+         * Set appId
+         * @param appId  (optional)
+         * @return GetVoterRequestBuilder
+         */
+        public GetVoterRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
         /**
          * Set id
          * @param id  (optional)
@@ -202,13 +213,13 @@ public class UgKycApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getVoterCall(id, firstName, lastName, _callback);
+            return getVoterCall(appId, id, firstName, lastName, _callback);
         }
 
 
         /**
          * Execute getVoter request
-         * @return GetVoterResponse
+         * @return Object
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -216,14 +227,14 @@ public class UgKycApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public GetVoterResponse execute() throws ApiException {
-            ApiResponse<GetVoterResponse> localVarResp = getVoterWithHttpInfo(id, firstName, lastName);
-            return localVarResp.getData();
+        public Object execute() throws ApiException {
+            ApiResponse<Object> localVarResp = getVoterWithHttpInfo(appId, id, firstName, lastName);
+            return localVarResp.getResponseBody();
         }
 
         /**
          * Execute getVoter request with HTTP info returned
-         * @return ApiResponse&lt;GetVoterResponse&gt;
+         * @return ApiResponse&lt;Object&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -231,8 +242,8 @@ public class UgKycApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<GetVoterResponse> executeWithHttpInfo() throws ApiException {
-            return getVoterWithHttpInfo(id, firstName, lastName);
+        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+            return getVoterWithHttpInfo(appId, id, firstName, lastName);
         }
 
         /**
@@ -246,8 +257,8 @@ public class UgKycApi {
             <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<GetVoterResponse> _callback) throws ApiException {
-            return getVoterAsync(id, firstName, lastName, _callback);
+        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
+            return getVoterAsync(appId, id, firstName, lastName, _callback);
         }
     }
 

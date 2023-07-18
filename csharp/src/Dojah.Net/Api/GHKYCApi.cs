@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -30,12 +30,13 @@ namespace Dojah.Net.Api
         /// Driver&#39;s License
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="fullName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetDriversLicenseResponse</returns>
-        GetDriversLicenseResponse GetDriversLicense(string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0);
+        GetDriversLicenseResponse GetDriversLicense(string appId = default(string), string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Driver&#39;s License
@@ -44,16 +45,18 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="fullName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetDriversLicenseResponse</returns>
-        ApiResponse<GetDriversLicenseResponse> GetDriversLicenseWithHttpInfo(string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0);
+        ApiResponse<GetDriversLicenseResponse> GetDriversLicenseWithHttpInfo(string appId = default(string), string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0);
         /// <summary>
         /// Passport
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -61,7 +64,7 @@ namespace Dojah.Net.Api
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetPassportResponse</returns>
-        GetPassportResponse GetPassport(string id = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string dateOfBirth = default(string), int operationIndex = 0);
+        GetPassportResponse GetPassport(string appId = default(string), string id = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string dateOfBirth = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Passport
@@ -70,6 +73,7 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -77,17 +81,18 @@ namespace Dojah.Net.Api
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetPassportResponse</returns>
-        ApiResponse<GetPassportResponse> GetPassportWithHttpInfo(string id = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string dateOfBirth = default(string), int operationIndex = 0);
+        ApiResponse<GetPassportResponse> GetPassportWithHttpInfo(string appId = default(string), string id = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string dateOfBirth = default(string), int operationIndex = 0);
         /// <summary>
         /// SSNIT
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="fullName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetSsnitResponse</returns>
-        GetSsnitResponse GetSsnit(string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0);
+        GetSsnitResponse GetSsnit(string appId = default(string), string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0);
 
         /// <summary>
         /// SSNIT
@@ -96,12 +101,39 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="fullName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetSsnitResponse</returns>
-        ApiResponse<GetSsnitResponse> GetSsnitWithHttpInfo(string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0);
+        ApiResponse<GetSsnitResponse> GetSsnitWithHttpInfo(string appId = default(string), string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0);
+        /// <summary>
+        /// Voter ID Lookup
+        /// </summary>
+        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="id"> (optional)</param>
+        /// <param name="fullName"> (optional)</param>
+        /// <param name="isNewId"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>Object</returns>
+        Object GetVoter(string appId = default(string), int? id = default(int?), string fullName = default(string), bool? isNewId = default(bool?), int operationIndex = 0);
+
+        /// <summary>
+        /// Voter ID Lookup
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="id"> (optional)</param>
+        /// <param name="fullName"> (optional)</param>
+        /// <param name="isNewId"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> GetVoterWithHttpInfo(string appId = default(string), int? id = default(int?), string fullName = default(string), bool? isNewId = default(bool?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -118,13 +150,14 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="fullName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetDriversLicenseResponse</returns>
-        System.Threading.Tasks.Task<GetDriversLicenseResponse> GetDriversLicenseAsync(string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetDriversLicenseResponse> GetDriversLicenseAsync(string appId = default(string), string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Driver&#39;s License
@@ -133,13 +166,14 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="fullName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetDriversLicenseResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetDriversLicenseResponse>> GetDriversLicenseWithHttpInfoAsync(string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetDriversLicenseResponse>> GetDriversLicenseWithHttpInfoAsync(string appId = default(string), string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Passport
         /// </summary>
@@ -147,6 +181,7 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -155,7 +190,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPassportResponse</returns>
-        System.Threading.Tasks.Task<GetPassportResponse> GetPassportAsync(string id = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetPassportResponse> GetPassportAsync(string appId = default(string), string id = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Passport
@@ -164,6 +199,7 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -172,7 +208,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPassportResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetPassportResponse>> GetPassportWithHttpInfoAsync(string id = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetPassportResponse>> GetPassportWithHttpInfoAsync(string appId = default(string), string id = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// SSNIT
         /// </summary>
@@ -180,13 +216,14 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="fullName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetSsnitResponse</returns>
-        System.Threading.Tasks.Task<GetSsnitResponse> GetSsnitAsync(string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetSsnitResponse> GetSsnitAsync(string appId = default(string), string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// SSNIT
@@ -195,13 +232,45 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="fullName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetSsnitResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetSsnitResponse>> GetSsnitWithHttpInfoAsync(string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetSsnitResponse>> GetSsnitWithHttpInfoAsync(string appId = default(string), string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Voter ID Lookup
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="id"> (optional)</param>
+        /// <param name="fullName"> (optional)</param>
+        /// <param name="isNewId"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> GetVoterAsync(string appId = default(string), int? id = default(int?), string fullName = default(string), bool? isNewId = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Voter ID Lookup
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="id"> (optional)</param>
+        /// <param name="fullName"> (optional)</param>
+        /// <param name="isNewId"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetVoterWithHttpInfoAsync(string appId = default(string), int? id = default(int?), string fullName = default(string), bool? isNewId = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -326,14 +395,15 @@ namespace Dojah.Net.Api
         /// Driver&#39;s License 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="fullName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetDriversLicenseResponse</returns>
-        public GetDriversLicenseResponse GetDriversLicense(string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0)
+        public GetDriversLicenseResponse GetDriversLicense(string appId = default(string), string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetDriversLicenseResponse> localVarResponse = GetDriversLicenseWithHttpInfo(id, fullName, dateOfBirth);
+            Dojah.Net.Client.ApiResponse<GetDriversLicenseResponse> localVarResponse = GetDriversLicenseWithHttpInfo(appId, id, fullName, dateOfBirth);
             return localVarResponse.Data;
         }
 
@@ -341,12 +411,13 @@ namespace Dojah.Net.Api
         /// Driver&#39;s License 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="fullName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetDriversLicenseResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetDriversLicenseResponse> GetDriversLicenseWithHttpInfo(string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GetDriversLicenseResponse> GetDriversLicenseWithHttpInfo(string appId = default(string), string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -382,20 +453,14 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "date_of_birth", dateOfBirth, ""));
             }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
 
             localVarRequestOptions.Operation = "GHKYCApi.GetDriversLicense";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<GetDriversLicenseResponse>("/api/v1/gh/kyc/dl", localVarRequestOptions, this.Configuration);
@@ -415,15 +480,16 @@ namespace Dojah.Net.Api
         /// Driver&#39;s License 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="fullName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetDriversLicenseResponse</returns>
-        public async System.Threading.Tasks.Task<GetDriversLicenseResponse> GetDriversLicenseAsync(string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetDriversLicenseResponse> GetDriversLicenseAsync(string appId = default(string), string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetDriversLicenseResponse> localVarResponse = await GetDriversLicenseWithHttpInfoAsync(id, fullName, dateOfBirth, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetDriversLicenseResponse> localVarResponse = await GetDriversLicenseWithHttpInfoAsync(appId, id, fullName, dateOfBirth, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -431,13 +497,14 @@ namespace Dojah.Net.Api
         /// Driver&#39;s License 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="fullName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetDriversLicenseResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetDriversLicenseResponse>> GetDriversLicenseWithHttpInfoAsync(string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetDriversLicenseResponse>> GetDriversLicenseWithHttpInfoAsync(string appId = default(string), string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -474,20 +541,14 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "date_of_birth", dateOfBirth, ""));
             }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
+            }
 
             localVarRequestOptions.Operation = "GHKYCApi.GetDriversLicense";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<GetDriversLicenseResponse>("/api/v1/gh/kyc/dl", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -508,6 +569,7 @@ namespace Dojah.Net.Api
         /// Passport 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -515,9 +577,9 @@ namespace Dojah.Net.Api
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetPassportResponse</returns>
-        public GetPassportResponse GetPassport(string id = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string dateOfBirth = default(string), int operationIndex = 0)
+        public GetPassportResponse GetPassport(string appId = default(string), string id = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string dateOfBirth = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetPassportResponse> localVarResponse = GetPassportWithHttpInfo(id, firstName, lastName, middleName, dateOfBirth);
+            Dojah.Net.Client.ApiResponse<GetPassportResponse> localVarResponse = GetPassportWithHttpInfo(appId, id, firstName, lastName, middleName, dateOfBirth);
             return localVarResponse.Data;
         }
 
@@ -525,6 +587,7 @@ namespace Dojah.Net.Api
         /// Passport 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -532,7 +595,7 @@ namespace Dojah.Net.Api
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetPassportResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetPassportResponse> GetPassportWithHttpInfo(string id = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string dateOfBirth = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GetPassportResponse> GetPassportWithHttpInfo(string appId = default(string), string id = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string dateOfBirth = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -576,20 +639,14 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "date_of_birth", dateOfBirth, ""));
             }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
 
             localVarRequestOptions.Operation = "GHKYCApi.GetPassport";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<GetPassportResponse>("/api/v1/gh/kyc/passport", localVarRequestOptions, this.Configuration);
@@ -609,6 +666,7 @@ namespace Dojah.Net.Api
         /// Passport 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -617,9 +675,9 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPassportResponse</returns>
-        public async System.Threading.Tasks.Task<GetPassportResponse> GetPassportAsync(string id = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetPassportResponse> GetPassportAsync(string appId = default(string), string id = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetPassportResponse> localVarResponse = await GetPassportWithHttpInfoAsync(id, firstName, lastName, middleName, dateOfBirth, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetPassportResponse> localVarResponse = await GetPassportWithHttpInfoAsync(appId, id, firstName, lastName, middleName, dateOfBirth, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -627,6 +685,7 @@ namespace Dojah.Net.Api
         /// Passport 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -635,7 +694,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPassportResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetPassportResponse>> GetPassportWithHttpInfoAsync(string id = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetPassportResponse>> GetPassportWithHttpInfoAsync(string appId = default(string), string id = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -680,20 +739,14 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "date_of_birth", dateOfBirth, ""));
             }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
+            }
 
             localVarRequestOptions.Operation = "GHKYCApi.GetPassport";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<GetPassportResponse>("/api/v1/gh/kyc/passport", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -714,14 +767,15 @@ namespace Dojah.Net.Api
         /// SSNIT 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="fullName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetSsnitResponse</returns>
-        public GetSsnitResponse GetSsnit(string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0)
+        public GetSsnitResponse GetSsnit(string appId = default(string), string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetSsnitResponse> localVarResponse = GetSsnitWithHttpInfo(id, fullName, dateOfBirth);
+            Dojah.Net.Client.ApiResponse<GetSsnitResponse> localVarResponse = GetSsnitWithHttpInfo(appId, id, fullName, dateOfBirth);
             return localVarResponse.Data;
         }
 
@@ -729,12 +783,13 @@ namespace Dojah.Net.Api
         /// SSNIT 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="fullName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetSsnitResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetSsnitResponse> GetSsnitWithHttpInfo(string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GetSsnitResponse> GetSsnitWithHttpInfo(string appId = default(string), string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -770,20 +825,14 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "date_of_birth", dateOfBirth, ""));
             }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
 
             localVarRequestOptions.Operation = "GHKYCApi.GetSsnit";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<GetSsnitResponse>("/api/v1/gh/kyc/ssnit", localVarRequestOptions, this.Configuration);
@@ -803,15 +852,16 @@ namespace Dojah.Net.Api
         /// SSNIT 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="fullName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetSsnitResponse</returns>
-        public async System.Threading.Tasks.Task<GetSsnitResponse> GetSsnitAsync(string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetSsnitResponse> GetSsnitAsync(string appId = default(string), string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetSsnitResponse> localVarResponse = await GetSsnitWithHttpInfoAsync(id, fullName, dateOfBirth, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetSsnitResponse> localVarResponse = await GetSsnitWithHttpInfoAsync(appId, id, fullName, dateOfBirth, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -819,13 +869,14 @@ namespace Dojah.Net.Api
         /// SSNIT 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="fullName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetSsnitResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetSsnitResponse>> GetSsnitWithHttpInfoAsync(string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetSsnitResponse>> GetSsnitWithHttpInfoAsync(string appId = default(string), string id = default(string), string fullName = default(string), string dateOfBirth = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -862,20 +913,14 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "date_of_birth", dateOfBirth, ""));
             }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
+            }
 
             localVarRequestOptions.Operation = "GHKYCApi.GetSsnit";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<GetSsnitResponse>("/api/v1/gh/kyc/ssnit", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -883,6 +928,180 @@ namespace Dojah.Net.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetSsnit", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Voter ID Lookup 
+        /// </summary>
+        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="id"> (optional)</param>
+        /// <param name="fullName"> (optional)</param>
+        /// <param name="isNewId"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>Object</returns>
+        public Object GetVoter(string appId = default(string), int? id = default(int?), string fullName = default(string), bool? isNewId = default(bool?), int operationIndex = 0)
+        {
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = GetVoterWithHttpInfo(appId, id, fullName, isNewId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Voter ID Lookup 
+        /// </summary>
+        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="id"> (optional)</param>
+        /// <param name="fullName"> (optional)</param>
+        /// <param name="isNewId"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object</returns>
+        public Dojah.Net.Client.ApiResponse<Object> GetVoterWithHttpInfo(string appId = default(string), int? id = default(int?), string fullName = default(string), bool? isNewId = default(bool?), int operationIndex = 0)
+        {
+            Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Dojah.Net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Dojah.Net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (id != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "id", id, ""));
+            }
+            if (fullName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "full_name", fullName, ""));
+            }
+            if (isNewId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "is_new_id", isNewId, ""));
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
+
+            localVarRequestOptions.Operation = "GHKYCApi.GetVoter";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<Object>("/api/v1/gh/kyc/voter", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetVoter", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Voter ID Lookup 
+        /// </summary>
+        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="id"> (optional)</param>
+        /// <param name="fullName"> (optional)</param>
+        /// <param name="isNewId"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> GetVoterAsync(string appId = default(string), int? id = default(int?), string fullName = default(string), bool? isNewId = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await GetVoterWithHttpInfoAsync(appId, id, fullName, isNewId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Voter ID Lookup 
+        /// </summary>
+        /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="id"> (optional)</param>
+        /// <param name="fullName"> (optional)</param>
+        /// <param name="isNewId"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> GetVoterWithHttpInfoAsync(string appId = default(string), int? id = default(int?), string fullName = default(string), bool? isNewId = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Dojah.Net.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Dojah.Net.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (id != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "id", id, ""));
+            }
+            if (fullName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "full_name", fullName, ""));
+            }
+            if (isNewId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "is_new_id", isNewId, ""));
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
+            }
+
+            localVarRequestOptions.Operation = "GHKYCApi.GetVoter";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/api/v1/gh/kyc/voter", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetVoter", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

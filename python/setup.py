@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -36,11 +36,11 @@ REQUIRES = [
 setup(
     name=NAME,
     version=VERSION,
-    description="DOJAH APIs",
+    description="DOJAH Publilc APIs",
     author="Konfig",
     author_email="engineering@konfigthis.com",
     url="https://github.com/dojah-inc/dojah-sdks/tree/main/python",
-    keywords=["Konfig", "DOJAH APIs"],
+    keywords=["Konfig", "DOJAH Publilc APIs"],
     license="MIT",
     python_requires=">=3.7",
     install_requires=REQUIRES,

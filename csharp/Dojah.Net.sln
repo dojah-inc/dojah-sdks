@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dojah.Net", "src\Dojah.Net\Dojah.Net.csproj", "{2FFB7B38-6770-464C-B6E1-F4288320C210}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dojah.Net", "src\Dojah.Net\Dojah.Net.csproj", "{1CC7FA2A-EB65-4C6E-A5DC-19FA5DD9A969}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dojah.Net.Test", "src\Dojah.Net.Test\Dojah.Net.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2FFB7B38-6770-464C-B6E1-F4288320C210}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2FFB7B38-6770-464C-B6E1-F4288320C210}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2FFB7B38-6770-464C-B6E1-F4288320C210}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2FFB7B38-6770-464C-B6E1-F4288320C210}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CC7FA2A-EB65-4C6E-A5DC-19FA5DD9A969}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CC7FA2A-EB65-4C6E-A5DC-19FA5DD9A969}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CC7FA2A-EB65-4C6E-A5DC-19FA5DD9A969}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CC7FA2A-EB65-4C6E-A5DC-19FA5DD9A969}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU

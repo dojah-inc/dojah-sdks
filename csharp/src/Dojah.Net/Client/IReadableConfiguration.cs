@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -98,6 +98,12 @@ namespace Dojah.Net.Client
         /// </summary>
         /// <value>Password.</value>
         string Password { get; }
+
+        /// <summary>
+        /// Gets the verifySsl flag.
+        /// </summary>
+        /// <value>VerifySsl.</value>
+        bool VerifySsl { get; }
 
         /// <summary>
         /// Get the servers associated with the operation.

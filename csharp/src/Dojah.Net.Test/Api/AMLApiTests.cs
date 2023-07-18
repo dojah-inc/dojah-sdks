@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -61,9 +61,9 @@ namespace Dojah.Net.Test.Api
         public void GetScreeningInfoTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string referenceId = null;
-            //var response = instance.GetScreeningInfo(referenceId);
-            //Assert.IsType<GetScreeningInfoResponse>(response);
+            //string profileId = null;
+            //var response = instance.GetScreeningInfo(profileId);
+            //Assert.IsType<Object>(response);
         }
 
         /// <summary>
@@ -73,9 +73,9 @@ namespace Dojah.Net.Test.Api
         public void ScreenAmlTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //ScreenAmlRequest screenAmlRequest = null;
-            //var response = instance.ScreenAml(screenAmlRequest);
-            //Assert.IsType<ScreenAmlResponse>(response);
+            //AmlScreenAmlRequest amlScreenAmlRequest = null;
+            //var response = instance.ScreenAml(amlScreenAmlRequest);
+            //Assert.IsType<AmlScreenAmlResponse>(response);
         }
     }
 }

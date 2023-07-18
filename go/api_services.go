@@ -1,5 +1,5 @@
 /*
-DOJAH APIs
+DOJAH Publilc APIs
 
 Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -22,57 +22,57 @@ import (
 // ServicesApiService ServicesApi service
 type ServicesApiService service
 
-type ServicesApiCategorizeTransactionsRequest struct {
+type ServicesApiGetWalletBalanceRequest struct {
 	ctx context.Context
 	ApiService *ServicesApiService
-	categorizeTransactionsRequest *CategorizeTransactionsRequest
+	appId *string
 }
 
-func (r ServicesApiCategorizeTransactionsRequest) CategorizeTransactionsRequest(categorizeTransactionsRequest CategorizeTransactionsRequest) ServicesApiCategorizeTransactionsRequest {
-	r.categorizeTransactionsRequest = &categorizeTransactionsRequest
+func (r ServicesApiGetWalletBalanceRequest) AppId(appId string) ServicesApiGetWalletBalanceRequest {
+	r.appId = &appId
 	return r
 }
 
-func (r ServicesApiCategorizeTransactionsRequest) Execute() (*CategorizeTransactionsResponse, *http.Response, error) {
-	return r.ApiService.CategorizeTransactionsExecute(r)
+func (r ServicesApiGetWalletBalanceRequest) Execute() (*GetWalletBalanceResponse, *http.Response, error) {
+	return r.ApiService.GetWalletBalanceExecute(r)
 }
 
 /*
-CategorizeTransactions Categorize Transactions
+GetWalletBalance Get Dojah Wallet Balance
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ServicesApiCategorizeTransactionsRequest
+ @return ServicesApiGetWalletBalanceRequest
 */
-func (a *ServicesApiService) CategorizeTransactions() ServicesApiCategorizeTransactionsRequest {
-	return ServicesApiCategorizeTransactionsRequest{
+func (a *ServicesApiService) GetWalletBalance() ServicesApiGetWalletBalanceRequest {
+	return ServicesApiGetWalletBalanceRequest{
 		ApiService: a,
 		ctx: a.client.cfg.Context,
 	}
 }
 
 // Execute executes the request
-//  @return CategorizeTransactionsResponse
-func (a *ServicesApiService) CategorizeTransactionsExecute(r ServicesApiCategorizeTransactionsRequest) (*CategorizeTransactionsResponse, *http.Response, error) {
+//  @return GetWalletBalanceResponse
+func (a *ServicesApiService) GetWalletBalanceExecute(r ServicesApiGetWalletBalanceRequest) (*GetWalletBalanceResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CategorizeTransactionsResponse
+		localVarReturnValue  *GetWalletBalanceResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServicesApiService.CategorizeTransactions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServicesApiService.GetWalletBalance")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/ml/categorize_transaction"
+	localVarPath := localBasePath + "/api/v1/balance"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -88,35 +88,8 @@ func (a *ServicesApiService) CategorizeTransactionsExecute(r ServicesApiCategori
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.categorizeTransactionsRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apikeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["appIdAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["AppId"] = key
-			}
-		}
+	if r.appId != nil {
+		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

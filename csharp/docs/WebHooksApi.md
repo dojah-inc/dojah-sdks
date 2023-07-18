@@ -11,7 +11,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="deletewebhook"></a>
 # **DeleteWebhook**
-> DeleteWebhookResponse DeleteWebhook ()
+> DeleteWebhookResponse DeleteWebhook (string appId = null)
 
 Delete Webhook
 
@@ -35,21 +35,14 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new WebHooksApi(config);
+            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // Delete Webhook
-                DeleteWebhookResponse result = apiInstance.DeleteWebhook();
+                DeleteWebhookResponse result = apiInstance.DeleteWebhook(appId);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -76,7 +69,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete Webhook
-    ApiResponse<DeleteWebhookResponse> response = apiInstance.DeleteWebhookWithHttpInfo();
+    ApiResponse<DeleteWebhookResponse> response = apiInstance.DeleteWebhookWithHttpInfo(appId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -90,14 +83,18 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **appId** | **string** |  | [optional]  |
+
 ### Return type
 
 [**DeleteWebhookResponse**](DeleteWebhookResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -114,7 +111,7 @@ This endpoint does not need any parameter.
 
 <a name="getwebhooks"></a>
 # **GetWebhooks**
-> GetWebhooksResponse GetWebhooks ()
+> GetWebhooksResponse GetWebhooks (string appId = null)
 
 Fetch All Webhooks
 
@@ -138,21 +135,14 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new WebHooksApi(config);
+            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // Fetch All Webhooks
-                GetWebhooksResponse result = apiInstance.GetWebhooks();
+                GetWebhooksResponse result = apiInstance.GetWebhooks(appId);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -179,7 +169,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Fetch All Webhooks
-    ApiResponse<GetWebhooksResponse> response = apiInstance.GetWebhooksWithHttpInfo();
+    ApiResponse<GetWebhooksResponse> response = apiInstance.GetWebhooksWithHttpInfo(appId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -193,14 +183,18 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **appId** | **string** |  | [optional]  |
+
 ### Return type
 
 [**GetWebhooksResponse**](GetWebhooksResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -217,7 +211,7 @@ This endpoint does not need any parameter.
 
 <a name="notifywebhook"></a>
 # **NotifyWebhook**
-> NotifyWebhookResponse NotifyWebhook (NotifyWebhookRequest notifyWebhookRequest = null)
+> NotifyWebhookResponse NotifyWebhook (NotifyWebhookRequest notifyWebhookRequest, string appId = null)
 
 Post Hook
 
@@ -241,22 +235,14 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
             var apiInstance = new WebHooksApi(config);
-            var notifyWebhookRequest = new NotifyWebhookRequest(); // NotifyWebhookRequest |  (optional) 
+            var notifyWebhookRequest = new NotifyWebhookRequest(); // NotifyWebhookRequest | 
+            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // Post Hook
-                NotifyWebhookResponse result = apiInstance.NotifyWebhook(notifyWebhookRequest);
+                NotifyWebhookResponse result = apiInstance.NotifyWebhook(notifyWebhookRequest, appId);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -283,7 +269,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Post Hook
-    ApiResponse<NotifyWebhookResponse> response = apiInstance.NotifyWebhookWithHttpInfo(notifyWebhookRequest);
+    ApiResponse<NotifyWebhookResponse> response = apiInstance.NotifyWebhookWithHttpInfo(notifyWebhookRequest, appId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -300,7 +286,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **notifyWebhookRequest** | [**NotifyWebhookRequest**](NotifyWebhookRequest.md) |  | [optional]  |
+| **notifyWebhookRequest** | [**NotifyWebhookRequest**](NotifyWebhookRequest.md) |  |  |
+| **appId** | **string** |  | [optional]  |
 
 ### Return type
 
@@ -308,7 +295,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -325,7 +312,7 @@ catch (ApiException e)
 
 <a name="subscribeservice"></a>
 # **SubscribeService**
-> SubscribeServiceResponse SubscribeService (SubscribeServiceRequest subscribeServiceRequest = null)
+> SubscribeServiceResponse SubscribeService (SubscribeServiceRequest subscribeServiceRequest, string appId = null)
 
 Subscribe to service
 
@@ -349,22 +336,15 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new WebHooksApi(config);
-            var subscribeServiceRequest = new SubscribeServiceRequest(); // SubscribeServiceRequest |  (optional) 
+            var subscribeServiceRequest = new SubscribeServiceRequest(); // SubscribeServiceRequest | 
+            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // Subscribe to service
-                SubscribeServiceResponse result = apiInstance.SubscribeService(subscribeServiceRequest);
+                SubscribeServiceResponse result = apiInstance.SubscribeService(subscribeServiceRequest, appId);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -391,7 +371,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Subscribe to service
-    ApiResponse<SubscribeServiceResponse> response = apiInstance.SubscribeServiceWithHttpInfo(subscribeServiceRequest);
+    ApiResponse<SubscribeServiceResponse> response = apiInstance.SubscribeServiceWithHttpInfo(subscribeServiceRequest, appId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -408,7 +388,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **subscribeServiceRequest** | [**SubscribeServiceRequest**](SubscribeServiceRequest.md) |  | [optional]  |
+| **subscribeServiceRequest** | [**SubscribeServiceRequest**](SubscribeServiceRequest.md) |  |  |
+| **appId** | **string** |  | [optional]  |
 
 ### Return type
 
@@ -416,7 +397,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 

@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -16,10 +16,8 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.Configuration;
-import com.konfigthis.dojah.client.model.GetAdvancedCacResponse;
-import com.konfigthis.dojah.client.model.GetBasicCacResponse;
-import com.konfigthis.dojah.client.model.GetCacResponse;
-import com.konfigthis.dojah.client.model.GetTinResponse;
+import com.konfigthis.dojah.client.model.KybGetCacResponse;
+import com.konfigthis.dojah.client.model.KybGetTinResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
@@ -45,35 +43,39 @@ public class KybApiTest {
     }
 
     /**
-     * KYC - Get CAC Advanced
+     * Business Detail
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void getAdvancedCacTest() throws ApiException {
-        Integer rc = null;
-        String type = null;
-        String propertyClass = null;
-        GetAdvancedCacResponse response = api.getAdvancedCac()
-                .rc(rc)
-                .type(type)
-                .propertyClass(propertyClass)
+    public void businessDetailTest() throws ApiException {
+        String appId = null;
+        String internationalNumber = null;
+        String countryCode = null;
+        Boolean full = null;
+        Object response = api.businessDetail()
+                .appId(appId)
+                .internationalNumber(internationalNumber)
+                .countryCode(countryCode)
+                .full(full)
                 .execute();
         // TODO: test validations
     }
 
     /**
-     * KYB - Get CAC 2
+     * Business Search
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void getBasicCacTest() throws ApiException {
-        Integer rc = null;
-        String type = null;
-        GetBasicCacResponse response = api.getBasicCac()
-                .rc(rc)
-                .type(type)
+    public void businessSearchTest() throws ApiException {
+        String appId = null;
+        String countryCode = null;
+        Integer company = null;
+        Object response = api.businessSearch()
+                .appId(appId)
+                .countryCode(countryCode)
+                .company(company)
                 .execute();
         // TODO: test validations
     }
@@ -85,9 +87,11 @@ public class KybApiTest {
      */
     @Test
     public void getCacTest() throws ApiException {
+        String appId = null;
         Integer rcNumber = null;
         String companyName = null;
-        GetCacResponse response = api.getCac()
+        KybGetCacResponse response = api.getCac()
+                .appId(appId)
                 .rcNumber(rcNumber)
                 .companyName(companyName)
                 .execute();
@@ -101,8 +105,10 @@ public class KybApiTest {
      */
     @Test
     public void getTinTest() throws ApiException {
+        String appId = null;
         String tin = null;
-        GetTinResponse response = api.getTin()
+        KybGetTinResponse response = api.getTin()
+                .appId(appId)
                 .tin(tin)
                 .execute();
         // TODO: test validations

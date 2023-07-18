@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -12,6 +12,7 @@
 from dataclasses import dataclass
 import typing_extensions
 import urllib3
+from dojah_client.request_before_hook import request_before_hook
 import json
 from urllib3._collections import HTTPHeaderDict
 
@@ -36,8 +37,6 @@ from dojah_client.type.validate_bvn_response import ValidateBvnResponse
 
 # Query params
 BvnSchema = schemas.IntSchema
-FirstNameSchema = schemas.StrSchema
-DobSchema = schemas.StrSchema
 RequestRequiredQueryParams = typing_extensions.TypedDict(
     'RequestRequiredQueryParams',
     {
@@ -47,8 +46,6 @@ RequestOptionalQueryParams = typing_extensions.TypedDict(
     'RequestOptionalQueryParams',
     {
         'bvn': typing.Union[BvnSchema, decimal.Decimal, int, ],
-        'first_name': typing.Union[FirstNameSchema, str, ],
-        'dob': typing.Union[DobSchema, str, ],
     },
     total=False
 )
@@ -64,19 +61,49 @@ request_query_bvn = api_client.QueryParameter(
     schema=BvnSchema,
     explode=True,
 )
-request_query_first_name = api_client.QueryParameter(
-    name="first_name",
-    style=api_client.ParameterStyle.FORM,
-    schema=FirstNameSchema,
-    explode=True,
+# Header params
+AppIdSchema = schemas.StrSchema
+RequestRequiredHeaderParams = typing_extensions.TypedDict(
+    'RequestRequiredHeaderParams',
+    {
+    }
 )
-request_query_dob = api_client.QueryParameter(
-    name="dob",
-    style=api_client.ParameterStyle.FORM,
-    schema=DobSchema,
-    explode=True,
+RequestOptionalHeaderParams = typing_extensions.TypedDict(
+    'RequestOptionalHeaderParams',
+    {
+        'AppId': typing.Union[AppIdSchema, str, ],
+    },
+    total=False
 )
+
+
+class RequestHeaderParams(RequestRequiredHeaderParams, RequestOptionalHeaderParams):
+    pass
+
+
+request_header_app_id = api_client.HeaderParameter(
+    name="AppId",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=AppIdSchema,
+)
+XPoweredBySchema = schemas.StrSchema
+AccessControlAllowOriginSchema = schemas.StrSchema
+ContentLengthSchema = schemas.IntSchema
+ETagSchema = schemas.StrSchema
+DateSchema = schemas.StrSchema
+ConnectionSchema = schemas.StrSchema
 SchemaFor200ResponseBodyApplicationJson = ValidateBvnResponseSchema
+ResponseHeadersFor200 = typing_extensions.TypedDict(
+    'ResponseHeadersFor200',
+    {
+        'X-Powered-By': XPoweredBySchema,
+        'Access-Control-Allow-Origin': AccessControlAllowOriginSchema,
+        'Content-Length': ContentLengthSchema,
+        'ETag': ETagSchema,
+        'Date': DateSchema,
+        'Connection': ConnectionSchema,
+    }
+)
 
 
 @dataclass
@@ -96,6 +123,14 @@ _response_for_200 = api_client.OpenApiResponse(
         'application/json': api_client.MediaType(
             schema=SchemaFor200ResponseBodyApplicationJson),
     },
+    headers=[
+        x_powered_by_parameter,
+        access_control_allow_origin_parameter,
+        content_length_parameter,
+        e_tag_parameter,
+        date_parameter,
+        connection_parameter,
+    ]
 )
 _all_accept_content_types = (
     'application/json',
@@ -104,26 +139,26 @@ _all_accept_content_types = (
 
 class BaseApi(api_client.Api):
 
-    def _validate_bvn_mapped_args(
+    def _get_basic_bvn_mapped_args(
         self,
+        app_id: typing.Optional[str] = None,
         bvn: typing.Optional[int] = None,
-        first_name: typing.Optional[str] = None,
-        dob: typing.Optional[str] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
         _query_params = {}
+        _header_params = {}
         if bvn is not None:
             _query_params["bvn"] = bvn
-        if first_name is not None:
-            _query_params["first_name"] = first_name
-        if dob is not None:
-            _query_params["dob"] = dob
+        if app_id is not None:
+            _header_params["AppId"] = app_id
         args.query = _query_params
+        args.header = _header_params
         return args
 
-    async def _avalidate_bvn_oapg(
+    async def _aget_basic_bvn_oapg(
         self,
             query_params: typing.Optional[dict] = {},
+            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -134,19 +169,18 @@ class BaseApi(api_client.Api):
         AsyncGeneratorResponse,
     ]:
         """
-        KYC - Validate BVN
+        KYC - Get Basic BVN Info
         :param skip_deserialization: If true then api_response.response will be set but
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
         self._verify_typed_dict_inputs_oapg(RequestQueryParams, query_params)
+        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         prefix_separator_iterator = None
         for parameter in (
             request_query_bvn,
-            request_query_first_name,
-            request_query_dob,
         ):
             parameter_data = query_params.get(parameter.name, schemas.unset)
             if parameter_data is schemas.unset:
@@ -158,21 +192,45 @@ class BaseApi(api_client.Api):
                 used_path += serialized_value
     
         _headers = HTTPHeaderDict()
+        for parameter in (
+            request_header_app_id,
+        ):
+            parameter_data = header_params.get(parameter.name, schemas.unset)
+            if parameter_data is schemas.unset:
+                continue
+            serialized_data = parameter.serialize(parameter_data)
+            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
                 _headers.add('Accept', accept_content_type)
+        method = 'get'.upper()
+        request_before_hook(
+            resource_path=used_path,
+            method=method,
+            configuration=self.api_client.configuration,
+            auth_settings=_auth,
+            headers=_headers,
+        )
     
         response = await self.api_client.async_call_api(
             resource_path=used_path,
-            method='get'.upper(),
+            method=method,
             headers=_headers,
             auth_settings=_auth,
             prefix_separator_iterator=prefix_separator_iterator,
             timeout=timeout,
         )
-        
+    
         if stream:
+            if not 200 <= response.http_response.status <= 299:
+                body = (await response.http_response.content.read()).decode("utf-8")
+                raise exceptions.ApiStreamingException(
+                    status=response.http_response.status,
+                    reason=response.http_response.reason,
+                    body=body,
+                )
+    
             async def stream_iterator():
                 """
                 iterates over response.http_response.content and closes connection once iteration has finished
@@ -217,9 +275,11 @@ class BaseApi(api_client.Api):
     
         return api_response
 
-    def _validate_bvn_oapg(
+
+    def _get_basic_bvn_oapg(
         self,
             query_params: typing.Optional[dict] = {},
+            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -229,19 +289,18 @@ class BaseApi(api_client.Api):
         api_client.ApiResponseWithoutDeserialization,
     ]:
         """
-        KYC - Validate BVN
+        KYC - Get Basic BVN Info
         :param skip_deserialization: If true then api_response.response will be set but
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
         self._verify_typed_dict_inputs_oapg(RequestQueryParams, query_params)
+        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         prefix_separator_iterator = None
         for parameter in (
             request_query_bvn,
-            request_query_first_name,
-            request_query_dob,
         ):
             parameter_data = query_params.get(parameter.name, schemas.unset)
             if parameter_data is schemas.unset:
@@ -253,14 +312,30 @@ class BaseApi(api_client.Api):
                 used_path += serialized_value
     
         _headers = HTTPHeaderDict()
+        for parameter in (
+            request_header_app_id,
+        ):
+            parameter_data = header_params.get(parameter.name, schemas.unset)
+            if parameter_data is schemas.unset:
+                continue
+            serialized_data = parameter.serialize(parameter_data)
+            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
                 _headers.add('Accept', accept_content_type)
+        method = 'get'.upper()
+        request_before_hook(
+            resource_path=used_path,
+            method=method,
+            configuration=self.api_client.configuration,
+            auth_settings=_auth,
+            headers=_headers,
+        )
     
         response = self.api_client.call_api(
             resource_path=used_path,
-            method='get'.upper(),
+            method=method,
             headers=_headers,
             auth_settings=_auth,
             prefix_separator_iterator=prefix_separator_iterator,
@@ -290,44 +365,43 @@ class BaseApi(api_client.Api):
     
         return api_response
 
-class ValidateBvn(BaseApi):
+
+class GetBasicBvn(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
-    async def avalidate_bvn(
+    async def aget_basic_bvn(
         self,
+        app_id: typing.Optional[str] = None,
         bvn: typing.Optional[int] = None,
-        first_name: typing.Optional[str] = None,
-        dob: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
         AsyncGeneratorResponse,
     ]:
-        args = self._validate_bvn_mapped_args(
+        args = self._get_basic_bvn_mapped_args(
+            app_id=app_id,
             bvn=bvn,
-            first_name=first_name,
-            dob=dob,
         )
-        return await self._avalidate_bvn_oapg(
+        return await self._aget_basic_bvn_oapg(
             query_params=args.query,
+            header_params=args.header,
         )
     
-    def validate_bvn(
+    def get_basic_bvn(
         self,
+        app_id: typing.Optional[str] = None,
         bvn: typing.Optional[int] = None,
-        first_name: typing.Optional[str] = None,
-        dob: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
     ]:
-        args = self._validate_bvn_mapped_args(
+        args = self._get_basic_bvn_mapped_args(
+            app_id=app_id,
             bvn=bvn,
-            first_name=first_name,
-            dob=dob,
         )
-        return self._validate_bvn_oapg(
+        return self._get_basic_bvn_oapg(
             query_params=args.query,
+            header_params=args.header,
         )
 
 class ApiForget(BaseApi):
@@ -335,38 +409,36 @@ class ApiForget(BaseApi):
 
     async def aget(
         self,
+        app_id: typing.Optional[str] = None,
         bvn: typing.Optional[int] = None,
-        first_name: typing.Optional[str] = None,
-        dob: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
         AsyncGeneratorResponse,
     ]:
-        args = self._validate_bvn_mapped_args(
+        args = self._get_basic_bvn_mapped_args(
+            app_id=app_id,
             bvn=bvn,
-            first_name=first_name,
-            dob=dob,
         )
-        return await self._avalidate_bvn_oapg(
+        return await self._aget_basic_bvn_oapg(
             query_params=args.query,
+            header_params=args.header,
         )
     
     def get(
         self,
+        app_id: typing.Optional[str] = None,
         bvn: typing.Optional[int] = None,
-        first_name: typing.Optional[str] = None,
-        dob: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
     ]:
-        args = self._validate_bvn_mapped_args(
+        args = self._get_basic_bvn_mapped_args(
+            app_id=app_id,
             bvn=bvn,
-            first_name=first_name,
-            dob=dob,
         )
-        return self._validate_bvn_oapg(
+        return self._get_basic_bvn_oapg(
             query_params=args.query,
+            header_params=args.header,
         )
 

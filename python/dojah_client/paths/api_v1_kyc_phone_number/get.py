@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -12,6 +12,7 @@
 from dataclasses import dataclass
 import typing_extensions
 import urllib3
+from dojah_client.request_before_hook import request_before_hook
 import json
 from urllib3._collections import HTTPHeaderDict
 
@@ -64,11 +65,159 @@ request_query_phone_number = api_client.QueryParameter(
     schema=PhoneNumberSchema,
     explode=True,
 )
+# Header params
+AppIdSchema = schemas.StrSchema
+RequestRequiredHeaderParams = typing_extensions.TypedDict(
+    'RequestRequiredHeaderParams',
+    {
+    }
+)
+RequestOptionalHeaderParams = typing_extensions.TypedDict(
+    'RequestOptionalHeaderParams',
+    {
+        'AppId': typing.Union[AppIdSchema, str, ],
+    },
+    total=False
+)
+
+
+class RequestHeaderParams(RequestRequiredHeaderParams, RequestOptionalHeaderParams):
+    pass
+
+
+request_header_app_id = api_client.HeaderParameter(
+    name="AppId",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=AppIdSchema,
+)
 _auth = [
-    'apikeyAuth',
-    'appIdAuth',
+    'noauthAuth',
 ]
+DateSchema = schemas.StrSchema
+date_parameter = api_client.HeaderParameter(
+    name="Date",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=DateSchema,
+)
+TransferEncodingSchema = schemas.StrSchema
+transfer_encoding_parameter = api_client.HeaderParameter(
+    name="Transfer-Encoding",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=TransferEncodingSchema,
+)
+ConnectionSchema = schemas.StrSchema
+connection_parameter = api_client.HeaderParameter(
+    name="Connection",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ConnectionSchema,
+)
+AccessControlAllowOriginSchema = schemas.StrSchema
+access_control_allow_origin_parameter = api_client.HeaderParameter(
+    name="access-control-allow-origin",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=AccessControlAllowOriginSchema,
+)
+XMoesifTransactionIdSchema = schemas.StrSchema
+x_moesif_transaction_id_parameter = api_client.HeaderParameter(
+    name="x-moesif-transaction-id",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=XMoesifTransactionIdSchema,
+)
+ServiceSchema = schemas.StrSchema
+service_parameter = api_client.HeaderParameter(
+    name="service",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ServiceSchema,
+)
+ProductSchema = schemas.StrSchema
+product_parameter = api_client.HeaderParameter(
+    name="product",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ProductSchema,
+)
+EtagSchema = schemas.StrSchema
+etag_parameter = api_client.HeaderParameter(
+    name="etag",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=EtagSchema,
+)
+VarySchema = schemas.StrSchema
+vary_parameter = api_client.HeaderParameter(
+    name="vary",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=VarySchema,
+)
+CFCacheStatusSchema = schemas.StrSchema
+cf_cache_status_parameter = api_client.HeaderParameter(
+    name="CF-Cache-Status",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=CFCacheStatusSchema,
+)
+ExpectCTSchema = schemas.StrSchema
+expect_ct_parameter = api_client.HeaderParameter(
+    name="Expect-CT",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ExpectCTSchema,
+)
+ReportToSchema = schemas.StrSchema
+report_to_parameter = api_client.HeaderParameter(
+    name="Report-To",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ReportToSchema,
+)
+NELSchema = schemas.StrSchema
+nel_parameter = api_client.HeaderParameter(
+    name="NEL",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=NELSchema,
+)
+ServerSchema = schemas.StrSchema
+server_parameter = api_client.HeaderParameter(
+    name="Server",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ServerSchema,
+)
+CFRAYSchema = schemas.StrSchema
+cf_ray_parameter = api_client.HeaderParameter(
+    name="CF-RAY",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=CFRAYSchema,
+)
+ContentEncodingSchema = schemas.StrSchema
+content_encoding_parameter = api_client.HeaderParameter(
+    name="Content-Encoding",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ContentEncodingSchema,
+)
+AltSvcSchema = schemas.StrSchema
+alt_svc_parameter = api_client.HeaderParameter(
+    name="alt-svc",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=AltSvcSchema,
+)
 SchemaFor200ResponseBodyApplicationJson = GetPhoneNumberResponseSchema
+ResponseHeadersFor200 = typing_extensions.TypedDict(
+    'ResponseHeadersFor200',
+    {
+        'Date': DateSchema,
+        'Transfer-Encoding': TransferEncodingSchema,
+        'Connection': ConnectionSchema,
+        'access-control-allow-origin': AccessControlAllowOriginSchema,
+        'x-moesif-transaction-id': XMoesifTransactionIdSchema,
+        'service': ServiceSchema,
+        'product': ProductSchema,
+        'etag': EtagSchema,
+        'vary': VarySchema,
+        'CF-Cache-Status': CFCacheStatusSchema,
+        'Expect-CT': ExpectCTSchema,
+        'Report-To': ReportToSchema,
+        'NEL': NELSchema,
+        'Server': ServerSchema,
+        'CF-RAY': CFRAYSchema,
+        'Content-Encoding': ContentEncodingSchema,
+        'alt-svc': AltSvcSchema,
+    }
+)
 
 
 @dataclass
@@ -88,8 +237,151 @@ _response_for_200 = api_client.OpenApiResponse(
         'application/json': api_client.MediaType(
             schema=SchemaFor200ResponseBodyApplicationJson),
     },
+    headers=[
+        date_parameter,
+        transfer_encoding_parameter,
+        connection_parameter,
+        access_control_allow_origin_parameter,
+        x_moesif_transaction_id_parameter,
+        service_parameter,
+        product_parameter,
+        etag_parameter,
+        vary_parameter,
+        cf_cache_status_parameter,
+        expect_ct_parameter,
+        report_to_parameter,
+        nel_parameter,
+        server_parameter,
+        cf_ray_parameter,
+        content_encoding_parameter,
+        alt_svc_parameter,
+    ]
+)
+DateSchema = schemas.StrSchema
+date_parameter = api_client.HeaderParameter(
+    name="Date",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=DateSchema,
+)
+TransferEncodingSchema = schemas.StrSchema
+transfer_encoding_parameter = api_client.HeaderParameter(
+    name="Transfer-Encoding",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=TransferEncodingSchema,
+)
+ConnectionSchema = schemas.StrSchema
+connection_parameter = api_client.HeaderParameter(
+    name="Connection",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ConnectionSchema,
+)
+AccessControlAllowOriginSchema = schemas.StrSchema
+access_control_allow_origin_parameter = api_client.HeaderParameter(
+    name="access-control-allow-origin",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=AccessControlAllowOriginSchema,
+)
+XMoesifTransactionIdSchema = schemas.StrSchema
+x_moesif_transaction_id_parameter = api_client.HeaderParameter(
+    name="x-moesif-transaction-id",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=XMoesifTransactionIdSchema,
+)
+ServiceSchema = schemas.StrSchema
+service_parameter = api_client.HeaderParameter(
+    name="service",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ServiceSchema,
+)
+ProductSchema = schemas.StrSchema
+product_parameter = api_client.HeaderParameter(
+    name="product",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ProductSchema,
+)
+EtagSchema = schemas.StrSchema
+etag_parameter = api_client.HeaderParameter(
+    name="etag",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=EtagSchema,
+)
+VarySchema = schemas.StrSchema
+vary_parameter = api_client.HeaderParameter(
+    name="vary",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=VarySchema,
+)
+CFCacheStatusSchema = schemas.StrSchema
+cf_cache_status_parameter = api_client.HeaderParameter(
+    name="CF-Cache-Status",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=CFCacheStatusSchema,
+)
+ExpectCTSchema = schemas.StrSchema
+expect_ct_parameter = api_client.HeaderParameter(
+    name="Expect-CT",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ExpectCTSchema,
+)
+ReportToSchema = schemas.StrSchema
+report_to_parameter = api_client.HeaderParameter(
+    name="Report-To",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ReportToSchema,
+)
+NELSchema = schemas.StrSchema
+nel_parameter = api_client.HeaderParameter(
+    name="NEL",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=NELSchema,
+)
+ServerSchema = schemas.StrSchema
+server_parameter = api_client.HeaderParameter(
+    name="Server",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ServerSchema,
+)
+CFRAYSchema = schemas.StrSchema
+cf_ray_parameter = api_client.HeaderParameter(
+    name="CF-RAY",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=CFRAYSchema,
+)
+ContentEncodingSchema = schemas.StrSchema
+content_encoding_parameter = api_client.HeaderParameter(
+    name="Content-Encoding",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ContentEncodingSchema,
+)
+AltSvcSchema = schemas.StrSchema
+alt_svc_parameter = api_client.HeaderParameter(
+    name="alt-svc",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=AltSvcSchema,
 )
 SchemaFor404ResponseBodyApplicationJson = GetPhoneNumber404ResponseSchema
+ResponseHeadersFor404 = typing_extensions.TypedDict(
+    'ResponseHeadersFor404',
+    {
+        'Date': DateSchema,
+        'Transfer-Encoding': TransferEncodingSchema,
+        'Connection': ConnectionSchema,
+        'access-control-allow-origin': AccessControlAllowOriginSchema,
+        'x-moesif-transaction-id': XMoesifTransactionIdSchema,
+        'service': ServiceSchema,
+        'product': ProductSchema,
+        'etag': EtagSchema,
+        'vary': VarySchema,
+        'CF-Cache-Status': CFCacheStatusSchema,
+        'Expect-CT': ExpectCTSchema,
+        'Report-To': ReportToSchema,
+        'NEL': NELSchema,
+        'Server': ServerSchema,
+        'CF-RAY': CFRAYSchema,
+        'Content-Encoding': ContentEncodingSchema,
+        'alt-svc': AltSvcSchema,
+    }
+)
 
 
 @dataclass
@@ -109,6 +401,25 @@ _response_for_404 = api_client.OpenApiResponse(
         'application/json': api_client.MediaType(
             schema=SchemaFor404ResponseBodyApplicationJson),
     },
+    headers=[
+        date_parameter,
+        transfer_encoding_parameter,
+        connection_parameter,
+        access_control_allow_origin_parameter,
+        x_moesif_transaction_id_parameter,
+        service_parameter,
+        product_parameter,
+        etag_parameter,
+        vary_parameter,
+        cf_cache_status_parameter,
+        expect_ct_parameter,
+        report_to_parameter,
+        nel_parameter,
+        server_parameter,
+        cf_ray_parameter,
+        content_encoding_parameter,
+        alt_svc_parameter,
+    ]
 )
 _status_code_to_response = {
     '200': _response_for_200,
@@ -123,18 +434,24 @@ class BaseApi(api_client.Api):
 
     def _get_phone_number_mapped_args(
         self,
+        app_id: typing.Optional[str] = None,
         phone_number: typing.Optional[int] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
         _query_params = {}
+        _header_params = {}
         if phone_number is not None:
             _query_params["phone_number"] = phone_number
+        if app_id is not None:
+            _header_params["AppId"] = app_id
         args.query = _query_params
+        args.header = _header_params
         return args
 
     async def _aget_phone_number_oapg(
         self,
             query_params: typing.Optional[dict] = {},
+            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -151,6 +468,7 @@ class BaseApi(api_client.Api):
             class instances
         """
         self._verify_typed_dict_inputs_oapg(RequestQueryParams, query_params)
+        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         prefix_separator_iterator = None
@@ -167,21 +485,45 @@ class BaseApi(api_client.Api):
                 used_path += serialized_value
     
         _headers = HTTPHeaderDict()
+        for parameter in (
+            request_header_app_id,
+        ):
+            parameter_data = header_params.get(parameter.name, schemas.unset)
+            if parameter_data is schemas.unset:
+                continue
+            serialized_data = parameter.serialize(parameter_data)
+            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
                 _headers.add('Accept', accept_content_type)
+        method = 'get'.upper()
+        request_before_hook(
+            resource_path=used_path,
+            method=method,
+            configuration=self.api_client.configuration,
+            auth_settings=_auth,
+            headers=_headers,
+        )
     
         response = await self.api_client.async_call_api(
             resource_path=used_path,
-            method='get'.upper(),
+            method=method,
             headers=_headers,
             auth_settings=_auth,
             prefix_separator_iterator=prefix_separator_iterator,
             timeout=timeout,
         )
-        
+    
         if stream:
+            if not 200 <= response.http_response.status <= 299:
+                body = (await response.http_response.content.read()).decode("utf-8")
+                raise exceptions.ApiStreamingException(
+                    status=response.http_response.status,
+                    reason=response.http_response.reason,
+                    body=body,
+                )
+    
             async def stream_iterator():
                 """
                 iterates over response.http_response.content and closes connection once iteration has finished
@@ -226,9 +568,11 @@ class BaseApi(api_client.Api):
     
         return api_response
 
+
     def _get_phone_number_oapg(
         self,
             query_params: typing.Optional[dict] = {},
+            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -244,6 +588,7 @@ class BaseApi(api_client.Api):
             class instances
         """
         self._verify_typed_dict_inputs_oapg(RequestQueryParams, query_params)
+        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         prefix_separator_iterator = None
@@ -260,14 +605,30 @@ class BaseApi(api_client.Api):
                 used_path += serialized_value
     
         _headers = HTTPHeaderDict()
+        for parameter in (
+            request_header_app_id,
+        ):
+            parameter_data = header_params.get(parameter.name, schemas.unset)
+            if parameter_data is schemas.unset:
+                continue
+            serialized_data = parameter.serialize(parameter_data)
+            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
                 _headers.add('Accept', accept_content_type)
+        method = 'get'.upper()
+        request_before_hook(
+            resource_path=used_path,
+            method=method,
+            configuration=self.api_client.configuration,
+            auth_settings=_auth,
+            headers=_headers,
+        )
     
         response = self.api_client.call_api(
             resource_path=used_path,
-            method='get'.upper(),
+            method=method,
             headers=_headers,
             auth_settings=_auth,
             prefix_separator_iterator=prefix_separator_iterator,
@@ -297,11 +658,13 @@ class BaseApi(api_client.Api):
     
         return api_response
 
+
 class GetPhoneNumber(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     async def aget_phone_number(
         self,
+        app_id: typing.Optional[str] = None,
         phone_number: typing.Optional[int] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -309,24 +672,29 @@ class GetPhoneNumber(BaseApi):
         AsyncGeneratorResponse,
     ]:
         args = self._get_phone_number_mapped_args(
+            app_id=app_id,
             phone_number=phone_number,
         )
         return await self._aget_phone_number_oapg(
             query_params=args.query,
+            header_params=args.header,
         )
     
     def get_phone_number(
         self,
+        app_id: typing.Optional[str] = None,
         phone_number: typing.Optional[int] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
     ]:
         args = self._get_phone_number_mapped_args(
+            app_id=app_id,
             phone_number=phone_number,
         )
         return self._get_phone_number_oapg(
             query_params=args.query,
+            header_params=args.header,
         )
 
 class ApiForget(BaseApi):
@@ -334,6 +702,7 @@ class ApiForget(BaseApi):
 
     async def aget(
         self,
+        app_id: typing.Optional[str] = None,
         phone_number: typing.Optional[int] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -341,23 +710,28 @@ class ApiForget(BaseApi):
         AsyncGeneratorResponse,
     ]:
         args = self._get_phone_number_mapped_args(
+            app_id=app_id,
             phone_number=phone_number,
         )
         return await self._aget_phone_number_oapg(
             query_params=args.query,
+            header_params=args.header,
         )
     
     def get(
         self,
+        app_id: typing.Optional[str] = None,
         phone_number: typing.Optional[int] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
     ]:
         args = self._get_phone_number_mapped_args(
+            app_id=app_id,
             phone_number=phone_number,
         )
         return self._get_phone_number_oapg(
             query_params=args.query,
+            header_params=args.header,
         )
 

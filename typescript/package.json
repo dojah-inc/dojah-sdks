@@ -1,7 +1,7 @@
 {
   "name": "dojah-typescript-sdk",
   "version": "4.0.0",
-  "description": "Client for DOJAH APIs",
+  "description": "Client for DOJAH Publilc APIs",
   "author": "Konfig",
   "engines": {
     "node": ">=10"

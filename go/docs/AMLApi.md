@@ -4,14 +4,14 @@ All URIs are relative to *https://api.dojah.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetScreeningInfo**](AMLApi.md#GetScreeningInfo) | **Get** /v1/aml/screening/info | Get AML Info
-[**ScreenAml**](AMLApi.md#ScreenAml) | **Post** /api/v1/aml/screening | AML Screening
+[**GetScreeningInfo**](AMLApi.md#GetScreeningInfo) | **Get** /api/v1/aml/screening/info | Get AML Info
+[**ScreenAml**](AMLApi.md#ScreenAml) | **Post** /api/v1/aml/screening/platform | AML Screening
 
 
 
 ## GetScreeningInfo
 
-> GetScreeningInfoResponse GetScreeningInfo(ctx).ReferenceId(referenceId).Execute()
+> map[string]interface{} GetScreeningInfo(ctx).ProfileId(profileId).Execute()
 
 Get AML Info
 
@@ -28,16 +28,16 @@ import (
 )
 
 func main() {
-    referenceId := "c574a3c8-dc27-4013-8bbc-462e7ed87d55" // string |  (optional)
+    profileId := "WC7117469" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.AMLApi.GetScreeningInfo(context.Background()).ReferenceId(referenceId).Execute()
+    resp, r, err := apiClient.AMLApi.GetScreeningInfo(context.Background()).ProfileId(profileId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AMLApi.GetScreeningInfo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetScreeningInfo`: GetScreeningInfoResponse
+    // response from `GetScreeningInfo`: map[string]interface{}
     fmt.Fprintf(os.Stdout, "Response from `AMLApi.GetScreeningInfo`: %v\n", resp)
 }
 ```
@@ -53,15 +53,15 @@ Other parameters are passed through a pointer to a apiGetScreeningInfoRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **referenceId** | **string** |  | 
+ **profileId** | **string** |  | 
 
 ### Return type
 
-[**GetScreeningInfoResponse**](GetScreeningInfoResponse.md)
+**map[string]interface{}**
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ## ScreenAml
 
-> ScreenAmlResponse ScreenAml(ctx).ScreenAmlRequest(screenAmlRequest).Execute()
+> AmlScreenAmlResponse ScreenAml(ctx).AmlScreenAmlRequest(amlScreenAmlRequest).Execute()
 
 AML Screening
 
@@ -92,16 +92,16 @@ import (
 )
 
 func main() {
-    screenAmlRequest := *dojah.NewScreenAmlRequest() // ScreenAmlRequest |  (optional)
+    amlScreenAmlRequest := *dojah.NewAmlScreenAmlRequest() // AmlScreenAmlRequest | 
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.AMLApi.ScreenAml(context.Background()).ScreenAmlRequest(screenAmlRequest).Execute()
+    resp, r, err := apiClient.AMLApi.ScreenAml(context.Background()).AmlScreenAmlRequest(amlScreenAmlRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AMLApi.ScreenAml``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ScreenAml`: ScreenAmlResponse
+    // response from `ScreenAml`: AmlScreenAmlResponse
     fmt.Fprintf(os.Stdout, "Response from `AMLApi.ScreenAml`: %v\n", resp)
 }
 ```
@@ -117,15 +117,15 @@ Other parameters are passed through a pointer to a apiScreenAmlRequest struct vi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **screenAmlRequest** | [**ScreenAmlRequest**](ScreenAmlRequest.md) |  | 
+ **amlScreenAmlRequest** | [**AmlScreenAmlRequest**](AmlScreenAmlRequest.md) |  | 
 
 ### Return type
 
-[**ScreenAmlResponse**](ScreenAmlResponse.md)
+[**AmlScreenAmlResponse**](AmlScreenAmlResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

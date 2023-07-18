@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -54,7 +54,9 @@ public class WebHooksApiTest {
      */
     @Test
     public void deleteWebhookTest() throws ApiException {
+        String appId = null;
         DeleteWebhookResponse response = api.deleteWebhook()
+                .appId(appId)
                 .execute();
         // TODO: test validations
     }
@@ -66,7 +68,9 @@ public class WebHooksApiTest {
      */
     @Test
     public void getWebhooksTest() throws ApiException {
+        String appId = null;
         GetWebhooksResponse response = api.getWebhooks()
+                .appId(appId)
                 .execute();
         // TODO: test validations
     }
@@ -80,9 +84,11 @@ public class WebHooksApiTest {
     public void notifyWebhookTest() throws ApiException {
         String subject = null;
         NotifyWebhookRequestData data = null;
+        String appId = null;
         NotifyWebhookResponse response = api.notifyWebhook()
                 .subject(subject)
                 .data(data)
+                .appId(appId)
                 .execute();
         // TODO: test validations
     }
@@ -96,9 +102,11 @@ public class WebHooksApiTest {
     public void subscribeServiceTest() throws ApiException {
         String webhook = null;
         String service = null;
+        String appId = null;
         SubscribeServiceResponse response = api.subscribeService()
                 .webhook(webhook)
                 .service(service)
+                .appId(appId)
                 .execute();
         // TODO: test validations
     }

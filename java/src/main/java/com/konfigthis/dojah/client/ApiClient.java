@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -57,7 +57,7 @@ import com.konfigthis.dojah.client.auth.ApiKeyAuth;
 /**
  * <p>ApiClient class.</p>
  */
-public class ApiClient {
+public class ApiClient extends ApiClientCustom {
 
     private String basePath = "https://api.dojah.io";
     private boolean debugging = false;
@@ -81,18 +81,12 @@ public class ApiClient {
 
     private HttpLoggingInterceptor loggingInterceptor;
 
+
     /**
      * Basic constructor for ApiClient
      */
     public ApiClient() {
-        init();
-        initHttpClient();
-
-        // Setup authentications (key: authentication name, value: authentication).
-        authentications.put("apikeyAuth", new ApiKeyAuth("header", "Authorization"));
-        authentications.put("appIdAuth", new ApiKeyAuth("header", "AppId"));
-        // Prevent the authentications from being modified.
-        authentications = Collections.unmodifiableMap(authentications);
+        this(null, null);
     }
 
     /**
@@ -101,39 +95,43 @@ public class ApiClient {
      * @param client a {@link okhttp3.OkHttpClient} object
      */
     public ApiClient(OkHttpClient client) {
-        init();
+        this(client, null);
+    }
 
-        httpClient = client;
+    public ApiClient(OkHttpClient client, Configuration configuration) {
+        init();
+        if (client == null) {
+            initHttpClient();
+        } else {
+            this.httpClient = client;
+        }
 
         // Setup authentications (key: authentication name, value: authentication).
-        authentications.put("apikeyAuth", new ApiKeyAuth("header", "Authorization"));
-        authentications.put("appIdAuth", new ApiKeyAuth("header", "AppId"));
+        authentications.put("apikeyAuth", new HttpBearerAuth("apikey"));
+        authentications.put("appIdAuth", new ApiKeyAuth("header", "Appid"));
+        authentications.put("noauthAuth", new HttpBearerAuth("noauth"));
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
+
+        if (configuration != null) {
+            if (configuration.Appid != null) {
+                this.setAppIdAuth(configuration.Appid);
+            }
+            setVerifyingSsl(configuration.verifyingSsl);
+            setBasePath(configuration.host);
+        }
     }
 
-
-    public String getApikeyAuth() {
-        return ((ApiKeyAuth) this.getAuthentication("Authorization")).getApiKey();
-    }
-
-    public void setApikeyAuth(String apiKey) {
-        ((ApiKeyAuth) this.getAuthentication("Authorization")).setApiKey(apiKey);
-    }
-
-    public void setApikeyAuthPrefix(String prefix) {
-        ((ApiKeyAuth) this.getAuthentication("Authorization")).setApiKeyPrefix(prefix);
-    }
     public String getAppIdAuth() {
-        return ((ApiKeyAuth) this.getAuthentication("AppId")).getApiKey();
+        return ((ApiKeyAuth) this.getAuthentication("appIdAuth")).getApiKey();
     }
 
     public void setAppIdAuth(String apiKey) {
-        ((ApiKeyAuth) this.getAuthentication("AppId")).setApiKey(apiKey);
+        ((ApiKeyAuth) this.getAuthentication("appIdAuth")).setApiKey(apiKey);
     }
 
     public void setAppIdAuthPrefix(String prefix) {
-        ((ApiKeyAuth) this.getAuthentication("AppId")).setApiKeyPrefix(prefix);
+        ((ApiKeyAuth) this.getAuthentication("appIdAuth")).setApiKeyPrefix(prefix);
     }
 
     private void initHttpClient() {
@@ -1146,11 +1144,7 @@ public class ApiClient {
      * @throws com.konfigthis.dojah.client.ApiException If fail to serialize the request body object
      */
     public Request buildRequest(String baseUrl, String path, String method, List<Pair> queryParams, List<Pair> collectionQueryParams, Object body, Map<String, String> headerParams, Map<String, String> cookieParams, Map<String, Object> formParams, String[] authNames, ApiCallback callback) throws ApiException {
-        // aggregate queryParams (non-collection) and collectionQueryParams into allQueryParams
-        List<Pair> allQueryParams = new ArrayList<Pair>(queryParams);
-        allQueryParams.addAll(collectionQueryParams);
-
-        final String url = buildUrl(baseUrl, path, queryParams, collectionQueryParams);
+        requestBeforeHook(baseUrl, path, method, queryParams, collectionQueryParams, body, headerParams, cookieParams, formParams, authNames, this);
 
         // prepare HTTP request body
         RequestBody reqBody;
@@ -1174,8 +1168,14 @@ public class ApiClient {
             reqBody = serialize(body, contentType);
         }
 
+        String payload = requestBodyToString(reqBody);
+
         // update parameters with authentication settings
-        updateParamsForAuth(authNames, allQueryParams, headerParams, cookieParams, requestBodyToString(reqBody), method, URI.create(url));
+        updateParamsForAuth(authNames, queryParams, headerParams, cookieParams, payload, method);
+
+        final String url = buildUrl(baseUrl, path, queryParams, collectionQueryParams);
+
+        requestAfterHook(url, path, method, queryParams, collectionQueryParams, body, headerParams, cookieParams, formParams, authNames, payload, this);
 
         final Request.Builder reqBuilder = new Request.Builder().url(url);
         processHeaderParams(headerParams, reqBuilder);
@@ -1294,17 +1294,16 @@ public class ApiClient {
      * @param cookieParams Map of cookie parameters
      * @param payload HTTP request body
      * @param method HTTP method
-     * @param uri URI
      * @throws com.konfigthis.dojah.client.ApiException If fails to update the parameters
      */
     public void updateParamsForAuth(String[] authNames, List<Pair> queryParams, Map<String, String> headerParams,
-                                    Map<String, String> cookieParams, String payload, String method, URI uri) throws ApiException {
+                                    Map<String, String> cookieParams, String payload, String method) throws ApiException {
         for (String authName : authNames) {
             Authentication auth = authentications.get(authName);
             if (auth == null) {
                 throw new RuntimeException("Authentication undefined: " + authName);
             }
-            auth.applyToParams(queryParams, headerParams, cookieParams, payload, method, uri);
+            auth.applyToParams(queryParams, headerParams, cookieParams, payload, method);
         }
     }
 
@@ -1369,10 +1368,10 @@ public class ApiClient {
     /**
      * Add a Content-Disposition Header for the given key and file to the MultipartBody Builder.
      *
-     * @param mpBuilder MultipartBody.Builder 
+     * @param mpBuilder MultipartBody.Builder
      * @param key The key of the Header element
      * @param file The file to add to the Header
-     */ 
+     */
     private void addPartToMultiPartBuilder(MultipartBody.Builder mpBuilder, String key, File file) {
         Headers partHeaders = Headers.of("Content-Disposition", "form-data; name=\"" + key + "\"; filename=\"" + file.getName() + "\"");
         MediaType mediaType = MediaType.parse(guessContentTypeFromFile(file));

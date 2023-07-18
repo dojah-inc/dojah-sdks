@@ -7,9 +7,9 @@ Method | HTTP request | Description
 [**getSenderId**](AuthenticationApi.md#getSenderId) | **GET** /api/v1/messaging/sender_ids | Messaging - Get Sender IDs
 [**getSmsStatus**](AuthenticationApi.md#getSmsStatus) | **GET** /v1/messaging/sms/get_status | Messaging - Get SMS Status
 [**requestSenderId**](AuthenticationApi.md#requestSenderId) | **POST** /api/v1/messaging/sender_id | Messaging - Request Sender ID
-[**sendOtp**](AuthenticationApi.md#sendOtp) | **POST** /v1/messaging/otp | Messaging - Send OTP
+[**sendOtp**](AuthenticationApi.md#sendOtp) | **POST** /api/v1/messaging/otp | Messaging - Send OTP
 [**sendSms**](AuthenticationApi.md#sendSms) | **POST** /api/v1/messaging/sms | Messaging - Send SMS
-[**validateOtp**](AuthenticationApi.md#validateOtp) | **GET** /v1/messaging/otp/validate | Messaging - Validate OTP
+[**validateOtp**](AuthenticationApi.md#validateOtp) | **GET** /api/v1/messaging/otp/validate | Messaging - Validate OTP
 
 
 # **getSenderId**
@@ -26,18 +26,19 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
 });
 
-const getSenderIdResponse = await dojah.authentication.getSenderId();
+const getSenderIdResponse = await dojah.authentication.getSenderId({});
 
 console.log(getSenderIdResponse);
 ```
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **appId** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -71,8 +72,6 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
 });
 
 const getSmsStatusResponse = await dojah.authentication.getSmsStatus({});
@@ -85,6 +84,7 @@ console.log(getSmsStatusResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **appId** | [**string**] |  | (optional) defaults to undefined
  **messageId** | [**string**] |  | (optional) defaults to undefined
 
 
@@ -119,8 +119,6 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
 });
 
 const requestSenderIdResponse = await dojah.authentication.requestSenderId({
@@ -136,6 +134,7 @@ console.log(requestSenderIdResponse);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **requestSenderIdRequest** | **RequestSenderIdRequest**|  |
+ **appId** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -157,7 +156,7 @@ Name | Type | Description  | Notes
 
 # **sendOtp**
 
-#### **POST** /v1/messaging/otp
+#### **POST** /api/v1/messaging/otp
 
 
 ### Example
@@ -169,8 +168,6 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
 });
 
 const sendOtpResponse = await dojah.authentication.sendOtp({
@@ -189,12 +186,13 @@ console.log(sendOtpResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sendOtpRequest** | **SendOtpRequest**|  |
+ **authenticationSendOtpRequest** | **AuthenticationSendOtpRequest**|  |
+ **appId** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
 
-**SendOtpResponse**
+**AuthenticationSendOtpResponse**
 
 ### HTTP request headers
 
@@ -223,8 +221,6 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
 });
 
 const sendSmsResponse = await dojah.authentication.sendSms({
@@ -243,6 +239,7 @@ console.log(sendSmsResponse);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sendSmsRequest** | **SendSmsRequest**|  |
+ **appId** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -264,7 +261,7 @@ Name | Type | Description  | Notes
 
 # **validateOtp**
 
-#### **GET** /v1/messaging/otp/validate
+#### **GET** /api/v1/messaging/otp/validate
 
 
 ### Example
@@ -276,8 +273,6 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
 });
 
 const validateOtpResponse = await dojah.authentication.validateOtp({});
@@ -290,13 +285,14 @@ console.log(validateOtpResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **appId** | [**string**] |  | (optional) defaults to undefined
  **referenceId** | [**string**] |  | (optional) defaults to undefined
  **code** | [**number**] |  | (optional) defaults to undefined
 
 
 ### Return type
 
-**ValidateOtpResponse**
+**AuthenticationValidateOtpResponse**
 
 ### HTTP request headers
 

@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -12,9 +12,9 @@
 from dojah_client.paths.api_v1_messaging_sender_ids.get import GetSenderId
 from dojah_client.paths.v1_messaging_sms_get_status.get import GetSmsStatus
 from dojah_client.paths.api_v1_messaging_sender_id.post import RequestSenderId
-from dojah_client.paths.v1_messaging_otp.post import SendOtp
+from dojah_client.paths.api_v1_messaging_otp.post import SendOtp
 from dojah_client.paths.api_v1_messaging_sms.post import SendSms
-from dojah_client.paths.v1_messaging_otp_validate.get import ValidateOtp
+from dojah_client.paths.api_v1_messaging_otp_validate.get import ValidateOtp
 
 
 class AuthenticationApi(

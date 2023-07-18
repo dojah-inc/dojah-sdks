@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -48,19 +48,25 @@ public class KeKycApiTest {
      */
     @Test
     public void getNationalIdTest() throws ApiException {
+        String appId = null;
         Integer id = null;
-        String firstName = null;
-        String lastName = null;
-        String middleName = null;
-        String dateOfBirth = null;
-        String gender = null;
         GetNationalIdResponse response = api.getNationalId()
+                .appId(appId)
                 .id(id)
-                .firstName(firstName)
-                .lastName(lastName)
-                .middleName(middleName)
-                .dateOfBirth(dateOfBirth)
-                .gender(gender)
+                .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * KYC - Passport
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getPassportTest() throws ApiException {
+        String appId = null;
+        Object response = api.getPassport()
+                .appId(appId)
                 .execute();
         // TODO: test validations
     }

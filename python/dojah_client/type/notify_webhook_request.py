@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -15,14 +15,13 @@ from enum import Enum
 from typing_extensions import TypedDict, Literal
 
 
-RequiredNotifyWebhookRequest = TypedDict("RequiredNotifyWebhookRequest", {
-    })
+class RequiredNotifyWebhookRequest(TypedDict):
+    pass
 
-OptionalNotifyWebhookRequest = TypedDict("OptionalNotifyWebhookRequest", {
-    "subject": str,
+class OptionalNotifyWebhookRequest(TypedDict, total=False):
+    subject: str
 
-    "data": typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]],
-    }, total=False)
+    data: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
 
 class NotifyWebhookRequest(RequiredNotifyWebhookRequest, OptionalNotifyWebhookRequest):
     pass

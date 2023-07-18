@@ -4,13 +4,13 @@ All URIs are relative to *https://api.dojah.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CategorizeTransactions**](ServicesApi.md#categorizetransactions) | **POST** /v1/ml/categorize_transaction | Categorize Transactions |
+| [**GetWalletBalance**](ServicesApi.md#getwalletbalance) | **GET** /api/v1/balance | Get Dojah Wallet Balance |
 
-<a name="categorizetransactions"></a>
-# **CategorizeTransactions**
-> CategorizeTransactionsResponse CategorizeTransactions (CategorizeTransactionsRequest categorizeTransactionsRequest = null)
+<a name="getwalletbalance"></a>
+# **GetWalletBalance**
+> GetWalletBalanceResponse GetWalletBalance (string appId = null)
 
-Categorize Transactions
+Get Dojah Wallet Balance
 
 ### Example
 ```csharp
@@ -23,7 +23,7 @@ using Dojah.Net.Model;
 
 namespace Example
 {
-    public class CategorizeTransactionsExample
+    public class GetWalletBalanceExample
     {
         public static void Main()
         {
@@ -32,27 +32,19 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new ServicesApi(config);
-            var categorizeTransactionsRequest = new CategorizeTransactionsRequest(); // CategorizeTransactionsRequest |  (optional) 
+            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
-                // Categorize Transactions
-                CategorizeTransactionsResponse result = apiInstance.CategorizeTransactions(categorizeTransactionsRequest);
+                // Get Dojah Wallet Balance
+                GetWalletBalanceResponse result = apiInstance.GetWalletBalance(appId);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
             {
-                Console.WriteLine("Exception when calling ServicesApi.CategorizeTransactions: " + e.Message);
+                Console.WriteLine("Exception when calling ServicesApi.GetWalletBalance: " + e.Message);
                 Console.WriteLine("Status Code: "+ e.ErrorCode);
                 Console.WriteLine(e.StackTrace);
             }
@@ -67,21 +59,21 @@ namespace Example
 }
 ```
 
-#### Using the CategorizeTransactionsWithHttpInfo variant
+#### Using the GetWalletBalanceWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Categorize Transactions
-    ApiResponse<CategorizeTransactionsResponse> response = apiInstance.CategorizeTransactionsWithHttpInfo(categorizeTransactionsRequest);
+    // Get Dojah Wallet Balance
+    ApiResponse<GetWalletBalanceResponse> response = apiInstance.GetWalletBalanceWithHttpInfo(appId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ServicesApi.CategorizeTransactionsWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ServicesApi.GetWalletBalanceWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -91,19 +83,19 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **categorizeTransactionsRequest** | [**CategorizeTransactionsRequest**](CategorizeTransactionsRequest.md) |  | [optional]  |
+| **appId** | **string** |  | [optional]  |
 
 ### Return type
 
-[**CategorizeTransactionsResponse**](CategorizeTransactionsResponse.md)
+[**GetWalletBalanceResponse**](GetWalletBalanceResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

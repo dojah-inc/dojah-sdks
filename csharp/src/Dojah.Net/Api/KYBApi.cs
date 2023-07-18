@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -27,60 +27,65 @@ namespace Dojah.Net.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// KYC - Get CAC Advanced
+        /// Business Detail
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rc"> (optional)</param>
-        /// <param name="type"> (optional)</param>
-        /// <param name="_class"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="internationalNumber"> (optional)</param>
+        /// <param name="countryCode"> (optional)</param>
+        /// <param name="full"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetAdvancedCacResponse</returns>
-        GetAdvancedCacResponse GetAdvancedCac(int? rc = default(int?), string type = default(string), string _class = default(string), int operationIndex = 0);
+        /// <returns>Object</returns>
+        Object BusinessDetail(string appId = default(string), string internationalNumber = default(string), string countryCode = default(string), bool? full = default(bool?), int operationIndex = 0);
 
         /// <summary>
-        /// KYC - Get CAC Advanced
+        /// Business Detail
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rc"> (optional)</param>
-        /// <param name="type"> (optional)</param>
-        /// <param name="_class"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="internationalNumber"> (optional)</param>
+        /// <param name="countryCode"> (optional)</param>
+        /// <param name="full"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetAdvancedCacResponse</returns>
-        ApiResponse<GetAdvancedCacResponse> GetAdvancedCacWithHttpInfo(int? rc = default(int?), string type = default(string), string _class = default(string), int operationIndex = 0);
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> BusinessDetailWithHttpInfo(string appId = default(string), string internationalNumber = default(string), string countryCode = default(string), bool? full = default(bool?), int operationIndex = 0);
         /// <summary>
-        /// KYB - Get CAC 2
+        /// Business Search
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rc"> (optional)</param>
-        /// <param name="type"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="countryCode"> (optional)</param>
+        /// <param name="company"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetBasicCacResponse</returns>
-        GetBasicCacResponse GetBasicCac(int? rc = default(int?), string type = default(string), int operationIndex = 0);
+        /// <returns>Object</returns>
+        Object BusinessSearch(string appId = default(string), string countryCode = default(string), int? company = default(int?), int operationIndex = 0);
 
         /// <summary>
-        /// KYB - Get CAC 2
+        /// Business Search
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rc"> (optional)</param>
-        /// <param name="type"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="countryCode"> (optional)</param>
+        /// <param name="company"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetBasicCacResponse</returns>
-        ApiResponse<GetBasicCacResponse> GetBasicCacWithHttpInfo(int? rc = default(int?), string type = default(string), int operationIndex = 0);
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> BusinessSearchWithHttpInfo(string appId = default(string), string countryCode = default(string), int? company = default(int?), int operationIndex = 0);
         /// <summary>
         /// KYC - Get CAC 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="rcNumber"> (optional)</param>
         /// <param name="companyName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetCacResponse</returns>
-        GetCacResponse GetCac(int? rcNumber = default(int?), string companyName = default(string), int operationIndex = 0);
+        /// <returns>KybGetCacResponse</returns>
+        KybGetCacResponse GetCac(string appId = default(string), int? rcNumber = default(int?), string companyName = default(string), int operationIndex = 0);
 
         /// <summary>
         /// KYC - Get CAC 
@@ -89,19 +94,21 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="rcNumber"> (optional)</param>
         /// <param name="companyName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetCacResponse</returns>
-        ApiResponse<GetCacResponse> GetCacWithHttpInfo(int? rcNumber = default(int?), string companyName = default(string), int operationIndex = 0);
+        /// <returns>ApiResponse of KybGetCacResponse</returns>
+        ApiResponse<KybGetCacResponse> GetCacWithHttpInfo(string appId = default(string), int? rcNumber = default(int?), string companyName = default(string), int operationIndex = 0);
         /// <summary>
         /// KYC - Fetch Tin
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="tin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetTinResponse</returns>
-        GetTinResponse GetTin(string tin = default(string), int operationIndex = 0);
+        /// <returns>KybGetTinResponse</returns>
+        KybGetTinResponse GetTin(string appId = default(string), string tin = default(string), int operationIndex = 0);
 
         /// <summary>
         /// KYC - Fetch Tin
@@ -110,10 +117,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="tin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetTinResponse</returns>
-        ApiResponse<GetTinResponse> GetTinWithHttpInfo(string tin = default(string), int operationIndex = 0);
+        /// <returns>ApiResponse of KybGetTinResponse</returns>
+        ApiResponse<KybGetTinResponse> GetTinWithHttpInfo(string appId = default(string), string tin = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -124,61 +132,65 @@ namespace Dojah.Net.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// KYC - Get CAC Advanced
+        /// Business Detail
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rc"> (optional)</param>
-        /// <param name="type"> (optional)</param>
-        /// <param name="_class"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="internationalNumber"> (optional)</param>
+        /// <param name="countryCode"> (optional)</param>
+        /// <param name="full"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetAdvancedCacResponse</returns>
-        System.Threading.Tasks.Task<GetAdvancedCacResponse> GetAdvancedCacAsync(int? rc = default(int?), string type = default(string), string _class = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> BusinessDetailAsync(string appId = default(string), string internationalNumber = default(string), string countryCode = default(string), bool? full = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// KYC - Get CAC Advanced
+        /// Business Detail
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rc"> (optional)</param>
-        /// <param name="type"> (optional)</param>
-        /// <param name="_class"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="internationalNumber"> (optional)</param>
+        /// <param name="countryCode"> (optional)</param>
+        /// <param name="full"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetAdvancedCacResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetAdvancedCacResponse>> GetAdvancedCacWithHttpInfoAsync(int? rc = default(int?), string type = default(string), string _class = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> BusinessDetailWithHttpInfoAsync(string appId = default(string), string internationalNumber = default(string), string countryCode = default(string), bool? full = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// KYB - Get CAC 2
+        /// Business Search
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rc"> (optional)</param>
-        /// <param name="type"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="countryCode"> (optional)</param>
+        /// <param name="company"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetBasicCacResponse</returns>
-        System.Threading.Tasks.Task<GetBasicCacResponse> GetBasicCacAsync(int? rc = default(int?), string type = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> BusinessSearchAsync(string appId = default(string), string countryCode = default(string), int? company = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// KYB - Get CAC 2
+        /// Business Search
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rc"> (optional)</param>
-        /// <param name="type"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="countryCode"> (optional)</param>
+        /// <param name="company"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetBasicCacResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetBasicCacResponse>> GetBasicCacWithHttpInfoAsync(int? rc = default(int?), string type = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> BusinessSearchWithHttpInfoAsync(string appId = default(string), string countryCode = default(string), int? company = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// KYC - Get CAC 
         /// </summary>
@@ -186,12 +198,13 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="rcNumber"> (optional)</param>
         /// <param name="companyName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetCacResponse</returns>
-        System.Threading.Tasks.Task<GetCacResponse> GetCacAsync(int? rcNumber = default(int?), string companyName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of KybGetCacResponse</returns>
+        System.Threading.Tasks.Task<KybGetCacResponse> GetCacAsync(string appId = default(string), int? rcNumber = default(int?), string companyName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Get CAC 
@@ -200,12 +213,13 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="rcNumber"> (optional)</param>
         /// <param name="companyName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetCacResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetCacResponse>> GetCacWithHttpInfoAsync(int? rcNumber = default(int?), string companyName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (KybGetCacResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<KybGetCacResponse>> GetCacWithHttpInfoAsync(string appId = default(string), int? rcNumber = default(int?), string companyName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// KYC - Fetch Tin
         /// </summary>
@@ -213,11 +227,12 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="tin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetTinResponse</returns>
-        System.Threading.Tasks.Task<GetTinResponse> GetTinAsync(string tin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of KybGetTinResponse</returns>
+        System.Threading.Tasks.Task<KybGetTinResponse> GetTinAsync(string appId = default(string), string tin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Fetch Tin
@@ -226,11 +241,12 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="tin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetTinResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetTinResponse>> GetTinWithHttpInfoAsync(string tin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (KybGetTinResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<KybGetTinResponse>> GetTinWithHttpInfoAsync(string appId = default(string), string tin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -352,30 +368,32 @@ namespace Dojah.Net.Api
         }
 
         /// <summary>
-        /// KYC - Get CAC Advanced 
+        /// Business Detail 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rc"> (optional)</param>
-        /// <param name="type"> (optional)</param>
-        /// <param name="_class"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="internationalNumber"> (optional)</param>
+        /// <param name="countryCode"> (optional)</param>
+        /// <param name="full"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetAdvancedCacResponse</returns>
-        public GetAdvancedCacResponse GetAdvancedCac(int? rc = default(int?), string type = default(string), string _class = default(string), int operationIndex = 0)
+        /// <returns>Object</returns>
+        public Object BusinessDetail(string appId = default(string), string internationalNumber = default(string), string countryCode = default(string), bool? full = default(bool?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetAdvancedCacResponse> localVarResponse = GetAdvancedCacWithHttpInfo(rc, type, _class);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = BusinessDetailWithHttpInfo(appId, internationalNumber, countryCode, full);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// KYC - Get CAC Advanced 
+        /// Business Detail 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rc"> (optional)</param>
-        /// <param name="type"> (optional)</param>
-        /// <param name="_class"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="internationalNumber"> (optional)</param>
+        /// <param name="countryCode"> (optional)</param>
+        /// <param name="full"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetAdvancedCacResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetAdvancedCacResponse> GetAdvancedCacWithHttpInfo(int? rc = default(int?), string type = default(string), string _class = default(string), int operationIndex = 0)
+        /// <returns>ApiResponse of Object</returns>
+        public Dojah.Net.Client.ApiResponse<Object> BusinessDetailWithHttpInfo(string appId = default(string), string internationalNumber = default(string), string countryCode = default(string), bool? full = default(bool?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -399,38 +417,32 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (rc != null)
+            if (internationalNumber != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "rc", rc, ""));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "international_number", internationalNumber, ""));
             }
-            if (type != null)
+            if (countryCode != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "type", type, ""));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "country_code", countryCode, ""));
             }
-            if (_class != null)
+            if (full != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "class", _class, ""));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "full", full, ""));
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
             }
 
-            localVarRequestOptions.Operation = "KYBApi.GetAdvancedCac";
+            localVarRequestOptions.Operation = "KYBApi.BusinessDetail";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<GetAdvancedCacResponse>("/v1/kyc/cac/advance", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<Object>("/api/v1/kyb/business/detail", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAdvancedCac", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BusinessDetail", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -441,32 +453,34 @@ namespace Dojah.Net.Api
         }
 
         /// <summary>
-        /// KYC - Get CAC Advanced 
+        /// Business Detail 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rc"> (optional)</param>
-        /// <param name="type"> (optional)</param>
-        /// <param name="_class"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="internationalNumber"> (optional)</param>
+        /// <param name="countryCode"> (optional)</param>
+        /// <param name="full"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetAdvancedCacResponse</returns>
-        public async System.Threading.Tasks.Task<GetAdvancedCacResponse> GetAdvancedCacAsync(int? rc = default(int?), string type = default(string), string _class = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> BusinessDetailAsync(string appId = default(string), string internationalNumber = default(string), string countryCode = default(string), bool? full = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetAdvancedCacResponse> localVarResponse = await GetAdvancedCacWithHttpInfoAsync(rc, type, _class, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await BusinessDetailWithHttpInfoAsync(appId, internationalNumber, countryCode, full, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// KYC - Get CAC Advanced 
+        /// Business Detail 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rc"> (optional)</param>
-        /// <param name="type"> (optional)</param>
-        /// <param name="_class"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="internationalNumber"> (optional)</param>
+        /// <param name="countryCode"> (optional)</param>
+        /// <param name="full"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetAdvancedCacResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetAdvancedCacResponse>> GetAdvancedCacWithHttpInfoAsync(int? rc = default(int?), string type = default(string), string _class = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> BusinessDetailWithHttpInfoAsync(string appId = default(string), string internationalNumber = default(string), string countryCode = default(string), bool? full = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -491,39 +505,33 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (rc != null)
+            if (internationalNumber != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "rc", rc, ""));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "international_number", internationalNumber, ""));
             }
-            if (type != null)
+            if (countryCode != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "type", type, ""));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "country_code", countryCode, ""));
             }
-            if (_class != null)
+            if (full != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "class", _class, ""));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "full", full, ""));
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
             }
 
-            localVarRequestOptions.Operation = "KYBApi.GetAdvancedCac";
+            localVarRequestOptions.Operation = "KYBApi.BusinessDetail";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<GetAdvancedCacResponse>("/v1/kyc/cac/advance", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/api/v1/kyb/business/detail", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAdvancedCac", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BusinessDetail", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -534,28 +542,30 @@ namespace Dojah.Net.Api
         }
 
         /// <summary>
-        /// KYB - Get CAC 2 
+        /// Business Search 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rc"> (optional)</param>
-        /// <param name="type"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="countryCode"> (optional)</param>
+        /// <param name="company"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetBasicCacResponse</returns>
-        public GetBasicCacResponse GetBasicCac(int? rc = default(int?), string type = default(string), int operationIndex = 0)
+        /// <returns>Object</returns>
+        public Object BusinessSearch(string appId = default(string), string countryCode = default(string), int? company = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetBasicCacResponse> localVarResponse = GetBasicCacWithHttpInfo(rc, type);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = BusinessSearchWithHttpInfo(appId, countryCode, company);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// KYB - Get CAC 2 
+        /// Business Search 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rc"> (optional)</param>
-        /// <param name="type"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="countryCode"> (optional)</param>
+        /// <param name="company"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetBasicCacResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetBasicCacResponse> GetBasicCacWithHttpInfo(int? rc = default(int?), string type = default(string), int operationIndex = 0)
+        /// <returns>ApiResponse of Object</returns>
+        public Dojah.Net.Client.ApiResponse<Object> BusinessSearchWithHttpInfo(string appId = default(string), string countryCode = default(string), int? company = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -579,34 +589,28 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (rc != null)
+            if (countryCode != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "rc", rc, ""));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "country_code", countryCode, ""));
             }
-            if (type != null)
+            if (company != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "type", type, ""));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "company", company, ""));
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
             }
 
-            localVarRequestOptions.Operation = "KYBApi.GetBasicCac";
+            localVarRequestOptions.Operation = "KYBApi.BusinessSearch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<GetBasicCacResponse>("/v1/kyc/cac/basic", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<Object>("/api/v1/kyb/business/search", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetBasicCac", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BusinessSearch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -617,30 +621,32 @@ namespace Dojah.Net.Api
         }
 
         /// <summary>
-        /// KYB - Get CAC 2 
+        /// Business Search 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rc"> (optional)</param>
-        /// <param name="type"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="countryCode"> (optional)</param>
+        /// <param name="company"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetBasicCacResponse</returns>
-        public async System.Threading.Tasks.Task<GetBasicCacResponse> GetBasicCacAsync(int? rc = default(int?), string type = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> BusinessSearchAsync(string appId = default(string), string countryCode = default(string), int? company = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetBasicCacResponse> localVarResponse = await GetBasicCacWithHttpInfoAsync(rc, type, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await BusinessSearchWithHttpInfoAsync(appId, countryCode, company, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// KYB - Get CAC 2 
+        /// Business Search 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rc"> (optional)</param>
-        /// <param name="type"> (optional)</param>
+        /// <param name="appId"> (optional)</param>
+        /// <param name="countryCode"> (optional)</param>
+        /// <param name="company"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetBasicCacResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetBasicCacResponse>> GetBasicCacWithHttpInfoAsync(int? rc = default(int?), string type = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> BusinessSearchWithHttpInfoAsync(string appId = default(string), string countryCode = default(string), int? company = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -665,35 +671,29 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (rc != null)
+            if (countryCode != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "rc", rc, ""));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "country_code", countryCode, ""));
             }
-            if (type != null)
+            if (company != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "type", type, ""));
+                localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "company", company, ""));
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
             }
 
-            localVarRequestOptions.Operation = "KYBApi.GetBasicCac";
+            localVarRequestOptions.Operation = "KYBApi.BusinessSearch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<GetBasicCacResponse>("/v1/kyc/cac/basic", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/api/v1/kyb/business/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetBasicCac", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BusinessSearch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -707,13 +707,14 @@ namespace Dojah.Net.Api
         /// KYC - Get CAC  
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="rcNumber"> (optional)</param>
         /// <param name="companyName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetCacResponse</returns>
-        public GetCacResponse GetCac(int? rcNumber = default(int?), string companyName = default(string), int operationIndex = 0)
+        /// <returns>KybGetCacResponse</returns>
+        public KybGetCacResponse GetCac(string appId = default(string), int? rcNumber = default(int?), string companyName = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetCacResponse> localVarResponse = GetCacWithHttpInfo(rcNumber, companyName);
+            Dojah.Net.Client.ApiResponse<KybGetCacResponse> localVarResponse = GetCacWithHttpInfo(appId, rcNumber, companyName);
             return localVarResponse.Data;
         }
 
@@ -721,11 +722,12 @@ namespace Dojah.Net.Api
         /// KYC - Get CAC  
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="rcNumber"> (optional)</param>
         /// <param name="companyName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetCacResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetCacResponse> GetCacWithHttpInfo(int? rcNumber = default(int?), string companyName = default(string), int operationIndex = 0)
+        /// <returns>ApiResponse of KybGetCacResponse</returns>
+        public Dojah.Net.Client.ApiResponse<KybGetCacResponse> GetCacWithHttpInfo(string appId = default(string), int? rcNumber = default(int?), string companyName = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -757,23 +759,18 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "company_name", companyName, ""));
             }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
 
             localVarRequestOptions.Operation = "KYBApi.GetCac";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<GetCacResponse>("/v1/kyc/cac", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<KybGetCacResponse>("/api/v1/kyc/cac", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetCac", localVarResponse);
@@ -790,14 +787,15 @@ namespace Dojah.Net.Api
         /// KYC - Get CAC  
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="rcNumber"> (optional)</param>
         /// <param name="companyName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetCacResponse</returns>
-        public async System.Threading.Tasks.Task<GetCacResponse> GetCacAsync(int? rcNumber = default(int?), string companyName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of KybGetCacResponse</returns>
+        public async System.Threading.Tasks.Task<KybGetCacResponse> GetCacAsync(string appId = default(string), int? rcNumber = default(int?), string companyName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetCacResponse> localVarResponse = await GetCacWithHttpInfoAsync(rcNumber, companyName, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<KybGetCacResponse> localVarResponse = await GetCacWithHttpInfoAsync(appId, rcNumber, companyName, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -805,12 +803,13 @@ namespace Dojah.Net.Api
         /// KYC - Get CAC  
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="rcNumber"> (optional)</param>
         /// <param name="companyName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetCacResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetCacResponse>> GetCacWithHttpInfoAsync(int? rcNumber = default(int?), string companyName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (KybGetCacResponse)</returns>
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<KybGetCacResponse>> GetCacWithHttpInfoAsync(string appId = default(string), int? rcNumber = default(int?), string companyName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -843,23 +842,18 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "company_name", companyName, ""));
             }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
+            }
 
             localVarRequestOptions.Operation = "KYBApi.GetCac";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<GetCacResponse>("/v1/kyc/cac", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<KybGetCacResponse>("/api/v1/kyc/cac", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -877,12 +871,13 @@ namespace Dojah.Net.Api
         /// KYC - Fetch Tin 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="tin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetTinResponse</returns>
-        public GetTinResponse GetTin(string tin = default(string), int operationIndex = 0)
+        /// <returns>KybGetTinResponse</returns>
+        public KybGetTinResponse GetTin(string appId = default(string), string tin = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetTinResponse> localVarResponse = GetTinWithHttpInfo(tin);
+            Dojah.Net.Client.ApiResponse<KybGetTinResponse> localVarResponse = GetTinWithHttpInfo(appId, tin);
             return localVarResponse.Data;
         }
 
@@ -890,10 +885,11 @@ namespace Dojah.Net.Api
         /// KYC - Fetch Tin 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="tin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetTinResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetTinResponse> GetTinWithHttpInfo(string tin = default(string), int operationIndex = 0)
+        /// <returns>ApiResponse of KybGetTinResponse</returns>
+        public Dojah.Net.Client.ApiResponse<KybGetTinResponse> GetTinWithHttpInfo(string appId = default(string), string tin = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -921,23 +917,18 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "tin", tin, ""));
             }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
 
             localVarRequestOptions.Operation = "KYBApi.GetTin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<GetTinResponse>("/v1/kyc/tin", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<KybGetTinResponse>("/api/v1/kyc/tin", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetTin", localVarResponse);
@@ -954,13 +945,14 @@ namespace Dojah.Net.Api
         /// KYC - Fetch Tin 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="tin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetTinResponse</returns>
-        public async System.Threading.Tasks.Task<GetTinResponse> GetTinAsync(string tin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of KybGetTinResponse</returns>
+        public async System.Threading.Tasks.Task<KybGetTinResponse> GetTinAsync(string appId = default(string), string tin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetTinResponse> localVarResponse = await GetTinWithHttpInfoAsync(tin, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<KybGetTinResponse> localVarResponse = await GetTinWithHttpInfoAsync(appId, tin, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -968,11 +960,12 @@ namespace Dojah.Net.Api
         /// KYC - Fetch Tin 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="appId"> (optional)</param>
         /// <param name="tin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetTinResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetTinResponse>> GetTinWithHttpInfoAsync(string tin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (KybGetTinResponse)</returns>
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<KybGetTinResponse>> GetTinWithHttpInfoAsync(string appId = default(string), string tin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -1001,23 +994,18 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "tin", tin, ""));
             }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
+            }
 
             localVarRequestOptions.Operation = "KYBApi.GetTin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
-            }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<GetTinResponse>("/v1/kyc/tin", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<KybGetTinResponse>("/api/v1/kyc/tin", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

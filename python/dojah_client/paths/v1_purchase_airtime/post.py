@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -12,6 +12,7 @@
 from dataclasses import dataclass
 import typing_extensions
 import urllib3
+from dojah_client.request_before_hook import request_before_hook
 import json
 from urllib3._collections import HTTPHeaderDict
 
@@ -38,6 +39,31 @@ from dojah_client.type.purchase_airtime_response import PurchaseAirtimeResponse
 
 from . import path
 
+# Header params
+AppIdSchema = schemas.StrSchema
+RequestRequiredHeaderParams = typing_extensions.TypedDict(
+    'RequestRequiredHeaderParams',
+    {
+    }
+)
+RequestOptionalHeaderParams = typing_extensions.TypedDict(
+    'RequestOptionalHeaderParams',
+    {
+        'AppId': typing.Union[AppIdSchema, str, ],
+    },
+    total=False
+)
+
+
+class RequestHeaderParams(RequestRequiredHeaderParams, RequestOptionalHeaderParams):
+    pass
+
+
+request_header_app_id = api_client.HeaderParameter(
+    name="AppId",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=AppIdSchema,
+)
 # body param
 SchemaForRequestBodyApplicationJson = PurchaseAirtimeRequestSchema
 
@@ -47,12 +73,122 @@ request_body_purchase_airtime_request = api_client.RequestBody(
         'application/json': api_client.MediaType(
             schema=SchemaForRequestBodyApplicationJson),
     },
+    required=True,
 )
 _auth = [
-    'apikeyAuth',
-    'appIdAuth',
+    'noauthAuth',
 ]
+DateSchema = schemas.StrSchema
+date_parameter = api_client.HeaderParameter(
+    name="Date",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=DateSchema,
+)
+TransferEncodingSchema = schemas.StrSchema
+transfer_encoding_parameter = api_client.HeaderParameter(
+    name="Transfer-Encoding",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=TransferEncodingSchema,
+)
+ConnectionSchema = schemas.StrSchema
+connection_parameter = api_client.HeaderParameter(
+    name="Connection",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ConnectionSchema,
+)
+AccessControlAllowOriginSchema = schemas.StrSchema
+access_control_allow_origin_parameter = api_client.HeaderParameter(
+    name="access-control-allow-origin",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=AccessControlAllowOriginSchema,
+)
+XMoesifTransactionIdSchema = schemas.StrSchema
+x_moesif_transaction_id_parameter = api_client.HeaderParameter(
+    name="x-moesif-transaction-id",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=XMoesifTransactionIdSchema,
+)
+EtagSchema = schemas.StrSchema
+etag_parameter = api_client.HeaderParameter(
+    name="etag",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=EtagSchema,
+)
+VarySchema = schemas.StrSchema
+vary_parameter = api_client.HeaderParameter(
+    name="vary",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=VarySchema,
+)
+CFCacheStatusSchema = schemas.StrSchema
+cf_cache_status_parameter = api_client.HeaderParameter(
+    name="CF-Cache-Status",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=CFCacheStatusSchema,
+)
+ExpectCTSchema = schemas.StrSchema
+expect_ct_parameter = api_client.HeaderParameter(
+    name="Expect-CT",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ExpectCTSchema,
+)
+ReportToSchema = schemas.StrSchema
+report_to_parameter = api_client.HeaderParameter(
+    name="Report-To",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ReportToSchema,
+)
+NELSchema = schemas.StrSchema
+nel_parameter = api_client.HeaderParameter(
+    name="NEL",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=NELSchema,
+)
+ServerSchema = schemas.StrSchema
+server_parameter = api_client.HeaderParameter(
+    name="Server",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ServerSchema,
+)
+CFRAYSchema = schemas.StrSchema
+cf_ray_parameter = api_client.HeaderParameter(
+    name="CF-RAY",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=CFRAYSchema,
+)
+ContentEncodingSchema = schemas.StrSchema
+content_encoding_parameter = api_client.HeaderParameter(
+    name="Content-Encoding",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=ContentEncodingSchema,
+)
+AltSvcSchema = schemas.StrSchema
+alt_svc_parameter = api_client.HeaderParameter(
+    name="alt-svc",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=AltSvcSchema,
+)
 SchemaFor200ResponseBodyApplicationJson = PurchaseAirtimeResponseSchema
+ResponseHeadersFor200 = typing_extensions.TypedDict(
+    'ResponseHeadersFor200',
+    {
+        'Date': DateSchema,
+        'Transfer-Encoding': TransferEncodingSchema,
+        'Connection': ConnectionSchema,
+        'access-control-allow-origin': AccessControlAllowOriginSchema,
+        'x-moesif-transaction-id': XMoesifTransactionIdSchema,
+        'etag': EtagSchema,
+        'vary': VarySchema,
+        'CF-Cache-Status': CFCacheStatusSchema,
+        'Expect-CT': ExpectCTSchema,
+        'Report-To': ReportToSchema,
+        'NEL': NELSchema,
+        'Server': ServerSchema,
+        'CF-RAY': CFRAYSchema,
+        'Content-Encoding': ContentEncodingSchema,
+        'alt-svc': AltSvcSchema,
+    }
+)
 
 
 @dataclass
@@ -72,6 +208,23 @@ _response_for_200 = api_client.OpenApiResponse(
         'application/json': api_client.MediaType(
             schema=SchemaFor200ResponseBodyApplicationJson),
     },
+    headers=[
+        date_parameter,
+        transfer_encoding_parameter,
+        connection_parameter,
+        access_control_allow_origin_parameter,
+        x_moesif_transaction_id_parameter,
+        etag_parameter,
+        vary_parameter,
+        cf_cache_status_parameter,
+        expect_ct_parameter,
+        report_to_parameter,
+        nel_parameter,
+        server_parameter,
+        cf_ray_parameter,
+        content_encoding_parameter,
+        alt_svc_parameter,
+    ]
 )
 _status_code_to_response = {
     '200': _response_for_200,
@@ -83,23 +236,29 @@ _all_accept_content_types = (
 
 class BaseApi(api_client.Api):
 
-    def _purchase_airtime_mapped_args(
+    def _send_airtime_mapped_args(
         self,
         destination: typing.Optional[str] = None,
         amount: typing.Optional[str] = None,
+        app_id: typing.Optional[str] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
+        _header_params = {}
         _body = {}
         if destination is not None:
             _body["destination"] = destination
         if amount is not None:
             _body["amount"] = amount
         args.body = _body
+        if app_id is not None:
+            _header_params["AppId"] = app_id
+        args.header = _header_params
         return args
 
-    async def _apurchase_airtime_oapg(
+    async def _asend_airtime_oapg(
         self,
         body: typing.Any = None,
+            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -116,26 +275,47 @@ class BaseApi(api_client.Api):
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
+        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         _headers = HTTPHeaderDict()
+        for parameter in (
+            request_header_app_id,
+        ):
+            parameter_data = header_params.get(parameter.name, schemas.unset)
+            if parameter_data is schemas.unset:
+                continue
+            serialized_data = parameter.serialize(parameter_data)
+            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
                 _headers.add('Accept', accept_content_type)
+        method = 'post'.upper()
+        _headers.add('Content-Type', content_type)
     
+        if body is schemas.unset:
+            raise exceptions.ApiValueError(
+                'The required body parameter has an invalid value of: unset. Set a valid value instead')
         _fields = None
         _body = None
-        if body is not schemas.unset:
-            serialized_data = request_body_purchase_airtime_request.serialize(body, content_type)
-            _headers.add('Content-Type', content_type)
-            if 'fields' in serialized_data:
-                _fields = serialized_data['fields']
-            elif 'body' in serialized_data:
-                _body = serialized_data['body']    
+        request_before_hook(
+            resource_path=used_path,
+            method=method,
+            configuration=self.api_client.configuration,
+            body=body,
+            auth_settings=_auth,
+            headers=_headers,
+        )
+        serialized_data = request_body_purchase_airtime_request.serialize(body, content_type)
+        if 'fields' in serialized_data:
+            _fields = serialized_data['fields']
+        elif 'body' in serialized_data:
+            _body = serialized_data['body']
+    
         response = await self.api_client.async_call_api(
             resource_path=used_path,
-            method='post'.upper(),
+            method=method,
             headers=_headers,
             fields=_fields,
             serialized_body=_body,
@@ -143,8 +323,16 @@ class BaseApi(api_client.Api):
             auth_settings=_auth,
             timeout=timeout,
         )
-        
+    
         if stream:
+            if not 200 <= response.http_response.status <= 299:
+                body = (await response.http_response.content.read()).decode("utf-8")
+                raise exceptions.ApiStreamingException(
+                    status=response.http_response.status,
+                    reason=response.http_response.reason,
+                    body=body,
+                )
+    
             async def stream_iterator():
                 """
                 iterates over response.http_response.content and closes connection once iteration has finished
@@ -189,9 +377,11 @@ class BaseApi(api_client.Api):
     
         return api_response
 
-    def _purchase_airtime_oapg(
+
+    def _send_airtime_oapg(
         self,
         body: typing.Any = None,
+            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -207,26 +397,47 @@ class BaseApi(api_client.Api):
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
+        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         _headers = HTTPHeaderDict()
+        for parameter in (
+            request_header_app_id,
+        ):
+            parameter_data = header_params.get(parameter.name, schemas.unset)
+            if parameter_data is schemas.unset:
+                continue
+            serialized_data = parameter.serialize(parameter_data)
+            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
                 _headers.add('Accept', accept_content_type)
+        method = 'post'.upper()
+        _headers.add('Content-Type', content_type)
     
+        if body is schemas.unset:
+            raise exceptions.ApiValueError(
+                'The required body parameter has an invalid value of: unset. Set a valid value instead')
         _fields = None
         _body = None
-        if body is not schemas.unset:
-            serialized_data = request_body_purchase_airtime_request.serialize(body, content_type)
-            _headers.add('Content-Type', content_type)
-            if 'fields' in serialized_data:
-                _fields = serialized_data['fields']
-            elif 'body' in serialized_data:
-                _body = serialized_data['body']    
+        request_before_hook(
+            resource_path=used_path,
+            method=method,
+            configuration=self.api_client.configuration,
+            body=body,
+            auth_settings=_auth,
+            headers=_headers,
+        )
+        serialized_data = request_body_purchase_airtime_request.serialize(body, content_type)
+        if 'fields' in serialized_data:
+            _fields = serialized_data['fields']
+        elif 'body' in serialized_data:
+            _body = serialized_data['body']
+    
         response = self.api_client.call_api(
             resource_path=used_path,
-            method='post'.upper(),
+            method=method,
             headers=_headers,
             fields=_fields,
             serialized_body=_body,
@@ -258,40 +469,47 @@ class BaseApi(api_client.Api):
     
         return api_response
 
-class PurchaseAirtime(BaseApi):
+
+class SendAirtime(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
-    async def apurchase_airtime(
+    async def asend_airtime(
         self,
         destination: typing.Optional[str] = None,
         amount: typing.Optional[str] = None,
+        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
         AsyncGeneratorResponse,
     ]:
-        args = self._purchase_airtime_mapped_args(
+        args = self._send_airtime_mapped_args(
             destination=destination,
             amount=amount,
+            app_id=app_id,
         )
-        return await self._apurchase_airtime_oapg(
+        return await self._asend_airtime_oapg(
             body=args.body,
+            header_params=args.header,
         )
     
-    def purchase_airtime(
+    def send_airtime(
         self,
         destination: typing.Optional[str] = None,
         amount: typing.Optional[str] = None,
+        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
     ]:
-        args = self._purchase_airtime_mapped_args(
+        args = self._send_airtime_mapped_args(
             destination=destination,
             amount=amount,
+            app_id=app_id,
         )
-        return self._purchase_airtime_oapg(
+        return self._send_airtime_oapg(
             body=args.body,
+            header_params=args.header,
         )
 
 class ApiForpost(BaseApi):
@@ -301,32 +519,38 @@ class ApiForpost(BaseApi):
         self,
         destination: typing.Optional[str] = None,
         amount: typing.Optional[str] = None,
+        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
         AsyncGeneratorResponse,
     ]:
-        args = self._purchase_airtime_mapped_args(
+        args = self._send_airtime_mapped_args(
             destination=destination,
             amount=amount,
+            app_id=app_id,
         )
-        return await self._apurchase_airtime_oapg(
+        return await self._asend_airtime_oapg(
             body=args.body,
+            header_params=args.header,
         )
     
     def post(
         self,
         destination: typing.Optional[str] = None,
         amount: typing.Optional[str] = None,
+        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
     ]:
-        args = self._purchase_airtime_mapped_args(
+        args = self._send_airtime_mapped_args(
             destination=destination,
             amount=amount,
+            app_id=app_id,
         )
-        return self._purchase_airtime_oapg(
+        return self._send_airtime_oapg(
             body=args.body,
+            header_params=args.header,
         )
 

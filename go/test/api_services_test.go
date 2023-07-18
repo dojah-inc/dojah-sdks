@@ -1,5 +1,5 @@
 /*
-DOJAH APIs
+DOJAH Publilc APIs
 
 Testing ServicesApiService
 
@@ -10,8 +10,6 @@ Testing ServicesApiService
 package dojah
 
 import (
-    "os"
-    "context"
     "github.com/stretchr/testify/assert"
     "github.com/stretchr/testify/require"
     "testing"
@@ -22,18 +20,14 @@ func Test_dojah_ServicesApiService(t *testing.T) {
 
     configuration := dojah.NewConfiguration()
     
-    apiKey := os.Getenv("API_KEY")
-    configuration.Context = context.WithValue(configuration.Context, dojah.ContextAPIKeys, map[string]dojah.APIKey{
-        "apikeyAuth": {Key: apiKey},
-    })
     
     apiClient := dojah.NewAPIClient(configuration)
 
-    t.Run("Test ServicesApiService CategorizeTransactions", func(t *testing.T) {
+    t.Run("Test ServicesApiService GetWalletBalance", func(t *testing.T) {
 
         t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.ServicesApi.CategorizeTransactions().Execute()
+        resp, httpRes, err := apiClient.ServicesApi.GetWalletBalance().Execute()
 
         require.Nil(t, err)
         require.NotNil(t, resp)

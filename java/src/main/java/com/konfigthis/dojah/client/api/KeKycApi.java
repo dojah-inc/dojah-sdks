@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -45,9 +45,6 @@ public class KeKycApi {
     }
 
     public KeKycApi(ApiClient apiClient) throws IllegalArgumentException {
-        if (apiClient.getApikeyAuth() == null) {
-            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
-        }
         this.localVarApiClient = apiClient;
     }
 
@@ -75,7 +72,7 @@ public class KeKycApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call getNationalIdCall(Integer id, String firstName, String lastName, String middleName, String dateOfBirth, String gender, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getNationalIdCall(String appId, Integer id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -104,24 +101,8 @@ public class KeKycApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("id", id));
         }
 
-        if (firstName != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("first_name", firstName));
-        }
-
-        if (lastName != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("last_name", lastName));
-        }
-
-        if (middleName != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("middle_name", middleName));
-        }
-
-        if (dateOfBirth != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("date_of_birth", dateOfBirth));
-        }
-
-        if (gender != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("gender", gender));
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
         }
 
         final String[] localVarAccepts = {
@@ -139,42 +120,48 @@ public class KeKycApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getNationalIdValidateBeforeCall(Integer id, String firstName, String lastName, String middleName, String dateOfBirth, String gender, final ApiCallback _callback) throws ApiException {
-        return getNationalIdCall(id, firstName, lastName, middleName, dateOfBirth, gender, _callback);
+    private okhttp3.Call getNationalIdValidateBeforeCall(String appId, Integer id, final ApiCallback _callback) throws ApiException {
+        return getNationalIdCall(appId, id, _callback);
 
     }
 
 
-    private ApiResponse<GetNationalIdResponse> getNationalIdWithHttpInfo(Integer id, String firstName, String lastName, String middleName, String dateOfBirth, String gender) throws ApiException {
-        okhttp3.Call localVarCall = getNationalIdValidateBeforeCall(id, firstName, lastName, middleName, dateOfBirth, gender, null);
+    private ApiResponse<GetNationalIdResponse> getNationalIdWithHttpInfo(String appId, Integer id) throws ApiException {
+        okhttp3.Call localVarCall = getNationalIdValidateBeforeCall(appId, id, null);
         Type localVarReturnType = new TypeToken<GetNationalIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getNationalIdAsync(Integer id, String firstName, String lastName, String middleName, String dateOfBirth, String gender, final ApiCallback<GetNationalIdResponse> _callback) throws ApiException {
+    private okhttp3.Call getNationalIdAsync(String appId, Integer id, final ApiCallback<GetNationalIdResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getNationalIdValidateBeforeCall(id, firstName, lastName, middleName, dateOfBirth, gender, _callback);
+        okhttp3.Call localVarCall = getNationalIdValidateBeforeCall(appId, id, _callback);
         Type localVarReturnType = new TypeToken<GetNationalIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
     public class GetNationalIdRequestBuilder {
+        private String appId;
         private Integer id;
-        private String firstName;
-        private String lastName;
-        private String middleName;
-        private String dateOfBirth;
-        private String gender;
 
         private GetNationalIdRequestBuilder() {
         }
 
+        /**
+         * Set appId
+         * @param appId  (optional)
+         * @return GetNationalIdRequestBuilder
+         */
+        public GetNationalIdRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
         /**
          * Set id
          * @param id  (optional)
@@ -182,56 +169,6 @@ public class KeKycApi {
          */
         public GetNationalIdRequestBuilder id(Integer id) {
             this.id = id;
-            return this;
-        }
-        
-        /**
-         * Set firstName
-         * @param firstName  (optional)
-         * @return GetNationalIdRequestBuilder
-         */
-        public GetNationalIdRequestBuilder firstName(String firstName) {
-            this.firstName = firstName;
-            return this;
-        }
-        
-        /**
-         * Set lastName
-         * @param lastName  (optional)
-         * @return GetNationalIdRequestBuilder
-         */
-        public GetNationalIdRequestBuilder lastName(String lastName) {
-            this.lastName = lastName;
-            return this;
-        }
-        
-        /**
-         * Set middleName
-         * @param middleName  (optional)
-         * @return GetNationalIdRequestBuilder
-         */
-        public GetNationalIdRequestBuilder middleName(String middleName) {
-            this.middleName = middleName;
-            return this;
-        }
-        
-        /**
-         * Set dateOfBirth
-         * @param dateOfBirth  (optional)
-         * @return GetNationalIdRequestBuilder
-         */
-        public GetNationalIdRequestBuilder dateOfBirth(String dateOfBirth) {
-            this.dateOfBirth = dateOfBirth;
-            return this;
-        }
-        
-        /**
-         * Set gender
-         * @param gender  (optional)
-         * @return GetNationalIdRequestBuilder
-         */
-        public GetNationalIdRequestBuilder gender(String gender) {
-            this.gender = gender;
             return this;
         }
         
@@ -247,7 +184,7 @@ public class KeKycApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getNationalIdCall(id, firstName, lastName, middleName, dateOfBirth, gender, _callback);
+            return getNationalIdCall(appId, id, _callback);
         }
 
 
@@ -262,8 +199,8 @@ public class KeKycApi {
          </table>
          */
         public GetNationalIdResponse execute() throws ApiException {
-            ApiResponse<GetNationalIdResponse> localVarResp = getNationalIdWithHttpInfo(id, firstName, lastName, middleName, dateOfBirth, gender);
-            return localVarResp.getData();
+            ApiResponse<GetNationalIdResponse> localVarResp = getNationalIdWithHttpInfo(appId, id);
+            return localVarResp.getResponseBody();
         }
 
         /**
@@ -277,7 +214,7 @@ public class KeKycApi {
          </table>
          */
         public ApiResponse<GetNationalIdResponse> executeWithHttpInfo() throws ApiException {
-            return getNationalIdWithHttpInfo(id, firstName, lastName, middleName, dateOfBirth, gender);
+            return getNationalIdWithHttpInfo(appId, id);
         }
 
         /**
@@ -292,7 +229,7 @@ public class KeKycApi {
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<GetNationalIdResponse> _callback) throws ApiException {
-            return getNationalIdAsync(id, firstName, lastName, middleName, dateOfBirth, gender, _callback);
+            return getNationalIdAsync(appId, id, _callback);
         }
     }
 
@@ -308,5 +245,164 @@ public class KeKycApi {
      */
     public GetNationalIdRequestBuilder getNationalId() throws IllegalArgumentException {
         return new GetNationalIdRequestBuilder();
+    }
+    private okhttp3.Call getPassportCall(String appId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/ke/kyc/passport";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getPassportValidateBeforeCall(String appId, final ApiCallback _callback) throws ApiException {
+        return getPassportCall(appId, _callback);
+
+    }
+
+
+    private ApiResponse<Object> getPassportWithHttpInfo(String appId) throws ApiException {
+        okhttp3.Call localVarCall = getPassportValidateBeforeCall(appId, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    private okhttp3.Call getPassportAsync(String appId, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getPassportValidateBeforeCall(appId, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+
+    public class GetPassportRequestBuilder {
+        private String appId;
+
+        private GetPassportRequestBuilder() {
+        }
+
+        /**
+         * Set appId
+         * @param appId  (optional)
+         * @return GetPassportRequestBuilder
+         */
+        public GetPassportRequestBuilder appId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        
+        /**
+         * Build call for getPassport
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return getPassportCall(appId, _callback);
+        }
+
+
+        /**
+         * Execute getPassport request
+         * @return Object
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public Object execute() throws ApiException {
+            ApiResponse<Object> localVarResp = getPassportWithHttpInfo(appId);
+            return localVarResp.getResponseBody();
+        }
+
+        /**
+         * Execute getPassport request with HTTP info returned
+         * @return ApiResponse&lt;Object&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+            return getPassportWithHttpInfo(appId);
+        }
+
+        /**
+         * Execute getPassport request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table summary="Response Details" border="1">
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
+            return getPassportAsync(appId, _callback);
+        }
+    }
+
+    /**
+     * KYC - Passport
+     * 
+     * @return GetPassportRequestBuilder
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public GetPassportRequestBuilder getPassport() throws IllegalArgumentException {
+        return new GetPassportRequestBuilder();
     }
 }

@@ -1,5 +1,5 @@
 /*
-DOJAH APIs
+DOJAH Publilc APIs
 
 Testing KYCApiService
 
@@ -10,8 +10,6 @@ Testing KYCApiService
 package dojah
 
 import (
-    "os"
-    "context"
     "github.com/stretchr/testify/assert"
     "github.com/stretchr/testify/require"
     "testing"
@@ -22,18 +20,14 @@ func Test_dojah_KYCApiService(t *testing.T) {
 
     configuration := dojah.NewConfiguration()
     
-    apiKey := os.Getenv("API_KEY")
-    configuration.Context = context.WithValue(configuration.Context, dojah.ContextAPIKeys, map[string]dojah.APIKey{
-        "apikeyAuth": {Key: apiKey},
-    })
     
     apiClient := dojah.NewAPIClient(configuration)
 
-    t.Run("Test KYCApiService AnalyzeDocument", func(t *testing.T) {
+    t.Run("Test KYCApiService CheckLiveness", func(t *testing.T) {
 
         t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.KYCApi.AnalyzeDocument().Execute()
+        resp, httpRes, err := apiClient.KYCApi.CheckLiveness().Execute()
 
         require.Nil(t, err)
         require.NotNil(t, resp)
@@ -41,11 +35,11 @@ func Test_dojah_KYCApiService(t *testing.T) {
 
     })
 
-    t.Run("Test KYCApiService GetBasicBvn", func(t *testing.T) {
+    t.Run("Test KYCApiService GetAccounts", func(t *testing.T) {
 
         t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.KYCApi.GetBasicBvn().Execute()
+        resp, httpRes, err := apiClient.KYCApi.GetAccounts().Execute()
 
         require.Nil(t, err)
         require.NotNil(t, resp)
@@ -53,11 +47,11 @@ func Test_dojah_KYCApiService(t *testing.T) {
 
     })
 
-    t.Run("Test KYCApiService GetBasicPhoneNumber", func(t *testing.T) {
+    t.Run("Test KYCApiService GetAddressVerification", func(t *testing.T) {
 
         t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.KYCApi.GetBasicPhoneNumber().Execute()
+        resp, httpRes, err := apiClient.KYCApi.GetAddressVerification().Execute()
 
         require.Nil(t, err)
         require.NotNil(t, resp)
@@ -65,11 +59,11 @@ func Test_dojah_KYCApiService(t *testing.T) {
 
     })
 
-    t.Run("Test KYCApiService GetDriversLicense", func(t *testing.T) {
+    t.Run("Test KYCApiService GetBvnFromNuban", func(t *testing.T) {
 
         t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.KYCApi.GetDriversLicense().Execute()
+        resp, httpRes, err := apiClient.KYCApi.GetBvnFromNuban().Execute()
 
         require.Nil(t, err)
         require.NotNil(t, resp)
@@ -77,11 +71,11 @@ func Test_dojah_KYCApiService(t *testing.T) {
 
     })
 
-    t.Run("Test KYCApiService GetEmailReputation", func(t *testing.T) {
+    t.Run("Test KYCApiService GetVin", func(t *testing.T) {
 
         t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.KYCApi.GetEmailReputation().Execute()
+        resp, httpRes, err := apiClient.KYCApi.GetVin().Execute()
 
         require.Nil(t, err)
         require.NotNil(t, resp)
@@ -89,131 +83,11 @@ func Test_dojah_KYCApiService(t *testing.T) {
 
     })
 
-    t.Run("Test KYCApiService GetFullBvn", func(t *testing.T) {
+    t.Run("Test KYCApiService SubmitAddress", func(t *testing.T) {
 
         t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.KYCApi.GetFullBvn().Execute()
-
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
-
-    })
-
-    t.Run("Test KYCApiService GetNuban", func(t *testing.T) {
-
-        t.Skip("skip test")  // remove to run test
-
-        resp, httpRes, err := apiClient.KYCApi.GetNuban().Execute()
-
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
-
-    })
-
-    t.Run("Test KYCApiService GetPassport", func(t *testing.T) {
-
-        t.Skip("skip test")  // remove to run test
-
-        resp, httpRes, err := apiClient.KYCApi.GetPassport().Execute()
-
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
-
-    })
-
-    t.Run("Test KYCApiService GetPhoneNumber", func(t *testing.T) {
-
-        t.Skip("skip test")  // remove to run test
-
-        resp, httpRes, err := apiClient.KYCApi.GetPhoneNumber().Execute()
-
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
-
-    })
-
-    t.Run("Test KYCApiService GetPremiumBvn", func(t *testing.T) {
-
-        t.Skip("skip test")  // remove to run test
-
-        resp, httpRes, err := apiClient.KYCApi.GetPremiumBvn().Execute()
-
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
-
-    })
-
-    t.Run("Test KYCApiService GetVIN", func(t *testing.T) {
-
-        t.Skip("skip test")  // remove to run test
-
-        resp, httpRes, err := apiClient.KYCApi.GetVIN().Execute()
-
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
-
-    })
-
-    t.Run("Test KYCApiService GetVnin", func(t *testing.T) {
-
-        t.Skip("skip test")  // remove to run test
-
-        resp, httpRes, err := apiClient.KYCApi.GetVnin().Execute()
-
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
-
-    })
-
-    t.Run("Test KYCApiService ValidateBvn", func(t *testing.T) {
-
-        t.Skip("skip test")  // remove to run test
-
-        resp, httpRes, err := apiClient.KYCApi.ValidateBvn().Execute()
-
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
-
-    })
-
-    t.Run("Test KYCApiService VerifyAge", func(t *testing.T) {
-
-        t.Skip("skip test")  // remove to run test
-
-        resp, httpRes, err := apiClient.KYCApi.VerifyAge().Execute()
-
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
-
-    })
-
-    t.Run("Test KYCApiService VerifySelfieBvn", func(t *testing.T) {
-
-        t.Skip("skip test")  // remove to run test
-
-        resp, httpRes, err := apiClient.KYCApi.VerifySelfieBvn().Execute()
-
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
-
-    })
-
-    t.Run("Test KYCApiService VerifySelfieNin", func(t *testing.T) {
-
-        t.Skip("skip test")  // remove to run test
-
-        resp, httpRes, err := apiClient.KYCApi.VerifySelfieNin().Execute()
+        resp, httpRes, err := apiClient.KYCApi.SubmitAddress().Execute()
 
         require.Nil(t, err)
         require.NotNil(t, resp)

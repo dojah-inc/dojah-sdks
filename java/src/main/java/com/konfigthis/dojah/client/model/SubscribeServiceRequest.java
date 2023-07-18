@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -76,7 +76,7 @@ public class SubscribeServiceRequest {
    * @return webhook
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "https://webhook.site/c587711d-d9f2-4982-9107-b1f9789a5dfe", value = "")
+  @ApiModelProperty(example = "https://webhook.site/bc33b503-bf38-4b65-88e5-349d86378d4a", value = "")
 
   public String getWebhook() {
     return webhook;
@@ -107,7 +107,7 @@ public class SubscribeServiceRequest {
    * @return service
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "kyc_widget", value = "")
+  @ApiModelProperty(example = "sms", value = "")
 
   public String getService() {
     return service;

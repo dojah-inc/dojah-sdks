@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -12,6 +12,7 @@
 from dataclasses import dataclass
 import typing_extensions
 import urllib3
+from dojah_client.request_before_hook import request_before_hook
 import json
 from urllib3._collections import HTTPHeaderDict
 
@@ -70,9 +71,33 @@ request_query_account_number = api_client.QueryParameter(
     schema=AccountNumberSchema,
     explode=True,
 )
+# Header params
+AppIdSchema = schemas.StrSchema
+RequestRequiredHeaderParams = typing_extensions.TypedDict(
+    'RequestRequiredHeaderParams',
+    {
+    }
+)
+RequestOptionalHeaderParams = typing_extensions.TypedDict(
+    'RequestOptionalHeaderParams',
+    {
+        'AppId': typing.Union[AppIdSchema, str, ],
+    },
+    total=False
+)
+
+
+class RequestHeaderParams(RequestRequiredHeaderParams, RequestOptionalHeaderParams):
+    pass
+
+
+request_header_app_id = api_client.HeaderParameter(
+    name="AppId",
+    style=api_client.ParameterStyle.SIMPLE,
+    schema=AppIdSchema,
+)
 _auth = [
     'apikeyAuth',
-    'appIdAuth',
 ]
 XPoweredBySchema = schemas.StrSchema
 x_powered_by_parameter = api_client.HeaderParameter(
@@ -162,21 +187,27 @@ class BaseApi(api_client.Api):
 
     def _get_nuban_mapped_args(
         self,
+        app_id: typing.Optional[str] = None,
         bank_code: typing.Optional[int] = None,
         account_number: typing.Optional[int] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
         _query_params = {}
+        _header_params = {}
         if bank_code is not None:
             _query_params["bank_code"] = bank_code
         if account_number is not None:
             _query_params["account_number"] = account_number
+        if app_id is not None:
+            _header_params["AppId"] = app_id
         args.query = _query_params
+        args.header = _header_params
         return args
 
     async def _aget_nuban_oapg(
         self,
             query_params: typing.Optional[dict] = {},
+            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -193,6 +224,7 @@ class BaseApi(api_client.Api):
             class instances
         """
         self._verify_typed_dict_inputs_oapg(RequestQueryParams, query_params)
+        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         prefix_separator_iterator = None
@@ -210,21 +242,45 @@ class BaseApi(api_client.Api):
                 used_path += serialized_value
     
         _headers = HTTPHeaderDict()
+        for parameter in (
+            request_header_app_id,
+        ):
+            parameter_data = header_params.get(parameter.name, schemas.unset)
+            if parameter_data is schemas.unset:
+                continue
+            serialized_data = parameter.serialize(parameter_data)
+            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
                 _headers.add('Accept', accept_content_type)
+        method = 'get'.upper()
+        request_before_hook(
+            resource_path=used_path,
+            method=method,
+            configuration=self.api_client.configuration,
+            auth_settings=_auth,
+            headers=_headers,
+        )
     
         response = await self.api_client.async_call_api(
             resource_path=used_path,
-            method='get'.upper(),
+            method=method,
             headers=_headers,
             auth_settings=_auth,
             prefix_separator_iterator=prefix_separator_iterator,
             timeout=timeout,
         )
-        
+    
         if stream:
+            if not 200 <= response.http_response.status <= 299:
+                body = (await response.http_response.content.read()).decode("utf-8")
+                raise exceptions.ApiStreamingException(
+                    status=response.http_response.status,
+                    reason=response.http_response.reason,
+                    body=body,
+                )
+    
             async def stream_iterator():
                 """
                 iterates over response.http_response.content and closes connection once iteration has finished
@@ -269,9 +325,11 @@ class BaseApi(api_client.Api):
     
         return api_response
 
+
     def _get_nuban_oapg(
         self,
             query_params: typing.Optional[dict] = {},
+            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -287,6 +345,7 @@ class BaseApi(api_client.Api):
             class instances
         """
         self._verify_typed_dict_inputs_oapg(RequestQueryParams, query_params)
+        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         prefix_separator_iterator = None
@@ -304,14 +363,30 @@ class BaseApi(api_client.Api):
                 used_path += serialized_value
     
         _headers = HTTPHeaderDict()
+        for parameter in (
+            request_header_app_id,
+        ):
+            parameter_data = header_params.get(parameter.name, schemas.unset)
+            if parameter_data is schemas.unset:
+                continue
+            serialized_data = parameter.serialize(parameter_data)
+            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
                 _headers.add('Accept', accept_content_type)
+        method = 'get'.upper()
+        request_before_hook(
+            resource_path=used_path,
+            method=method,
+            configuration=self.api_client.configuration,
+            auth_settings=_auth,
+            headers=_headers,
+        )
     
         response = self.api_client.call_api(
             resource_path=used_path,
-            method='get'.upper(),
+            method=method,
             headers=_headers,
             auth_settings=_auth,
             prefix_separator_iterator=prefix_separator_iterator,
@@ -341,11 +416,13 @@ class BaseApi(api_client.Api):
     
         return api_response
 
+
 class GetNuban(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     async def aget_nuban(
         self,
+        app_id: typing.Optional[str] = None,
         bank_code: typing.Optional[int] = None,
         account_number: typing.Optional[int] = None,
     ) -> typing.Union[
@@ -354,15 +431,18 @@ class GetNuban(BaseApi):
         AsyncGeneratorResponse,
     ]:
         args = self._get_nuban_mapped_args(
+            app_id=app_id,
             bank_code=bank_code,
             account_number=account_number,
         )
         return await self._aget_nuban_oapg(
             query_params=args.query,
+            header_params=args.header,
         )
     
     def get_nuban(
         self,
+        app_id: typing.Optional[str] = None,
         bank_code: typing.Optional[int] = None,
         account_number: typing.Optional[int] = None,
     ) -> typing.Union[
@@ -370,11 +450,13 @@ class GetNuban(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]:
         args = self._get_nuban_mapped_args(
+            app_id=app_id,
             bank_code=bank_code,
             account_number=account_number,
         )
         return self._get_nuban_oapg(
             query_params=args.query,
+            header_params=args.header,
         )
 
 class ApiForget(BaseApi):
@@ -382,6 +464,7 @@ class ApiForget(BaseApi):
 
     async def aget(
         self,
+        app_id: typing.Optional[str] = None,
         bank_code: typing.Optional[int] = None,
         account_number: typing.Optional[int] = None,
     ) -> typing.Union[
@@ -390,15 +473,18 @@ class ApiForget(BaseApi):
         AsyncGeneratorResponse,
     ]:
         args = self._get_nuban_mapped_args(
+            app_id=app_id,
             bank_code=bank_code,
             account_number=account_number,
         )
         return await self._aget_nuban_oapg(
             query_params=args.query,
+            header_params=args.header,
         )
     
     def get(
         self,
+        app_id: typing.Optional[str] = None,
         bank_code: typing.Optional[int] = None,
         account_number: typing.Optional[int] = None,
     ) -> typing.Union[
@@ -406,10 +492,12 @@ class ApiForget(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]:
         args = self._get_nuban_mapped_args(
+            app_id=app_id,
             bank_code=bank_code,
             account_number=account_number,
         )
         return self._get_nuban_oapg(
             query_params=args.query,
+            header_params=args.header,
         )
 

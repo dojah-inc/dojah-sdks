@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -26,8 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.konfigthis.dojah.client.model.CategorizeTransactionsRequest;
-import com.konfigthis.dojah.client.model.CategorizeTransactionsResponse;
+import com.konfigthis.dojah.client.model.GetWalletBalanceResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -46,9 +45,6 @@ public class ServicesApi {
     }
 
     public ServicesApi(ApiClient apiClient) throws IllegalArgumentException {
-        if (apiClient.getApikeyAuth() == null) {
-            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
-        }
         this.localVarApiClient = apiClient;
     }
 
@@ -76,7 +72,7 @@ public class ServicesApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call categorizeTransactionsCall(CategorizeTransactionsRequest categorizeTransactionsRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWalletBalanceCall(String appId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -90,16 +86,20 @@ public class ServicesApi {
             basePath = null;
         }
 
-        Object localVarPostBody = categorizeTransactionsRequest;
+        Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v1/ml/categorize_transaction";
+        String localVarPath = "/api/v1/balance";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (appId != null) {
+            localVarHeaderParams.put("AppId", localVarApiClient.parameterToString(appId));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -110,67 +110,55 @@ public class ServicesApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "apikeyAuth", "appIdAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        String[] localVarAuthNames = new String[] { "noauthAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call categorizeTransactionsValidateBeforeCall(CategorizeTransactionsRequest categorizeTransactionsRequest, final ApiCallback _callback) throws ApiException {
-        return categorizeTransactionsCall(categorizeTransactionsRequest, _callback);
+    private okhttp3.Call getWalletBalanceValidateBeforeCall(String appId, final ApiCallback _callback) throws ApiException {
+        return getWalletBalanceCall(appId, _callback);
 
     }
 
 
-    private ApiResponse<CategorizeTransactionsResponse> categorizeTransactionsWithHttpInfo(CategorizeTransactionsRequest categorizeTransactionsRequest) throws ApiException {
-        okhttp3.Call localVarCall = categorizeTransactionsValidateBeforeCall(categorizeTransactionsRequest, null);
-        Type localVarReturnType = new TypeToken<CategorizeTransactionsResponse>(){}.getType();
+    private ApiResponse<GetWalletBalanceResponse> getWalletBalanceWithHttpInfo(String appId) throws ApiException {
+        okhttp3.Call localVarCall = getWalletBalanceValidateBeforeCall(appId, null);
+        Type localVarReturnType = new TypeToken<GetWalletBalanceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call categorizeTransactionsAsync(CategorizeTransactionsRequest categorizeTransactionsRequest, final ApiCallback<CategorizeTransactionsResponse> _callback) throws ApiException {
+    private okhttp3.Call getWalletBalanceAsync(String appId, final ApiCallback<GetWalletBalanceResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = categorizeTransactionsValidateBeforeCall(categorizeTransactionsRequest, _callback);
-        Type localVarReturnType = new TypeToken<CategorizeTransactionsResponse>(){}.getType();
+        okhttp3.Call localVarCall = getWalletBalanceValidateBeforeCall(appId, _callback);
+        Type localVarReturnType = new TypeToken<GetWalletBalanceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 
-    public class CategorizeTransactionsRequestBuilder {
-        private String description;
-        private String transType;
+    public class GetWalletBalanceRequestBuilder {
+        private String appId;
 
-        private CategorizeTransactionsRequestBuilder() {
+        private GetWalletBalanceRequestBuilder() {
         }
 
         /**
-         * Set description
-         * @param description  (optional)
-         * @return CategorizeTransactionsRequestBuilder
+         * Set appId
+         * @param appId  (optional)
+         * @return GetWalletBalanceRequestBuilder
          */
-        public CategorizeTransactionsRequestBuilder description(String description) {
-            this.description = description;
+        public GetWalletBalanceRequestBuilder appId(String appId) {
+            this.appId = appId;
             return this;
         }
         
         /**
-         * Set transType
-         * @param transType  (optional)
-         * @return CategorizeTransactionsRequestBuilder
-         */
-        public CategorizeTransactionsRequestBuilder transType(String transType) {
-            this.transType = transType;
-            return this;
-        }
-        
-        /**
-         * Build call for categorizeTransactions
+         * Build call for getWalletBalance
          * @param _callback ApiCallback API callback
          * @return Call to execute
          * @throws ApiException If fail to serialize the request body object
@@ -181,20 +169,13 @@ public class ServicesApi {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            CategorizeTransactionsRequest categorizeTransactionsRequest = buildBodyParams();
-            return categorizeTransactionsCall(categorizeTransactionsRequest, _callback);
+            return getWalletBalanceCall(appId, _callback);
         }
 
-        private CategorizeTransactionsRequest buildBodyParams() {
-            CategorizeTransactionsRequest categorizeTransactionsRequest = new CategorizeTransactionsRequest();
-            categorizeTransactionsRequest.description(this.description);
-            categorizeTransactionsRequest.transType(this.transType);
-            return categorizeTransactionsRequest;
-        }
 
         /**
-         * Execute categorizeTransactions request
-         * @return CategorizeTransactionsResponse
+         * Execute getWalletBalance request
+         * @return GetWalletBalanceResponse
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -202,15 +183,14 @@ public class ServicesApi {
             <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
          </table>
          */
-        public CategorizeTransactionsResponse execute() throws ApiException {
-            CategorizeTransactionsRequest categorizeTransactionsRequest = buildBodyParams();
-            ApiResponse<CategorizeTransactionsResponse> localVarResp = categorizeTransactionsWithHttpInfo(categorizeTransactionsRequest);
-            return localVarResp.getData();
+        public GetWalletBalanceResponse execute() throws ApiException {
+            ApiResponse<GetWalletBalanceResponse> localVarResp = getWalletBalanceWithHttpInfo(appId);
+            return localVarResp.getResponseBody();
         }
 
         /**
-         * Execute categorizeTransactions request with HTTP info returned
-         * @return ApiResponse&lt;CategorizeTransactionsResponse&gt;
+         * Execute getWalletBalance request with HTTP info returned
+         * @return ApiResponse&lt;GetWalletBalanceResponse&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -218,13 +198,12 @@ public class ServicesApi {
             <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
          </table>
          */
-        public ApiResponse<CategorizeTransactionsResponse> executeWithHttpInfo() throws ApiException {
-            CategorizeTransactionsRequest categorizeTransactionsRequest = buildBodyParams();
-            return categorizeTransactionsWithHttpInfo(categorizeTransactionsRequest);
+        public ApiResponse<GetWalletBalanceResponse> executeWithHttpInfo() throws ApiException {
+            return getWalletBalanceWithHttpInfo(appId);
         }
 
         /**
-         * Execute categorizeTransactions request (asynchronously)
+         * Execute getWalletBalance request (asynchronously)
          * @param _callback The callback to be executed when the API call finishes
          * @return The request call
          * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -234,23 +213,22 @@ public class ServicesApi {
             <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<CategorizeTransactionsResponse> _callback) throws ApiException {
-            CategorizeTransactionsRequest categorizeTransactionsRequest = buildBodyParams();
-            return categorizeTransactionsAsync(categorizeTransactionsRequest, _callback);
+        public okhttp3.Call executeAsync(final ApiCallback<GetWalletBalanceResponse> _callback) throws ApiException {
+            return getWalletBalanceAsync(appId, _callback);
         }
     }
 
     /**
-     * Categorize Transactions
+     * Get Dojah Wallet Balance
      * 
-     * @return CategorizeTransactionsRequestBuilder
+     * @return GetWalletBalanceRequestBuilder
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  </td></tr>
      </table>
      */
-    public CategorizeTransactionsRequestBuilder categorizeTransactions() throws IllegalArgumentException {
-        return new CategorizeTransactionsRequestBuilder();
+    public GetWalletBalanceRequestBuilder getWalletBalance() throws IllegalArgumentException {
+        return new GetWalletBalanceRequestBuilder();
     }
 }

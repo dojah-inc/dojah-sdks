@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -16,8 +16,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.Configuration;
-import com.konfigthis.dojah.client.model.CategorizeTransactionsRequest;
-import com.konfigthis.dojah.client.model.CategorizeTransactionsResponse;
+import com.konfigthis.dojah.client.model.GetWalletBalanceResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
@@ -43,17 +42,15 @@ public class ServicesApiTest {
     }
 
     /**
-     * Categorize Transactions
+     * Get Dojah Wallet Balance
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void categorizeTransactionsTest() throws ApiException {
-        String description = null;
-        String transType = null;
-        CategorizeTransactionsResponse response = api.categorizeTransactions()
-                .description(description)
-                .transType(transType)
+    public void getWalletBalanceTest() throws ApiException {
+        String appId = null;
+        GetWalletBalanceResponse response = api.getWalletBalance()
+                .appId(appId)
                 .execute();
         // TODO: test validations
     }

@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -19,12 +19,6 @@ import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.model.GeneralGetNubanResponse;
 import com.konfigthis.dojah.client.model.GetBanksResponse;
 import com.konfigthis.dojah.client.model.GetBinResponse;
-import com.konfigthis.dojah.client.model.GetDataPlansResponse;
-import com.konfigthis.dojah.client.model.GetWalletBalanceResponse;
-import com.konfigthis.dojah.client.model.PurchaseAirtimeRequest;
-import com.konfigthis.dojah.client.model.PurchaseAirtimeResponse;
-import com.konfigthis.dojah.client.model.PurchaseDataRequest;
-import com.konfigthis.dojah.client.model.PurchaseDataResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
@@ -56,7 +50,9 @@ public class GeneralApiTest {
      */
     @Test
     public void getBanksTest() throws ApiException {
+        String appId = null;
         GetBanksResponse response = api.getBanks()
+                .appId(appId)
                 .execute();
         // TODO: test validations
     }
@@ -68,21 +64,11 @@ public class GeneralApiTest {
      */
     @Test
     public void getBinTest() throws ApiException {
+        String appId = null;
         Integer cardBin = null;
         GetBinResponse response = api.getBin()
+                .appId(appId)
                 .cardBin(cardBin)
-                .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Purchase - Get Data Plans
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getDataPlansTest() throws ApiException {
-        GetDataPlansResponse response = api.getDataPlans()
                 .execute();
         // TODO: test validations
     }
@@ -94,55 +80,13 @@ public class GeneralApiTest {
      */
     @Test
     public void getNubanTest() throws ApiException {
+        String appId = null;
         Integer bankCode = null;
         Integer accountNumber = null;
         GeneralGetNubanResponse response = api.getNuban()
+                .appId(appId)
                 .bankCode(bankCode)
                 .accountNumber(accountNumber)
-                .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Get Dojah Wallet Balance
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getWalletBalanceTest() throws ApiException {
-        GetWalletBalanceResponse response = api.getWalletBalance()
-                .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Purchase - Send Airtime
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void purchaseAirtimeTest() throws ApiException {
-        String destination = null;
-        String amount = null;
-        PurchaseAirtimeResponse response = api.purchaseAirtime()
-                .destination(destination)
-                .amount(amount)
-                .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Purchase - Buy Data
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void purchaseDataTest() throws ApiException {
-        String plan = null;
-        String destination = null;
-        PurchaseDataResponse response = api.purchaseData()
-                .plan(plan)
-                .destination(destination)
                 .execute();
         // TODO: test validations
     }

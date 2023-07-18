@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -16,9 +16,8 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.Configuration;
-import com.konfigthis.dojah.client.model.GetScreeningInfoResponse;
-import com.konfigthis.dojah.client.model.ScreenAmlRequest;
-import com.konfigthis.dojah.client.model.ScreenAmlResponse;
+import com.konfigthis.dojah.client.model.AmlScreenAmlRequest;
+import com.konfigthis.dojah.client.model.AmlScreenAmlResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
@@ -50,9 +49,9 @@ public class AmlApiTest {
      */
     @Test
     public void getScreeningInfoTest() throws ApiException {
-        String referenceId = null;
-        GetScreeningInfoResponse response = api.getScreeningInfo()
-                .referenceId(referenceId)
+        String profileId = null;
+        Object response = api.getScreeningInfo()
+                .profileId(profileId)
                 .execute();
         // TODO: test validations
     }
@@ -67,10 +66,12 @@ public class AmlApiTest {
         String firstName = null;
         String lastName = null;
         String dateOfBirth = null;
-        ScreenAmlResponse response = api.screenAml()
+        String nameQueryMatchThreshold = null;
+        AmlScreenAmlResponse response = api.screenAml()
                 .firstName(firstName)
                 .lastName(lastName)
                 .dateOfBirth(dateOfBirth)
+                .nameQueryMatchThreshold(nameQueryMatchThreshold)
                 .execute();
         // TODO: test validations
     }

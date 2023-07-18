@@ -7,14 +7,14 @@ All URIs are relative to *https://api.dojah.io*
 | [**getSenderId**](AuthenticationApi.md#getSenderId) | **GET** /api/v1/messaging/sender_ids | Messaging - Get Sender IDs |
 | [**getSmsStatus**](AuthenticationApi.md#getSmsStatus) | **GET** /v1/messaging/sms/get_status | Messaging - Get SMS Status |
 | [**requestSenderId**](AuthenticationApi.md#requestSenderId) | **POST** /api/v1/messaging/sender_id | Messaging - Request Sender ID |
-| [**sendOtp**](AuthenticationApi.md#sendOtp) | **POST** /v1/messaging/otp | Messaging - Send OTP |
+| [**sendOtp**](AuthenticationApi.md#sendOtp) | **POST** /api/v1/messaging/otp | Messaging - Send OTP |
 | [**sendSms**](AuthenticationApi.md#sendSms) | **POST** /api/v1/messaging/sms | Messaging - Send SMS |
-| [**validateOtp**](AuthenticationApi.md#validateOtp) | **GET** /v1/messaging/otp/validate | Messaging - Validate OTP |
+| [**validateOtp**](AuthenticationApi.md#validateOtp) | **GET** /api/v1/messaging/otp/validate | Messaging - Validate OTP |
 
 
 <a name="getSenderId"></a>
 # **getSenderId**
-> GetSenderIdResponse getSenderId().execute();
+> GetSenderIdResponse getSenderId().appId(appId).execute();
 
 Messaging - Get Sender IDs
 
@@ -23,62 +23,70 @@ Messaging - Get Sender IDs
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
+import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.AuthenticationApi;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class Example {
   public static void main(String[] args) {
-
-    ApiClient apiClient = Configuration.getDefaultApiClient();
-    // Set custom base path if desired
-    // apiClient.setBasePath("https://api.dojah.io");
+    Configuration configuration = new Configuration();
+    configuration.host = "https://api.dojah.io";
     
-    // Configure API key authorization: apikeyAuth
-    apiClient.setApikeyAuth("YOUR API KEY");
 
-    // Configure API key authorization: appIdAuth
-    apiClient.setAppIdAuth("YOUR API KEY");
-
-    AuthenticationApi api = new AuthenticationApi(apiClient);
+    Dojah client = new Dojah(configuration);
+    String appId = "{{app_id}}";
     try {
-      GetSenderIdResponse result = api
+      GetSenderIdResponse result = client
+              .authentication
               .getSenderId()
+              .appId(appId)
               .execute();
       System.out.println(result);
-      System.out.println(result.toJson()); // Serialize response back to JSON 
+
+      System.out.println(result.getEntity());
+
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#getSenderId");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
 
-    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<GetSenderIdResponse> response = api
+      ApiResponse<GetSenderIdResponse> response = client
+              .authentication
               .getSenderId()
+              .appId(appId)
               .executeWithHttpInfo();
-      System.out.println(response.getData());
-      System.out.println(response.getHeaders());
+      System.out.println(response.getResponseBody());
+      System.out.println(response.getResponseHeaders());
       System.out.println(response.getStatusCode());
       System.out.println(response.getRoundTripTime());
       System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#getSenderId");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
+
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -86,7 +94,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -100,7 +108,7 @@ This endpoint does not need any parameter.
 
 <a name="getSmsStatus"></a>
 # **getSmsStatus**
-> GetSmsStatusResponse getSmsStatus().messageId(messageId).execute();
+> GetSmsStatusResponse getSmsStatus().appId(appId).messageId(messageId).execute();
 
 Messaging - Get SMS Status
 
@@ -109,67 +117,73 @@ Messaging - Get SMS Status
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
+import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.AuthenticationApi;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class Example {
   public static void main(String[] args) {
-
-    ApiClient apiClient = Configuration.getDefaultApiClient();
-    // Set custom base path if desired
-    // apiClient.setBasePath("https://api.dojah.io");
+    Configuration configuration = new Configuration();
+    configuration.host = "https://api.dojah.io";
     
-    // Configure API key authorization: apikeyAuth
-    apiClient.setApikeyAuth("YOUR API KEY");
 
-    // Configure API key authorization: appIdAuth
-    apiClient.setAppIdAuth("YOUR API KEY");
-
-    AuthenticationApi api = new AuthenticationApi(apiClient);
+    Dojah client = new Dojah(configuration);
+    String appId = "{{app_id}}";
     String messageId = "54818c8a-4aed-4e5f-b846-8274fd4e0bbd";
     try {
-      GetSmsStatusResponse result = api
+      GetSmsStatusResponse result = client
+              .authentication
               .getSmsStatus()
+              .appId(appId)
               .messageId(messageId)
               .execute();
       System.out.println(result);
-      System.out.println(result.toJson()); // Serialize response back to JSON 
+
+      System.out.println(result.getEntity());
+
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#getSmsStatus");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
 
-    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<GetSmsStatusResponse> response = api
+      ApiResponse<GetSmsStatusResponse> response = client
+              .authentication
               .getSmsStatus()
+              .appId(appId)
               .messageId(messageId)
               .executeWithHttpInfo();
-      System.out.println(response.getData());
-      System.out.println(response.getHeaders());
+      System.out.println(response.getResponseBody());
+      System.out.println(response.getResponseHeaders());
       System.out.println(response.getStatusCode());
       System.out.println(response.getRoundTripTime());
       System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#getSmsStatus");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
+
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **appId** | **String**|  | [optional] |
 | **messageId** | **String**|  | [optional] |
 
 ### Return type
@@ -178,7 +192,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -192,7 +206,7 @@ public class Example {
 
 <a name="requestSenderId"></a>
 # **requestSenderId**
-> RequestSenderIdResponse requestSenderId().requestSenderIdRequest(requestSenderIdRequest).execute();
+> RequestSenderIdResponse requestSenderId(requestSenderIdRequest).appId(appId).execute();
 
 Messaging - Request Sender ID
 
@@ -201,68 +215,72 @@ Messaging - Request Sender ID
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
+import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
-import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.AuthenticationApi;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class Example {
   public static void main(String[] args) {
+    Configuration configuration = new Configuration();
+    configuration.host = "https://api.dojah.io";
 
-    ApiClient apiClient = Configuration.getDefaultApiClient();
-    // Set custom base path if desired
-    // apiClient.setBasePath("https://api.dojah.io");
-    
-    // Configure API key authorization: apikeyAuth
-    apiClient.setApikeyAuth("YOUR API KEY");
-
-    // Configure API key authorization: appIdAuth
-    apiClient.setAppIdAuth("YOUR API KEY");
-
-    AuthenticationApi api = new AuthenticationApi(apiClient);
+    Dojah client = new Dojah(configuration);
     String senderId = "senderId_example";
+    String appId = "{{app_id}}";
     try {
-      RequestSenderIdResponse result = api
+      RequestSenderIdResponse result = client
+              .authentication
               .requestSenderId()
               .senderId(senderId)
+              .appId(appId)
               .execute();
       System.out.println(result);
-      System.out.println(result.toJson()); // Serialize response back to JSON 
+
+      System.out.println(result.getEntity());
+
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#requestSenderId");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
 
-    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<RequestSenderIdResponse> response = api
+      ApiResponse<RequestSenderIdResponse> response = client
+              .authentication
               .requestSenderId()
               .senderId(senderId)
+              .appId(appId)
               .executeWithHttpInfo();
-      System.out.println(response.getData());
-      System.out.println(response.getHeaders());
+      System.out.println(response.getResponseBody());
+      System.out.println(response.getResponseHeaders());
       System.out.println(response.getStatusCode());
       System.out.println(response.getRoundTripTime());
       System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#requestSenderId");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
+
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **requestSenderIdRequest** | [**RequestSenderIdRequest**](RequestSenderIdRequest.md)|  | [optional] |
+| **requestSenderIdRequest** | [**RequestSenderIdRequest**](RequestSenderIdRequest.md)|  | |
+| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -270,7 +288,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -284,7 +302,7 @@ public class Example {
 
 <a name="sendOtp"></a>
 # **sendOtp**
-> SendOtpResponse sendOtp().sendOtpRequest(sendOtpRequest).execute();
+> AuthenticationSendOtpResponse sendOtp(authenticationSendOtpRequest).appId(appId).execute();
 
 Messaging - Send OTP
 
@@ -293,88 +311,94 @@ Messaging - Send OTP
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
+import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.AuthenticationApi;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class Example {
   public static void main(String[] args) {
-
-    ApiClient apiClient = Configuration.getDefaultApiClient();
-    // Set custom base path if desired
-    // apiClient.setBasePath("https://api.dojah.io");
+    Configuration configuration = new Configuration();
+    configuration.host = "https://api.dojah.io";
     
-    // Configure API key authorization: apikeyAuth
-    apiClient.setApikeyAuth("YOUR API KEY");
 
-    // Configure API key authorization: appIdAuth
-    apiClient.setAppIdAuth("YOUR API KEY");
-
-    AuthenticationApi api = new AuthenticationApi(apiClient);
+    Dojah client = new Dojah(configuration);
     String destination = "destination_example";
     Double length = 3.4D;
     String channel = "channel_example";
     String senderId = "senderId_example";
     Boolean priority = true;
+    String appId = "{{app_id}}";
     try {
-      SendOtpResponse result = api
+      AuthenticationSendOtpResponse result = client
+              .authentication
               .sendOtp()
               .destination(destination)
               .length(length)
               .channel(channel)
               .senderId(senderId)
               .priority(priority)
+              .appId(appId)
               .execute();
       System.out.println(result);
-      System.out.println(result.toJson()); // Serialize response back to JSON 
+
+      System.out.println(result.getEntity());
+
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#sendOtp");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
 
-    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<SendOtpResponse> response = api
+      ApiResponse<AuthenticationSendOtpResponse> response = client
+              .authentication
               .sendOtp()
               .destination(destination)
               .length(length)
               .channel(channel)
               .senderId(senderId)
               .priority(priority)
+              .appId(appId)
               .executeWithHttpInfo();
-      System.out.println(response.getData());
-      System.out.println(response.getHeaders());
+      System.out.println(response.getResponseBody());
+      System.out.println(response.getResponseHeaders());
       System.out.println(response.getStatusCode());
       System.out.println(response.getRoundTripTime());
       System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#sendOtp");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
+
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **sendOtpRequest** | [**SendOtpRequest**](SendOtpRequest.md)|  | [optional] |
+| **authenticationSendOtpRequest** | [**AuthenticationSendOtpRequest**](AuthenticationSendOtpRequest.md)|  | |
+| **appId** | **String**|  | [optional] |
 
 ### Return type
 
-[**SendOtpResponse**](SendOtpResponse.md)
+[**AuthenticationSendOtpResponse**](AuthenticationSendOtpResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -388,7 +412,7 @@ public class Example {
 
 <a name="sendSms"></a>
 # **sendSms**
-> SendSmsResponse sendSms().sendSmsRequest(sendSmsRequest).execute();
+> SendSmsResponse sendSms(sendSmsRequest).appId(appId).execute();
 
 Messaging - Send SMS
 
@@ -397,77 +421,83 @@ Messaging - Send SMS
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
+import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.AuthenticationApi;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class Example {
   public static void main(String[] args) {
-
-    ApiClient apiClient = Configuration.getDefaultApiClient();
-    // Set custom base path if desired
-    // apiClient.setBasePath("https://api.dojah.io");
+    Configuration configuration = new Configuration();
+    configuration.host = "https://api.dojah.io";
     
-    // Configure API key authorization: apikeyAuth
-    apiClient.setApikeyAuth("YOUR API KEY");
 
-    // Configure API key authorization: appIdAuth
-    apiClient.setAppIdAuth("YOUR API KEY");
-
-    AuthenticationApi api = new AuthenticationApi(apiClient);
+    Dojah client = new Dojah(configuration);
     String destination = "destination_example";
     String message = "message_example";
     String channel = "channel_example";
     String senderId = "senderId_example";
+    String appId = "{{app_id}}";
     try {
-      SendSmsResponse result = api
+      SendSmsResponse result = client
+              .authentication
               .sendSms()
               .destination(destination)
               .message(message)
               .channel(channel)
               .senderId(senderId)
+              .appId(appId)
               .execute();
       System.out.println(result);
-      System.out.println(result.toJson()); // Serialize response back to JSON 
+
+      System.out.println(result.getEntity());
+
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#sendSms");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
 
-    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<SendSmsResponse> response = api
+      ApiResponse<SendSmsResponse> response = client
+              .authentication
               .sendSms()
               .destination(destination)
               .message(message)
               .channel(channel)
               .senderId(senderId)
+              .appId(appId)
               .executeWithHttpInfo();
-      System.out.println(response.getData());
-      System.out.println(response.getHeaders());
+      System.out.println(response.getResponseBody());
+      System.out.println(response.getResponseHeaders());
       System.out.println(response.getStatusCode());
       System.out.println(response.getRoundTripTime());
       System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#sendSms");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
+
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **sendSmsRequest** | [**SendSmsRequest**](SendSmsRequest.md)|  | [optional] |
+| **sendSmsRequest** | [**SendSmsRequest**](SendSmsRequest.md)|  | |
+| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -475,7 +505,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -489,7 +519,7 @@ public class Example {
 
 <a name="validateOtp"></a>
 # **validateOtp**
-> ValidateOtpResponse validateOtp().referenceId(referenceId).code(code).execute();
+> AuthenticationValidateOtpResponse validateOtp().appId(appId).referenceId(referenceId).code(code).execute();
 
 Messaging - Validate OTP
 
@@ -498,80 +528,86 @@ Messaging - Validate OTP
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
+import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
 import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.AuthenticationApi;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class Example {
   public static void main(String[] args) {
-
-    ApiClient apiClient = Configuration.getDefaultApiClient();
-    // Set custom base path if desired
-    // apiClient.setBasePath("https://api.dojah.io");
+    Configuration configuration = new Configuration();
+    configuration.host = "https://api.dojah.io";
     
-    // Configure API key authorization: apikeyAuth
-    apiClient.setApikeyAuth("YOUR API KEY");
 
-    // Configure API key authorization: appIdAuth
-    apiClient.setAppIdAuth("YOUR API KEY");
-
-    AuthenticationApi api = new AuthenticationApi(apiClient);
+    Dojah client = new Dojah(configuration);
+    String appId = "{{app_id}}";
     String referenceId = "a89e4b64-367f-414f-a189-1800bc364b05";
     Integer code = 81974;
     try {
-      ValidateOtpResponse result = api
+      AuthenticationValidateOtpResponse result = client
+              .authentication
               .validateOtp()
+              .appId(appId)
               .referenceId(referenceId)
               .code(code)
               .execute();
       System.out.println(result);
-      System.out.println(result.toJson()); // Serialize response back to JSON 
+
+      System.out.println(result.getEntity());
+
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#validateOtp");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
 
-    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request 
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<ValidateOtpResponse> response = api
+      ApiResponse<AuthenticationValidateOtpResponse> response = client
+              .authentication
               .validateOtp()
+              .appId(appId)
               .referenceId(referenceId)
               .code(code)
               .executeWithHttpInfo();
-      System.out.println(response.getData());
-      System.out.println(response.getHeaders());
+      System.out.println(response.getResponseBody());
+      System.out.println(response.getResponseHeaders());
       System.out.println(response.getStatusCode());
       System.out.println(response.getRoundTripTime());
       System.out.println(response.getRequest());
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#validateOtp");
-      System.err.println("Status code: " + e.getCode());
+      System.err.println("Status code: " + e.getStatusCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
+
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **appId** | **String**|  | [optional] |
 | **referenceId** | **String**|  | [optional] |
 | **code** | **Integer**|  | [optional] |
 
 ### Return type
 
-[**ValidateOtpResponse**](ValidateOtpResponse.md)
+[**AuthenticationValidateOtpResponse**](AuthenticationValidateOtpResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 

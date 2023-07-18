@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    DOJAH APIs
+    DOJAH Publilc APIs
 
     Use Dojah to verify, onboard and manage user identity across Africa!
 
@@ -15,12 +15,11 @@ from enum import Enum
 from typing_extensions import TypedDict, Literal
 
 
-RequiredGetPhoneNumber404Response = TypedDict("RequiredGetPhoneNumber404Response", {
-    })
+class RequiredGetPhoneNumber404Response(TypedDict):
+    pass
 
-OptionalGetPhoneNumber404Response = TypedDict("OptionalGetPhoneNumber404Response", {
-    "entity": typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]],
-    }, total=False)
+class OptionalGetPhoneNumber404Response(TypedDict, total=False):
+    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
 
 class GetPhoneNumber404Response(RequiredGetPhoneNumber404Response, OptionalGetPhoneNumber404Response):
     pass

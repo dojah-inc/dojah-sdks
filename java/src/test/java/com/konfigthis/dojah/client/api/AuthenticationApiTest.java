@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -16,15 +16,15 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.model.AuthenticationSendOtpRequest;
+import com.konfigthis.dojah.client.model.AuthenticationSendOtpResponse;
+import com.konfigthis.dojah.client.model.AuthenticationValidateOtpResponse;
 import com.konfigthis.dojah.client.model.GetSenderIdResponse;
 import com.konfigthis.dojah.client.model.GetSmsStatusResponse;
 import com.konfigthis.dojah.client.model.RequestSenderIdRequest;
 import com.konfigthis.dojah.client.model.RequestSenderIdResponse;
-import com.konfigthis.dojah.client.model.SendOtpRequest;
-import com.konfigthis.dojah.client.model.SendOtpResponse;
 import com.konfigthis.dojah.client.model.SendSmsRequest;
 import com.konfigthis.dojah.client.model.SendSmsResponse;
-import com.konfigthis.dojah.client.model.ValidateOtpResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
@@ -56,7 +56,9 @@ public class AuthenticationApiTest {
      */
     @Test
     public void getSenderIdTest() throws ApiException {
+        String appId = null;
         GetSenderIdResponse response = api.getSenderId()
+                .appId(appId)
                 .execute();
         // TODO: test validations
     }
@@ -68,8 +70,10 @@ public class AuthenticationApiTest {
      */
     @Test
     public void getSmsStatusTest() throws ApiException {
+        String appId = null;
         String messageId = null;
         GetSmsStatusResponse response = api.getSmsStatus()
+                .appId(appId)
                 .messageId(messageId)
                 .execute();
         // TODO: test validations
@@ -83,8 +87,10 @@ public class AuthenticationApiTest {
     @Test
     public void requestSenderIdTest() throws ApiException {
         String senderId = null;
+        String appId = null;
         RequestSenderIdResponse response = api.requestSenderId()
                 .senderId(senderId)
+                .appId(appId)
                 .execute();
         // TODO: test validations
     }
@@ -101,12 +107,14 @@ public class AuthenticationApiTest {
         String channel = null;
         String senderId = null;
         Boolean priority = null;
-        SendOtpResponse response = api.sendOtp()
+        String appId = null;
+        AuthenticationSendOtpResponse response = api.sendOtp()
                 .destination(destination)
                 .length(length)
                 .channel(channel)
                 .senderId(senderId)
                 .priority(priority)
+                .appId(appId)
                 .execute();
         // TODO: test validations
     }
@@ -122,11 +130,13 @@ public class AuthenticationApiTest {
         String message = null;
         String channel = null;
         String senderId = null;
+        String appId = null;
         SendSmsResponse response = api.sendSms()
                 .destination(destination)
                 .message(message)
                 .channel(channel)
                 .senderId(senderId)
+                .appId(appId)
                 .execute();
         // TODO: test validations
     }
@@ -138,9 +148,11 @@ public class AuthenticationApiTest {
      */
     @Test
     public void validateOtpTest() throws ApiException {
+        String appId = null;
         String referenceId = null;
         Integer code = null;
-        ValidateOtpResponse response = api.validateOtp()
+        AuthenticationValidateOtpResponse response = api.validateOtp()
+                .appId(appId)
                 .referenceId(referenceId)
                 .code(code)
                 .execute();

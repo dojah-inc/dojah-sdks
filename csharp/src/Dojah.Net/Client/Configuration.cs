@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -120,6 +120,7 @@ namespace Dojah.Net.Client
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
+            VerifySsl = true;
             Servers = new List<IReadOnlyDictionary<string, object>>()
             {
                 {
@@ -241,6 +242,12 @@ namespace Dojah.Net.Client
         /// </summary>
         /// <value>The password.</value>
         public virtual string Password { get; set; }
+
+        /// <summary>
+        /// Gets or sets the verifySsl flag.
+        /// </summary>
+        /// <value>verifySsl flag.</value>
+        public virtual bool VerifySsl { get; set; }
 
         /// <summary>
         /// Gets the API key with prefix.
@@ -587,6 +594,7 @@ namespace Dojah.Net.Client
                 UserAgent = second.UserAgent ?? first.UserAgent,
                 Username = second.Username ?? first.Username,
                 Password = second.Password ?? first.Password,
+                VerifySsl = second.VerifySsl && first.VerifySsl,
                 AccessToken = second.AccessToken ?? first.AccessToken,
                 TempFolderPath = second.TempFolderPath ?? first.TempFolderPath,
                 DateTimeFormat = second.DateTimeFormat ?? first.DateTimeFormat,

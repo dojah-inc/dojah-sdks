@@ -6,15 +6,11 @@ All URIs are relative to *https://api.dojah.io*
 |--------|--------------|-------------|
 | [**GetBanks**](GeneralApi.md#getbanks) | **GET** /v1/general/banks | General - Get Banks |
 | [**GetBin**](GeneralApi.md#getbin) | **GET** /v1/general/bin | General Resolve BIN |
-| [**GetDataPlans**](GeneralApi.md#getdataplans) | **GET** /v1/purchase/data/plans | Purchase - Get Data Plans |
-| [**GetNuban**](GeneralApi.md#getnuban) | **GET** /v1/general/account | General Resolve NUBAN |
-| [**GetWalletBalance**](GeneralApi.md#getwalletbalance) | **GET** /api/v1/balance | Get Dojah Wallet Balance |
-| [**PurchaseAirtime**](GeneralApi.md#purchaseairtime) | **POST** /v1/purchase/airtime | Purchase - Send Airtime |
-| [**PurchaseData**](GeneralApi.md#purchasedata) | **POST** /v1/purchase/data | Purchase - Buy Data |
+| [**GetNuban**](GeneralApi.md#getnuban) | **GET** /api/v1/general/account | General Resolve NUBAN |
 
 <a name="getbanks"></a>
 # **GetBanks**
-> GetBanksResponse GetBanks ()
+> GetBanksResponse GetBanks (string appId = null)
 
 General - Get Banks
 
@@ -38,21 +34,14 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new GeneralApi(config);
+            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // General - Get Banks
-                GetBanksResponse result = apiInstance.GetBanks();
+                GetBanksResponse result = apiInstance.GetBanks(appId);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -79,7 +68,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // General - Get Banks
-    ApiResponse<GetBanksResponse> response = apiInstance.GetBanksWithHttpInfo();
+    ApiResponse<GetBanksResponse> response = apiInstance.GetBanksWithHttpInfo(appId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -93,14 +82,18 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **appId** | **string** |  | [optional]  |
+
 ### Return type
 
 [**GetBanksResponse**](GetBanksResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -111,13 +104,13 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getbin"></a>
 # **GetBin**
-> GetBinResponse GetBin (int? cardBin = null)
+> GetBinResponse GetBin (string appId = null, int? cardBin = null)
 
 General Resolve BIN
 
@@ -141,22 +134,15 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new GeneralApi(config);
+            var appId = {{app_id}};  // string |  (optional) 
             var cardBin = 506118;  // int? |  (optional) 
 
             try
             {
                 // General Resolve BIN
-                GetBinResponse result = apiInstance.GetBin(cardBin);
+                GetBinResponse result = apiInstance.GetBin(appId, cardBin);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -183,7 +169,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // General Resolve BIN
-    ApiResponse<GetBinResponse> response = apiInstance.GetBinWithHttpInfo(cardBin);
+    ApiResponse<GetBinResponse> response = apiInstance.GetBinWithHttpInfo(appId, cardBin);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -200,6 +186,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
+| **appId** | **string** |  | [optional]  |
 | **cardBin** | **int?** |  | [optional]  |
 
 ### Return type
@@ -208,7 +195,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -219,116 +206,13 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getdataplans"></a>
-# **GetDataPlans**
-> GetDataPlansResponse GetDataPlans ()
-
-Purchase - Get Data Plans
-
-### Example
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dojah.Net.Api;
-using Dojah.Net.Client;
-using Dojah.Net.Model;
-
-namespace Example
-{
-    public class GetDataPlansExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-
-            // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
-            var apiInstance = new GeneralApi(config);
-
-            try
-            {
-                // Purchase - Get Data Plans
-                GetDataPlansResponse result = apiInstance.GetDataPlans();
-                Console.WriteLine(result);
-            }
-            catch (ApiException e)
-            {
-                Console.WriteLine("Exception when calling GeneralApi.GetDataPlans: " + e.Message);
-                Console.WriteLine("Status Code: "+ e.ErrorCode);
-                Console.WriteLine(e.StackTrace);
-            }
-            catch (ClientException e)
-            {
-                Console.WriteLine(e.Response.StatusCode);
-                Console.WriteLine(e.Response.RawContent);
-                Console.WriteLine(e.InnerException);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetDataPlansWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Purchase - Get Data Plans
-    ApiResponse<GetDataPlansResponse> response = apiInstance.GetDataPlansWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GeneralApi.GetDataPlansWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-[**GetDataPlansResponse**](GetDataPlansResponse.md)
-
-### Authorization
-
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getnuban"></a>
 # **GetNuban**
-> GeneralGetNubanResponse GetNuban (int? bankCode = null, int? accountNumber = null)
+> GeneralGetNubanResponse GetNuban (string appId = null, int? bankCode = null, int? accountNumber = null)
 
 General Resolve NUBAN
 
@@ -352,23 +236,16 @@ namespace Example
             // Configure custom BasePath if desired
             // config.BasePath = "https://api.dojah.io";
 
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
 
             var apiInstance = new GeneralApi(config);
+            var appId = {{app_id}};  // string |  (optional) 
             var bankCode = 58;  // int? |  (optional) 
             var accountNumber = 37466959;  // int? |  (optional) 
 
             try
             {
                 // General Resolve NUBAN
-                GeneralGetNubanResponse result = apiInstance.GetNuban(bankCode, accountNumber);
+                GeneralGetNubanResponse result = apiInstance.GetNuban(appId, bankCode, accountNumber);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -395,7 +272,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // General Resolve NUBAN
-    ApiResponse<GeneralGetNubanResponse> response = apiInstance.GetNubanWithHttpInfo(bankCode, accountNumber);
+    ApiResponse<GeneralGetNubanResponse> response = apiInstance.GetNubanWithHttpInfo(appId, bankCode, accountNumber);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -412,6 +289,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
+| **appId** | **string** |  | [optional]  |
 | **bankCode** | **int?** |  | [optional]  |
 | **accountNumber** | **int?** |  | [optional]  |
 
@@ -421,7 +299,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -433,326 +311,6 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  * X-Powered-By -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Length -  <br>  * ETag -  <br>  * Date -  <br>  * Connection -  <br>  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getwalletbalance"></a>
-# **GetWalletBalance**
-> GetWalletBalanceResponse GetWalletBalance ()
-
-Get Dojah Wallet Balance
-
-### Example
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dojah.Net.Api;
-using Dojah.Net.Client;
-using Dojah.Net.Model;
-
-namespace Example
-{
-    public class GetWalletBalanceExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-
-            // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
-            var apiInstance = new GeneralApi(config);
-
-            try
-            {
-                // Get Dojah Wallet Balance
-                GetWalletBalanceResponse result = apiInstance.GetWalletBalance();
-                Console.WriteLine(result);
-            }
-            catch (ApiException e)
-            {
-                Console.WriteLine("Exception when calling GeneralApi.GetWalletBalance: " + e.Message);
-                Console.WriteLine("Status Code: "+ e.ErrorCode);
-                Console.WriteLine(e.StackTrace);
-            }
-            catch (ClientException e)
-            {
-                Console.WriteLine(e.Response.StatusCode);
-                Console.WriteLine(e.Response.RawContent);
-                Console.WriteLine(e.InnerException);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetWalletBalanceWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get Dojah Wallet Balance
-    ApiResponse<GetWalletBalanceResponse> response = apiInstance.GetWalletBalanceWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GeneralApi.GetWalletBalanceWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-[**GetWalletBalanceResponse**](GetWalletBalanceResponse.md)
-
-### Authorization
-
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **401** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="purchaseairtime"></a>
-# **PurchaseAirtime**
-> PurchaseAirtimeResponse PurchaseAirtime (PurchaseAirtimeRequest purchaseAirtimeRequest = null)
-
-Purchase - Send Airtime
-
-### Example
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dojah.Net.Api;
-using Dojah.Net.Client;
-using Dojah.Net.Model;
-
-namespace Example
-{
-    public class PurchaseAirtimeExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-
-            // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
-            var apiInstance = new GeneralApi(config);
-            var purchaseAirtimeRequest = new PurchaseAirtimeRequest(); // PurchaseAirtimeRequest |  (optional) 
-
-            try
-            {
-                // Purchase - Send Airtime
-                PurchaseAirtimeResponse result = apiInstance.PurchaseAirtime(purchaseAirtimeRequest);
-                Console.WriteLine(result);
-            }
-            catch (ApiException e)
-            {
-                Console.WriteLine("Exception when calling GeneralApi.PurchaseAirtime: " + e.Message);
-                Console.WriteLine("Status Code: "+ e.ErrorCode);
-                Console.WriteLine(e.StackTrace);
-            }
-            catch (ClientException e)
-            {
-                Console.WriteLine(e.Response.StatusCode);
-                Console.WriteLine(e.Response.RawContent);
-                Console.WriteLine(e.InnerException);
-            }
-        }
-    }
-}
-```
-
-#### Using the PurchaseAirtimeWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Purchase - Send Airtime
-    ApiResponse<PurchaseAirtimeResponse> response = apiInstance.PurchaseAirtimeWithHttpInfo(purchaseAirtimeRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GeneralApi.PurchaseAirtimeWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **purchaseAirtimeRequest** | [**PurchaseAirtimeRequest**](PurchaseAirtimeRequest.md) |  | [optional]  |
-
-### Return type
-
-[**PurchaseAirtimeResponse**](PurchaseAirtimeResponse.md)
-
-### Authorization
-
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="purchasedata"></a>
-# **PurchaseData**
-> PurchaseDataResponse PurchaseData (PurchaseDataRequest purchaseDataRequest = null)
-
-Purchase - Buy Data
-
-### Example
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dojah.Net.Api;
-using Dojah.Net.Client;
-using Dojah.Net.Model;
-
-namespace Example
-{
-    public class PurchaseDataExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-
-            // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
-            // Configure API key authorization: apikeyAuth
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-            // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("AppId", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("AppId", "Bearer");
-
-            var apiInstance = new GeneralApi(config);
-            var purchaseDataRequest = new PurchaseDataRequest(); // PurchaseDataRequest |  (optional) 
-
-            try
-            {
-                // Purchase - Buy Data
-                PurchaseDataResponse result = apiInstance.PurchaseData(purchaseDataRequest);
-                Console.WriteLine(result);
-            }
-            catch (ApiException e)
-            {
-                Console.WriteLine("Exception when calling GeneralApi.PurchaseData: " + e.Message);
-                Console.WriteLine("Status Code: "+ e.ErrorCode);
-                Console.WriteLine(e.StackTrace);
-            }
-            catch (ClientException e)
-            {
-                Console.WriteLine(e.Response.StatusCode);
-                Console.WriteLine(e.Response.RawContent);
-                Console.WriteLine(e.InnerException);
-            }
-        }
-    }
-}
-```
-
-#### Using the PurchaseDataWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Purchase - Buy Data
-    ApiResponse<PurchaseDataResponse> response = apiInstance.PurchaseDataWithHttpInfo(purchaseDataRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GeneralApi.PurchaseDataWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **purchaseDataRequest** | [**PurchaseDataRequest**](PurchaseDataRequest.md) |  | [optional]  |
-
-### Return type
-
-[**PurchaseDataResponse**](PurchaseDataResponse.md)
-
-### Authorization
-
-[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

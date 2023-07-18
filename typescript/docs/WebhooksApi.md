@@ -24,18 +24,19 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
 });
 
-const deleteWebhookResponse = await dojah.webhooks.deleteWebhook();
+const deleteWebhookResponse = await dojah.webhooks.deleteWebhook({});
 
 console.log(deleteWebhookResponse);
 ```
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **appId** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -69,18 +70,19 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
 });
 
-const getWebhooksResponse = await dojah.webhooks.getWebhooks();
+const getWebhooksResponse = await dojah.webhooks.getWebhooks({});
 
 console.log(getWebhooksResponse);
 ```
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **appId** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -114,8 +116,6 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
 });
 
 const notifyWebhookResponse = await dojah.webhooks.notifyWebhook({
@@ -131,6 +131,7 @@ console.log(notifyWebhookResponse);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **notifyWebhookRequest** | **NotifyWebhookRequest**|  |
+ **appId** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -164,13 +165,11 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  Authorization: "API_KEY",
-  AppId: "API_KEY",
 });
 
 const subscribeServiceResponse = await dojah.webhooks.subscribeService({
-  webhook: "https://webhook.site/c587711d-d9f2-4982-9107-b1f9789a5dfe",
-  service: "kyc_widget",
+  webhook: "https://webhook.site/bc33b503-bf38-4b65-88e5-349d86378d4a",
+  service: "sms",
 });
 
 console.log(subscribeServiceResponse);
@@ -182,6 +181,7 @@ console.log(subscribeServiceResponse);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscribeServiceRequest** | **SubscribeServiceRequest**|  |
+ **appId** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type

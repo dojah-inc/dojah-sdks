@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -55,51 +55,16 @@ namespace Dojah.Net.Test.Api
         }
 
         /// <summary>
-        /// Test GetDocumentAnalysis
-        /// </summary>
-        [Fact]
-        public void GetDocumentAnalysisTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //GetDocumentAnalysisRequest getDocumentAnalysisRequest = null;
-            //var response = instance.GetDocumentAnalysis(getDocumentAnalysisRequest);
-            //Assert.IsType<GetDocumentAnalysisResponse>(response);
-        }
-
-        /// <summary>
-        /// Test GetGenericOcrText
-        /// </summary>
-        [Fact]
-        public void GetGenericOcrTextTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //GetGenericOcrTextRequest getGenericOcrTextRequest = null;
-            //var response = instance.GetGenericOcrText(getGenericOcrTextRequest);
-            //Assert.IsType<GetGenericOcrTextResponse>(response);
-        }
-
-        /// <summary>
-        /// Test GetOcrText
-        /// </summary>
-        [Fact]
-        public void GetOcrTextTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //GetOcrTextRequest getOcrTextRequest = null;
-            //var response = instance.GetOcrText(getOcrTextRequest);
-            //Assert.IsType<GetOcrTextResponse>(response);
-        }
-
-        /// <summary>
         /// Test VerifyPhotoIdWithSelfie
         /// </summary>
         [Fact]
         public void VerifyPhotoIdWithSelfieTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //VerifyPhotoIdWithSelfieRequest verifyPhotoIdWithSelfieRequest = null;
-            //var response = instance.VerifyPhotoIdWithSelfie(verifyPhotoIdWithSelfieRequest);
-            //Assert.IsType<VerifyPhotoIdWithSelfieResponse>(response);
+            //MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest = null;
+            //string appId = null;
+            //var response = instance.VerifyPhotoIdWithSelfie(mlVerifyPhotoIdWithSelfieRequest, appId);
+            //Assert.IsType<Object>(response);
         }
     }
 }

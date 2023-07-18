@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  *
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
@@ -61,14 +61,22 @@ namespace Dojah.Net.Test.Api
         public void GetNationalIdTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
+            //string appId = null;
             //int? id = null;
-            //string firstName = null;
-            //string lastName = null;
-            //string middleName = null;
-            //string dateOfBirth = null;
-            //string gender = null;
-            //var response = instance.GetNationalId(id, firstName, lastName, middleName, dateOfBirth, gender);
+            //var response = instance.GetNationalId(appId, id);
             //Assert.IsType<GetNationalIdResponse>(response);
+        }
+
+        /// <summary>
+        /// Test GetPassport
+        /// </summary>
+        [Fact]
+        public void GetPassportTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string appId = null;
+            //var response = instance.GetPassport(appId);
+            //Assert.IsType<Object>(response);
         }
     }
 }

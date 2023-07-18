@@ -1,5 +1,5 @@
 /*
- * DOJAH APIs
+ * DOJAH Publilc APIs
  * Use Dojah to verify, onboard and manage user identity across Africa!
  *
  * The version of the OpenAPI document: 1.0.0
@@ -16,7 +16,6 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiClient;
 import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.Configuration;
-import com.konfigthis.dojah.client.model.GetVoterResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
@@ -48,10 +47,12 @@ public class UgKycApiTest {
      */
     @Test
     public void getVoterTest() throws ApiException {
+        String appId = null;
         Integer id = null;
         String firstName = null;
         String lastName = null;
-        GetVoterResponse response = api.getVoter()
+        Object response = api.getVoter()
+                .appId(appId)
                 .id(id)
                 .firstName(firstName)
                 .lastName(lastName)
