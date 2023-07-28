@@ -4,7 +4,7 @@ outputDirectory: /tmp/dojah-sdks-out
 specPath: api.yaml
 generators:
   java:
-    version: 4.0.0
+    version: 4.1.0
     clientName: Dojah
     groupId: com.konfigthis.dojah
     artifactId: dojah-java-sdk
@@ -13,7 +13,7 @@ generators:
       userId: dojah-inc
       repoId: dojah-sdks/tree/main/java
   typescript:
-    version: 4.0.0
+    version: 4.1.0
     npmName: dojah-typescript-sdk
     outputDirectory: typescript
     clientName: Dojah
@@ -21,7 +21,7 @@ generators:
       userId: dojah-inc
       repoId: dojah-sdks/tree/main/typescript
   python:
-    version: 4.0.0
+    version: 4.1.0
     packageName: dojah_client
     projectName: dojah-python-sdk
     outputDirectory: python
@@ -30,7 +30,7 @@ generators:
       userId: dojah-inc
       repoId: dojah-sdks/tree/main/python
   php:
-    version: 4.0.0
+    version: 4.1.0
     packageName: dojah-php-sdk
     invokerPackage: Dojah
     outputDirectory: php
@@ -38,7 +38,7 @@ generators:
       userId: dojah-inc
       repoId: dojah-php-sdk
   csharp:
-    version: 4.0.0
+    version: 4.1.0
     packageName: Dojah.Net
     clientName: DojahClient
     outputDirectory: csharp
@@ -47,7 +47,7 @@ generators:
       userId: dojah-inc
       repoId: dojah-sdks/tree/main/csharp
   go:
-    version: 4.0.0
+    version: 4.1.0
     packageName: dojah
     outputDirectory: go
     git:

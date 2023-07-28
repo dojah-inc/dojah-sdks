@@ -1,4 +1,4 @@
-# dojah-python-sdk@4.0.0
+# dojah-python-sdk@4.1.0
 Use Dojah to verify, onboard and manage user identity across Africa!
 
 
@@ -9,7 +9,7 @@ Python >=3.7
 ## Installing
 
 ```sh
-pip install dojah-python-sdk==4.0.0
+pip install dojah-python-sdk==4.1.0
 ```
 
 ## Getting Started

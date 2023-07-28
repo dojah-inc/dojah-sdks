@@ -44,7 +44,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.konfigthis.dojah</groupId>
   <artifactId>dojah-java-sdk</artifactId>
-  <version>4.0.0</version>
+  <version>4.1.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -60,7 +60,7 @@ repositories {
 }
 
 dependencies {
-   implementation "com.konfigthis.dojah:dojah-java-sdk:4.0.0"
+   implementation "com.konfigthis.dojah:dojah-java-sdk:4.1.0"
 }
 ```
 
@@ -97,7 +97,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dojah-java-sdk-4.0.0.jar`
+* `target/dojah-java-sdk-4.1.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started

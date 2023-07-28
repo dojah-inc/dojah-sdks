@@ -1,4 +1,4 @@
-# dojah-typescript-sdk@4.0.0
+# dojah-typescript-sdk@4.1.0
 
 Use Dojah to verify, onboard and manage user identity across Africa!
 ## Installing
