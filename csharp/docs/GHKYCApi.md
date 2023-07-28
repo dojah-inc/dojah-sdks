@@ -30,7 +30,7 @@ namespace Example
         public static void Main()
         {
 
-            Dojah client = new Dojah();
+            DojahClient client = new DojahClient();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
             // Configure API key authorization: apikeyAuth
@@ -135,7 +135,7 @@ namespace Example
         public static void Main()
         {
 
-            Dojah client = new Dojah();
+            DojahClient client = new DojahClient();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
             // Configure API key authorization: apikeyAuth
@@ -244,7 +244,7 @@ namespace Example
         public static void Main()
         {
 
-            Dojah client = new Dojah();
+            DojahClient client = new DojahClient();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
             // Configure API key authorization: apikeyAuth
@@ -349,7 +349,7 @@ namespace Example
         public static void Main()
         {
 
-            Dojah client = new Dojah();
+            DojahClient client = new DojahClient();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
             // Configure API key authorization: apikeyAuth

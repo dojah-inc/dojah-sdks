@@ -15,7 +15,7 @@ namespace Dojah.Net.Client
     /// <summary>
     ///  SDK client
     /// </summary>
-    public class Dojah
+    public class DojahClient
     {
         /// <summary>
         /// API instance
@@ -125,7 +125,7 @@ namespace Dojah.Net.Client
         /// <summary>
         /// Constructor
         /// </summary>
-        public Dojah()
+        public DojahClient()
         {
             Configuration = new Configuration();
             init();
@@ -158,7 +158,7 @@ namespace Dojah.Net.Client
         /// <summary>
         /// Setter for base path
         /// </summary>
-        public Dojah SetBasePath(string basePath)
+        public DojahClient SetBasePath(string basePath)
         {
             Configuration.BasePath = basePath;
             init();
@@ -168,7 +168,7 @@ namespace Dojah.Net.Client
         /// <summary>
         /// Setter for verify SSL configuration. Set to false when you want to disable SSL verification.
         /// </summary>
-        public Dojah SetVerifySsl(bool verifySsl)
+        public DojahClient SetVerifySsl(bool verifySsl)
         {
             Configuration.VerifySsl = verifySsl;
             init();
@@ -178,7 +178,7 @@ namespace Dojah.Net.Client
         /// <summary>
         /// Setter for Username
         /// </summary>
-        public Dojah SetUsername(string username)
+        public DojahClient SetUsername(string username)
         {
             Configuration.Username = username;
             init();
@@ -188,7 +188,7 @@ namespace Dojah.Net.Client
         /// <summary>
         /// Setter for Password
         /// </summary>
-        public Dojah SetPassword(string password)
+        public DojahClient SetPassword(string password)
         {
             Configuration.Password = password;
             init();
@@ -198,7 +198,7 @@ namespace Dojah.Net.Client
         /// <summary>
         /// Setter for Access Token
         /// </summary>
-        public Dojah SetAccessToken(string accessToken)
+        public DojahClient SetAccessToken(string accessToken)
         {
             Configuration.AccessToken = accessToken;
             init();
@@ -208,7 +208,7 @@ namespace Dojah.Net.Client
         /// <summary>
         /// Setter for API Key
         /// </summary>
-        public Dojah SetAuthorization(string apiKey)
+        public DojahClient SetAuthorization(string apiKey)
         {
             Configuration.ApiKey["Authorization"] = apiKey;
             init();
@@ -218,7 +218,7 @@ namespace Dojah.Net.Client
         /// <summary>
         /// Setter for API Key
         /// </summary>
-        public Dojah SetAppId(string apiKey)
+        public DojahClient SetAppId(string apiKey)
         {
             Configuration.ApiKey["AppId"] = apiKey;
             init();
