@@ -3374,11 +3374,9 @@ responseSchemaNames:
         application/json: TransferFundsResponse
 securityParameters:
   AppId:
-    header: false
-  Appid:
     header:
       in: header
-      name: Appid
+      name: AppId
       securityName: appIdAuth
       type: apiKey
   account_id:

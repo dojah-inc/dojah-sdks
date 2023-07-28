@@ -137,7 +137,8 @@ paths:
       summary: Business Search
       operationId: Kyb_businessSearch
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: country_code
           in: query
@@ -163,7 +164,8 @@ paths:
       summary: Business Detail
       operationId: Kyb_businessDetail
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: international_number
           in: query
@@ -194,7 +196,8 @@ paths:
       summary: Driver's License
       operationId: GhKyc_getDriversLicense
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: id
           in: query
@@ -270,7 +273,8 @@ paths:
       summary: Passport
       operationId: GhKyc_getPassport
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: id
           in: query
@@ -356,7 +360,8 @@ paths:
       summary: SSNIT
       operationId: GhKyc_getSsnit
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: id
           in: query
@@ -432,7 +437,8 @@ paths:
       summary: Voter ID Lookup
       operationId: GhKyc_getVoter
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: id
           in: query
@@ -463,7 +469,8 @@ paths:
       summary: Voters ID
       operationId: UgKyc_getVoter
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: id
           in: query
@@ -494,7 +501,8 @@ paths:
       summary: KYC - National ID
       operationId: KeKyc_getNationalId
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: id
           in: query
@@ -515,7 +523,8 @@ paths:
       summary: KYC - Passport
       operationId: KeKyc_getPassport
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters: []
       responses:
         '200':
@@ -531,7 +540,8 @@ paths:
       summary: Lookup TZ NIN
       operationId: TzKyc_getNin
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: first_name
           in: query
@@ -572,7 +582,8 @@ paths:
       summary: National ID Verification
       operationId: ZwKyc_verifyId
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: id
           in: query
@@ -654,7 +665,8 @@ paths:
       summary: Credit Check
       operationId: ZwKyc_checkCredit
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: id_number
           in: query
@@ -799,7 +811,8 @@ paths:
       summary: UK 2+2
       operationId: GlobalKyc_ukTwoPlusTwo
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: country
           in: query
@@ -850,7 +863,8 @@ paths:
       summary: US SSN
       operationId: GlobalKyc_getUsSsn
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: country
           in: query
@@ -901,7 +915,8 @@ paths:
       summary: Canada Ekyc
       operationId: GlobalKyc_caEkyc
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: country
           in: query
@@ -952,7 +967,8 @@ paths:
       summary: KYC - Lookup ID
       operationId: ZafKyc_getId
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: id_number
           in: query
@@ -1150,7 +1166,8 @@ paths:
       summary: KYC - Lookup BVN Basic 1
       operationId: NigeriaKyc_getBasicBvn1
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: bvn
           in: query
@@ -1265,7 +1282,8 @@ paths:
       summary: Lookup VNIN
       operationId: NigeriaKyc_getVnin
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: vnin
           in: query
@@ -1404,7 +1422,7 @@ paths:
       summary: KYC - Lookup Phone Number
       operationId: NigeriaKyc_getPhoneNumber
       security:
-        - noauthAuth: []
+        - apikeyAuth: []
           appIdAuth: []
       parameters:
         - name: phone_number
@@ -1627,7 +1645,8 @@ paths:
       summary: KYC - Passport
       operationId: NigeriaKyc_getPassport
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: passport_number
           in: query
@@ -1653,7 +1672,7 @@ paths:
       summary: KYC - Get VIN
       operationId: Kyc_getVin
       security:
-        - noauthAuth: []
+        - apikeyAuth: []
           appIdAuth: []
       parameters:
         - name: vin
@@ -1768,7 +1787,8 @@ paths:
       summary: Submit Address
       operationId: Kyc_submitAddress
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters: []
       requestBody:
         content:
@@ -1870,7 +1890,8 @@ paths:
       summary: Fetch Address Verification Data
       operationId: Kyc_getAddressVerification
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: reference_id
           in: query
@@ -1891,7 +1912,8 @@ paths:
       summary: 'KYC - Fetch Accounts '
       operationId: Kyc_getAccounts
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: bvn
           in: query
@@ -1912,7 +1934,8 @@ paths:
       summary: Liveness Check
       operationId: Kyc_checkLiveness
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters: []
       requestBody:
         content:
@@ -2084,7 +2107,8 @@ paths:
       summary: KYC - Selfie vNIN verification
       operationId: Verifications_verifySelfieVnin
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters: []
       requestBody:
         content:
@@ -2106,7 +2130,8 @@ paths:
       summary: KYC - Document Analysis
       operationId: DocumentAnalysis_analyzeDocument
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters: []
       responses:
         '200':
@@ -2414,7 +2439,8 @@ paths:
       summary: Messaging - Request Sender ID
       operationId: Authentication_requestSenderId
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters: []
       requestBody:
         content:
@@ -2459,7 +2485,8 @@ paths:
       summary: AML Screening
       operationId: Aml_screenAml
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters: []
       requestBody:
         content:
@@ -2532,7 +2559,8 @@ paths:
       summary: Get AML Info
       operationId: Aml_getScreeningInfo
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: profileId
           in: query
@@ -2553,7 +2581,8 @@ paths:
       summary: IP Reputation
       operationId: Fraud_getIpReputation
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: ip_address
           in: query
@@ -2660,7 +2689,7 @@ paths:
       summary: Email Reputation
       operationId: Fraud_getEmailReputation
       security:
-        - noauthAuth: []
+        - apikeyAuth: []
           appIdAuth: []
       parameters:
         - name: email
@@ -2824,7 +2853,8 @@ paths:
       summary: User Screening
       operationId: Fraud_screenUser
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: first_name
           in: query
@@ -2935,7 +2965,8 @@ paths:
       summary: Phone Screening
       operationId: Fraud_screenPhone
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters:
         - name: phone_number
           in: query
@@ -3017,7 +3048,7 @@ paths:
       summary: Purchase - Send Airtime
       operationId: Purchase_sendAirtime
       security:
-        - noauthAuth: []
+        - apikeyAuth: []
           appIdAuth: []
       parameters: []
       requestBody:
@@ -3252,7 +3283,7 @@ paths:
       summary: Get Dojah Wallet Balance
       operationId: Services_getWalletBalance
       security:
-        - noauthAuth: []
+        - apikeyAuth: []
           appIdAuth: []
       parameters: []
       responses:
@@ -3294,7 +3325,7 @@ paths:
       summary: Subscribe to service
       operationId: WebHooks_subscribeService
       security:
-        - noauthAuth: []
+        - apikeyAuth: []
           appIdAuth: []
       parameters: []
       requestBody:
@@ -3447,7 +3478,8 @@ paths:
       summary: Post Hook
       operationId: WebHooks_notifyWebhook
       security:
-        - appIdAuth: []
+        - apikeyAuth: []
+          appIdAuth: []
       parameters: []
       requestBody:
         content:
@@ -3535,14 +3567,12 @@ paths:
 components:
   securitySchemes:
     apikeyAuth:
-      type: http
-      scheme: apikey
-    noauthAuth:
-      type: http
-      scheme: noauth
+      type: apiKey
+      in: header
+      name: Authorization
     appIdAuth:
       type: apiKey
-      name: Appid
+      name: AppId
       in: header
   schemas:
     KycSubmitAddressRequest:
@@ -4106,9 +4136,11 @@ components:
             date_of_death:
               type: string
               nullable: true
+              x-konfig-null-placeholder: true
             birth_place:
               type: string
               nullable: true
+              x-konfig-null-placeholder: true
       example:
         entity:
           person_no: '450190221E45'
@@ -4143,6 +4175,7 @@ components:
             id_number:
               type: string
               nullable: true
+              x-konfig-null-placeholder: true
       example:
         entity:
           full_name: MUTUNWA DZIVA MAWERE
@@ -4350,12 +4383,12 @@ components:
             bvn:
               type: object
               properties:
-                value:
-                  type: string
-                  example: '23456789012'
                 status:
                   type: boolean
                   example: true
+                value:
+                  type: string
+                  example: '23456789012'
             first_name:
               type: object
               properties:
@@ -4368,8 +4401,8 @@ components:
       example:
         entity:
           bvn:
-            value: '23456789012'
             status: true
+            value: '23456789012'
           first_name:
             confidence_value: 100
             status: true
@@ -4379,32 +4412,32 @@ components:
         entity:
           type: object
           properties:
-            first_name:
-              type: string
-              example: JOSHUA
-            last_name:
-              type: string
-              example: OLADIPO
-            dob:
-              type: string
-              example: 28-Jun-00
-            formatted_dob:
-              type: string
-              example: '2000-06-28'
-            mobile:
-              type: string
-              example: '07085460116'
             bvn:
               type: string
               example: '22468537919'
+            dob:
+              type: string
+              example: 28-Jun-00
+            first_name:
+              type: string
+              example: JOSHUA
+            formatted_dob:
+              type: string
+              example: '2000-06-28'
+            last_name:
+              type: string
+              example: OLADIPO
+            mobile:
+              type: string
+              example: '07085460116'
       example:
         entity:
-          first_name: JOSHUA
-          last_name: OLADIPO
-          dob: 28-Jun-00
-          formatted_dob: '2000-06-28'
-          mobile: '07085460116'
           bvn: '22468537919'
+          dob: 28-Jun-00
+          first_name: JOSHUA
+          formatted_dob: '2000-06-28'
+          last_name: OLADIPO
+          mobile: '07085460116'
     GetFullBvnResponse:
       type: object
       properties:
@@ -4547,6 +4580,7 @@ components:
             email:
               type: string
               nullable: true
+              x-konfig-null-placeholder: true
             employment_status:
               type: string
               example: unemployed
@@ -4562,6 +4596,7 @@ components:
             maiden_name:
               type: string
               nullable: true
+              x-konfig-null-placeholder: true
             marital_status:
               type: string
               example: single
@@ -6208,44 +6243,44 @@ components:
         entity:
           type: object
           properties:
-            vnin:
+            dateOfBirth:
               type: string
-              example: AB012345678910YZ
+              example: 01-01-1982
             firstname:
               type: string
               example: John
+            gender:
+              type: string
+              example: M
             middlename:
               type: string
               example: Doe
+            mobile:
+              type: string
+              example: '08012345678'
+            photo:
+              type: string
+              example: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
             surname:
               type: string
               example: Alamutu
             user_id:
               type: string
               example: WXABCD-1234
-            gender:
+            vnin:
               type: string
-              example: M
-            mobile:
-              type: string
-              example: '08012345678'
-            dateOfBirth:
-              type: string
-              example: 01-01-1982
-            photo:
-              type: string
-              example: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
+              example: AB012345678910YZ
       example:
         entity:
-          vnin: AB012345678910YZ
+          dateOfBirth: 01-01-1982
           firstname: John
+          gender: M
           middlename: Doe
+          mobile: '08012345678'
+          photo: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
           surname: Alamutu
           user_id: WXABCD-1234
-          gender: M
-          mobile: '08012345678'
-          dateOfBirth: 01-01-1982
-          photo: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
+          vnin: AB012345678910YZ
     GetPremiumBvnResponse:
       type: object
       properties:
@@ -6324,12 +6359,12 @@ components:
             state_of_residence:
               type: string
               example: Kwara State
-            watch_listed:
-              type: string
-              example: 'NO'
             status:
               type: number
               example: 200
+            watch_listed:
+              type: string
+              example: 'NO'
       example:
         entity:
           title: Mr
@@ -6356,8 +6391,8 @@ components:
           residential_address: 24, OSHODI SURULERE, ILORIN
           state_of_origin: Osun State
           state_of_residence: Kwara State
-          watch_listed: 'NO'
           status: 200
+          watch_listed: 'NO'
     NigeriaKycGetBasicPhoneNumberResponse:
       type: object
       properties: {}
@@ -6371,24 +6406,6 @@ components:
             title:
               type: string
               example: Mr
-            msisdn:
-              type: string
-              example: '09011111111'
-            firstName:
-              type: string
-              example: John
-            middleName:
-              type: string
-              example: Doe
-            lastName:
-              type: string
-              example: Doe
-            maritalStatus:
-              type: string
-              example: Married
-            gender:
-              type: string
-              example: Male
             birthDate:
               type: string
               example: 11-11-1972
@@ -6404,12 +6421,42 @@ components:
             emplymentStatus:
               type: string
               example: 25 ikeja
+            firstName:
+              type: string
+              example: John
+            gender:
+              type: string
+              example: Male
+            height:
+              type: string
+              example: 5 9
+            lastName:
+              type: string
+              example: Doe
+            lga:
+              type: string
+              example: Ikeja
+            maritalStatus:
+              type: string
+              example: Married
+            middleName:
+              type: string
+              example: Doe
+            msisdn:
+              type: string
+              example: '09011111111'
+            nin:
+              type: string
+              example: '111111111111111'
             nspokenLang:
               type: string
               example: English
             ospokenlang:
               type: string
               example: Yoruba
+            picture:
+              type: string
+              example: <base64 encoded image>
             profession:
               type: string
               example: Tailor
@@ -6419,9 +6466,6 @@ components:
             residenceAddressLine1:
               type: string
               example: 25 Agege motor ways
-            residenceTown:
-              type: string
-              example: Oshogbo
             residenceLga:
               type: string
               example: Ikeja
@@ -6431,6 +6475,9 @@ components:
             residenceStatus:
               type: string
               example: Occupant
+            residenceTown:
+              type: string
+              example: Oshogbo
             selfOriginLga:
               type: string
               example: Lagos Island
@@ -6443,52 +6490,40 @@ components:
             state:
               type: string
               example: Lagos
-            lga:
-              type: string
-              example: Ikeja
-            nin:
-              type: string
-              example: '111111111111111'
-            height:
-              type: string
-              example: 5 9
-            picture:
-              type: string
-              example: <base64 encoded image>
             status:
               type: number
               example: 200
-      example:
+      example: &ref_0
         entity:
           title: Mr
-          msisdn: '09011111111'
-          firstName: John
-          middleName: Doe
-          lastName: Doe
-          maritalStatus: Married
-          gender: Male
           birthDate: 11-11-1972
           birthLga: Ikeja
           birthState: Lagos
           educationalLevel: Higher
           emplymentStatus: 25 ikeja
+          firstName: John
+          gender: Male
+          height: 5 9
+          lastName: Doe
+          lga: Ikeja
+          maritalStatus: Married
+          middleName: Doe
+          msisdn: '09011111111'
+          nin: '111111111111111'
           nspokenLang: English
           ospokenlang: Yoruba
+          picture: <base64 encoded image>
           profession: Tailor
           religion: Muslim
           residenceAddressLine1: 25 Agege motor ways
-          residenceTown: Oshogbo
           residenceLga: Ikeja
           residenceState: Lagos
           residenceStatus: Occupant
+          residenceTown: Oshogbo
           selfOriginLga: Lagos Island
           selfOriginPlace: Yaba
           selfOriginState: Muslim
           state: Lagos
-          lga: Ikeja
-          nin: '111111111111111'
-          height: 5 9
-          picture: <base64 encoded image>
           status: 200
     GetPhoneNumber404Response:
       type: object
@@ -6499,24 +6534,6 @@ components:
             title:
               type: string
               example: Mr
-            msisdn:
-              type: string
-              example: '09011111111'
-            firstName:
-              type: string
-              example: John
-            middleName:
-              type: string
-              example: Doe
-            lastName:
-              type: string
-              example: Doe
-            maritalStatus:
-              type: string
-              example: Married
-            gender:
-              type: string
-              example: Male
             birthDate:
               type: string
               example: 11-11-1972
@@ -6532,12 +6549,42 @@ components:
             emplymentStatus:
               type: string
               example: 25 ikeja
+            firstName:
+              type: string
+              example: John
+            gender:
+              type: string
+              example: Male
+            height:
+              type: string
+              example: 5 9
+            lastName:
+              type: string
+              example: Doe
+            lga:
+              type: string
+              example: Ikeja
+            maritalStatus:
+              type: string
+              example: Married
+            middleName:
+              type: string
+              example: Doe
+            msisdn:
+              type: string
+              example: '09011111111'
+            nin:
+              type: string
+              example: '111111111111111'
             nspokenLang:
               type: string
               example: English
             ospokenlang:
               type: string
               example: Yoruba
+            picture:
+              type: string
+              example: <base64 encoded image>
             profession:
               type: string
               example: Tailor
@@ -6547,9 +6594,6 @@ components:
             residenceAddressLine1:
               type: string
               example: 25 Agege motor ways
-            residenceTown:
-              type: string
-              example: Oshogbo
             residenceLga:
               type: string
               example: Ikeja
@@ -6559,6 +6603,9 @@ components:
             residenceStatus:
               type: string
               example: Occupant
+            residenceTown:
+              type: string
+              example: Oshogbo
             selfOriginLga:
               type: string
               example: Lagos Island
@@ -6571,53 +6618,10 @@ components:
             state:
               type: string
               example: Lagos
-            lga:
-              type: string
-              example: Ikeja
-            nin:
-              type: string
-              example: '111111111111111'
-            height:
-              type: string
-              example: 5 9
-            picture:
-              type: string
-              example: <base64 encoded image>
             status:
               type: number
               example: 200
-      example:
-        entity:
-          title: Mr
-          msisdn: '09011111111'
-          firstName: John
-          middleName: Doe
-          lastName: Doe
-          maritalStatus: Married
-          gender: Male
-          birthDate: 11-11-1972
-          birthLga: Ikeja
-          birthState: Lagos
-          educationalLevel: Higher
-          emplymentStatus: 25 ikeja
-          nspokenLang: English
-          ospokenlang: Yoruba
-          profession: Tailor
-          religion: Muslim
-          residenceAddressLine1: 25 Agege motor ways
-          residenceTown: Oshogbo
-          residenceLga: Ikeja
-          residenceState: Lagos
-          residenceStatus: Occupant
-          selfOriginLga: Lagos Island
-          selfOriginPlace: Yaba
-          selfOriginState: Muslim
-          state: Lagos
-          lga: Ikeja
-          nin: '111111111111111'
-          height: 5 9
-          picture: <base64 encoded image>
-          status: 200
+      example: *ref_0
     GetKycDriversLicenseResponse:
       type: object
       properties:
@@ -6627,129 +6631,129 @@ components:
             personal_details:
               type: object
               properties:
-                firstname:
-                  type: string
-                  example: TOBI
-                othername:
-                  type: string
-                  example: OLALEKAN
-                surname:
-                  type: string
-                  example: OLOLADE
-                mother_maiden_name:
-                  type: string
-                  example: OGUNSOLA
-                gender:
-                  type: string
-                  example: Male
                 birth_date:
                   type: string
                   example: 18/05/1992
                 blood_group_id:
                   type: string
                   example: B+
+                country:
+                  type: string
+                  example: Nigeria
+                disability_reason:
+                  type: string
+                  example: ''
                 facial_mark:
                   type: string
                   example: 'No'
+                firstname:
+                  type: string
+                  example: TOBI
+                gender:
+                  type: string
+                  example: Male
                 glasses:
                   type: string
                   example: 'No'
                 height:
                   type: string
                   example: '1.7'
-                universaltax_identity_number:
-                  type: string
-                  example: ''
-                nin_number:
-                  type: string
-                  example: ''
-                country:
-                  type: string
-                  example: Nigeria
-                state:
-                  type: string
-                  example: Edo
-                lga:
-                  type: string
-                  example: Etsako East
                 is_disability:
                   type: string
                   example: 'No'
-                disability_reason:
+                lga:
+                  type: string
+                  example: Etsako East
+                mother_maiden_name:
+                  type: string
+                  example: OGUNSOLA
+                nin_number:
+                  type: string
+                  example: ''
+                othername:
+                  type: string
+                  example: OLALEKAN
+                state:
+                  type: string
+                  example: Edo
+                surname:
+                  type: string
+                  example: OLOLADE
+                universaltax_identity_number:
                   type: string
                   example: ''
       example:
         entity:
           personal_details:
-            firstname: TOBI
-            othername: OLALEKAN
-            surname: OLOLADE
-            mother_maiden_name: OGUNSOLA
-            gender: Male
             birth_date: 18/05/1992
             blood_group_id: B+
+            country: Nigeria
+            disability_reason: ''
             facial_mark: 'No'
+            firstname: TOBI
+            gender: Male
             glasses: 'No'
             height: '1.7'
-            universaltax_identity_number: ''
-            nin_number: ''
-            country: Nigeria
-            state: Edo
-            lga: Etsako East
             is_disability: 'No'
-            disability_reason: ''
+            lga: Etsako East
+            mother_maiden_name: OGUNSOLA
+            nin_number: ''
+            othername: OLALEKAN
+            state: Edo
+            surname: OLOLADE
+            universaltax_identity_number: ''
     GetKycPassportResponse:
       type: object
       properties:
         entity:
           type: object
           properties:
-            passport_number:
+            date_of_birth:
               type: string
-              example: A00123456
+              example: 10/06/1993
             date_of_issue:
-              type: string
-              example: 01/02/2000
-            expiry_date:
               type: string
               example: 01/02/2000
             document_type:
               type: string
               example: Standard Passport
-            issue_place:
+            expiry_date:
               type: string
-              example: LAGOS
-            surname:
-              type: string
-              example: JOHN
+              example: 01/02/2000
             first_name:
               type: string
               example: DOE
-            other_names:
-              type: string
-              example: MOSES
-            date_of_birth:
-              type: string
-              example: 10/06/1993
             gender:
               type: string
               example: Undecided
+            issue_place:
+              type: string
+              example: LAGOS
+            other_names:
+              type: string
+              example: MOSES
+            passport_number:
+              type: string
+              example: A00123456
             photo:
               type: string
               example: /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBA
+            surname:
+              type: string
+              example: JOHN
       example:
         entity:
-          passport_number: A00123456
-          date_of_issue: 01/02/2000
-          expiry_date: 01/02/2000
-          document_type: Standard Passport
-          issue_place: LAGOS
-          surname: JOHN
-          first_name: DOE
-          other_names: MOSES
           date_of_birth: 10/06/1993
+          date_of_issue: 01/02/2000
+          document_type: Standard Passport
+          expiry_date: 01/02/2000
+          first_name: DOE
           gender: Undecided
+          issue_place: LAGOS
+          other_names: MOSES
+          passport_number: A00123456
           photo: /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBA
+          surname: JOHN
     GetVinResponse:
       type: object
       properties:
@@ -6930,36 +6934,33 @@ components:
             bvn:
               type: string
               example: '22156341123'
-            first_name:
-              type: string
-              example: ADEYEMO
-            middle_name:
-              type: string
-              example: ADELEKE
-            last_name:
-              type: string
-              example: AKIN
             date_of_birth:
               type: string
               example: 15-Apr-1985
-            phone_number1:
+            email:
               type: string
-              example: '08134720263'
-            phone_number2:
-              type: string
-              example: ''
-            gender:
-              type: string
-              example: Male
+              example: adelek@yahoo.com
             enrollment_bank:
               type: string
               example: '044'
             enrollment_branch:
               type: string
               example: BBA LAGOS,BANK PLAZA
-            email:
+            first_name:
               type: string
-              example: adelek@yahoo.com
+              example: ADEYEMO
+            gender:
+              type: string
+              example: Male
+            image:
+              type: string
+              example: base64 image
+            last_name:
+              type: string
+              example: AKIN
+            level_of_account:
+              type: string
+              example: Level 2 - Medium Level Accounts
             lga_of_origin:
               type: string
               example: Obafemi Owode
@@ -6969,33 +6970,27 @@ components:
             marital_status:
               type: string
               example: Single
-            nin:
+            middle_name:
               type: string
-              example: '76221462632'
+              example: ADELEKE
             name_on_card:
               type: string
               example: ADEYEMO ADELEKE AKIN
-            residential_address:
+            nin:
               type: string
-              example: 1, OMOLOLA CLOSE CASSIDY BUS STOP OKOKOMAIKO.
-            state_of_origin:
+              example: '76221462632'
+            phone_number1:
               type: string
-              example: Ogun State
-            state_of_residence:
+              example: '08134720263'
+            phone_number2:
               type: string
-              example: Lagos State
-            watch_listed:
-              type: string
-              example: 'NO'
-            level_of_account:
-              type: string
-              example: Level 2 - Medium Level Accounts
+              example: ''
             registration_date:
               type: string
               example: ''
-            image:
+            residential_address:
               type: string
-              example: base64 image
+              example: 1, OMOLOLA CLOSE CASSIDY BUS STOP OKOKOMAIKO.
             selfie_verification:
               type: object
               properties:
@@ -7005,34 +7000,43 @@ components:
                 match:
                   type: boolean
                   example: true
+            state_of_origin:
+              type: string
+              example: Ogun State
+            state_of_residence:
+              type: string
+              example: Lagos State
+            watch_listed:
+              type: string
+              example: 'NO'
       example:
         entity:
           bvn: '22156341123'
-          first_name: ADEYEMO
-          middle_name: ADELEKE
-          last_name: AKIN
           date_of_birth: 15-Apr-1985
-          phone_number1: '08134720263'
-          phone_number2: ''
-          gender: Male
+          email: adelek@yahoo.com
           enrollment_bank: '044'
           enrollment_branch: BBA LAGOS,BANK PLAZA
-          email: adelek@yahoo.com
+          first_name: ADEYEMO
+          gender: Male
+          image: base64 image
+          last_name: AKIN
+          level_of_account: Level 2 - Medium Level Accounts
           lga_of_origin: Obafemi Owode
           lga_of_residence: Ojo
           marital_status: Single
-          nin: '76221462632'
+          middle_name: ADELEKE
           name_on_card: ADEYEMO ADELEKE AKIN
-          residential_address: 1, OMOLOLA CLOSE CASSIDY BUS STOP OKOKOMAIKO.
-          state_of_origin: Ogun State
-          state_of_residence: Lagos State
-          watch_listed: 'NO'
-          level_of_account: Level 2 - Medium Level Accounts
+          nin: '76221462632'
+          phone_number1: '08134720263'
+          phone_number2: ''
           registration_date: ''
-          image: base64 image
+          residential_address: 1, OMOLOLA CLOSE CASSIDY BUS STOP OKOKOMAIKO.
           selfie_verification:
             confidence_value: 99.99803924560547
             match: true
+          state_of_origin: Ogun State
+          state_of_residence: Lagos State
+          watch_listed: 'NO'
     VerificationsVerifySelfieNinResponse:
       type: object
       properties: {}
@@ -7075,16 +7079,40 @@ components:
         entity:
           type: object
           properties:
+            document_images:
+              type: object
+              properties:
+                Document front side:
+                  type: string
+                  example: base64 image
+                Fingerprint:
+                  type: string
+                  example: base64 image
+                Portrait:
+                  type: string
+                  example: base64 image
+            document_type:
+              type: object
+              properties:
+                document_country_code:
+                  type: string
+                  example: USA
+                document_country_name:
+                  type: string
+                  example: United States
+                document_name:
+                  type: string
+                  example: United States - Permanent Resident Card (2010)
+                document_type_id:
+                  type: number
+                  example: 173
+                document_year:
+                  type: string
+                  example: '2010'
             status:
               type: object
               properties:
-                overall_status:
-                  type: number
-                  example: 0
                 document_images:
-                  type: string
-                  example: 'Yes'
-                text:
                   type: string
                   example: 'Yes'
                 document_type:
@@ -7093,36 +7121,12 @@ components:
                 expiry:
                   type: string
                   example: 'No'
-            document_type:
-              type: object
-              properties:
-                document_name:
-                  type: string
-                  example: United States - Permanent Resident Card (2010)
-                document_country_name:
-                  type: string
-                  example: United States
-                document_country_code:
-                  type: string
-                  example: USA
-                document_type_id:
+                overall_status:
                   type: number
-                  example: 173
-                document_year:
+                  example: 0
+                text:
                   type: string
-                  example: '2010'
-            document_images:
-              type: object
-              properties:
-                Portrait:
-                  type: string
-                  example: base64 image
-                Fingerprint:
-                  type: string
-                  example: base64 image
-                Document front side:
-                  type: string
-                  example: base64 image
+                  example: 'Yes'
             text_data:
               type: array
               items:
@@ -7142,22 +7146,22 @@ components:
                     example: '2007-08-21'
       example:
         entity:
-          status:
-            overall_status: 0
-            document_images: 'Yes'
-            text: 'Yes'
-            document_type: 'Yes'
-            expiry: 'No'
+          document_images:
+            Document front side: base64 image
+            Fingerprint: base64 image
+            Portrait: base64 image
           document_type:
-            document_name: United States - Permanent Resident Card (2010)
-            document_country_name: United States
             document_country_code: USA
+            document_country_name: United States
+            document_name: United States - Permanent Resident Card (2010)
             document_type_id: 173
             document_year: '2010'
-          document_images:
-            Portrait: base64 image
-            Fingerprint: base64 image
-            Document front side: base64 image
+          status:
+            document_images: 'Yes'
+            document_type: 'Yes'
+            expiry: 'No'
+            overall_status: 0
+            text: 'Yes'
           text_data:
             - field_name: Date of Expiry
               field_type: 3
@@ -7336,20 +7340,20 @@ components:
           items:
             type: object
             properties:
-              sender_id:
-                type: string
-                example: Dojah
               activated:
                 type: boolean
                 example: true
               createdAt:
                 type: string
                 example: '2020-10-30T09:54:17.145Z'
+              sender_id:
+                type: string
+                example: Dojah
       example:
         entity:
-          - sender_id: Dojah
-            activated: true
+          - activated: true
             createdAt: '2020-10-30T09:54:17.145Z'
+            sender_id: Dojah
     MlVerifyPhotoIdWithSelfieResponse:
       type: object
       properties: {}
@@ -7630,6 +7634,7 @@ components:
                 registered_to:
                   type: string
                   nullable: true
+                  x-konfig-null-placeholder: true
                 disposable:
                   type: boolean
                   example: false
@@ -7669,6 +7674,7 @@ components:
                 first_breach:
                   type: string
                   nullable: true
+                  x-konfig-null-placeholder: true
                 breaches:
                   type: array
                   items:
@@ -7726,6 +7732,7 @@ components:
             aml_screening_result:
               type: string
               nullable: true
+              x-konfig-null-placeholder: true
             ip_check_result:
               type: object
               properties:
