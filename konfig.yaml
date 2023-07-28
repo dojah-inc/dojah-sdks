@@ -41,6 +41,7 @@ generators:
   csharp:
     version: 4.0.0
     packageName: Dojah.Net
+    clientName: Dojah
     outputDirectory: csharp
     logoPath: logo.png
     git:

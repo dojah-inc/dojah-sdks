@@ -39,12 +39,8 @@ paths:
       operationId: Kyb_getCac
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: rc_number
           in: query
           schema:
@@ -95,12 +91,8 @@ paths:
       operationId: Kyb_getTin
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: tin
           in: query
           schema:
@@ -144,12 +136,9 @@ paths:
         - KYB
       summary: Business Search
       operationId: Kyb_businessSearch
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: country_code
           in: query
           schema:
@@ -173,12 +162,9 @@ paths:
         - KYB
       summary: Business Detail
       operationId: Kyb_businessDetail
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: international_number
           in: query
           schema:
@@ -207,12 +193,9 @@ paths:
         - GH KYC
       summary: Driver's License
       operationId: GhKyc_getDriversLicense
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: id
           in: query
           schema:
@@ -286,12 +269,9 @@ paths:
         - GH KYC
       summary: Passport
       operationId: GhKyc_getPassport
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: id
           in: query
           schema:
@@ -375,12 +355,9 @@ paths:
         - GH KYC
       summary: SSNIT
       operationId: GhKyc_getSsnit
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: id
           in: query
           schema:
@@ -454,12 +431,9 @@ paths:
         - GH KYC
       summary: Voter ID Lookup
       operationId: GhKyc_getVoter
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: id
           in: query
           schema:
@@ -488,12 +462,9 @@ paths:
         - UG KYC
       summary: Voters ID
       operationId: UgKyc_getVoter
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: id
           in: query
           schema:
@@ -522,12 +493,9 @@ paths:
         - KE KYC
       summary: KYC - National ID
       operationId: KeKyc_getNationalId
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: id
           in: query
           schema:
@@ -546,12 +514,9 @@ paths:
         - KE KYC
       summary: KYC - Passport
       operationId: KeKyc_getPassport
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+      security:
+        - appIdAuth: []
+      parameters: []
       responses:
         '200':
           description: Successful response
@@ -565,12 +530,9 @@ paths:
         - TZ KYC
       summary: Lookup TZ NIN
       operationId: TzKyc_getNin
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: first_name
           in: query
           schema:
@@ -609,12 +571,9 @@ paths:
         - ZW KYC
       summary: National ID Verification
       operationId: ZwKyc_verifyId
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: id
           in: query
           schema:
@@ -694,12 +653,9 @@ paths:
         - ZW KYC
       summary: Credit Check
       operationId: ZwKyc_checkCredit
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: id_number
           in: query
           schema:
@@ -842,12 +798,9 @@ paths:
         - Global KYC
       summary: UK 2+2
       operationId: GlobalKyc_ukTwoPlusTwo
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: country
           in: query
           schema:
@@ -896,12 +849,9 @@ paths:
         - Global KYC
       summary: US SSN
       operationId: GlobalKyc_getUsSsn
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: country
           in: query
           schema:
@@ -950,12 +900,9 @@ paths:
         - Global KYC
       summary: Canada Ekyc
       operationId: GlobalKyc_caEkyc
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: country
           in: query
           schema:
@@ -1105,12 +1052,8 @@ paths:
       operationId: NigeriaKyc_getNuban
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: bank_code
           in: query
           schema:
@@ -1161,12 +1104,8 @@ paths:
       operationId: NigeriaKyc_getBasicBvn
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: bvn
           in: query
           schema:
@@ -1210,12 +1149,9 @@ paths:
         - Nigeria KYC
       summary: KYC - Lookup BVN Basic 1
       operationId: NigeriaKyc_getBasicBvn1
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: bvn
           in: query
           schema:
@@ -1236,12 +1172,8 @@ paths:
       operationId: NigeriaKyc_getNormalBvn
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: bvn
           in: query
           schema:
@@ -1287,12 +1219,8 @@ paths:
       operationId: NigeriaKyc_getNin
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: nin
           in: query
           schema:
@@ -1336,12 +1264,9 @@ paths:
         - Nigeria KYC
       summary: Lookup VNIN
       operationId: NigeriaKyc_getVnin
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: vnin
           in: query
           schema:
@@ -1362,12 +1287,8 @@ paths:
       operationId: NigeriaKyc_getPremiumBvn
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: bvn
           in: query
           schema:
@@ -1462,12 +1383,8 @@ paths:
       operationId: NigeriaKyc_getBasicPhoneNumber
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: phone_number
           in: query
           schema:
@@ -1488,12 +1405,8 @@ paths:
       operationId: NigeriaKyc_getPhoneNumber
       security:
         - noauthAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: phone_number
           in: query
           schema:
@@ -1668,12 +1581,8 @@ paths:
       operationId: NigeriaKyc_getDriversLicense
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: license_number
           in: query
           schema:
@@ -1745,12 +1654,8 @@ paths:
       operationId: Kyc_getVin
       security:
         - noauthAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: vin
           in: query
           schema:
@@ -1837,12 +1742,8 @@ paths:
       operationId: Kyc_getBvnFromNuban
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: bank_code
           in: query
           schema:
@@ -1866,12 +1767,9 @@ paths:
         - KYC
       summary: Submit Address
       operationId: Kyc_submitAddress
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+      security:
+        - appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -1971,12 +1869,9 @@ paths:
         - KYC
       summary: Fetch Address Verification Data
       operationId: Kyc_getAddressVerification
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: reference_id
           in: query
           schema:
@@ -1995,12 +1890,9 @@ paths:
         - KYC
       summary: 'KYC - Fetch Accounts '
       operationId: Kyc_getAccounts
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: bvn
           in: query
           schema:
@@ -2019,12 +1911,9 @@ paths:
         - KYC
       summary: Liveness Check
       operationId: Kyc_checkLiveness
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+      security:
+        - appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -2046,12 +1935,8 @@ paths:
       operationId: Verifications_verifySelfieBvn
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -2073,12 +1958,8 @@ paths:
       operationId: Verifications_verifySelfieNin
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -2100,12 +1981,8 @@ paths:
       operationId: Verifications_verifyAge
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: mode
           in: query
           schema:
@@ -2176,12 +2053,8 @@ paths:
       operationId: Verifications_validateBvn
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: bvn
           in: query
           schema:
@@ -2210,12 +2083,9 @@ paths:
         - Verifications
       summary: KYC - Selfie vNIN verification
       operationId: Verifications_verifySelfieVnin
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+      security:
+        - appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -2235,12 +2105,9 @@ paths:
         - Document Analysis
       summary: KYC - Document Analysis
       operationId: DocumentAnalysis_analyzeDocument
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+      security:
+        - appIdAuth: []
+      parameters: []
       responses:
         '200':
           description: Successful response
@@ -2256,12 +2123,8 @@ paths:
       operationId: Authentication_sendSms
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -2314,12 +2177,8 @@ paths:
       operationId: Authentication_getSmsStatus
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: message_id
           in: query
           schema:
@@ -2365,12 +2224,8 @@ paths:
       operationId: Authentication_sendOtp
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -2466,12 +2321,8 @@ paths:
       operationId: Authentication_validateOtp
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: reference_id
           in: query
           schema:
@@ -2522,12 +2373,8 @@ paths:
       operationId: Authentication_getSenderId
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       responses:
         '200':
           description: OK
@@ -2566,12 +2413,9 @@ paths:
         - Authentication
       summary: Messaging - Request Sender ID
       operationId: Authentication_requestSenderId
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+      security:
+        - appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -2593,12 +2437,8 @@ paths:
       operationId: Ml_verifyPhotoIdWithSelfie
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -2712,12 +2552,9 @@ paths:
         - Fraud
       summary: IP Reputation
       operationId: Fraud_getIpReputation
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: ip_address
           in: query
           schema:
@@ -2824,12 +2661,8 @@ paths:
       operationId: Fraud_getEmailReputation
       security:
         - noauthAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: email
           in: query
           schema:
@@ -2990,12 +2823,9 @@ paths:
         - Fraud
       summary: User Screening
       operationId: Fraud_screenUser
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: first_name
           in: query
           schema:
@@ -3104,12 +2934,9 @@ paths:
         - Fraud
       summary: Phone Screening
       operationId: Fraud_screenPhone
+      security:
+        - appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: phone_number
           in: query
           schema:
@@ -3191,12 +3018,8 @@ paths:
       operationId: Purchase_sendAirtime
       security:
         - noauthAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -3289,12 +3112,8 @@ paths:
       operationId: General_getBanks
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       responses:
         '200':
           description: OK
@@ -3335,12 +3154,8 @@ paths:
       operationId: General_getNuban
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: bank_code
           in: query
           schema:
@@ -3391,12 +3206,8 @@ paths:
       operationId: General_getBin
       security:
         - apikeyAuth: []
+          appIdAuth: []
       parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
         - name: card_bin
           in: query
           schema:
@@ -3442,12 +3253,8 @@ paths:
       operationId: Services_getWalletBalance
       security:
         - noauthAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       responses:
         '200':
           description: OK
@@ -3488,12 +3295,8 @@ paths:
       operationId: WebHooks_subscribeService
       security:
         - noauthAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -3545,12 +3348,8 @@ paths:
       operationId: WebHooks_deleteWebhook
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       responses:
         '200':
           description: Successful response
@@ -3566,12 +3365,8 @@ paths:
       operationId: WebHooks_getWebhooks
       security:
         - apikeyAuth: []
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+          appIdAuth: []
+      parameters: []
       responses:
         '200':
           description: OK
@@ -3651,12 +3446,9 @@ paths:
         - WebHooks
       summary: Post Hook
       operationId: WebHooks_notifyWebhook
-      parameters:
-        - name: AppId
-          in: header
-          schema:
-            type: string
-          example: '{{app_id}}'
+      security:
+        - appIdAuth: []
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -6666,7 +6458,7 @@ components:
             status:
               type: number
               example: 200
-      example: &ref_0
+      example:
         entity:
           title: Mr
           msisdn: '09011111111'
@@ -6794,7 +6586,38 @@ components:
             status:
               type: number
               example: 200
-      example: *ref_0
+      example:
+        entity:
+          title: Mr
+          msisdn: '09011111111'
+          firstName: John
+          middleName: Doe
+          lastName: Doe
+          maritalStatus: Married
+          gender: Male
+          birthDate: 11-11-1972
+          birthLga: Ikeja
+          birthState: Lagos
+          educationalLevel: Higher
+          emplymentStatus: 25 ikeja
+          nspokenLang: English
+          ospokenlang: Yoruba
+          profession: Tailor
+          religion: Muslim
+          residenceAddressLine1: 25 Agege motor ways
+          residenceTown: Oshogbo
+          residenceLga: Ikeja
+          residenceState: Lagos
+          residenceStatus: Occupant
+          selfOriginLga: Lagos Island
+          selfOriginPlace: Yaba
+          selfOriginState: Muslim
+          state: Lagos
+          lga: Ikeja
+          nin: '111111111111111'
+          height: 5 9
+          picture: <base64 encoded image>
+          status: 200
     GetKycDriversLicenseResponse:
       type: object
       properties:
