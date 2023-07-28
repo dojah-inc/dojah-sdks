@@ -10,7 +10,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getNationalId"></a>
 # **getNationalId**
-> GetNationalIdResponse getNationalId().appId(appId).id(id).execute();
+> GetNationalIdResponse getNationalId().id(id).execute();
 
 KYC - National ID
 
@@ -21,6 +21,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.KeKycApi;
 import java.util.List;
@@ -31,15 +32,16 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     Integer id = 24798402;
     try {
       GetNationalIdResponse result = client
               .keKyc
               .getNationalId()
-              .appId(appId)
               .id(id)
               .execute();
       System.out.println(result);
@@ -59,7 +61,6 @@ public class Example {
       ApiResponse<GetNationalIdResponse> response = client
               .keKyc
               .getNationalId()
-              .appId(appId)
               .id(id)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -83,7 +84,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **id** | **Integer**|  | [optional] |
 
 ### Return type
@@ -92,7 +92,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -106,7 +106,7 @@ No authorization required
 
 <a name="getPassport"></a>
 # **getPassport**
-> Object getPassport().appId(appId).execute();
+> Object getPassport().execute();
 
 KYC - Passport
 
@@ -117,6 +117,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.KeKycApi;
 import java.util.List;
@@ -127,14 +128,15 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     try {
       Object result = client
               .keKyc
               .getPassport()
-              .appId(appId)
               .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling KeKycApi#getPassport");
@@ -149,7 +151,6 @@ public class Example {
       ApiResponse<Object> response = client
               .keKyc
               .getPassport()
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -169,10 +170,7 @@ public class Example {
 ```
 
 ### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -180,7 +178,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

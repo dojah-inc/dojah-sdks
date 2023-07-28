@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.get_drivers_license_response_entity import GetDriversLicenseResponseEntity
 
 class RequiredGetDriversLicenseResponse(TypedDict):
     pass
 
 class OptionalGetDriversLicenseResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: GetDriversLicenseResponseEntity
 
 class GetDriversLicenseResponse(RequiredGetDriversLicenseResponse, OptionalGetDriversLicenseResponse):
     pass

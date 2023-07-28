@@ -23,6 +23,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const caEkycResponse = await dojah.globalKyc.caEkyc({});
@@ -35,7 +36,6 @@ console.log(caEkycResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **country** | [**string**] |  | (optional) defaults to undefined
  **firstName** | [**string**] |  | (optional) defaults to undefined
  **lastName** | [**string**] |  | (optional) defaults to undefined
@@ -76,6 +76,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getUsSsnResponse = await dojah.globalKyc.getUsSsn({});
@@ -88,7 +89,6 @@ console.log(getUsSsnResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **country** | [**string**] |  | (optional) defaults to undefined
  **firstName** | [**string**] |  | (optional) defaults to undefined
  **lastName** | [**string**] |  | (optional) defaults to undefined
@@ -129,6 +129,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const ukTwoPlusTwoResponse = await dojah.globalKyc.ukTwoPlusTwo({});
@@ -141,7 +142,6 @@ console.log(ukTwoPlusTwoResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **country** | [**string**] |  | (optional) defaults to undefined
  **firstName** | [**string**] |  | (optional) defaults to undefined
  **lastName** | [**string**] |  | (optional) defaults to undefined

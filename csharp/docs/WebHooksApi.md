@@ -11,7 +11,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="deletewebhook"></a>
 # **DeleteWebhook**
-> DeleteWebhookResponse DeleteWebhook (string appId = null)
+> DeleteWebhookResponse DeleteWebhook ()
 
 Delete Webhook
 
@@ -20,7 +20,6 @@ Delete Webhook
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -30,19 +29,18 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new WebHooksApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // Delete Webhook
-                DeleteWebhookResponse result = apiInstance.DeleteWebhook(appId);
+                DeleteWebhookResponse result = client.WebHooks.DeleteWebhook();
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -69,7 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete Webhook
-    ApiResponse<DeleteWebhookResponse> response = apiInstance.DeleteWebhookWithHttpInfo(appId);
+    ApiResponse<DeleteWebhookResponse> response = apiInstance.DeleteWebhookWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -83,18 +81,14 @@ catch (ApiException e)
 ```
 
 ### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
-
+This endpoint does not need any parameter.
 ### Return type
 
 [**DeleteWebhookResponse**](DeleteWebhookResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -111,7 +105,7 @@ catch (ApiException e)
 
 <a name="getwebhooks"></a>
 # **GetWebhooks**
-> GetWebhooksResponse GetWebhooks (string appId = null)
+> GetWebhooksResponse GetWebhooks ()
 
 Fetch All Webhooks
 
@@ -120,7 +114,6 @@ Fetch All Webhooks
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -130,19 +123,18 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new WebHooksApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // Fetch All Webhooks
-                GetWebhooksResponse result = apiInstance.GetWebhooks(appId);
+                GetWebhooksResponse result = client.WebHooks.GetWebhooks();
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -169,7 +161,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Fetch All Webhooks
-    ApiResponse<GetWebhooksResponse> response = apiInstance.GetWebhooksWithHttpInfo(appId);
+    ApiResponse<GetWebhooksResponse> response = apiInstance.GetWebhooksWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -183,18 +175,14 @@ catch (ApiException e)
 ```
 
 ### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
-
+This endpoint does not need any parameter.
 ### Return type
 
 [**GetWebhooksResponse**](GetWebhooksResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -211,7 +199,7 @@ catch (ApiException e)
 
 <a name="notifywebhook"></a>
 # **NotifyWebhook**
-> NotifyWebhookResponse NotifyWebhook (NotifyWebhookRequest notifyWebhookRequest, string appId = null)
+> NotifyWebhookResponse NotifyWebhook (NotifyWebhookRequest notifyWebhookRequest)
 
 Post Hook
 
@@ -220,7 +208,6 @@ Post Hook
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -230,19 +217,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new WebHooksApi(config);
             var notifyWebhookRequest = new NotifyWebhookRequest(); // NotifyWebhookRequest | 
-            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // Post Hook
-                NotifyWebhookResponse result = apiInstance.NotifyWebhook(notifyWebhookRequest, appId);
+                NotifyWebhookResponse result = client.WebHooks.NotifyWebhook(notifyWebhookRequest);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -269,7 +256,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Post Hook
-    ApiResponse<NotifyWebhookResponse> response = apiInstance.NotifyWebhookWithHttpInfo(notifyWebhookRequest, appId);
+    ApiResponse<NotifyWebhookResponse> response = apiInstance.NotifyWebhookWithHttpInfo(notifyWebhookRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -287,7 +274,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **notifyWebhookRequest** | [**NotifyWebhookRequest**](NotifyWebhookRequest.md) |  |  |
-| **appId** | **string** |  | [optional]  |
 
 ### Return type
 
@@ -295,7 +281,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -312,7 +298,7 @@ No authorization required
 
 <a name="subscribeservice"></a>
 # **SubscribeService**
-> SubscribeServiceResponse SubscribeService (SubscribeServiceRequest subscribeServiceRequest, string appId = null)
+> SubscribeServiceResponse SubscribeService (SubscribeServiceRequest subscribeServiceRequest)
 
 Subscribe to service
 
@@ -321,7 +307,6 @@ Subscribe to service
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -331,20 +316,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new WebHooksApi(config);
             var subscribeServiceRequest = new SubscribeServiceRequest(); // SubscribeServiceRequest | 
-            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // Subscribe to service
-                SubscribeServiceResponse result = apiInstance.SubscribeService(subscribeServiceRequest, appId);
+                SubscribeServiceResponse result = client.WebHooks.SubscribeService(subscribeServiceRequest);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -371,7 +355,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Subscribe to service
-    ApiResponse<SubscribeServiceResponse> response = apiInstance.SubscribeServiceWithHttpInfo(subscribeServiceRequest, appId);
+    ApiResponse<SubscribeServiceResponse> response = apiInstance.SubscribeServiceWithHttpInfo(subscribeServiceRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -389,7 +373,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **subscribeServiceRequest** | [**SubscribeServiceRequest**](SubscribeServiceRequest.md) |  |  |
-| **appId** | **string** |  | [optional]  |
 
 ### Return type
 
@@ -397,7 +380,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[noauthAuth](../README.md#noauthAuth)
+[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 

@@ -26,13 +26,15 @@ dojah = Dojah(
     host="https://api.dojah.io",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'apikeyAuth': 'Bearer'},
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # Delete Webhook
-    delete_webhook_response = dojah.web_hooks.delete_webhook(
-        app_id="{{app_id}}",  # optional
-    )
+    delete_webhook_response = dojah.web_hooks.delete_webhook()
     pprint(delete_webhook_response.body)
     pprint(delete_webhook_response.body["entity"])
     pprint(delete_webhook_response.headers)
@@ -47,28 +49,7 @@ except ApiException as e:
     pprint(e.round_trip_time)
 ```
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-header_params | RequestHeaderParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
+This endpoint does not need any parameter.
 
 ### Return Types, Responses
 
@@ -92,7 +73,7 @@ Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth)
+[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -112,13 +93,15 @@ dojah = Dojah(
     host="https://api.dojah.io",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'apikeyAuth': 'Bearer'},
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # Fetch All Webhooks
-    get_webhooks_response = dojah.web_hooks.get_webhooks(
-        app_id="{{app_id}}",  # optional
-    )
+    get_webhooks_response = dojah.web_hooks.get_webhooks()
     pprint(get_webhooks_response.body)
     pprint(get_webhooks_response.body["entity"])
     pprint(get_webhooks_response.headers)
@@ -133,28 +116,7 @@ except ApiException as e:
     pprint(e.round_trip_time)
 ```
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-header_params | RequestHeaderParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
+This endpoint does not need any parameter.
 
 ### Return Types, Responses
 
@@ -303,7 +265,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth)
+[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -321,6 +283,10 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
@@ -330,7 +296,6 @@ try:
         data={
             "stuff": "12345678",
         },  # optional
-        app_id="{{app_id}}",  # optional
     )
     pprint(notify_webhook_response.body)
     pprint(notify_webhook_response.body["entity"])
@@ -350,7 +315,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
-header_params | RequestHeaderParams | |
 content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
@@ -364,20 +328,6 @@ Type | Description  | Notes
 ------------- | ------------- | -------------
 [**NotifyWebhookRequest**](../../models/NotifyWebhookRequest.md) |  | 
 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -526,7 +476,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -544,6 +494,10 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'noauthAuth': 'Bearer'},
 )
@@ -553,7 +507,6 @@ try:
     subscribe_service_response = dojah.web_hooks.subscribe_service(
         webhook="https://webhook.site/bc33b503-bf38-4b65-88e5-349d86378d4a",  # optional
         service="sms",  # optional
-        app_id="{{app_id}}",  # optional
     )
     pprint(subscribe_service_response.body)
     pprint(subscribe_service_response.body["entity"])
@@ -573,7 +526,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
-header_params | RequestHeaderParams | |
 content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
@@ -587,20 +539,6 @@ Type | Description  | Notes
 ------------- | ------------- | -------------
 [**SubscribeServiceRequest**](../../models/SubscribeServiceRequest.md) |  | 
 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -677,7 +615,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[noauthAuth](../../../README.md#noauthAuth)
+[appIdAuth](../../../README.md#appIdAuth), [noauthAuth](../../../README.md#noauthAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## CheckCredit
 
-> ZwKycCheckCreditResponse CheckCredit(ctx).AppId(appId).IdNumber(idNumber).Name(name).Surname(surname).Gender(gender).Dob(dob).MaritalStatus(maritalStatus).MobileNumber(mobileNumber).Execute()
+> ZwKycCheckCreditResponse CheckCredit(ctx).IdNumber(idNumber).Name(name).Surname(surname).Gender(gender).Dob(dob).MaritalStatus(maritalStatus).MobileNumber(mobileNumber).Execute()
 
 Credit Check
 
@@ -28,18 +28,17 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    idNumber := "45190221E45" // string |  (optional)
-    name := "CHIMUNDEGE" // string |  (optional)
-    surname := "CHIMUNDEGE" // string |  (optional)
-    gender := "F" // string |  (optional)
-    dob := "1994-04-03" // string |  (optional)
-    maritalStatus := "M" // string |  (optional)
+    idNumber := ""45190221E45"" // string |  (optional)
+    name := ""CHIMUNDEGE"" // string |  (optional)
+    surname := ""CHIMUNDEGE"" // string |  (optional)
+    gender := ""F"" // string |  (optional)
+    dob := ""1994-04-03"" // string |  (optional)
+    maritalStatus := ""M"" // string |  (optional)
     mobileNumber := int32(26424257383) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.ZWKYCApi.CheckCredit(context.Background()).AppId(appId).IdNumber(idNumber).Name(name).Surname(surname).Gender(gender).Dob(dob).MaritalStatus(maritalStatus).MobileNumber(mobileNumber).Execute()
+    resp, r, err := apiClient.ZWKYCApi.CheckCredit(context.Background()).IdNumber(idNumber).Name(name).Surname(surname).Gender(gender).Dob(dob).MaritalStatus(maritalStatus).MobileNumber(mobileNumber).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ZWKYCApi.CheckCredit``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,7 +59,6 @@ Other parameters are passed through a pointer to a apiCheckCreditRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **idNumber** | **string** |  | 
  **name** | **string** |  | 
  **surname** | **string** |  | 
@@ -75,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -89,7 +87,7 @@ No authorization required
 
 ## VerifyId
 
-> ZwKycVerifyIdResponse VerifyId(ctx).AppId(appId).Id(id).Execute()
+> ZwKycVerifyIdResponse VerifyId(ctx).Id(id).Execute()
 
 National ID Verification
 
@@ -106,12 +104,11 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    id := "45190221E45" // string |  (optional)
+    id := ""45190221E45"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.ZWKYCApi.VerifyId(context.Background()).AppId(appId).Id(id).Execute()
+    resp, r, err := apiClient.ZWKYCApi.VerifyId(context.Background()).Id(id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ZWKYCApi.VerifyId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -132,7 +129,6 @@ Other parameters are passed through a pointer to a apiVerifyIdRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **id** | **string** |  | 
 
 ### Return type
@@ -141,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## BusinessDetail
 
-> map[string]interface{} BusinessDetail(ctx).AppId(appId).InternationalNumber(internationalNumber).CountryCode(countryCode).Full(full).Execute()
+> map[string]interface{} BusinessDetail(ctx).InternationalNumber(internationalNumber).CountryCode(countryCode).Full(full).Execute()
 
 Business Detail
 
@@ -30,14 +30,13 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    internationalNumber := "RC-1885308" // string |  (optional)
-    countryCode := "NG" // string |  (optional)
-    full := true // bool |  (optional)
+    internationalNumber := ""RC-1885308"" // string |  (optional)
+    countryCode := ""NG"" // string |  (optional)
+    full := false // bool |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.KYBApi.BusinessDetail(context.Background()).AppId(appId).InternationalNumber(internationalNumber).CountryCode(countryCode).Full(full).Execute()
+    resp, r, err := apiClient.KYBApi.BusinessDetail(context.Background()).InternationalNumber(internationalNumber).CountryCode(countryCode).Full(full).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KYBApi.BusinessDetail``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -58,7 +57,6 @@ Other parameters are passed through a pointer to a apiBusinessDetailRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **internationalNumber** | **string** |  | 
  **countryCode** | **string** |  | 
  **full** | **bool** |  | 
@@ -69,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -83,7 +81,7 @@ No authorization required
 
 ## BusinessSearch
 
-> map[string]interface{} BusinessSearch(ctx).AppId(appId).CountryCode(countryCode).Company(company).Execute()
+> map[string]interface{} BusinessSearch(ctx).CountryCode(countryCode).Company(company).Execute()
 
 Business Search
 
@@ -100,13 +98,12 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    countryCode := "NG" // string |  (optional)
+    countryCode := ""NG"" // string |  (optional)
     company := int32(1885308) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.KYBApi.BusinessSearch(context.Background()).AppId(appId).CountryCode(countryCode).Company(company).Execute()
+    resp, r, err := apiClient.KYBApi.BusinessSearch(context.Background()).CountryCode(countryCode).Company(company).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KYBApi.BusinessSearch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -127,7 +124,6 @@ Other parameters are passed through a pointer to a apiBusinessSearchRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **countryCode** | **string** |  | 
  **company** | **int32** |  | 
 
@@ -137,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -151,7 +147,7 @@ No authorization required
 
 ## GetCac
 
-> KybGetCacResponse GetCac(ctx).AppId(appId).RcNumber(rcNumber).CompanyName(companyName).Execute()
+> KybGetCacResponse GetCac(ctx).RcNumber(rcNumber).CompanyName(companyName).Execute()
 
 KYC - Get CAC 
 
@@ -168,13 +164,12 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
     rcNumber := int32(1432074) // int32 |  (optional)
-    companyName := "ELTA SOLUTIONS LIMITED" // string |  (optional)
+    companyName := ""ELTA SOLUTIONS LIMITED"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.KYBApi.GetCac(context.Background()).AppId(appId).RcNumber(rcNumber).CompanyName(companyName).Execute()
+    resp, r, err := apiClient.KYBApi.GetCac(context.Background()).RcNumber(rcNumber).CompanyName(companyName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KYBApi.GetCac``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -195,7 +190,6 @@ Other parameters are passed through a pointer to a apiGetCacRequest struct via t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **rcNumber** | **int32** |  | 
  **companyName** | **string** |  | 
 
@@ -205,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -219,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## GetTin
 
-> KybGetTinResponse GetTin(ctx).AppId(appId).Tin(tin).Execute()
+> KybGetTinResponse GetTin(ctx).Tin(tin).Execute()
 
 KYC - Fetch Tin
 
@@ -236,12 +230,11 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    tin := "24111697-0001" // string |  (optional)
+    tin := ""24111697-0001"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.KYBApi.GetTin(context.Background()).AppId(appId).Tin(tin).Execute()
+    resp, r, err := apiClient.KYBApi.GetTin(context.Background()).Tin(tin).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KYBApi.GetTin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +255,6 @@ Other parameters are passed through a pointer to a apiGetTinRequest struct via t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **tin** | **string** |  | 
 
 ### Return type
@@ -271,7 +263,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

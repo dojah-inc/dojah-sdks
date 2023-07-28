@@ -25,12 +25,6 @@ type GeneralApiService service
 type GeneralApiGetBanksRequest struct {
 	ctx context.Context
 	ApiService *GeneralApiService
-	appId *string
-}
-
-func (r GeneralApiGetBanksRequest) AppId(appId string) GeneralApiGetBanksRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r GeneralApiGetBanksRequest) Execute() (*GetBanksResponse, *http.Response, error) {
@@ -88,8 +82,19 @@ func (a *GeneralApiService) GetBanksExecute(r GeneralApiGetBanksRequest) (*GetBa
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -131,13 +136,7 @@ func (a *GeneralApiService) GetBanksExecute(r GeneralApiGetBanksRequest) (*GetBa
 type GeneralApiGetBinRequest struct {
 	ctx context.Context
 	ApiService *GeneralApiService
-	appId *string
 	cardBin *int32
-}
-
-func (r GeneralApiGetBinRequest) AppId(appId string) GeneralApiGetBinRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r GeneralApiGetBinRequest) CardBin(cardBin int32) GeneralApiGetBinRequest {
@@ -203,8 +202,19 @@ func (a *GeneralApiService) GetBinExecute(r GeneralApiGetBinRequest) (*GetBinRes
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -246,14 +256,8 @@ func (a *GeneralApiService) GetBinExecute(r GeneralApiGetBinRequest) (*GetBinRes
 type GeneralApiGetNubanRequest struct {
 	ctx context.Context
 	ApiService *GeneralApiService
-	appId *string
 	bankCode *int32
 	accountNumber *int32
-}
-
-func (r GeneralApiGetNubanRequest) AppId(appId string) GeneralApiGetNubanRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r GeneralApiGetNubanRequest) BankCode(bankCode int32) GeneralApiGetNubanRequest {
@@ -327,8 +331,19 @@ func (a *GeneralApiService) GetNubanExecute(r GeneralApiGetNubanRequest) (*Gener
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

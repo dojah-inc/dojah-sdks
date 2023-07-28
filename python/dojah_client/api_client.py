@@ -37,6 +37,7 @@ from dojah_client.rest import AsyncResponseWrapper, ResponseWrapper
 from dojah_client.configuration import Configuration
 from dojah_client.exceptions import ApiTypeError, ApiValueError, MissingRequiredParametersError
 from dojah_client.request_after_hook import request_after_hook
+from dojah_client.request_before_url_hook import request_before_url_hook
 from dojah_client.schemas import (
     NoneClass,
     BoolClass,
@@ -1194,28 +1195,38 @@ class ApiClient:
             headers['Cookie'] = self.cookie
 
         # auth setting
-        resource_path = self.update_params_for_auth(
+        resource_path_ref = [self.update_params_for_auth(
             used_headers,
             auth_settings,
             resource_path,
             method,
             body,
             prefix_separator_iterator
-        )
+        )]
 
         # must happen after cookie setting and auth setting in case user is overriding those
         if headers:
             used_headers.update(headers)
 
+        request_before_url_hook(
+            resource_path_ref=resource_path_ref,
+            method=method,
+            configuration=self.configuration,
+            body=body,
+            fields=fields,
+            auth_settings=auth_settings,
+            headers=used_headers,
+        )
+
         # request url
         if host is None:
-            url = self.configuration.host + resource_path
+            url = self.configuration.host + resource_path_ref[0]
         else:
             # use server/host defined in path or operation instead
-            url = host + resource_path
+            url = host + resource_path_ref[0]
 
         request_after_hook(
-            resource_path=resource_path,
+            resource_path=resource_path_ref[0],
             method=method,
             configuration=self.configuration,
             body=body,
@@ -1259,28 +1270,38 @@ class ApiClient:
             headers['Cookie'] = self.cookie
 
         # auth setting
-        resource_path = self.update_params_for_auth(
+        resource_path_ref = [self.update_params_for_auth(
             used_headers,
             auth_settings,
             resource_path,
             method,
             body,
             prefix_separator_iterator
-        )
+        )]
 
         # must happen after cookie setting and auth setting in case user is overriding those
         if headers:
             used_headers.update(headers)
 
+        request_before_url_hook(
+            resource_path_ref=resource_path_ref,
+            method=method,
+            configuration=self.configuration,
+            body=body,
+            fields=fields,
+            auth_settings=auth_settings,
+            headers=used_headers,
+        )
+
         # request url
         if host is None:
-            url = self.configuration.host + resource_path
+            url = self.configuration.host + resource_path_ref[0]
         else:
             # use server/host defined in path or operation instead
-            url = host + resource_path
+            url = host + resource_path_ref[0]
 
         request_after_hook(
-            resource_path=resource_path,
+            resource_path=resource_path_ref[0],
             method=method,
             configuration=self.configuration,
             body=body,

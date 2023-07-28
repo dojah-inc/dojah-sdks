@@ -61,8 +61,7 @@ namespace Dojah.Net.Test.Api
         public void GetWalletBalanceTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
-            //var response = instance.GetWalletBalance(appId);
+            //var response = instance.GetWalletBalance();
             //Assert.IsType<GetWalletBalanceResponse>(response);
         }
     }

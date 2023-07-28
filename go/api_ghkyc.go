@@ -25,15 +25,9 @@ type GHKYCApiService service
 type GHKYCApiGetDriversLicenseRequest struct {
 	ctx context.Context
 	ApiService *GHKYCApiService
-	appId *string
 	id *string
 	fullName *string
 	dateOfBirth *string
-}
-
-func (r GHKYCApiGetDriversLicenseRequest) AppId(appId string) GHKYCApiGetDriversLicenseRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r GHKYCApiGetDriversLicenseRequest) Id(id string) GHKYCApiGetDriversLicenseRequest {
@@ -115,8 +109,19 @@ func (a *GHKYCApiService) GetDriversLicenseExecute(r GHKYCApiGetDriversLicenseRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -158,17 +163,11 @@ func (a *GHKYCApiService) GetDriversLicenseExecute(r GHKYCApiGetDriversLicenseRe
 type GHKYCApiGetPassportRequest struct {
 	ctx context.Context
 	ApiService *GHKYCApiService
-	appId *string
 	id *string
 	firstName *string
 	lastName *string
 	middleName *string
 	dateOfBirth *string
-}
-
-func (r GHKYCApiGetPassportRequest) AppId(appId string) GHKYCApiGetPassportRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r GHKYCApiGetPassportRequest) Id(id string) GHKYCApiGetPassportRequest {
@@ -266,8 +265,19 @@ func (a *GHKYCApiService) GetPassportExecute(r GHKYCApiGetPassportRequest) (*Get
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -309,15 +319,9 @@ func (a *GHKYCApiService) GetPassportExecute(r GHKYCApiGetPassportRequest) (*Get
 type GHKYCApiGetSsnitRequest struct {
 	ctx context.Context
 	ApiService *GHKYCApiService
-	appId *string
 	id *string
 	fullName *string
 	dateOfBirth *string
-}
-
-func (r GHKYCApiGetSsnitRequest) AppId(appId string) GHKYCApiGetSsnitRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r GHKYCApiGetSsnitRequest) Id(id string) GHKYCApiGetSsnitRequest {
@@ -399,8 +403,19 @@ func (a *GHKYCApiService) GetSsnitExecute(r GHKYCApiGetSsnitRequest) (*GetSsnitR
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -442,15 +457,9 @@ func (a *GHKYCApiService) GetSsnitExecute(r GHKYCApiGetSsnitRequest) (*GetSsnitR
 type GHKYCApiGetVoterRequest struct {
 	ctx context.Context
 	ApiService *GHKYCApiService
-	appId *string
 	id *int32
 	fullName *string
 	isNewId *bool
-}
-
-func (r GHKYCApiGetVoterRequest) AppId(appId string) GHKYCApiGetVoterRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r GHKYCApiGetVoterRequest) Id(id int32) GHKYCApiGetVoterRequest {
@@ -532,8 +541,19 @@ func (a *GHKYCApiService) GetVoterExecute(r GHKYCApiGetVoterRequest) (map[string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

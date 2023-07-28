@@ -9,7 +9,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="checkcredit"></a>
 # **CheckCredit**
-> ZwKycCheckCreditResponse CheckCredit (string appId = null, string idNumber = null, string name = null, string surname = null, string gender = null, string dob = null, string maritalStatus = null, int? mobileNumber = null)
+> ZwKycCheckCreditResponse CheckCredit (string idNumber = null, string name = null, string surname = null, string gender = null, string dob = null, string maritalStatus = null, int? mobileNumber = null)
 
 Credit Check
 
@@ -18,7 +18,6 @@ Credit Check
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -28,25 +27,25 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new ZWKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
-            var idNumber = 45190221E45;  // string |  (optional) 
-            var name = CHIMUNDEGE;  // string |  (optional) 
-            var surname = CHIMUNDEGE;  // string |  (optional) 
-            var gender = F;  // string |  (optional) 
-            var dob = 1994-04-03;  // string |  (optional) 
-            var maritalStatus = M;  // string |  (optional) 
+            var idNumber = "45190221E45";  // string |  (optional) 
+            var name = "CHIMUNDEGE";  // string |  (optional) 
+            var surname = "CHIMUNDEGE";  // string |  (optional) 
+            var gender = "F";  // string |  (optional) 
+            var dob = "1994-04-03";  // string |  (optional) 
+            var maritalStatus = "M";  // string |  (optional) 
             var mobileNumber = 26424257383;  // int? |  (optional) 
 
             try
             {
                 // Credit Check
-                ZwKycCheckCreditResponse result = apiInstance.CheckCredit(appId, idNumber, name, surname, gender, dob, maritalStatus, mobileNumber);
+                ZwKycCheckCreditResponse result = client.ZWKYC.CheckCredit(idNumber, name, surname, gender, dob, maritalStatus, mobileNumber);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -73,7 +72,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Credit Check
-    ApiResponse<ZwKycCheckCreditResponse> response = apiInstance.CheckCreditWithHttpInfo(appId, idNumber, name, surname, gender, dob, maritalStatus, mobileNumber);
+    ApiResponse<ZwKycCheckCreditResponse> response = apiInstance.CheckCreditWithHttpInfo(idNumber, name, surname, gender, dob, maritalStatus, mobileNumber);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -90,7 +89,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **idNumber** | **string** |  | [optional]  |
 | **name** | **string** |  | [optional]  |
 | **surname** | **string** |  | [optional]  |
@@ -105,7 +103,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -122,7 +120,7 @@ No authorization required
 
 <a name="verifyid"></a>
 # **VerifyId**
-> ZwKycVerifyIdResponse VerifyId (string appId = null, string id = null)
+> ZwKycVerifyIdResponse VerifyId (string id = null)
 
 National ID Verification
 
@@ -131,7 +129,6 @@ National ID Verification
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -141,19 +138,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new ZWKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
-            var id = 45190221E45;  // string |  (optional) 
+            var id = "45190221E45";  // string |  (optional) 
 
             try
             {
                 // National ID Verification
-                ZwKycVerifyIdResponse result = apiInstance.VerifyId(appId, id);
+                ZwKycVerifyIdResponse result = client.ZWKYC.VerifyId(id);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -180,7 +177,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // National ID Verification
-    ApiResponse<ZwKycVerifyIdResponse> response = apiInstance.VerifyIdWithHttpInfo(appId, id);
+    ApiResponse<ZwKycVerifyIdResponse> response = apiInstance.VerifyIdWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -197,7 +194,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **id** | **string** |  | [optional]  |
 
 ### Return type
@@ -206,7 +202,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

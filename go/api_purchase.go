@@ -26,16 +26,10 @@ type PurchaseApiSendAirtimeRequest struct {
 	ctx context.Context
 	ApiService *PurchaseApiService
 	purchaseAirtimeRequest *PurchaseAirtimeRequest
-	appId *string
 }
 
 func (r PurchaseApiSendAirtimeRequest) PurchaseAirtimeRequest(purchaseAirtimeRequest PurchaseAirtimeRequest) PurchaseApiSendAirtimeRequest {
 	r.purchaseAirtimeRequest = &purchaseAirtimeRequest
-	return r
-}
-
-func (r PurchaseApiSendAirtimeRequest) AppId(appId string) PurchaseApiSendAirtimeRequest {
-	r.appId = &appId
 	return r
 }
 
@@ -97,11 +91,22 @@ func (a *PurchaseApiService) SendAirtimeExecute(r PurchaseApiSendAirtimeRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
-	}
 	// body params
 	localVarPostBody = r.purchaseAirtimeRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

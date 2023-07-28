@@ -21,21 +21,17 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
-const analyzeDocumentResponse = await dojah.documentAnalysis.analyzeDocument(
-  {}
-);
+const analyzeDocumentResponse = await dojah.documentAnalysis.analyzeDocument();
 
 console.log(analyzeDocumentResponse);
 ```
 
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
+This endpoint does not need any parameter.
 
 
 ### Return type

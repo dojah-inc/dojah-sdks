@@ -24,6 +24,10 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'noauthAuth': 'Bearer'},
 )
@@ -31,7 +35,6 @@ dojah = Dojah(
 try:
     # Email Reputation
     get_email_reputation_response = dojah.fraud.get_email_reputation(
-        app_id="{{app_id}}",  # optional
         email="johndoe@gmail.com",  # optional
     )
     pprint(get_email_reputation_response.body)
@@ -52,7 +55,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -67,20 +69,6 @@ email | EmailSchema | | optional
 
 
 # EmailSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
@@ -234,7 +222,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[noauthAuth](../../../README.md#noauthAuth)
+[appIdAuth](../../../README.md#appIdAuth), [noauthAuth](../../../README.md#noauthAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -252,12 +240,15 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # IP Reputation
     get_ip_reputation_response = dojah.fraud.get_ip_reputation(
-        app_id="{{app_id}}",  # optional
         ip_address="102.215.56.170",  # optional
     )
     pprint(get_ip_reputation_response.body)
@@ -278,7 +269,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -293,20 +283,6 @@ ip_address | IpAddressSchema | | optional
 
 
 # IpAddressSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
@@ -508,7 +484,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -526,12 +502,15 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # Phone Screening
     screen_phone_response = dojah.fraud.screen_phone(
-        app_id="{{app_id}}",  # optional
         phone_number=2348068810228,  # optional
     )
     pprint(screen_phone_response.body)
@@ -552,7 +531,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -572,20 +550,6 @@ phone_number | PhoneNumberSchema | | optional
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 decimal.Decimal, int,  | decimal.Decimal,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -734,7 +698,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -752,12 +716,15 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # User Screening
     screen_user_response = dojah.fraud.screen_user(
-        app_id="{{app_id}}",  # optional
         first_name="Robert",  # optional
         last_name="Morris",  # optional
         date_of_birth="1986-11-12",  # optional
@@ -783,7 +750,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -838,20 +804,6 @@ Input Type | Accessed Type | Description | Notes
 str,  | str,  |  | 
 
 # IpAddressSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
@@ -1013,7 +965,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 

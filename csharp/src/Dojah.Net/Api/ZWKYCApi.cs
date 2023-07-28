@@ -30,7 +30,6 @@ namespace Dojah.Net.Api
         /// Credit Check
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="idNumber"> (optional)</param>
         /// <param name="name"> (optional)</param>
         /// <param name="surname"> (optional)</param>
@@ -40,7 +39,7 @@ namespace Dojah.Net.Api
         /// <param name="mobileNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ZwKycCheckCreditResponse</returns>
-        ZwKycCheckCreditResponse CheckCredit(string appId = default(string), string idNumber = default(string), string name = default(string), string surname = default(string), string gender = default(string), string dob = default(string), string maritalStatus = default(string), int? mobileNumber = default(int?), int operationIndex = 0);
+        ZwKycCheckCreditResponse CheckCredit(string idNumber = default(string), string name = default(string), string surname = default(string), string gender = default(string), string dob = default(string), string maritalStatus = default(string), int? mobileNumber = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// Credit Check
@@ -49,7 +48,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="idNumber"> (optional)</param>
         /// <param name="name"> (optional)</param>
         /// <param name="surname"> (optional)</param>
@@ -59,16 +57,15 @@ namespace Dojah.Net.Api
         /// <param name="mobileNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ZwKycCheckCreditResponse</returns>
-        ApiResponse<ZwKycCheckCreditResponse> CheckCreditWithHttpInfo(string appId = default(string), string idNumber = default(string), string name = default(string), string surname = default(string), string gender = default(string), string dob = default(string), string maritalStatus = default(string), int? mobileNumber = default(int?), int operationIndex = 0);
+        ApiResponse<ZwKycCheckCreditResponse> CheckCreditWithHttpInfo(string idNumber = default(string), string name = default(string), string surname = default(string), string gender = default(string), string dob = default(string), string maritalStatus = default(string), int? mobileNumber = default(int?), int operationIndex = 0);
         /// <summary>
         /// National ID Verification
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ZwKycVerifyIdResponse</returns>
-        ZwKycVerifyIdResponse VerifyId(string appId = default(string), string id = default(string), int operationIndex = 0);
+        ZwKycVerifyIdResponse VerifyId(string id = default(string), int operationIndex = 0);
 
         /// <summary>
         /// National ID Verification
@@ -77,11 +74,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ZwKycVerifyIdResponse</returns>
-        ApiResponse<ZwKycVerifyIdResponse> VerifyIdWithHttpInfo(string appId = default(string), string id = default(string), int operationIndex = 0);
+        ApiResponse<ZwKycVerifyIdResponse> VerifyIdWithHttpInfo(string id = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -98,7 +94,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="idNumber"> (optional)</param>
         /// <param name="name"> (optional)</param>
         /// <param name="surname"> (optional)</param>
@@ -109,7 +104,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ZwKycCheckCreditResponse</returns>
-        System.Threading.Tasks.Task<ZwKycCheckCreditResponse> CheckCreditAsync(string appId = default(string), string idNumber = default(string), string name = default(string), string surname = default(string), string gender = default(string), string dob = default(string), string maritalStatus = default(string), int? mobileNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ZwKycCheckCreditResponse> CheckCreditAsync(string idNumber = default(string), string name = default(string), string surname = default(string), string gender = default(string), string dob = default(string), string maritalStatus = default(string), int? mobileNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Credit Check
@@ -118,7 +113,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="idNumber"> (optional)</param>
         /// <param name="name"> (optional)</param>
         /// <param name="surname"> (optional)</param>
@@ -129,7 +123,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ZwKycCheckCreditResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ZwKycCheckCreditResponse>> CheckCreditWithHttpInfoAsync(string appId = default(string), string idNumber = default(string), string name = default(string), string surname = default(string), string gender = default(string), string dob = default(string), string maritalStatus = default(string), int? mobileNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ZwKycCheckCreditResponse>> CheckCreditWithHttpInfoAsync(string idNumber = default(string), string name = default(string), string surname = default(string), string gender = default(string), string dob = default(string), string maritalStatus = default(string), int? mobileNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// National ID Verification
         /// </summary>
@@ -137,12 +131,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ZwKycVerifyIdResponse</returns>
-        System.Threading.Tasks.Task<ZwKycVerifyIdResponse> VerifyIdAsync(string appId = default(string), string id = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ZwKycVerifyIdResponse> VerifyIdAsync(string id = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// National ID Verification
@@ -151,12 +144,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ZwKycVerifyIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ZwKycVerifyIdResponse>> VerifyIdWithHttpInfoAsync(string appId = default(string), string id = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ZwKycVerifyIdResponse>> VerifyIdWithHttpInfoAsync(string id = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -281,7 +273,6 @@ namespace Dojah.Net.Api
         /// Credit Check 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="idNumber"> (optional)</param>
         /// <param name="name"> (optional)</param>
         /// <param name="surname"> (optional)</param>
@@ -291,9 +282,9 @@ namespace Dojah.Net.Api
         /// <param name="mobileNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ZwKycCheckCreditResponse</returns>
-        public ZwKycCheckCreditResponse CheckCredit(string appId = default(string), string idNumber = default(string), string name = default(string), string surname = default(string), string gender = default(string), string dob = default(string), string maritalStatus = default(string), int? mobileNumber = default(int?), int operationIndex = 0)
+        public ZwKycCheckCreditResponse CheckCredit(string idNumber = default(string), string name = default(string), string surname = default(string), string gender = default(string), string dob = default(string), string maritalStatus = default(string), int? mobileNumber = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<ZwKycCheckCreditResponse> localVarResponse = CheckCreditWithHttpInfo(appId, idNumber, name, surname, gender, dob, maritalStatus, mobileNumber);
+            Dojah.Net.Client.ApiResponse<ZwKycCheckCreditResponse> localVarResponse = CheckCreditWithHttpInfo(idNumber, name, surname, gender, dob, maritalStatus, mobileNumber);
             return localVarResponse.Data;
         }
 
@@ -301,7 +292,6 @@ namespace Dojah.Net.Api
         /// Credit Check 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="idNumber"> (optional)</param>
         /// <param name="name"> (optional)</param>
         /// <param name="surname"> (optional)</param>
@@ -311,7 +301,7 @@ namespace Dojah.Net.Api
         /// <param name="mobileNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ZwKycCheckCreditResponse</returns>
-        public Dojah.Net.Client.ApiResponse<ZwKycCheckCreditResponse> CheckCreditWithHttpInfo(string appId = default(string), string idNumber = default(string), string name = default(string), string surname = default(string), string gender = default(string), string dob = default(string), string maritalStatus = default(string), int? mobileNumber = default(int?), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<ZwKycCheckCreditResponse> CheckCreditWithHttpInfo(string idNumber = default(string), string name = default(string), string surname = default(string), string gender = default(string), string dob = default(string), string maritalStatus = default(string), int? mobileNumber = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -363,14 +353,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "mobile_number", mobileNumber, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "ZWKYCApi.CheckCredit";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<ZwKycCheckCreditResponse>("/api/v1/zw/kyc/fcb", localVarRequestOptions, this.Configuration);
@@ -390,7 +381,6 @@ namespace Dojah.Net.Api
         /// Credit Check 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="idNumber"> (optional)</param>
         /// <param name="name"> (optional)</param>
         /// <param name="surname"> (optional)</param>
@@ -401,9 +391,9 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ZwKycCheckCreditResponse</returns>
-        public async System.Threading.Tasks.Task<ZwKycCheckCreditResponse> CheckCreditAsync(string appId = default(string), string idNumber = default(string), string name = default(string), string surname = default(string), string gender = default(string), string dob = default(string), string maritalStatus = default(string), int? mobileNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ZwKycCheckCreditResponse> CheckCreditAsync(string idNumber = default(string), string name = default(string), string surname = default(string), string gender = default(string), string dob = default(string), string maritalStatus = default(string), int? mobileNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<ZwKycCheckCreditResponse> localVarResponse = await CheckCreditWithHttpInfoAsync(appId, idNumber, name, surname, gender, dob, maritalStatus, mobileNumber, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<ZwKycCheckCreditResponse> localVarResponse = await CheckCreditWithHttpInfoAsync(idNumber, name, surname, gender, dob, maritalStatus, mobileNumber, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -411,7 +401,6 @@ namespace Dojah.Net.Api
         /// Credit Check 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="idNumber"> (optional)</param>
         /// <param name="name"> (optional)</param>
         /// <param name="surname"> (optional)</param>
@@ -422,7 +411,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ZwKycCheckCreditResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<ZwKycCheckCreditResponse>> CheckCreditWithHttpInfoAsync(string appId = default(string), string idNumber = default(string), string name = default(string), string surname = default(string), string gender = default(string), string dob = default(string), string maritalStatus = default(string), int? mobileNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<ZwKycCheckCreditResponse>> CheckCreditWithHttpInfoAsync(string idNumber = default(string), string name = default(string), string surname = default(string), string gender = default(string), string dob = default(string), string maritalStatus = default(string), int? mobileNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -475,14 +464,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "mobile_number", mobileNumber, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "ZWKYCApi.CheckCredit";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<ZwKycCheckCreditResponse>("/api/v1/zw/kyc/fcb", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -503,13 +493,12 @@ namespace Dojah.Net.Api
         /// National ID Verification 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ZwKycVerifyIdResponse</returns>
-        public ZwKycVerifyIdResponse VerifyId(string appId = default(string), string id = default(string), int operationIndex = 0)
+        public ZwKycVerifyIdResponse VerifyId(string id = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<ZwKycVerifyIdResponse> localVarResponse = VerifyIdWithHttpInfo(appId, id);
+            Dojah.Net.Client.ApiResponse<ZwKycVerifyIdResponse> localVarResponse = VerifyIdWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -517,11 +506,10 @@ namespace Dojah.Net.Api
         /// National ID Verification 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ZwKycVerifyIdResponse</returns>
-        public Dojah.Net.Client.ApiResponse<ZwKycVerifyIdResponse> VerifyIdWithHttpInfo(string appId = default(string), string id = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<ZwKycVerifyIdResponse> VerifyIdWithHttpInfo(string id = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -549,14 +537,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "id", id, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "ZWKYCApi.VerifyId";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<ZwKycVerifyIdResponse>("/api/v1/zw/kyc/nin", localVarRequestOptions, this.Configuration);
@@ -576,14 +565,13 @@ namespace Dojah.Net.Api
         /// National ID Verification 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ZwKycVerifyIdResponse</returns>
-        public async System.Threading.Tasks.Task<ZwKycVerifyIdResponse> VerifyIdAsync(string appId = default(string), string id = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ZwKycVerifyIdResponse> VerifyIdAsync(string id = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<ZwKycVerifyIdResponse> localVarResponse = await VerifyIdWithHttpInfoAsync(appId, id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<ZwKycVerifyIdResponse> localVarResponse = await VerifyIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -591,12 +579,11 @@ namespace Dojah.Net.Api
         /// National ID Verification 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ZwKycVerifyIdResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<ZwKycVerifyIdResponse>> VerifyIdWithHttpInfoAsync(string appId = default(string), string id = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<ZwKycVerifyIdResponse>> VerifyIdWithHttpInfoAsync(string id = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -625,14 +612,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "id", id, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "ZWKYCApi.VerifyId";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<ZwKycVerifyIdResponse>("/api/v1/zw/kyc/nin", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

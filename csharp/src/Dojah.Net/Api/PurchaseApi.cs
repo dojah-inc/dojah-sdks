@@ -31,10 +31,9 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseAirtimeRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PurchaseAirtimeResponse</returns>
-        PurchaseAirtimeResponse SendAirtime(PurchaseAirtimeRequest purchaseAirtimeRequest, string appId = default(string), int operationIndex = 0);
+        PurchaseAirtimeResponse SendAirtime(PurchaseAirtimeRequest purchaseAirtimeRequest, int operationIndex = 0);
 
         /// <summary>
         /// Purchase - Send Airtime
@@ -44,10 +43,9 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseAirtimeRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PurchaseAirtimeResponse</returns>
-        ApiResponse<PurchaseAirtimeResponse> SendAirtimeWithHttpInfo(PurchaseAirtimeRequest purchaseAirtimeRequest, string appId = default(string), int operationIndex = 0);
+        ApiResponse<PurchaseAirtimeResponse> SendAirtimeWithHttpInfo(PurchaseAirtimeRequest purchaseAirtimeRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -65,11 +63,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseAirtimeRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PurchaseAirtimeResponse</returns>
-        System.Threading.Tasks.Task<PurchaseAirtimeResponse> SendAirtimeAsync(PurchaseAirtimeRequest purchaseAirtimeRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PurchaseAirtimeResponse> SendAirtimeAsync(PurchaseAirtimeRequest purchaseAirtimeRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Purchase - Send Airtime
@@ -79,11 +76,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseAirtimeRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PurchaseAirtimeResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PurchaseAirtimeResponse>> SendAirtimeWithHttpInfoAsync(PurchaseAirtimeRequest purchaseAirtimeRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PurchaseAirtimeResponse>> SendAirtimeWithHttpInfoAsync(PurchaseAirtimeRequest purchaseAirtimeRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -209,12 +205,11 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseAirtimeRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PurchaseAirtimeResponse</returns>
-        public PurchaseAirtimeResponse SendAirtime(PurchaseAirtimeRequest purchaseAirtimeRequest, string appId = default(string), int operationIndex = 0)
+        public PurchaseAirtimeResponse SendAirtime(PurchaseAirtimeRequest purchaseAirtimeRequest, int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse> localVarResponse = SendAirtimeWithHttpInfo(purchaseAirtimeRequest, appId);
+            Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse> localVarResponse = SendAirtimeWithHttpInfo(purchaseAirtimeRequest);
             return localVarResponse.Data;
         }
 
@@ -223,10 +218,9 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseAirtimeRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PurchaseAirtimeResponse</returns>
-        public Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse> SendAirtimeWithHttpInfo(PurchaseAirtimeRequest purchaseAirtimeRequest, string appId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse> SendAirtimeWithHttpInfo(PurchaseAirtimeRequest purchaseAirtimeRequest, int operationIndex = 0)
         {
             // verify the required parameter 'purchaseAirtimeRequest' is set
             if (purchaseAirtimeRequest == null)
@@ -257,15 +251,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
             localVarRequestOptions.Data = purchaseAirtimeRequest;
 
             localVarRequestOptions.Operation = "PurchaseApi.SendAirtime";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
             // authentication (noauthAuth) required
 
             // make the HTTP request
@@ -287,13 +282,12 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseAirtimeRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PurchaseAirtimeResponse</returns>
-        public async System.Threading.Tasks.Task<PurchaseAirtimeResponse> SendAirtimeAsync(PurchaseAirtimeRequest purchaseAirtimeRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PurchaseAirtimeResponse> SendAirtimeAsync(PurchaseAirtimeRequest purchaseAirtimeRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse> localVarResponse = await SendAirtimeWithHttpInfoAsync(purchaseAirtimeRequest, appId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse> localVarResponse = await SendAirtimeWithHttpInfoAsync(purchaseAirtimeRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -302,11 +296,10 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseAirtimeRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PurchaseAirtimeResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse>> SendAirtimeWithHttpInfoAsync(PurchaseAirtimeRequest purchaseAirtimeRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<PurchaseAirtimeResponse>> SendAirtimeWithHttpInfoAsync(PurchaseAirtimeRequest purchaseAirtimeRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'purchaseAirtimeRequest' is set
             if (purchaseAirtimeRequest == null)
@@ -338,15 +331,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
             localVarRequestOptions.Data = purchaseAirtimeRequest;
 
             localVarRequestOptions.Operation = "PurchaseApi.SendAirtime";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
             // authentication (noauthAuth) required
 
             // make the HTTP request

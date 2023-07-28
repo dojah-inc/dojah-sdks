@@ -48,9 +48,7 @@ public class DocumentAnalysisApiTest {
      */
     @Test
     public void analyzeDocumentTest() throws ApiException {
-        String appId = null;
         AnalyzeDocumentResponse response = api.analyzeDocument()
-                .appId(appId)
                 .execute();
         // TODO: test validations
     }

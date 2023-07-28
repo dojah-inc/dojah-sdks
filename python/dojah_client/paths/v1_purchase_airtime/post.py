@@ -39,31 +39,6 @@ from dojah_client.type.purchase_airtime_response import PurchaseAirtimeResponse
 
 from . import path
 
-# Header params
-AppIdSchema = schemas.StrSchema
-RequestRequiredHeaderParams = typing_extensions.TypedDict(
-    'RequestRequiredHeaderParams',
-    {
-    }
-)
-RequestOptionalHeaderParams = typing_extensions.TypedDict(
-    'RequestOptionalHeaderParams',
-    {
-        'AppId': typing.Union[AppIdSchema, str, ],
-    },
-    total=False
-)
-
-
-class RequestHeaderParams(RequestRequiredHeaderParams, RequestOptionalHeaderParams):
-    pass
-
-
-request_header_app_id = api_client.HeaderParameter(
-    name="AppId",
-    style=api_client.ParameterStyle.SIMPLE,
-    schema=AppIdSchema,
-)
 # body param
 SchemaForRequestBodyApplicationJson = PurchaseAirtimeRequestSchema
 
@@ -76,6 +51,7 @@ request_body_purchase_airtime_request = api_client.RequestBody(
     required=True,
 )
 _auth = [
+    'appIdAuth',
     'noauthAuth',
 ]
 DateSchema = schemas.StrSchema
@@ -240,25 +216,19 @@ class BaseApi(api_client.Api):
         self,
         destination: typing.Optional[str] = None,
         amount: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
-        _header_params = {}
         _body = {}
         if destination is not None:
             _body["destination"] = destination
         if amount is not None:
             _body["amount"] = amount
         args.body = _body
-        if app_id is not None:
-            _header_params["AppId"] = app_id
-        args.header = _header_params
         return args
 
     async def _asend_airtime_oapg(
         self,
         body: typing.Any = None,
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -275,18 +245,9 @@ class BaseApi(api_client.Api):
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -381,7 +342,6 @@ class BaseApi(api_client.Api):
     def _send_airtime_oapg(
         self,
         body: typing.Any = None,
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -397,18 +357,9 @@ class BaseApi(api_client.Api):
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -477,7 +428,6 @@ class SendAirtime(BaseApi):
         self,
         destination: typing.Optional[str] = None,
         amount: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -486,18 +436,15 @@ class SendAirtime(BaseApi):
         args = self._send_airtime_mapped_args(
             destination=destination,
             amount=amount,
-            app_id=app_id,
         )
         return await self._asend_airtime_oapg(
             body=args.body,
-            header_params=args.header,
         )
     
     def send_airtime(
         self,
         destination: typing.Optional[str] = None,
         amount: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -505,11 +452,9 @@ class SendAirtime(BaseApi):
         args = self._send_airtime_mapped_args(
             destination=destination,
             amount=amount,
-            app_id=app_id,
         )
         return self._send_airtime_oapg(
             body=args.body,
-            header_params=args.header,
         )
 
 class ApiForpost(BaseApi):
@@ -519,7 +464,6 @@ class ApiForpost(BaseApi):
         self,
         destination: typing.Optional[str] = None,
         amount: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -528,18 +472,15 @@ class ApiForpost(BaseApi):
         args = self._send_airtime_mapped_args(
             destination=destination,
             amount=amount,
-            app_id=app_id,
         )
         return await self._asend_airtime_oapg(
             body=args.body,
-            header_params=args.header,
         )
     
     def post(
         self,
         destination: typing.Optional[str] = None,
         amount: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -547,10 +488,8 @@ class ApiForpost(BaseApi):
         args = self._send_airtime_mapped_args(
             destination=destination,
             amount=amount,
-            app_id=app_id,
         )
         return self._send_airtime_oapg(
             body=args.body,
-            header_params=args.header,
         )
 

@@ -11,7 +11,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="businessdetail"></a>
 # **BusinessDetail**
-> Object BusinessDetail (string appId = null, string internationalNumber = null, string countryCode = null, bool? full = null)
+> Object BusinessDetail (string internationalNumber = null, string countryCode = null, bool? full = null)
 
 Business Detail
 
@@ -20,7 +20,6 @@ Business Detail
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -30,21 +29,21 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new KYBApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
-            var internationalNumber = RC-1885308;  // string |  (optional) 
-            var countryCode = NG;  // string |  (optional) 
-            var full = true;  // bool? |  (optional) 
+            var internationalNumber = "RC-1885308";  // string |  (optional) 
+            var countryCode = "NG";  // string |  (optional) 
+            var full = "true";  // bool? |  (optional) 
 
             try
             {
                 // Business Detail
-                Object result = apiInstance.BusinessDetail(appId, internationalNumber, countryCode, full);
+                Object result = client.KYB.BusinessDetail(internationalNumber, countryCode, full);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -71,7 +70,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Business Detail
-    ApiResponse<Object> response = apiInstance.BusinessDetailWithHttpInfo(appId, internationalNumber, countryCode, full);
+    ApiResponse<Object> response = apiInstance.BusinessDetailWithHttpInfo(internationalNumber, countryCode, full);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -88,7 +87,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **internationalNumber** | **string** |  | [optional]  |
 | **countryCode** | **string** |  | [optional]  |
 | **full** | **bool?** |  | [optional]  |
@@ -99,7 +97,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -116,7 +114,7 @@ No authorization required
 
 <a name="businesssearch"></a>
 # **BusinessSearch**
-> Object BusinessSearch (string appId = null, string countryCode = null, int? company = null)
+> Object BusinessSearch (string countryCode = null, int? company = null)
 
 Business Search
 
@@ -125,7 +123,6 @@ Business Search
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -135,20 +132,20 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new KYBApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
-            var countryCode = NG;  // string |  (optional) 
+            var countryCode = "NG";  // string |  (optional) 
             var company = 1885308;  // int? |  (optional) 
 
             try
             {
                 // Business Search
-                Object result = apiInstance.BusinessSearch(appId, countryCode, company);
+                Object result = client.KYB.BusinessSearch(countryCode, company);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -175,7 +172,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Business Search
-    ApiResponse<Object> response = apiInstance.BusinessSearchWithHttpInfo(appId, countryCode, company);
+    ApiResponse<Object> response = apiInstance.BusinessSearchWithHttpInfo(countryCode, company);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -192,7 +189,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **countryCode** | **string** |  | [optional]  |
 | **company** | **int?** |  | [optional]  |
 
@@ -202,7 +198,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -219,7 +215,7 @@ No authorization required
 
 <a name="getcac"></a>
 # **GetCac**
-> KybGetCacResponse GetCac (string appId = null, int? rcNumber = null, string companyName = null)
+> KybGetCacResponse GetCac (int? rcNumber = null, string companyName = null)
 
 KYC - Get CAC 
 
@@ -228,7 +224,6 @@ KYC - Get CAC
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -238,21 +233,20 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new KYBApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
             var rcNumber = 1432074;  // int? |  (optional) 
-            var companyName = ELTA SOLUTIONS LIMITED;  // string |  (optional) 
+            var companyName = "ELTA SOLUTIONS LIMITED";  // string |  (optional) 
 
             try
             {
                 // KYC - Get CAC 
-                KybGetCacResponse result = apiInstance.GetCac(appId, rcNumber, companyName);
+                KybGetCacResponse result = client.KYB.GetCac(rcNumber, companyName);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -279,7 +273,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Get CAC 
-    ApiResponse<KybGetCacResponse> response = apiInstance.GetCacWithHttpInfo(appId, rcNumber, companyName);
+    ApiResponse<KybGetCacResponse> response = apiInstance.GetCacWithHttpInfo(rcNumber, companyName);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -296,7 +290,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **rcNumber** | **int?** |  | [optional]  |
 | **companyName** | **string** |  | [optional]  |
 
@@ -306,7 +299,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -323,7 +316,7 @@ catch (ApiException e)
 
 <a name="gettin"></a>
 # **GetTin**
-> KybGetTinResponse GetTin (string appId = null, string tin = null)
+> KybGetTinResponse GetTin (string tin = null)
 
 KYC - Fetch Tin
 
@@ -332,7 +325,6 @@ KYC - Fetch Tin
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -342,20 +334,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new KYBApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
-            var tin = 24111697-0001;  // string |  (optional) 
+            var tin = "24111697-0001";  // string |  (optional) 
 
             try
             {
                 // KYC - Fetch Tin
-                KybGetTinResponse result = apiInstance.GetTin(appId, tin);
+                KybGetTinResponse result = client.KYB.GetTin(tin);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -382,7 +373,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Fetch Tin
-    ApiResponse<KybGetTinResponse> response = apiInstance.GetTinWithHttpInfo(appId, tin);
+    ApiResponse<KybGetTinResponse> response = apiInstance.GetTinWithHttpInfo(tin);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -399,7 +390,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **tin** | **string** |  | [optional]  |
 
 ### Return type
@@ -408,7 +398,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

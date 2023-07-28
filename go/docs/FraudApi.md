@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## GetEmailReputation
 
-> FraudGetEmailReputationResponse GetEmailReputation(ctx).AppId(appId).Email(email).Execute()
+> FraudGetEmailReputationResponse GetEmailReputation(ctx).Email(email).Execute()
 
 Email Reputation
 
@@ -30,12 +30,11 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    email := "johndoe@gmail.com" // string |  (optional)
+    email := ""johndoe@gmail.com"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.FraudApi.GetEmailReputation(context.Background()).AppId(appId).Email(email).Execute()
+    resp, r, err := apiClient.FraudApi.GetEmailReputation(context.Background()).Email(email).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FraudApi.GetEmailReputation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -56,7 +55,6 @@ Other parameters are passed through a pointer to a apiGetEmailReputationRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **email** | **string** |  | 
 
 ### Return type
@@ -65,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[noauthAuth](../README.md#noauthAuth)
+[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 
@@ -79,7 +77,7 @@ Name | Type | Description  | Notes
 
 ## GetIpReputation
 
-> FraudGetIpReputationResponse GetIpReputation(ctx).AppId(appId).IpAddress(ipAddress).Execute()
+> FraudGetIpReputationResponse GetIpReputation(ctx).IpAddress(ipAddress).Execute()
 
 IP Reputation
 
@@ -96,12 +94,11 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    ipAddress := "102.215.56.170" // string |  (optional)
+    ipAddress := ""102.215.56.170"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.FraudApi.GetIpReputation(context.Background()).AppId(appId).IpAddress(ipAddress).Execute()
+    resp, r, err := apiClient.FraudApi.GetIpReputation(context.Background()).IpAddress(ipAddress).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FraudApi.GetIpReputation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -122,7 +119,6 @@ Other parameters are passed through a pointer to a apiGetIpReputationRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **ipAddress** | **string** |  | 
 
 ### Return type
@@ -131,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -145,7 +141,7 @@ No authorization required
 
 ## ScreenPhone
 
-> FraudScreenPhoneResponse ScreenPhone(ctx).AppId(appId).PhoneNumber(phoneNumber).Execute()
+> FraudScreenPhoneResponse ScreenPhone(ctx).PhoneNumber(phoneNumber).Execute()
 
 Phone Screening
 
@@ -162,12 +158,11 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
     phoneNumber := int32(2348068810228) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.FraudApi.ScreenPhone(context.Background()).AppId(appId).PhoneNumber(phoneNumber).Execute()
+    resp, r, err := apiClient.FraudApi.ScreenPhone(context.Background()).PhoneNumber(phoneNumber).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FraudApi.ScreenPhone``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -188,7 +183,6 @@ Other parameters are passed through a pointer to a apiScreenPhoneRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **phoneNumber** | **int32** |  | 
 
 ### Return type
@@ -197,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -211,7 +205,7 @@ No authorization required
 
 ## ScreenUser
 
-> FraudScreenUserResponse ScreenUser(ctx).AppId(appId).FirstName(firstName).LastName(lastName).DateOfBirth(dateOfBirth).Email(email).Phone(phone).IpAddress(ipAddress).Execute()
+> FraudScreenUserResponse ScreenUser(ctx).FirstName(firstName).LastName(lastName).DateOfBirth(dateOfBirth).Email(email).Phone(phone).IpAddress(ipAddress).Execute()
 
 User Screening
 
@@ -228,17 +222,16 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    firstName := "Robert" // string |  (optional)
-    lastName := "Morris" // string |  (optional)
-    dateOfBirth := "1986-11-12" // string |  (optional)
-    email := "andre.little@moore.com" // string |  (optional)
-    phone := "001-640-858-2058" // string |  (optional)
-    ipAddress := "116.7.209.8" // string |  (optional)
+    firstName := ""Robert"" // string |  (optional)
+    lastName := ""Morris"" // string |  (optional)
+    dateOfBirth := ""1986-11-12"" // string |  (optional)
+    email := ""andre.little@moore.com"" // string |  (optional)
+    phone := ""001-640-858-2058"" // string |  (optional)
+    ipAddress := ""116.7.209.8"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.FraudApi.ScreenUser(context.Background()).AppId(appId).FirstName(firstName).LastName(lastName).DateOfBirth(dateOfBirth).Email(email).Phone(phone).IpAddress(ipAddress).Execute()
+    resp, r, err := apiClient.FraudApi.ScreenUser(context.Background()).FirstName(firstName).LastName(lastName).DateOfBirth(dateOfBirth).Email(email).Phone(phone).IpAddress(ipAddress).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FraudApi.ScreenUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -259,7 +252,6 @@ Other parameters are passed through a pointer to a apiScreenUserRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **firstName** | **string** |  | 
  **lastName** | **string** |  | 
  **dateOfBirth** | **string** |  | 
@@ -273,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

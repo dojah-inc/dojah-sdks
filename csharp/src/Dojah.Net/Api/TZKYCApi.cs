@@ -29,7 +29,6 @@ namespace Dojah.Net.Api
         /// Lookup TZ NIN
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
@@ -37,7 +36,7 @@ namespace Dojah.Net.Api
         /// <param name="mothersFirstName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object GetNin(string appId = default(string), string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string mothersLastName = default(string), string mothersFirstName = default(string), int operationIndex = 0);
+        Object GetNin(string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string mothersLastName = default(string), string mothersFirstName = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Lookup TZ NIN
@@ -46,7 +45,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
@@ -54,7 +52,7 @@ namespace Dojah.Net.Api
         /// <param name="mothersFirstName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> GetNinWithHttpInfo(string appId = default(string), string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string mothersLastName = default(string), string mothersFirstName = default(string), int operationIndex = 0);
+        ApiResponse<Object> GetNinWithHttpInfo(string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string mothersLastName = default(string), string mothersFirstName = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -71,7 +69,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
@@ -80,7 +77,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> GetNinAsync(string appId = default(string), string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string mothersLastName = default(string), string mothersFirstName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> GetNinAsync(string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string mothersLastName = default(string), string mothersFirstName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Lookup TZ NIN
@@ -89,7 +86,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
@@ -98,7 +94,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetNinWithHttpInfoAsync(string appId = default(string), string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string mothersLastName = default(string), string mothersFirstName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetNinWithHttpInfoAsync(string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string mothersLastName = default(string), string mothersFirstName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -223,7 +219,6 @@ namespace Dojah.Net.Api
         /// Lookup TZ NIN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
@@ -231,9 +226,9 @@ namespace Dojah.Net.Api
         /// <param name="mothersFirstName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object GetNin(string appId = default(string), string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string mothersLastName = default(string), string mothersFirstName = default(string), int operationIndex = 0)
+        public Object GetNin(string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string mothersLastName = default(string), string mothersFirstName = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = GetNinWithHttpInfo(appId, firstName, lastName, dateOfBirth, mothersLastName, mothersFirstName);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = GetNinWithHttpInfo(firstName, lastName, dateOfBirth, mothersLastName, mothersFirstName);
             return localVarResponse.Data;
         }
 
@@ -241,7 +236,6 @@ namespace Dojah.Net.Api
         /// Lookup TZ NIN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
@@ -249,7 +243,7 @@ namespace Dojah.Net.Api
         /// <param name="mothersFirstName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public Dojah.Net.Client.ApiResponse<Object> GetNinWithHttpInfo(string appId = default(string), string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string mothersLastName = default(string), string mothersFirstName = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<Object> GetNinWithHttpInfo(string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string mothersLastName = default(string), string mothersFirstName = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -293,14 +287,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "mothers_first_name", mothersFirstName, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "TZKYCApi.GetNin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Object>("/api/v1/tz/kyc/nin", localVarRequestOptions, this.Configuration);
@@ -320,7 +315,6 @@ namespace Dojah.Net.Api
         /// Lookup TZ NIN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
@@ -329,9 +323,9 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> GetNinAsync(string appId = default(string), string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string mothersLastName = default(string), string mothersFirstName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> GetNinAsync(string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string mothersLastName = default(string), string mothersFirstName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await GetNinWithHttpInfoAsync(appId, firstName, lastName, dateOfBirth, mothersLastName, mothersFirstName, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await GetNinWithHttpInfoAsync(firstName, lastName, dateOfBirth, mothersLastName, mothersFirstName, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -339,7 +333,6 @@ namespace Dojah.Net.Api
         /// Lookup TZ NIN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
@@ -348,7 +341,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> GetNinWithHttpInfoAsync(string appId = default(string), string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string mothersLastName = default(string), string mothersFirstName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> GetNinWithHttpInfoAsync(string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string mothersLastName = default(string), string mothersFirstName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -393,14 +386,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "mothers_first_name", mothersFirstName, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "TZKYCApi.GetNin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/api/v1/tz/kyc/nin", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

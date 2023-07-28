@@ -14,6 +14,7 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.notify_webhook_request_data import NotifyWebhookRequestData
 
 class RequiredNotifyWebhookRequest(TypedDict):
     pass
@@ -21,7 +22,7 @@ class RequiredNotifyWebhookRequest(TypedDict):
 class OptionalNotifyWebhookRequest(TypedDict, total=False):
     subject: str
 
-    data: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    data: NotifyWebhookRequestData
 
 class NotifyWebhookRequest(RequiredNotifyWebhookRequest, OptionalNotifyWebhookRequest):
     pass

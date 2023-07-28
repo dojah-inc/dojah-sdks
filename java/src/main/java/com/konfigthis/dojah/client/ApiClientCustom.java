@@ -1,5 +1,8 @@
 package com.konfigthis.dojah.client;
 
+import java.util.List;
+import java.util.Map;
+
 public class ApiClientCustom {
 
     protected void requestBeforeHook(String baseUrl, String path, String method, List<Pair> queryParams,

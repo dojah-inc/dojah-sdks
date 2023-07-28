@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## AnalyzeDocument
 
-> AnalyzeDocumentResponse AnalyzeDocument(ctx).AppId(appId).Execute()
+> AnalyzeDocumentResponse AnalyzeDocument(ctx).Execute()
 
 KYC - Document Analysis
 
@@ -27,11 +27,10 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.DocumentAnalysisApi.AnalyzeDocument(context.Background()).AppId(appId).Execute()
+    resp, r, err := apiClient.DocumentAnalysisApi.AnalyzeDocument(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentAnalysisApi.AnalyzeDocument``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -43,16 +42,12 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not need any parameter.
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiAnalyzeDocumentRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
 
 ### Return type
 
@@ -60,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

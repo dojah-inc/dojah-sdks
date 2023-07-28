@@ -21,6 +21,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getNinResponse = await dojah.tzKyc.getNin({});
@@ -33,7 +34,6 @@ console.log(getNinResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **firstName** | [**string**] |  | (optional) defaults to undefined
  **lastName** | [**string**] |  | (optional) defaults to undefined
  **dateOfBirth** | [**string**] |  | (optional) defaults to undefined

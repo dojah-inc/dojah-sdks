@@ -9,7 +9,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="analyzeDocument"></a>
 # **analyzeDocument**
-> AnalyzeDocumentResponse analyzeDocument().appId(appId).execute();
+> AnalyzeDocumentResponse analyzeDocument().execute();
 
 KYC - Document Analysis
 
@@ -20,6 +20,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.DocumentAnalysisApi;
 import java.util.List;
@@ -30,14 +31,15 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     try {
       AnalyzeDocumentResponse result = client
               .documentAnalysis
               .analyzeDocument()
-              .appId(appId)
               .execute();
       System.out.println(result);
 
@@ -56,7 +58,6 @@ public class Example {
       ApiResponse<AnalyzeDocumentResponse> response = client
               .documentAnalysis
               .analyzeDocument()
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -76,10 +77,7 @@ public class Example {
 ```
 
 ### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -87,7 +85,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

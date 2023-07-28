@@ -26,16 +26,10 @@ type MLApiVerifyPhotoIdWithSelfieRequest struct {
 	ctx context.Context
 	ApiService *MLApiService
 	mlVerifyPhotoIdWithSelfieRequest *MlVerifyPhotoIdWithSelfieRequest
-	appId *string
 }
 
 func (r MLApiVerifyPhotoIdWithSelfieRequest) MlVerifyPhotoIdWithSelfieRequest(mlVerifyPhotoIdWithSelfieRequest MlVerifyPhotoIdWithSelfieRequest) MLApiVerifyPhotoIdWithSelfieRequest {
 	r.mlVerifyPhotoIdWithSelfieRequest = &mlVerifyPhotoIdWithSelfieRequest
-	return r
-}
-
-func (r MLApiVerifyPhotoIdWithSelfieRequest) AppId(appId string) MLApiVerifyPhotoIdWithSelfieRequest {
-	r.appId = &appId
 	return r
 }
 
@@ -97,11 +91,22 @@ func (a *MLApiService) VerifyPhotoIdWithSelfieExecute(r MLApiVerifyPhotoIdWithSe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
-	}
 	// body params
 	localVarPostBody = r.mlVerifyPhotoIdWithSelfieRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.nigeria_kyc_get_nin_response_entity import NigeriaKycGetNinResponseEntity
 
 class RequiredNigeriaKycGetNinResponse(TypedDict):
     pass
 
 class OptionalNigeriaKycGetNinResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: NigeriaKycGetNinResponseEntity
 
 class NigeriaKycGetNinResponse(RequiredNigeriaKycGetNinResponse, OptionalNigeriaKycGetNinResponse):
     pass

@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.analyze_document_response_entity import AnalyzeDocumentResponseEntity
 
 class RequiredAnalyzeDocumentResponse(TypedDict):
     pass
 
 class OptionalAnalyzeDocumentResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: AnalyzeDocumentResponseEntity
 
 class AnalyzeDocumentResponse(RequiredAnalyzeDocumentResponse, OptionalAnalyzeDocumentResponse):
     pass

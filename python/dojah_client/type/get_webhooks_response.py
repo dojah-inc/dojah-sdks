@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.get_webhooks_response_entity import GetWebhooksResponseEntity
 
 class RequiredGetWebhooksResponse(TypedDict):
     pass
 
 class OptionalGetWebhooksResponse(TypedDict, total=False):
-    entity: typing.List[typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]]
+    entity: GetWebhooksResponseEntity
 
 class GetWebhooksResponse(RequiredGetWebhooksResponse, OptionalGetWebhooksResponse):
     pass

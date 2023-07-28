@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ## GetBasicBvn
 
-> ValidateBvnResponse GetBasicBvn(ctx).AppId(appId).Bvn(bvn).Execute()
+> ValidateBvnResponse GetBasicBvn(ctx).Bvn(bvn).Execute()
 
 KYC - Get Basic BVN Info
 
@@ -37,12 +37,11 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
     bvn := int32(22468537919) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.NigeriaKYCApi.GetBasicBvn(context.Background()).AppId(appId).Bvn(bvn).Execute()
+    resp, r, err := apiClient.NigeriaKYCApi.GetBasicBvn(context.Background()).Bvn(bvn).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NigeriaKYCApi.GetBasicBvn``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -63,7 +62,6 @@ Other parameters are passed through a pointer to a apiGetBasicBvnRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **bvn** | **int32** |  | 
 
 ### Return type
@@ -72,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -86,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## GetBasicBvn1
 
-> GetBasicBvnResponse GetBasicBvn1(ctx).AppId(appId).Bvn(bvn).Execute()
+> GetBasicBvnResponse GetBasicBvn1(ctx).Bvn(bvn).Execute()
 
 KYC - Lookup BVN Basic 1
 
@@ -103,12 +101,11 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
     bvn := int32(22621998885) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.NigeriaKYCApi.GetBasicBvn1(context.Background()).AppId(appId).Bvn(bvn).Execute()
+    resp, r, err := apiClient.NigeriaKYCApi.GetBasicBvn1(context.Background()).Bvn(bvn).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NigeriaKYCApi.GetBasicBvn1``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -129,7 +126,6 @@ Other parameters are passed through a pointer to a apiGetBasicBvn1Request struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **bvn** | **int32** |  | 
 
 ### Return type
@@ -138,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -152,7 +148,7 @@ No authorization required
 
 ## GetBasicPhoneNumber
 
-> map[string]interface{} GetBasicPhoneNumber(ctx).AppId(appId).PhoneNumber(phoneNumber).Execute()
+> map[string]interface{} GetBasicPhoneNumber(ctx).PhoneNumber(phoneNumber).Execute()
 
 KYC Lookup Phone Number Basic
 
@@ -169,12 +165,11 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
     phoneNumber := int32(9131377829) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.NigeriaKYCApi.GetBasicPhoneNumber(context.Background()).AppId(appId).PhoneNumber(phoneNumber).Execute()
+    resp, r, err := apiClient.NigeriaKYCApi.GetBasicPhoneNumber(context.Background()).PhoneNumber(phoneNumber).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NigeriaKYCApi.GetBasicPhoneNumber``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -195,7 +190,6 @@ Other parameters are passed through a pointer to a apiGetBasicPhoneNumberRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **phoneNumber** | **int32** |  | 
 
 ### Return type
@@ -204,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -218,7 +212,7 @@ Name | Type | Description  | Notes
 
 ## GetDriversLicense
 
-> GetKycDriversLicenseResponse GetDriversLicense(ctx).AppId(appId).LicenseNumber(licenseNumber).Execute()
+> GetKycDriversLicenseResponse GetDriversLicense(ctx).LicenseNumber(licenseNumber).Execute()
 
 KYC - Get Drivers License Info
 
@@ -235,12 +229,11 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    licenseNumber := "FKJ49409AB13" // string |  (optional)
+    licenseNumber := ""FKJ49409AB13"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.NigeriaKYCApi.GetDriversLicense(context.Background()).AppId(appId).LicenseNumber(licenseNumber).Execute()
+    resp, r, err := apiClient.NigeriaKYCApi.GetDriversLicense(context.Background()).LicenseNumber(licenseNumber).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NigeriaKYCApi.GetDriversLicense``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -261,7 +254,6 @@ Other parameters are passed through a pointer to a apiGetDriversLicenseRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **licenseNumber** | **string** |  | 
 
 ### Return type
@@ -270,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -284,7 +276,7 @@ Name | Type | Description  | Notes
 
 ## GetNin
 
-> NigeriaKycGetNinResponse GetNin(ctx).AppId(appId).Nin(nin).Execute()
+> NigeriaKycGetNinResponse GetNin(ctx).Nin(nin).Execute()
 
 KYC - Get NIN Info
 
@@ -301,12 +293,11 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
     nin := int32(55648152772) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.NigeriaKYCApi.GetNin(context.Background()).AppId(appId).Nin(nin).Execute()
+    resp, r, err := apiClient.NigeriaKYCApi.GetNin(context.Background()).Nin(nin).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NigeriaKYCApi.GetNin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -327,7 +318,6 @@ Other parameters are passed through a pointer to a apiGetNinRequest struct via t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **nin** | **int32** |  | 
 
 ### Return type
@@ -336,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -350,7 +340,7 @@ Name | Type | Description  | Notes
 
 ## GetNormalBvn
 
-> GetFullBvnResponse GetNormalBvn(ctx).AppId(appId).Bvn(bvn).Execute()
+> GetFullBvnResponse GetNormalBvn(ctx).Bvn(bvn).Execute()
 
 KYC - Lookup BVN Normal
 
@@ -367,12 +357,11 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
     bvn := int32(22342291445) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.NigeriaKYCApi.GetNormalBvn(context.Background()).AppId(appId).Bvn(bvn).Execute()
+    resp, r, err := apiClient.NigeriaKYCApi.GetNormalBvn(context.Background()).Bvn(bvn).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NigeriaKYCApi.GetNormalBvn``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -393,7 +382,6 @@ Other parameters are passed through a pointer to a apiGetNormalBvnRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **bvn** | **int32** |  | 
 
 ### Return type
@@ -402,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -416,7 +404,7 @@ Name | Type | Description  | Notes
 
 ## GetNuban
 
-> GetNubanResponse GetNuban(ctx).AppId(appId).BankCode(bankCode).AccountNumber(accountNumber).Execute()
+> GetNubanResponse GetNuban(ctx).BankCode(bankCode).AccountNumber(accountNumber).Execute()
 
 KYC - Get NUBAN Information
 
@@ -433,13 +421,12 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
     bankCode := int32(58) // int32 |  (optional)
     accountNumber := int32(11223344) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.NigeriaKYCApi.GetNuban(context.Background()).AppId(appId).BankCode(bankCode).AccountNumber(accountNumber).Execute()
+    resp, r, err := apiClient.NigeriaKYCApi.GetNuban(context.Background()).BankCode(bankCode).AccountNumber(accountNumber).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NigeriaKYCApi.GetNuban``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -460,7 +447,6 @@ Other parameters are passed through a pointer to a apiGetNubanRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **bankCode** | **int32** |  | 
  **accountNumber** | **int32** |  | 
 
@@ -470,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -501,8 +487,8 @@ import (
 )
 
 func main() {
-    passportNumber := "B00671500" // string |  (optional)
-    surname := "adekanmi" // string |  (optional)
+    passportNumber := ""B00671500"" // string |  (optional)
+    surname := ""adekanmi"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
@@ -550,7 +536,7 @@ Name | Type | Description  | Notes
 
 ## GetPhoneNumber
 
-> GetPhoneNumberResponse GetPhoneNumber(ctx).AppId(appId).PhoneNumber(phoneNumber).Execute()
+> GetPhoneNumberResponse GetPhoneNumber(ctx).PhoneNumber(phoneNumber).Execute()
 
 KYC - Lookup Phone Number
 
@@ -567,12 +553,11 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
     phoneNumber := int32(8034628633) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.NigeriaKYCApi.GetPhoneNumber(context.Background()).AppId(appId).PhoneNumber(phoneNumber).Execute()
+    resp, r, err := apiClient.NigeriaKYCApi.GetPhoneNumber(context.Background()).PhoneNumber(phoneNumber).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NigeriaKYCApi.GetPhoneNumber``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -593,7 +578,6 @@ Other parameters are passed through a pointer to a apiGetPhoneNumberRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **phoneNumber** | **int32** |  | 
 
 ### Return type
@@ -602,7 +586,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[noauthAuth](../README.md#noauthAuth)
+[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 
@@ -616,7 +600,7 @@ Name | Type | Description  | Notes
 
 ## GetPremiumBvn
 
-> GetPremiumBvnResponse GetPremiumBvn(ctx).AppId(appId).Bvn(bvn).Execute()
+> GetPremiumBvnResponse GetPremiumBvn(ctx).Bvn(bvn).Execute()
 
 KYC - Lookup BVN Premium
 
@@ -633,12 +617,11 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
     bvn := int32(22200508254) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.NigeriaKYCApi.GetPremiumBvn(context.Background()).AppId(appId).Bvn(bvn).Execute()
+    resp, r, err := apiClient.NigeriaKYCApi.GetPremiumBvn(context.Background()).Bvn(bvn).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NigeriaKYCApi.GetPremiumBvn``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -659,7 +642,6 @@ Other parameters are passed through a pointer to a apiGetPremiumBvnRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **bvn** | **int32** |  | 
 
 ### Return type
@@ -668,7 +650,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -682,7 +664,7 @@ Name | Type | Description  | Notes
 
 ## GetVnin
 
-> GetVninResponse GetVnin(ctx).AppId(appId).Vnin(vnin).Execute()
+> GetVninResponse GetVnin(ctx).Vnin(vnin).Execute()
 
 Lookup VNIN
 
@@ -699,12 +681,11 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    vnin := "LC829995256998RD" // string |  (optional)
+    vnin := ""LC829995256998RD"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.NigeriaKYCApi.GetVnin(context.Background()).AppId(appId).Vnin(vnin).Execute()
+    resp, r, err := apiClient.NigeriaKYCApi.GetVnin(context.Background()).Vnin(vnin).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NigeriaKYCApi.GetVnin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -725,7 +706,6 @@ Other parameters are passed through a pointer to a apiGetVninRequest struct via 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **vnin** | **string** |  | 
 
 ### Return type
@@ -734,7 +714,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

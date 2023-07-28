@@ -26,19 +26,17 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
-const getSenderIdResponse = await dojah.authentication.getSenderId({});
+const getSenderIdResponse = await dojah.authentication.getSenderId();
 
 console.log(getSenderIdResponse);
 ```
 
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -72,6 +70,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getSmsStatusResponse = await dojah.authentication.getSmsStatus({});
@@ -84,7 +83,6 @@ console.log(getSmsStatusResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **messageId** | [**string**] |  | (optional) defaults to undefined
 
 
@@ -119,6 +117,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const requestSenderIdResponse = await dojah.authentication.requestSenderId({
@@ -134,7 +133,6 @@ console.log(requestSenderIdResponse);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **requestSenderIdRequest** | **RequestSenderIdRequest**|  |
- **appId** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -168,6 +166,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const sendOtpResponse = await dojah.authentication.sendOtp({
@@ -187,7 +186,6 @@ console.log(sendOtpResponse);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authenticationSendOtpRequest** | **AuthenticationSendOtpRequest**|  |
- **appId** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -221,6 +219,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const sendSmsResponse = await dojah.authentication.sendSms({
@@ -239,7 +238,6 @@ console.log(sendSmsResponse);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sendSmsRequest** | **SendSmsRequest**|  |
- **appId** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -273,6 +271,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const validateOtpResponse = await dojah.authentication.validateOtp({});
@@ -285,7 +284,6 @@ console.log(validateOtpResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **referenceId** | [**string**] |  | (optional) defaults to undefined
  **code** | [**number**] |  | (optional) defaults to undefined
 

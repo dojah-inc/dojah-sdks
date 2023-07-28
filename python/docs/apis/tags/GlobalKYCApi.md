@@ -23,12 +23,15 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # Canada Ekyc
     ca_ekyc_response = dojah.global_kyc.ca_ekyc(
-        app_id="{{app_id}}",  # optional
         country="GBR",  # optional
         first_name="Tobi",  # optional
         last_name="Ololade",  # optional
@@ -53,7 +56,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -121,20 +123,6 @@ decimal.Decimal, int,  | decimal.Decimal,  |  |
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 decimal.Decimal, int,  | decimal.Decimal,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -159,7 +147,7 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -177,12 +165,15 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # US SSN
     get_us_ssn_response = dojah.global_kyc.get_us_ssn(
-        app_id="{{app_id}}",  # optional
         country="GBR",  # optional
         first_name="Tobi",  # optional
         last_name="Ololade",  # optional
@@ -207,7 +198,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -275,20 +265,6 @@ decimal.Decimal, int,  | decimal.Decimal,  |  |
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 decimal.Decimal, int,  | decimal.Decimal,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -313,7 +289,7 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -331,12 +307,15 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # UK 2+2
     uk_two_plus_two_response = dojah.global_kyc.uk_two_plus_two(
-        app_id="{{app_id}}",  # optional
         country="GBR",  # optional
         first_name="Tobi",  # optional
         last_name="Ololade",  # optional
@@ -361,7 +340,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -430,20 +408,6 @@ Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 decimal.Decimal, int,  | decimal.Decimal,  |  | 
 
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
-
 ### Return Types, Responses
 
 Code | Class | Description
@@ -467,7 +431,7 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 

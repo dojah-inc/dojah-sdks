@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.zaf_kyc_get_id_response_entity import ZafKycGetIdResponseEntity
 
 class RequiredZafKycGetIdResponse(TypedDict):
     pass
 
 class OptionalZafKycGetIdResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: ZafKycGetIdResponseEntity
 
 class ZafKycGetIdResponse(RequiredZafKycGetIdResponse, OptionalZafKycGetIdResponse):
     pass

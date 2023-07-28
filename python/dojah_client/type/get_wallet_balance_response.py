@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.get_wallet_balance_response_entity import GetWalletBalanceResponseEntity
 
 class RequiredGetWalletBalanceResponse(TypedDict):
     pass
 
 class OptionalGetWalletBalanceResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: GetWalletBalanceResponseEntity
 
 class GetWalletBalanceResponse(RequiredGetWalletBalanceResponse, OptionalGetWalletBalanceResponse):
     pass

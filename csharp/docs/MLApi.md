@@ -8,7 +8,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="verifyphotoidwithselfie"></a>
 # **VerifyPhotoIdWithSelfie**
-> Object VerifyPhotoIdWithSelfie (MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, string appId = null)
+> Object VerifyPhotoIdWithSelfie (MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest)
 
 KYC - Selfie Photo ID Verification
 
@@ -17,7 +17,6 @@ KYC - Selfie Photo ID Verification
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -27,20 +26,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new MLApi(config);
             var mlVerifyPhotoIdWithSelfieRequest = new MlVerifyPhotoIdWithSelfieRequest(); // MlVerifyPhotoIdWithSelfieRequest | 
-            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // KYC - Selfie Photo ID Verification
-                Object result = apiInstance.VerifyPhotoIdWithSelfie(mlVerifyPhotoIdWithSelfieRequest, appId);
+                Object result = client.ML.VerifyPhotoIdWithSelfie(mlVerifyPhotoIdWithSelfieRequest);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -67,7 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Selfie Photo ID Verification
-    ApiResponse<Object> response = apiInstance.VerifyPhotoIdWithSelfieWithHttpInfo(mlVerifyPhotoIdWithSelfieRequest, appId);
+    ApiResponse<Object> response = apiInstance.VerifyPhotoIdWithSelfieWithHttpInfo(mlVerifyPhotoIdWithSelfieRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -85,7 +83,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **mlVerifyPhotoIdWithSelfieRequest** | [**MlVerifyPhotoIdWithSelfieRequest**](MlVerifyPhotoIdWithSelfieRequest.md) |  |  |
-| **appId** | **string** |  | [optional]  |
 
 ### Return type
 
@@ -93,7 +90,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

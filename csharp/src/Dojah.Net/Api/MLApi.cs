@@ -31,10 +31,9 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="mlVerifyPhotoIdWithSelfieRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object VerifyPhotoIdWithSelfie(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, string appId = default(string), int operationIndex = 0);
+        Object VerifyPhotoIdWithSelfie(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, int operationIndex = 0);
 
         /// <summary>
         /// KYC - Selfie Photo ID Verification
@@ -44,10 +43,9 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="mlVerifyPhotoIdWithSelfieRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> VerifyPhotoIdWithSelfieWithHttpInfo(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, string appId = default(string), int operationIndex = 0);
+        ApiResponse<Object> VerifyPhotoIdWithSelfieWithHttpInfo(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -65,11 +63,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="mlVerifyPhotoIdWithSelfieRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> VerifyPhotoIdWithSelfieAsync(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> VerifyPhotoIdWithSelfieAsync(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Selfie Photo ID Verification
@@ -79,11 +76,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="mlVerifyPhotoIdWithSelfieRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> VerifyPhotoIdWithSelfieWithHttpInfoAsync(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> VerifyPhotoIdWithSelfieWithHttpInfoAsync(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -209,12 +205,11 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="mlVerifyPhotoIdWithSelfieRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object VerifyPhotoIdWithSelfie(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, string appId = default(string), int operationIndex = 0)
+        public Object VerifyPhotoIdWithSelfie(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = VerifyPhotoIdWithSelfieWithHttpInfo(mlVerifyPhotoIdWithSelfieRequest, appId);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = VerifyPhotoIdWithSelfieWithHttpInfo(mlVerifyPhotoIdWithSelfieRequest);
             return localVarResponse.Data;
         }
 
@@ -223,10 +218,9 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="mlVerifyPhotoIdWithSelfieRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public Dojah.Net.Client.ApiResponse<Object> VerifyPhotoIdWithSelfieWithHttpInfo(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, string appId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<Object> VerifyPhotoIdWithSelfieWithHttpInfo(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, int operationIndex = 0)
         {
             // verify the required parameter 'mlVerifyPhotoIdWithSelfieRequest' is set
             if (mlVerifyPhotoIdWithSelfieRequest == null)
@@ -257,16 +251,17 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
             localVarRequestOptions.Data = mlVerifyPhotoIdWithSelfieRequest;
 
             localVarRequestOptions.Operation = "MLApi.VerifyPhotoIdWithSelfie";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/api/v1/kyc/photoid/verify", localVarRequestOptions, this.Configuration);
@@ -287,13 +282,12 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="mlVerifyPhotoIdWithSelfieRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> VerifyPhotoIdWithSelfieAsync(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> VerifyPhotoIdWithSelfieAsync(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await VerifyPhotoIdWithSelfieWithHttpInfoAsync(mlVerifyPhotoIdWithSelfieRequest, appId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await VerifyPhotoIdWithSelfieWithHttpInfoAsync(mlVerifyPhotoIdWithSelfieRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -302,11 +296,10 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="mlVerifyPhotoIdWithSelfieRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> VerifyPhotoIdWithSelfieWithHttpInfoAsync(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> VerifyPhotoIdWithSelfieWithHttpInfoAsync(MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'mlVerifyPhotoIdWithSelfieRequest' is set
             if (mlVerifyPhotoIdWithSelfieRequest == null)
@@ -338,16 +331,17 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
             localVarRequestOptions.Data = mlVerifyPhotoIdWithSelfieRequest;
 
             localVarRequestOptions.Operation = "MLApi.VerifyPhotoIdWithSelfie";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v1/kyc/photoid/verify", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

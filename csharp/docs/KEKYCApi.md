@@ -9,7 +9,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getnationalid"></a>
 # **GetNationalId**
-> GetNationalIdResponse GetNationalId (string appId = null, int? id = null)
+> GetNationalIdResponse GetNationalId (int? id = null)
 
 KYC - National ID
 
@@ -18,7 +18,6 @@ KYC - National ID
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -28,19 +27,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new KEKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
             var id = 24798402;  // int? |  (optional) 
 
             try
             {
                 // KYC - National ID
-                GetNationalIdResponse result = apiInstance.GetNationalId(appId, id);
+                GetNationalIdResponse result = client.KEKYC.GetNationalId(id);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -67,7 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - National ID
-    ApiResponse<GetNationalIdResponse> response = apiInstance.GetNationalIdWithHttpInfo(appId, id);
+    ApiResponse<GetNationalIdResponse> response = apiInstance.GetNationalIdWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -84,7 +83,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **id** | **int?** |  | [optional]  |
 
 ### Return type
@@ -93,7 +91,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -110,7 +108,7 @@ No authorization required
 
 <a name="getpassport"></a>
 # **GetPassport**
-> Object GetPassport (string appId = null)
+> Object GetPassport ()
 
 KYC - Passport
 
@@ -119,7 +117,6 @@ KYC - Passport
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -129,18 +126,18 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new KEKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // KYC - Passport
-                Object result = apiInstance.GetPassport(appId);
+                Object result = client.KEKYC.GetPassport();
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -167,7 +164,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Passport
-    ApiResponse<Object> response = apiInstance.GetPassportWithHttpInfo(appId);
+    ApiResponse<Object> response = apiInstance.GetPassportWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -181,18 +178,14 @@ catch (ApiException e)
 ```
 
 ### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
-
+This endpoint does not need any parameter.
 ### Return type
 
 **Object**
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

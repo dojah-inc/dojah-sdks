@@ -61,11 +61,10 @@ namespace Dojah.Net.Test.Api
         public void ValidateBvnTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //int? bvn = null;
             //string firstName = null;
             //string dob = null;
-            //var response = instance.ValidateBvn(appId, bvn, firstName, dob);
+            //var response = instance.ValidateBvn(bvn, firstName, dob);
             //Assert.IsType<Object>(response);
         }
 
@@ -76,14 +75,13 @@ namespace Dojah.Net.Test.Api
         public void VerifyAgeTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string mode = null;
             //int? accountNumber = null;
             //int? bankCode = null;
             //string dob = null;
             //string firstName = null;
             //string lastName = null;
-            //var response = instance.VerifyAge(appId, mode, accountNumber, bankCode, dob, firstName, lastName);
+            //var response = instance.VerifyAge(mode, accountNumber, bankCode, dob, firstName, lastName);
             //Assert.IsType<VerifyAgeResponse>(response);
         }
 
@@ -95,8 +93,7 @@ namespace Dojah.Net.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //VerifySelfieBvnRequest verifySelfieBvnRequest = null;
-            //string appId = null;
-            //var response = instance.VerifySelfieBvn(verifySelfieBvnRequest, appId);
+            //var response = instance.VerifySelfieBvn(verifySelfieBvnRequest);
             //Assert.IsType<VerifySelfieBvnResponse>(response);
         }
 
@@ -108,8 +105,7 @@ namespace Dojah.Net.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest = null;
-            //string appId = null;
-            //var response = instance.VerifySelfieNin(verificationsVerifySelfieNinRequest, appId);
+            //var response = instance.VerifySelfieNin(verificationsVerifySelfieNinRequest);
             //Assert.IsType<Object>(response);
         }
 
@@ -121,8 +117,7 @@ namespace Dojah.Net.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest = null;
-            //string appId = null;
-            //var response = instance.VerifySelfieVnin(verificationsVerifySelfieVninRequest, appId);
+            //var response = instance.VerifySelfieVnin(verificationsVerifySelfieVninRequest);
             //Assert.IsType<Object>(response);
         }
     }

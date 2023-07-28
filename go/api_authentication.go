@@ -25,12 +25,6 @@ type AuthenticationApiService service
 type AuthenticationApiGetSenderIdRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationApiService
-	appId *string
-}
-
-func (r AuthenticationApiGetSenderIdRequest) AppId(appId string) AuthenticationApiGetSenderIdRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r AuthenticationApiGetSenderIdRequest) Execute() (*GetSenderIdResponse, *http.Response, error) {
@@ -88,8 +82,19 @@ func (a *AuthenticationApiService) GetSenderIdExecute(r AuthenticationApiGetSend
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -131,13 +136,7 @@ func (a *AuthenticationApiService) GetSenderIdExecute(r AuthenticationApiGetSend
 type AuthenticationApiGetSmsStatusRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationApiService
-	appId *string
 	messageId *string
-}
-
-func (r AuthenticationApiGetSmsStatusRequest) AppId(appId string) AuthenticationApiGetSmsStatusRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r AuthenticationApiGetSmsStatusRequest) MessageId(messageId string) AuthenticationApiGetSmsStatusRequest {
@@ -203,8 +202,19 @@ func (a *AuthenticationApiService) GetSmsStatusExecute(r AuthenticationApiGetSms
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -247,16 +257,10 @@ type AuthenticationApiRequestSenderIdRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationApiService
 	requestSenderIdRequest *RequestSenderIdRequest
-	appId *string
 }
 
 func (r AuthenticationApiRequestSenderIdRequest) RequestSenderIdRequest(requestSenderIdRequest RequestSenderIdRequest) AuthenticationApiRequestSenderIdRequest {
 	r.requestSenderIdRequest = &requestSenderIdRequest
-	return r
-}
-
-func (r AuthenticationApiRequestSenderIdRequest) AppId(appId string) AuthenticationApiRequestSenderIdRequest {
-	r.appId = &appId
 	return r
 }
 
@@ -318,11 +322,22 @@ func (a *AuthenticationApiService) RequestSenderIdExecute(r AuthenticationApiReq
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
-	}
 	// body params
 	localVarPostBody = r.requestSenderIdRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -364,16 +379,10 @@ type AuthenticationApiSendOtpRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationApiService
 	authenticationSendOtpRequest *AuthenticationSendOtpRequest
-	appId *string
 }
 
 func (r AuthenticationApiSendOtpRequest) AuthenticationSendOtpRequest(authenticationSendOtpRequest AuthenticationSendOtpRequest) AuthenticationApiSendOtpRequest {
 	r.authenticationSendOtpRequest = &authenticationSendOtpRequest
-	return r
-}
-
-func (r AuthenticationApiSendOtpRequest) AppId(appId string) AuthenticationApiSendOtpRequest {
-	r.appId = &appId
 	return r
 }
 
@@ -435,11 +444,22 @@ func (a *AuthenticationApiService) SendOtpExecute(r AuthenticationApiSendOtpRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
-	}
 	// body params
 	localVarPostBody = r.authenticationSendOtpRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -481,16 +501,10 @@ type AuthenticationApiSendSmsRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationApiService
 	sendSmsRequest *SendSmsRequest
-	appId *string
 }
 
 func (r AuthenticationApiSendSmsRequest) SendSmsRequest(sendSmsRequest SendSmsRequest) AuthenticationApiSendSmsRequest {
 	r.sendSmsRequest = &sendSmsRequest
-	return r
-}
-
-func (r AuthenticationApiSendSmsRequest) AppId(appId string) AuthenticationApiSendSmsRequest {
-	r.appId = &appId
 	return r
 }
 
@@ -552,11 +566,22 @@ func (a *AuthenticationApiService) SendSmsExecute(r AuthenticationApiSendSmsRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
-	}
 	// body params
 	localVarPostBody = r.sendSmsRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -597,14 +622,8 @@ func (a *AuthenticationApiService) SendSmsExecute(r AuthenticationApiSendSmsRequ
 type AuthenticationApiValidateOtpRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationApiService
-	appId *string
 	referenceId *string
 	code *int32
-}
-
-func (r AuthenticationApiValidateOtpRequest) AppId(appId string) AuthenticationApiValidateOtpRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r AuthenticationApiValidateOtpRequest) ReferenceId(referenceId string) AuthenticationApiValidateOtpRequest {
@@ -678,8 +697,19 @@ func (a *AuthenticationApiService) ValidateOtpExecute(r AuthenticationApiValidat
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetWalletBalance
 
-> GetWalletBalanceResponse GetWalletBalance(ctx).AppId(appId).Execute()
+> GetWalletBalanceResponse GetWalletBalance(ctx).Execute()
 
 Get Dojah Wallet Balance
 
@@ -27,11 +27,10 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServicesApi.GetWalletBalance(context.Background()).AppId(appId).Execute()
+    resp, r, err := apiClient.ServicesApi.GetWalletBalance(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServicesApi.GetWalletBalance``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -43,16 +42,12 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not need any parameter.
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetWalletBalanceRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
 
 ### Return type
 
@@ -60,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[noauthAuth](../README.md#noauthAuth)
+[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 

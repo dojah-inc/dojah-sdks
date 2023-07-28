@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.get_sender_id_response_entity import GetSenderIdResponseEntity
 
 class RequiredGetSenderIdResponse(TypedDict):
     pass
 
 class OptionalGetSenderIdResponse(TypedDict, total=False):
-    entity: typing.List[typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]]
+    entity: GetSenderIdResponseEntity
 
 class GetSenderIdResponse(RequiredGetSenderIdResponse, OptionalGetSenderIdResponse):
     pass

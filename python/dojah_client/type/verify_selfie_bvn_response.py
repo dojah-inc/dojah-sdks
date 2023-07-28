@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.verify_selfie_bvn_response_entity import VerifySelfieBvnResponseEntity
 
 class RequiredVerifySelfieBvnResponse(TypedDict):
     pass
 
 class OptionalVerifySelfieBvnResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: VerifySelfieBvnResponseEntity
 
 class VerifySelfieBvnResponse(RequiredVerifySelfieBvnResponse, OptionalVerifySelfieBvnResponse):
     pass

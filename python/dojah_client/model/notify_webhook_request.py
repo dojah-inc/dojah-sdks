@@ -35,56 +35,10 @@ class NotifyWebhookRequest(
         
         class properties:
             subject = schemas.StrSchema
-            
-            
-            class data(
-                schemas.DictSchema
-            ):
-            
-            
-                class MetaOapg:
-                    
-                    class properties:
-                        stuff = schemas.StrSchema
-                        __annotations__ = {
-                            "stuff": stuff,
-                        }
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["stuff"]) -> MetaOapg.properties.stuff: ...
-                
-                @typing.overload
-                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
-                
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["stuff", ], str]):
-                    # dict_instance[name] accessor
-                    return super().__getitem__(name)
-                
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["stuff"]) -> typing.Union[MetaOapg.properties.stuff, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
-                
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["stuff", ], str]):
-                    return super().get_item_oapg(name)
-                
-            
-                def __new__(
-                    cls,
-                    *args: typing.Union[dict, frozendict.frozendict, ],
-                    stuff: typing.Union[MetaOapg.properties.stuff, str, schemas.Unset] = schemas.unset,
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-                ) -> 'data':
-                    return super().__new__(
-                        cls,
-                        *args,
-                        stuff=stuff,
-                        _configuration=_configuration,
-                        **kwargs,
-                    )
+        
+            @staticmethod
+            def data() -> typing.Type['NotifyWebhookRequestData']:
+                return NotifyWebhookRequestData
             __annotations__ = {
                 "subject": subject,
                 "data": data,
@@ -94,7 +48,7 @@ class NotifyWebhookRequest(
     def __getitem__(self, name: typing_extensions.Literal["subject"]) -> MetaOapg.properties.subject: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["data"]) -> MetaOapg.properties.data: ...
+    def __getitem__(self, name: typing_extensions.Literal["data"]) -> 'NotifyWebhookRequestData': ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
@@ -108,7 +62,7 @@ class NotifyWebhookRequest(
     def get_item_oapg(self, name: typing_extensions.Literal["subject"]) -> typing.Union[MetaOapg.properties.subject, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["data"]) -> typing.Union[MetaOapg.properties.data, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["data"]) -> typing.Union['NotifyWebhookRequestData', schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
@@ -121,7 +75,7 @@ class NotifyWebhookRequest(
         cls,
         *args: typing.Union[dict, frozendict.frozendict, ],
         subject: typing.Union[MetaOapg.properties.subject, str, schemas.Unset] = schemas.unset,
-        data: typing.Union[MetaOapg.properties.data, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        data: typing.Union['NotifyWebhookRequestData', schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'NotifyWebhookRequest':
@@ -133,3 +87,5 @@ class NotifyWebhookRequest(
             _configuration=_configuration,
             **kwargs,
         )
+
+from dojah_client.model.notify_webhook_request_data import NotifyWebhookRequestData

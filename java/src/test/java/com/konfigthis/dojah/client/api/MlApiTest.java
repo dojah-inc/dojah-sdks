@@ -50,11 +50,9 @@ public class MlApiTest {
     public void verifyPhotoIdWithSelfieTest() throws ApiException {
         String selfieImage = null;
         String photoidImage = null;
-        String appId = null;
         Object response = api.verifyPhotoIdWithSelfie()
                 .selfieImage(selfieImage)
                 .photoidImage(photoidImage)
-                .appId(appId)
                 .execute();
         // TODO: test validations
     }

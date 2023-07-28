@@ -14,7 +14,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="checkLiveness"></a>
 # **checkLiveness**
-> Object checkLiveness(kycCheckLivenessRequest).appId(appId).execute();
+> Object checkLiveness(kycCheckLivenessRequest).execute();
 
 Liveness Check
 
@@ -25,6 +25,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.KycApi;
 import java.util.List;
@@ -35,16 +36,17 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     String image = "image_example";
-    String appId = "{{app_id}}";
     try {
       Object result = client
               .kyc
               .checkLiveness()
               .image(image)
-              .appId(appId)
               .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling KycApi#checkLiveness");
@@ -60,7 +62,6 @@ public class Example {
               .kyc
               .checkLiveness()
               .image(image)
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -84,7 +85,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **kycCheckLivenessRequest** | [**KycCheckLivenessRequest**](KycCheckLivenessRequest.md)|  | |
-| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -92,7 +92,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -106,7 +106,7 @@ No authorization required
 
 <a name="getAccounts"></a>
 # **getAccounts**
-> Object getAccounts().appId(appId).bvn(bvn).execute();
+> Object getAccounts().bvn(bvn).execute();
 
 KYC - Fetch Accounts 
 
@@ -117,6 +117,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.KycApi;
 import java.util.List;
@@ -127,15 +128,16 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String bvn = "22342291445 ";
     try {
       Object result = client
               .kyc
               .getAccounts()
-              .appId(appId)
               .bvn(bvn)
               .execute();
     } catch (ApiException e) {
@@ -151,7 +153,6 @@ public class Example {
       ApiResponse<Object> response = client
               .kyc
               .getAccounts()
-              .appId(appId)
               .bvn(bvn)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -175,7 +176,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **bvn** | **String**|  | [optional] |
 
 ### Return type
@@ -184,7 +184,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -198,7 +198,7 @@ No authorization required
 
 <a name="getAddressVerification"></a>
 # **getAddressVerification**
-> Object getAddressVerification().appId(appId).referenceId(referenceId).execute();
+> Object getAddressVerification().referenceId(referenceId).execute();
 
 Fetch Address Verification Data
 
@@ -209,6 +209,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.KycApi;
 import java.util.List;
@@ -219,15 +220,16 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String referenceId = "69e10264-4b90-64fe-b4b7-c9dddafd0241";
     try {
       Object result = client
               .kyc
               .getAddressVerification()
-              .appId(appId)
               .referenceId(referenceId)
               .execute();
     } catch (ApiException e) {
@@ -243,7 +245,6 @@ public class Example {
       ApiResponse<Object> response = client
               .kyc
               .getAddressVerification()
-              .appId(appId)
               .referenceId(referenceId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -267,7 +268,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **referenceId** | **String**|  | [optional] |
 
 ### Return type
@@ -276,7 +276,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -290,7 +290,7 @@ No authorization required
 
 <a name="getBvnFromNuban"></a>
 # **getBvnFromNuban**
-> Object getBvnFromNuban().appId(appId).bankCode(bankCode).accountNumber(accountNumber).execute();
+> Object getBvnFromNuban().bankCode(bankCode).accountNumber(accountNumber).execute();
 
 Lookup BVN from NUBAN
 
@@ -314,15 +314,16 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     Integer bankCode = 57;
     Integer accountNumber = 2174879334;
     try {
       Object result = client
               .kyc
               .getBvnFromNuban()
-              .appId(appId)
               .bankCode(bankCode)
               .accountNumber(accountNumber)
               .execute();
@@ -339,7 +340,6 @@ public class Example {
       ApiResponse<Object> response = client
               .kyc
               .getBvnFromNuban()
-              .appId(appId)
               .bankCode(bankCode)
               .accountNumber(accountNumber)
               .executeWithHttpInfo();
@@ -364,7 +364,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **bankCode** | **Integer**|  | [optional] |
 | **accountNumber** | **Integer**|  | [optional] |
 
@@ -374,7 +373,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -388,7 +387,7 @@ public class Example {
 
 <a name="getVin"></a>
 # **getVin**
-> GetVinResponse getVin().appId(appId).vin(vin).execute();
+> GetVinResponse getVin().vin(vin).execute();
 
 KYC - Get VIN
 
@@ -411,15 +410,16 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String vin = "90F5B20205096041114";
     try {
       GetVinResponse result = client
               .kyc
               .getVin()
-              .appId(appId)
               .vin(vin)
               .execute();
       System.out.println(result);
@@ -439,7 +439,6 @@ public class Example {
       ApiResponse<GetVinResponse> response = client
               .kyc
               .getVin()
-              .appId(appId)
               .vin(vin)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -463,7 +462,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **vin** | **String**|  | [optional] |
 
 ### Return type
@@ -472,7 +470,7 @@ public class Example {
 
 ### Authorization
 
-[noauthAuth](../README.md#noauthAuth)
+[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 
@@ -486,7 +484,7 @@ public class Example {
 
 <a name="submitAddress"></a>
 # **submitAddress**
-> KycSubmitAddressResponse submitAddress().appId(appId).kycSubmitAddressRequest(kycSubmitAddressRequest).execute();
+> KycSubmitAddressResponse submitAddress().kycSubmitAddressRequest(kycSubmitAddressRequest).execute();
 
 Submit Address
 
@@ -497,6 +495,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.KycApi;
 import java.util.List;
@@ -507,6 +506,9 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     String street = "street_example";
@@ -519,7 +521,6 @@ public class Example {
     String dob = "dob_example";
     String gender = "gender_example";
     String mobile = "mobile_example";
-    String appId = "{{app_id}}";
     try {
       KycSubmitAddressResponse result = client
               .kyc
@@ -534,7 +535,6 @@ public class Example {
               .dob(dob)
               .gender(gender)
               .mobile(mobile)
-              .appId(appId)
               .execute();
       System.out.println(result);
 
@@ -563,7 +563,6 @@ public class Example {
               .dob(dob)
               .gender(gender)
               .mobile(mobile)
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -586,7 +585,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **kycSubmitAddressRequest** | [**KycSubmitAddressRequest**](KycSubmitAddressRequest.md)|  | [optional] |
 
 ### Return type
@@ -595,7 +593,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

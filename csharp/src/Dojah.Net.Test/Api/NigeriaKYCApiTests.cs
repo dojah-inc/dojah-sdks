@@ -61,9 +61,8 @@ namespace Dojah.Net.Test.Api
         public void GetBasicBvnTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //int? bvn = null;
-            //var response = instance.GetBasicBvn(appId, bvn);
+            //var response = instance.GetBasicBvn(bvn);
             //Assert.IsType<ValidateBvnResponse>(response);
         }
 
@@ -74,9 +73,8 @@ namespace Dojah.Net.Test.Api
         public void GetBasicBvn1Test()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //int? bvn = null;
-            //var response = instance.GetBasicBvn1(appId, bvn);
+            //var response = instance.GetBasicBvn1(bvn);
             //Assert.IsType<GetBasicBvnResponse>(response);
         }
 
@@ -87,9 +85,8 @@ namespace Dojah.Net.Test.Api
         public void GetBasicPhoneNumberTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //int? phoneNumber = null;
-            //var response = instance.GetBasicPhoneNumber(appId, phoneNumber);
+            //var response = instance.GetBasicPhoneNumber(phoneNumber);
             //Assert.IsType<Object>(response);
         }
 
@@ -100,9 +97,8 @@ namespace Dojah.Net.Test.Api
         public void GetDriversLicenseTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string licenseNumber = null;
-            //var response = instance.GetDriversLicense(appId, licenseNumber);
+            //var response = instance.GetDriversLicense(licenseNumber);
             //Assert.IsType<GetKycDriversLicenseResponse>(response);
         }
 
@@ -113,9 +109,8 @@ namespace Dojah.Net.Test.Api
         public void GetNinTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //int? nin = null;
-            //var response = instance.GetNin(appId, nin);
+            //var response = instance.GetNin(nin);
             //Assert.IsType<NigeriaKycGetNinResponse>(response);
         }
 
@@ -126,9 +121,8 @@ namespace Dojah.Net.Test.Api
         public void GetNormalBvnTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //int? bvn = null;
-            //var response = instance.GetNormalBvn(appId, bvn);
+            //var response = instance.GetNormalBvn(bvn);
             //Assert.IsType<GetFullBvnResponse>(response);
         }
 
@@ -139,10 +133,9 @@ namespace Dojah.Net.Test.Api
         public void GetNubanTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //int? bankCode = null;
             //int? accountNumber = null;
-            //var response = instance.GetNuban(appId, bankCode, accountNumber);
+            //var response = instance.GetNuban(bankCode, accountNumber);
             //Assert.IsType<GetNubanResponse>(response);
         }
 
@@ -166,9 +159,8 @@ namespace Dojah.Net.Test.Api
         public void GetPhoneNumberTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //int? phoneNumber = null;
-            //var response = instance.GetPhoneNumber(appId, phoneNumber);
+            //var response = instance.GetPhoneNumber(phoneNumber);
             //Assert.IsType<GetPhoneNumberResponse>(response);
         }
 
@@ -179,9 +171,8 @@ namespace Dojah.Net.Test.Api
         public void GetPremiumBvnTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //int? bvn = null;
-            //var response = instance.GetPremiumBvn(appId, bvn);
+            //var response = instance.GetPremiumBvn(bvn);
             //Assert.IsType<GetPremiumBvnResponse>(response);
         }
 
@@ -192,9 +183,8 @@ namespace Dojah.Net.Test.Api
         public void GetVninTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string vnin = null;
-            //var response = instance.GetVnin(appId, vnin);
+            //var response = instance.GetVnin(vnin);
             //Assert.IsType<GetVninResponse>(response);
         }
     }

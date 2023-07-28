@@ -59,13 +59,12 @@ namespace Dojah.Net.Test.Api
         public void GetNinTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string firstName = null;
             //string lastName = null;
             //string dateOfBirth = null;
             //string mothersLastName = null;
             //string mothersFirstName = null;
-            //var response = instance.GetNin(appId, firstName, lastName, dateOfBirth, mothersLastName, mothersFirstName);
+            //var response = instance.GetNin(firstName, lastName, dateOfBirth, mothersLastName, mothersFirstName);
             //Assert.IsType<Object>(response);
         }
     }

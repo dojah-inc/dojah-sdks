@@ -25,15 +25,9 @@ type VerificationsApiService service
 type VerificationsApiValidateBvnRequest struct {
 	ctx context.Context
 	ApiService *VerificationsApiService
-	appId *string
 	bvn *int32
 	firstName *string
 	dob *string
-}
-
-func (r VerificationsApiValidateBvnRequest) AppId(appId string) VerificationsApiValidateBvnRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r VerificationsApiValidateBvnRequest) Bvn(bvn int32) VerificationsApiValidateBvnRequest {
@@ -115,8 +109,19 @@ func (a *VerificationsApiService) ValidateBvnExecute(r VerificationsApiValidateB
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -158,18 +163,12 @@ func (a *VerificationsApiService) ValidateBvnExecute(r VerificationsApiValidateB
 type VerificationsApiVerifyAgeRequest struct {
 	ctx context.Context
 	ApiService *VerificationsApiService
-	appId *string
 	mode *string
 	accountNumber *int32
 	bankCode *int32
 	dob *string
 	firstName *string
 	lastName *string
-}
-
-func (r VerificationsApiVerifyAgeRequest) AppId(appId string) VerificationsApiVerifyAgeRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r VerificationsApiVerifyAgeRequest) Mode(mode string) VerificationsApiVerifyAgeRequest {
@@ -275,8 +274,19 @@ func (a *VerificationsApiService) VerifyAgeExecute(r VerificationsApiVerifyAgeRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -319,16 +329,10 @@ type VerificationsApiVerifySelfieBvnRequest struct {
 	ctx context.Context
 	ApiService *VerificationsApiService
 	verifySelfieBvnRequest *VerifySelfieBvnRequest
-	appId *string
 }
 
 func (r VerificationsApiVerifySelfieBvnRequest) VerifySelfieBvnRequest(verifySelfieBvnRequest VerifySelfieBvnRequest) VerificationsApiVerifySelfieBvnRequest {
 	r.verifySelfieBvnRequest = &verifySelfieBvnRequest
-	return r
-}
-
-func (r VerificationsApiVerifySelfieBvnRequest) AppId(appId string) VerificationsApiVerifySelfieBvnRequest {
-	r.appId = &appId
 	return r
 }
 
@@ -390,11 +394,22 @@ func (a *VerificationsApiService) VerifySelfieBvnExecute(r VerificationsApiVerif
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
-	}
 	// body params
 	localVarPostBody = r.verifySelfieBvnRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -436,16 +451,10 @@ type VerificationsApiVerifySelfieNinRequest struct {
 	ctx context.Context
 	ApiService *VerificationsApiService
 	verificationsVerifySelfieNinRequest *VerificationsVerifySelfieNinRequest
-	appId *string
 }
 
 func (r VerificationsApiVerifySelfieNinRequest) VerificationsVerifySelfieNinRequest(verificationsVerifySelfieNinRequest VerificationsVerifySelfieNinRequest) VerificationsApiVerifySelfieNinRequest {
 	r.verificationsVerifySelfieNinRequest = &verificationsVerifySelfieNinRequest
-	return r
-}
-
-func (r VerificationsApiVerifySelfieNinRequest) AppId(appId string) VerificationsApiVerifySelfieNinRequest {
-	r.appId = &appId
 	return r
 }
 
@@ -507,11 +516,22 @@ func (a *VerificationsApiService) VerifySelfieNinExecute(r VerificationsApiVerif
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
-	}
 	// body params
 	localVarPostBody = r.verificationsVerifySelfieNinRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -553,16 +573,10 @@ type VerificationsApiVerifySelfieVninRequest struct {
 	ctx context.Context
 	ApiService *VerificationsApiService
 	verificationsVerifySelfieVninRequest *VerificationsVerifySelfieVninRequest
-	appId *string
 }
 
 func (r VerificationsApiVerifySelfieVninRequest) VerificationsVerifySelfieVninRequest(verificationsVerifySelfieVninRequest VerificationsVerifySelfieVninRequest) VerificationsApiVerifySelfieVninRequest {
 	r.verificationsVerifySelfieVninRequest = &verificationsVerifySelfieVninRequest
-	return r
-}
-
-func (r VerificationsApiVerifySelfieVninRequest) AppId(appId string) VerificationsApiVerifySelfieVninRequest {
-	r.appId = &appId
 	return r
 }
 
@@ -624,11 +638,22 @@ func (a *VerificationsApiService) VerifySelfieVninExecute(r VerificationsApiVeri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
-	}
 	// body params
 	localVarPostBody = r.verificationsVerifySelfieVninRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

@@ -51,11 +51,9 @@ public class PurchaseApiTest {
     public void sendAirtimeTest() throws ApiException {
         String destination = null;
         String amount = null;
-        String appId = null;
         PurchaseAirtimeResponse response = api.sendAirtime()
                 .destination(destination)
                 .amount(amount)
-                .appId(appId)
                 .execute();
         // TODO: test validations
     }

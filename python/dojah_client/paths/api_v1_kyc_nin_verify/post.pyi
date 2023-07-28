@@ -35,31 +35,6 @@ from dojah_client.model.verifications_verify_selfie_nin_request import Verificat
 
 from dojah_client.type.verifications_verify_selfie_nin_request import VerificationsVerifySelfieNinRequest
 
-# Header params
-AppIdSchema = schemas.StrSchema
-RequestRequiredHeaderParams = typing_extensions.TypedDict(
-    'RequestRequiredHeaderParams',
-    {
-    }
-)
-RequestOptionalHeaderParams = typing_extensions.TypedDict(
-    'RequestOptionalHeaderParams',
-    {
-        'AppId': typing.Union[AppIdSchema, str, ],
-    },
-    total=False
-)
-
-
-class RequestHeaderParams(RequestRequiredHeaderParams, RequestOptionalHeaderParams):
-    pass
-
-
-request_header_app_id = api_client.HeaderParameter(
-    name="AppId",
-    style=api_client.ParameterStyle.SIMPLE,
-    schema=AppIdSchema,
-)
 # body param
 SchemaForRequestBodyApplicationJson = VerificationsVerifySelfieNinRequestSchema
 
@@ -103,25 +78,19 @@ class BaseApi(api_client.Api):
         self,
         nin: typing.Optional[str] = None,
         selfie_image: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
-        _header_params = {}
         _body = {}
         if nin is not None:
             _body["nin"] = nin
         if selfie_image is not None:
             _body["selfie_image"] = selfie_image
         args.body = _body
-        if app_id is not None:
-            _header_params["AppId"] = app_id
-        args.header = _header_params
         return args
 
     async def _averify_selfie_nin_oapg(
         self,
         body: typing.Any = None,
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -138,18 +107,9 @@ class BaseApi(api_client.Api):
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -244,7 +204,6 @@ class BaseApi(api_client.Api):
     def _verify_selfie_nin_oapg(
         self,
         body: typing.Any = None,
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -260,18 +219,9 @@ class BaseApi(api_client.Api):
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -340,7 +290,6 @@ class VerifySelfieNin(BaseApi):
         self,
         nin: typing.Optional[str] = None,
         selfie_image: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -349,18 +298,15 @@ class VerifySelfieNin(BaseApi):
         args = self._verify_selfie_nin_mapped_args(
             nin=nin,
             selfie_image=selfie_image,
-            app_id=app_id,
         )
         return await self._averify_selfie_nin_oapg(
             body=args.body,
-            header_params=args.header,
         )
     
     def verify_selfie_nin(
         self,
         nin: typing.Optional[str] = None,
         selfie_image: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -368,11 +314,9 @@ class VerifySelfieNin(BaseApi):
         args = self._verify_selfie_nin_mapped_args(
             nin=nin,
             selfie_image=selfie_image,
-            app_id=app_id,
         )
         return self._verify_selfie_nin_oapg(
             body=args.body,
-            header_params=args.header,
         )
 
 class ApiForpost(BaseApi):
@@ -382,7 +326,6 @@ class ApiForpost(BaseApi):
         self,
         nin: typing.Optional[str] = None,
         selfie_image: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -391,18 +334,15 @@ class ApiForpost(BaseApi):
         args = self._verify_selfie_nin_mapped_args(
             nin=nin,
             selfie_image=selfie_image,
-            app_id=app_id,
         )
         return await self._averify_selfie_nin_oapg(
             body=args.body,
-            header_params=args.header,
         )
     
     def post(
         self,
         nin: typing.Optional[str] = None,
         selfie_image: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -410,10 +350,8 @@ class ApiForpost(BaseApi):
         args = self._verify_selfie_nin_mapped_args(
             nin=nin,
             selfie_image=selfie_image,
-            app_id=app_id,
         )
         return self._verify_selfie_nin_oapg(
             body=args.body,
-            header_params=args.header,
         )
 

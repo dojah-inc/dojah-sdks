@@ -29,13 +29,12 @@ namespace Dojah.Net.Api
         /// Voters ID
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object GetVoter(string appId = default(string), int? id = default(int?), string firstName = default(string), string lastName = default(string), int operationIndex = 0);
+        Object GetVoter(int? id = default(int?), string firstName = default(string), string lastName = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Voters ID
@@ -44,13 +43,12 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> GetVoterWithHttpInfo(string appId = default(string), int? id = default(int?), string firstName = default(string), string lastName = default(string), int operationIndex = 0);
+        ApiResponse<Object> GetVoterWithHttpInfo(int? id = default(int?), string firstName = default(string), string lastName = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -67,14 +65,13 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> GetVoterAsync(string appId = default(string), int? id = default(int?), string firstName = default(string), string lastName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> GetVoterAsync(int? id = default(int?), string firstName = default(string), string lastName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Voters ID
@@ -83,14 +80,13 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetVoterWithHttpInfoAsync(string appId = default(string), int? id = default(int?), string firstName = default(string), string lastName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetVoterWithHttpInfoAsync(int? id = default(int?), string firstName = default(string), string lastName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -215,15 +211,14 @@ namespace Dojah.Net.Api
         /// Voters ID 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object GetVoter(string appId = default(string), int? id = default(int?), string firstName = default(string), string lastName = default(string), int operationIndex = 0)
+        public Object GetVoter(int? id = default(int?), string firstName = default(string), string lastName = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = GetVoterWithHttpInfo(appId, id, firstName, lastName);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = GetVoterWithHttpInfo(id, firstName, lastName);
             return localVarResponse.Data;
         }
 
@@ -231,13 +226,12 @@ namespace Dojah.Net.Api
         /// Voters ID 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public Dojah.Net.Client.ApiResponse<Object> GetVoterWithHttpInfo(string appId = default(string), int? id = default(int?), string firstName = default(string), string lastName = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<Object> GetVoterWithHttpInfo(int? id = default(int?), string firstName = default(string), string lastName = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -273,14 +267,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "last_name", lastName, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "UGKYCApi.GetVoter";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Object>("/api/v1/ug/kyc/voter", localVarRequestOptions, this.Configuration);
@@ -300,16 +295,15 @@ namespace Dojah.Net.Api
         /// Voters ID 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> GetVoterAsync(string appId = default(string), int? id = default(int?), string firstName = default(string), string lastName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> GetVoterAsync(int? id = default(int?), string firstName = default(string), string lastName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await GetVoterWithHttpInfoAsync(appId, id, firstName, lastName, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await GetVoterWithHttpInfoAsync(id, firstName, lastName, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -317,14 +311,13 @@ namespace Dojah.Net.Api
         /// Voters ID 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> GetVoterWithHttpInfoAsync(string appId = default(string), int? id = default(int?), string firstName = default(string), string lastName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> GetVoterWithHttpInfoAsync(int? id = default(int?), string firstName = default(string), string lastName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -361,14 +354,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "last_name", lastName, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "UGKYCApi.GetVoter";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/api/v1/ug/kyc/voter", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

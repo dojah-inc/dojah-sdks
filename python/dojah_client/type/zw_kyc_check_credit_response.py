@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.zw_kyc_check_credit_response_entity import ZwKycCheckCreditResponseEntity
 
 class RequiredZwKycCheckCreditResponse(TypedDict):
     pass
 
 class OptionalZwKycCheckCreditResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: ZwKycCheckCreditResponseEntity
 
 class ZwKycCheckCreditResponse(RequiredZwKycCheckCreditResponse, OptionalZwKycCheckCreditResponse):
     pass

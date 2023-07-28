@@ -61,7 +61,6 @@ namespace Dojah.Net.Test.Api
         public void CheckCreditTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string idNumber = null;
             //string name = null;
             //string surname = null;
@@ -69,7 +68,7 @@ namespace Dojah.Net.Test.Api
             //string dob = null;
             //string maritalStatus = null;
             //int? mobileNumber = null;
-            //var response = instance.CheckCredit(appId, idNumber, name, surname, gender, dob, maritalStatus, mobileNumber);
+            //var response = instance.CheckCredit(idNumber, name, surname, gender, dob, maritalStatus, mobileNumber);
             //Assert.IsType<ZwKycCheckCreditResponse>(response);
         }
 
@@ -80,9 +79,8 @@ namespace Dojah.Net.Test.Api
         public void VerifyIdTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string id = null;
-            //var response = instance.VerifyId(appId, id);
+            //var response = instance.VerifyId(id);
             //Assert.IsType<ZwKycVerifyIdResponse>(response);
         }
     }

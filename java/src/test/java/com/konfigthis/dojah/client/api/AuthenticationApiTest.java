@@ -56,9 +56,7 @@ public class AuthenticationApiTest {
      */
     @Test
     public void getSenderIdTest() throws ApiException {
-        String appId = null;
         GetSenderIdResponse response = api.getSenderId()
-                .appId(appId)
                 .execute();
         // TODO: test validations
     }
@@ -70,10 +68,8 @@ public class AuthenticationApiTest {
      */
     @Test
     public void getSmsStatusTest() throws ApiException {
-        String appId = null;
         String messageId = null;
         GetSmsStatusResponse response = api.getSmsStatus()
-                .appId(appId)
                 .messageId(messageId)
                 .execute();
         // TODO: test validations
@@ -87,10 +83,8 @@ public class AuthenticationApiTest {
     @Test
     public void requestSenderIdTest() throws ApiException {
         String senderId = null;
-        String appId = null;
         RequestSenderIdResponse response = api.requestSenderId()
                 .senderId(senderId)
-                .appId(appId)
                 .execute();
         // TODO: test validations
     }
@@ -107,14 +101,12 @@ public class AuthenticationApiTest {
         String channel = null;
         String senderId = null;
         Boolean priority = null;
-        String appId = null;
         AuthenticationSendOtpResponse response = api.sendOtp()
                 .destination(destination)
                 .length(length)
                 .channel(channel)
                 .senderId(senderId)
                 .priority(priority)
-                .appId(appId)
                 .execute();
         // TODO: test validations
     }
@@ -130,13 +122,11 @@ public class AuthenticationApiTest {
         String message = null;
         String channel = null;
         String senderId = null;
-        String appId = null;
         SendSmsResponse response = api.sendSms()
                 .destination(destination)
                 .message(message)
                 .channel(channel)
                 .senderId(senderId)
-                .appId(appId)
                 .execute();
         // TODO: test validations
     }
@@ -148,11 +138,9 @@ public class AuthenticationApiTest {
      */
     @Test
     public void validateOtpTest() throws ApiException {
-        String appId = null;
         String referenceId = null;
         Integer code = null;
         AuthenticationValidateOtpResponse response = api.validateOtp()
-                .appId(appId)
                 .referenceId(referenceId)
                 .code(code)
                 .execute();

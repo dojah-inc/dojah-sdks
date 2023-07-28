@@ -35,31 +35,6 @@ from dojah_client.model.kyc_check_liveness_request import KycCheckLivenessReques
 
 from dojah_client.type.kyc_check_liveness_request import KycCheckLivenessRequest
 
-# Header params
-AppIdSchema = schemas.StrSchema
-RequestRequiredHeaderParams = typing_extensions.TypedDict(
-    'RequestRequiredHeaderParams',
-    {
-    }
-)
-RequestOptionalHeaderParams = typing_extensions.TypedDict(
-    'RequestOptionalHeaderParams',
-    {
-        'AppId': typing.Union[AppIdSchema, str, ],
-    },
-    total=False
-)
-
-
-class RequestHeaderParams(RequestRequiredHeaderParams, RequestOptionalHeaderParams):
-    pass
-
-
-request_header_app_id = api_client.HeaderParameter(
-    name="AppId",
-    style=api_client.ParameterStyle.SIMPLE,
-    schema=AppIdSchema,
-)
 # body param
 SchemaForRequestBodyApplicationJson = KycCheckLivenessRequestSchema
 
@@ -102,23 +77,17 @@ class BaseApi(api_client.Api):
     def _check_liveness_mapped_args(
         self,
         image: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
-        _header_params = {}
         _body = {}
         if image is not None:
             _body["image"] = image
         args.body = _body
-        if app_id is not None:
-            _header_params["AppId"] = app_id
-        args.header = _header_params
         return args
 
     async def _acheck_liveness_oapg(
         self,
         body: typing.Any = None,
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -135,18 +104,9 @@ class BaseApi(api_client.Api):
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -164,6 +124,7 @@ class BaseApi(api_client.Api):
             method=method,
             configuration=self.api_client.configuration,
             body=body,
+            auth_settings=_auth,
             headers=_headers,
         )
         serialized_data = request_body_kyc_check_liveness_request.serialize(body, content_type)
@@ -179,6 +140,7 @@ class BaseApi(api_client.Api):
             fields=_fields,
             serialized_body=_body,
             body=body,
+            auth_settings=_auth,
             timeout=timeout,
         )
     
@@ -239,7 +201,6 @@ class BaseApi(api_client.Api):
     def _check_liveness_oapg(
         self,
         body: typing.Any = None,
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -255,18 +216,9 @@ class BaseApi(api_client.Api):
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -284,6 +236,7 @@ class BaseApi(api_client.Api):
             method=method,
             configuration=self.api_client.configuration,
             body=body,
+            auth_settings=_auth,
             headers=_headers,
         )
         serialized_data = request_body_kyc_check_liveness_request.serialize(body, content_type)
@@ -299,6 +252,7 @@ class BaseApi(api_client.Api):
             fields=_fields,
             serialized_body=_body,
             body=body,
+            auth_settings=_auth,
             timeout=timeout,
         )
     
@@ -332,7 +286,6 @@ class CheckLiveness(BaseApi):
     async def acheck_liveness(
         self,
         image: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -340,28 +293,23 @@ class CheckLiveness(BaseApi):
     ]:
         args = self._check_liveness_mapped_args(
             image=image,
-            app_id=app_id,
         )
         return await self._acheck_liveness_oapg(
             body=args.body,
-            header_params=args.header,
         )
     
     def check_liveness(
         self,
         image: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
     ]:
         args = self._check_liveness_mapped_args(
             image=image,
-            app_id=app_id,
         )
         return self._check_liveness_oapg(
             body=args.body,
-            header_params=args.header,
         )
 
 class ApiForpost(BaseApi):
@@ -370,7 +318,6 @@ class ApiForpost(BaseApi):
     async def apost(
         self,
         image: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -378,27 +325,22 @@ class ApiForpost(BaseApi):
     ]:
         args = self._check_liveness_mapped_args(
             image=image,
-            app_id=app_id,
         )
         return await self._acheck_liveness_oapg(
             body=args.body,
-            header_params=args.header,
         )
     
     def post(
         self,
         image: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
     ]:
         args = self._check_liveness_mapped_args(
             image=image,
-            app_id=app_id,
         )
         return self._check_liveness_oapg(
             body=args.body,
-            header_params=args.header,
         )
 

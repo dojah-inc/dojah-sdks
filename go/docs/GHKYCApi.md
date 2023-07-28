@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## GetDriversLicense
 
-> GetDriversLicenseResponse GetDriversLicense(ctx).AppId(appId).Id(id).FullName(fullName).DateOfBirth(dateOfBirth).Execute()
+> GetDriversLicenseResponse GetDriversLicense(ctx).Id(id).FullName(fullName).DateOfBirth(dateOfBirth).Execute()
 
 Driver's License
 
@@ -30,14 +30,13 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    id := "V0000000" // string |  (optional)
-    fullName := "John Doe" // string |  (optional)
-    dateOfBirth := "1988-09-01" // string |  (optional)
+    id := ""V0000000"" // string |  (optional)
+    fullName := ""John Doe"" // string |  (optional)
+    dateOfBirth := ""1988-09-01"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.GHKYCApi.GetDriversLicense(context.Background()).AppId(appId).Id(id).FullName(fullName).DateOfBirth(dateOfBirth).Execute()
+    resp, r, err := apiClient.GHKYCApi.GetDriversLicense(context.Background()).Id(id).FullName(fullName).DateOfBirth(dateOfBirth).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GHKYCApi.GetDriversLicense``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -58,7 +57,6 @@ Other parameters are passed through a pointer to a apiGetDriversLicenseRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **id** | **string** |  | 
  **fullName** | **string** |  | 
  **dateOfBirth** | **string** |  | 
@@ -69,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -83,7 +81,7 @@ No authorization required
 
 ## GetPassport
 
-> GetPassportResponse GetPassport(ctx).AppId(appId).Id(id).FirstName(firstName).LastName(lastName).MiddleName(middleName).DateOfBirth(dateOfBirth).Execute()
+> GetPassportResponse GetPassport(ctx).Id(id).FirstName(firstName).LastName(lastName).MiddleName(middleName).DateOfBirth(dateOfBirth).Execute()
 
 Passport
 
@@ -100,16 +98,15 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    id := "G111235468" // string |  (optional)
-    firstName := "John" // string |  (optional)
-    lastName := "Doe" // string |  (optional)
-    middleName := "Jack" // string |  (optional)
-    dateOfBirth := "1990-04-05" // string |  (optional)
+    id := ""G111235468"" // string |  (optional)
+    firstName := ""John"" // string |  (optional)
+    lastName := ""Doe"" // string |  (optional)
+    middleName := ""Jack"" // string |  (optional)
+    dateOfBirth := ""1990-04-05"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.GHKYCApi.GetPassport(context.Background()).AppId(appId).Id(id).FirstName(firstName).LastName(lastName).MiddleName(middleName).DateOfBirth(dateOfBirth).Execute()
+    resp, r, err := apiClient.GHKYCApi.GetPassport(context.Background()).Id(id).FirstName(firstName).LastName(lastName).MiddleName(middleName).DateOfBirth(dateOfBirth).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GHKYCApi.GetPassport``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -130,7 +127,6 @@ Other parameters are passed through a pointer to a apiGetPassportRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **id** | **string** |  | 
  **firstName** | **string** |  | 
  **lastName** | **string** |  | 
@@ -143,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -157,7 +153,7 @@ No authorization required
 
 ## GetSsnit
 
-> GetSsnitResponse GetSsnit(ctx).AppId(appId).Id(id).FullName(fullName).DateOfBirth(dateOfBirth).Execute()
+> GetSsnitResponse GetSsnit(ctx).Id(id).FullName(fullName).DateOfBirth(dateOfBirth).Execute()
 
 SSNIT
 
@@ -174,14 +170,13 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    id := "G0000000" // string |  (optional)
-    fullName := "John Doe" // string |  (optional)
-    dateOfBirth := "1990-04-05" // string |  (optional)
+    id := ""G0000000"" // string |  (optional)
+    fullName := ""John Doe"" // string |  (optional)
+    dateOfBirth := ""1990-04-05"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.GHKYCApi.GetSsnit(context.Background()).AppId(appId).Id(id).FullName(fullName).DateOfBirth(dateOfBirth).Execute()
+    resp, r, err := apiClient.GHKYCApi.GetSsnit(context.Background()).Id(id).FullName(fullName).DateOfBirth(dateOfBirth).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GHKYCApi.GetSsnit``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -202,7 +197,6 @@ Other parameters are passed through a pointer to a apiGetSsnitRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **id** | **string** |  | 
  **fullName** | **string** |  | 
  **dateOfBirth** | **string** |  | 
@@ -213,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -227,7 +221,7 @@ No authorization required
 
 ## GetVoter
 
-> map[string]interface{} GetVoter(ctx).AppId(appId).Id(id).FullName(fullName).IsNewId(isNewId).Execute()
+> map[string]interface{} GetVoter(ctx).Id(id).FullName(fullName).IsNewId(isNewId).Execute()
 
 Voter ID Lookup
 
@@ -244,14 +238,13 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
     id := int32(6423007613) // int32 |  (optional)
-    fullName := "John Doe" // string |  (optional)
-    isNewId := true // bool |  (optional)
+    fullName := ""John Doe"" // string |  (optional)
+    isNewId := false // bool |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.GHKYCApi.GetVoter(context.Background()).AppId(appId).Id(id).FullName(fullName).IsNewId(isNewId).Execute()
+    resp, r, err := apiClient.GHKYCApi.GetVoter(context.Background()).Id(id).FullName(fullName).IsNewId(isNewId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GHKYCApi.GetVoter``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -272,7 +265,6 @@ Other parameters are passed through a pointer to a apiGetVoterRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **id** | **int32** |  | 
  **fullName** | **string** |  | 
  **isNewId** | **bool** |  | 
@@ -283,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

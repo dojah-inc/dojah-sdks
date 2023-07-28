@@ -10,7 +10,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="checkCredit"></a>
 # **checkCredit**
-> ZwKycCheckCreditResponse checkCredit().appId(appId).idNumber(idNumber).name(name).surname(surname).gender(gender).dob(dob).maritalStatus(maritalStatus).mobileNumber(mobileNumber).execute();
+> ZwKycCheckCreditResponse checkCredit().idNumber(idNumber).name(name).surname(surname).gender(gender).dob(dob).maritalStatus(maritalStatus).mobileNumber(mobileNumber).execute();
 
 Credit Check
 
@@ -21,6 +21,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.ZwKycApi;
 import java.util.List;
@@ -31,9 +32,11 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String idNumber = "45190221E45";
     String name = "CHIMUNDEGE";
     String surname = "CHIMUNDEGE";
@@ -45,7 +48,6 @@ public class Example {
       ZwKycCheckCreditResponse result = client
               .zwKyc
               .checkCredit()
-              .appId(appId)
               .idNumber(idNumber)
               .name(name)
               .surname(surname)
@@ -71,7 +73,6 @@ public class Example {
       ApiResponse<ZwKycCheckCreditResponse> response = client
               .zwKyc
               .checkCredit()
-              .appId(appId)
               .idNumber(idNumber)
               .name(name)
               .surname(surname)
@@ -101,7 +102,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **idNumber** | **String**|  | [optional] |
 | **name** | **String**|  | [optional] |
 | **surname** | **String**|  | [optional] |
@@ -116,7 +116,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -130,7 +130,7 @@ No authorization required
 
 <a name="verifyId"></a>
 # **verifyId**
-> ZwKycVerifyIdResponse verifyId().appId(appId).id(id).execute();
+> ZwKycVerifyIdResponse verifyId().id(id).execute();
 
 National ID Verification
 
@@ -141,6 +141,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.ZwKycApi;
 import java.util.List;
@@ -151,15 +152,16 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String id = "45190221E45";
     try {
       ZwKycVerifyIdResponse result = client
               .zwKyc
               .verifyId()
-              .appId(appId)
               .id(id)
               .execute();
       System.out.println(result);
@@ -179,7 +181,6 @@ public class Example {
       ApiResponse<ZwKycVerifyIdResponse> response = client
               .zwKyc
               .verifyId()
-              .appId(appId)
               .id(id)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -203,7 +204,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **id** | **String**|  | [optional] |
 
 ### Return type
@@ -212,7 +212,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

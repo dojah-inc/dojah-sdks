@@ -62,8 +62,7 @@ namespace Dojah.Net.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //KycCheckLivenessRequest kycCheckLivenessRequest = null;
-            //string appId = null;
-            //var response = instance.CheckLiveness(kycCheckLivenessRequest, appId);
+            //var response = instance.CheckLiveness(kycCheckLivenessRequest);
             //Assert.IsType<Object>(response);
         }
 
@@ -74,9 +73,8 @@ namespace Dojah.Net.Test.Api
         public void GetAccountsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string bvn = null;
-            //var response = instance.GetAccounts(appId, bvn);
+            //var response = instance.GetAccounts(bvn);
             //Assert.IsType<Object>(response);
         }
 
@@ -87,9 +85,8 @@ namespace Dojah.Net.Test.Api
         public void GetAddressVerificationTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string referenceId = null;
-            //var response = instance.GetAddressVerification(appId, referenceId);
+            //var response = instance.GetAddressVerification(referenceId);
             //Assert.IsType<Object>(response);
         }
 
@@ -100,10 +97,9 @@ namespace Dojah.Net.Test.Api
         public void GetBvnFromNubanTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //int? bankCode = null;
             //int? accountNumber = null;
-            //var response = instance.GetBvnFromNuban(appId, bankCode, accountNumber);
+            //var response = instance.GetBvnFromNuban(bankCode, accountNumber);
             //Assert.IsType<Object>(response);
         }
 
@@ -114,9 +110,8 @@ namespace Dojah.Net.Test.Api
         public void GetVinTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string vin = null;
-            //var response = instance.GetVin(appId, vin);
+            //var response = instance.GetVin(vin);
             //Assert.IsType<GetVinResponse>(response);
         }
 
@@ -127,9 +122,8 @@ namespace Dojah.Net.Test.Api
         public void SubmitAddressTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //KycSubmitAddressRequest kycSubmitAddressRequest = null;
-            //var response = instance.SubmitAddress(appId, kycSubmitAddressRequest);
+            //var response = instance.SubmitAddress(kycSubmitAddressRequest);
             //Assert.IsType<KycSubmitAddressResponse>(response);
         }
     }

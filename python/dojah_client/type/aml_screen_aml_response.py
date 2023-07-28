@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.aml_screen_aml_response_entity import AmlScreenAmlResponseEntity
 
 class RequiredAmlScreenAmlResponse(TypedDict):
     pass
 
 class OptionalAmlScreenAmlResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: AmlScreenAmlResponseEntity
 
 class AmlScreenAmlResponse(RequiredAmlScreenAmlResponse, OptionalAmlScreenAmlResponse):
     pass

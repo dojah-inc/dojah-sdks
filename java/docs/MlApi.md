@@ -9,7 +9,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="verifyPhotoIdWithSelfie"></a>
 # **verifyPhotoIdWithSelfie**
-> Object verifyPhotoIdWithSelfie(mlVerifyPhotoIdWithSelfieRequest).appId(appId).execute();
+> Object verifyPhotoIdWithSelfie(mlVerifyPhotoIdWithSelfieRequest).execute();
 
 KYC - Selfie Photo ID Verification
 
@@ -33,17 +33,18 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
     String selfieImage = "selfieImage_example";
     String photoidImage = "photoidImage_example";
-    String appId = "{{app_id}}";
     try {
       Object result = client
               .ml
               .verifyPhotoIdWithSelfie()
               .selfieImage(selfieImage)
               .photoidImage(photoidImage)
-              .appId(appId)
               .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling MlApi#verifyPhotoIdWithSelfie");
@@ -60,7 +61,6 @@ public class Example {
               .verifyPhotoIdWithSelfie()
               .selfieImage(selfieImage)
               .photoidImage(photoidImage)
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -84,7 +84,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **mlVerifyPhotoIdWithSelfieRequest** | [**MlVerifyPhotoIdWithSelfieRequest**](MlVerifyPhotoIdWithSelfieRequest.md)|  | |
-| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -92,7 +91,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

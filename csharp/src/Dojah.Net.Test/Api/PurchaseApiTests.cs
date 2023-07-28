@@ -62,8 +62,7 @@ namespace Dojah.Net.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //PurchaseAirtimeRequest purchaseAirtimeRequest = null;
-            //string appId = null;
-            //var response = instance.SendAirtime(purchaseAirtimeRequest, appId);
+            //var response = instance.SendAirtime(purchaseAirtimeRequest);
             //Assert.IsType<PurchaseAirtimeResponse>(response);
         }
     }

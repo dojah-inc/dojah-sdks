@@ -8,7 +8,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getvoter"></a>
 # **GetVoter**
-> Object GetVoter (string appId = null, int? id = null, string firstName = null, string lastName = null)
+> Object GetVoter (int? id = null, string firstName = null, string lastName = null)
 
 Voters ID
 
@@ -17,7 +17,6 @@ Voters ID
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -27,21 +26,21 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new UGKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
             var id = 67335751;  // int? |  (optional) 
-            var firstName = Happy;  // string |  (optional) 
-            var lastName = Christmas;  // string |  (optional) 
+            var firstName = "Happy";  // string |  (optional) 
+            var lastName = "Christmas";  // string |  (optional) 
 
             try
             {
                 // Voters ID
-                Object result = apiInstance.GetVoter(appId, id, firstName, lastName);
+                Object result = client.UGKYC.GetVoter(id, firstName, lastName);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -68,7 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Voters ID
-    ApiResponse<Object> response = apiInstance.GetVoterWithHttpInfo(appId, id, firstName, lastName);
+    ApiResponse<Object> response = apiInstance.GetVoterWithHttpInfo(id, firstName, lastName);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -85,7 +84,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **id** | **int?** |  | [optional]  |
 | **firstName** | **string** |  | [optional]  |
 | **lastName** | **string** |  | [optional]  |
@@ -96,7 +94,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

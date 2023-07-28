@@ -61,11 +61,10 @@ namespace Dojah.Net.Test.Api
         public void BusinessDetailTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string internationalNumber = null;
             //string countryCode = null;
             //bool? full = null;
-            //var response = instance.BusinessDetail(appId, internationalNumber, countryCode, full);
+            //var response = instance.BusinessDetail(internationalNumber, countryCode, full);
             //Assert.IsType<Object>(response);
         }
 
@@ -76,10 +75,9 @@ namespace Dojah.Net.Test.Api
         public void BusinessSearchTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string countryCode = null;
             //int? company = null;
-            //var response = instance.BusinessSearch(appId, countryCode, company);
+            //var response = instance.BusinessSearch(countryCode, company);
             //Assert.IsType<Object>(response);
         }
 
@@ -90,10 +88,9 @@ namespace Dojah.Net.Test.Api
         public void GetCacTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //int? rcNumber = null;
             //string companyName = null;
-            //var response = instance.GetCac(appId, rcNumber, companyName);
+            //var response = instance.GetCac(rcNumber, companyName);
             //Assert.IsType<KybGetCacResponse>(response);
         }
 
@@ -104,9 +101,8 @@ namespace Dojah.Net.Test.Api
         public void GetTinTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string tin = null;
-            //var response = instance.GetTin(appId, tin);
+            //var response = instance.GetTin(tin);
             //Assert.IsType<KybGetTinResponse>(response);
         }
     }

@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.fraud_screen_user_response_entity import FraudScreenUserResponseEntity
 
 class RequiredFraudScreenUserResponse(TypedDict):
     pass
 
 class OptionalFraudScreenUserResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: FraudScreenUserResponseEntity
 
 class FraudScreenUserResponse(RequiredFraudScreenUserResponse, OptionalFraudScreenUserResponse):
     pass

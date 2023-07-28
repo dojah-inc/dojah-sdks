@@ -21,6 +21,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const sendAirtimeResponse = await dojah.purchase.sendAirtime({
@@ -37,7 +38,6 @@ console.log(sendAirtimeResponse);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **purchaseAirtimeRequest** | **PurchaseAirtimeRequest**|  |
- **appId** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type

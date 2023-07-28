@@ -61,9 +61,8 @@ namespace Dojah.Net.Test.Api
         public void GetNationalIdTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //int? id = null;
-            //var response = instance.GetNationalId(appId, id);
+            //var response = instance.GetNationalId(id);
             //Assert.IsType<GetNationalIdResponse>(response);
         }
 
@@ -74,8 +73,7 @@ namespace Dojah.Net.Test.Api
         public void GetPassportTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
-            //var response = instance.GetPassport(appId);
+            //var response = instance.GetPassport();
             //Assert.IsType<Object>(response);
         }
     }

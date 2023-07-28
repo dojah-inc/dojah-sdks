@@ -51,10 +51,8 @@ public class FraudApiTest {
      */
     @Test
     public void getEmailReputationTest() throws ApiException {
-        String appId = null;
         String email = null;
         FraudGetEmailReputationResponse response = api.getEmailReputation()
-                .appId(appId)
                 .email(email)
                 .execute();
         // TODO: test validations
@@ -67,10 +65,8 @@ public class FraudApiTest {
      */
     @Test
     public void getIpReputationTest() throws ApiException {
-        String appId = null;
         String ipAddress = null;
         FraudGetIpReputationResponse response = api.getIpReputation()
-                .appId(appId)
                 .ipAddress(ipAddress)
                 .execute();
         // TODO: test validations
@@ -83,10 +79,8 @@ public class FraudApiTest {
      */
     @Test
     public void screenPhoneTest() throws ApiException {
-        String appId = null;
         Integer phoneNumber = null;
         FraudScreenPhoneResponse response = api.screenPhone()
-                .appId(appId)
                 .phoneNumber(phoneNumber)
                 .execute();
         // TODO: test validations
@@ -99,7 +93,6 @@ public class FraudApiTest {
      */
     @Test
     public void screenUserTest() throws ApiException {
-        String appId = null;
         String firstName = null;
         String lastName = null;
         String dateOfBirth = null;
@@ -107,7 +100,6 @@ public class FraudApiTest {
         String phone = null;
         String ipAddress = null;
         FraudScreenUserResponse response = api.screenUser()
-                .appId(appId)
                 .firstName(firstName)
                 .lastName(lastName)
                 .dateOfBirth(dateOfBirth)

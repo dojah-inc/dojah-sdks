@@ -25,13 +25,7 @@ type FraudApiService service
 type FraudApiGetEmailReputationRequest struct {
 	ctx context.Context
 	ApiService *FraudApiService
-	appId *string
 	email *string
-}
-
-func (r FraudApiGetEmailReputationRequest) AppId(appId string) FraudApiGetEmailReputationRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r FraudApiGetEmailReputationRequest) Email(email string) FraudApiGetEmailReputationRequest {
@@ -97,8 +91,19 @@ func (a *FraudApiService) GetEmailReputationExecute(r FraudApiGetEmailReputation
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -140,13 +145,7 @@ func (a *FraudApiService) GetEmailReputationExecute(r FraudApiGetEmailReputation
 type FraudApiGetIpReputationRequest struct {
 	ctx context.Context
 	ApiService *FraudApiService
-	appId *string
 	ipAddress *string
-}
-
-func (r FraudApiGetIpReputationRequest) AppId(appId string) FraudApiGetIpReputationRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r FraudApiGetIpReputationRequest) IpAddress(ipAddress string) FraudApiGetIpReputationRequest {
@@ -212,8 +211,19 @@ func (a *FraudApiService) GetIpReputationExecute(r FraudApiGetIpReputationReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -255,13 +265,7 @@ func (a *FraudApiService) GetIpReputationExecute(r FraudApiGetIpReputationReques
 type FraudApiScreenPhoneRequest struct {
 	ctx context.Context
 	ApiService *FraudApiService
-	appId *string
 	phoneNumber *int32
-}
-
-func (r FraudApiScreenPhoneRequest) AppId(appId string) FraudApiScreenPhoneRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r FraudApiScreenPhoneRequest) PhoneNumber(phoneNumber int32) FraudApiScreenPhoneRequest {
@@ -327,8 +331,19 @@ func (a *FraudApiService) ScreenPhoneExecute(r FraudApiScreenPhoneRequest) (*Fra
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -370,18 +385,12 @@ func (a *FraudApiService) ScreenPhoneExecute(r FraudApiScreenPhoneRequest) (*Fra
 type FraudApiScreenUserRequest struct {
 	ctx context.Context
 	ApiService *FraudApiService
-	appId *string
 	firstName *string
 	lastName *string
 	dateOfBirth *string
 	email *string
 	phone *string
 	ipAddress *string
-}
-
-func (r FraudApiScreenUserRequest) AppId(appId string) FraudApiScreenUserRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r FraudApiScreenUserRequest) FirstName(firstName string) FraudApiScreenUserRequest {
@@ -487,8 +496,19 @@ func (a *FraudApiService) ScreenUserExecute(r FraudApiScreenUserRequest) (*Fraud
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

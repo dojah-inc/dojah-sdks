@@ -25,15 +25,9 @@ type KYBApiService service
 type KYBApiBusinessDetailRequest struct {
 	ctx context.Context
 	ApiService *KYBApiService
-	appId *string
 	internationalNumber *string
 	countryCode *string
 	full *bool
-}
-
-func (r KYBApiBusinessDetailRequest) AppId(appId string) KYBApiBusinessDetailRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r KYBApiBusinessDetailRequest) InternationalNumber(internationalNumber string) KYBApiBusinessDetailRequest {
@@ -115,8 +109,19 @@ func (a *KYBApiService) BusinessDetailExecute(r KYBApiBusinessDetailRequest) (ma
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -158,14 +163,8 @@ func (a *KYBApiService) BusinessDetailExecute(r KYBApiBusinessDetailRequest) (ma
 type KYBApiBusinessSearchRequest struct {
 	ctx context.Context
 	ApiService *KYBApiService
-	appId *string
 	countryCode *string
 	company *int32
-}
-
-func (r KYBApiBusinessSearchRequest) AppId(appId string) KYBApiBusinessSearchRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r KYBApiBusinessSearchRequest) CountryCode(countryCode string) KYBApiBusinessSearchRequest {
@@ -239,8 +238,19 @@ func (a *KYBApiService) BusinessSearchExecute(r KYBApiBusinessSearchRequest) (ma
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -282,14 +292,8 @@ func (a *KYBApiService) BusinessSearchExecute(r KYBApiBusinessSearchRequest) (ma
 type KYBApiGetCacRequest struct {
 	ctx context.Context
 	ApiService *KYBApiService
-	appId *string
 	rcNumber *int32
 	companyName *string
-}
-
-func (r KYBApiGetCacRequest) AppId(appId string) KYBApiGetCacRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r KYBApiGetCacRequest) RcNumber(rcNumber int32) KYBApiGetCacRequest {
@@ -363,8 +367,19 @@ func (a *KYBApiService) GetCacExecute(r KYBApiGetCacRequest) (*KybGetCacResponse
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -406,13 +421,7 @@ func (a *KYBApiService) GetCacExecute(r KYBApiGetCacRequest) (*KybGetCacResponse
 type KYBApiGetTinRequest struct {
 	ctx context.Context
 	ApiService *KYBApiService
-	appId *string
 	tin *string
-}
-
-func (r KYBApiGetTinRequest) AppId(appId string) KYBApiGetTinRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r KYBApiGetTinRequest) Tin(tin string) KYBApiGetTinRequest {
@@ -478,8 +487,19 @@ func (a *KYBApiService) GetTinExecute(r KYBApiGetTinRequest) (*KybGetTinResponse
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

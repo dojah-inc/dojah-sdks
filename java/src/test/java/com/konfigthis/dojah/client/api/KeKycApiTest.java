@@ -48,10 +48,8 @@ public class KeKycApiTest {
      */
     @Test
     public void getNationalIdTest() throws ApiException {
-        String appId = null;
         Integer id = null;
         GetNationalIdResponse response = api.getNationalId()
-                .appId(appId)
                 .id(id)
                 .execute();
         // TODO: test validations
@@ -64,9 +62,7 @@ public class KeKycApiTest {
      */
     @Test
     public void getPassportTest() throws ApiException {
-        String appId = null;
         Object response = api.getPassport()
-                .appId(appId)
                 .execute();
         // TODO: test validations
     }

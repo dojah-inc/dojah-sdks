@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetNin
 
-> map[string]interface{} GetNin(ctx).AppId(appId).FirstName(firstName).LastName(lastName).DateOfBirth(dateOfBirth).MothersLastName(mothersLastName).MothersFirstName(mothersFirstName).Execute()
+> map[string]interface{} GetNin(ctx).FirstName(firstName).LastName(lastName).DateOfBirth(dateOfBirth).MothersLastName(mothersLastName).MothersFirstName(mothersFirstName).Execute()
 
 Lookup TZ NIN
 
@@ -27,16 +27,15 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    firstName := "khafsa" // string |  (optional)
-    lastName := "mohammed" // string |  (optional)
-    dateOfBirth := "1994-01-11" // string |  (optional)
-    mothersLastName := "zulekha" // string |  (optional)
-    mothersFirstName := "kassim" // string |  (optional)
+    firstName := ""khafsa"" // string |  (optional)
+    lastName := ""mohammed"" // string |  (optional)
+    dateOfBirth := ""1994-01-11"" // string |  (optional)
+    mothersLastName := ""zulekha"" // string |  (optional)
+    mothersFirstName := ""kassim"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.TZKYCApi.GetNin(context.Background()).AppId(appId).FirstName(firstName).LastName(lastName).DateOfBirth(dateOfBirth).MothersLastName(mothersLastName).MothersFirstName(mothersFirstName).Execute()
+    resp, r, err := apiClient.TZKYCApi.GetNin(context.Background()).FirstName(firstName).LastName(lastName).DateOfBirth(dateOfBirth).MothersLastName(mothersLastName).MothersFirstName(mothersFirstName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TZKYCApi.GetNin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -57,7 +56,6 @@ Other parameters are passed through a pointer to a apiGetNinRequest struct via t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **firstName** | **string** |  | 
  **lastName** | **string** |  | 
  **dateOfBirth** | **string** |  | 
@@ -70,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

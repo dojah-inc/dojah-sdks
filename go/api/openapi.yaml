@@ -35,15 +35,6 @@ paths:
     get:
       operationId: Kyb_getCac
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 1432074
         explode: true
         in: query
@@ -120,6 +111,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: 'KYC - Get CAC '
       tags:
       - KYB
@@ -129,15 +121,6 @@ paths:
     get:
       operationId: Kyb_getTin
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 24111697-0001
         explode: true
         in: query
@@ -205,6 +188,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - Fetch Tin
       tags:
       - KYB
@@ -214,15 +198,6 @@ paths:
     get:
       operationId: Kyb_businessSearch
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: NG
         explode: true
         in: query
@@ -248,6 +223,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/KybBusinessSearchResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: Business Search
       tags:
       - KYB
@@ -257,15 +234,6 @@ paths:
     get:
       operationId: Kyb_businessDetail
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: RC-1885308
         explode: true
         in: query
@@ -300,6 +268,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/KybBusinessDetailResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: Business Detail
       tags:
       - KYB
@@ -309,15 +279,6 @@ paths:
     get:
       operationId: GhKyc_getDriversLicense
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: V0000000
         explode: true
         in: query
@@ -441,6 +402,8 @@ paths:
                 x-konfig-original-example: chunked
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-gh-kyc-dl-get-responses-200-headers-Transfer-Encoding-schema
               style: simple
+      security:
+      - appIdAuth: []
       summary: Driver's License
       tags:
       - GH KYC
@@ -450,15 +413,6 @@ paths:
     get:
       operationId: GhKyc_getPassport
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: G111235468
         explode: true
         in: query
@@ -600,6 +554,8 @@ paths:
                 x-konfig-original-example: chunked
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-gh-kyc-passport-get-responses-200-headers-Transfer-Encoding-schema
               style: simple
+      security:
+      - appIdAuth: []
       summary: Passport
       tags:
       - GH KYC
@@ -609,15 +565,6 @@ paths:
     get:
       operationId: GhKyc_getSsnit
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: G0000000
         explode: true
         in: query
@@ -741,6 +688,8 @@ paths:
                 x-konfig-original-example: chunked
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-gh-kyc-ssnit-get-responses-200-headers-Transfer-Encoding-schema
               style: simple
+      security:
+      - appIdAuth: []
       summary: SSNIT
       tags:
       - GH KYC
@@ -750,15 +699,6 @@ paths:
     get:
       operationId: GhKyc_getVoter
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 6423007613
         explode: true
         in: query
@@ -793,6 +733,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/GhKycGetVoterResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: Voter ID Lookup
       tags:
       - GH KYC
@@ -802,15 +744,6 @@ paths:
     get:
       operationId: UgKyc_getVoter
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 67335751
         explode: true
         in: query
@@ -845,6 +778,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/GetVoterResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: Voters ID
       tags:
       - UG KYC
@@ -854,15 +789,6 @@ paths:
     get:
       operationId: KeKyc_getNationalId
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 24798402
         explode: true
         in: query
@@ -879,6 +805,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/GetNationalIdResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: KYC - National ID
       tags:
       - KE KYC
@@ -887,16 +815,7 @@ paths:
   /api/v1/ke/kyc/passport:
     get:
       operationId: KeKyc_getPassport
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       responses:
         "200":
           content:
@@ -904,6 +823,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/KeKycGetPassportResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: KYC - Passport
       tags:
       - KE KYC
@@ -913,15 +834,6 @@ paths:
     get:
       operationId: TzKyc_getNin
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: khafsa
         explode: true
         in: query
@@ -974,6 +886,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/TzKycGetNinResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: Lookup TZ NIN
       tags:
       - TZ KYC
@@ -983,15 +897,6 @@ paths:
     get:
       operationId: ZwKyc_verifyId
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 45190221E45
         explode: true
         in: query
@@ -1129,6 +1034,8 @@ paths:
                 x-konfig-original-example: timeout=5
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-zw-kyc-nin-get-responses-200-headers-Keep-Alive-schema
               style: simple
+      security:
+      - appIdAuth: []
       summary: National ID Verification
       tags:
       - ZW KYC
@@ -1138,15 +1045,6 @@ paths:
     get:
       operationId: ZwKyc_checkCredit
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 45190221E45
         explode: true
         in: query
@@ -1409,6 +1307,8 @@ paths:
                   ; ma=86400"
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-zw-kyc-fcb-get-responses-200-headers-alt-svc-schema
               style: simple
+      security:
+      - appIdAuth: []
       summary: Credit Check
       tags:
       - ZW KYC
@@ -1418,15 +1318,6 @@ paths:
     get:
       operationId: GlobalKyc_ukTwoPlusTwo
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: GBR
         explode: true
         in: query
@@ -1497,6 +1388,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/GlobalKycUkTwoPlusTwoResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: UK 2+2
       tags:
       - Global KYC
@@ -1506,15 +1399,6 @@ paths:
     get:
       operationId: GlobalKyc_getUsSsn
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: GBR
         explode: true
         in: query
@@ -1585,6 +1469,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/GlobalKycGetUsSsnResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: US SSN
       tags:
       - Global KYC
@@ -1594,15 +1480,6 @@ paths:
     get:
       operationId: GlobalKyc_caEkyc
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: GBR
         explode: true
         in: query
@@ -1673,6 +1550,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/GlobalKycCaEkycResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: Canada Ekyc
       tags:
       - Global KYC
@@ -1868,15 +1747,6 @@ paths:
     get:
       operationId: NigeriaKyc_getNuban
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 58
         explode: true
         in: query
@@ -1953,6 +1823,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - Get NUBAN Information
       tags:
       - Nigeria KYC
@@ -1962,15 +1833,6 @@ paths:
     get:
       operationId: NigeriaKyc_getBasicBvn
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 22468537919
         explode: true
         in: query
@@ -2038,6 +1900,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - Get Basic BVN Info
       tags:
       - Nigeria KYC
@@ -2047,15 +1910,6 @@ paths:
     get:
       operationId: NigeriaKyc_getBasicBvn1
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 22621998885
         explode: true
         in: query
@@ -2072,6 +1926,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/GetBasicBvnResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: KYC - Lookup BVN Basic 1
       tags:
       - Nigeria KYC
@@ -2081,15 +1937,6 @@ paths:
     get:
       operationId: NigeriaKyc_getNormalBvn
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 22342291445
         explode: true
         in: query
@@ -2157,6 +2004,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - Lookup BVN Normal
       tags:
       - Nigeria KYC
@@ -2166,15 +2014,6 @@ paths:
     get:
       operationId: NigeriaKyc_getNin
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 55648152772
         explode: true
         in: query
@@ -2242,6 +2081,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - Get NIN Info
       tags:
       - Nigeria KYC
@@ -2251,15 +2091,6 @@ paths:
     get:
       operationId: NigeriaKyc_getVnin
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: LC829995256998RD
         explode: true
         in: query
@@ -2276,6 +2107,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/GetVninResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: Lookup VNIN
       tags:
       - Nigeria KYC
@@ -2285,15 +2118,6 @@ paths:
     get:
       operationId: NigeriaKyc_getPremiumBvn
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 22200508254
         explode: true
         in: query
@@ -2457,6 +2281,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - Lookup BVN Premium
       tags:
       - Nigeria KYC
@@ -2466,15 +2291,6 @@ paths:
     get:
       operationId: NigeriaKyc_getBasicPhoneNumber
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 9131377829
         explode: true
         in: query
@@ -2493,6 +2309,7 @@ paths:
           description: Successful response
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: KYC Lookup Phone Number Basic
       tags:
       - Nigeria KYC
@@ -2502,15 +2319,6 @@ paths:
     get:
       operationId: NigeriaKyc_getPhoneNumber
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 8034628633
         explode: true
         in: query
@@ -2825,6 +2633,7 @@ paths:
               style: simple
       security:
       - noauthAuth: []
+        appIdAuth: []
       summary: KYC - Lookup Phone Number
       tags:
       - Nigeria KYC
@@ -2834,15 +2643,6 @@ paths:
     get:
       operationId: NigeriaKyc_getDriversLicense
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: FKJ49409AB13
         explode: true
         in: query
@@ -2910,6 +2710,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - Get Drivers License Info
       tags:
       - Nigeria KYC
@@ -2955,15 +2756,6 @@ paths:
     get:
       operationId: Kyc_getVin
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 90F5B20205096041114
         explode: true
         in: query
@@ -3110,6 +2902,7 @@ paths:
               style: simple
       security:
       - noauthAuth: []
+        appIdAuth: []
       summary: KYC - Get VIN
       tags:
       - KYC
@@ -3119,15 +2912,6 @@ paths:
     get:
       operationId: Kyc_getBvnFromNuban
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 57
         explode: true
         in: query
@@ -3155,6 +2939,7 @@ paths:
           description: Successful response
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: Lookup BVN from NUBAN
       tags:
       - KYC
@@ -3164,15 +2949,6 @@ paths:
     get:
       operationId: Kyc_getAddressVerification
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 69e10264-4b90-64fe-b4b7-c9dddafd0241
         explode: true
         in: query
@@ -3189,6 +2965,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/KycGetAddressVerificationResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: Fetch Address Verification Data
       tags:
       - KYC
@@ -3196,16 +2974,7 @@ paths:
       x-konfig-single-parameter-schema: konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-address
     post:
       operationId: Kyc_submitAddress
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -3386,6 +3155,8 @@ paths:
                   ; ma=86400"
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-kyc-address-post-responses-200-headers-alt-svc-schema
               style: simple
+      security:
+      - appIdAuth: []
       summary: Submit Address
       tags:
       - KYC
@@ -3395,15 +3166,6 @@ paths:
     get:
       operationId: Kyc_getAccounts
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: '22342291445 '
         explode: true
         in: query
@@ -3420,6 +3182,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/KycGetAccountsResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: 'KYC - Fetch Accounts '
       tags:
       - KYC
@@ -3428,16 +3192,7 @@ paths:
   /api/v1/ml/liveness:
     post:
       operationId: Kyc_checkLiveness
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -3451,6 +3206,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/KycCheckLivenessResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: Liveness Check
       tags:
       - KYC
@@ -3459,16 +3216,7 @@ paths:
   /v1/kyc/bvn/verify:
     post:
       operationId: Verifications_verifySelfieBvn
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -3484,6 +3232,7 @@ paths:
           description: Successful response
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: KYV - Selfie BVN Verificatoin
       tags:
       - Verifications
@@ -3492,16 +3241,7 @@ paths:
   /api/v1/kyc/nin/verify:
     post:
       operationId: Verifications_verifySelfieNin
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -3517,6 +3257,7 @@ paths:
           description: Successful response
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - Selfie NIN Verification
       tags:
       - Verifications
@@ -3526,15 +3267,6 @@ paths:
     get:
       operationId: Verifications_verifyAge
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: account_number
         explode: true
         in: query
@@ -3647,6 +3379,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - Age Verification
       tags:
       - Verifications
@@ -3656,15 +3389,6 @@ paths:
     get:
       operationId: Verifications_validateBvn
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 22250148240
         explode: true
         in: query
@@ -3701,6 +3425,7 @@ paths:
           description: Successful response
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - Validate BVN
       tags:
       - Verifications
@@ -3709,16 +3434,7 @@ paths:
   /api/v1/kyc/vnin/verify:
     post:
       operationId: Verifications_verifySelfieVnin
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -3732,6 +3448,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/VerificationsVerifySelfieVninResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: KYC - Selfie vNIN verification
       tags:
       - Verifications
@@ -3740,16 +3458,7 @@ paths:
   /api/v1/document/analysis:
     post:
       operationId: DocumentAnalysis_analyzeDocument
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       responses:
         "200":
           content:
@@ -3757,6 +3466,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/AnalyzeDocumentResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: KYC - Document Analysis
       tags:
       - Document Analysis
@@ -3765,16 +3476,7 @@ paths:
   /api/v1/messaging/sms:
     post:
       operationId: Authentication_sendSms
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -3845,6 +3547,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: Messaging - Send SMS
       tags:
       - Authentication
@@ -3854,15 +3557,6 @@ paths:
     get:
       operationId: Authentication_getSmsStatus
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 54818c8a-4aed-4e5f-b846-8274fd4e0bbd
         explode: true
         in: query
@@ -3930,6 +3624,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: Messaging - Get SMS Status
       tags:
       - Authentication
@@ -3938,16 +3633,7 @@ paths:
   /api/v1/messaging/otp:
     post:
       operationId: Authentication_sendOtp
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -4100,6 +3786,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: Messaging - Send OTP
       tags:
       - Authentication
@@ -4109,15 +3796,6 @@ paths:
     get:
       operationId: Authentication_validateOtp
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: a89e4b64-367f-414f-a189-1800bc364b05
         explode: true
         in: query
@@ -4194,6 +3872,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: Messaging - Validate OTP
       tags:
       - Authentication
@@ -4202,16 +3881,7 @@ paths:
   /api/v1/messaging/sender_ids:
     get:
       operationId: Authentication_getSenderId
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       responses:
         "200":
           content:
@@ -4270,6 +3940,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: Messaging - Get Sender IDs
       tags:
       - Authentication
@@ -4278,16 +3949,7 @@ paths:
   /api/v1/messaging/sender_id:
     post:
       operationId: Authentication_requestSenderId
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -4301,6 +3963,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/RequestSenderIdResponse'
           description: Successful response
+      security:
+      - appIdAuth: []
       summary: Messaging - Request Sender ID
       tags:
       - Authentication
@@ -4309,16 +3973,7 @@ paths:
   /api/v1/kyc/photoid/verify:
     post:
       operationId: Ml_verifyPhotoIdWithSelfie
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -4334,6 +3989,7 @@ paths:
           description: Successful response
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - Selfie Photo ID Verification
       tags:
       - ML
@@ -4489,15 +4145,6 @@ paths:
     get:
       operationId: Fraud_getIpReputation
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 102.215.56.170
         explode: true
         in: query
@@ -4690,6 +4337,8 @@ paths:
                   ; ma=86400"
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-fraud-ip-get-responses-200-headers-alt-svc-schema
               style: simple
+      security:
+      - appIdAuth: []
       summary: IP Reputation
       tags:
       - Fraud
@@ -4699,15 +4348,6 @@ paths:
     get:
       operationId: Fraud_getEmailReputation
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: johndoe@gmail.com
         explode: true
         in: query
@@ -4930,6 +4570,7 @@ paths:
               style: simple
       security:
       - noauthAuth: []
+        appIdAuth: []
       summary: Email Reputation
       tags:
       - Fraud
@@ -4939,15 +4580,6 @@ paths:
     get:
       operationId: Fraud_screenUser
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: Robert
         explode: true
         in: query
@@ -5138,6 +4770,8 @@ paths:
                 x-konfig-original-example: chunked
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-fraud-user-get-responses-200-headers-Transfer-Encoding-schema
               style: simple
+      security:
+      - appIdAuth: []
       summary: User Screening
       tags:
       - Fraud
@@ -5147,15 +4781,6 @@ paths:
     get:
       operationId: Fraud_screenPhone
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 2348068810228
         explode: true
         in: query
@@ -5293,6 +4918,8 @@ paths:
                 x-konfig-original-example: timeout=5
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-fraud-phone-get-responses-200-headers-Keep-Alive-schema
               style: simple
+      security:
+      - appIdAuth: []
       summary: Phone Screening
       tags:
       - Fraud
@@ -5301,16 +4928,7 @@ paths:
   /v1/purchase/airtime:
     post:
       operationId: Purchase_sendAirtime
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -5460,6 +5078,7 @@ paths:
               style: simple
       security:
       - noauthAuth: []
+        appIdAuth: []
       summary: Purchase - Send Airtime
       tags:
       - Purchase
@@ -5468,16 +5087,7 @@ paths:
   /v1/general/banks:
     get:
       operationId: General_getBanks
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       responses:
         "200":
           content:
@@ -5536,6 +5146,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: General - Get Banks
       tags:
       - General
@@ -5545,15 +5156,6 @@ paths:
     get:
       operationId: General_getNuban
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 58
         explode: true
         in: query
@@ -5630,6 +5232,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: General Resolve NUBAN
       tags:
       - General
@@ -5639,15 +5242,6 @@ paths:
     get:
       operationId: General_getBin
       parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
       - example: 506118
         explode: true
         in: query
@@ -5715,6 +5309,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: General Resolve BIN
       tags:
       - General
@@ -5723,16 +5318,7 @@ paths:
   /api/v1/balance:
     get:
       operationId: Services_getWalletBalance
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       responses:
         "200":
           content:
@@ -5791,6 +5377,7 @@ paths:
               style: simple
       security:
       - noauthAuth: []
+        appIdAuth: []
       summary: Get Dojah Wallet Balance
       tags:
       - Services
@@ -5799,16 +5386,7 @@ paths:
   /api/v1/webhook/subscribe:
     post:
       operationId: WebHooks_subscribeService
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -5878,6 +5456,7 @@ paths:
               style: simple
       security:
       - noauthAuth: []
+        appIdAuth: []
       summary: Subscribe to service
       tags:
       - WebHooks
@@ -5886,16 +5465,7 @@ paths:
   /api/v1/webhook/delete:
     delete:
       operationId: WebHooks_deleteWebhook
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       responses:
         "200":
           content:
@@ -5905,6 +5475,7 @@ paths:
           description: Successful response
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: Delete Webhook
       tags:
       - WebHooks
@@ -5913,16 +5484,7 @@ paths:
   /api/v1/webhook/fetch:
     get:
       operationId: WebHooks_getWebhooks
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       responses:
         "200":
           content:
@@ -6061,6 +5623,7 @@ paths:
               style: simple
       security:
       - apikeyAuth: []
+        appIdAuth: []
       summary: Fetch All Webhooks
       tags:
       - WebHooks
@@ -6069,16 +5632,7 @@ paths:
   /api/v1/webhook/notify:
     post:
       operationId: WebHooks_notifyWebhook
-      parameters:
-      - example: "{{app_id}}"
-        explode: false
-        in: header
-        name: AppId
-        required: false
-        schema:
-          type: string
-        style: simple
-        x-konfig-original-example: "{{app_id}}"
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -6226,6 +5780,8 @@ paths:
                   ; ma=86400"
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-webhook-notify-post-responses-200-headers-alt-svc-schema
               style: simple
+      security:
+      - appIdAuth: []
       summary: Post Hook
       tags:
       - WebHooks
@@ -12623,9 +12179,11 @@ components:
             date_of_death:
               nullable: true
               type: string
+              x-konfig-null-placeholder: true
             birth_place:
               nullable: true
               type: string
+              x-konfig-null-placeholder: true
           type: object
       type: object
       x-do-not-generate: true
@@ -12656,10 +12214,12 @@ components:
     konfig-generated-schema-components-schemas-ZwKycVerifyIdResponse-properties-entity-properties-date_of_death:
       nullable: true
       type: string
+      x-konfig-null-placeholder: true
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-ZwKycVerifyIdResponse-properties-entity-properties-birth_place:
       nullable: true
       type: string
+      x-konfig-null-placeholder: true
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-ZwKycCheckCreditResponse:
       example:
@@ -12691,6 +12251,7 @@ components:
             id_number:
               nullable: true
               type: string
+              x-konfig-null-placeholder: true
           type: object
       type: object
       x-do-not-generate: true
@@ -12717,6 +12278,7 @@ components:
     konfig-generated-schema-components-schemas-ZwKycCheckCreditResponse-properties-entity-properties-id_number:
       nullable: true
       type: string
+      x-konfig-null-placeholder: true
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GlobalKycUkTwoPlusTwoResponse:
       example: {}
@@ -13844,6 +13406,7 @@ components:
             email:
               nullable: true
               type: string
+              x-konfig-null-placeholder: true
             employment_status:
               example: unemployed
               type: string
@@ -13859,6 +13422,7 @@ components:
             maiden_name:
               nullable: true
               type: string
+              x-konfig-null-placeholder: true
             marital_status:
               example: single
               type: string
@@ -14353,6 +13917,7 @@ components:
     konfig-generated-schema-components-schemas-NigeriaKycGetNinResponse-properties-entity-properties-email:
       nullable: true
       type: string
+      x-konfig-null-placeholder: true
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-NigeriaKycGetNinResponse-properties-entity-properties-employment_status:
       example: unemployed
@@ -14373,6 +13938,7 @@ components:
     konfig-generated-schema-components-schemas-NigeriaKycGetNinResponse-properties-entity-properties-maiden_name:
       nullable: true
       type: string
+      x-konfig-null-placeholder: true
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-NigeriaKycGetNinResponse-properties-entity-properties-marital_status:
       example: single
@@ -17628,6 +17194,7 @@ components:
             aml_screening_result:
               nullable: true
               type: string
+              x-konfig-null-placeholder: true
             ip_check_result:
               properties:
                 ip:
@@ -17849,6 +17416,7 @@ components:
     konfig-generated-schema-components-schemas-FraudScreenUserResponse-properties-entity-properties-aml_screening_result:
       nullable: true
       type: string
+      x-konfig-null-placeholder: true
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-FraudScreenUserResponse-properties-entity-properties-ip_check_result-properties-ip:
       example: 66.249.76.187
@@ -18784,8 +18352,6 @@ components:
       x-do-not-generate: true
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-cac:
       properties:
-        AppId:
-          type: string
         rc_number:
           type: integer
         company_name:
@@ -18793,24 +18359,18 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - rc_number
       - company_name
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-tin:
       properties:
-        AppId:
-          type: string
         tin:
           type: string
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - tin
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyb-business-search:
       properties:
-        AppId:
-          type: string
         country_code:
           type: string
         company:
@@ -18818,13 +18378,10 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - country_code
       - company
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyb-business-detail:
       properties:
-        AppId:
-          type: string
         international_number:
           type: string
         country_code:
@@ -18834,14 +18391,11 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - international_number
       - country_code
       - full
     konfig-generated-schema-single-parameter-schema-get--api-v1-gh-kyc-dl:
       properties:
-        AppId:
-          type: string
         id:
           type: string
         full_name:
@@ -18851,14 +18405,11 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - id
       - full_name
       - date_of_birth
     konfig-generated-schema-single-parameter-schema-get--api-v1-gh-kyc-passport:
       properties:
-        AppId:
-          type: string
         id:
           type: string
         first_name:
@@ -18872,7 +18423,6 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - id
       - first_name
       - last_name
@@ -18880,8 +18430,6 @@ components:
       - date_of_birth
     konfig-generated-schema-single-parameter-schema-get--api-v1-gh-kyc-ssnit:
       properties:
-        AppId:
-          type: string
         id:
           type: string
         full_name:
@@ -18891,14 +18439,11 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - id
       - full_name
       - date_of_birth
     konfig-generated-schema-single-parameter-schema-get--api-v1-gh-kyc-voter:
       properties:
-        AppId:
-          type: string
         id:
           type: integer
         full_name:
@@ -18908,14 +18453,11 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - id
       - full_name
       - is_new_id
     konfig-generated-schema-single-parameter-schema-get--api-v1-ug-kyc-voter:
       properties:
-        AppId:
-          type: string
         id:
           type: integer
         first_name:
@@ -18925,33 +18467,24 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - id
       - first_name
       - last_name
     konfig-generated-schema-single-parameter-schema-get--api-v1-ke-kyc-id:
       properties:
-        AppId:
-          type: string
         id:
           type: integer
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - id
     konfig-generated-schema-single-parameter-schema-get--api-v1-ke-kyc-passport:
-      properties:
-        AppId:
-          type: string
+      properties: {}
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-get--api-v1-tz-kyc-nin:
       properties:
-        AppId:
-          type: string
         first_name:
           type: string
         last_name:
@@ -18965,7 +18498,6 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - first_name
       - last_name
       - date_of_birth
@@ -18973,19 +18505,14 @@ components:
       - mothers_first_name
     konfig-generated-schema-single-parameter-schema-get--api-v1-zw-kyc-nin:
       properties:
-        AppId:
-          type: string
         id:
           type: string
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - id
     konfig-generated-schema-single-parameter-schema-get--api-v1-zw-kyc-fcb:
       properties:
-        AppId:
-          type: string
         id_number:
           type: string
         name:
@@ -19003,7 +18530,6 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - id_number
       - name
       - surname
@@ -19013,8 +18539,6 @@ components:
       - mobile_number
     konfig-generated-schema-single-parameter-schema-get--api-v1-uk-kyc:
       properties:
-        AppId:
-          type: string
         country:
           type: string
         first_name:
@@ -19032,7 +18556,6 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - country
       - first_name
       - last_name
@@ -19042,8 +18565,6 @@ components:
       - post_code
     konfig-generated-schema-single-parameter-schema-get--api-v1-us-kyc:
       properties:
-        AppId:
-          type: string
         country:
           type: string
         first_name:
@@ -19061,7 +18582,6 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - country
       - first_name
       - last_name
@@ -19071,8 +18591,6 @@ components:
       - post_code
     konfig-generated-schema-single-parameter-schema-get--api-v1-ca-kyc:
       properties:
-        AppId:
-          type: string
         country:
           type: string
         first_name:
@@ -19090,7 +18608,6 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - country
       - first_name
       - last_name
@@ -19108,8 +18625,6 @@ components:
       - id_number
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-nuban:
       properties:
-        AppId:
-          type: string
         bank_code:
           type: integer
         account_number:
@@ -19117,107 +18632,79 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - bank_code
       - account_number
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-bvn:
       properties:
-        AppId:
-          type: string
         bvn:
           type: integer
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - bvn
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-bvn-basic:
       properties:
-        AppId:
-          type: string
         bvn:
           type: integer
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - bvn
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-bvn-full:
       properties:
-        AppId:
-          type: string
         bvn:
           type: integer
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - bvn
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-nin:
       properties:
-        AppId:
-          type: string
         nin:
           type: integer
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - nin
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-vnin:
       properties:
-        AppId:
-          type: string
         vnin:
           type: string
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - vnin
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-bvn-advance:
       properties:
-        AppId:
-          type: string
         bvn:
           type: integer
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - bvn
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-phone_number-basic:
       properties:
-        AppId:
-          type: string
         phone_number:
           type: integer
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - phone_number
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-phone_number:
       properties:
-        AppId:
-          type: string
         phone_number:
           type: integer
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - phone_number
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-dl:
       properties:
-        AppId:
-          type: string
         license_number:
           type: string
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - license_number
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-passport:
       properties:
@@ -19232,19 +18719,14 @@ components:
       - surname
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-vin:
       properties:
-        AppId:
-          type: string
         vin:
           type: string
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - vin
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-nuban-bvn:
       properties:
-        AppId:
-          type: string
         bank_code:
           type: integer
         account_number:
@@ -19252,24 +18734,18 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - bank_code
       - account_number
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-address:
       properties:
-        AppId:
-          type: string
         reference_id:
           type: string
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - reference_id
     konfig-generated-schema-single-parameter-schema-post--api-v1-kyc-address:
       properties:
-        AppId:
-          type: string
         street:
           example: Aso Rock Villa
           type: string
@@ -19322,23 +18798,17 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-KycSubmitAddressRequest-properties-mobile
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-accounts:
       properties:
-        AppId:
-          type: string
         bvn:
           type: string
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - bvn
     konfig-generated-schema-single-parameter-schema-post--api-v1-ml-liveness:
       properties:
-        AppId:
-          type: string
         image:
           example: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAGQASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDpQgxTwlNHSpARiudpFXYgjFSBABSA04GjlC7GmMZzShMGnZpaXKh8zALjpT8uRjNICDTqLILsZ5dNMOTU1FFguyIwgio/s1WqSlyofMyDyMYxVlJZI02hjSUZp2DmYjln6nNRPGTU46UhosFyFEZaNhzUtFHKhczITG2aDGTU9FPlQczIPKJpfLap8UoFFkHMytsbPSrag+VjcfpTMU4dKdkHMxZDmHbVURt6VZxmlp8ocxSaJs5Ap4RsVaIFNwMU1HuLmKxUha5jVLOeW6LIOK61sYqtIq56VrBWdyJO61OOWxuB/ATTvsNwD9w11QAz0FO2r6CtrtmV0c5DZzd1NXobOcyDCGtpAuegrQtQoIyBT1DmRRt7S6UoUjZvYCu90ZJUsFWZCrZ4B9KpafKoIGBW4rBgCKmbdrFxsLRRRWRZ5OpyKcDUKmpARWLAeDUimogacDSGSilzTAaUUDHA8U4GmZpc0CJAeKUHNR5pwPFDQXHZpc0zdSFsUhkmaTNNBozzQA/NGabnik3UAPophYUbqaAfRTc0uafQQ/PFAOKbmigB+aUUzNLmgB3elBpm6l3cU0ApNB6cU0nIpuaoQjHiq0hqdzxVVzzWkSJDc804Go9wo3CtUZFhDVuCTBFZ6tU8b9KoDorOfBFdFZzB0xmuMt5sGt/Trnkc1MloVFm/RSKdyg0tYmx5CDxTgaYpzTqyYEoNOzUYpw4pDJAacDUYNLnFAEmaUGo85pQ1AElGaZuOacDRsA7NJmkzSE0hjs0uaZ0qKW5jhGXYCgRPmkMir1IrnNS8TQWx2xMGb0rnbzxNdT5GQoP901ag2JyO/kvYI/vyqPxquNWty2FdT+NeXvfyM2S7fnQLxx91yPxq/ZoXMz1I6xaKcNMo+pqSLU7eU4WRfzryfzmzksSfepYruVPmVyPoaORCuz15ZlfoakBzXmVn4iu4SMS7gOzCugs/FkblUlXaT3pODQ1I63NLmqdvfRTqCrg5qyGBqLFD6Kbu5oLUwHUmaTdxTS1UhDXNVZDzVhzxVRzzVxIkJRmm55o3ZrVGTJFapUbFVwakVu1VcRfhfB61r2c5DDmsCNsGr9vLgigdzurOXzIR61ZrE0m4zgE8Vt1lNWZtF3R48hp+aiBqQVzljxTgajzinA8UgJRS0wGnCgBwopKKAHilHApuc0lHqA8mkZwFyTioLi6jtomeRgABXE6z4mlnLR2x2J601FsG7G1qviaK0ZooRvcd+wrk7/Wprs/vH4P8I6VlS3DMCc5NQKWY5bj61tGKSI3ZYaYFue9RMcHI5qOQZOabznrTAmSQNnjGPWhGPpim7x+NMLgnHegLE4ck9Keh96r+Y6jpxQC/pQItBmH0qRZMHOaroWcY6UoDKaYM2bLVJ7Y/I/FddpXiSK4CxynbJ0z2NeeA478VNHMVPy5pWQanrySB1yDkUua4bRPEEsBENwxaM9D3FdlFOk0YdSCCOorNxsVcmLU3dzTN+aYW5pgOZveq8jc09zVd2yatEMXdmgNTM0ZrRGbJM04GowRTg3NMRYV+atRSciqAOanjbkUXGjptNuNrDmupimDRgk1wllNtYV0kF1+5HNJq5cXY84U1IDVdXFSBx61yGxNmlFQ76cHoAmBpc1EHzTtw9aAJd1KDUO4U4NQBMDVW9vorG3aWRgMdPemXt9HZWzSyEACvPtT1WbVLkuzHyl+6o6Cmo3E2TaxrU18xUMRH6CsI5PrTyxLGlhVnkO8YFaCsQlAcY6ip/LZ4stxilNv8xKnNTiJzHgii4WM9A2/G0kUjjL8CtaOBduCvJqP+zzvwO9O4zNAH1NNK4YNjBrYh0Rt25icVeexiEQwnzfSi4jmu3JNSx7jVyaz2seKgaGRfuikgsMZSBmmhnGKsC2lc81Zisz025qkxNNlDDE9KkjYgY71cnspY8EDikW1bGSKOYdiOOUq2a6TRNcNu4hlOYz+lc75eG+7TgGjIJFF7iseoJKsiB1OQaC3NcromrBNsEjnB6ZrpA4YZHSpsJscx4qBjUjNxUDntTQmPzRUYan54rRMzY4GgGm5paoRIGqVG5quKkSgZpW0mDWxFcMEGDWFDxWgj5QUikcGLiQNjJqT7Q+RzTWQZ4pdvPSvNTZ2NIf8AaH9TTvtLjHNRhaVlxRzMOVEounzTGvZFpFHakZATyKTkxqKJVvXpTfsoJJ4FQbQKytcult7UqDy3HFVGUm7ClFIzte1WS8mMZbMY6CspCBHtWq7SfNU8O0EccmuvZGHUsQ2/mMFA+atCOwZUK45qWxg2YbHWtHFLqUzKhsDH96rP2ZQtWyQRUZOetPQRU8rDe1WYUTeCajfGeKli7GgDRWBWXI5ps0CJH70RShRmoriQyHrimT1M+WJcnPeoPJVTj1qy+MZzUO4ZqSxyIoPSrUKKW4FVQ3PFWIXIFFguW3iVwMiq7247CpfPGKQtkUySuLMOcYx702504qODkVeicA1byjpyKdibs5Ng9u4JBGK6bS9WV4Nsh5FVry1SRTxWKA9tPtP3c0x2udm19FsLbuPWqravbZwZBn61nZzZls8Yrl5nIdjnvTprm3IqPlO4Gq2v/PQU9NVtTwJRXBq+4ZzStcCPHPNbcqRjzN7HfDUrUnHnLUrXsKKC0gArzpJmLhiTntVqS5kmQbnPFS7dC0n1O5GpWp/5bIPxqaPUrXP+vQfU15nIzbvvH86mtIZLiUKm4k0rrqVys9Ut7yF/uyKT9a0EuE2/eH51xunwjTIBJJ8zdTmustfFujJbosumKzgckd6SXNsPRbnL5paaAKftJGa8zodgA804kEU0Ic0u2gEAIpxpmDRk9KG9BiSMFGa4zWbozXbDOQOBXT6nP9ntXYnHFcJLIzyZJ5JrajHW5FR6WHxxh3BNa9lCruOOlUrSEMm4mtWyAR+lbMhGmqBFwKdu4pM8UhIxTQgJ9KYxAHNIWAFQls0xWAnJ4p6P2qEsKB1zQNFwMR3pHkzwaiUmkYknmgLCPjtTQAKUmlFACYpy5U0Y5p3SgB4NKX7VGX29qjaTvQJlkPiplmwMZrPEpxThNimKxfEgY4NU9QgDpuTqKVZR1zT2fehFAFS2uwLSSGTqBxXPTOWkOOlaUymN2GetZU37tz61dOxnUQ4ybVxmoD8zbiajZ8mhW9a1bsQolpG4zUofeMD8KqCXAwK6Pw7pZnkFxKp2Dpmsy1Eq2ukXVywOzap7muq0zSUskBIy/cmtJY1QAKABTjUN3KbM3VJQigfnVFXjK9Kn1puFFZSv8vWqiyT0QeG7fOQ7j8aX/hG4T/y1k/OtnNLmsuVFczMf/hHIsY81sfWl/wCEchx/rXzWvmjNLlQczMYeG4ic+c4pf+EaiH/Ld/yFbGaQtgU+RBzSPNfH9mmmWESK5cyvgZrgIiDya7X4l3JbVbSLdwqZxXIQmPb2zRZJaFpt7lq3VlXjpWtangZ61kwscVoW54680mWkaueKazYqFJD0zSk5oQrAzfLUO45pWbsKZnFFhi5y3WpFwDiox1p4zTsO5KG4pc85pgNLmmK2oHrSg00tigHIoJsTKO9IeDSK1ObkUbBuRsQTmq0j4zzUrmqknOaLDGtIcdaVZjwCahz7UZoCxcSXnFTrL6VnKxH41MJMYpIloZeNznFOsvDd3r0JlsnUbTtbcM81Dcv8hJrr/hzc7Uu4h6h/zqk+wmc+Phxq5IzLHn/d/wDr1KPhxqpGC6AfSvWfONHmetNtkJnmFl8PbyGUPMiy47ZxXUR6JfwRACzKrjjBFdQJPQU4zsRjNAXOW/s6+zgwfjuo/s2+7Qfm1dP5npR5nNILnE3/AIevrwD91tIPrVP/AIRS/Xjyc++a9C380u7NO4NmcLuUDgD8aUXcnGRTQlL5dIY/7XIOiij7VJn7tNCUbaA0HC7k7qB+NI125B+WjYKGQYNIDyTxxL53iXL9ViHH4mucT7/NbnjEs/iS5JH3QFH0xn+tYcJ3uEHWm2XFGlCdxUVfiPIwaowDDDHbrV+Ndoz61F9TXYsocHOacWPaol5qUE4xS6hqJnjmmmnleKAuRVCsN5qVFYikCdKlUGhMLCMpAozxT24HNRFhmmDTEJ55pe1MJBNLnJoFbQehC9aeT8tQZO7pmpiPlobFykD9M1XappGBOKgyM80hkMgPGKZzmpWIPSmEcUxCZxS7qaQaYT3HWkOwTvla6T4fSmG9u93IKL/M1y0p+Q5FdJ8P1L6hdyDoqBSKqJnM9HF4no35U43cY9ahCe1GznpQQS/bIwfuv+ApftkecYb8qh2e1Gz2oDQm+2R5Iw3HtR9tjPQN+IqHZ7UbPagCU3sYGcN+VH26P0f8qhKZ7UmwelAWJQRTqYevFLQA+lpoOaWgBaQ/dOaM0GgDxvxmxi8UXA7FRWHEQrlh3rqviBZGLWo5c/61P5H/AOvXI8DCjg0M0ga9qcgGr6YwM1RsFHl8mr689Khs1RPGOac7rH1NMaTy0z3rPeSSQnPWpsDbRLLfhDxTE1Neh4qtJAWGR1qrLavjNWmibS6G9FfxE43VbFyhX5SDXFs0kRxk0JfTIfvGnp0Hdrc7Fph681CZPm69a5uPU5uN3NWlv2cgk4pWKTXU2BKATSmSstLje2M1L52CM0m2OxprL05pxmyOtZ4myM0z7UATmne4bFwtubmmMKq/bUB5pj6hGO4oJui3gDinqq4Oaym1FcnFN/tLtmhKxLkabKOgNQlRmqgvSferUMyy8d6BXIrgYjJNdZ8NkBS+lxyWVc1y96pS2au1+HNuY9CllI4lmLD6VSIlsdnSUUU0QLSAetGaM0CCikzijcMUDA0UVYjgLpnFNK5MpcqKfWnA0wGlHNSWSA0p9qZ0NOzmgQtLTM4pdwoA4D4kQkRWlwB0fYfbNeeAbjzxz1r1/wAZac2o6HIsYBkjO9fwryEMS+CMc0mXA27JcRDPpV1cLyarWg/cjNSyttXrWb02N0NmmBJBquH+aq00x3GoxdKnUik3YtI2YkDcjvUkluCORWMmrpEfvAVKdajYffH500g5kOu7NWB4rFmtyjHitV9ViZcAiqk11FKOoppWJ3M0ErxmrEZPFROBuyDU0HJxQ2CSL8AwM96lIJPNOgj3AcVaFrkZpLzLdihux3qtNIQKu3MQWs6cjFUQV3mfkA1EN7DAqQDdVu2gU4zRd9CeVN6kcFrI/JGatiwwOlaVusap2qV2jC9adyrJGP8AZyh+lOjbZID71PMyluKrEgtUqQpRVjTvpN2nlwOcV6R4Usjp/hyzt2GGCZb6nmvPdPtmvYktxyS64/MGvWIEEcSqP4RirRzyWpJSZ5pM80ueaohgTigEUhNFACnBFJ3oqe3i3tyM01dilJJXH21sZPmb7taQVFAHpTR8i4ximF+a2S5djhnUc2YwpRTBTq5z0Ljs0ueKbmloAUniuM1fxdFBqTWiSAbDtPPeuunfy4JJP7qk/pXgMqSajr87BiWaQnr0FK9i4xuz1BfEkrQspIcEd64bUoALoyqoyxycVMyy2keVYnHaq/2kXDAHrS5uhoqdtTRtxiFfpST52cU+IfIKcU3CoRZzt20gYhVJHtWXP9oClmQge9dutpGBkrUE9nFIMbBQmDOah0O7utON3G6lQM7V5rM+Xau4EkcYrrYrV7Mk20jRk9QOn5VnXWlCRi+QGJzgVSZDRTsdPk1G8WG2JXjLd8VLfaTc6bnz0LR5/wBYnb8K2tGll0mNlt7SIyP96V2JP5Yq1c3OoXKlbiWFkP8AAIsf1pttspcq0OZgspZYxJGd6etXoLYoQWFPG+2nxHgRt95RUwk3HNS9CzQtQoAzVxtoXg1jJOc4XNW4/MYYpXCSKt42Saxpid+BW1dxkGsuSP58mn1JWxTLsvRelNa7lRdyhto744qwV82RVKMYg3zBeuK6BptPeye1axnEbrtBRd2PemwObE12wXbOgJ/h9KYNSuVJSTPHHHNMktZIpWX5mC8Bsda29FisLKCS5vZBLM4wsajOBVNq2xGvVmSt+SMk1bgn8wiq9zbLd3rSQw+VGf4e9TJYyR4IqWkyk3c6nQbpbe6jlbJVTkgd66tvFu2X5olWM+p5rg7AlRzwcVkareTO+3cVXNOLInG70PdrW5ju7WK4ibMcihlPtU1YXhA/8UlpnPPkjOa3KoxCjNJRQIeoLHFaEQEKA1WtkH3jUzNuPtW0I21OWtO75RxlLNmmM/PWmM4QVny3gDkZrVI5xwpaaDxThXIemKKWkozQBBfAtY3CqOTGQK8O0xvI1W5Z/wCEn+de7sAVINeR+IdGOm65dbRhJsyLUvY0pvUzbvWdgbAFUNPuZJ7oll6mo2spbifywOprUt7IQyqi8Bep9TUHRY10+6KnRcVXjOAAeasRtxS0JJSPlqDbhqn3A0uwGhsauQmNWzlaie3TjC1oCLilEagdKpagZ6QHsMVBcJt781qSZ+6o5qqbfOWbk02SlqYjxEkk0q2zOOAcVpmAE9KnjiC4wtSkU5WK9rZAAZrREConApyKARxTnPOKNCW2zIv1yMVmeWGbBrZvUwM4rMK4PFVewW0IYkMEvQ7D1rWihDJuFVUwTg4xV+3GwdcigRDJbq4wwH5VVazCn5RWu4UjioGCimgSM1bb5+lWNmFwRU7MvoKiZvypXG0RRja5OKxNVIZGC8nOMVvKQW45rDuoWmuQiDJMgCgdzniktxbnrfg0geFbEZJAQ4z6ZNb1Z2h2X9naPa2p6xxgH61oZrTcw2FpyIXYCmVahAUZPeqhG7sZVJKKuTomFwOlRzzxwgjPNU7zUwjeTByehaqWC5JJLH1NdaVkcGrd2Oubsy8LkCqZDMcjmr0Vq0nGOKp3OvaDpk5tbm7jEq9QGHFIrY0elOzTM04VxnoDqWkooGLXNeMLAT6cLlVy0Jz+Heul7VDcQrcQPE4yrDBoGnbU8jZfKIljUFvSq91dKpV+VY9QatavZXOj6hJA4OwnMbdmFVLhI7u32yDB9ayfmdKd9UXYpMqD6irCP71QgBSFVJzgdakMm3pRaw7XZfEgyKsxHdWUsuTyavW8oPepT1LsaapletL5YFRrKAvWnLICK0RLQhTHNV5jtqZ5goOazZp9zkZpPUVrD8jOe1SI4LBV5NQxwSSjk7Vq/FbCNPlHPqaV7C5bj4kG0sxxiqzSgzgkfLnHFXo4AQQxyTTHtULhelJ3Y0kirqMBWLcOQRwa55wVbBrpLiMoNruSvvWbcWaycxHn0pisZytzWlA+6PBrNkRo3wwIq3bvjimn1E+xdYk9KhcGpNwUetRuQcmhspKxA529aieTinSNVSV8cCk2VYswtkZrR8Prp6a19qvZFUQjMYbux7/hWPDJ71n3NyTKdp4Bpx1ZhPTY9g/4SXSV+9eKPwJpF8T6Qx/4/V/75NeNC6kHVzig3DsPvHFa6GCT6nuun39tfs32eUSBepHapr27Cjykb52HbtWB4TtG07QIURC11cfOR6Z6ZqzqGr6f4dDS30onuyM+UnJArppw5Thq1HN6F2CwZvmOfqaivtY0zSV/fzBnHRE5JrzrWPH+p6mTHCwtoD0VOv51Sivo44llvZmkY8hauTaQlFnW6n42eXTpnh/0eMgqqj7xP1rzB5DJIzyDc7HJJ71a1HUftUpPRM8Cs/cO9JXSuzaELH0MDTs0wU7NcZ1DqWk60tABk5ozRTSeKAKmoaZa6lA0NzEsin16j6V5/rGgjTbjyFdnjYbkLdcfWvTKxPEWkSanag2zKtxHym7ofY0mrlRlZnnnlGJSDVWRsZNXLmK+tn8u+tZIWzgMR8pPsaznb7w7Vk33OlD1kzVuCUg1mA4birEcu0g96NNy0bccpzzVgSenWsyKcuBkAVbjcke1NaiY+eVsYx1qg0qwtuer+3dWRq6Mi7gOlMRK2uqh7ACnnxH5i9Rx0xXHzpJO21WwfrUsWlyxctcBfbOaLXFqtkdZFrch5B5qZdXYnLkVy6OYW27t3vTzcce9S00zRNW1Ny61cyPyeKSHUo9vJxXMTySOfkYA+lVma8iILEEH0q0jNy7HVz3aTHqDVi3YMgxXNWkryOqgEk10cAKRjjmlZiuWGbHWoWNKz561A7kUrstDJGI71TkY560+R8k81XY5agGyYMRExHYVjmTLk9a0bqTy7U46nisnpVx2MKlrk24VqaFZNqGoIgGVByaxx0Jr0fwxZ22heFJNbuMtLMP3KHue1bU43epzVp8sTQ17UptKso4beUrPIPm2nlR2FcfczCTT5muf9dICAe5+tC6rK7zXN5J5kkhzsPQVlT3All3Fsgnt2roSb0ZxRjfUk0vSTdTb5twiH61PrdklvHCoJ3dfwqEajJbKEjbKjnmqt/qEl64aQklRgChpuSb2NY8xTeNeuaZ5YPY1bt7Vpv3kjJFEPU8n8Ks77JeAS3vmk+xrex7oKUU0UtchsPBpc03tS80xIUnFJ1o69qD2pDAnFJkHrQeTSd6AMHxdAH0R5Mf6t1bP+frXmkyhXNeuavB9q0m6hxktGcfXqK8lmzgZHI4P1rOaNqZWKkmpUHNRk4p6nHNQbouwnGKvxt0rLjY5FXom4p9AL6ODUVxGsikMM01XwaUyVS1M3oZL6TCrFwMUxrBcYrQd85quyyyE+WDTGpGVcaeynKHioltHkGMYPrWsbS+UH7jZ6YqAC7iJX7Od1K/ce5TGmBRhjk0HT9xx2NaPk3LLllAPpSKxVsMpFNEydtB1jYR265A59auyEAAVFHKPWlkkG3rTJT1I2biq0jH1p7vxVSR81BpcSRqjXJORSMakTmk9CrlXUJGwsfbrVHNS3TiSZvQcU60tpLmTCDCjqx6CtYR6HNOXUSCMSOFPRjg16I0k5tLOF/LZIVxGoXgDp+dcjd2sFnDA6MS+Tu9PannW7wqAACFXapPaulQ933ThqS52R6qsP26T7MhVDyVz0PfFZnmKBkVatpxDcCZzvfOTmkNot3cuYMqhOcDtWqfLoEdNynkt2/OnKEEg3MK14tNtGwjReY/cl9tXBoujSptZ2gcDqr55pOfWxXMjm5Z0LlVycU0XaoMCIGte8axt7d7a3UMx4MhFUo9NnmQPHESp74p3+QKSPeKUUgp1cR0CilptLQFxc80HmkNGaAsL0ptFFIYEZBryjXLQ2WrXMGPl3b1+hr1euM8c6eWhiv415j+R/wDdPelLYqDtI4M4304NkU2RcEmmjIrJHVsWozg5q0kuKoK+B1p3mZHWq3JL32gA0CYvVHcc8moZ73y1KqeaslmsHjj4Y5NSpdIOmK5gXbM+d2TTzdsD15NAWudI98o6Go/7QTPvXPidz61HHPI8pG0jHeloPlZ0xulYdarySoc8g1ivcsvUmmG5bHBNCYnA02k54NIZ/U1lJc89easLJuXIpkpalppc1Cx6mo1bnBNOLc4qGaJCL96nyN5cLvnoKQDJzVW9lyvljvSWrCbsinks3H41sWKNIiow8q3H3j3NUktHihEhHzHoDUgSeZgSXPsBxXZTgmefUlfRGlcXNvPMsEShYI+gHeqd5eIyiNAAo9KUWMqxhtuxScbjUCWTNcCLzkAJ+9iuiNuhiox6kBc46fnViBLwJujAQHuTT7izitSVeTcwP4GmmV5UOzJA7DtTd+5fMiz9hugqu8q7JON6HofQ1nSxTAkPI2AcZzV2CRkiKXMUpiY9SCMGp91kLZg2SGHCk5NRzNeZPN5FbSLC1uLpRdXDCNeevWryQ24BzORyeA5GBnis2ee3SPZbQLH6kZyapZbsTUuLlqx8rve59CA+lOpgp2a5UdI4cUUgpaACiiigBaSiikAVXvLaO7tpIJRlHUqasUh5pjPH9RsJNOvZbWbJKH5WP8S9jVFl9K9N8T6H/alp5sIAuoeV/wBof3TXnJjPOVKkHBUjkH0rGSs7nTB3RW5Ciml8EVJICpFQkZNCY2Sbiep4om0gzqHickHrUJJ6VNDdyQcAnFVcmxdtNDhC/MMn3q2NDAbhRioItTBUZ4NXIdXVOpzRuUmxf7FUD7opYtHXdyBVr+1o2HWmf2kpPDCi1iuZkcmjRc5AqlJo9sG+ZRirsmpgA5NZsuobieeKHZIl36lGfRYRISh2iq7xpC21TmrE94X4B4qqTuOaXMStAFPABpFU5qcR8ZqWzRaojJ2rk1o6No8bXH2y7G7uqntWWSznzFGUU9fWrkusXDwLGpC444FdFKi2rnDial3yovXcdp/acrvJ+7Y7guelUZL5DdgW6bVxhcd6pJA80u4tyTyzdqvK8Vovy4eTHBxXXyNaHINna8ayMKxMPNfuepHpWSI5hLhiysGwQa1zd3M86SSEAL0zxio5EuNS1ULbqDJKQAO31pxTXxApW3M+7hkEg81mPcE96s2TXPk+TbQEknOQP5101xprWFuFlQ3Dr1baNq/hnNY41GUS+WoWJQf4RxSUlLSKHzOxJJpeo3wRJr61jcDiNyST+NYTxSxzPHMpSSNtrL6Gui+2SSoYbpo5FP3dvUHtVNLMz3khvHeE5wcrk5pQun72w1KyMqKFnkCDknpWxFobGMFo5SfbFOl0wafdL5crSuCGUhflxUptdWuXaWLfsY8YOKJTutHYTk7nrgpwNNBpRXGdY8UtNpRTELR0oooGFFFJmgYd6KWkoENIzXl2qqI9WvIz2mbH6V6i3FeY+Il8vW7w9zJn9BUyV0aU3qZcsfB4qm64NXY5xINjnnsainjI7VjszpWpSYc5qNqkbgmozVCaGNuXvSGWQDg0uCTShSDz0poQCW5xwaUyXajPGacs2w0puN1PTcFciNxORgmm7nI5Jp/DZpgwDSsD3HquQMmpVHIpg6VPEMkcUhomjizzUGoSmNFjTgtxmrTyCMbR1qCWPzGjbAODzTpx5nqRUlyx0IUuTHb+UQMfSkhilncCKMvngYFXP7Nt2vEZpGZDzsHatKS68or5CCNYzwoFeiny6JHlSmZdxbXlii/abdoxJ91s5BqsN27d3rpY549WRre53bQ+8EdB/nFK2jae0Jkgnfcv8DuPm+lNVLaSWok0c6fNuGCDJPoBWtb2dzo0TXsrKGKlFXuCaltNRttPgEf2YBz95upqtrOprfQRRxI27dk+9JtydktBXRTfUbhkYea2W61nncWPJzVqezu4YVkMWdwzj2qm7upwwA4q1ydC1Edlgc7jWnay3uozRwLN8xGAW5xWSHY9q09DuHh1OB8DO4Dn3oklYHdam1Z6bcDe0kzS7RnZ0BxUM1xqxf8AdD5McbBwK04pXilcFWVozjkdRTGtIp3MkWozQKxz5YGQDXK2r6kXvueiEYYilzxTepp2M1id4opwFNpwoELiikzRQAGgUKC/Cgk+1WYbC5nfCRnHcmi6W5STexWp8cTyuFRSxPpWimmFGwQ0jd8cAVZkmFhGViTMpHYVjKslojSNJvVmS1ttkZZTgKPmPYV5V4kmS41u7kiIMRbCkewrrPF+tzrKmlpJh2XzLhlPT0WuHusE57UJt7lpRT0Mtxt5HWpFn3AK/wCdMl61WZiGqtyloyeaLaSarkYqaOcn5XpXVSMio2ZRWBw1IzDtTynNQsDnrV31FYOppTgDikHApp5NMVkKKVVBPWmgHPFSomOtGovIkVM96kaYQrhfvVE8oQYXr61Du3HJ60lq9Rt2J4yWOWOTW74fFq2q2/2yNZICSrBhxggj+eKwU4q/auAwqtehHqekzeB9DnUz2MDwvj/llIfzx0rnr3wFqqhpNNu0uCP+Wc67WP0I4/StrwRrM15YXCE7prSQowP8Q7foa6S4uLjzlaFgoIz8wqFWqRe4nShLVo8kfR9XsopTfwPZ7OvcN9DUcNskm0x30rZ6oFHFeyuDeosd1CrjpzzWHqnhSwk+VWe1ZujxAD862jiuktzCWEvrA86isbhZjKEBPXBG7iqt/bNBItxCybGOGQDBQ1s6p4V12zzLZyrewqcnyyVfH071zE1xMZGjkba/8SNww+orqhPmejOV0ZR3RcudTlknEgUDCBcfSrdtK1zbgeUgIzncvWsPeB71q6RcPv54Uc81c4JRJadiFrWG1nKy8EjKgdKfbnThOrLEysPvbmyDWjd2Ed3dIZZSsSg5Vev4Gqi6T85e2lWRf7khw1Qqi6sS2sF9fT2s4iWdpIWG6Msc8elQrrkiLtES4FU9QWeJljuIWjx93PpVEkg8dKcYJorlXU98pc8UgqaC1muW2xoT79APxrjOxK4xTxTxWh/ZRiX5nRm9Aae1tHbxxl1HLCs3VijRUpMpxWk8o3LE231I61pWmj/IZbgAqB931q39uaWQRhNqL0x3qDUtSaABIwSB1AHJrGVST2No0oISMzeeI4k2R+qjGKS51U24aOBCzdC2MA1JY3TzoSUIXvuGKlmtEuEVgwCj0rKUrP3jWMF0KNrc3UqHcyjvhetNmaZo9y8HODSzXMOkQEjBdumfSjSrmO9SRSp+bmh783QNLWR45dPIdW1B5m3SmdgSfQHj9KpTHOa2fF1uLHxhfIOFm2yqPwwf5ViSnjiuqMuaKaMXFxlZlCb71VW69Ktyiqzg5yKryGiMcc0u8gE0jHim5pbgOaXIpnmrTHGKgbOaLAr7k7OOopN4qvzmjHvTtoLmJvMAPFOMrOOtQDrUgOBTsCY7PNOQfNUYbNSICcUaiJl5NW4fl5qsnWp0PHNMXQ6j4cTlPEOrIx4aBJAPcEiu31iCae2EttKwDd1/lXm3gORf+E1lj+b95akfrXrmlWzR2skb8gHvXNWstTSknLQTSmcWp+0HBHeh5Eup0jVskn5aLkMIzHGcMxqXTdOFoonkYkryK576X6m9t10LSWEcQGT83U1i654Z0XXlHnwL5vTevDD3BrakuY5W2BuWFQR2TwtGxOQWwea0pya3epFSKauloeReJPh7qmhqbqykN9Yjr08yP6+tcliZXIDlWHVehH4V9LT2sQDQNzDKvQ9Qa5zUfB2lapK0V3ZoTj5Zovlb867aeKaXvanLPDpvQ8ftrlXiRJ5GDg8HPar8Ybzw6rwB1B611Gp/D+90SNp7OMX9qDkkrmRR9O9cm08MpON8TKcYIKkH0wa3jOE/hOCpSlB6oGg/tCB1L+UFOQWHArFuIJrSZoZ42DjuoyGHqDWq4upUMSNuBOeOM0A3kShHjcEDpjNbJNbExaW575aadBk9ZCOuelWbk+XFtTCD2qvqmpjTI9qDCgfNipLVl1KwWXvjNeLOUpe90PahFLQzbV5UvG3yKwB4Gat3pmla2VRnMgHP0NMh08JevNL8qDue4q39rS4ngCLtQOQPyIoTu07aBa11fUa90be4ij2r8wOT9KsybXQfIAT1qteRCOaGV+QDioBqTSXioAQT7dqU37RXiaRXI7SLpikO1VyFzzUtxeQ28CoSBjirjIDGpA9DWJqWnieb5QSM5qYpSWvQJNp6dSCazW+Ik3blIwKntETTsFsLuXaKLRFtQI3fGalvbXz7X1CnPHpVRbcuVrQJpJcy3PLfiVtN7Y6ivJZjESPf/wDVXJh9y16j458PG78KzeWB50K+bGPQjn/GvIbOfzIlOeSORXTSatZHPNO92TyHOart05qww4yarMpPNaaAkRkcVGSBTzTRyTxSaC5ETk03bzmpSAR70wrii9gsR7etNHWpSKbt5qiBp5FJ1pwXJ5NSKMDNLqNhHH61OBimKSetKOvWmCJVPNO3naeKRVOKHGIzRYR0Pw2txceJ76cD5oYFGfTJP+Feuuz/ANns8RzzzivL/hSoF5rEv94Iin1IGcfrXfabLcRxMjqdrsSM/Wueqt2bU3pbuRWcd3cXJd2wFfr7V0JlheMxbsNjjNReWsSgYCjOcVXm0+ZpBODnBz8p6iuaCU9WbSvDQiXT5ftDuGYsex6fhWrIvyQIzANuBP5Vats/Y4twyxAzWFqs0y6jE0atgSHqO2MVcV7R32sJvkVu5du1ky+wEqwycdj3qTTo5cbd2SvQkU20ldIJDI3rgmpWlaC1jkQZGfmxSc3O8ROHJaRJNcTJEUOM7sZAxXL6l4YtNWlkd7dY7g8eaqjJ+tbdvqRupFMiYDMR9K1pXS3j83aDgCnTk4S5VuRUipq72PGNS0x9AlIv4ljiU4WRQcN7+1Y0uuoX/dx7kHAPrXucstnrSS2c8EUy4GVYZHNcVdfC3R5Ll2je5tgT/q0bgfSu2Ff+dHBPCreDN+5R9WfLAdcH3rY09odNj8uRuGwAB2qlZzxfaPIQgEdPepLqyMzFnB+VsjmuDd2ex6aWmhrSeXdByjcggGqdxAkMZkXqnIPvU9lEIoN0h2s3J/pTriIXEB8tsgkjipT96y2G0reZA9xDd24x97I/OpRZpbRmY8tjj2qvptnFYQF5mycnANTWOoLe5jbBXJUE9eK05bbbGfNf4tyl59w1wQSBHjC+prUcMIgpOWA5qvKqRyggAkdKzLm/nadE2NtJ5PpUyXtVoWv3W4mpwyyb1UlTjgirujCTY4kYlduOe5qeEia2VyMnoc1UuJZYEVogMgnI96fM5+4HKoe+TXcJurR164OGHqK+ftTsDpPiG/sjkBJSyD/Zbkf1r3XSL2Zrvy512+bk4znFec/FrSja6raarGPlf9xJj81rSm/Zz5GRJc8edHG/eFRunHHSnxMCoqYoCK6mZozmTBph4rSaJSKrSQjNAik+cVGxIq48WRxVcxmjQTuQbjSEk1L5WTQIST04oEMXk5qxGm4U5LfAyanRVQUWGiIRmpFhOMmpPMQVJHIpPSi49hFi4qC7YJGewA5q6WXaaotbPqN7BYoTuuZVi47Ank/lmjYT8jufBOmzWXh+G4xtN2xmYd8H7v6Yr1OOKJrSN/KGQBWZY2Ua2lpEI1AQcAdgBVm8v3s32ohbaAcVwzk5v3ToilBe8UNYa7EhVACMg5J7Vs6P5ggKSDK4BBPrUVk8eoSBZYuQobntV2+l+zwPtGAAAPxqHaT5SlzRXMyjqF5NZTjCkocD2FTyxR3TwuRjccHHbiqNpdNfhoZ1wA20E9auSbbFoiSSC4B/lWtmrJbkX6vYp64fsunN5QPIJ/KovDupfbbdI5Adsi8B+oIq3qJgubJ1WQFmI2qfrWdDbHTZ0klKjBJGO3FS7cvmy1dyd9jWnt47dt4XpkmobfVvtEhgccEccVMt7BeRlCwB6ZzmoorBYR6FTnJ9KIWiry3ImuZ+7sWFtGhd22qm4j5h1NaYnhYDe67hwagZvMKEcqvP49q5uZL7zW8scZpx95Xk7EvR2RDc2cn2gTR7lZTnjvXTxP50KSY5KgkGobohIWIA3Gsu31B4LtVXJV+MdqzlepsbK1Pct6m07f6p9oOMD0rT0zMVsyzEDpgmkgRLiFZnTGD0NUdTMxO2I44qr8z5GRa3vEy5u454erRSkD3U81Fb2Ys5iX4GN2BRpokgu1ZjlZV2sT6iruoDdEXjOSMZwe1OU3zKKBRVuZlP7TDLcdcMD0zmpzYKZDK3I6gDpVO100i8LY4cgsT2FbFxPAgCs2BnjFRJW0iUmnrIyL7UFshsUbVHXAzTbWRb5XBXaQQTV6706OYu2AQ3Oaqq0Onxlf4mO4k1Ta+xuJL+bYjulS1QyR8NH0Ncj4ngbxNpU9mVbcMMjH1HSusimi1NXjHBIz9aij09YboLIxCAbgPXFVCWlnuKUb6rY+f7MsN0cqlZUJV1PYjqK0Bk1v8AjTRUs9abUbZcQXJ/eqP4X9foaxUXArqi7q5ja2gwIc9KjliO0nvVsClIB4qhWMU7x2pAMnnitSSFccCq5tSeRTv1FYqAdsU/gDpU4gx2pRbZNIorkk8UnlluOavC3HpUiQD0pN3BWuVIbTcea0UtUWPkYNOVAtOLcc9BTQOxSnhCqTXTfDzww19dPrl0CtvHlbcd29W/pVHSNCufEV0IolItFOZZexH90V6lapBplqlmvEajB2j7orGtJpWW46UE3d7Ci9SB3YjCouFFX7Mw6hFuZRvX+VNe1hvY8RFS4HQ+lPtLE2ciszKMLjA71zSatpubrf3iUxR6dDJLGvI6nrVKDU4r66a2bBDcfQ1ofaYLgEBhg8EVnf2O63BlQqo/v0otct3uN35rdC5HYrBcrIW+UchfU1Vv3W7VUQ/NvBHvitORo5wyhhuxg/Q1zc8U1tqUL+YcKc7T7VpTbb5nuiJ6aLYlSzaCaNJGb5pQeasa7AZYt0ZwRmtK8AmhhYrhic++cVzdxeXTy/Zij7gG+btntU29oua5alyPlJNLgA+6rF3OW9q6WVVKAYyMYIrG0u4VirKQQwP51HdX9xFcJAQTuBO4HoRSUfaakyfs3axJDNcQ3sgZjsj27D6itpo0c7hjnmqogR1WbPDKCfTNQSatBE2w9qKt5L3RU0k9Staakt5N9ncEjIXJHINXV00R4IPQ1DBpRSUOzBcnJNawZJo2CSKWHvRJ9Yjiv5ipPqcNrGkSYJAC896vQLFd2yTbcZ6is86QHmLyfdBJGamOoRaciRbchjjHvSav8O4+a25U1UyJGrRceX8wFSaR5s27zBwyHPt6VfVI723Z2j2gkiqiTi2tnVSQwO3I9BVqV1ydSHG3vF1lLIAvBKkcdjWJ9lne9PzOygfdPSp9N1KSW42bS6lsDI71tzoFU7VG4+lLWn7pWk3cjjZFjWKSRd4GDWZq1h9oQbVD5GCPeqVx9pluo2RticlvetyzUpaKZDknn6VN1T95dQs56MxrHTjp8gdyFjUdKt3UYu0VonBxnBFJqDloMKMlst+XSsvSRd+YqkgEtyAc5FXyt++9xp/YWxRuNIXUWZJYMugwyt0zXD+IfC82hMJowWs3PIByYj/hXrt/DhA6cSAdR3A7GuaupZLi6CSoGjYHep6Y9K0p1ObVGc4W06nlm0jntSgciu6vvAEk1u13ph2Hqbdzwfoe1cdcW01nOYLqFoZR/C/f6HvW0JqezIlFxepBtHpS4AHSnYyaVcNwvzN6Dk1ZDZA0foOKFjrTg0jUbyRI4LRgznC+Z8g/Wt218B38hH2q9toPUIC5FS2o7jXvbHIhB0oJVBkkAV3jeB9OtF3STSXR9ScAH6Cp7bw/aBo5Jo4TCrZAYYzWfto9DRU5dTirDR9U1Uj7HaNsP/LWQbV/+vW1beFFhdPtkonw3zqwwo+n/wBeu4n1u1iKW1sqmQ/wLwFAq3b2MN1CJpVDFuTWc67S10LjSvsRaRbLHp+yBQo5+bGAKZf2cr2yCLPQhmH3s1LdXT2sKrHHgFScf0qPSL1pkTzMgPwA3rmsrun73cuynoug3R4JobiOOQsxTOWNbVzhgVUjcVIHPciiQMFO0AZU4+tc28919pjVidnPzZ6Gpiud+0QN29wX7JNBOZCTtYbSCOAa6SFcWSox5KY5plvItxarLtBbHQ+tZms3dxCrmMEjy8jb60J+0foN+5v1Kl79ot9TDxk7DWshWZoZ5FBdYi1V7Mi/sh5n3l798Uz7XHBLKG+4gCVbbb0M1ZLUXU9S+zXqRHkBtuPwH+NKttHdf6QrlQwwRjvTJrNL+8MsY3HZu59f8ipoh9lthFIwByaqo7L3Qpp394xprldNvo124jIDD8zWpc2kUkkUgcgMuQPUGsjxDZNcmOVc4UDbitJ5w+kwTAYdVCsPSpSs7FN3VzRikja3aJDkKOBXM3unGS6ZhIy+wqaxmnW5duQuQEHqK6I20cmHIAJHNPSmS05n/9k=
           type: string
@@ -19346,12 +18816,9 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-KycCheckLivenessRequest-properties-image
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-post--v1-kyc-bvn-verify:
       properties:
-        AppId:
-          type: string
         bvn:
           example: "22468537919"
           type: string
@@ -19364,12 +18831,9 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnRequest-properties-selfie_image
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-post--api-v1-kyc-nin-verify:
       properties:
-        AppId:
-          type: string
         nin:
           example: "79628483753"
           type: string
@@ -19382,12 +18846,9 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerificationsVerifySelfieNinRequest-properties-selfie_image
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-get--v1-kyc-age_verification:
       properties:
-        AppId:
-          type: string
         mode:
           type: string
         account_number:
@@ -19403,7 +18864,6 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - mode
       - account_number
       - bank_code
@@ -19412,8 +18872,6 @@ components:
       - last_name
     konfig-generated-schema-single-parameter-schema-get--v1-kyc-bvn:
       properties:
-        AppId:
-          type: string
         bvn:
           type: integer
         first_name:
@@ -19423,14 +18881,11 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - bvn
       - first_name
       - dob
     konfig-generated-schema-single-parameter-schema-post--api-v1-kyc-vnin-verify:
       properties:
-        AppId:
-          type: string
         vnin:
           example: "79628483753"
           type: string
@@ -19443,20 +18898,14 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerificationsVerifySelfieVninRequest-properties-selfie_image
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-post--api-v1-document-analysis:
-      properties:
-        AppId:
-          type: string
+      properties: {}
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-post--api-v1-messaging-sms:
       properties:
-        AppId:
-          type: string
         destination:
           example: "08068810228"
           type: string
@@ -19479,23 +18928,17 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-SendSmsRequest-properties-sender_id
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-get--v1-messaging-sms-get_status:
       properties:
-        AppId:
-          type: string
         message_id:
           type: string
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - message_id
     konfig-generated-schema-single-parameter-schema-post--api-v1-messaging-otp:
       properties:
-        AppId:
-          type: string
         destination:
           example: "08068810228"
           type: string
@@ -19523,12 +18966,9 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-AuthenticationSendOtpRequest-properties-priority
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-get--api-v1-messaging-otp-validate:
       properties:
-        AppId:
-          type: string
         reference_id:
           type: string
         code:
@@ -19536,21 +18976,15 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - reference_id
       - code
     konfig-generated-schema-single-parameter-schema-get--api-v1-messaging-sender_ids:
-      properties:
-        AppId:
-          type: string
+      properties: {}
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-post--api-v1-messaging-sender_id:
       properties:
-        AppId:
-          type: string
         sender_id:
           example: Dojah
           type: string
@@ -19558,12 +18992,9 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-RequestSenderIdRequest-properties-sender_id
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-post--api-v1-kyc-photoid-verify:
       properties:
-        AppId:
-          type: string
         selfie_image:
           example: "data:image/jpeg;base64,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"
           type: string
@@ -19576,8 +19007,7 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-MlVerifyPhotoIdWithSelfieRequest-properties-photoid_image
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-post--api-v1-aml-screening-platform:
       properties:
         first_name:
@@ -19613,30 +19043,22 @@ components:
       - profileId
     konfig-generated-schema-single-parameter-schema-get--api-v1-fraud-ip:
       properties:
-        AppId:
-          type: string
         ip_address:
           type: string
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - ip_address
     konfig-generated-schema-single-parameter-schema-get--api-v1-kyc-email:
       properties:
-        AppId:
-          type: string
         email:
           type: string
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - email
     konfig-generated-schema-single-parameter-schema-get--api-v1-fraud-user:
       properties:
-        AppId:
-          type: string
         first_name:
           type: string
         last_name:
@@ -19652,7 +19074,6 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - first_name
       - last_name
       - date_of_birth
@@ -19661,19 +19082,14 @@ components:
       - ip_address
     konfig-generated-schema-single-parameter-schema-get--api-v1-fraud-phone:
       properties:
-        AppId:
-          type: string
         phone_number:
           type: integer
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - phone_number
     konfig-generated-schema-single-parameter-schema-post--v1-purchase-airtime:
       properties:
-        AppId:
-          type: string
         destination:
           example: "08068810228"
           type: string
@@ -19686,20 +19102,14 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-PurchaseAirtimeRequest-properties-amount
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-get--v1-general-banks:
-      properties:
-        AppId:
-          type: string
+      properties: {}
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-get--api-v1-general-account:
       properties:
-        AppId:
-          type: string
         bank_code:
           type: integer
         account_number:
@@ -19707,32 +19117,23 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - bank_code
       - account_number
     konfig-generated-schema-single-parameter-schema-get--v1-general-bin:
       properties:
-        AppId:
-          type: string
         card_bin:
           type: integer
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
-      - AppId
       - card_bin
     konfig-generated-schema-single-parameter-schema-get--api-v1-balance:
-      properties:
-        AppId:
-          type: string
+      properties: {}
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-post--api-v1-webhook-subscribe:
       properties:
-        AppId:
-          type: string
         webhook:
           example: https://webhook.site/bc33b503-bf38-4b65-88e5-349d86378d4a
           type: string
@@ -19745,28 +19146,19 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-SubscribeServiceRequest-properties-service
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-delete--api-v1-webhook-delete:
-      properties:
-        AppId:
-          type: string
+      properties: {}
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-get--api-v1-webhook-fetch:
-      properties:
-        AppId:
-          type: string
+      properties: {}
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     konfig-generated-schema-single-parameter-schema-post--api-v1-webhook-notify:
       properties:
-        AppId:
-          type: string
         subject:
           example: kyc_widget
           type: string
@@ -19782,8 +19174,7 @@ components:
           type: object
       type: object
       x-do-not-generate: true
-      x-konfig-is-parameter:
-      - AppId
+      x-konfig-is-parameter: []
     NotifyWebhookRequest_data:
       properties:
         stuff:
@@ -23752,4 +23143,4 @@ components:
       in: header
       name: Appid
       type: apiKey
-      x-konfig-globally-required-security: false
+      x-konfig-globally-required-security: true

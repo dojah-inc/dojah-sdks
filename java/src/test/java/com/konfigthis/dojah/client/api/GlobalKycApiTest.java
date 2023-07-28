@@ -47,7 +47,6 @@ public class GlobalKycApiTest {
      */
     @Test
     public void caEkycTest() throws ApiException {
-        String appId = null;
         String country = null;
         String firstName = null;
         String lastName = null;
@@ -56,7 +55,6 @@ public class GlobalKycApiTest {
         Integer houseNumber = null;
         Integer postCode = null;
         Object response = api.caEkyc()
-                .appId(appId)
                 .country(country)
                 .firstName(firstName)
                 .lastName(lastName)
@@ -75,7 +73,6 @@ public class GlobalKycApiTest {
      */
     @Test
     public void getUsSsnTest() throws ApiException {
-        String appId = null;
         String country = null;
         String firstName = null;
         String lastName = null;
@@ -84,7 +81,6 @@ public class GlobalKycApiTest {
         Integer houseNumber = null;
         Integer postCode = null;
         Object response = api.getUsSsn()
-                .appId(appId)
                 .country(country)
                 .firstName(firstName)
                 .lastName(lastName)
@@ -103,7 +99,6 @@ public class GlobalKycApiTest {
      */
     @Test
     public void ukTwoPlusTwoTest() throws ApiException {
-        String appId = null;
         String country = null;
         String firstName = null;
         String lastName = null;
@@ -112,7 +107,6 @@ public class GlobalKycApiTest {
         Integer houseNumber = null;
         Integer postCode = null;
         Object response = api.ukTwoPlusTwo()
-                .appId(appId)
                 .country(country)
                 .firstName(firstName)
                 .lastName(lastName)

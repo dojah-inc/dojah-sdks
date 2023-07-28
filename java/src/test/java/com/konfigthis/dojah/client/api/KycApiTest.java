@@ -52,10 +52,8 @@ public class KycApiTest {
     @Test
     public void checkLivenessTest() throws ApiException {
         String image = null;
-        String appId = null;
         Object response = api.checkLiveness()
                 .image(image)
-                .appId(appId)
                 .execute();
         // TODO: test validations
     }
@@ -67,10 +65,8 @@ public class KycApiTest {
      */
     @Test
     public void getAccountsTest() throws ApiException {
-        String appId = null;
         String bvn = null;
         Object response = api.getAccounts()
-                .appId(appId)
                 .bvn(bvn)
                 .execute();
         // TODO: test validations
@@ -83,10 +79,8 @@ public class KycApiTest {
      */
     @Test
     public void getAddressVerificationTest() throws ApiException {
-        String appId = null;
         String referenceId = null;
         Object response = api.getAddressVerification()
-                .appId(appId)
                 .referenceId(referenceId)
                 .execute();
         // TODO: test validations
@@ -99,11 +93,9 @@ public class KycApiTest {
      */
     @Test
     public void getBvnFromNubanTest() throws ApiException {
-        String appId = null;
         Integer bankCode = null;
         Integer accountNumber = null;
         Object response = api.getBvnFromNuban()
-                .appId(appId)
                 .bankCode(bankCode)
                 .accountNumber(accountNumber)
                 .execute();
@@ -117,10 +109,8 @@ public class KycApiTest {
      */
     @Test
     public void getVinTest() throws ApiException {
-        String appId = null;
         String vin = null;
         GetVinResponse response = api.getVin()
-                .appId(appId)
                 .vin(vin)
                 .execute();
         // TODO: test validations
@@ -143,7 +133,6 @@ public class KycApiTest {
         String dob = null;
         String gender = null;
         String mobile = null;
-        String appId = null;
         KycSubmitAddressResponse response = api.submitAddress()
                 .street(street)
                 .lga(lga)
@@ -155,7 +144,6 @@ public class KycApiTest {
                 .dob(dob)
                 .gender(gender)
                 .mobile(mobile)
-                .appId(appId)
                 .execute();
         // TODO: test validations
     }

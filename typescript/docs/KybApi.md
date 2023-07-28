@@ -24,6 +24,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const businessDetailResponse = await dojah.kyb.businessDetail({});
@@ -36,7 +37,6 @@ console.log(businessDetailResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **internationalNumber** | [**string**] |  | (optional) defaults to undefined
  **countryCode** | [**string**] |  | (optional) defaults to undefined
  **full** | [**boolean**] |  | (optional) defaults to undefined
@@ -73,6 +73,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const businessSearchResponse = await dojah.kyb.businessSearch({});
@@ -85,7 +86,6 @@ console.log(businessSearchResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **countryCode** | [**string**] |  | (optional) defaults to undefined
  **company** | [**number**] |  | (optional) defaults to undefined
 
@@ -121,6 +121,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getCacResponse = await dojah.kyb.getCac({});
@@ -133,7 +134,6 @@ console.log(getCacResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **rcNumber** | [**number**] |  | (optional) defaults to undefined
  **companyName** | [**string**] |  | (optional) defaults to undefined
 
@@ -169,6 +169,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getTinResponse = await dojah.kyb.getTin({});
@@ -181,7 +182,6 @@ console.log(getTinResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **tin** | [**string**] |  | (optional) defaults to undefined
 
 

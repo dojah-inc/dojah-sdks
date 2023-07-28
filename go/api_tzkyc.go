@@ -25,17 +25,11 @@ type TZKYCApiService service
 type TZKYCApiGetNinRequest struct {
 	ctx context.Context
 	ApiService *TZKYCApiService
-	appId *string
 	firstName *string
 	lastName *string
 	dateOfBirth *string
 	mothersLastName *string
 	mothersFirstName *string
-}
-
-func (r TZKYCApiGetNinRequest) AppId(appId string) TZKYCApiGetNinRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r TZKYCApiGetNinRequest) FirstName(firstName string) TZKYCApiGetNinRequest {
@@ -133,8 +127,19 @@ func (a *TZKYCApiService) GetNinExecute(r TZKYCApiGetNinRequest) (map[string]int
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

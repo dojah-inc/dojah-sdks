@@ -12,7 +12,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="deleteWebhook"></a>
 # **deleteWebhook**
-> DeleteWebhookResponse deleteWebhook().appId(appId).execute();
+> DeleteWebhookResponse deleteWebhook().execute();
 
 Delete Webhook
 
@@ -36,13 +36,14 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     try {
       DeleteWebhookResponse result = client
               .webHooks
               .deleteWebhook()
-              .appId(appId)
               .execute();
       System.out.println(result);
 
@@ -61,7 +62,6 @@ public class Example {
       ApiResponse<DeleteWebhookResponse> response = client
               .webHooks
               .deleteWebhook()
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -81,10 +81,7 @@ public class Example {
 ```
 
 ### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -92,7 +89,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -106,7 +103,7 @@ public class Example {
 
 <a name="getWebhooks"></a>
 # **getWebhooks**
-> GetWebhooksResponse getWebhooks().appId(appId).execute();
+> GetWebhooksResponse getWebhooks().execute();
 
 Fetch All Webhooks
 
@@ -130,13 +127,14 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     try {
       GetWebhooksResponse result = client
               .webHooks
               .getWebhooks()
-              .appId(appId)
               .execute();
       System.out.println(result);
 
@@ -155,7 +153,6 @@ public class Example {
       ApiResponse<GetWebhooksResponse> response = client
               .webHooks
               .getWebhooks()
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -175,10 +172,7 @@ public class Example {
 ```
 
 ### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -186,7 +180,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -200,7 +194,7 @@ public class Example {
 
 <a name="notifyWebhook"></a>
 # **notifyWebhook**
-> NotifyWebhookResponse notifyWebhook(notifyWebhookRequest).appId(appId).execute();
+> NotifyWebhookResponse notifyWebhook(notifyWebhookRequest).execute();
 
 Post Hook
 
@@ -211,6 +205,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.WebHooksApi;
 import java.util.List;
@@ -221,18 +216,19 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     String subject = "subject_example";
     NotifyWebhookRequestData data = new NotifyWebhookRequestData();
-    String appId = "{{app_id}}";
     try {
       NotifyWebhookResponse result = client
               .webHooks
               .notifyWebhook()
               .subject(subject)
               .data(data)
-              .appId(appId)
               .execute();
       System.out.println(result);
 
@@ -253,7 +249,6 @@ public class Example {
               .notifyWebhook()
               .subject(subject)
               .data(data)
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -277,7 +272,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **notifyWebhookRequest** | [**NotifyWebhookRequest**](NotifyWebhookRequest.md)|  | |
-| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -285,7 +279,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -299,7 +293,7 @@ No authorization required
 
 <a name="subscribeService"></a>
 # **subscribeService**
-> SubscribeServiceResponse subscribeService(subscribeServiceRequest).appId(appId).execute();
+> SubscribeServiceResponse subscribeService(subscribeServiceRequest).execute();
 
 Subscribe to service
 
@@ -322,18 +316,19 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
 
     Dojah client = new Dojah(configuration);
     String webhook = "webhook_example";
     String service = "service_example";
-    String appId = "{{app_id}}";
     try {
       SubscribeServiceResponse result = client
               .webHooks
               .subscribeService()
               .webhook(webhook)
               .service(service)
-              .appId(appId)
               .execute();
       System.out.println(result);
 
@@ -354,7 +349,6 @@ public class Example {
               .subscribeService()
               .webhook(webhook)
               .service(service)
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -378,7 +372,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **subscribeServiceRequest** | [**SubscribeServiceRequest**](SubscribeServiceRequest.md)|  | |
-| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -386,7 +379,7 @@ public class Example {
 
 ### Authorization
 
-[noauthAuth](../README.md#noauthAuth)
+[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 

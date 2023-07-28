@@ -71,33 +71,9 @@ request_query_company_name = api_client.QueryParameter(
     schema=CompanyNameSchema,
     explode=True,
 )
-# Header params
-AppIdSchema = schemas.StrSchema
-RequestRequiredHeaderParams = typing_extensions.TypedDict(
-    'RequestRequiredHeaderParams',
-    {
-    }
-)
-RequestOptionalHeaderParams = typing_extensions.TypedDict(
-    'RequestOptionalHeaderParams',
-    {
-        'AppId': typing.Union[AppIdSchema, str, ],
-    },
-    total=False
-)
-
-
-class RequestHeaderParams(RequestRequiredHeaderParams, RequestOptionalHeaderParams):
-    pass
-
-
-request_header_app_id = api_client.HeaderParameter(
-    name="AppId",
-    style=api_client.ParameterStyle.SIMPLE,
-    schema=AppIdSchema,
-)
 _auth = [
     'apikeyAuth',
+    'appIdAuth',
 ]
 XPoweredBySchema = schemas.StrSchema
 x_powered_by_parameter = api_client.HeaderParameter(
@@ -187,27 +163,21 @@ class BaseApi(api_client.Api):
 
     def _get_cac_mapped_args(
         self,
-        app_id: typing.Optional[str] = None,
         rc_number: typing.Optional[int] = None,
         company_name: typing.Optional[str] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
         _query_params = {}
-        _header_params = {}
         if rc_number is not None:
             _query_params["rc_number"] = rc_number
         if company_name is not None:
             _query_params["company_name"] = company_name
-        if app_id is not None:
-            _header_params["AppId"] = app_id
         args.query = _query_params
-        args.header = _header_params
         return args
 
     async def _aget_cac_oapg(
         self,
             query_params: typing.Optional[dict] = {},
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -224,7 +194,6 @@ class BaseApi(api_client.Api):
             class instances
         """
         self._verify_typed_dict_inputs_oapg(RequestQueryParams, query_params)
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         prefix_separator_iterator = None
@@ -242,14 +211,6 @@ class BaseApi(api_client.Api):
                 used_path += serialized_value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -329,7 +290,6 @@ class BaseApi(api_client.Api):
     def _get_cac_oapg(
         self,
             query_params: typing.Optional[dict] = {},
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -345,7 +305,6 @@ class BaseApi(api_client.Api):
             class instances
         """
         self._verify_typed_dict_inputs_oapg(RequestQueryParams, query_params)
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         prefix_separator_iterator = None
@@ -363,14 +322,6 @@ class BaseApi(api_client.Api):
                 used_path += serialized_value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -422,7 +373,6 @@ class GetCac(BaseApi):
 
     async def aget_cac(
         self,
-        app_id: typing.Optional[str] = None,
         rc_number: typing.Optional[int] = None,
         company_name: typing.Optional[str] = None,
     ) -> typing.Union[
@@ -431,18 +381,15 @@ class GetCac(BaseApi):
         AsyncGeneratorResponse,
     ]:
         args = self._get_cac_mapped_args(
-            app_id=app_id,
             rc_number=rc_number,
             company_name=company_name,
         )
         return await self._aget_cac_oapg(
             query_params=args.query,
-            header_params=args.header,
         )
     
     def get_cac(
         self,
-        app_id: typing.Optional[str] = None,
         rc_number: typing.Optional[int] = None,
         company_name: typing.Optional[str] = None,
     ) -> typing.Union[
@@ -450,13 +397,11 @@ class GetCac(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]:
         args = self._get_cac_mapped_args(
-            app_id=app_id,
             rc_number=rc_number,
             company_name=company_name,
         )
         return self._get_cac_oapg(
             query_params=args.query,
-            header_params=args.header,
         )
 
 class ApiForget(BaseApi):
@@ -464,7 +409,6 @@ class ApiForget(BaseApi):
 
     async def aget(
         self,
-        app_id: typing.Optional[str] = None,
         rc_number: typing.Optional[int] = None,
         company_name: typing.Optional[str] = None,
     ) -> typing.Union[
@@ -473,18 +417,15 @@ class ApiForget(BaseApi):
         AsyncGeneratorResponse,
     ]:
         args = self._get_cac_mapped_args(
-            app_id=app_id,
             rc_number=rc_number,
             company_name=company_name,
         )
         return await self._aget_cac_oapg(
             query_params=args.query,
-            header_params=args.header,
         )
     
     def get(
         self,
-        app_id: typing.Optional[str] = None,
         rc_number: typing.Optional[int] = None,
         company_name: typing.Optional[str] = None,
     ) -> typing.Union[
@@ -492,12 +433,10 @@ class ApiForget(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]:
         args = self._get_cac_mapped_args(
-            app_id=app_id,
             rc_number=rc_number,
             company_name=company_name,
         )
         return self._get_cac_oapg(
             query_params=args.query,
-            header_params=args.header,
         )
 

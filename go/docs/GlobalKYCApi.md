@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## CaEkyc
 
-> map[string]interface{} CaEkyc(ctx).AppId(appId).Country(country).FirstName(firstName).LastName(lastName).StreetName(streetName).DateOfBirth(dateOfBirth).HouseNumber(houseNumber).PostCode(postCode).Execute()
+> map[string]interface{} CaEkyc(ctx).Country(country).FirstName(firstName).LastName(lastName).StreetName(streetName).DateOfBirth(dateOfBirth).HouseNumber(houseNumber).PostCode(postCode).Execute()
 
 Canada Ekyc
 
@@ -29,18 +29,17 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    country := "GBR" // string |  (optional)
-    firstName := "Tobi" // string |  (optional)
-    lastName := "Ololade" // string |  (optional)
-    streetName := "Street 1" // string |  (optional)
-    dateOfBirth := "1992-05-18" // string |  (optional)
+    country := ""GBR"" // string |  (optional)
+    firstName := ""Tobi"" // string |  (optional)
+    lastName := ""Ololade"" // string |  (optional)
+    streetName := ""Street 1"" // string |  (optional)
+    dateOfBirth := ""1992-05-18"" // string |  (optional)
     houseNumber := int32(25) // int32 |  (optional)
     postCode := int32(1234) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.GlobalKYCApi.CaEkyc(context.Background()).AppId(appId).Country(country).FirstName(firstName).LastName(lastName).StreetName(streetName).DateOfBirth(dateOfBirth).HouseNumber(houseNumber).PostCode(postCode).Execute()
+    resp, r, err := apiClient.GlobalKYCApi.CaEkyc(context.Background()).Country(country).FirstName(firstName).LastName(lastName).StreetName(streetName).DateOfBirth(dateOfBirth).HouseNumber(houseNumber).PostCode(postCode).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GlobalKYCApi.CaEkyc``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -61,7 +60,6 @@ Other parameters are passed through a pointer to a apiCaEkycRequest struct via t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **country** | **string** |  | 
  **firstName** | **string** |  | 
  **lastName** | **string** |  | 
@@ -76,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -90,7 +88,7 @@ No authorization required
 
 ## GetUsSsn
 
-> map[string]interface{} GetUsSsn(ctx).AppId(appId).Country(country).FirstName(firstName).LastName(lastName).StreetName(streetName).DateOfBirth(dateOfBirth).HouseNumber(houseNumber).PostCode(postCode).Execute()
+> map[string]interface{} GetUsSsn(ctx).Country(country).FirstName(firstName).LastName(lastName).StreetName(streetName).DateOfBirth(dateOfBirth).HouseNumber(houseNumber).PostCode(postCode).Execute()
 
 US SSN
 
@@ -107,18 +105,17 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    country := "GBR" // string |  (optional)
-    firstName := "Tobi" // string |  (optional)
-    lastName := "Ololade" // string |  (optional)
-    streetName := "Street 1" // string |  (optional)
-    dateOfBirth := "1992-05-18" // string |  (optional)
+    country := ""GBR"" // string |  (optional)
+    firstName := ""Tobi"" // string |  (optional)
+    lastName := ""Ololade"" // string |  (optional)
+    streetName := ""Street 1"" // string |  (optional)
+    dateOfBirth := ""1992-05-18"" // string |  (optional)
     houseNumber := int32(25) // int32 |  (optional)
     postCode := int32(1234) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.GlobalKYCApi.GetUsSsn(context.Background()).AppId(appId).Country(country).FirstName(firstName).LastName(lastName).StreetName(streetName).DateOfBirth(dateOfBirth).HouseNumber(houseNumber).PostCode(postCode).Execute()
+    resp, r, err := apiClient.GlobalKYCApi.GetUsSsn(context.Background()).Country(country).FirstName(firstName).LastName(lastName).StreetName(streetName).DateOfBirth(dateOfBirth).HouseNumber(houseNumber).PostCode(postCode).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GlobalKYCApi.GetUsSsn``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -139,7 +136,6 @@ Other parameters are passed through a pointer to a apiGetUsSsnRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **country** | **string** |  | 
  **firstName** | **string** |  | 
  **lastName** | **string** |  | 
@@ -154,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -168,7 +164,7 @@ No authorization required
 
 ## UkTwoPlusTwo
 
-> map[string]interface{} UkTwoPlusTwo(ctx).AppId(appId).Country(country).FirstName(firstName).LastName(lastName).StreetName(streetName).DateOfBirth(dateOfBirth).HouseNumber(houseNumber).PostCode(postCode).Execute()
+> map[string]interface{} UkTwoPlusTwo(ctx).Country(country).FirstName(firstName).LastName(lastName).StreetName(streetName).DateOfBirth(dateOfBirth).HouseNumber(houseNumber).PostCode(postCode).Execute()
 
 UK 2+2
 
@@ -185,18 +181,17 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    country := "GBR" // string |  (optional)
-    firstName := "Tobi" // string |  (optional)
-    lastName := "Ololade" // string |  (optional)
-    streetName := "Street 1" // string |  (optional)
-    dateOfBirth := "1992-05-18" // string |  (optional)
+    country := ""GBR"" // string |  (optional)
+    firstName := ""Tobi"" // string |  (optional)
+    lastName := ""Ololade"" // string |  (optional)
+    streetName := ""Street 1"" // string |  (optional)
+    dateOfBirth := ""1992-05-18"" // string |  (optional)
     houseNumber := int32(25) // int32 |  (optional)
     postCode := int32(1234) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.GlobalKYCApi.UkTwoPlusTwo(context.Background()).AppId(appId).Country(country).FirstName(firstName).LastName(lastName).StreetName(streetName).DateOfBirth(dateOfBirth).HouseNumber(houseNumber).PostCode(postCode).Execute()
+    resp, r, err := apiClient.GlobalKYCApi.UkTwoPlusTwo(context.Background()).Country(country).FirstName(firstName).LastName(lastName).StreetName(streetName).DateOfBirth(dateOfBirth).HouseNumber(houseNumber).PostCode(postCode).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GlobalKYCApi.UkTwoPlusTwo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -217,7 +212,6 @@ Other parameters are passed through a pointer to a apiUkTwoPlusTwoRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **country** | **string** |  | 
  **firstName** | **string** |  | 
  **lastName** | **string** |  | 
@@ -232,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

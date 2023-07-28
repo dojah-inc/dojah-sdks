@@ -19,7 +19,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getBasicBvn"></a>
 # **getBasicBvn**
-> ValidateBvnResponse getBasicBvn().appId(appId).bvn(bvn).execute();
+> ValidateBvnResponse getBasicBvn().bvn(bvn).execute();
 
 KYC - Get Basic BVN Info
 
@@ -43,14 +43,15 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     Integer bvn = 22468537919;
     try {
       ValidateBvnResponse result = client
               .nigeriaKyc
               .getBasicBvn()
-              .appId(appId)
               .bvn(bvn)
               .execute();
       System.out.println(result);
@@ -70,7 +71,6 @@ public class Example {
       ApiResponse<ValidateBvnResponse> response = client
               .nigeriaKyc
               .getBasicBvn()
-              .appId(appId)
               .bvn(bvn)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -94,7 +94,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **bvn** | **Integer**|  | [optional] |
 
 ### Return type
@@ -103,7 +102,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -117,7 +116,7 @@ public class Example {
 
 <a name="getBasicBvn1"></a>
 # **getBasicBvn1**
-> GetBasicBvnResponse getBasicBvn1().appId(appId).bvn(bvn).execute();
+> GetBasicBvnResponse getBasicBvn1().bvn(bvn).execute();
 
 KYC - Lookup BVN Basic 1
 
@@ -128,6 +127,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.NigeriaKycApi;
 import java.util.List;
@@ -138,15 +138,16 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     Integer bvn = 22621998885;
     try {
       GetBasicBvnResponse result = client
               .nigeriaKyc
               .getBasicBvn1()
-              .appId(appId)
               .bvn(bvn)
               .execute();
       System.out.println(result);
@@ -166,7 +167,6 @@ public class Example {
       ApiResponse<GetBasicBvnResponse> response = client
               .nigeriaKyc
               .getBasicBvn1()
-              .appId(appId)
               .bvn(bvn)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -190,7 +190,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **bvn** | **Integer**|  | [optional] |
 
 ### Return type
@@ -199,7 +198,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -213,7 +212,7 @@ No authorization required
 
 <a name="getBasicPhoneNumber"></a>
 # **getBasicPhoneNumber**
-> Object getBasicPhoneNumber().appId(appId).phoneNumber(phoneNumber).execute();
+> Object getBasicPhoneNumber().phoneNumber(phoneNumber).execute();
 
 KYC Lookup Phone Number Basic
 
@@ -237,14 +236,15 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     Integer phoneNumber = 9131377829;
     try {
       Object result = client
               .nigeriaKyc
               .getBasicPhoneNumber()
-              .appId(appId)
               .phoneNumber(phoneNumber)
               .execute();
     } catch (ApiException e) {
@@ -260,7 +260,6 @@ public class Example {
       ApiResponse<Object> response = client
               .nigeriaKyc
               .getBasicPhoneNumber()
-              .appId(appId)
               .phoneNumber(phoneNumber)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -284,7 +283,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **phoneNumber** | **Integer**|  | [optional] |
 
 ### Return type
@@ -293,7 +291,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -307,7 +305,7 @@ public class Example {
 
 <a name="getDriversLicense"></a>
 # **getDriversLicense**
-> GetKycDriversLicenseResponse getDriversLicense().appId(appId).licenseNumber(licenseNumber).execute();
+> GetKycDriversLicenseResponse getDriversLicense().licenseNumber(licenseNumber).execute();
 
 KYC - Get Drivers License Info
 
@@ -331,14 +329,15 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String licenseNumber = "FKJ49409AB13";
     try {
       GetKycDriversLicenseResponse result = client
               .nigeriaKyc
               .getDriversLicense()
-              .appId(appId)
               .licenseNumber(licenseNumber)
               .execute();
       System.out.println(result);
@@ -358,7 +357,6 @@ public class Example {
       ApiResponse<GetKycDriversLicenseResponse> response = client
               .nigeriaKyc
               .getDriversLicense()
-              .appId(appId)
               .licenseNumber(licenseNumber)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -382,7 +380,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **licenseNumber** | **String**|  | [optional] |
 
 ### Return type
@@ -391,7 +388,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -405,7 +402,7 @@ public class Example {
 
 <a name="getNin"></a>
 # **getNin**
-> NigeriaKycGetNinResponse getNin().appId(appId).nin(nin).execute();
+> NigeriaKycGetNinResponse getNin().nin(nin).execute();
 
 KYC - Get NIN Info
 
@@ -429,14 +426,15 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     Integer nin = 55648152772;
     try {
       NigeriaKycGetNinResponse result = client
               .nigeriaKyc
               .getNin()
-              .appId(appId)
               .nin(nin)
               .execute();
       System.out.println(result);
@@ -456,7 +454,6 @@ public class Example {
       ApiResponse<NigeriaKycGetNinResponse> response = client
               .nigeriaKyc
               .getNin()
-              .appId(appId)
               .nin(nin)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -480,7 +477,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **nin** | **Integer**|  | [optional] |
 
 ### Return type
@@ -489,7 +485,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -503,7 +499,7 @@ public class Example {
 
 <a name="getNormalBvn"></a>
 # **getNormalBvn**
-> GetFullBvnResponse getNormalBvn().appId(appId).bvn(bvn).execute();
+> GetFullBvnResponse getNormalBvn().bvn(bvn).execute();
 
 KYC - Lookup BVN Normal
 
@@ -527,14 +523,15 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     Integer bvn = 22342291445;
     try {
       GetFullBvnResponse result = client
               .nigeriaKyc
               .getNormalBvn()
-              .appId(appId)
               .bvn(bvn)
               .execute();
       System.out.println(result);
@@ -554,7 +551,6 @@ public class Example {
       ApiResponse<GetFullBvnResponse> response = client
               .nigeriaKyc
               .getNormalBvn()
-              .appId(appId)
               .bvn(bvn)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -578,7 +574,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **bvn** | **Integer**|  | [optional] |
 
 ### Return type
@@ -587,7 +582,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -601,7 +596,7 @@ public class Example {
 
 <a name="getNuban"></a>
 # **getNuban**
-> GetNubanResponse getNuban().appId(appId).bankCode(bankCode).accountNumber(accountNumber).execute();
+> GetNubanResponse getNuban().bankCode(bankCode).accountNumber(accountNumber).execute();
 
 KYC - Get NUBAN Information
 
@@ -625,15 +620,16 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     Integer bankCode = 58;
     Integer accountNumber = 11223344;
     try {
       GetNubanResponse result = client
               .nigeriaKyc
               .getNuban()
-              .appId(appId)
               .bankCode(bankCode)
               .accountNumber(accountNumber)
               .execute();
@@ -654,7 +650,6 @@ public class Example {
       ApiResponse<GetNubanResponse> response = client
               .nigeriaKyc
               .getNuban()
-              .appId(appId)
               .bankCode(bankCode)
               .accountNumber(accountNumber)
               .executeWithHttpInfo();
@@ -679,7 +674,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **bankCode** | **Integer**|  | [optional] |
 | **accountNumber** | **Integer**|  | [optional] |
 
@@ -689,7 +683,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -803,7 +797,7 @@ public class Example {
 
 <a name="getPhoneNumber"></a>
 # **getPhoneNumber**
-> GetPhoneNumberResponse getPhoneNumber().appId(appId).phoneNumber(phoneNumber).execute();
+> GetPhoneNumberResponse getPhoneNumber().phoneNumber(phoneNumber).execute();
 
 KYC - Lookup Phone Number
 
@@ -826,15 +820,16 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     Integer phoneNumber = 8034628633;
     try {
       GetPhoneNumberResponse result = client
               .nigeriaKyc
               .getPhoneNumber()
-              .appId(appId)
               .phoneNumber(phoneNumber)
               .execute();
       System.out.println(result);
@@ -854,7 +849,6 @@ public class Example {
       ApiResponse<GetPhoneNumberResponse> response = client
               .nigeriaKyc
               .getPhoneNumber()
-              .appId(appId)
               .phoneNumber(phoneNumber)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -878,7 +872,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **phoneNumber** | **Integer**|  | [optional] |
 
 ### Return type
@@ -887,7 +880,7 @@ public class Example {
 
 ### Authorization
 
-[noauthAuth](../README.md#noauthAuth)
+[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 
@@ -901,7 +894,7 @@ public class Example {
 
 <a name="getPremiumBvn"></a>
 # **getPremiumBvn**
-> GetPremiumBvnResponse getPremiumBvn().appId(appId).bvn(bvn).execute();
+> GetPremiumBvnResponse getPremiumBvn().bvn(bvn).execute();
 
 KYC - Lookup BVN Premium
 
@@ -925,14 +918,15 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     Integer bvn = 22200508254;
     try {
       GetPremiumBvnResponse result = client
               .nigeriaKyc
               .getPremiumBvn()
-              .appId(appId)
               .bvn(bvn)
               .execute();
       System.out.println(result);
@@ -952,7 +946,6 @@ public class Example {
       ApiResponse<GetPremiumBvnResponse> response = client
               .nigeriaKyc
               .getPremiumBvn()
-              .appId(appId)
               .bvn(bvn)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -976,7 +969,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **bvn** | **Integer**|  | [optional] |
 
 ### Return type
@@ -985,7 +977,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -999,7 +991,7 @@ public class Example {
 
 <a name="getVnin"></a>
 # **getVnin**
-> GetVninResponse getVnin().appId(appId).vnin(vnin).execute();
+> GetVninResponse getVnin().vnin(vnin).execute();
 
 Lookup VNIN
 
@@ -1010,6 +1002,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.NigeriaKycApi;
 import java.util.List;
@@ -1020,15 +1013,16 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String vnin = "LC829995256998RD";
     try {
       GetVninResponse result = client
               .nigeriaKyc
               .getVnin()
-              .appId(appId)
               .vnin(vnin)
               .execute();
       System.out.println(result);
@@ -1048,7 +1042,6 @@ public class Example {
       ApiResponse<GetVninResponse> response = client
               .nigeriaKyc
               .getVnin()
-              .appId(appId)
               .vnin(vnin)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -1072,7 +1065,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **vnin** | **String**|  | [optional] |
 
 ### Return type
@@ -1081,7 +1073,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

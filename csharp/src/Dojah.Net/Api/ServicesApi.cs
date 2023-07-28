@@ -30,10 +30,9 @@ namespace Dojah.Net.Api
         /// Get Dojah Wallet Balance
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetWalletBalanceResponse</returns>
-        GetWalletBalanceResponse GetWalletBalance(string appId = default(string), int operationIndex = 0);
+        GetWalletBalanceResponse GetWalletBalance(int operationIndex = 0);
 
         /// <summary>
         /// Get Dojah Wallet Balance
@@ -42,10 +41,9 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetWalletBalanceResponse</returns>
-        ApiResponse<GetWalletBalanceResponse> GetWalletBalanceWithHttpInfo(string appId = default(string), int operationIndex = 0);
+        ApiResponse<GetWalletBalanceResponse> GetWalletBalanceWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -62,11 +60,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetWalletBalanceResponse</returns>
-        System.Threading.Tasks.Task<GetWalletBalanceResponse> GetWalletBalanceAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetWalletBalanceResponse> GetWalletBalanceAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Dojah Wallet Balance
@@ -75,11 +72,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetWalletBalanceResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetWalletBalanceResponse>> GetWalletBalanceWithHttpInfoAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetWalletBalanceResponse>> GetWalletBalanceWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -204,12 +200,11 @@ namespace Dojah.Net.Api
         /// Get Dojah Wallet Balance 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetWalletBalanceResponse</returns>
-        public GetWalletBalanceResponse GetWalletBalance(string appId = default(string), int operationIndex = 0)
+        public GetWalletBalanceResponse GetWalletBalance(int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetWalletBalanceResponse> localVarResponse = GetWalletBalanceWithHttpInfo(appId);
+            Dojah.Net.Client.ApiResponse<GetWalletBalanceResponse> localVarResponse = GetWalletBalanceWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -217,10 +212,9 @@ namespace Dojah.Net.Api
         /// Get Dojah Wallet Balance 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetWalletBalanceResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetWalletBalanceResponse> GetWalletBalanceWithHttpInfo(string appId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GetWalletBalanceResponse> GetWalletBalanceWithHttpInfo(int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -244,14 +238,15 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "ServicesApi.GetWalletBalance";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
             // authentication (noauthAuth) required
 
             // make the HTTP request
@@ -272,13 +267,12 @@ namespace Dojah.Net.Api
         /// Get Dojah Wallet Balance 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetWalletBalanceResponse</returns>
-        public async System.Threading.Tasks.Task<GetWalletBalanceResponse> GetWalletBalanceAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetWalletBalanceResponse> GetWalletBalanceAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetWalletBalanceResponse> localVarResponse = await GetWalletBalanceWithHttpInfoAsync(appId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetWalletBalanceResponse> localVarResponse = await GetWalletBalanceWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -286,11 +280,10 @@ namespace Dojah.Net.Api
         /// Get Dojah Wallet Balance 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetWalletBalanceResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetWalletBalanceResponse>> GetWalletBalanceWithHttpInfoAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetWalletBalanceResponse>> GetWalletBalanceWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -315,14 +308,15 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "ServicesApi.GetWalletBalance";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
             // authentication (noauthAuth) required
 
             // make the HTTP request

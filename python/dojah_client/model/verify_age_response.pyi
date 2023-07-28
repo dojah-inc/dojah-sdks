@@ -34,92 +34,16 @@ class VerifyAgeResponse(
     class MetaOapg:
         
         class properties:
-            
-            
-            class entity(
-                schemas.DictSchema
-            ):
-            
-            
-                class MetaOapg:
-                    
-                    class properties:
-                        first_name = schemas.StrSchema
-                        last_name = schemas.StrSchema
-                        date_of_birth = schemas.StrSchema
-                        verification = schemas.BoolSchema
-                        __annotations__ = {
-                            "first_name": first_name,
-                            "last_name": last_name,
-                            "date_of_birth": date_of_birth,
-                            "verification": verification,
-                        }
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["first_name"]) -> MetaOapg.properties.first_name: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["last_name"]) -> MetaOapg.properties.last_name: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["date_of_birth"]) -> MetaOapg.properties.date_of_birth: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["verification"]) -> MetaOapg.properties.verification: ...
-                
-                @typing.overload
-                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
-                
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["first_name", "last_name", "date_of_birth", "verification", ], str]):
-                    # dict_instance[name] accessor
-                    return super().__getitem__(name)
-                
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["first_name"]) -> typing.Union[MetaOapg.properties.first_name, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["last_name"]) -> typing.Union[MetaOapg.properties.last_name, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["date_of_birth"]) -> typing.Union[MetaOapg.properties.date_of_birth, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["verification"]) -> typing.Union[MetaOapg.properties.verification, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
-                
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["first_name", "last_name", "date_of_birth", "verification", ], str]):
-                    return super().get_item_oapg(name)
-                
-            
-                def __new__(
-                    cls,
-                    *args: typing.Union[dict, frozendict.frozendict, ],
-                    first_name: typing.Union[MetaOapg.properties.first_name, str, schemas.Unset] = schemas.unset,
-                    last_name: typing.Union[MetaOapg.properties.last_name, str, schemas.Unset] = schemas.unset,
-                    date_of_birth: typing.Union[MetaOapg.properties.date_of_birth, str, schemas.Unset] = schemas.unset,
-                    verification: typing.Union[MetaOapg.properties.verification, bool, schemas.Unset] = schemas.unset,
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-                ) -> 'entity':
-                    return super().__new__(
-                        cls,
-                        *args,
-                        first_name=first_name,
-                        last_name=last_name,
-                        date_of_birth=date_of_birth,
-                        verification=verification,
-                        _configuration=_configuration,
-                        **kwargs,
-                    )
+        
+            @staticmethod
+            def entity() -> typing.Type['VerifyAgeResponseEntity']:
+                return VerifyAgeResponseEntity
             __annotations__ = {
                 "entity": entity,
             }
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["entity"]) -> MetaOapg.properties.entity: ...
+    def __getitem__(self, name: typing_extensions.Literal["entity"]) -> 'VerifyAgeResponseEntity': ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
@@ -130,7 +54,7 @@ class VerifyAgeResponse(
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["entity"]) -> typing.Union[MetaOapg.properties.entity, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["entity"]) -> typing.Union['VerifyAgeResponseEntity', schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
@@ -142,7 +66,7 @@ class VerifyAgeResponse(
     def __new__(
         cls,
         *args: typing.Union[dict, frozendict.frozendict, ],
-        entity: typing.Union[MetaOapg.properties.entity, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        entity: typing.Union['VerifyAgeResponseEntity', schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'VerifyAgeResponse':
@@ -153,3 +77,5 @@ class VerifyAgeResponse(
             _configuration=_configuration,
             **kwargs,
         )
+
+from dojah_client.model.verify_age_response_entity import VerifyAgeResponseEntity

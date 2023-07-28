@@ -8,7 +8,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="analyzedocument"></a>
 # **AnalyzeDocument**
-> AnalyzeDocumentResponse AnalyzeDocument (string appId = null)
+> AnalyzeDocumentResponse AnalyzeDocument ()
 
 KYC - Document Analysis
 
@@ -17,7 +17,6 @@ KYC - Document Analysis
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -27,18 +26,18 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new DocumentAnalysisApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // KYC - Document Analysis
-                AnalyzeDocumentResponse result = apiInstance.AnalyzeDocument(appId);
+                AnalyzeDocumentResponse result = client.DocumentAnalysis.AnalyzeDocument();
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -65,7 +64,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Document Analysis
-    ApiResponse<AnalyzeDocumentResponse> response = apiInstance.AnalyzeDocumentWithHttpInfo(appId);
+    ApiResponse<AnalyzeDocumentResponse> response = apiInstance.AnalyzeDocumentWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -79,18 +78,14 @@ catch (ApiException e)
 ```
 
 ### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
-
+This endpoint does not need any parameter.
 ### Return type
 
 [**AnalyzeDocumentResponse**](AnalyzeDocumentResponse.md)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

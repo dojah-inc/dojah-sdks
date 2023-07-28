@@ -12,7 +12,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="validatebvn"></a>
 # **ValidateBvn**
-> Object ValidateBvn (string appId = null, int? bvn = null, string firstName = null, string dob = null)
+> Object ValidateBvn (int? bvn = null, string firstName = null, string dob = null)
 
 KYC - Validate BVN
 
@@ -21,7 +21,6 @@ KYC - Validate BVN
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -31,22 +30,21 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new VerificationsApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
             var bvn = 22250148240;  // int? |  (optional) 
-            var firstName = FRANCIS;  // string |  (optional) 
-            var dob = 1982-02-19;  // string |  (optional) 
+            var firstName = "FRANCIS";  // string |  (optional) 
+            var dob = "1982-02-19";  // string |  (optional) 
 
             try
             {
                 // KYC - Validate BVN
-                Object result = apiInstance.ValidateBvn(appId, bvn, firstName, dob);
+                Object result = client.Verifications.ValidateBvn(bvn, firstName, dob);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -73,7 +71,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Validate BVN
-    ApiResponse<Object> response = apiInstance.ValidateBvnWithHttpInfo(appId, bvn, firstName, dob);
+    ApiResponse<Object> response = apiInstance.ValidateBvnWithHttpInfo(bvn, firstName, dob);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -90,7 +88,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **bvn** | **int?** |  | [optional]  |
 | **firstName** | **string** |  | [optional]  |
 | **dob** | **string** |  | [optional]  |
@@ -101,7 +98,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -118,7 +115,7 @@ catch (ApiException e)
 
 <a name="verifyage"></a>
 # **VerifyAge**
-> VerifyAgeResponse VerifyAge (string appId = null, string mode = null, int? accountNumber = null, int? bankCode = null, string dob = null, string firstName = null, string lastName = null)
+> VerifyAgeResponse VerifyAge (string mode = null, int? accountNumber = null, int? bankCode = null, string dob = null, string firstName = null, string lastName = null)
 
 KYC - Age Verification
 
@@ -127,7 +124,6 @@ KYC - Age Verification
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -137,25 +133,24 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new VerificationsApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
-            var mode = account_number;  // string |  (optional) 
+            var mode = "account_number";  // string |  (optional) 
             var accountNumber = 3046507407;  // int? |  (optional) 
             var bankCode = 11;  // int? |  (optional) 
-            var dob = 1993-06-10;  // string |  (optional) 
-            var firstName = Mosh;  // string |  (optional) 
-            var lastName = Saliu;  // string |  (optional) 
+            var dob = "1993-06-10";  // string |  (optional) 
+            var firstName = "Mosh";  // string |  (optional) 
+            var lastName = "Saliu";  // string |  (optional) 
 
             try
             {
                 // KYC - Age Verification
-                VerifyAgeResponse result = apiInstance.VerifyAge(appId, mode, accountNumber, bankCode, dob, firstName, lastName);
+                VerifyAgeResponse result = client.Verifications.VerifyAge(mode, accountNumber, bankCode, dob, firstName, lastName);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -182,7 +177,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Age Verification
-    ApiResponse<VerifyAgeResponse> response = apiInstance.VerifyAgeWithHttpInfo(appId, mode, accountNumber, bankCode, dob, firstName, lastName);
+    ApiResponse<VerifyAgeResponse> response = apiInstance.VerifyAgeWithHttpInfo(mode, accountNumber, bankCode, dob, firstName, lastName);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -199,7 +194,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **mode** | **string** |  | [optional]  |
 | **accountNumber** | **int?** |  | [optional]  |
 | **bankCode** | **int?** |  | [optional]  |
@@ -213,7 +207,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -230,7 +224,7 @@ catch (ApiException e)
 
 <a name="verifyselfiebvn"></a>
 # **VerifySelfieBvn**
-> VerifySelfieBvnResponse VerifySelfieBvn (VerifySelfieBvnRequest verifySelfieBvnRequest, string appId = null)
+> VerifySelfieBvnResponse VerifySelfieBvn (VerifySelfieBvnRequest verifySelfieBvnRequest)
 
 KYV - Selfie BVN Verificatoin
 
@@ -239,7 +233,6 @@ KYV - Selfie BVN Verificatoin
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -249,20 +242,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new VerificationsApi(config);
             var verifySelfieBvnRequest = new VerifySelfieBvnRequest(); // VerifySelfieBvnRequest | 
-            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // KYV - Selfie BVN Verificatoin
-                VerifySelfieBvnResponse result = apiInstance.VerifySelfieBvn(verifySelfieBvnRequest, appId);
+                VerifySelfieBvnResponse result = client.Verifications.VerifySelfieBvn(verifySelfieBvnRequest);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -289,7 +281,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYV - Selfie BVN Verificatoin
-    ApiResponse<VerifySelfieBvnResponse> response = apiInstance.VerifySelfieBvnWithHttpInfo(verifySelfieBvnRequest, appId);
+    ApiResponse<VerifySelfieBvnResponse> response = apiInstance.VerifySelfieBvnWithHttpInfo(verifySelfieBvnRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -307,7 +299,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **verifySelfieBvnRequest** | [**VerifySelfieBvnRequest**](VerifySelfieBvnRequest.md) |  |  |
-| **appId** | **string** |  | [optional]  |
 
 ### Return type
 
@@ -315,7 +306,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -332,7 +323,7 @@ catch (ApiException e)
 
 <a name="verifyselfienin"></a>
 # **VerifySelfieNin**
-> Object VerifySelfieNin (VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest, string appId = null)
+> Object VerifySelfieNin (VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest)
 
 KYC - Selfie NIN Verification
 
@@ -341,7 +332,6 @@ KYC - Selfie NIN Verification
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -351,20 +341,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new VerificationsApi(config);
             var verificationsVerifySelfieNinRequest = new VerificationsVerifySelfieNinRequest(); // VerificationsVerifySelfieNinRequest | 
-            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // KYC - Selfie NIN Verification
-                Object result = apiInstance.VerifySelfieNin(verificationsVerifySelfieNinRequest, appId);
+                Object result = client.Verifications.VerifySelfieNin(verificationsVerifySelfieNinRequest);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -391,7 +380,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Selfie NIN Verification
-    ApiResponse<Object> response = apiInstance.VerifySelfieNinWithHttpInfo(verificationsVerifySelfieNinRequest, appId);
+    ApiResponse<Object> response = apiInstance.VerifySelfieNinWithHttpInfo(verificationsVerifySelfieNinRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -409,7 +398,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **verificationsVerifySelfieNinRequest** | [**VerificationsVerifySelfieNinRequest**](VerificationsVerifySelfieNinRequest.md) |  |  |
-| **appId** | **string** |  | [optional]  |
 
 ### Return type
 
@@ -417,7 +405,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -434,7 +422,7 @@ catch (ApiException e)
 
 <a name="verifyselfievnin"></a>
 # **VerifySelfieVnin**
-> Object VerifySelfieVnin (VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest, string appId = null)
+> Object VerifySelfieVnin (VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest)
 
 KYC - Selfie vNIN verification
 
@@ -443,7 +431,6 @@ KYC - Selfie vNIN verification
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -453,19 +440,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new VerificationsApi(config);
             var verificationsVerifySelfieVninRequest = new VerificationsVerifySelfieVninRequest(); // VerificationsVerifySelfieVninRequest | 
-            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // KYC - Selfie vNIN verification
-                Object result = apiInstance.VerifySelfieVnin(verificationsVerifySelfieVninRequest, appId);
+                Object result = client.Verifications.VerifySelfieVnin(verificationsVerifySelfieVninRequest);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -492,7 +479,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Selfie vNIN verification
-    ApiResponse<Object> response = apiInstance.VerifySelfieVninWithHttpInfo(verificationsVerifySelfieVninRequest, appId);
+    ApiResponse<Object> response = apiInstance.VerifySelfieVninWithHttpInfo(verificationsVerifySelfieVninRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -510,7 +497,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **verificationsVerifySelfieVninRequest** | [**VerificationsVerifySelfieVninRequest**](VerificationsVerifySelfieVninRequest.md) |  |  |
-| **appId** | **string** |  | [optional]  |
 
 ### Return type
 
@@ -518,7 +504,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

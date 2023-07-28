@@ -49,12 +49,10 @@ public class KybApiTest {
      */
     @Test
     public void businessDetailTest() throws ApiException {
-        String appId = null;
         String internationalNumber = null;
         String countryCode = null;
         Boolean full = null;
         Object response = api.businessDetail()
-                .appId(appId)
                 .internationalNumber(internationalNumber)
                 .countryCode(countryCode)
                 .full(full)
@@ -69,11 +67,9 @@ public class KybApiTest {
      */
     @Test
     public void businessSearchTest() throws ApiException {
-        String appId = null;
         String countryCode = null;
         Integer company = null;
         Object response = api.businessSearch()
-                .appId(appId)
                 .countryCode(countryCode)
                 .company(company)
                 .execute();
@@ -87,11 +83,9 @@ public class KybApiTest {
      */
     @Test
     public void getCacTest() throws ApiException {
-        String appId = null;
         Integer rcNumber = null;
         String companyName = null;
         KybGetCacResponse response = api.getCac()
-                .appId(appId)
                 .rcNumber(rcNumber)
                 .companyName(companyName)
                 .execute();
@@ -105,10 +99,8 @@ public class KybApiTest {
      */
     @Test
     public void getTinTest() throws ApiException {
-        String appId = null;
         String tin = null;
         KybGetTinResponse response = api.getTin()
-                .appId(appId)
                 .tin(tin)
                 .execute();
         // TODO: test validations

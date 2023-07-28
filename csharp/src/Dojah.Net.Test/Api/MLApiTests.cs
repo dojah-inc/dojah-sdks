@@ -62,8 +62,7 @@ namespace Dojah.Net.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //MlVerifyPhotoIdWithSelfieRequest mlVerifyPhotoIdWithSelfieRequest = null;
-            //string appId = null;
-            //var response = instance.VerifyPhotoIdWithSelfie(mlVerifyPhotoIdWithSelfieRequest, appId);
+            //var response = instance.VerifyPhotoIdWithSelfie(mlVerifyPhotoIdWithSelfieRequest);
             //Assert.IsType<Object>(response);
         }
     }

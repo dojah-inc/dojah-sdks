@@ -34,62 +34,16 @@ class GetWalletBalanceResponse(
     class MetaOapg:
         
         class properties:
-            
-            
-            class entity(
-                schemas.DictSchema
-            ):
-            
-            
-                class MetaOapg:
-                    
-                    class properties:
-                        wallet_balance = schemas.StrSchema
-                        __annotations__ = {
-                            "wallet_balance": wallet_balance,
-                        }
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["wallet_balance"]) -> MetaOapg.properties.wallet_balance: ...
-                
-                @typing.overload
-                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
-                
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["wallet_balance", ], str]):
-                    # dict_instance[name] accessor
-                    return super().__getitem__(name)
-                
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["wallet_balance"]) -> typing.Union[MetaOapg.properties.wallet_balance, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
-                
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["wallet_balance", ], str]):
-                    return super().get_item_oapg(name)
-                
-            
-                def __new__(
-                    cls,
-                    *args: typing.Union[dict, frozendict.frozendict, ],
-                    wallet_balance: typing.Union[MetaOapg.properties.wallet_balance, str, schemas.Unset] = schemas.unset,
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-                ) -> 'entity':
-                    return super().__new__(
-                        cls,
-                        *args,
-                        wallet_balance=wallet_balance,
-                        _configuration=_configuration,
-                        **kwargs,
-                    )
+        
+            @staticmethod
+            def entity() -> typing.Type['GetWalletBalanceResponseEntity']:
+                return GetWalletBalanceResponseEntity
             __annotations__ = {
                 "entity": entity,
             }
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["entity"]) -> MetaOapg.properties.entity: ...
+    def __getitem__(self, name: typing_extensions.Literal["entity"]) -> 'GetWalletBalanceResponseEntity': ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
@@ -100,7 +54,7 @@ class GetWalletBalanceResponse(
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["entity"]) -> typing.Union[MetaOapg.properties.entity, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["entity"]) -> typing.Union['GetWalletBalanceResponseEntity', schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
@@ -112,7 +66,7 @@ class GetWalletBalanceResponse(
     def __new__(
         cls,
         *args: typing.Union[dict, frozendict.frozendict, ],
-        entity: typing.Union[MetaOapg.properties.entity, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        entity: typing.Union['GetWalletBalanceResponseEntity', schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'GetWalletBalanceResponse':
@@ -123,3 +77,5 @@ class GetWalletBalanceResponse(
             _configuration=_configuration,
             **kwargs,
         )
+
+from dojah_client.model.get_wallet_balance_response_entity import GetWalletBalanceResponseEntity

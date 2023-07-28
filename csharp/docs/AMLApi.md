@@ -18,7 +18,6 @@ Get AML Info
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -28,23 +27,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
+            client.SetBasePath("https://api.dojah.io");
             // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("Appid", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Appid", "Bearer");
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new AMLApi(config);
-            var profileId = WC7117469;  // string |  (optional) 
+            var profileId = "WC7117469";  // string |  (optional) 
 
             try
             {
                 // Get AML Info
-                Object result = apiInstance.GetScreeningInfo(profileId);
+                Object result = client.AML.GetScreeningInfo(profileId);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -122,7 +117,6 @@ AML Screening
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -132,23 +126,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
+            client.SetBasePath("https://api.dojah.io");
             // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("Appid", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Appid", "Bearer");
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new AMLApi(config);
             var amlScreenAmlRequest = new AmlScreenAmlRequest(); // AmlScreenAmlRequest | 
 
             try
             {
                 // AML Screening
-                AmlScreenAmlResponse result = apiInstance.ScreenAml(amlScreenAmlRequest);
+                AmlScreenAmlResponse result = client.AML.ScreenAml(amlScreenAmlRequest);
                 Console.WriteLine(result);
             }
             catch (ApiException e)

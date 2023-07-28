@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## VerifyPhotoIdWithSelfie
 
-> map[string]interface{} VerifyPhotoIdWithSelfie(ctx).MlVerifyPhotoIdWithSelfieRequest(mlVerifyPhotoIdWithSelfieRequest).AppId(appId).Execute()
+> map[string]interface{} VerifyPhotoIdWithSelfie(ctx).MlVerifyPhotoIdWithSelfieRequest(mlVerifyPhotoIdWithSelfieRequest).Execute()
 
 KYC - Selfie Photo ID Verification
 
@@ -28,11 +28,10 @@ import (
 
 func main() {
     mlVerifyPhotoIdWithSelfieRequest := *dojah.NewMlVerifyPhotoIdWithSelfieRequest() // MlVerifyPhotoIdWithSelfieRequest | 
-    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.MLApi.VerifyPhotoIdWithSelfie(context.Background()).MlVerifyPhotoIdWithSelfieRequest(mlVerifyPhotoIdWithSelfieRequest).AppId(appId).Execute()
+    resp, r, err := apiClient.MLApi.VerifyPhotoIdWithSelfie(context.Background()).MlVerifyPhotoIdWithSelfieRequest(mlVerifyPhotoIdWithSelfieRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MLApi.VerifyPhotoIdWithSelfie``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -54,7 +53,6 @@ Other parameters are passed through a pointer to a apiVerifyPhotoIdWithSelfieReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mlVerifyPhotoIdWithSelfieRequest** | [**MlVerifyPhotoIdWithSelfieRequest**](MlVerifyPhotoIdWithSelfieRequest.md) |  | 
- **appId** | **string** |  | 
 
 ### Return type
 
@@ -62,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

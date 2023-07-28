@@ -39,31 +39,6 @@ from dojah_client.type.send_sms_request import SendSmsRequest
 
 from . import path
 
-# Header params
-AppIdSchema = schemas.StrSchema
-RequestRequiredHeaderParams = typing_extensions.TypedDict(
-    'RequestRequiredHeaderParams',
-    {
-    }
-)
-RequestOptionalHeaderParams = typing_extensions.TypedDict(
-    'RequestOptionalHeaderParams',
-    {
-        'AppId': typing.Union[AppIdSchema, str, ],
-    },
-    total=False
-)
-
-
-class RequestHeaderParams(RequestRequiredHeaderParams, RequestOptionalHeaderParams):
-    pass
-
-
-request_header_app_id = api_client.HeaderParameter(
-    name="AppId",
-    style=api_client.ParameterStyle.SIMPLE,
-    schema=AppIdSchema,
-)
 # body param
 SchemaForRequestBodyApplicationJson = SendSmsRequestSchema
 
@@ -77,6 +52,7 @@ request_body_send_sms_request = api_client.RequestBody(
 )
 _auth = [
     'apikeyAuth',
+    'appIdAuth',
 ]
 XPoweredBySchema = schemas.StrSchema
 x_powered_by_parameter = api_client.HeaderParameter(
@@ -170,10 +146,8 @@ class BaseApi(api_client.Api):
         message: typing.Optional[str] = None,
         channel: typing.Optional[str] = None,
         sender_id: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
-        _header_params = {}
         _body = {}
         if destination is not None:
             _body["destination"] = destination
@@ -184,15 +158,11 @@ class BaseApi(api_client.Api):
         if sender_id is not None:
             _body["sender_id"] = sender_id
         args.body = _body
-        if app_id is not None:
-            _header_params["AppId"] = app_id
-        args.header = _header_params
         return args
 
     async def _asend_sms_oapg(
         self,
         body: typing.Any = None,
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -209,18 +179,9 @@ class BaseApi(api_client.Api):
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -315,7 +276,6 @@ class BaseApi(api_client.Api):
     def _send_sms_oapg(
         self,
         body: typing.Any = None,
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -331,18 +291,9 @@ class BaseApi(api_client.Api):
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -413,7 +364,6 @@ class SendSms(BaseApi):
         message: typing.Optional[str] = None,
         channel: typing.Optional[str] = None,
         sender_id: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -424,11 +374,9 @@ class SendSms(BaseApi):
             message=message,
             channel=channel,
             sender_id=sender_id,
-            app_id=app_id,
         )
         return await self._asend_sms_oapg(
             body=args.body,
-            header_params=args.header,
         )
     
     def send_sms(
@@ -437,7 +385,6 @@ class SendSms(BaseApi):
         message: typing.Optional[str] = None,
         channel: typing.Optional[str] = None,
         sender_id: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -447,11 +394,9 @@ class SendSms(BaseApi):
             message=message,
             channel=channel,
             sender_id=sender_id,
-            app_id=app_id,
         )
         return self._send_sms_oapg(
             body=args.body,
-            header_params=args.header,
         )
 
 class ApiForpost(BaseApi):
@@ -463,7 +408,6 @@ class ApiForpost(BaseApi):
         message: typing.Optional[str] = None,
         channel: typing.Optional[str] = None,
         sender_id: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -474,11 +418,9 @@ class ApiForpost(BaseApi):
             message=message,
             channel=channel,
             sender_id=sender_id,
-            app_id=app_id,
         )
         return await self._asend_sms_oapg(
             body=args.body,
-            header_params=args.header,
         )
     
     def post(
@@ -487,7 +429,6 @@ class ApiForpost(BaseApi):
         message: typing.Optional[str] = None,
         channel: typing.Optional[str] = None,
         sender_id: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -497,10 +438,8 @@ class ApiForpost(BaseApi):
             message=message,
             channel=channel,
             sender_id=sender_id,
-            app_id=app_id,
         )
         return self._send_sms_oapg(
             body=args.body,
-            header_params=args.header,
         )
 

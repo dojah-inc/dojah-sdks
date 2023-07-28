@@ -12,7 +12,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getDriversLicense"></a>
 # **getDriversLicense**
-> GetDriversLicenseResponse getDriversLicense().appId(appId).id(id).fullName(fullName).dateOfBirth(dateOfBirth).execute();
+> GetDriversLicenseResponse getDriversLicense().id(id).fullName(fullName).dateOfBirth(dateOfBirth).execute();
 
 Driver&#39;s License
 
@@ -23,6 +23,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.GhKycApi;
 import java.util.List;
@@ -33,9 +34,11 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String id = "V0000000";
     String fullName = "John Doe";
     String dateOfBirth = "1988-09-01";
@@ -43,7 +46,6 @@ public class Example {
       GetDriversLicenseResponse result = client
               .ghKyc
               .getDriversLicense()
-              .appId(appId)
               .id(id)
               .fullName(fullName)
               .dateOfBirth(dateOfBirth)
@@ -65,7 +67,6 @@ public class Example {
       ApiResponse<GetDriversLicenseResponse> response = client
               .ghKyc
               .getDriversLicense()
-              .appId(appId)
               .id(id)
               .fullName(fullName)
               .dateOfBirth(dateOfBirth)
@@ -91,7 +92,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **id** | **String**|  | [optional] |
 | **fullName** | **String**|  | [optional] |
 | **dateOfBirth** | **String**|  | [optional] |
@@ -102,7 +102,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -116,7 +116,7 @@ No authorization required
 
 <a name="getPassport"></a>
 # **getPassport**
-> GetPassportResponse getPassport().appId(appId).id(id).firstName(firstName).lastName(lastName).middleName(middleName).dateOfBirth(dateOfBirth).execute();
+> GetPassportResponse getPassport().id(id).firstName(firstName).lastName(lastName).middleName(middleName).dateOfBirth(dateOfBirth).execute();
 
 Passport
 
@@ -127,6 +127,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.GhKycApi;
 import java.util.List;
@@ -137,9 +138,11 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String id = "G111235468";
     String firstName = "John";
     String lastName = "Doe";
@@ -149,7 +152,6 @@ public class Example {
       GetPassportResponse result = client
               .ghKyc
               .getPassport()
-              .appId(appId)
               .id(id)
               .firstName(firstName)
               .lastName(lastName)
@@ -173,7 +175,6 @@ public class Example {
       ApiResponse<GetPassportResponse> response = client
               .ghKyc
               .getPassport()
-              .appId(appId)
               .id(id)
               .firstName(firstName)
               .lastName(lastName)
@@ -201,7 +202,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **id** | **String**|  | [optional] |
 | **firstName** | **String**|  | [optional] |
 | **lastName** | **String**|  | [optional] |
@@ -214,7 +214,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -228,7 +228,7 @@ No authorization required
 
 <a name="getSsnit"></a>
 # **getSsnit**
-> GetSsnitResponse getSsnit().appId(appId).id(id).fullName(fullName).dateOfBirth(dateOfBirth).execute();
+> GetSsnitResponse getSsnit().id(id).fullName(fullName).dateOfBirth(dateOfBirth).execute();
 
 SSNIT
 
@@ -239,6 +239,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.GhKycApi;
 import java.util.List;
@@ -249,9 +250,11 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String id = "G0000000";
     String fullName = "John Doe";
     String dateOfBirth = "1990-04-05";
@@ -259,7 +262,6 @@ public class Example {
       GetSsnitResponse result = client
               .ghKyc
               .getSsnit()
-              .appId(appId)
               .id(id)
               .fullName(fullName)
               .dateOfBirth(dateOfBirth)
@@ -281,7 +283,6 @@ public class Example {
       ApiResponse<GetSsnitResponse> response = client
               .ghKyc
               .getSsnit()
-              .appId(appId)
               .id(id)
               .fullName(fullName)
               .dateOfBirth(dateOfBirth)
@@ -307,7 +308,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **id** | **String**|  | [optional] |
 | **fullName** | **String**|  | [optional] |
 | **dateOfBirth** | **String**|  | [optional] |
@@ -318,7 +318,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -332,7 +332,7 @@ No authorization required
 
 <a name="getVoter"></a>
 # **getVoter**
-> Object getVoter().appId(appId).id(id).fullName(fullName).isNewId(isNewId).execute();
+> Object getVoter().id(id).fullName(fullName).isNewId(isNewId).execute();
 
 Voter ID Lookup
 
@@ -343,6 +343,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.GhKycApi;
 import java.util.List;
@@ -353,9 +354,11 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     Integer id = 6423007613;
     String fullName = "John Doe";
     Boolean isNewId = true;
@@ -363,7 +366,6 @@ public class Example {
       Object result = client
               .ghKyc
               .getVoter()
-              .appId(appId)
               .id(id)
               .fullName(fullName)
               .isNewId(isNewId)
@@ -381,7 +383,6 @@ public class Example {
       ApiResponse<Object> response = client
               .ghKyc
               .getVoter()
-              .appId(appId)
               .id(id)
               .fullName(fullName)
               .isNewId(isNewId)
@@ -407,7 +408,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **id** | **Integer**|  | [optional] |
 | **fullName** | **String**|  | [optional] |
 | **isNewId** | **Boolean**|  | [optional] |
@@ -418,7 +418,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

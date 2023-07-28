@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.get_bin_response_entity import GetBinResponseEntity
 
 class RequiredGetBinResponse(TypedDict):
     pass
 
 class OptionalGetBinResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: GetBinResponseEntity
 
 class GetBinResponse(RequiredGetBinResponse, OptionalGetBinResponse):
     pass

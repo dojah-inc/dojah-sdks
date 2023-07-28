@@ -59,11 +59,10 @@ namespace Dojah.Net.Test.Api
         public void GetVoterTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //int? id = null;
             //string firstName = null;
             //string lastName = null;
-            //var response = instance.GetVoter(appId, id, firstName, lastName);
+            //var response = instance.GetVoter(id, firstName, lastName);
             //Assert.IsType<Object>(response);
         }
     }

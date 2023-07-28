@@ -93,31 +93,9 @@ request_query_mothers_first_name = api_client.QueryParameter(
     schema=MothersFirstNameSchema,
     explode=True,
 )
-# Header params
-AppIdSchema = schemas.StrSchema
-RequestRequiredHeaderParams = typing_extensions.TypedDict(
-    'RequestRequiredHeaderParams',
-    {
-    }
-)
-RequestOptionalHeaderParams = typing_extensions.TypedDict(
-    'RequestOptionalHeaderParams',
-    {
-        'AppId': typing.Union[AppIdSchema, str, ],
-    },
-    total=False
-)
-
-
-class RequestHeaderParams(RequestRequiredHeaderParams, RequestOptionalHeaderParams):
-    pass
-
-
-request_header_app_id = api_client.HeaderParameter(
-    name="AppId",
-    style=api_client.ParameterStyle.SIMPLE,
-    schema=AppIdSchema,
-)
+_auth = [
+    'appIdAuth',
+]
 SchemaFor200ResponseBodyApplicationJson = schemas.DictSchema
 
 
@@ -151,7 +129,6 @@ class BaseApi(api_client.Api):
 
     def _get_nin_mapped_args(
         self,
-        app_id: typing.Optional[str] = None,
         first_name: typing.Optional[str] = None,
         last_name: typing.Optional[str] = None,
         date_of_birth: typing.Optional[str] = None,
@@ -160,7 +137,6 @@ class BaseApi(api_client.Api):
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
         _query_params = {}
-        _header_params = {}
         if first_name is not None:
             _query_params["first_name"] = first_name
         if last_name is not None:
@@ -171,16 +147,12 @@ class BaseApi(api_client.Api):
             _query_params["mothers_last_name"] = mothers_last_name
         if mothers_first_name is not None:
             _query_params["mothers_first_name"] = mothers_first_name
-        if app_id is not None:
-            _header_params["AppId"] = app_id
         args.query = _query_params
-        args.header = _header_params
         return args
 
     async def _aget_nin_oapg(
         self,
             query_params: typing.Optional[dict] = {},
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -197,7 +169,6 @@ class BaseApi(api_client.Api):
             class instances
         """
         self._verify_typed_dict_inputs_oapg(RequestQueryParams, query_params)
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         prefix_separator_iterator = None
@@ -218,14 +189,6 @@ class BaseApi(api_client.Api):
                 used_path += serialized_value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -235,6 +198,7 @@ class BaseApi(api_client.Api):
             resource_path=used_path,
             method=method,
             configuration=self.api_client.configuration,
+            auth_settings=_auth,
             headers=_headers,
         )
     
@@ -242,6 +206,7 @@ class BaseApi(api_client.Api):
             resource_path=used_path,
             method=method,
             headers=_headers,
+            auth_settings=_auth,
             prefix_separator_iterator=prefix_separator_iterator,
             timeout=timeout,
         )
@@ -303,7 +268,6 @@ class BaseApi(api_client.Api):
     def _get_nin_oapg(
         self,
             query_params: typing.Optional[dict] = {},
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -319,7 +283,6 @@ class BaseApi(api_client.Api):
             class instances
         """
         self._verify_typed_dict_inputs_oapg(RequestQueryParams, query_params)
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         prefix_separator_iterator = None
@@ -340,14 +303,6 @@ class BaseApi(api_client.Api):
                 used_path += serialized_value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -357,6 +312,7 @@ class BaseApi(api_client.Api):
             resource_path=used_path,
             method=method,
             configuration=self.api_client.configuration,
+            auth_settings=_auth,
             headers=_headers,
         )
     
@@ -364,6 +320,7 @@ class BaseApi(api_client.Api):
             resource_path=used_path,
             method=method,
             headers=_headers,
+            auth_settings=_auth,
             prefix_separator_iterator=prefix_separator_iterator,
             timeout=timeout,
         )
@@ -397,7 +354,6 @@ class GetNin(BaseApi):
 
     async def aget_nin(
         self,
-        app_id: typing.Optional[str] = None,
         first_name: typing.Optional[str] = None,
         last_name: typing.Optional[str] = None,
         date_of_birth: typing.Optional[str] = None,
@@ -409,7 +365,6 @@ class GetNin(BaseApi):
         AsyncGeneratorResponse,
     ]:
         args = self._get_nin_mapped_args(
-            app_id=app_id,
             first_name=first_name,
             last_name=last_name,
             date_of_birth=date_of_birth,
@@ -418,12 +373,10 @@ class GetNin(BaseApi):
         )
         return await self._aget_nin_oapg(
             query_params=args.query,
-            header_params=args.header,
         )
     
     def get_nin(
         self,
-        app_id: typing.Optional[str] = None,
         first_name: typing.Optional[str] = None,
         last_name: typing.Optional[str] = None,
         date_of_birth: typing.Optional[str] = None,
@@ -434,7 +387,6 @@ class GetNin(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]:
         args = self._get_nin_mapped_args(
-            app_id=app_id,
             first_name=first_name,
             last_name=last_name,
             date_of_birth=date_of_birth,
@@ -443,7 +395,6 @@ class GetNin(BaseApi):
         )
         return self._get_nin_oapg(
             query_params=args.query,
-            header_params=args.header,
         )
 
 class ApiForget(BaseApi):
@@ -451,7 +402,6 @@ class ApiForget(BaseApi):
 
     async def aget(
         self,
-        app_id: typing.Optional[str] = None,
         first_name: typing.Optional[str] = None,
         last_name: typing.Optional[str] = None,
         date_of_birth: typing.Optional[str] = None,
@@ -463,7 +413,6 @@ class ApiForget(BaseApi):
         AsyncGeneratorResponse,
     ]:
         args = self._get_nin_mapped_args(
-            app_id=app_id,
             first_name=first_name,
             last_name=last_name,
             date_of_birth=date_of_birth,
@@ -472,12 +421,10 @@ class ApiForget(BaseApi):
         )
         return await self._aget_nin_oapg(
             query_params=args.query,
-            header_params=args.header,
         )
     
     def get(
         self,
-        app_id: typing.Optional[str] = None,
         first_name: typing.Optional[str] = None,
         last_name: typing.Optional[str] = None,
         date_of_birth: typing.Optional[str] = None,
@@ -488,7 +435,6 @@ class ApiForget(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]:
         args = self._get_nin_mapped_args(
-            app_id=app_id,
             first_name=first_name,
             last_name=last_name,
             date_of_birth=date_of_birth,
@@ -497,6 +443,5 @@ class ApiForget(BaseApi):
         )
         return self._get_nin_oapg(
             query_params=args.query,
-            header_params=args.header,
         )
 

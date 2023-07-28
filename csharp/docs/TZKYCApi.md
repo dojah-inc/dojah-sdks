@@ -8,7 +8,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getnin"></a>
 # **GetNin**
-> Object GetNin (string appId = null, string firstName = null, string lastName = null, string dateOfBirth = null, string mothersLastName = null, string mothersFirstName = null)
+> Object GetNin (string firstName = null, string lastName = null, string dateOfBirth = null, string mothersLastName = null, string mothersFirstName = null)
 
 Lookup TZ NIN
 
@@ -17,7 +17,6 @@ Lookup TZ NIN
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -27,23 +26,23 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new TZKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
-            var firstName = khafsa;  // string |  (optional) 
-            var lastName = mohammed;  // string |  (optional) 
-            var dateOfBirth = 1994-01-11;  // string |  (optional) 
-            var mothersLastName = zulekha;  // string |  (optional) 
-            var mothersFirstName = kassim;  // string |  (optional) 
+            var firstName = "khafsa";  // string |  (optional) 
+            var lastName = "mohammed";  // string |  (optional) 
+            var dateOfBirth = "1994-01-11";  // string |  (optional) 
+            var mothersLastName = "zulekha";  // string |  (optional) 
+            var mothersFirstName = "kassim";  // string |  (optional) 
 
             try
             {
                 // Lookup TZ NIN
-                Object result = apiInstance.GetNin(appId, firstName, lastName, dateOfBirth, mothersLastName, mothersFirstName);
+                Object result = client.TZKYC.GetNin(firstName, lastName, dateOfBirth, mothersLastName, mothersFirstName);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -70,7 +69,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Lookup TZ NIN
-    ApiResponse<Object> response = apiInstance.GetNinWithHttpInfo(appId, firstName, lastName, dateOfBirth, mothersLastName, mothersFirstName);
+    ApiResponse<Object> response = apiInstance.GetNinWithHttpInfo(firstName, lastName, dateOfBirth, mothersLastName, mothersFirstName);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -87,7 +86,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **firstName** | **string** |  | [optional]  |
 | **lastName** | **string** |  | [optional]  |
 | **dateOfBirth** | **string** |  | [optional]  |
@@ -100,7 +98,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.get_sms_status_response_entity import GetSmsStatusResponseEntity
 
 class RequiredGetSmsStatusResponse(TypedDict):
     pass
 
 class OptionalGetSmsStatusResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: GetSmsStatusResponseEntity
 
 class GetSmsStatusResponse(RequiredGetSmsStatusResponse, OptionalGetSmsStatusResponse):
     pass

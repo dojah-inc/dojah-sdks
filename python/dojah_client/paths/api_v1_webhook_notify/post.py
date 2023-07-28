@@ -31,39 +31,16 @@ import frozendict  # noqa: F401
 
 from dojah_client import schemas  # noqa: F401
 
+from dojah_client.model.notify_webhook_request_data import NotifyWebhookRequestData as NotifyWebhookRequestDataSchema
 from dojah_client.model.notify_webhook_request import NotifyWebhookRequest as NotifyWebhookRequestSchema
 from dojah_client.model.notify_webhook_response import NotifyWebhookResponse as NotifyWebhookResponseSchema
 
+from dojah_client.type.notify_webhook_request_data import NotifyWebhookRequestData
 from dojah_client.type.notify_webhook_request import NotifyWebhookRequest
 from dojah_client.type.notify_webhook_response import NotifyWebhookResponse
 
 from . import path
 
-# Header params
-AppIdSchema = schemas.StrSchema
-RequestRequiredHeaderParams = typing_extensions.TypedDict(
-    'RequestRequiredHeaderParams',
-    {
-    }
-)
-RequestOptionalHeaderParams = typing_extensions.TypedDict(
-    'RequestOptionalHeaderParams',
-    {
-        'AppId': typing.Union[AppIdSchema, str, ],
-    },
-    total=False
-)
-
-
-class RequestHeaderParams(RequestRequiredHeaderParams, RequestOptionalHeaderParams):
-    pass
-
-
-request_header_app_id = api_client.HeaderParameter(
-    name="AppId",
-    style=api_client.ParameterStyle.SIMPLE,
-    schema=AppIdSchema,
-)
 # body param
 SchemaForRequestBodyApplicationJson = NotifyWebhookRequestSchema
 
@@ -75,6 +52,9 @@ request_body_notify_webhook_request = api_client.RequestBody(
     },
     required=True,
 )
+_auth = [
+    'appIdAuth',
+]
 DateSchema = schemas.StrSchema
 date_parameter = api_client.HeaderParameter(
     name="Date",
@@ -236,26 +216,20 @@ class BaseApi(api_client.Api):
     def _notify_webhook_mapped_args(
         self,
         subject: typing.Optional[str] = None,
-        data: typing.Optional[typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]] = None,
-        app_id: typing.Optional[str] = None,
+        data: typing.Optional[NotifyWebhookRequestData] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
-        _header_params = {}
         _body = {}
         if subject is not None:
             _body["subject"] = subject
         if data is not None:
             _body["data"] = data
         args.body = _body
-        if app_id is not None:
-            _header_params["AppId"] = app_id
-        args.header = _header_params
         return args
 
     async def _anotify_webhook_oapg(
         self,
         body: typing.Any = None,
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -272,18 +246,9 @@ class BaseApi(api_client.Api):
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -301,6 +266,7 @@ class BaseApi(api_client.Api):
             method=method,
             configuration=self.api_client.configuration,
             body=body,
+            auth_settings=_auth,
             headers=_headers,
         )
         serialized_data = request_body_notify_webhook_request.serialize(body, content_type)
@@ -316,6 +282,7 @@ class BaseApi(api_client.Api):
             fields=_fields,
             serialized_body=_body,
             body=body,
+            auth_settings=_auth,
             timeout=timeout,
         )
     
@@ -376,7 +343,6 @@ class BaseApi(api_client.Api):
     def _notify_webhook_oapg(
         self,
         body: typing.Any = None,
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -392,18 +358,9 @@ class BaseApi(api_client.Api):
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -421,6 +378,7 @@ class BaseApi(api_client.Api):
             method=method,
             configuration=self.api_client.configuration,
             body=body,
+            auth_settings=_auth,
             headers=_headers,
         )
         serialized_data = request_body_notify_webhook_request.serialize(body, content_type)
@@ -436,6 +394,7 @@ class BaseApi(api_client.Api):
             fields=_fields,
             serialized_body=_body,
             body=body,
+            auth_settings=_auth,
             timeout=timeout,
         )
     
@@ -469,8 +428,7 @@ class NotifyWebhook(BaseApi):
     async def anotify_webhook(
         self,
         subject: typing.Optional[str] = None,
-        data: typing.Optional[typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]] = None,
-        app_id: typing.Optional[str] = None,
+        data: typing.Optional[NotifyWebhookRequestData] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -479,18 +437,15 @@ class NotifyWebhook(BaseApi):
         args = self._notify_webhook_mapped_args(
             subject=subject,
             data=data,
-            app_id=app_id,
         )
         return await self._anotify_webhook_oapg(
             body=args.body,
-            header_params=args.header,
         )
     
     def notify_webhook(
         self,
         subject: typing.Optional[str] = None,
-        data: typing.Optional[typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]] = None,
-        app_id: typing.Optional[str] = None,
+        data: typing.Optional[NotifyWebhookRequestData] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -498,11 +453,9 @@ class NotifyWebhook(BaseApi):
         args = self._notify_webhook_mapped_args(
             subject=subject,
             data=data,
-            app_id=app_id,
         )
         return self._notify_webhook_oapg(
             body=args.body,
-            header_params=args.header,
         )
 
 class ApiForpost(BaseApi):
@@ -511,8 +464,7 @@ class ApiForpost(BaseApi):
     async def apost(
         self,
         subject: typing.Optional[str] = None,
-        data: typing.Optional[typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]] = None,
-        app_id: typing.Optional[str] = None,
+        data: typing.Optional[NotifyWebhookRequestData] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -521,18 +473,15 @@ class ApiForpost(BaseApi):
         args = self._notify_webhook_mapped_args(
             subject=subject,
             data=data,
-            app_id=app_id,
         )
         return await self._anotify_webhook_oapg(
             body=args.body,
-            header_params=args.header,
         )
     
     def post(
         self,
         subject: typing.Optional[str] = None,
-        data: typing.Optional[typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]] = None,
-        app_id: typing.Optional[str] = None,
+        data: typing.Optional[NotifyWebhookRequestData] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -540,10 +489,8 @@ class ApiForpost(BaseApi):
         args = self._notify_webhook_mapped_args(
             subject=subject,
             data=data,
-            app_id=app_id,
         )
         return self._notify_webhook_oapg(
             body=args.body,
-            header_params=args.header,
         )
 

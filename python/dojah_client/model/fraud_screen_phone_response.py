@@ -34,154 +34,16 @@ class FraudScreenPhoneResponse(
     class MetaOapg:
         
         class properties:
-            
-            
-            class entity(
-                schemas.DictSchema
-            ):
-            
-            
-                class MetaOapg:
-                    
-                    class properties:
-                        number = schemas.NumberSchema
-                        valid = schemas.BoolSchema
-                        disposable = schemas.BoolSchema
-                        type = schemas.StrSchema
-                        country = schemas.StrSchema
-                        carrier = schemas.StrSchema
-                        score = schemas.NumberSchema
-                        
-                        
-                        class account_details_registered(
-                            schemas.ListSchema
-                        ):
-                        
-                        
-                            class MetaOapg:
-                                items = schemas.StrSchema
-                        
-                            def __new__(
-                                cls,
-                                arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
-                                _configuration: typing.Optional[schemas.Configuration] = None,
-                            ) -> 'account_details_registered':
-                                return super().__new__(
-                                    cls,
-                                    arg,
-                                    _configuration=_configuration,
-                                )
-                        
-                            def __getitem__(self, i: int) -> MetaOapg.items:
-                                return super().__getitem__(i)
-                        __annotations__ = {
-                            "number": number,
-                            "valid": valid,
-                            "disposable": disposable,
-                            "type": type,
-                            "country": country,
-                            "carrier": carrier,
-                            "score": score,
-                            "account_details_registered": account_details_registered,
-                        }
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["number"]) -> MetaOapg.properties.number: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["valid"]) -> MetaOapg.properties.valid: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["disposable"]) -> MetaOapg.properties.disposable: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["country"]) -> MetaOapg.properties.country: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["carrier"]) -> MetaOapg.properties.carrier: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["score"]) -> MetaOapg.properties.score: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["account_details_registered"]) -> MetaOapg.properties.account_details_registered: ...
-                
-                @typing.overload
-                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
-                
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["number", "valid", "disposable", "type", "country", "carrier", "score", "account_details_registered", ], str]):
-                    # dict_instance[name] accessor
-                    return super().__getitem__(name)
-                
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["number"]) -> typing.Union[MetaOapg.properties.number, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["valid"]) -> typing.Union[MetaOapg.properties.valid, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["disposable"]) -> typing.Union[MetaOapg.properties.disposable, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["country"]) -> typing.Union[MetaOapg.properties.country, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["carrier"]) -> typing.Union[MetaOapg.properties.carrier, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["score"]) -> typing.Union[MetaOapg.properties.score, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["account_details_registered"]) -> typing.Union[MetaOapg.properties.account_details_registered, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
-                
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["number", "valid", "disposable", "type", "country", "carrier", "score", "account_details_registered", ], str]):
-                    return super().get_item_oapg(name)
-                
-            
-                def __new__(
-                    cls,
-                    *args: typing.Union[dict, frozendict.frozendict, ],
-                    number: typing.Union[MetaOapg.properties.number, decimal.Decimal, int, float, schemas.Unset] = schemas.unset,
-                    valid: typing.Union[MetaOapg.properties.valid, bool, schemas.Unset] = schemas.unset,
-                    disposable: typing.Union[MetaOapg.properties.disposable, bool, schemas.Unset] = schemas.unset,
-                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-                    country: typing.Union[MetaOapg.properties.country, str, schemas.Unset] = schemas.unset,
-                    carrier: typing.Union[MetaOapg.properties.carrier, str, schemas.Unset] = schemas.unset,
-                    score: typing.Union[MetaOapg.properties.score, decimal.Decimal, int, float, schemas.Unset] = schemas.unset,
-                    account_details_registered: typing.Union[MetaOapg.properties.account_details_registered, list, tuple, schemas.Unset] = schemas.unset,
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-                ) -> 'entity':
-                    return super().__new__(
-                        cls,
-                        *args,
-                        number=number,
-                        valid=valid,
-                        disposable=disposable,
-                        type=type,
-                        country=country,
-                        carrier=carrier,
-                        score=score,
-                        account_details_registered=account_details_registered,
-                        _configuration=_configuration,
-                        **kwargs,
-                    )
+        
+            @staticmethod
+            def entity() -> typing.Type['FraudScreenPhoneResponseEntity']:
+                return FraudScreenPhoneResponseEntity
             __annotations__ = {
                 "entity": entity,
             }
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["entity"]) -> MetaOapg.properties.entity: ...
+    def __getitem__(self, name: typing_extensions.Literal["entity"]) -> 'FraudScreenPhoneResponseEntity': ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
@@ -192,7 +54,7 @@ class FraudScreenPhoneResponse(
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["entity"]) -> typing.Union[MetaOapg.properties.entity, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["entity"]) -> typing.Union['FraudScreenPhoneResponseEntity', schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
@@ -204,7 +66,7 @@ class FraudScreenPhoneResponse(
     def __new__(
         cls,
         *args: typing.Union[dict, frozendict.frozendict, ],
-        entity: typing.Union[MetaOapg.properties.entity, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        entity: typing.Union['FraudScreenPhoneResponseEntity', schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'FraudScreenPhoneResponse':
@@ -215,3 +77,5 @@ class FraudScreenPhoneResponse(
             _configuration=_configuration,
             **kwargs,
         )
+
+from dojah_client.model.fraud_screen_phone_response_entity import FraudScreenPhoneResponseEntity

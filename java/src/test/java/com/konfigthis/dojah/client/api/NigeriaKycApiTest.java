@@ -57,10 +57,8 @@ public class NigeriaKycApiTest {
      */
     @Test
     public void getBasicBvnTest() throws ApiException {
-        String appId = null;
         Integer bvn = null;
         ValidateBvnResponse response = api.getBasicBvn()
-                .appId(appId)
                 .bvn(bvn)
                 .execute();
         // TODO: test validations
@@ -73,10 +71,8 @@ public class NigeriaKycApiTest {
      */
     @Test
     public void getBasicBvn1Test() throws ApiException {
-        String appId = null;
         Integer bvn = null;
         GetBasicBvnResponse response = api.getBasicBvn1()
-                .appId(appId)
                 .bvn(bvn)
                 .execute();
         // TODO: test validations
@@ -89,10 +85,8 @@ public class NigeriaKycApiTest {
      */
     @Test
     public void getBasicPhoneNumberTest() throws ApiException {
-        String appId = null;
         Integer phoneNumber = null;
         Object response = api.getBasicPhoneNumber()
-                .appId(appId)
                 .phoneNumber(phoneNumber)
                 .execute();
         // TODO: test validations
@@ -105,10 +99,8 @@ public class NigeriaKycApiTest {
      */
     @Test
     public void getDriversLicenseTest() throws ApiException {
-        String appId = null;
         String licenseNumber = null;
         GetKycDriversLicenseResponse response = api.getDriversLicense()
-                .appId(appId)
                 .licenseNumber(licenseNumber)
                 .execute();
         // TODO: test validations
@@ -121,10 +113,8 @@ public class NigeriaKycApiTest {
      */
     @Test
     public void getNinTest() throws ApiException {
-        String appId = null;
         Integer nin = null;
         NigeriaKycGetNinResponse response = api.getNin()
-                .appId(appId)
                 .nin(nin)
                 .execute();
         // TODO: test validations
@@ -137,10 +127,8 @@ public class NigeriaKycApiTest {
      */
     @Test
     public void getNormalBvnTest() throws ApiException {
-        String appId = null;
         Integer bvn = null;
         GetFullBvnResponse response = api.getNormalBvn()
-                .appId(appId)
                 .bvn(bvn)
                 .execute();
         // TODO: test validations
@@ -153,11 +141,9 @@ public class NigeriaKycApiTest {
      */
     @Test
     public void getNubanTest() throws ApiException {
-        String appId = null;
         Integer bankCode = null;
         Integer accountNumber = null;
         GetNubanResponse response = api.getNuban()
-                .appId(appId)
                 .bankCode(bankCode)
                 .accountNumber(accountNumber)
                 .execute();
@@ -187,10 +173,8 @@ public class NigeriaKycApiTest {
      */
     @Test
     public void getPhoneNumberTest() throws ApiException {
-        String appId = null;
         Integer phoneNumber = null;
         GetPhoneNumberResponse response = api.getPhoneNumber()
-                .appId(appId)
                 .phoneNumber(phoneNumber)
                 .execute();
         // TODO: test validations
@@ -203,10 +187,8 @@ public class NigeriaKycApiTest {
      */
     @Test
     public void getPremiumBvnTest() throws ApiException {
-        String appId = null;
         Integer bvn = null;
         GetPremiumBvnResponse response = api.getPremiumBvn()
-                .appId(appId)
                 .bvn(bvn)
                 .execute();
         // TODO: test validations
@@ -219,10 +201,8 @@ public class NigeriaKycApiTest {
      */
     @Test
     public void getVninTest() throws ApiException {
-        String appId = null;
         String vnin = null;
         GetVninResponse response = api.getVnin()
-                .appId(appId)
                 .vnin(vnin)
                 .execute();
         // TODO: test validations

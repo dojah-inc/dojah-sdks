@@ -25,7 +25,6 @@ type GlobalKYCApiService service
 type GlobalKYCApiCaEkycRequest struct {
 	ctx context.Context
 	ApiService *GlobalKYCApiService
-	appId *string
 	country *string
 	firstName *string
 	lastName *string
@@ -33,11 +32,6 @@ type GlobalKYCApiCaEkycRequest struct {
 	dateOfBirth *string
 	houseNumber *int32
 	postCode *int32
-}
-
-func (r GlobalKYCApiCaEkycRequest) AppId(appId string) GlobalKYCApiCaEkycRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r GlobalKYCApiCaEkycRequest) Country(country string) GlobalKYCApiCaEkycRequest {
@@ -151,8 +145,19 @@ func (a *GlobalKYCApiService) CaEkycExecute(r GlobalKYCApiCaEkycRequest) (map[st
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -194,7 +199,6 @@ func (a *GlobalKYCApiService) CaEkycExecute(r GlobalKYCApiCaEkycRequest) (map[st
 type GlobalKYCApiGetUsSsnRequest struct {
 	ctx context.Context
 	ApiService *GlobalKYCApiService
-	appId *string
 	country *string
 	firstName *string
 	lastName *string
@@ -202,11 +206,6 @@ type GlobalKYCApiGetUsSsnRequest struct {
 	dateOfBirth *string
 	houseNumber *int32
 	postCode *int32
-}
-
-func (r GlobalKYCApiGetUsSsnRequest) AppId(appId string) GlobalKYCApiGetUsSsnRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r GlobalKYCApiGetUsSsnRequest) Country(country string) GlobalKYCApiGetUsSsnRequest {
@@ -320,8 +319,19 @@ func (a *GlobalKYCApiService) GetUsSsnExecute(r GlobalKYCApiGetUsSsnRequest) (ma
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -363,7 +373,6 @@ func (a *GlobalKYCApiService) GetUsSsnExecute(r GlobalKYCApiGetUsSsnRequest) (ma
 type GlobalKYCApiUkTwoPlusTwoRequest struct {
 	ctx context.Context
 	ApiService *GlobalKYCApiService
-	appId *string
 	country *string
 	firstName *string
 	lastName *string
@@ -371,11 +380,6 @@ type GlobalKYCApiUkTwoPlusTwoRequest struct {
 	dateOfBirth *string
 	houseNumber *int32
 	postCode *int32
-}
-
-func (r GlobalKYCApiUkTwoPlusTwoRequest) AppId(appId string) GlobalKYCApiUkTwoPlusTwoRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r GlobalKYCApiUkTwoPlusTwoRequest) Country(country string) GlobalKYCApiUkTwoPlusTwoRequest {
@@ -489,8 +493,19 @@ func (a *GlobalKYCApiService) UkTwoPlusTwoExecute(r GlobalKYCApiUkTwoPlusTwoRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

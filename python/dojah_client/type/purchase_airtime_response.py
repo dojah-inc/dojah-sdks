@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.purchase_airtime_response_entity import PurchaseAirtimeResponseEntity
 
 class RequiredPurchaseAirtimeResponse(TypedDict):
     pass
 
 class OptionalPurchaseAirtimeResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: PurchaseAirtimeResponseEntity
 
 class PurchaseAirtimeResponse(RequiredPurchaseAirtimeResponse, OptionalPurchaseAirtimeResponse):
     pass

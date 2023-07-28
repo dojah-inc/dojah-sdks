@@ -11,7 +11,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getdriverslicense"></a>
 # **GetDriversLicense**
-> GetDriversLicenseResponse GetDriversLicense (string appId = null, string id = null, string fullName = null, string dateOfBirth = null)
+> GetDriversLicenseResponse GetDriversLicense (string id = null, string fullName = null, string dateOfBirth = null)
 
 Driver's License
 
@@ -20,7 +20,6 @@ Driver's License
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -30,21 +29,21 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new GHKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
-            var id = V0000000;  // string |  (optional) 
-            var fullName = John Doe;  // string |  (optional) 
-            var dateOfBirth = 1988-09-01;  // string |  (optional) 
+            var id = "V0000000";  // string |  (optional) 
+            var fullName = "John Doe";  // string |  (optional) 
+            var dateOfBirth = "1988-09-01";  // string |  (optional) 
 
             try
             {
                 // Driver's License
-                GetDriversLicenseResponse result = apiInstance.GetDriversLicense(appId, id, fullName, dateOfBirth);
+                GetDriversLicenseResponse result = client.GHKYC.GetDriversLicense(id, fullName, dateOfBirth);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -71,7 +70,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Driver's License
-    ApiResponse<GetDriversLicenseResponse> response = apiInstance.GetDriversLicenseWithHttpInfo(appId, id, fullName, dateOfBirth);
+    ApiResponse<GetDriversLicenseResponse> response = apiInstance.GetDriversLicenseWithHttpInfo(id, fullName, dateOfBirth);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -88,7 +87,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **id** | **string** |  | [optional]  |
 | **fullName** | **string** |  | [optional]  |
 | **dateOfBirth** | **string** |  | [optional]  |
@@ -99,7 +97,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -116,7 +114,7 @@ No authorization required
 
 <a name="getpassport"></a>
 # **GetPassport**
-> GetPassportResponse GetPassport (string appId = null, string id = null, string firstName = null, string lastName = null, string middleName = null, string dateOfBirth = null)
+> GetPassportResponse GetPassport (string id = null, string firstName = null, string lastName = null, string middleName = null, string dateOfBirth = null)
 
 Passport
 
@@ -125,7 +123,6 @@ Passport
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -135,23 +132,23 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new GHKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
-            var id = G111235468;  // string |  (optional) 
-            var firstName = John;  // string |  (optional) 
-            var lastName = Doe;  // string |  (optional) 
-            var middleName = Jack;  // string |  (optional) 
-            var dateOfBirth = 1990-04-05;  // string |  (optional) 
+            var id = "G111235468";  // string |  (optional) 
+            var firstName = "John";  // string |  (optional) 
+            var lastName = "Doe";  // string |  (optional) 
+            var middleName = "Jack";  // string |  (optional) 
+            var dateOfBirth = "1990-04-05";  // string |  (optional) 
 
             try
             {
                 // Passport
-                GetPassportResponse result = apiInstance.GetPassport(appId, id, firstName, lastName, middleName, dateOfBirth);
+                GetPassportResponse result = client.GHKYC.GetPassport(id, firstName, lastName, middleName, dateOfBirth);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -178,7 +175,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Passport
-    ApiResponse<GetPassportResponse> response = apiInstance.GetPassportWithHttpInfo(appId, id, firstName, lastName, middleName, dateOfBirth);
+    ApiResponse<GetPassportResponse> response = apiInstance.GetPassportWithHttpInfo(id, firstName, lastName, middleName, dateOfBirth);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -195,7 +192,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **id** | **string** |  | [optional]  |
 | **firstName** | **string** |  | [optional]  |
 | **lastName** | **string** |  | [optional]  |
@@ -208,7 +204,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -225,7 +221,7 @@ No authorization required
 
 <a name="getssnit"></a>
 # **GetSsnit**
-> GetSsnitResponse GetSsnit (string appId = null, string id = null, string fullName = null, string dateOfBirth = null)
+> GetSsnitResponse GetSsnit (string id = null, string fullName = null, string dateOfBirth = null)
 
 SSNIT
 
@@ -234,7 +230,6 @@ SSNIT
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -244,21 +239,21 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new GHKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
-            var id = G0000000;  // string |  (optional) 
-            var fullName = John Doe;  // string |  (optional) 
-            var dateOfBirth = 1990-04-05;  // string |  (optional) 
+            var id = "G0000000";  // string |  (optional) 
+            var fullName = "John Doe";  // string |  (optional) 
+            var dateOfBirth = "1990-04-05";  // string |  (optional) 
 
             try
             {
                 // SSNIT
-                GetSsnitResponse result = apiInstance.GetSsnit(appId, id, fullName, dateOfBirth);
+                GetSsnitResponse result = client.GHKYC.GetSsnit(id, fullName, dateOfBirth);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -285,7 +280,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // SSNIT
-    ApiResponse<GetSsnitResponse> response = apiInstance.GetSsnitWithHttpInfo(appId, id, fullName, dateOfBirth);
+    ApiResponse<GetSsnitResponse> response = apiInstance.GetSsnitWithHttpInfo(id, fullName, dateOfBirth);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -302,7 +297,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **id** | **string** |  | [optional]  |
 | **fullName** | **string** |  | [optional]  |
 | **dateOfBirth** | **string** |  | [optional]  |
@@ -313,7 +307,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -330,7 +324,7 @@ No authorization required
 
 <a name="getvoter"></a>
 # **GetVoter**
-> Object GetVoter (string appId = null, int? id = null, string fullName = null, bool? isNewId = null)
+> Object GetVoter (int? id = null, string fullName = null, bool? isNewId = null)
 
 Voter ID Lookup
 
@@ -339,7 +333,6 @@ Voter ID Lookup
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -349,21 +342,21 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new GHKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
             var id = 6423007613;  // int? |  (optional) 
-            var fullName = John Doe;  // string |  (optional) 
-            var isNewId = true;  // bool? |  (optional) 
+            var fullName = "John Doe";  // string |  (optional) 
+            var isNewId = "true";  // bool? |  (optional) 
 
             try
             {
                 // Voter ID Lookup
-                Object result = apiInstance.GetVoter(appId, id, fullName, isNewId);
+                Object result = client.GHKYC.GetVoter(id, fullName, isNewId);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -390,7 +383,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Voter ID Lookup
-    ApiResponse<Object> response = apiInstance.GetVoterWithHttpInfo(appId, id, fullName, isNewId);
+    ApiResponse<Object> response = apiInstance.GetVoterWithHttpInfo(id, fullName, isNewId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -407,7 +400,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **id** | **int?** |  | [optional]  |
 | **fullName** | **string** |  | [optional]  |
 | **isNewId** | **bool?** |  | [optional]  |
@@ -418,7 +410,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

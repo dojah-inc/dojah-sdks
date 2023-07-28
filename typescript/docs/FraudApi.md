@@ -24,6 +24,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getEmailReputationResponse = await dojah.fraud.getEmailReputation({});
@@ -36,7 +37,6 @@ console.log(getEmailReputationResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **email** | [**string**] |  | (optional) defaults to undefined
 
 
@@ -71,6 +71,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getIpReputationResponse = await dojah.fraud.getIpReputation({});
@@ -83,7 +84,6 @@ console.log(getIpReputationResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **ipAddress** | [**string**] |  | (optional) defaults to undefined
 
 
@@ -118,6 +118,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const screenPhoneResponse = await dojah.fraud.screenPhone({});
@@ -130,7 +131,6 @@ console.log(screenPhoneResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **phoneNumber** | [**number**] |  | (optional) defaults to undefined
 
 
@@ -165,6 +165,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const screenUserResponse = await dojah.fraud.screenUser({});
@@ -177,7 +178,6 @@ console.log(screenUserResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **firstName** | [**string**] |  | (optional) defaults to undefined
  **lastName** | [**string**] |  | (optional) defaults to undefined
  **dateOfBirth** | [**string**] |  | (optional) defaults to undefined

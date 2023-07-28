@@ -33,12 +33,15 @@ dojah = Dojah(
     host="https://api.dojah.io",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'apikeyAuth': 'Bearer'},
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # KYC - Get Basic BVN Info
     get_basic_bvn_response = dojah.nigeria_kyc.get_basic_bvn(
-        app_id="{{app_id}}",  # optional
         bvn=22468537919,  # optional
     )
     pprint(get_basic_bvn_response.body)
@@ -59,7 +62,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -79,20 +81,6 @@ bvn | BvnSchema | | optional
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 decimal.Decimal, int,  | decimal.Decimal,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -169,7 +157,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth)
+[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -187,12 +175,15 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # KYC - Lookup BVN Basic 1
     get_basic_bvn1_response = dojah.nigeria_kyc.get_basic_bvn1(
-        app_id="{{app_id}}",  # optional
         bvn=22621998885,  # optional
     )
     pprint(get_basic_bvn1_response.body)
@@ -213,7 +204,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -233,20 +223,6 @@ bvn | BvnSchema | | optional
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 decimal.Decimal, int,  | decimal.Decimal,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -270,7 +246,7 @@ Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -290,12 +266,15 @@ dojah = Dojah(
     host="https://api.dojah.io",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'apikeyAuth': 'Bearer'},
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # KYC Lookup Phone Number Basic
     get_basic_phone_number_response = dojah.nigeria_kyc.get_basic_phone_number(
-        app_id="{{app_id}}",  # optional
         phone_number=9131377829,  # optional
     )
     pprint(get_basic_phone_number_response.headers)
@@ -314,7 +293,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -334,20 +312,6 @@ phone_number | PhoneNumberSchema | | optional
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 decimal.Decimal, int,  | decimal.Decimal,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -372,7 +336,7 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth)
+[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -392,12 +356,15 @@ dojah = Dojah(
     host="https://api.dojah.io",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'apikeyAuth': 'Bearer'},
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # KYC - Get Drivers License Info
     get_drivers_license_response = dojah.nigeria_kyc.get_drivers_license(
-        app_id="{{app_id}}",  # optional
         license_number="FKJ49409AB13",  # optional
     )
     pprint(get_drivers_license_response.body)
@@ -418,7 +385,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -433,20 +399,6 @@ license_number | LicenseNumberSchema | | optional
 
 
 # LicenseNumberSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
@@ -528,7 +480,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth)
+[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -548,12 +500,15 @@ dojah = Dojah(
     host="https://api.dojah.io",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'apikeyAuth': 'Bearer'},
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # KYC - Get NIN Info
     get_nin_response = dojah.nigeria_kyc.get_nin(
-        app_id="{{app_id}}",  # optional
         nin=55648152772,  # optional
     )
     pprint(get_nin_response.body)
@@ -574,7 +529,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -594,20 +548,6 @@ nin | NinSchema | | optional
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 decimal.Decimal, int,  | decimal.Decimal,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -684,7 +624,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth)
+[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -704,12 +644,15 @@ dojah = Dojah(
     host="https://api.dojah.io",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'apikeyAuth': 'Bearer'},
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # KYC - Lookup BVN Normal
     get_normal_bvn_response = dojah.nigeria_kyc.get_normal_bvn(
-        app_id="{{app_id}}",  # optional
         bvn=22342291445,  # optional
     )
     pprint(get_normal_bvn_response.body)
@@ -730,7 +673,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -750,20 +692,6 @@ bvn | BvnSchema | | optional
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 decimal.Decimal, int,  | decimal.Decimal,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -840,7 +768,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth)
+[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -860,12 +788,15 @@ dojah = Dojah(
     host="https://api.dojah.io",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'apikeyAuth': 'Bearer'},
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # KYC - Get NUBAN Information
     get_nuban_response = dojah.nigeria_kyc.get_nuban(
-        app_id="{{app_id}}",  # optional
         bank_code=58,  # optional
         account_number=11223344,  # optional
     )
@@ -887,7 +818,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -915,20 +845,6 @@ decimal.Decimal, int,  | decimal.Decimal,  |  |
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 decimal.Decimal, int,  | decimal.Decimal,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -1005,7 +921,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth)
+[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -1121,6 +1037,10 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'noauthAuth': 'Bearer'},
 )
@@ -1128,7 +1048,6 @@ dojah = Dojah(
 try:
     # KYC - Lookup Phone Number
     get_phone_number_response = dojah.nigeria_kyc.get_phone_number(
-        app_id="{{app_id}}",  # optional
         phone_number=8034628633,  # optional
     )
     pprint(get_phone_number_response.body)
@@ -1151,7 +1070,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -1171,20 +1089,6 @@ phone_number | PhoneNumberSchema | | optional
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 decimal.Decimal, int,  | decimal.Decimal,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -1504,7 +1408,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[noauthAuth](../../../README.md#noauthAuth)
+[appIdAuth](../../../README.md#appIdAuth), [noauthAuth](../../../README.md#noauthAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -1524,12 +1428,15 @@ dojah = Dojah(
     host="https://api.dojah.io",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'apikeyAuth': 'Bearer'},
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # KYC - Lookup BVN Premium
     get_premium_bvn_response = dojah.nigeria_kyc.get_premium_bvn(
-        app_id="{{app_id}}",  # optional
         bvn=22200508254,  # optional
     )
     pprint(get_premium_bvn_response.body)
@@ -1550,7 +1457,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -1570,20 +1476,6 @@ bvn | BvnSchema | | optional
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 decimal.Decimal, int,  | decimal.Decimal,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -1748,7 +1640,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth)
+[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -1766,12 +1658,15 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # Lookup VNIN
     get_vnin_response = dojah.nigeria_kyc.get_vnin(
-        app_id="{{app_id}}",  # optional
         vnin="LC829995256998RD",  # optional
     )
     pprint(get_vnin_response.body)
@@ -1792,7 +1687,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -1807,20 +1701,6 @@ vnin | VninSchema | | optional
 
 
 # VninSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
@@ -1849,7 +1729,7 @@ Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 

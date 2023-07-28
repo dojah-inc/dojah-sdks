@@ -39,31 +39,6 @@ from dojah_client.type.kyc_submit_address_request import KycSubmitAddressRequest
 
 from . import path
 
-# Header params
-AppIdSchema = schemas.StrSchema
-RequestRequiredHeaderParams = typing_extensions.TypedDict(
-    'RequestRequiredHeaderParams',
-    {
-    }
-)
-RequestOptionalHeaderParams = typing_extensions.TypedDict(
-    'RequestOptionalHeaderParams',
-    {
-        'AppId': typing.Union[AppIdSchema, str, ],
-    },
-    total=False
-)
-
-
-class RequestHeaderParams(RequestRequiredHeaderParams, RequestOptionalHeaderParams):
-    pass
-
-
-request_header_app_id = api_client.HeaderParameter(
-    name="AppId",
-    style=api_client.ParameterStyle.SIMPLE,
-    schema=AppIdSchema,
-)
 # body param
 SchemaForRequestBodyApplicationJson = KycSubmitAddressRequestSchema
 
@@ -74,6 +49,9 @@ request_body_kyc_submit_address_request = api_client.RequestBody(
             schema=SchemaForRequestBodyApplicationJson),
     },
 )
+_auth = [
+    'appIdAuth',
+]
 DateSchema = schemas.StrSchema
 date_parameter = api_client.HeaderParameter(
     name="Date",
@@ -284,10 +262,8 @@ class BaseApi(api_client.Api):
         dob: typing.Optional[str] = None,
         gender: typing.Optional[str] = None,
         mobile: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
-        _header_params = {}
         _body = {}
         if street is not None:
             _body["street"] = street
@@ -310,15 +286,11 @@ class BaseApi(api_client.Api):
         if mobile is not None:
             _body["mobile"] = mobile
         args.body = _body
-        if app_id is not None:
-            _header_params["AppId"] = app_id
-        args.header = _header_params
         return args
 
     async def _asubmit_address_oapg(
         self,
         body: typing.Any = None,
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -335,18 +307,9 @@ class BaseApi(api_client.Api):
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -361,6 +324,7 @@ class BaseApi(api_client.Api):
             method=method,
             configuration=self.api_client.configuration,
             body=body,
+            auth_settings=_auth,
             headers=_headers,
         )
         if body is not schemas.unset:
@@ -377,6 +341,7 @@ class BaseApi(api_client.Api):
             fields=_fields,
             serialized_body=_body,
             body=body,
+            auth_settings=_auth,
             timeout=timeout,
         )
     
@@ -437,7 +402,6 @@ class BaseApi(api_client.Api):
     def _submit_address_oapg(
         self,
         body: typing.Any = None,
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -453,18 +417,9 @@ class BaseApi(api_client.Api):
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -479,6 +434,7 @@ class BaseApi(api_client.Api):
             method=method,
             configuration=self.api_client.configuration,
             body=body,
+            auth_settings=_auth,
             headers=_headers,
         )
         if body is not schemas.unset:
@@ -495,6 +451,7 @@ class BaseApi(api_client.Api):
             fields=_fields,
             serialized_body=_body,
             body=body,
+            auth_settings=_auth,
             timeout=timeout,
         )
     
@@ -537,7 +494,6 @@ class SubmitAddress(BaseApi):
         dob: typing.Optional[str] = None,
         gender: typing.Optional[str] = None,
         mobile: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -554,11 +510,9 @@ class SubmitAddress(BaseApi):
             dob=dob,
             gender=gender,
             mobile=mobile,
-            app_id=app_id,
         )
         return await self._asubmit_address_oapg(
             body=args.body,
-            header_params=args.header,
         )
     
     def submit_address(
@@ -573,7 +527,6 @@ class SubmitAddress(BaseApi):
         dob: typing.Optional[str] = None,
         gender: typing.Optional[str] = None,
         mobile: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -589,11 +542,9 @@ class SubmitAddress(BaseApi):
             dob=dob,
             gender=gender,
             mobile=mobile,
-            app_id=app_id,
         )
         return self._submit_address_oapg(
             body=args.body,
-            header_params=args.header,
         )
 
 class ApiForpost(BaseApi):
@@ -611,7 +562,6 @@ class ApiForpost(BaseApi):
         dob: typing.Optional[str] = None,
         gender: typing.Optional[str] = None,
         mobile: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -628,11 +578,9 @@ class ApiForpost(BaseApi):
             dob=dob,
             gender=gender,
             mobile=mobile,
-            app_id=app_id,
         )
         return await self._asubmit_address_oapg(
             body=args.body,
-            header_params=args.header,
         )
     
     def post(
@@ -647,7 +595,6 @@ class ApiForpost(BaseApi):
         dob: typing.Optional[str] = None,
         gender: typing.Optional[str] = None,
         mobile: typing.Optional[str] = None,
-        app_id: typing.Optional[str] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -663,10 +610,8 @@ class ApiForpost(BaseApi):
             dob=dob,
             gender=gender,
             mobile=mobile,
-            app_id=app_id,
         )
         return self._submit_address_oapg(
             body=args.body,
-            header_params=args.header,
         )
 

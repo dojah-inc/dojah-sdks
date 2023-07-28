@@ -18,7 +18,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getbasicbvn"></a>
 # **GetBasicBvn**
-> ValidateBvnResponse GetBasicBvn (string appId = null, int? bvn = null)
+> ValidateBvnResponse GetBasicBvn (int? bvn = null)
 
 KYC - Get Basic BVN Info
 
@@ -27,7 +27,6 @@ KYC - Get Basic BVN Info
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -37,20 +36,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new NigeriaKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
             var bvn = 22468537919;  // int? |  (optional) 
 
             try
             {
                 // KYC - Get Basic BVN Info
-                ValidateBvnResponse result = apiInstance.GetBasicBvn(appId, bvn);
+                ValidateBvnResponse result = client.NigeriaKYC.GetBasicBvn(bvn);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -77,7 +75,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Get Basic BVN Info
-    ApiResponse<ValidateBvnResponse> response = apiInstance.GetBasicBvnWithHttpInfo(appId, bvn);
+    ApiResponse<ValidateBvnResponse> response = apiInstance.GetBasicBvnWithHttpInfo(bvn);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -94,7 +92,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **bvn** | **int?** |  | [optional]  |
 
 ### Return type
@@ -103,7 +100,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -120,7 +117,7 @@ catch (ApiException e)
 
 <a name="getbasicbvn1"></a>
 # **GetBasicBvn1**
-> GetBasicBvnResponse GetBasicBvn1 (string appId = null, int? bvn = null)
+> GetBasicBvnResponse GetBasicBvn1 (int? bvn = null)
 
 KYC - Lookup BVN Basic 1
 
@@ -129,7 +126,6 @@ KYC - Lookup BVN Basic 1
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -139,19 +135,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new NigeriaKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
             var bvn = 22621998885;  // int? |  (optional) 
 
             try
             {
                 // KYC - Lookup BVN Basic 1
-                GetBasicBvnResponse result = apiInstance.GetBasicBvn1(appId, bvn);
+                GetBasicBvnResponse result = client.NigeriaKYC.GetBasicBvn1(bvn);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -178,7 +174,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Lookup BVN Basic 1
-    ApiResponse<GetBasicBvnResponse> response = apiInstance.GetBasicBvn1WithHttpInfo(appId, bvn);
+    ApiResponse<GetBasicBvnResponse> response = apiInstance.GetBasicBvn1WithHttpInfo(bvn);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -195,7 +191,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **bvn** | **int?** |  | [optional]  |
 
 ### Return type
@@ -204,7 +199,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -221,7 +216,7 @@ No authorization required
 
 <a name="getbasicphonenumber"></a>
 # **GetBasicPhoneNumber**
-> Object GetBasicPhoneNumber (string appId = null, int? phoneNumber = null)
+> Object GetBasicPhoneNumber (int? phoneNumber = null)
 
 KYC Lookup Phone Number Basic
 
@@ -230,7 +225,6 @@ KYC Lookup Phone Number Basic
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -240,20 +234,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new NigeriaKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
             var phoneNumber = 9131377829;  // int? |  (optional) 
 
             try
             {
                 // KYC Lookup Phone Number Basic
-                Object result = apiInstance.GetBasicPhoneNumber(appId, phoneNumber);
+                Object result = client.NigeriaKYC.GetBasicPhoneNumber(phoneNumber);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -280,7 +273,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC Lookup Phone Number Basic
-    ApiResponse<Object> response = apiInstance.GetBasicPhoneNumberWithHttpInfo(appId, phoneNumber);
+    ApiResponse<Object> response = apiInstance.GetBasicPhoneNumberWithHttpInfo(phoneNumber);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -297,7 +290,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **phoneNumber** | **int?** |  | [optional]  |
 
 ### Return type
@@ -306,7 +298,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -323,7 +315,7 @@ catch (ApiException e)
 
 <a name="getdriverslicense"></a>
 # **GetDriversLicense**
-> GetKycDriversLicenseResponse GetDriversLicense (string appId = null, string licenseNumber = null)
+> GetKycDriversLicenseResponse GetDriversLicense (string licenseNumber = null)
 
 KYC - Get Drivers License Info
 
@@ -332,7 +324,6 @@ KYC - Get Drivers License Info
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -342,20 +333,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new NigeriaKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
-            var licenseNumber = FKJ49409AB13;  // string |  (optional) 
+            var licenseNumber = "FKJ49409AB13";  // string |  (optional) 
 
             try
             {
                 // KYC - Get Drivers License Info
-                GetKycDriversLicenseResponse result = apiInstance.GetDriversLicense(appId, licenseNumber);
+                GetKycDriversLicenseResponse result = client.NigeriaKYC.GetDriversLicense(licenseNumber);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -382,7 +372,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Get Drivers License Info
-    ApiResponse<GetKycDriversLicenseResponse> response = apiInstance.GetDriversLicenseWithHttpInfo(appId, licenseNumber);
+    ApiResponse<GetKycDriversLicenseResponse> response = apiInstance.GetDriversLicenseWithHttpInfo(licenseNumber);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -399,7 +389,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **licenseNumber** | **string** |  | [optional]  |
 
 ### Return type
@@ -408,7 +397,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -425,7 +414,7 @@ catch (ApiException e)
 
 <a name="getnin"></a>
 # **GetNin**
-> NigeriaKycGetNinResponse GetNin (string appId = null, int? nin = null)
+> NigeriaKycGetNinResponse GetNin (int? nin = null)
 
 KYC - Get NIN Info
 
@@ -434,7 +423,6 @@ KYC - Get NIN Info
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -444,20 +432,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new NigeriaKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
             var nin = 55648152772;  // int? |  (optional) 
 
             try
             {
                 // KYC - Get NIN Info
-                NigeriaKycGetNinResponse result = apiInstance.GetNin(appId, nin);
+                NigeriaKycGetNinResponse result = client.NigeriaKYC.GetNin(nin);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -484,7 +471,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Get NIN Info
-    ApiResponse<NigeriaKycGetNinResponse> response = apiInstance.GetNinWithHttpInfo(appId, nin);
+    ApiResponse<NigeriaKycGetNinResponse> response = apiInstance.GetNinWithHttpInfo(nin);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -501,7 +488,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **nin** | **int?** |  | [optional]  |
 
 ### Return type
@@ -510,7 +496,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -527,7 +513,7 @@ catch (ApiException e)
 
 <a name="getnormalbvn"></a>
 # **GetNormalBvn**
-> GetFullBvnResponse GetNormalBvn (string appId = null, int? bvn = null)
+> GetFullBvnResponse GetNormalBvn (int? bvn = null)
 
 KYC - Lookup BVN Normal
 
@@ -536,7 +522,6 @@ KYC - Lookup BVN Normal
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -546,20 +531,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new NigeriaKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
             var bvn = 22342291445;  // int? |  (optional) 
 
             try
             {
                 // KYC - Lookup BVN Normal
-                GetFullBvnResponse result = apiInstance.GetNormalBvn(appId, bvn);
+                GetFullBvnResponse result = client.NigeriaKYC.GetNormalBvn(bvn);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -586,7 +570,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Lookup BVN Normal
-    ApiResponse<GetFullBvnResponse> response = apiInstance.GetNormalBvnWithHttpInfo(appId, bvn);
+    ApiResponse<GetFullBvnResponse> response = apiInstance.GetNormalBvnWithHttpInfo(bvn);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -603,7 +587,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **bvn** | **int?** |  | [optional]  |
 
 ### Return type
@@ -612,7 +595,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -629,7 +612,7 @@ catch (ApiException e)
 
 <a name="getnuban"></a>
 # **GetNuban**
-> GetNubanResponse GetNuban (string appId = null, int? bankCode = null, int? accountNumber = null)
+> GetNubanResponse GetNuban (int? bankCode = null, int? accountNumber = null)
 
 KYC - Get NUBAN Information
 
@@ -638,7 +621,6 @@ KYC - Get NUBAN Information
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -648,21 +630,20 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new NigeriaKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
             var bankCode = 58;  // int? |  (optional) 
             var accountNumber = 11223344;  // int? |  (optional) 
 
             try
             {
                 // KYC - Get NUBAN Information
-                GetNubanResponse result = apiInstance.GetNuban(appId, bankCode, accountNumber);
+                GetNubanResponse result = client.NigeriaKYC.GetNuban(bankCode, accountNumber);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -689,7 +670,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Get NUBAN Information
-    ApiResponse<GetNubanResponse> response = apiInstance.GetNubanWithHttpInfo(appId, bankCode, accountNumber);
+    ApiResponse<GetNubanResponse> response = apiInstance.GetNubanWithHttpInfo(bankCode, accountNumber);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -706,7 +687,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **bankCode** | **int?** |  | [optional]  |
 | **accountNumber** | **int?** |  | [optional]  |
 
@@ -716,7 +696,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -742,7 +722,6 @@ KYC - Passport
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -752,24 +731,20 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
+            client.SetBasePath("https://api.dojah.io");
             // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("Appid", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Appid", "Bearer");
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new NigeriaKYCApi(config);
-            var passportNumber = B00671500;  // string |  (optional) 
-            var surname = adekanmi;  // string |  (optional) 
+            var passportNumber = "B00671500";  // string |  (optional) 
+            var surname = "adekanmi";  // string |  (optional) 
 
             try
             {
                 // KYC - Passport
-                GetKycPassportResponse result = apiInstance.GetPassport(passportNumber, surname);
+                GetKycPassportResponse result = client.NigeriaKYC.GetPassport(passportNumber, surname);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -839,7 +814,7 @@ catch (ApiException e)
 
 <a name="getphonenumber"></a>
 # **GetPhoneNumber**
-> GetPhoneNumberResponse GetPhoneNumber (string appId = null, int? phoneNumber = null)
+> GetPhoneNumberResponse GetPhoneNumber (int? phoneNumber = null)
 
 KYC - Lookup Phone Number
 
@@ -848,7 +823,6 @@ KYC - Lookup Phone Number
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -858,20 +832,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new NigeriaKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
             var phoneNumber = 8034628633;  // int? |  (optional) 
 
             try
             {
                 // KYC - Lookup Phone Number
-                GetPhoneNumberResponse result = apiInstance.GetPhoneNumber(appId, phoneNumber);
+                GetPhoneNumberResponse result = client.NigeriaKYC.GetPhoneNumber(phoneNumber);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -898,7 +871,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Lookup Phone Number
-    ApiResponse<GetPhoneNumberResponse> response = apiInstance.GetPhoneNumberWithHttpInfo(appId, phoneNumber);
+    ApiResponse<GetPhoneNumberResponse> response = apiInstance.GetPhoneNumberWithHttpInfo(phoneNumber);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -915,7 +888,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **phoneNumber** | **int?** |  | [optional]  |
 
 ### Return type
@@ -924,7 +896,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[noauthAuth](../README.md#noauthAuth)
+[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 
@@ -942,7 +914,7 @@ catch (ApiException e)
 
 <a name="getpremiumbvn"></a>
 # **GetPremiumBvn**
-> GetPremiumBvnResponse GetPremiumBvn (string appId = null, int? bvn = null)
+> GetPremiumBvnResponse GetPremiumBvn (int? bvn = null)
 
 KYC - Lookup BVN Premium
 
@@ -951,7 +923,6 @@ KYC - Lookup BVN Premium
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -961,20 +932,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new NigeriaKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
             var bvn = 22200508254;  // int? |  (optional) 
 
             try
             {
                 // KYC - Lookup BVN Premium
-                GetPremiumBvnResponse result = apiInstance.GetPremiumBvn(appId, bvn);
+                GetPremiumBvnResponse result = client.NigeriaKYC.GetPremiumBvn(bvn);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -1001,7 +971,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // KYC - Lookup BVN Premium
-    ApiResponse<GetPremiumBvnResponse> response = apiInstance.GetPremiumBvnWithHttpInfo(appId, bvn);
+    ApiResponse<GetPremiumBvnResponse> response = apiInstance.GetPremiumBvnWithHttpInfo(bvn);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1018,7 +988,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **bvn** | **int?** |  | [optional]  |
 
 ### Return type
@@ -1027,7 +996,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -1044,7 +1013,7 @@ catch (ApiException e)
 
 <a name="getvnin"></a>
 # **GetVnin**
-> GetVninResponse GetVnin (string appId = null, string vnin = null)
+> GetVninResponse GetVnin (string vnin = null)
 
 Lookup VNIN
 
@@ -1053,7 +1022,6 @@ Lookup VNIN
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -1063,19 +1031,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new NigeriaKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
-            var vnin = LC829995256998RD;  // string |  (optional) 
+            var vnin = "LC829995256998RD";  // string |  (optional) 
 
             try
             {
                 // Lookup VNIN
-                GetVninResponse result = apiInstance.GetVnin(appId, vnin);
+                GetVninResponse result = client.NigeriaKYC.GetVnin(vnin);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -1102,7 +1070,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Lookup VNIN
-    ApiResponse<GetVninResponse> response = apiInstance.GetVninWithHttpInfo(appId, vnin);
+    ApiResponse<GetVninResponse> response = apiInstance.GetVninWithHttpInfo(vnin);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1119,7 +1087,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **vnin** | **string** |  | [optional]  |
 
 ### Return type
@@ -1128,7 +1095,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

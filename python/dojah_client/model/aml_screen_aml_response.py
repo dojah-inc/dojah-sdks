@@ -34,72 +34,16 @@ class AmlScreenAmlResponse(
     class MetaOapg:
         
         class properties:
-            
-            
-            class entity(
-                schemas.DictSchema
-            ):
-            
-            
-                class MetaOapg:
-                    
-                    class properties:
-                        reference_id = schemas.StrSchema
-                        status = schemas.StrSchema
-                        __annotations__ = {
-                            "reference_id": reference_id,
-                            "status": status,
-                        }
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["reference_id"]) -> MetaOapg.properties.reference_id: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["status"]) -> MetaOapg.properties.status: ...
-                
-                @typing.overload
-                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
-                
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["reference_id", "status", ], str]):
-                    # dict_instance[name] accessor
-                    return super().__getitem__(name)
-                
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["reference_id"]) -> typing.Union[MetaOapg.properties.reference_id, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["status"]) -> typing.Union[MetaOapg.properties.status, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
-                
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["reference_id", "status", ], str]):
-                    return super().get_item_oapg(name)
-                
-            
-                def __new__(
-                    cls,
-                    *args: typing.Union[dict, frozendict.frozendict, ],
-                    reference_id: typing.Union[MetaOapg.properties.reference_id, str, schemas.Unset] = schemas.unset,
-                    status: typing.Union[MetaOapg.properties.status, str, schemas.Unset] = schemas.unset,
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-                ) -> 'entity':
-                    return super().__new__(
-                        cls,
-                        *args,
-                        reference_id=reference_id,
-                        status=status,
-                        _configuration=_configuration,
-                        **kwargs,
-                    )
+        
+            @staticmethod
+            def entity() -> typing.Type['AmlScreenAmlResponseEntity']:
+                return AmlScreenAmlResponseEntity
             __annotations__ = {
                 "entity": entity,
             }
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["entity"]) -> MetaOapg.properties.entity: ...
+    def __getitem__(self, name: typing_extensions.Literal["entity"]) -> 'AmlScreenAmlResponseEntity': ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
@@ -110,7 +54,7 @@ class AmlScreenAmlResponse(
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["entity"]) -> typing.Union[MetaOapg.properties.entity, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["entity"]) -> typing.Union['AmlScreenAmlResponseEntity', schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
@@ -122,7 +66,7 @@ class AmlScreenAmlResponse(
     def __new__(
         cls,
         *args: typing.Union[dict, frozendict.frozendict, ],
-        entity: typing.Union[MetaOapg.properties.entity, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        entity: typing.Union['AmlScreenAmlResponseEntity', schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'AmlScreenAmlResponse':
@@ -133,3 +77,5 @@ class AmlScreenAmlResponse(
             _configuration=_configuration,
             **kwargs,
         )
+
+from dojah_client.model.aml_screen_aml_response_entity import AmlScreenAmlResponseEntity

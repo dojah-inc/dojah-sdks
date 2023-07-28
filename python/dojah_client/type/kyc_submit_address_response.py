@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.kyc_submit_address_response_entity import KycSubmitAddressResponseEntity
 
 class RequiredKycSubmitAddressResponse(TypedDict):
     pass
 
 class OptionalKycSubmitAddressResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: KycSubmitAddressResponseEntity
 
 class KycSubmitAddressResponse(RequiredKycSubmitAddressResponse, OptionalKycSubmitAddressResponse):
     pass

@@ -49,7 +49,6 @@ public class ZwKycApiTest {
      */
     @Test
     public void checkCreditTest() throws ApiException {
-        String appId = null;
         String idNumber = null;
         String name = null;
         String surname = null;
@@ -58,7 +57,6 @@ public class ZwKycApiTest {
         String maritalStatus = null;
         Integer mobileNumber = null;
         ZwKycCheckCreditResponse response = api.checkCredit()
-                .appId(appId)
                 .idNumber(idNumber)
                 .name(name)
                 .surname(surname)
@@ -77,10 +75,8 @@ public class ZwKycApiTest {
      */
     @Test
     public void verifyIdTest() throws ApiException {
-        String appId = null;
         String id = null;
         ZwKycVerifyIdResponse response = api.verifyId()
-                .appId(appId)
                 .id(id)
                 .execute();
         // TODO: test validations

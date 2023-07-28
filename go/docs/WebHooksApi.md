@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## DeleteWebhook
 
-> DeleteWebhookResponse DeleteWebhook(ctx).AppId(appId).Execute()
+> DeleteWebhookResponse DeleteWebhook(ctx).Execute()
 
 Delete Webhook
 
@@ -30,11 +30,10 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebHooksApi.DeleteWebhook(context.Background()).AppId(appId).Execute()
+    resp, r, err := apiClient.WebHooksApi.DeleteWebhook(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebHooksApi.DeleteWebhook``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -46,16 +45,12 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not need any parameter.
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDeleteWebhookRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
 
 ### Return type
 
@@ -63,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -77,7 +72,7 @@ Name | Type | Description  | Notes
 
 ## GetWebhooks
 
-> GetWebhooksResponse GetWebhooks(ctx).AppId(appId).Execute()
+> GetWebhooksResponse GetWebhooks(ctx).Execute()
 
 Fetch All Webhooks
 
@@ -94,11 +89,10 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebHooksApi.GetWebhooks(context.Background()).AppId(appId).Execute()
+    resp, r, err := apiClient.WebHooksApi.GetWebhooks(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebHooksApi.GetWebhooks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -110,16 +104,12 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not need any parameter.
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetWebhooksRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
 
 ### Return type
 
@@ -127,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -141,7 +131,7 @@ Name | Type | Description  | Notes
 
 ## NotifyWebhook
 
-> NotifyWebhookResponse NotifyWebhook(ctx).NotifyWebhookRequest(notifyWebhookRequest).AppId(appId).Execute()
+> NotifyWebhookResponse NotifyWebhook(ctx).NotifyWebhookRequest(notifyWebhookRequest).Execute()
 
 Post Hook
 
@@ -159,11 +149,10 @@ import (
 
 func main() {
     notifyWebhookRequest := *dojah.NewNotifyWebhookRequest() // NotifyWebhookRequest | 
-    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebHooksApi.NotifyWebhook(context.Background()).NotifyWebhookRequest(notifyWebhookRequest).AppId(appId).Execute()
+    resp, r, err := apiClient.WebHooksApi.NotifyWebhook(context.Background()).NotifyWebhookRequest(notifyWebhookRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebHooksApi.NotifyWebhook``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -185,7 +174,6 @@ Other parameters are passed through a pointer to a apiNotifyWebhookRequest struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **notifyWebhookRequest** | [**NotifyWebhookRequest**](NotifyWebhookRequest.md) |  | 
- **appId** | **string** |  | 
 
 ### Return type
 
@@ -193,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -207,7 +195,7 @@ No authorization required
 
 ## SubscribeService
 
-> SubscribeServiceResponse SubscribeService(ctx).SubscribeServiceRequest(subscribeServiceRequest).AppId(appId).Execute()
+> SubscribeServiceResponse SubscribeService(ctx).SubscribeServiceRequest(subscribeServiceRequest).Execute()
 
 Subscribe to service
 
@@ -225,11 +213,10 @@ import (
 
 func main() {
     subscribeServiceRequest := *dojah.NewSubscribeServiceRequest() // SubscribeServiceRequest | 
-    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebHooksApi.SubscribeService(context.Background()).SubscribeServiceRequest(subscribeServiceRequest).AppId(appId).Execute()
+    resp, r, err := apiClient.WebHooksApi.SubscribeService(context.Background()).SubscribeServiceRequest(subscribeServiceRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebHooksApi.SubscribeService``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -251,7 +238,6 @@ Other parameters are passed through a pointer to a apiSubscribeServiceRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscribeServiceRequest** | [**SubscribeServiceRequest**](SubscribeServiceRequest.md) |  | 
- **appId** | **string** |  | 
 
 ### Return type
 
@@ -259,7 +245,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[noauthAuth](../README.md#noauthAuth)
+[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 

@@ -9,7 +9,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="sendAirtime"></a>
 # **sendAirtime**
-> PurchaseAirtimeResponse sendAirtime(purchaseAirtimeRequest).appId(appId).execute();
+> PurchaseAirtimeResponse sendAirtime(purchaseAirtimeRequest).execute();
 
 Purchase - Send Airtime
 
@@ -32,18 +32,19 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
 
     Dojah client = new Dojah(configuration);
     String destination = "destination_example";
     String amount = "amount_example";
-    String appId = "{{app_id}}";
     try {
       PurchaseAirtimeResponse result = client
               .purchase
               .sendAirtime()
               .destination(destination)
               .amount(amount)
-              .appId(appId)
               .execute();
       System.out.println(result);
 
@@ -64,7 +65,6 @@ public class Example {
               .sendAirtime()
               .destination(destination)
               .amount(amount)
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -88,7 +88,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **purchaseAirtimeRequest** | [**PurchaseAirtimeRequest**](PurchaseAirtimeRequest.md)|  | |
-| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -96,7 +95,7 @@ public class Example {
 
 ### Authorization
 
-[noauthAuth](../README.md#noauthAuth)
+[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 

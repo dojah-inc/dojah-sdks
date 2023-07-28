@@ -30,11 +30,10 @@ namespace Dojah.Net.Api
         /// KYC - Get Basic BVN Info
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ValidateBvnResponse</returns>
-        ValidateBvnResponse GetBasicBvn(string appId = default(string), int? bvn = default(int?), int operationIndex = 0);
+        ValidateBvnResponse GetBasicBvn(int? bvn = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// KYC - Get Basic BVN Info
@@ -43,20 +42,18 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ValidateBvnResponse</returns>
-        ApiResponse<ValidateBvnResponse> GetBasicBvnWithHttpInfo(string appId = default(string), int? bvn = default(int?), int operationIndex = 0);
+        ApiResponse<ValidateBvnResponse> GetBasicBvnWithHttpInfo(int? bvn = default(int?), int operationIndex = 0);
         /// <summary>
         /// KYC - Lookup BVN Basic 1
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetBasicBvnResponse</returns>
-        GetBasicBvnResponse GetBasicBvn1(string appId = default(string), int? bvn = default(int?), int operationIndex = 0);
+        GetBasicBvnResponse GetBasicBvn1(int? bvn = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// KYC - Lookup BVN Basic 1
@@ -65,20 +62,18 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetBasicBvnResponse</returns>
-        ApiResponse<GetBasicBvnResponse> GetBasicBvn1WithHttpInfo(string appId = default(string), int? bvn = default(int?), int operationIndex = 0);
+        ApiResponse<GetBasicBvnResponse> GetBasicBvn1WithHttpInfo(int? bvn = default(int?), int operationIndex = 0);
         /// <summary>
         /// KYC Lookup Phone Number Basic
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object GetBasicPhoneNumber(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0);
+        Object GetBasicPhoneNumber(int? phoneNumber = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// KYC Lookup Phone Number Basic
@@ -87,20 +82,18 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> GetBasicPhoneNumberWithHttpInfo(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0);
+        ApiResponse<Object> GetBasicPhoneNumberWithHttpInfo(int? phoneNumber = default(int?), int operationIndex = 0);
         /// <summary>
         /// KYC - Get Drivers License Info
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="licenseNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetKycDriversLicenseResponse</returns>
-        GetKycDriversLicenseResponse GetDriversLicense(string appId = default(string), string licenseNumber = default(string), int operationIndex = 0);
+        GetKycDriversLicenseResponse GetDriversLicense(string licenseNumber = default(string), int operationIndex = 0);
 
         /// <summary>
         /// KYC - Get Drivers License Info
@@ -109,20 +102,18 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="licenseNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetKycDriversLicenseResponse</returns>
-        ApiResponse<GetKycDriversLicenseResponse> GetDriversLicenseWithHttpInfo(string appId = default(string), string licenseNumber = default(string), int operationIndex = 0);
+        ApiResponse<GetKycDriversLicenseResponse> GetDriversLicenseWithHttpInfo(string licenseNumber = default(string), int operationIndex = 0);
         /// <summary>
         /// KYC - Get NIN Info
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="nin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>NigeriaKycGetNinResponse</returns>
-        NigeriaKycGetNinResponse GetNin(string appId = default(string), int? nin = default(int?), int operationIndex = 0);
+        NigeriaKycGetNinResponse GetNin(int? nin = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// KYC - Get NIN Info
@@ -131,20 +122,18 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="nin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of NigeriaKycGetNinResponse</returns>
-        ApiResponse<NigeriaKycGetNinResponse> GetNinWithHttpInfo(string appId = default(string), int? nin = default(int?), int operationIndex = 0);
+        ApiResponse<NigeriaKycGetNinResponse> GetNinWithHttpInfo(int? nin = default(int?), int operationIndex = 0);
         /// <summary>
         /// KYC - Lookup BVN Normal
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetFullBvnResponse</returns>
-        GetFullBvnResponse GetNormalBvn(string appId = default(string), int? bvn = default(int?), int operationIndex = 0);
+        GetFullBvnResponse GetNormalBvn(int? bvn = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// KYC - Lookup BVN Normal
@@ -153,21 +142,19 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetFullBvnResponse</returns>
-        ApiResponse<GetFullBvnResponse> GetNormalBvnWithHttpInfo(string appId = default(string), int? bvn = default(int?), int operationIndex = 0);
+        ApiResponse<GetFullBvnResponse> GetNormalBvnWithHttpInfo(int? bvn = default(int?), int operationIndex = 0);
         /// <summary>
         /// KYC - Get NUBAN Information
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetNubanResponse</returns>
-        GetNubanResponse GetNuban(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0);
+        GetNubanResponse GetNuban(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// KYC - Get NUBAN Information
@@ -176,12 +163,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetNubanResponse</returns>
-        ApiResponse<GetNubanResponse> GetNubanWithHttpInfo(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0);
+        ApiResponse<GetNubanResponse> GetNubanWithHttpInfo(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0);
         /// <summary>
         /// KYC - Passport
         /// </summary>
@@ -208,11 +194,10 @@ namespace Dojah.Net.Api
         /// KYC - Lookup Phone Number
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetPhoneNumberResponse</returns>
-        GetPhoneNumberResponse GetPhoneNumber(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0);
+        GetPhoneNumberResponse GetPhoneNumber(int? phoneNumber = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// KYC - Lookup Phone Number
@@ -221,20 +206,18 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetPhoneNumberResponse</returns>
-        ApiResponse<GetPhoneNumberResponse> GetPhoneNumberWithHttpInfo(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0);
+        ApiResponse<GetPhoneNumberResponse> GetPhoneNumberWithHttpInfo(int? phoneNumber = default(int?), int operationIndex = 0);
         /// <summary>
         /// KYC - Lookup BVN Premium
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetPremiumBvnResponse</returns>
-        GetPremiumBvnResponse GetPremiumBvn(string appId = default(string), int? bvn = default(int?), int operationIndex = 0);
+        GetPremiumBvnResponse GetPremiumBvn(int? bvn = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// KYC - Lookup BVN Premium
@@ -243,20 +226,18 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetPremiumBvnResponse</returns>
-        ApiResponse<GetPremiumBvnResponse> GetPremiumBvnWithHttpInfo(string appId = default(string), int? bvn = default(int?), int operationIndex = 0);
+        ApiResponse<GetPremiumBvnResponse> GetPremiumBvnWithHttpInfo(int? bvn = default(int?), int operationIndex = 0);
         /// <summary>
         /// Lookup VNIN
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="vnin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetVninResponse</returns>
-        GetVninResponse GetVnin(string appId = default(string), string vnin = default(string), int operationIndex = 0);
+        GetVninResponse GetVnin(string vnin = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Lookup VNIN
@@ -265,11 +246,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="vnin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetVninResponse</returns>
-        ApiResponse<GetVninResponse> GetVninWithHttpInfo(string appId = default(string), string vnin = default(string), int operationIndex = 0);
+        ApiResponse<GetVninResponse> GetVninWithHttpInfo(string vnin = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -286,12 +266,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ValidateBvnResponse</returns>
-        System.Threading.Tasks.Task<ValidateBvnResponse> GetBasicBvnAsync(string appId = default(string), int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ValidateBvnResponse> GetBasicBvnAsync(int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Get Basic BVN Info
@@ -300,12 +279,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ValidateBvnResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ValidateBvnResponse>> GetBasicBvnWithHttpInfoAsync(string appId = default(string), int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ValidateBvnResponse>> GetBasicBvnWithHttpInfoAsync(int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// KYC - Lookup BVN Basic 1
         /// </summary>
@@ -313,12 +291,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetBasicBvnResponse</returns>
-        System.Threading.Tasks.Task<GetBasicBvnResponse> GetBasicBvn1Async(string appId = default(string), int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetBasicBvnResponse> GetBasicBvn1Async(int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Lookup BVN Basic 1
@@ -327,12 +304,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetBasicBvnResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetBasicBvnResponse>> GetBasicBvn1WithHttpInfoAsync(string appId = default(string), int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetBasicBvnResponse>> GetBasicBvn1WithHttpInfoAsync(int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// KYC Lookup Phone Number Basic
         /// </summary>
@@ -340,12 +316,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> GetBasicPhoneNumberAsync(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> GetBasicPhoneNumberAsync(int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC Lookup Phone Number Basic
@@ -354,12 +329,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetBasicPhoneNumberWithHttpInfoAsync(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetBasicPhoneNumberWithHttpInfoAsync(int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// KYC - Get Drivers License Info
         /// </summary>
@@ -367,12 +341,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="licenseNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetKycDriversLicenseResponse</returns>
-        System.Threading.Tasks.Task<GetKycDriversLicenseResponse> GetDriversLicenseAsync(string appId = default(string), string licenseNumber = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetKycDriversLicenseResponse> GetDriversLicenseAsync(string licenseNumber = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Get Drivers License Info
@@ -381,12 +354,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="licenseNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetKycDriversLicenseResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetKycDriversLicenseResponse>> GetDriversLicenseWithHttpInfoAsync(string appId = default(string), string licenseNumber = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetKycDriversLicenseResponse>> GetDriversLicenseWithHttpInfoAsync(string licenseNumber = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// KYC - Get NIN Info
         /// </summary>
@@ -394,12 +366,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="nin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NigeriaKycGetNinResponse</returns>
-        System.Threading.Tasks.Task<NigeriaKycGetNinResponse> GetNinAsync(string appId = default(string), int? nin = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<NigeriaKycGetNinResponse> GetNinAsync(int? nin = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Get NIN Info
@@ -408,12 +379,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="nin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (NigeriaKycGetNinResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<NigeriaKycGetNinResponse>> GetNinWithHttpInfoAsync(string appId = default(string), int? nin = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<NigeriaKycGetNinResponse>> GetNinWithHttpInfoAsync(int? nin = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// KYC - Lookup BVN Normal
         /// </summary>
@@ -421,12 +391,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetFullBvnResponse</returns>
-        System.Threading.Tasks.Task<GetFullBvnResponse> GetNormalBvnAsync(string appId = default(string), int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetFullBvnResponse> GetNormalBvnAsync(int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Lookup BVN Normal
@@ -435,12 +404,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetFullBvnResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetFullBvnResponse>> GetNormalBvnWithHttpInfoAsync(string appId = default(string), int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetFullBvnResponse>> GetNormalBvnWithHttpInfoAsync(int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// KYC - Get NUBAN Information
         /// </summary>
@@ -448,13 +416,12 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetNubanResponse</returns>
-        System.Threading.Tasks.Task<GetNubanResponse> GetNubanAsync(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetNubanResponse> GetNubanAsync(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Get NUBAN Information
@@ -463,13 +430,12 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetNubanResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetNubanResponse>> GetNubanWithHttpInfoAsync(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetNubanResponse>> GetNubanWithHttpInfoAsync(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// KYC - Passport
         /// </summary>
@@ -504,12 +470,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPhoneNumberResponse</returns>
-        System.Threading.Tasks.Task<GetPhoneNumberResponse> GetPhoneNumberAsync(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetPhoneNumberResponse> GetPhoneNumberAsync(int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Lookup Phone Number
@@ -518,12 +483,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPhoneNumberResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetPhoneNumberResponse>> GetPhoneNumberWithHttpInfoAsync(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetPhoneNumberResponse>> GetPhoneNumberWithHttpInfoAsync(int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// KYC - Lookup BVN Premium
         /// </summary>
@@ -531,12 +495,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPremiumBvnResponse</returns>
-        System.Threading.Tasks.Task<GetPremiumBvnResponse> GetPremiumBvnAsync(string appId = default(string), int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetPremiumBvnResponse> GetPremiumBvnAsync(int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Lookup BVN Premium
@@ -545,12 +508,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPremiumBvnResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetPremiumBvnResponse>> GetPremiumBvnWithHttpInfoAsync(string appId = default(string), int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetPremiumBvnResponse>> GetPremiumBvnWithHttpInfoAsync(int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Lookup VNIN
         /// </summary>
@@ -558,12 +520,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="vnin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetVninResponse</returns>
-        System.Threading.Tasks.Task<GetVninResponse> GetVninAsync(string appId = default(string), string vnin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetVninResponse> GetVninAsync(string vnin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Lookup VNIN
@@ -572,12 +533,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="vnin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetVninResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetVninResponse>> GetVninWithHttpInfoAsync(string appId = default(string), string vnin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetVninResponse>> GetVninWithHttpInfoAsync(string vnin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -702,13 +662,12 @@ namespace Dojah.Net.Api
         /// KYC - Get Basic BVN Info 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ValidateBvnResponse</returns>
-        public ValidateBvnResponse GetBasicBvn(string appId = default(string), int? bvn = default(int?), int operationIndex = 0)
+        public ValidateBvnResponse GetBasicBvn(int? bvn = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<ValidateBvnResponse> localVarResponse = GetBasicBvnWithHttpInfo(appId, bvn);
+            Dojah.Net.Client.ApiResponse<ValidateBvnResponse> localVarResponse = GetBasicBvnWithHttpInfo(bvn);
             return localVarResponse.Data;
         }
 
@@ -716,11 +675,10 @@ namespace Dojah.Net.Api
         /// KYC - Get Basic BVN Info 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ValidateBvnResponse</returns>
-        public Dojah.Net.Client.ApiResponse<ValidateBvnResponse> GetBasicBvnWithHttpInfo(string appId = default(string), int? bvn = default(int?), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<ValidateBvnResponse> GetBasicBvnWithHttpInfo(int? bvn = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -748,15 +706,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetBasicBvn";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<ValidateBvnResponse>("/api/v1/kyc/bvn", localVarRequestOptions, this.Configuration);
@@ -776,14 +735,13 @@ namespace Dojah.Net.Api
         /// KYC - Get Basic BVN Info 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ValidateBvnResponse</returns>
-        public async System.Threading.Tasks.Task<ValidateBvnResponse> GetBasicBvnAsync(string appId = default(string), int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ValidateBvnResponse> GetBasicBvnAsync(int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<ValidateBvnResponse> localVarResponse = await GetBasicBvnWithHttpInfoAsync(appId, bvn, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<ValidateBvnResponse> localVarResponse = await GetBasicBvnWithHttpInfoAsync(bvn, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -791,12 +749,11 @@ namespace Dojah.Net.Api
         /// KYC - Get Basic BVN Info 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ValidateBvnResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<ValidateBvnResponse>> GetBasicBvnWithHttpInfoAsync(string appId = default(string), int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<ValidateBvnResponse>> GetBasicBvnWithHttpInfoAsync(int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -825,15 +782,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetBasicBvn";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<ValidateBvnResponse>("/api/v1/kyc/bvn", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -854,13 +812,12 @@ namespace Dojah.Net.Api
         /// KYC - Lookup BVN Basic 1 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetBasicBvnResponse</returns>
-        public GetBasicBvnResponse GetBasicBvn1(string appId = default(string), int? bvn = default(int?), int operationIndex = 0)
+        public GetBasicBvnResponse GetBasicBvn1(int? bvn = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetBasicBvnResponse> localVarResponse = GetBasicBvn1WithHttpInfo(appId, bvn);
+            Dojah.Net.Client.ApiResponse<GetBasicBvnResponse> localVarResponse = GetBasicBvn1WithHttpInfo(bvn);
             return localVarResponse.Data;
         }
 
@@ -868,11 +825,10 @@ namespace Dojah.Net.Api
         /// KYC - Lookup BVN Basic 1 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetBasicBvnResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetBasicBvnResponse> GetBasicBvn1WithHttpInfo(string appId = default(string), int? bvn = default(int?), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GetBasicBvnResponse> GetBasicBvn1WithHttpInfo(int? bvn = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -900,14 +856,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetBasicBvn1";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<GetBasicBvnResponse>("/api/v1/kyc/bvn/basic", localVarRequestOptions, this.Configuration);
@@ -927,14 +884,13 @@ namespace Dojah.Net.Api
         /// KYC - Lookup BVN Basic 1 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetBasicBvnResponse</returns>
-        public async System.Threading.Tasks.Task<GetBasicBvnResponse> GetBasicBvn1Async(string appId = default(string), int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetBasicBvnResponse> GetBasicBvn1Async(int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetBasicBvnResponse> localVarResponse = await GetBasicBvn1WithHttpInfoAsync(appId, bvn, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetBasicBvnResponse> localVarResponse = await GetBasicBvn1WithHttpInfoAsync(bvn, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -942,12 +898,11 @@ namespace Dojah.Net.Api
         /// KYC - Lookup BVN Basic 1 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetBasicBvnResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetBasicBvnResponse>> GetBasicBvn1WithHttpInfoAsync(string appId = default(string), int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetBasicBvnResponse>> GetBasicBvn1WithHttpInfoAsync(int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -976,14 +931,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetBasicBvn1";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<GetBasicBvnResponse>("/api/v1/kyc/bvn/basic", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1004,13 +960,12 @@ namespace Dojah.Net.Api
         /// KYC Lookup Phone Number Basic 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object GetBasicPhoneNumber(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0)
+        public Object GetBasicPhoneNumber(int? phoneNumber = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = GetBasicPhoneNumberWithHttpInfo(appId, phoneNumber);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = GetBasicPhoneNumberWithHttpInfo(phoneNumber);
             return localVarResponse.Data;
         }
 
@@ -1018,11 +973,10 @@ namespace Dojah.Net.Api
         /// KYC Lookup Phone Number Basic 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public Dojah.Net.Client.ApiResponse<Object> GetBasicPhoneNumberWithHttpInfo(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<Object> GetBasicPhoneNumberWithHttpInfo(int? phoneNumber = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -1050,15 +1004,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "phone_number", phoneNumber, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetBasicPhoneNumber";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Object>("/api/v1/kyc/phone_number/basic", localVarRequestOptions, this.Configuration);
@@ -1078,14 +1033,13 @@ namespace Dojah.Net.Api
         /// KYC Lookup Phone Number Basic 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> GetBasicPhoneNumberAsync(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> GetBasicPhoneNumberAsync(int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await GetBasicPhoneNumberWithHttpInfoAsync(appId, phoneNumber, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await GetBasicPhoneNumberWithHttpInfoAsync(phoneNumber, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1093,12 +1047,11 @@ namespace Dojah.Net.Api
         /// KYC Lookup Phone Number Basic 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> GetBasicPhoneNumberWithHttpInfoAsync(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> GetBasicPhoneNumberWithHttpInfoAsync(int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -1127,15 +1080,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "phone_number", phoneNumber, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetBasicPhoneNumber";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/api/v1/kyc/phone_number/basic", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1156,13 +1110,12 @@ namespace Dojah.Net.Api
         /// KYC - Get Drivers License Info 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="licenseNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetKycDriversLicenseResponse</returns>
-        public GetKycDriversLicenseResponse GetDriversLicense(string appId = default(string), string licenseNumber = default(string), int operationIndex = 0)
+        public GetKycDriversLicenseResponse GetDriversLicense(string licenseNumber = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetKycDriversLicenseResponse> localVarResponse = GetDriversLicenseWithHttpInfo(appId, licenseNumber);
+            Dojah.Net.Client.ApiResponse<GetKycDriversLicenseResponse> localVarResponse = GetDriversLicenseWithHttpInfo(licenseNumber);
             return localVarResponse.Data;
         }
 
@@ -1170,11 +1123,10 @@ namespace Dojah.Net.Api
         /// KYC - Get Drivers License Info 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="licenseNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetKycDriversLicenseResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetKycDriversLicenseResponse> GetDriversLicenseWithHttpInfo(string appId = default(string), string licenseNumber = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GetKycDriversLicenseResponse> GetDriversLicenseWithHttpInfo(string licenseNumber = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -1202,15 +1154,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "license_number", licenseNumber, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetDriversLicense";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<GetKycDriversLicenseResponse>("/api/v1/kyc/dl", localVarRequestOptions, this.Configuration);
@@ -1230,14 +1183,13 @@ namespace Dojah.Net.Api
         /// KYC - Get Drivers License Info 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="licenseNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetKycDriversLicenseResponse</returns>
-        public async System.Threading.Tasks.Task<GetKycDriversLicenseResponse> GetDriversLicenseAsync(string appId = default(string), string licenseNumber = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetKycDriversLicenseResponse> GetDriversLicenseAsync(string licenseNumber = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetKycDriversLicenseResponse> localVarResponse = await GetDriversLicenseWithHttpInfoAsync(appId, licenseNumber, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetKycDriversLicenseResponse> localVarResponse = await GetDriversLicenseWithHttpInfoAsync(licenseNumber, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1245,12 +1197,11 @@ namespace Dojah.Net.Api
         /// KYC - Get Drivers License Info 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="licenseNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetKycDriversLicenseResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetKycDriversLicenseResponse>> GetDriversLicenseWithHttpInfoAsync(string appId = default(string), string licenseNumber = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetKycDriversLicenseResponse>> GetDriversLicenseWithHttpInfoAsync(string licenseNumber = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -1279,15 +1230,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "license_number", licenseNumber, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetDriversLicense";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<GetKycDriversLicenseResponse>("/api/v1/kyc/dl", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1308,13 +1260,12 @@ namespace Dojah.Net.Api
         /// KYC - Get NIN Info 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="nin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>NigeriaKycGetNinResponse</returns>
-        public NigeriaKycGetNinResponse GetNin(string appId = default(string), int? nin = default(int?), int operationIndex = 0)
+        public NigeriaKycGetNinResponse GetNin(int? nin = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<NigeriaKycGetNinResponse> localVarResponse = GetNinWithHttpInfo(appId, nin);
+            Dojah.Net.Client.ApiResponse<NigeriaKycGetNinResponse> localVarResponse = GetNinWithHttpInfo(nin);
             return localVarResponse.Data;
         }
 
@@ -1322,11 +1273,10 @@ namespace Dojah.Net.Api
         /// KYC - Get NIN Info 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="nin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of NigeriaKycGetNinResponse</returns>
-        public Dojah.Net.Client.ApiResponse<NigeriaKycGetNinResponse> GetNinWithHttpInfo(string appId = default(string), int? nin = default(int?), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<NigeriaKycGetNinResponse> GetNinWithHttpInfo(int? nin = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -1354,15 +1304,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "nin", nin, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetNin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<NigeriaKycGetNinResponse>("/api/v1/kyc/nin", localVarRequestOptions, this.Configuration);
@@ -1382,14 +1333,13 @@ namespace Dojah.Net.Api
         /// KYC - Get NIN Info 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="nin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NigeriaKycGetNinResponse</returns>
-        public async System.Threading.Tasks.Task<NigeriaKycGetNinResponse> GetNinAsync(string appId = default(string), int? nin = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<NigeriaKycGetNinResponse> GetNinAsync(int? nin = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<NigeriaKycGetNinResponse> localVarResponse = await GetNinWithHttpInfoAsync(appId, nin, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<NigeriaKycGetNinResponse> localVarResponse = await GetNinWithHttpInfoAsync(nin, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1397,12 +1347,11 @@ namespace Dojah.Net.Api
         /// KYC - Get NIN Info 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="nin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (NigeriaKycGetNinResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<NigeriaKycGetNinResponse>> GetNinWithHttpInfoAsync(string appId = default(string), int? nin = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<NigeriaKycGetNinResponse>> GetNinWithHttpInfoAsync(int? nin = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -1431,15 +1380,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "nin", nin, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetNin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<NigeriaKycGetNinResponse>("/api/v1/kyc/nin", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1460,13 +1410,12 @@ namespace Dojah.Net.Api
         /// KYC - Lookup BVN Normal 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetFullBvnResponse</returns>
-        public GetFullBvnResponse GetNormalBvn(string appId = default(string), int? bvn = default(int?), int operationIndex = 0)
+        public GetFullBvnResponse GetNormalBvn(int? bvn = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetFullBvnResponse> localVarResponse = GetNormalBvnWithHttpInfo(appId, bvn);
+            Dojah.Net.Client.ApiResponse<GetFullBvnResponse> localVarResponse = GetNormalBvnWithHttpInfo(bvn);
             return localVarResponse.Data;
         }
 
@@ -1474,11 +1423,10 @@ namespace Dojah.Net.Api
         /// KYC - Lookup BVN Normal 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetFullBvnResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetFullBvnResponse> GetNormalBvnWithHttpInfo(string appId = default(string), int? bvn = default(int?), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GetFullBvnResponse> GetNormalBvnWithHttpInfo(int? bvn = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -1506,15 +1454,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetNormalBvn";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<GetFullBvnResponse>("/api/v1/kyc/bvn/full", localVarRequestOptions, this.Configuration);
@@ -1534,14 +1483,13 @@ namespace Dojah.Net.Api
         /// KYC - Lookup BVN Normal 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetFullBvnResponse</returns>
-        public async System.Threading.Tasks.Task<GetFullBvnResponse> GetNormalBvnAsync(string appId = default(string), int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetFullBvnResponse> GetNormalBvnAsync(int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetFullBvnResponse> localVarResponse = await GetNormalBvnWithHttpInfoAsync(appId, bvn, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetFullBvnResponse> localVarResponse = await GetNormalBvnWithHttpInfoAsync(bvn, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1549,12 +1497,11 @@ namespace Dojah.Net.Api
         /// KYC - Lookup BVN Normal 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetFullBvnResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetFullBvnResponse>> GetNormalBvnWithHttpInfoAsync(string appId = default(string), int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetFullBvnResponse>> GetNormalBvnWithHttpInfoAsync(int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -1583,15 +1530,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetNormalBvn";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<GetFullBvnResponse>("/api/v1/kyc/bvn/full", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1612,14 +1560,13 @@ namespace Dojah.Net.Api
         /// KYC - Get NUBAN Information 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetNubanResponse</returns>
-        public GetNubanResponse GetNuban(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0)
+        public GetNubanResponse GetNuban(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetNubanResponse> localVarResponse = GetNubanWithHttpInfo(appId, bankCode, accountNumber);
+            Dojah.Net.Client.ApiResponse<GetNubanResponse> localVarResponse = GetNubanWithHttpInfo(bankCode, accountNumber);
             return localVarResponse.Data;
         }
 
@@ -1627,12 +1574,11 @@ namespace Dojah.Net.Api
         /// KYC - Get NUBAN Information 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetNubanResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetNubanResponse> GetNubanWithHttpInfo(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GetNubanResponse> GetNubanWithHttpInfo(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -1664,15 +1610,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_number", accountNumber, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetNuban";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<GetNubanResponse>("/api/v1/kyc/nuban", localVarRequestOptions, this.Configuration);
@@ -1692,15 +1639,14 @@ namespace Dojah.Net.Api
         /// KYC - Get NUBAN Information 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetNubanResponse</returns>
-        public async System.Threading.Tasks.Task<GetNubanResponse> GetNubanAsync(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetNubanResponse> GetNubanAsync(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetNubanResponse> localVarResponse = await GetNubanWithHttpInfoAsync(appId, bankCode, accountNumber, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetNubanResponse> localVarResponse = await GetNubanWithHttpInfoAsync(bankCode, accountNumber, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1708,13 +1654,12 @@ namespace Dojah.Net.Api
         /// KYC - Get NUBAN Information 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetNubanResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetNubanResponse>> GetNubanWithHttpInfoAsync(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetNubanResponse>> GetNubanWithHttpInfoAsync(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -1747,15 +1692,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_number", accountNumber, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetNuban";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<GetNubanResponse>("/api/v1/kyc/nuban", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1936,13 +1882,12 @@ namespace Dojah.Net.Api
         /// KYC - Lookup Phone Number 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetPhoneNumberResponse</returns>
-        public GetPhoneNumberResponse GetPhoneNumber(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0)
+        public GetPhoneNumberResponse GetPhoneNumber(int? phoneNumber = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetPhoneNumberResponse> localVarResponse = GetPhoneNumberWithHttpInfo(appId, phoneNumber);
+            Dojah.Net.Client.ApiResponse<GetPhoneNumberResponse> localVarResponse = GetPhoneNumberWithHttpInfo(phoneNumber);
             return localVarResponse.Data;
         }
 
@@ -1950,11 +1895,10 @@ namespace Dojah.Net.Api
         /// KYC - Lookup Phone Number 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetPhoneNumberResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetPhoneNumberResponse> GetPhoneNumberWithHttpInfo(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GetPhoneNumberResponse> GetPhoneNumberWithHttpInfo(int? phoneNumber = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -1982,14 +1926,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "phone_number", phoneNumber, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetPhoneNumber";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
             // authentication (noauthAuth) required
 
             // make the HTTP request
@@ -2010,14 +1955,13 @@ namespace Dojah.Net.Api
         /// KYC - Lookup Phone Number 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPhoneNumberResponse</returns>
-        public async System.Threading.Tasks.Task<GetPhoneNumberResponse> GetPhoneNumberAsync(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetPhoneNumberResponse> GetPhoneNumberAsync(int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetPhoneNumberResponse> localVarResponse = await GetPhoneNumberWithHttpInfoAsync(appId, phoneNumber, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetPhoneNumberResponse> localVarResponse = await GetPhoneNumberWithHttpInfoAsync(phoneNumber, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2025,12 +1969,11 @@ namespace Dojah.Net.Api
         /// KYC - Lookup Phone Number 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPhoneNumberResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetPhoneNumberResponse>> GetPhoneNumberWithHttpInfoAsync(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetPhoneNumberResponse>> GetPhoneNumberWithHttpInfoAsync(int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -2059,14 +2002,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "phone_number", phoneNumber, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetPhoneNumber";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
             // authentication (noauthAuth) required
 
             // make the HTTP request
@@ -2088,13 +2032,12 @@ namespace Dojah.Net.Api
         /// KYC - Lookup BVN Premium 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetPremiumBvnResponse</returns>
-        public GetPremiumBvnResponse GetPremiumBvn(string appId = default(string), int? bvn = default(int?), int operationIndex = 0)
+        public GetPremiumBvnResponse GetPremiumBvn(int? bvn = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetPremiumBvnResponse> localVarResponse = GetPremiumBvnWithHttpInfo(appId, bvn);
+            Dojah.Net.Client.ApiResponse<GetPremiumBvnResponse> localVarResponse = GetPremiumBvnWithHttpInfo(bvn);
             return localVarResponse.Data;
         }
 
@@ -2102,11 +2045,10 @@ namespace Dojah.Net.Api
         /// KYC - Lookup BVN Premium 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetPremiumBvnResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetPremiumBvnResponse> GetPremiumBvnWithHttpInfo(string appId = default(string), int? bvn = default(int?), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GetPremiumBvnResponse> GetPremiumBvnWithHttpInfo(int? bvn = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -2134,15 +2076,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetPremiumBvn";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<GetPremiumBvnResponse>("/api/v1/kyc/bvn/advance", localVarRequestOptions, this.Configuration);
@@ -2162,14 +2105,13 @@ namespace Dojah.Net.Api
         /// KYC - Lookup BVN Premium 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPremiumBvnResponse</returns>
-        public async System.Threading.Tasks.Task<GetPremiumBvnResponse> GetPremiumBvnAsync(string appId = default(string), int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetPremiumBvnResponse> GetPremiumBvnAsync(int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetPremiumBvnResponse> localVarResponse = await GetPremiumBvnWithHttpInfoAsync(appId, bvn, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetPremiumBvnResponse> localVarResponse = await GetPremiumBvnWithHttpInfoAsync(bvn, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2177,12 +2119,11 @@ namespace Dojah.Net.Api
         /// KYC - Lookup BVN Premium 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPremiumBvnResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetPremiumBvnResponse>> GetPremiumBvnWithHttpInfoAsync(string appId = default(string), int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetPremiumBvnResponse>> GetPremiumBvnWithHttpInfoAsync(int? bvn = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -2211,15 +2152,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetPremiumBvn";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<GetPremiumBvnResponse>("/api/v1/kyc/bvn/advance", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2240,13 +2182,12 @@ namespace Dojah.Net.Api
         /// Lookup VNIN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="vnin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetVninResponse</returns>
-        public GetVninResponse GetVnin(string appId = default(string), string vnin = default(string), int operationIndex = 0)
+        public GetVninResponse GetVnin(string vnin = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetVninResponse> localVarResponse = GetVninWithHttpInfo(appId, vnin);
+            Dojah.Net.Client.ApiResponse<GetVninResponse> localVarResponse = GetVninWithHttpInfo(vnin);
             return localVarResponse.Data;
         }
 
@@ -2254,11 +2195,10 @@ namespace Dojah.Net.Api
         /// Lookup VNIN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="vnin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetVninResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetVninResponse> GetVninWithHttpInfo(string appId = default(string), string vnin = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GetVninResponse> GetVninWithHttpInfo(string vnin = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -2286,14 +2226,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "vnin", vnin, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetVnin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<GetVninResponse>("/api/v1/kyc/vnin", localVarRequestOptions, this.Configuration);
@@ -2313,14 +2254,13 @@ namespace Dojah.Net.Api
         /// Lookup VNIN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="vnin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetVninResponse</returns>
-        public async System.Threading.Tasks.Task<GetVninResponse> GetVninAsync(string appId = default(string), string vnin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetVninResponse> GetVninAsync(string vnin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetVninResponse> localVarResponse = await GetVninWithHttpInfoAsync(appId, vnin, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetVninResponse> localVarResponse = await GetVninWithHttpInfoAsync(vnin, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2328,12 +2268,11 @@ namespace Dojah.Net.Api
         /// Lookup VNIN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="vnin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetVninResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetVninResponse>> GetVninWithHttpInfoAsync(string appId = default(string), string vnin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetVninResponse>> GetVninWithHttpInfoAsync(string vnin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -2362,14 +2301,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "vnin", vnin, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetVnin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<GetVninResponse>("/api/v1/kyc/vnin", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

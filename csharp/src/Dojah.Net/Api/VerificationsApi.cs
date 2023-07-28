@@ -30,13 +30,12 @@ namespace Dojah.Net.Api
         /// KYC - Validate BVN
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="dob"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object ValidateBvn(string appId = default(string), int? bvn = default(int?), string firstName = default(string), string dob = default(string), int operationIndex = 0);
+        Object ValidateBvn(int? bvn = default(int?), string firstName = default(string), string dob = default(string), int operationIndex = 0);
 
         /// <summary>
         /// KYC - Validate BVN
@@ -45,18 +44,16 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="dob"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> ValidateBvnWithHttpInfo(string appId = default(string), int? bvn = default(int?), string firstName = default(string), string dob = default(string), int operationIndex = 0);
+        ApiResponse<Object> ValidateBvnWithHttpInfo(int? bvn = default(int?), string firstName = default(string), string dob = default(string), int operationIndex = 0);
         /// <summary>
         /// KYC - Age Verification
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="mode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
@@ -65,7 +62,7 @@ namespace Dojah.Net.Api
         /// <param name="lastName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>VerifyAgeResponse</returns>
-        VerifyAgeResponse VerifyAge(string appId = default(string), string mode = default(string), int? accountNumber = default(int?), int? bankCode = default(int?), string dob = default(string), string firstName = default(string), string lastName = default(string), int operationIndex = 0);
+        VerifyAgeResponse VerifyAge(string mode = default(string), int? accountNumber = default(int?), int? bankCode = default(int?), string dob = default(string), string firstName = default(string), string lastName = default(string), int operationIndex = 0);
 
         /// <summary>
         /// KYC - Age Verification
@@ -74,7 +71,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="mode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
@@ -83,16 +79,15 @@ namespace Dojah.Net.Api
         /// <param name="lastName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of VerifyAgeResponse</returns>
-        ApiResponse<VerifyAgeResponse> VerifyAgeWithHttpInfo(string appId = default(string), string mode = default(string), int? accountNumber = default(int?), int? bankCode = default(int?), string dob = default(string), string firstName = default(string), string lastName = default(string), int operationIndex = 0);
+        ApiResponse<VerifyAgeResponse> VerifyAgeWithHttpInfo(string mode = default(string), int? accountNumber = default(int?), int? bankCode = default(int?), string dob = default(string), string firstName = default(string), string lastName = default(string), int operationIndex = 0);
         /// <summary>
         /// KYV - Selfie BVN Verificatoin
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verifySelfieBvnRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>VerifySelfieBvnResponse</returns>
-        VerifySelfieBvnResponse VerifySelfieBvn(VerifySelfieBvnRequest verifySelfieBvnRequest, string appId = default(string), int operationIndex = 0);
+        VerifySelfieBvnResponse VerifySelfieBvn(VerifySelfieBvnRequest verifySelfieBvnRequest, int operationIndex = 0);
 
         /// <summary>
         /// KYV - Selfie BVN Verificatoin
@@ -102,19 +97,17 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verifySelfieBvnRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of VerifySelfieBvnResponse</returns>
-        ApiResponse<VerifySelfieBvnResponse> VerifySelfieBvnWithHttpInfo(VerifySelfieBvnRequest verifySelfieBvnRequest, string appId = default(string), int operationIndex = 0);
+        ApiResponse<VerifySelfieBvnResponse> VerifySelfieBvnWithHttpInfo(VerifySelfieBvnRequest verifySelfieBvnRequest, int operationIndex = 0);
         /// <summary>
         /// KYC - Selfie NIN Verification
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verificationsVerifySelfieNinRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object VerifySelfieNin(VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest, string appId = default(string), int operationIndex = 0);
+        Object VerifySelfieNin(VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest, int operationIndex = 0);
 
         /// <summary>
         /// KYC - Selfie NIN Verification
@@ -124,19 +117,17 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verificationsVerifySelfieNinRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> VerifySelfieNinWithHttpInfo(VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest, string appId = default(string), int operationIndex = 0);
+        ApiResponse<Object> VerifySelfieNinWithHttpInfo(VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest, int operationIndex = 0);
         /// <summary>
         /// KYC - Selfie vNIN verification
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verificationsVerifySelfieVninRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object VerifySelfieVnin(VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest, string appId = default(string), int operationIndex = 0);
+        Object VerifySelfieVnin(VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest, int operationIndex = 0);
 
         /// <summary>
         /// KYC - Selfie vNIN verification
@@ -146,10 +137,9 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verificationsVerifySelfieVninRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> VerifySelfieVninWithHttpInfo(VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest, string appId = default(string), int operationIndex = 0);
+        ApiResponse<Object> VerifySelfieVninWithHttpInfo(VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -166,14 +156,13 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="dob"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> ValidateBvnAsync(string appId = default(string), int? bvn = default(int?), string firstName = default(string), string dob = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> ValidateBvnAsync(int? bvn = default(int?), string firstName = default(string), string dob = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Validate BVN
@@ -182,14 +171,13 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="dob"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ValidateBvnWithHttpInfoAsync(string appId = default(string), int? bvn = default(int?), string firstName = default(string), string dob = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ValidateBvnWithHttpInfoAsync(int? bvn = default(int?), string firstName = default(string), string dob = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// KYC - Age Verification
         /// </summary>
@@ -197,7 +185,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="mode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
@@ -207,7 +194,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VerifyAgeResponse</returns>
-        System.Threading.Tasks.Task<VerifyAgeResponse> VerifyAgeAsync(string appId = default(string), string mode = default(string), int? accountNumber = default(int?), int? bankCode = default(int?), string dob = default(string), string firstName = default(string), string lastName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<VerifyAgeResponse> VerifyAgeAsync(string mode = default(string), int? accountNumber = default(int?), int? bankCode = default(int?), string dob = default(string), string firstName = default(string), string lastName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Age Verification
@@ -216,7 +203,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="mode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
@@ -226,7 +212,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VerifyAgeResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<VerifyAgeResponse>> VerifyAgeWithHttpInfoAsync(string appId = default(string), string mode = default(string), int? accountNumber = default(int?), int? bankCode = default(int?), string dob = default(string), string firstName = default(string), string lastName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<VerifyAgeResponse>> VerifyAgeWithHttpInfoAsync(string mode = default(string), int? accountNumber = default(int?), int? bankCode = default(int?), string dob = default(string), string firstName = default(string), string lastName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// KYV - Selfie BVN Verificatoin
         /// </summary>
@@ -235,11 +221,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verifySelfieBvnRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VerifySelfieBvnResponse</returns>
-        System.Threading.Tasks.Task<VerifySelfieBvnResponse> VerifySelfieBvnAsync(VerifySelfieBvnRequest verifySelfieBvnRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<VerifySelfieBvnResponse> VerifySelfieBvnAsync(VerifySelfieBvnRequest verifySelfieBvnRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYV - Selfie BVN Verificatoin
@@ -249,11 +234,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verifySelfieBvnRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VerifySelfieBvnResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<VerifySelfieBvnResponse>> VerifySelfieBvnWithHttpInfoAsync(VerifySelfieBvnRequest verifySelfieBvnRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<VerifySelfieBvnResponse>> VerifySelfieBvnWithHttpInfoAsync(VerifySelfieBvnRequest verifySelfieBvnRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// KYC - Selfie NIN Verification
         /// </summary>
@@ -262,11 +246,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verificationsVerifySelfieNinRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> VerifySelfieNinAsync(VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> VerifySelfieNinAsync(VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Selfie NIN Verification
@@ -276,11 +259,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verificationsVerifySelfieNinRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> VerifySelfieNinWithHttpInfoAsync(VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> VerifySelfieNinWithHttpInfoAsync(VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// KYC - Selfie vNIN verification
         /// </summary>
@@ -289,11 +271,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verificationsVerifySelfieVninRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> VerifySelfieVninAsync(VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> VerifySelfieVninAsync(VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Selfie vNIN verification
@@ -303,11 +284,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verificationsVerifySelfieVninRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> VerifySelfieVninWithHttpInfoAsync(VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> VerifySelfieVninWithHttpInfoAsync(VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -432,15 +412,14 @@ namespace Dojah.Net.Api
         /// KYC - Validate BVN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="dob"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object ValidateBvn(string appId = default(string), int? bvn = default(int?), string firstName = default(string), string dob = default(string), int operationIndex = 0)
+        public Object ValidateBvn(int? bvn = default(int?), string firstName = default(string), string dob = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = ValidateBvnWithHttpInfo(appId, bvn, firstName, dob);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = ValidateBvnWithHttpInfo(bvn, firstName, dob);
             return localVarResponse.Data;
         }
 
@@ -448,13 +427,12 @@ namespace Dojah.Net.Api
         /// KYC - Validate BVN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="dob"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public Dojah.Net.Client.ApiResponse<Object> ValidateBvnWithHttpInfo(string appId = default(string), int? bvn = default(int?), string firstName = default(string), string dob = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<Object> ValidateBvnWithHttpInfo(int? bvn = default(int?), string firstName = default(string), string dob = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -490,15 +468,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "dob", dob, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "VerificationsApi.ValidateBvn";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Object>("/v1/kyc/bvn", localVarRequestOptions, this.Configuration);
@@ -518,16 +497,15 @@ namespace Dojah.Net.Api
         /// KYC - Validate BVN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="dob"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> ValidateBvnAsync(string appId = default(string), int? bvn = default(int?), string firstName = default(string), string dob = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> ValidateBvnAsync(int? bvn = default(int?), string firstName = default(string), string dob = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await ValidateBvnWithHttpInfoAsync(appId, bvn, firstName, dob, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await ValidateBvnWithHttpInfoAsync(bvn, firstName, dob, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -535,14 +513,13 @@ namespace Dojah.Net.Api
         /// KYC - Validate BVN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="dob"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> ValidateBvnWithHttpInfoAsync(string appId = default(string), int? bvn = default(int?), string firstName = default(string), string dob = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> ValidateBvnWithHttpInfoAsync(int? bvn = default(int?), string firstName = default(string), string dob = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -579,15 +556,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "dob", dob, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "VerificationsApi.ValidateBvn";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/kyc/bvn", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -608,7 +586,6 @@ namespace Dojah.Net.Api
         /// KYC - Age Verification 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="mode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
@@ -617,9 +594,9 @@ namespace Dojah.Net.Api
         /// <param name="lastName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>VerifyAgeResponse</returns>
-        public VerifyAgeResponse VerifyAge(string appId = default(string), string mode = default(string), int? accountNumber = default(int?), int? bankCode = default(int?), string dob = default(string), string firstName = default(string), string lastName = default(string), int operationIndex = 0)
+        public VerifyAgeResponse VerifyAge(string mode = default(string), int? accountNumber = default(int?), int? bankCode = default(int?), string dob = default(string), string firstName = default(string), string lastName = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<VerifyAgeResponse> localVarResponse = VerifyAgeWithHttpInfo(appId, mode, accountNumber, bankCode, dob, firstName, lastName);
+            Dojah.Net.Client.ApiResponse<VerifyAgeResponse> localVarResponse = VerifyAgeWithHttpInfo(mode, accountNumber, bankCode, dob, firstName, lastName);
             return localVarResponse.Data;
         }
 
@@ -627,7 +604,6 @@ namespace Dojah.Net.Api
         /// KYC - Age Verification 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="mode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
@@ -636,7 +612,7 @@ namespace Dojah.Net.Api
         /// <param name="lastName"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of VerifyAgeResponse</returns>
-        public Dojah.Net.Client.ApiResponse<VerifyAgeResponse> VerifyAgeWithHttpInfo(string appId = default(string), string mode = default(string), int? accountNumber = default(int?), int? bankCode = default(int?), string dob = default(string), string firstName = default(string), string lastName = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<VerifyAgeResponse> VerifyAgeWithHttpInfo(string mode = default(string), int? accountNumber = default(int?), int? bankCode = default(int?), string dob = default(string), string firstName = default(string), string lastName = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -684,15 +660,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "last_name", lastName, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "VerificationsApi.VerifyAge";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<VerifyAgeResponse>("/v1/kyc/age_verification", localVarRequestOptions, this.Configuration);
@@ -712,7 +689,6 @@ namespace Dojah.Net.Api
         /// KYC - Age Verification 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="mode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
@@ -722,9 +698,9 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VerifyAgeResponse</returns>
-        public async System.Threading.Tasks.Task<VerifyAgeResponse> VerifyAgeAsync(string appId = default(string), string mode = default(string), int? accountNumber = default(int?), int? bankCode = default(int?), string dob = default(string), string firstName = default(string), string lastName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<VerifyAgeResponse> VerifyAgeAsync(string mode = default(string), int? accountNumber = default(int?), int? bankCode = default(int?), string dob = default(string), string firstName = default(string), string lastName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<VerifyAgeResponse> localVarResponse = await VerifyAgeWithHttpInfoAsync(appId, mode, accountNumber, bankCode, dob, firstName, lastName, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<VerifyAgeResponse> localVarResponse = await VerifyAgeWithHttpInfoAsync(mode, accountNumber, bankCode, dob, firstName, lastName, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -732,7 +708,6 @@ namespace Dojah.Net.Api
         /// KYC - Age Verification 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="mode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
@@ -742,7 +717,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VerifyAgeResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<VerifyAgeResponse>> VerifyAgeWithHttpInfoAsync(string appId = default(string), string mode = default(string), int? accountNumber = default(int?), int? bankCode = default(int?), string dob = default(string), string firstName = default(string), string lastName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<VerifyAgeResponse>> VerifyAgeWithHttpInfoAsync(string mode = default(string), int? accountNumber = default(int?), int? bankCode = default(int?), string dob = default(string), string firstName = default(string), string lastName = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -791,15 +766,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "last_name", lastName, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "VerificationsApi.VerifyAge";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<VerifyAgeResponse>("/v1/kyc/age_verification", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -821,12 +797,11 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verifySelfieBvnRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>VerifySelfieBvnResponse</returns>
-        public VerifySelfieBvnResponse VerifySelfieBvn(VerifySelfieBvnRequest verifySelfieBvnRequest, string appId = default(string), int operationIndex = 0)
+        public VerifySelfieBvnResponse VerifySelfieBvn(VerifySelfieBvnRequest verifySelfieBvnRequest, int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<VerifySelfieBvnResponse> localVarResponse = VerifySelfieBvnWithHttpInfo(verifySelfieBvnRequest, appId);
+            Dojah.Net.Client.ApiResponse<VerifySelfieBvnResponse> localVarResponse = VerifySelfieBvnWithHttpInfo(verifySelfieBvnRequest);
             return localVarResponse.Data;
         }
 
@@ -835,10 +810,9 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verifySelfieBvnRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of VerifySelfieBvnResponse</returns>
-        public Dojah.Net.Client.ApiResponse<VerifySelfieBvnResponse> VerifySelfieBvnWithHttpInfo(VerifySelfieBvnRequest verifySelfieBvnRequest, string appId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<VerifySelfieBvnResponse> VerifySelfieBvnWithHttpInfo(VerifySelfieBvnRequest verifySelfieBvnRequest, int operationIndex = 0)
         {
             // verify the required parameter 'verifySelfieBvnRequest' is set
             if (verifySelfieBvnRequest == null)
@@ -869,16 +843,17 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
             localVarRequestOptions.Data = verifySelfieBvnRequest;
 
             localVarRequestOptions.Operation = "VerificationsApi.VerifySelfieBvn";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<VerifySelfieBvnResponse>("/v1/kyc/bvn/verify", localVarRequestOptions, this.Configuration);
@@ -899,13 +874,12 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verifySelfieBvnRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VerifySelfieBvnResponse</returns>
-        public async System.Threading.Tasks.Task<VerifySelfieBvnResponse> VerifySelfieBvnAsync(VerifySelfieBvnRequest verifySelfieBvnRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<VerifySelfieBvnResponse> VerifySelfieBvnAsync(VerifySelfieBvnRequest verifySelfieBvnRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<VerifySelfieBvnResponse> localVarResponse = await VerifySelfieBvnWithHttpInfoAsync(verifySelfieBvnRequest, appId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<VerifySelfieBvnResponse> localVarResponse = await VerifySelfieBvnWithHttpInfoAsync(verifySelfieBvnRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -914,11 +888,10 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verifySelfieBvnRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VerifySelfieBvnResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<VerifySelfieBvnResponse>> VerifySelfieBvnWithHttpInfoAsync(VerifySelfieBvnRequest verifySelfieBvnRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<VerifySelfieBvnResponse>> VerifySelfieBvnWithHttpInfoAsync(VerifySelfieBvnRequest verifySelfieBvnRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'verifySelfieBvnRequest' is set
             if (verifySelfieBvnRequest == null)
@@ -950,16 +923,17 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
             localVarRequestOptions.Data = verifySelfieBvnRequest;
 
             localVarRequestOptions.Operation = "VerificationsApi.VerifySelfieBvn";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<VerifySelfieBvnResponse>("/v1/kyc/bvn/verify", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -981,12 +955,11 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verificationsVerifySelfieNinRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object VerifySelfieNin(VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest, string appId = default(string), int operationIndex = 0)
+        public Object VerifySelfieNin(VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest, int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = VerifySelfieNinWithHttpInfo(verificationsVerifySelfieNinRequest, appId);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = VerifySelfieNinWithHttpInfo(verificationsVerifySelfieNinRequest);
             return localVarResponse.Data;
         }
 
@@ -995,10 +968,9 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verificationsVerifySelfieNinRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public Dojah.Net.Client.ApiResponse<Object> VerifySelfieNinWithHttpInfo(VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest, string appId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<Object> VerifySelfieNinWithHttpInfo(VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest, int operationIndex = 0)
         {
             // verify the required parameter 'verificationsVerifySelfieNinRequest' is set
             if (verificationsVerifySelfieNinRequest == null)
@@ -1029,16 +1001,17 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
             localVarRequestOptions.Data = verificationsVerifySelfieNinRequest;
 
             localVarRequestOptions.Operation = "VerificationsApi.VerifySelfieNin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/api/v1/kyc/nin/verify", localVarRequestOptions, this.Configuration);
@@ -1059,13 +1032,12 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verificationsVerifySelfieNinRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> VerifySelfieNinAsync(VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> VerifySelfieNinAsync(VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await VerifySelfieNinWithHttpInfoAsync(verificationsVerifySelfieNinRequest, appId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await VerifySelfieNinWithHttpInfoAsync(verificationsVerifySelfieNinRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1074,11 +1046,10 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verificationsVerifySelfieNinRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> VerifySelfieNinWithHttpInfoAsync(VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> VerifySelfieNinWithHttpInfoAsync(VerificationsVerifySelfieNinRequest verificationsVerifySelfieNinRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'verificationsVerifySelfieNinRequest' is set
             if (verificationsVerifySelfieNinRequest == null)
@@ -1110,16 +1081,17 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
             localVarRequestOptions.Data = verificationsVerifySelfieNinRequest;
 
             localVarRequestOptions.Operation = "VerificationsApi.VerifySelfieNin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v1/kyc/nin/verify", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1141,12 +1113,11 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verificationsVerifySelfieVninRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object VerifySelfieVnin(VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest, string appId = default(string), int operationIndex = 0)
+        public Object VerifySelfieVnin(VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest, int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = VerifySelfieVninWithHttpInfo(verificationsVerifySelfieVninRequest, appId);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = VerifySelfieVninWithHttpInfo(verificationsVerifySelfieVninRequest);
             return localVarResponse.Data;
         }
 
@@ -1155,10 +1126,9 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verificationsVerifySelfieVninRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public Dojah.Net.Client.ApiResponse<Object> VerifySelfieVninWithHttpInfo(VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest, string appId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<Object> VerifySelfieVninWithHttpInfo(VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest, int operationIndex = 0)
         {
             // verify the required parameter 'verificationsVerifySelfieVninRequest' is set
             if (verificationsVerifySelfieVninRequest == null)
@@ -1189,15 +1159,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
             localVarRequestOptions.Data = verificationsVerifySelfieVninRequest;
 
             localVarRequestOptions.Operation = "VerificationsApi.VerifySelfieVnin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/api/v1/kyc/vnin/verify", localVarRequestOptions, this.Configuration);
@@ -1218,13 +1189,12 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verificationsVerifySelfieVninRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> VerifySelfieVninAsync(VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> VerifySelfieVninAsync(VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await VerifySelfieVninWithHttpInfoAsync(verificationsVerifySelfieVninRequest, appId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await VerifySelfieVninWithHttpInfoAsync(verificationsVerifySelfieVninRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1233,11 +1203,10 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="verificationsVerifySelfieVninRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> VerifySelfieVninWithHttpInfoAsync(VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> VerifySelfieVninWithHttpInfoAsync(VerificationsVerifySelfieVninRequest verificationsVerifySelfieVninRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'verificationsVerifySelfieVninRequest' is set
             if (verificationsVerifySelfieVninRequest == null)
@@ -1269,15 +1238,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
             localVarRequestOptions.Data = verificationsVerifySelfieVninRequest;
 
             localVarRequestOptions.Operation = "VerificationsApi.VerifySelfieVnin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v1/kyc/vnin/verify", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

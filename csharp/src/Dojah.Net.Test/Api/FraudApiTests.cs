@@ -61,9 +61,8 @@ namespace Dojah.Net.Test.Api
         public void GetEmailReputationTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string email = null;
-            //var response = instance.GetEmailReputation(appId, email);
+            //var response = instance.GetEmailReputation(email);
             //Assert.IsType<FraudGetEmailReputationResponse>(response);
         }
 
@@ -74,9 +73,8 @@ namespace Dojah.Net.Test.Api
         public void GetIpReputationTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string ipAddress = null;
-            //var response = instance.GetIpReputation(appId, ipAddress);
+            //var response = instance.GetIpReputation(ipAddress);
             //Assert.IsType<FraudGetIpReputationResponse>(response);
         }
 
@@ -87,9 +85,8 @@ namespace Dojah.Net.Test.Api
         public void ScreenPhoneTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //int? phoneNumber = null;
-            //var response = instance.ScreenPhone(appId, phoneNumber);
+            //var response = instance.ScreenPhone(phoneNumber);
             //Assert.IsType<FraudScreenPhoneResponse>(response);
         }
 
@@ -100,14 +97,13 @@ namespace Dojah.Net.Test.Api
         public void ScreenUserTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string firstName = null;
             //string lastName = null;
             //string dateOfBirth = null;
             //string email = null;
             //string phone = null;
             //string ipAddress = null;
-            //var response = instance.ScreenUser(appId, firstName, lastName, dateOfBirth, email, phone, ipAddress);
+            //var response = instance.ScreenUser(firstName, lastName, dateOfBirth, email, phone, ipAddress);
             //Assert.IsType<FraudScreenUserResponse>(response);
         }
     }

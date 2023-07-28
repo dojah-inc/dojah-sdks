@@ -30,10 +30,9 @@ namespace Dojah.Net.Api
         /// KYC - Document Analysis
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AnalyzeDocumentResponse</returns>
-        AnalyzeDocumentResponse AnalyzeDocument(string appId = default(string), int operationIndex = 0);
+        AnalyzeDocumentResponse AnalyzeDocument(int operationIndex = 0);
 
         /// <summary>
         /// KYC - Document Analysis
@@ -42,10 +41,9 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AnalyzeDocumentResponse</returns>
-        ApiResponse<AnalyzeDocumentResponse> AnalyzeDocumentWithHttpInfo(string appId = default(string), int operationIndex = 0);
+        ApiResponse<AnalyzeDocumentResponse> AnalyzeDocumentWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -62,11 +60,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AnalyzeDocumentResponse</returns>
-        System.Threading.Tasks.Task<AnalyzeDocumentResponse> AnalyzeDocumentAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AnalyzeDocumentResponse> AnalyzeDocumentAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Document Analysis
@@ -75,11 +72,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AnalyzeDocumentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AnalyzeDocumentResponse>> AnalyzeDocumentWithHttpInfoAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AnalyzeDocumentResponse>> AnalyzeDocumentWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -204,12 +200,11 @@ namespace Dojah.Net.Api
         /// KYC - Document Analysis 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AnalyzeDocumentResponse</returns>
-        public AnalyzeDocumentResponse AnalyzeDocument(string appId = default(string), int operationIndex = 0)
+        public AnalyzeDocumentResponse AnalyzeDocument(int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<AnalyzeDocumentResponse> localVarResponse = AnalyzeDocumentWithHttpInfo(appId);
+            Dojah.Net.Client.ApiResponse<AnalyzeDocumentResponse> localVarResponse = AnalyzeDocumentWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -217,10 +212,9 @@ namespace Dojah.Net.Api
         /// KYC - Document Analysis 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AnalyzeDocumentResponse</returns>
-        public Dojah.Net.Client.ApiResponse<AnalyzeDocumentResponse> AnalyzeDocumentWithHttpInfo(string appId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<AnalyzeDocumentResponse> AnalyzeDocumentWithHttpInfo(int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -244,14 +238,15 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "DocumentAnalysisApi.AnalyzeDocument";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<AnalyzeDocumentResponse>("/api/v1/document/analysis", localVarRequestOptions, this.Configuration);
@@ -271,13 +266,12 @@ namespace Dojah.Net.Api
         /// KYC - Document Analysis 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AnalyzeDocumentResponse</returns>
-        public async System.Threading.Tasks.Task<AnalyzeDocumentResponse> AnalyzeDocumentAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AnalyzeDocumentResponse> AnalyzeDocumentAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<AnalyzeDocumentResponse> localVarResponse = await AnalyzeDocumentWithHttpInfoAsync(appId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<AnalyzeDocumentResponse> localVarResponse = await AnalyzeDocumentWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -285,11 +279,10 @@ namespace Dojah.Net.Api
         /// KYC - Document Analysis 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AnalyzeDocumentResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<AnalyzeDocumentResponse>> AnalyzeDocumentWithHttpInfoAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<AnalyzeDocumentResponse>> AnalyzeDocumentWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -314,14 +307,15 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "DocumentAnalysisApi.AnalyzeDocument";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<AnalyzeDocumentResponse>("/api/v1/document/analysis", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

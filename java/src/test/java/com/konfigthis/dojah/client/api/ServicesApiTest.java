@@ -48,9 +48,7 @@ public class ServicesApiTest {
      */
     @Test
     public void getWalletBalanceTest() throws ApiException {
-        String appId = null;
         GetWalletBalanceResponse response = api.getWalletBalance()
-                .appId(appId)
                 .execute();
         // TODO: test validations
     }

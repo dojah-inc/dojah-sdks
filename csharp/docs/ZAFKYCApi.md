@@ -17,7 +17,6 @@ KYC - Lookup ID
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -27,23 +26,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
-
+            client.SetBasePath("https://api.dojah.io");
             // Configure API key authorization: appIdAuth
-            config.ApiKey.Add("Appid", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Appid", "Bearer");
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new ZAFKYCApi(config);
             var idNumber = 9910180077084;  // int? |  (optional) 
 
             try
             {
                 // KYC - Lookup ID
-                ZafKycGetIdResponse result = apiInstance.GetId(idNumber);
+                ZafKycGetIdResponse result = client.ZAFKYC.GetId(idNumber);
                 Console.WriteLine(result);
             }
             catch (ApiException e)

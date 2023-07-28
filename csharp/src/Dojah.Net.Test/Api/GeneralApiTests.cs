@@ -61,8 +61,7 @@ namespace Dojah.Net.Test.Api
         public void GetBanksTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
-            //var response = instance.GetBanks(appId);
+            //var response = instance.GetBanks();
             //Assert.IsType<GetBanksResponse>(response);
         }
 
@@ -73,9 +72,8 @@ namespace Dojah.Net.Test.Api
         public void GetBinTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //int? cardBin = null;
-            //var response = instance.GetBin(appId, cardBin);
+            //var response = instance.GetBin(cardBin);
             //Assert.IsType<GetBinResponse>(response);
         }
 
@@ -86,10 +84,9 @@ namespace Dojah.Net.Test.Api
         public void GetNubanTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //int? bankCode = null;
             //int? accountNumber = null;
-            //var response = instance.GetNuban(appId, bankCode, accountNumber);
+            //var response = instance.GetNuban(bankCode, accountNumber);
             //Assert.IsType<GeneralGetNubanResponse>(response);
         }
     }

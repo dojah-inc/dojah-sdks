@@ -12,7 +12,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="businessDetail"></a>
 # **businessDetail**
-> Object businessDetail().appId(appId).internationalNumber(internationalNumber).countryCode(countryCode).full(full).execute();
+> Object businessDetail().internationalNumber(internationalNumber).countryCode(countryCode).full(full).execute();
 
 Business Detail
 
@@ -23,6 +23,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.KybApi;
 import java.util.List;
@@ -33,9 +34,11 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String internationalNumber = "RC-1885308";
     String countryCode = "NG";
     Boolean full = true;
@@ -43,7 +46,6 @@ public class Example {
       Object result = client
               .kyb
               .businessDetail()
-              .appId(appId)
               .internationalNumber(internationalNumber)
               .countryCode(countryCode)
               .full(full)
@@ -61,7 +63,6 @@ public class Example {
       ApiResponse<Object> response = client
               .kyb
               .businessDetail()
-              .appId(appId)
               .internationalNumber(internationalNumber)
               .countryCode(countryCode)
               .full(full)
@@ -87,7 +88,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **internationalNumber** | **String**|  | [optional] |
 | **countryCode** | **String**|  | [optional] |
 | **full** | **Boolean**|  | [optional] |
@@ -98,7 +98,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -112,7 +112,7 @@ No authorization required
 
 <a name="businessSearch"></a>
 # **businessSearch**
-> Object businessSearch().appId(appId).countryCode(countryCode).company(company).execute();
+> Object businessSearch().countryCode(countryCode).company(company).execute();
 
 Business Search
 
@@ -123,6 +123,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.KybApi;
 import java.util.List;
@@ -133,16 +134,17 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String countryCode = "NG";
     Integer company = 1885308;
     try {
       Object result = client
               .kyb
               .businessSearch()
-              .appId(appId)
               .countryCode(countryCode)
               .company(company)
               .execute();
@@ -159,7 +161,6 @@ public class Example {
       ApiResponse<Object> response = client
               .kyb
               .businessSearch()
-              .appId(appId)
               .countryCode(countryCode)
               .company(company)
               .executeWithHttpInfo();
@@ -184,7 +185,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **countryCode** | **String**|  | [optional] |
 | **company** | **Integer**|  | [optional] |
 
@@ -194,7 +194,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -208,7 +208,7 @@ No authorization required
 
 <a name="getCac"></a>
 # **getCac**
-> KybGetCacResponse getCac().appId(appId).rcNumber(rcNumber).companyName(companyName).execute();
+> KybGetCacResponse getCac().rcNumber(rcNumber).companyName(companyName).execute();
 
 KYC - Get CAC 
 
@@ -232,15 +232,16 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     Integer rcNumber = 1432074;
     String companyName = "ELTA SOLUTIONS LIMITED";
     try {
       KybGetCacResponse result = client
               .kyb
               .getCac()
-              .appId(appId)
               .rcNumber(rcNumber)
               .companyName(companyName)
               .execute();
@@ -261,7 +262,6 @@ public class Example {
       ApiResponse<KybGetCacResponse> response = client
               .kyb
               .getCac()
-              .appId(appId)
               .rcNumber(rcNumber)
               .companyName(companyName)
               .executeWithHttpInfo();
@@ -286,7 +286,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **rcNumber** | **Integer**|  | [optional] |
 | **companyName** | **String**|  | [optional] |
 
@@ -296,7 +295,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -310,7 +309,7 @@ public class Example {
 
 <a name="getTin"></a>
 # **getTin**
-> KybGetTinResponse getTin().appId(appId).tin(tin).execute();
+> KybGetTinResponse getTin().tin(tin).execute();
 
 KYC - Fetch Tin
 
@@ -334,14 +333,15 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String tin = "24111697-0001";
     try {
       KybGetTinResponse result = client
               .kyb
               .getTin()
-              .appId(appId)
               .tin(tin)
               .execute();
       System.out.println(result);
@@ -361,7 +361,6 @@ public class Example {
       ApiResponse<KybGetTinResponse> response = client
               .kyb
               .getTin()
-              .appId(appId)
               .tin(tin)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -385,7 +384,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **tin** | **String**|  | [optional] |
 
 ### Return type
@@ -394,7 +392,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

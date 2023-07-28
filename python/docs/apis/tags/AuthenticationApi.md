@@ -28,13 +28,15 @@ dojah = Dojah(
     host="https://api.dojah.io",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'apikeyAuth': 'Bearer'},
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # Messaging - Get Sender IDs
-    get_sender_id_response = dojah.authentication.get_sender_id(
-        app_id="{{app_id}}",  # optional
-    )
+    get_sender_id_response = dojah.authentication.get_sender_id()
     pprint(get_sender_id_response.body)
     pprint(get_sender_id_response.body["entity"])
     pprint(get_sender_id_response.headers)
@@ -49,28 +51,7 @@ except ApiException as e:
     pprint(e.round_trip_time)
 ```
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-header_params | RequestHeaderParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
+This endpoint does not need any parameter.
 
 ### Return Types, Responses
 
@@ -147,7 +128,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth)
+[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -167,12 +148,15 @@ dojah = Dojah(
     host="https://api.dojah.io",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'apikeyAuth': 'Bearer'},
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # Messaging - Get SMS Status
     get_sms_status_response = dojah.authentication.get_sms_status(
-        app_id="{{app_id}}",  # optional
         message_id="54818c8a-4aed-4e5f-b846-8274fd4e0bbd",  # optional
     )
     pprint(get_sms_status_response.body)
@@ -193,7 +177,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -208,20 +191,6 @@ message_id | MessageIdSchema | | optional
 
 
 # MessageIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
@@ -303,7 +272,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth)
+[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -321,13 +290,16 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # Messaging - Request Sender ID
     request_sender_id_response = dojah.authentication.request_sender_id(
         sender_id="Dojah",  # optional
-        app_id="{{app_id}}",  # optional
     )
     pprint(request_sender_id_response.body)
     pprint(request_sender_id_response.body["entity"])
@@ -347,7 +319,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
-header_params | RequestHeaderParams | |
 content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
@@ -361,20 +332,6 @@ Type | Description  | Notes
 ------------- | ------------- | -------------
 [**RequestSenderIdRequest**](../../models/RequestSenderIdRequest.md) |  | 
 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -398,7 +355,7 @@ Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -418,6 +375,10 @@ dojah = Dojah(
     host="https://api.dojah.io",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'apikeyAuth': 'Bearer'},
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
@@ -428,7 +389,6 @@ try:
         channel="sms",  # optional
         sender_id="Dojah",  # optional
         priority=True,  # optional
-        app_id="{{app_id}}",  # optional
     )
     pprint(send_otp_response.body)
     pprint(send_otp_response.body["entity"])
@@ -448,7 +408,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
-header_params | RequestHeaderParams | |
 content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
@@ -462,20 +421,6 @@ Type | Description  | Notes
 ------------- | ------------- | -------------
 [**AuthenticationSendOtpRequest**](../../models/AuthenticationSendOtpRequest.md) |  | 
 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -624,7 +569,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth)
+[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -644,6 +589,10 @@ dojah = Dojah(
     host="https://api.dojah.io",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'apikeyAuth': 'Bearer'},
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
@@ -653,7 +602,6 @@ try:
         message="Checking to see if you are Okay",  # optional
         channel="whatsapp",  # optional
         sender_id="Kedesa",  # optional
-        app_id="{{app_id}}",  # optional
     )
     pprint(send_sms_response.body)
     pprint(send_sms_response.body["entity"])
@@ -673,7 +621,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
-header_params | RequestHeaderParams | |
 content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
@@ -687,20 +634,6 @@ Type | Description  | Notes
 ------------- | ------------- | -------------
 [**SendSmsRequest**](../../models/SendSmsRequest.md) |  | 
 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -777,7 +710,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth)
+[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -797,12 +730,15 @@ dojah = Dojah(
     host="https://api.dojah.io",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'apikeyAuth': 'Bearer'},
+    # Configure API key authorization: appIdAuth
+    api_key="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
 
 try:
     # Messaging - Validate OTP
     validate_otp_response = dojah.authentication.validate_otp(
-        app_id="{{app_id}}",  # optional
         reference_id="a89e4b64-367f-414f-a189-1800bc364b05",  # optional
         code=81974,  # optional
     )
@@ -824,7 +760,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -852,20 +787,6 @@ str,  | str,  |  |
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 decimal.Decimal, int,  | decimal.Decimal,  |  | 
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-AppId | AppIdSchema | | optional
-
-# AppIdSchema
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -942,7 +863,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[apikeyAuth](../../../README.md#apikeyAuth)
+[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 

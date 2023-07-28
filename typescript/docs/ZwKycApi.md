@@ -22,6 +22,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const checkCreditResponse = await dojah.zwKyc.checkCredit({});
@@ -34,7 +35,6 @@ console.log(checkCreditResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **idNumber** | [**string**] |  | (optional) defaults to undefined
  **name** | [**string**] |  | (optional) defaults to undefined
  **surname** | [**string**] |  | (optional) defaults to undefined
@@ -75,6 +75,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const verifyIdResponse = await dojah.zwKyc.verifyId({});
@@ -87,7 +88,6 @@ console.log(verifyIdResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **id** | [**string**] |  | (optional) defaults to undefined
 
 

@@ -28,7 +28,7 @@ import (
 )
 
 func main() {
-    profileId := "WC7117469" // string |  (optional)
+    profileId := ""WC7117469"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)

@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.get_ssnit_response_entity import GetSsnitResponseEntity
 
 class RequiredGetSsnitResponse(TypedDict):
     pass
 
 class OptionalGetSsnitResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: GetSsnitResponseEntity
 
 class GetSsnitResponse(RequiredGetSsnitResponse, OptionalGetSsnitResponse):
     pass

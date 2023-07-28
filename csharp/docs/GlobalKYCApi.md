@@ -10,7 +10,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="caekyc"></a>
 # **CaEkyc**
-> Object CaEkyc (string appId = null, string country = null, string firstName = null, string lastName = null, string streetName = null, string dateOfBirth = null, int? houseNumber = null, int? postCode = null)
+> Object CaEkyc (string country = null, string firstName = null, string lastName = null, string streetName = null, string dateOfBirth = null, int? houseNumber = null, int? postCode = null)
 
 Canada Ekyc
 
@@ -19,7 +19,6 @@ Canada Ekyc
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -29,25 +28,25 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new GlobalKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
-            var country = GBR;  // string |  (optional) 
-            var firstName = Tobi;  // string |  (optional) 
-            var lastName = Ololade;  // string |  (optional) 
-            var streetName = Street 1;  // string |  (optional) 
-            var dateOfBirth = 1992-05-18;  // string |  (optional) 
+            var country = "GBR";  // string |  (optional) 
+            var firstName = "Tobi";  // string |  (optional) 
+            var lastName = "Ololade";  // string |  (optional) 
+            var streetName = "Street 1";  // string |  (optional) 
+            var dateOfBirth = "1992-05-18";  // string |  (optional) 
             var houseNumber = 25;  // int? |  (optional) 
             var postCode = 1234;  // int? |  (optional) 
 
             try
             {
                 // Canada Ekyc
-                Object result = apiInstance.CaEkyc(appId, country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
+                Object result = client.GlobalKYC.CaEkyc(country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -74,7 +73,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Canada Ekyc
-    ApiResponse<Object> response = apiInstance.CaEkycWithHttpInfo(appId, country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
+    ApiResponse<Object> response = apiInstance.CaEkycWithHttpInfo(country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -91,7 +90,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **country** | **string** |  | [optional]  |
 | **firstName** | **string** |  | [optional]  |
 | **lastName** | **string** |  | [optional]  |
@@ -106,7 +104,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -123,7 +121,7 @@ No authorization required
 
 <a name="getusssn"></a>
 # **GetUsSsn**
-> Object GetUsSsn (string appId = null, string country = null, string firstName = null, string lastName = null, string streetName = null, string dateOfBirth = null, int? houseNumber = null, int? postCode = null)
+> Object GetUsSsn (string country = null, string firstName = null, string lastName = null, string streetName = null, string dateOfBirth = null, int? houseNumber = null, int? postCode = null)
 
 US SSN
 
@@ -132,7 +130,6 @@ US SSN
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -142,25 +139,25 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new GlobalKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
-            var country = GBR;  // string |  (optional) 
-            var firstName = Tobi;  // string |  (optional) 
-            var lastName = Ololade;  // string |  (optional) 
-            var streetName = Street 1;  // string |  (optional) 
-            var dateOfBirth = 1992-05-18;  // string |  (optional) 
+            var country = "GBR";  // string |  (optional) 
+            var firstName = "Tobi";  // string |  (optional) 
+            var lastName = "Ololade";  // string |  (optional) 
+            var streetName = "Street 1";  // string |  (optional) 
+            var dateOfBirth = "1992-05-18";  // string |  (optional) 
             var houseNumber = 25;  // int? |  (optional) 
             var postCode = 1234;  // int? |  (optional) 
 
             try
             {
                 // US SSN
-                Object result = apiInstance.GetUsSsn(appId, country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
+                Object result = client.GlobalKYC.GetUsSsn(country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -187,7 +184,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // US SSN
-    ApiResponse<Object> response = apiInstance.GetUsSsnWithHttpInfo(appId, country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
+    ApiResponse<Object> response = apiInstance.GetUsSsnWithHttpInfo(country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -204,7 +201,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **country** | **string** |  | [optional]  |
 | **firstName** | **string** |  | [optional]  |
 | **lastName** | **string** |  | [optional]  |
@@ -219,7 +215,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -236,7 +232,7 @@ No authorization required
 
 <a name="uktwoplustwo"></a>
 # **UkTwoPlusTwo**
-> Object UkTwoPlusTwo (string appId = null, string country = null, string firstName = null, string lastName = null, string streetName = null, string dateOfBirth = null, int? houseNumber = null, int? postCode = null)
+> Object UkTwoPlusTwo (string country = null, string firstName = null, string lastName = null, string streetName = null, string dateOfBirth = null, int? houseNumber = null, int? postCode = null)
 
 UK 2+2
 
@@ -245,7 +241,6 @@ UK 2+2
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -255,25 +250,25 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-            var apiInstance = new GlobalKYCApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
-            var country = GBR;  // string |  (optional) 
-            var firstName = Tobi;  // string |  (optional) 
-            var lastName = Ololade;  // string |  (optional) 
-            var streetName = Street 1;  // string |  (optional) 
-            var dateOfBirth = 1992-05-18;  // string |  (optional) 
+            var country = "GBR";  // string |  (optional) 
+            var firstName = "Tobi";  // string |  (optional) 
+            var lastName = "Ololade";  // string |  (optional) 
+            var streetName = "Street 1";  // string |  (optional) 
+            var dateOfBirth = "1992-05-18";  // string |  (optional) 
             var houseNumber = 25;  // int? |  (optional) 
             var postCode = 1234;  // int? |  (optional) 
 
             try
             {
                 // UK 2+2
-                Object result = apiInstance.UkTwoPlusTwo(appId, country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
+                Object result = client.GlobalKYC.UkTwoPlusTwo(country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -300,7 +295,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // UK 2+2
-    ApiResponse<Object> response = apiInstance.UkTwoPlusTwoWithHttpInfo(appId, country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
+    ApiResponse<Object> response = apiInstance.UkTwoPlusTwoWithHttpInfo(country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -317,7 +312,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **country** | **string** |  | [optional]  |
 | **firstName** | **string** |  | [optional]  |
 | **lastName** | **string** |  | [optional]  |
@@ -332,7 +326,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## GetSenderId
 
-> GetSenderIdResponse GetSenderId(ctx).AppId(appId).Execute()
+> GetSenderIdResponse GetSenderId(ctx).Execute()
 
 Messaging - Get Sender IDs
 
@@ -32,11 +32,10 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApi.GetSenderId(context.Background()).AppId(appId).Execute()
+    resp, r, err := apiClient.AuthenticationApi.GetSenderId(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApi.GetSenderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -48,16 +47,12 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not need any parameter.
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetSenderIdRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
 
 ### Return type
 
@@ -65,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -79,7 +74,7 @@ Name | Type | Description  | Notes
 
 ## GetSmsStatus
 
-> GetSmsStatusResponse GetSmsStatus(ctx).AppId(appId).MessageId(messageId).Execute()
+> GetSmsStatusResponse GetSmsStatus(ctx).MessageId(messageId).Execute()
 
 Messaging - Get SMS Status
 
@@ -96,12 +91,11 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    messageId := "54818c8a-4aed-4e5f-b846-8274fd4e0bbd" // string |  (optional)
+    messageId := ""54818c8a-4aed-4e5f-b846-8274fd4e0bbd"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApi.GetSmsStatus(context.Background()).AppId(appId).MessageId(messageId).Execute()
+    resp, r, err := apiClient.AuthenticationApi.GetSmsStatus(context.Background()).MessageId(messageId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApi.GetSmsStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -122,7 +116,6 @@ Other parameters are passed through a pointer to a apiGetSmsStatusRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **messageId** | **string** |  | 
 
 ### Return type
@@ -131,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -145,7 +138,7 @@ Name | Type | Description  | Notes
 
 ## RequestSenderId
 
-> RequestSenderIdResponse RequestSenderId(ctx).RequestSenderIdRequest(requestSenderIdRequest).AppId(appId).Execute()
+> RequestSenderIdResponse RequestSenderId(ctx).RequestSenderIdRequest(requestSenderIdRequest).Execute()
 
 Messaging - Request Sender ID
 
@@ -163,11 +156,10 @@ import (
 
 func main() {
     requestSenderIdRequest := *dojah.NewRequestSenderIdRequest() // RequestSenderIdRequest | 
-    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApi.RequestSenderId(context.Background()).RequestSenderIdRequest(requestSenderIdRequest).AppId(appId).Execute()
+    resp, r, err := apiClient.AuthenticationApi.RequestSenderId(context.Background()).RequestSenderIdRequest(requestSenderIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApi.RequestSenderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -189,7 +181,6 @@ Other parameters are passed through a pointer to a apiRequestSenderIdRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **requestSenderIdRequest** | [**RequestSenderIdRequest**](RequestSenderIdRequest.md) |  | 
- **appId** | **string** |  | 
 
 ### Return type
 
@@ -197,7 +188,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -211,7 +202,7 @@ No authorization required
 
 ## SendOtp
 
-> AuthenticationSendOtpResponse SendOtp(ctx).AuthenticationSendOtpRequest(authenticationSendOtpRequest).AppId(appId).Execute()
+> AuthenticationSendOtpResponse SendOtp(ctx).AuthenticationSendOtpRequest(authenticationSendOtpRequest).Execute()
 
 Messaging - Send OTP
 
@@ -229,11 +220,10 @@ import (
 
 func main() {
     authenticationSendOtpRequest := *dojah.NewAuthenticationSendOtpRequest() // AuthenticationSendOtpRequest | 
-    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApi.SendOtp(context.Background()).AuthenticationSendOtpRequest(authenticationSendOtpRequest).AppId(appId).Execute()
+    resp, r, err := apiClient.AuthenticationApi.SendOtp(context.Background()).AuthenticationSendOtpRequest(authenticationSendOtpRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApi.SendOtp``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -255,7 +245,6 @@ Other parameters are passed through a pointer to a apiSendOtpRequest struct via 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authenticationSendOtpRequest** | [**AuthenticationSendOtpRequest**](AuthenticationSendOtpRequest.md) |  | 
- **appId** | **string** |  | 
 
 ### Return type
 
@@ -263,7 +252,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -277,7 +266,7 @@ Name | Type | Description  | Notes
 
 ## SendSms
 
-> SendSmsResponse SendSms(ctx).SendSmsRequest(sendSmsRequest).AppId(appId).Execute()
+> SendSmsResponse SendSms(ctx).SendSmsRequest(sendSmsRequest).Execute()
 
 Messaging - Send SMS
 
@@ -295,11 +284,10 @@ import (
 
 func main() {
     sendSmsRequest := *dojah.NewSendSmsRequest() // SendSmsRequest | 
-    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApi.SendSms(context.Background()).SendSmsRequest(sendSmsRequest).AppId(appId).Execute()
+    resp, r, err := apiClient.AuthenticationApi.SendSms(context.Background()).SendSmsRequest(sendSmsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApi.SendSms``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -321,7 +309,6 @@ Other parameters are passed through a pointer to a apiSendSmsRequest struct via 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sendSmsRequest** | [**SendSmsRequest**](SendSmsRequest.md) |  | 
- **appId** | **string** |  | 
 
 ### Return type
 
@@ -329,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -343,7 +330,7 @@ Name | Type | Description  | Notes
 
 ## ValidateOtp
 
-> AuthenticationValidateOtpResponse ValidateOtp(ctx).AppId(appId).ReferenceId(referenceId).Code(code).Execute()
+> AuthenticationValidateOtpResponse ValidateOtp(ctx).ReferenceId(referenceId).Code(code).Execute()
 
 Messaging - Validate OTP
 
@@ -360,13 +347,12 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    referenceId := "a89e4b64-367f-414f-a189-1800bc364b05" // string |  (optional)
+    referenceId := ""a89e4b64-367f-414f-a189-1800bc364b05"" // string |  (optional)
     code := int32(81974) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApi.ValidateOtp(context.Background()).AppId(appId).ReferenceId(referenceId).Code(code).Execute()
+    resp, r, err := apiClient.AuthenticationApi.ValidateOtp(context.Background()).ReferenceId(referenceId).Code(code).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApi.ValidateOtp``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -387,7 +373,6 @@ Other parameters are passed through a pointer to a apiValidateOtpRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **referenceId** | **string** |  | 
  **code** | **int32** |  | 
 
@@ -397,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

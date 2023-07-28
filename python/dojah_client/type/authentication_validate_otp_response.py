@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.authentication_validate_otp_response_entity import AuthenticationValidateOtpResponseEntity
 
 class RequiredAuthenticationValidateOtpResponse(TypedDict):
     pass
 
 class OptionalAuthenticationValidateOtpResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: AuthenticationValidateOtpResponseEntity
 
 class AuthenticationValidateOtpResponse(RequiredAuthenticationValidateOtpResponse, OptionalAuthenticationValidateOtpResponse):
     pass

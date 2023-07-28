@@ -21,19 +21,17 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
-const getWalletBalanceResponse = await dojah.services.getWalletBalance({});
+const getWalletBalanceResponse = await dojah.services.getWalletBalance();
 
 console.log(getWalletBalanceResponse);
 ```
 
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
+This endpoint does not need any parameter.
 
 
 ### Return type

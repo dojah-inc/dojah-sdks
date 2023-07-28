@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## SendAirtime
 
-> PurchaseAirtimeResponse SendAirtime(ctx).PurchaseAirtimeRequest(purchaseAirtimeRequest).AppId(appId).Execute()
+> PurchaseAirtimeResponse SendAirtime(ctx).PurchaseAirtimeRequest(purchaseAirtimeRequest).Execute()
 
 Purchase - Send Airtime
 
@@ -28,11 +28,10 @@ import (
 
 func main() {
     purchaseAirtimeRequest := *dojah.NewPurchaseAirtimeRequest() // PurchaseAirtimeRequest | 
-    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.PurchaseApi.SendAirtime(context.Background()).PurchaseAirtimeRequest(purchaseAirtimeRequest).AppId(appId).Execute()
+    resp, r, err := apiClient.PurchaseApi.SendAirtime(context.Background()).PurchaseAirtimeRequest(purchaseAirtimeRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PurchaseApi.SendAirtime``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -54,7 +53,6 @@ Other parameters are passed through a pointer to a apiSendAirtimeRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **purchaseAirtimeRequest** | [**PurchaseAirtimeRequest**](PurchaseAirtimeRequest.md) |  | 
- **appId** | **string** |  | 
 
 ### Return type
 
@@ -62,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[noauthAuth](../README.md#noauthAuth)
+[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 

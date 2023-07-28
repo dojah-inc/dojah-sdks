@@ -30,10 +30,9 @@ namespace Dojah.Net.Api
         /// Messaging - Get Sender IDs
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetSenderIdResponse</returns>
-        GetSenderIdResponse GetSenderId(string appId = default(string), int operationIndex = 0);
+        GetSenderIdResponse GetSenderId(int operationIndex = 0);
 
         /// <summary>
         /// Messaging - Get Sender IDs
@@ -42,19 +41,17 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetSenderIdResponse</returns>
-        ApiResponse<GetSenderIdResponse> GetSenderIdWithHttpInfo(string appId = default(string), int operationIndex = 0);
+        ApiResponse<GetSenderIdResponse> GetSenderIdWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Messaging - Get SMS Status
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="messageId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetSmsStatusResponse</returns>
-        GetSmsStatusResponse GetSmsStatus(string appId = default(string), string messageId = default(string), int operationIndex = 0);
+        GetSmsStatusResponse GetSmsStatus(string messageId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Messaging - Get SMS Status
@@ -63,20 +60,18 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="messageId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetSmsStatusResponse</returns>
-        ApiResponse<GetSmsStatusResponse> GetSmsStatusWithHttpInfo(string appId = default(string), string messageId = default(string), int operationIndex = 0);
+        ApiResponse<GetSmsStatusResponse> GetSmsStatusWithHttpInfo(string messageId = default(string), int operationIndex = 0);
         /// <summary>
         /// Messaging - Request Sender ID
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestSenderIdRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RequestSenderIdResponse</returns>
-        RequestSenderIdResponse RequestSenderId(RequestSenderIdRequest requestSenderIdRequest, string appId = default(string), int operationIndex = 0);
+        RequestSenderIdResponse RequestSenderId(RequestSenderIdRequest requestSenderIdRequest, int operationIndex = 0);
 
         /// <summary>
         /// Messaging - Request Sender ID
@@ -86,19 +81,17 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestSenderIdRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RequestSenderIdResponse</returns>
-        ApiResponse<RequestSenderIdResponse> RequestSenderIdWithHttpInfo(RequestSenderIdRequest requestSenderIdRequest, string appId = default(string), int operationIndex = 0);
+        ApiResponse<RequestSenderIdResponse> RequestSenderIdWithHttpInfo(RequestSenderIdRequest requestSenderIdRequest, int operationIndex = 0);
         /// <summary>
         /// Messaging - Send OTP
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authenticationSendOtpRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AuthenticationSendOtpResponse</returns>
-        AuthenticationSendOtpResponse SendOtp(AuthenticationSendOtpRequest authenticationSendOtpRequest, string appId = default(string), int operationIndex = 0);
+        AuthenticationSendOtpResponse SendOtp(AuthenticationSendOtpRequest authenticationSendOtpRequest, int operationIndex = 0);
 
         /// <summary>
         /// Messaging - Send OTP
@@ -108,19 +101,17 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authenticationSendOtpRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AuthenticationSendOtpResponse</returns>
-        ApiResponse<AuthenticationSendOtpResponse> SendOtpWithHttpInfo(AuthenticationSendOtpRequest authenticationSendOtpRequest, string appId = default(string), int operationIndex = 0);
+        ApiResponse<AuthenticationSendOtpResponse> SendOtpWithHttpInfo(AuthenticationSendOtpRequest authenticationSendOtpRequest, int operationIndex = 0);
         /// <summary>
         /// Messaging - Send SMS
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendSmsRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SendSmsResponse</returns>
-        SendSmsResponse SendSms(SendSmsRequest sendSmsRequest, string appId = default(string), int operationIndex = 0);
+        SendSmsResponse SendSms(SendSmsRequest sendSmsRequest, int operationIndex = 0);
 
         /// <summary>
         /// Messaging - Send SMS
@@ -130,20 +121,18 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendSmsRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SendSmsResponse</returns>
-        ApiResponse<SendSmsResponse> SendSmsWithHttpInfo(SendSmsRequest sendSmsRequest, string appId = default(string), int operationIndex = 0);
+        ApiResponse<SendSmsResponse> SendSmsWithHttpInfo(SendSmsRequest sendSmsRequest, int operationIndex = 0);
         /// <summary>
         /// Messaging - Validate OTP
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="referenceId"> (optional)</param>
         /// <param name="code"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AuthenticationValidateOtpResponse</returns>
-        AuthenticationValidateOtpResponse ValidateOtp(string appId = default(string), string referenceId = default(string), int? code = default(int?), int operationIndex = 0);
+        AuthenticationValidateOtpResponse ValidateOtp(string referenceId = default(string), int? code = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// Messaging - Validate OTP
@@ -152,12 +141,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="referenceId"> (optional)</param>
         /// <param name="code"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AuthenticationValidateOtpResponse</returns>
-        ApiResponse<AuthenticationValidateOtpResponse> ValidateOtpWithHttpInfo(string appId = default(string), string referenceId = default(string), int? code = default(int?), int operationIndex = 0);
+        ApiResponse<AuthenticationValidateOtpResponse> ValidateOtpWithHttpInfo(string referenceId = default(string), int? code = default(int?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -174,11 +162,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetSenderIdResponse</returns>
-        System.Threading.Tasks.Task<GetSenderIdResponse> GetSenderIdAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetSenderIdResponse> GetSenderIdAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Messaging - Get Sender IDs
@@ -187,11 +174,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetSenderIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetSenderIdResponse>> GetSenderIdWithHttpInfoAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetSenderIdResponse>> GetSenderIdWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Messaging - Get SMS Status
         /// </summary>
@@ -199,12 +185,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="messageId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetSmsStatusResponse</returns>
-        System.Threading.Tasks.Task<GetSmsStatusResponse> GetSmsStatusAsync(string appId = default(string), string messageId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetSmsStatusResponse> GetSmsStatusAsync(string messageId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Messaging - Get SMS Status
@@ -213,12 +198,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="messageId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetSmsStatusResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetSmsStatusResponse>> GetSmsStatusWithHttpInfoAsync(string appId = default(string), string messageId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetSmsStatusResponse>> GetSmsStatusWithHttpInfoAsync(string messageId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Messaging - Request Sender ID
         /// </summary>
@@ -227,11 +211,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestSenderIdRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RequestSenderIdResponse</returns>
-        System.Threading.Tasks.Task<RequestSenderIdResponse> RequestSenderIdAsync(RequestSenderIdRequest requestSenderIdRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RequestSenderIdResponse> RequestSenderIdAsync(RequestSenderIdRequest requestSenderIdRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Messaging - Request Sender ID
@@ -241,11 +224,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestSenderIdRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RequestSenderIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RequestSenderIdResponse>> RequestSenderIdWithHttpInfoAsync(RequestSenderIdRequest requestSenderIdRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RequestSenderIdResponse>> RequestSenderIdWithHttpInfoAsync(RequestSenderIdRequest requestSenderIdRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Messaging - Send OTP
         /// </summary>
@@ -254,11 +236,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authenticationSendOtpRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AuthenticationSendOtpResponse</returns>
-        System.Threading.Tasks.Task<AuthenticationSendOtpResponse> SendOtpAsync(AuthenticationSendOtpRequest authenticationSendOtpRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AuthenticationSendOtpResponse> SendOtpAsync(AuthenticationSendOtpRequest authenticationSendOtpRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Messaging - Send OTP
@@ -268,11 +249,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authenticationSendOtpRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AuthenticationSendOtpResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AuthenticationSendOtpResponse>> SendOtpWithHttpInfoAsync(AuthenticationSendOtpRequest authenticationSendOtpRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AuthenticationSendOtpResponse>> SendOtpWithHttpInfoAsync(AuthenticationSendOtpRequest authenticationSendOtpRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Messaging - Send SMS
         /// </summary>
@@ -281,11 +261,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendSmsRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SendSmsResponse</returns>
-        System.Threading.Tasks.Task<SendSmsResponse> SendSmsAsync(SendSmsRequest sendSmsRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SendSmsResponse> SendSmsAsync(SendSmsRequest sendSmsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Messaging - Send SMS
@@ -295,11 +274,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendSmsRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SendSmsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SendSmsResponse>> SendSmsWithHttpInfoAsync(SendSmsRequest sendSmsRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SendSmsResponse>> SendSmsWithHttpInfoAsync(SendSmsRequest sendSmsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Messaging - Validate OTP
         /// </summary>
@@ -307,13 +285,12 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="referenceId"> (optional)</param>
         /// <param name="code"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AuthenticationValidateOtpResponse</returns>
-        System.Threading.Tasks.Task<AuthenticationValidateOtpResponse> ValidateOtpAsync(string appId = default(string), string referenceId = default(string), int? code = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AuthenticationValidateOtpResponse> ValidateOtpAsync(string referenceId = default(string), int? code = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Messaging - Validate OTP
@@ -322,13 +299,12 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="referenceId"> (optional)</param>
         /// <param name="code"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AuthenticationValidateOtpResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AuthenticationValidateOtpResponse>> ValidateOtpWithHttpInfoAsync(string appId = default(string), string referenceId = default(string), int? code = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AuthenticationValidateOtpResponse>> ValidateOtpWithHttpInfoAsync(string referenceId = default(string), int? code = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -453,12 +429,11 @@ namespace Dojah.Net.Api
         /// Messaging - Get Sender IDs 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetSenderIdResponse</returns>
-        public GetSenderIdResponse GetSenderId(string appId = default(string), int operationIndex = 0)
+        public GetSenderIdResponse GetSenderId(int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetSenderIdResponse> localVarResponse = GetSenderIdWithHttpInfo(appId);
+            Dojah.Net.Client.ApiResponse<GetSenderIdResponse> localVarResponse = GetSenderIdWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -466,10 +441,9 @@ namespace Dojah.Net.Api
         /// Messaging - Get Sender IDs 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetSenderIdResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetSenderIdResponse> GetSenderIdWithHttpInfo(string appId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GetSenderIdResponse> GetSenderIdWithHttpInfo(int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -493,15 +467,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "AuthenticationApi.GetSenderId";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<GetSenderIdResponse>("/api/v1/messaging/sender_ids", localVarRequestOptions, this.Configuration);
@@ -521,13 +496,12 @@ namespace Dojah.Net.Api
         /// Messaging - Get Sender IDs 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetSenderIdResponse</returns>
-        public async System.Threading.Tasks.Task<GetSenderIdResponse> GetSenderIdAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetSenderIdResponse> GetSenderIdAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetSenderIdResponse> localVarResponse = await GetSenderIdWithHttpInfoAsync(appId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetSenderIdResponse> localVarResponse = await GetSenderIdWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -535,11 +509,10 @@ namespace Dojah.Net.Api
         /// Messaging - Get Sender IDs 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetSenderIdResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetSenderIdResponse>> GetSenderIdWithHttpInfoAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetSenderIdResponse>> GetSenderIdWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -564,15 +537,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "AuthenticationApi.GetSenderId";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<GetSenderIdResponse>("/api/v1/messaging/sender_ids", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -593,13 +567,12 @@ namespace Dojah.Net.Api
         /// Messaging - Get SMS Status 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="messageId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetSmsStatusResponse</returns>
-        public GetSmsStatusResponse GetSmsStatus(string appId = default(string), string messageId = default(string), int operationIndex = 0)
+        public GetSmsStatusResponse GetSmsStatus(string messageId = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetSmsStatusResponse> localVarResponse = GetSmsStatusWithHttpInfo(appId, messageId);
+            Dojah.Net.Client.ApiResponse<GetSmsStatusResponse> localVarResponse = GetSmsStatusWithHttpInfo(messageId);
             return localVarResponse.Data;
         }
 
@@ -607,11 +580,10 @@ namespace Dojah.Net.Api
         /// Messaging - Get SMS Status 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="messageId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetSmsStatusResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetSmsStatusResponse> GetSmsStatusWithHttpInfo(string appId = default(string), string messageId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GetSmsStatusResponse> GetSmsStatusWithHttpInfo(string messageId = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -639,15 +611,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "message_id", messageId, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "AuthenticationApi.GetSmsStatus";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<GetSmsStatusResponse>("/v1/messaging/sms/get_status", localVarRequestOptions, this.Configuration);
@@ -667,14 +640,13 @@ namespace Dojah.Net.Api
         /// Messaging - Get SMS Status 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="messageId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetSmsStatusResponse</returns>
-        public async System.Threading.Tasks.Task<GetSmsStatusResponse> GetSmsStatusAsync(string appId = default(string), string messageId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetSmsStatusResponse> GetSmsStatusAsync(string messageId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetSmsStatusResponse> localVarResponse = await GetSmsStatusWithHttpInfoAsync(appId, messageId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetSmsStatusResponse> localVarResponse = await GetSmsStatusWithHttpInfoAsync(messageId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -682,12 +654,11 @@ namespace Dojah.Net.Api
         /// Messaging - Get SMS Status 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="messageId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetSmsStatusResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetSmsStatusResponse>> GetSmsStatusWithHttpInfoAsync(string appId = default(string), string messageId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetSmsStatusResponse>> GetSmsStatusWithHttpInfoAsync(string messageId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -716,15 +687,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "message_id", messageId, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "AuthenticationApi.GetSmsStatus";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<GetSmsStatusResponse>("/v1/messaging/sms/get_status", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -746,12 +718,11 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestSenderIdRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RequestSenderIdResponse</returns>
-        public RequestSenderIdResponse RequestSenderId(RequestSenderIdRequest requestSenderIdRequest, string appId = default(string), int operationIndex = 0)
+        public RequestSenderIdResponse RequestSenderId(RequestSenderIdRequest requestSenderIdRequest, int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<RequestSenderIdResponse> localVarResponse = RequestSenderIdWithHttpInfo(requestSenderIdRequest, appId);
+            Dojah.Net.Client.ApiResponse<RequestSenderIdResponse> localVarResponse = RequestSenderIdWithHttpInfo(requestSenderIdRequest);
             return localVarResponse.Data;
         }
 
@@ -760,10 +731,9 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestSenderIdRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RequestSenderIdResponse</returns>
-        public Dojah.Net.Client.ApiResponse<RequestSenderIdResponse> RequestSenderIdWithHttpInfo(RequestSenderIdRequest requestSenderIdRequest, string appId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<RequestSenderIdResponse> RequestSenderIdWithHttpInfo(RequestSenderIdRequest requestSenderIdRequest, int operationIndex = 0)
         {
             // verify the required parameter 'requestSenderIdRequest' is set
             if (requestSenderIdRequest == null)
@@ -794,15 +764,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
             localVarRequestOptions.Data = requestSenderIdRequest;
 
             localVarRequestOptions.Operation = "AuthenticationApi.RequestSenderId";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<RequestSenderIdResponse>("/api/v1/messaging/sender_id", localVarRequestOptions, this.Configuration);
@@ -823,13 +794,12 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestSenderIdRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RequestSenderIdResponse</returns>
-        public async System.Threading.Tasks.Task<RequestSenderIdResponse> RequestSenderIdAsync(RequestSenderIdRequest requestSenderIdRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RequestSenderIdResponse> RequestSenderIdAsync(RequestSenderIdRequest requestSenderIdRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<RequestSenderIdResponse> localVarResponse = await RequestSenderIdWithHttpInfoAsync(requestSenderIdRequest, appId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<RequestSenderIdResponse> localVarResponse = await RequestSenderIdWithHttpInfoAsync(requestSenderIdRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -838,11 +808,10 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestSenderIdRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RequestSenderIdResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<RequestSenderIdResponse>> RequestSenderIdWithHttpInfoAsync(RequestSenderIdRequest requestSenderIdRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<RequestSenderIdResponse>> RequestSenderIdWithHttpInfoAsync(RequestSenderIdRequest requestSenderIdRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'requestSenderIdRequest' is set
             if (requestSenderIdRequest == null)
@@ -874,15 +843,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
             localVarRequestOptions.Data = requestSenderIdRequest;
 
             localVarRequestOptions.Operation = "AuthenticationApi.RequestSenderId";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<RequestSenderIdResponse>("/api/v1/messaging/sender_id", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -904,12 +874,11 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authenticationSendOtpRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AuthenticationSendOtpResponse</returns>
-        public AuthenticationSendOtpResponse SendOtp(AuthenticationSendOtpRequest authenticationSendOtpRequest, string appId = default(string), int operationIndex = 0)
+        public AuthenticationSendOtpResponse SendOtp(AuthenticationSendOtpRequest authenticationSendOtpRequest, int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<AuthenticationSendOtpResponse> localVarResponse = SendOtpWithHttpInfo(authenticationSendOtpRequest, appId);
+            Dojah.Net.Client.ApiResponse<AuthenticationSendOtpResponse> localVarResponse = SendOtpWithHttpInfo(authenticationSendOtpRequest);
             return localVarResponse.Data;
         }
 
@@ -918,10 +887,9 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authenticationSendOtpRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AuthenticationSendOtpResponse</returns>
-        public Dojah.Net.Client.ApiResponse<AuthenticationSendOtpResponse> SendOtpWithHttpInfo(AuthenticationSendOtpRequest authenticationSendOtpRequest, string appId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<AuthenticationSendOtpResponse> SendOtpWithHttpInfo(AuthenticationSendOtpRequest authenticationSendOtpRequest, int operationIndex = 0)
         {
             // verify the required parameter 'authenticationSendOtpRequest' is set
             if (authenticationSendOtpRequest == null)
@@ -952,16 +920,17 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
             localVarRequestOptions.Data = authenticationSendOtpRequest;
 
             localVarRequestOptions.Operation = "AuthenticationApi.SendOtp";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<AuthenticationSendOtpResponse>("/api/v1/messaging/otp", localVarRequestOptions, this.Configuration);
@@ -982,13 +951,12 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authenticationSendOtpRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AuthenticationSendOtpResponse</returns>
-        public async System.Threading.Tasks.Task<AuthenticationSendOtpResponse> SendOtpAsync(AuthenticationSendOtpRequest authenticationSendOtpRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AuthenticationSendOtpResponse> SendOtpAsync(AuthenticationSendOtpRequest authenticationSendOtpRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<AuthenticationSendOtpResponse> localVarResponse = await SendOtpWithHttpInfoAsync(authenticationSendOtpRequest, appId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<AuthenticationSendOtpResponse> localVarResponse = await SendOtpWithHttpInfoAsync(authenticationSendOtpRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -997,11 +965,10 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authenticationSendOtpRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AuthenticationSendOtpResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<AuthenticationSendOtpResponse>> SendOtpWithHttpInfoAsync(AuthenticationSendOtpRequest authenticationSendOtpRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<AuthenticationSendOtpResponse>> SendOtpWithHttpInfoAsync(AuthenticationSendOtpRequest authenticationSendOtpRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'authenticationSendOtpRequest' is set
             if (authenticationSendOtpRequest == null)
@@ -1033,16 +1000,17 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
             localVarRequestOptions.Data = authenticationSendOtpRequest;
 
             localVarRequestOptions.Operation = "AuthenticationApi.SendOtp";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<AuthenticationSendOtpResponse>("/api/v1/messaging/otp", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1064,12 +1032,11 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendSmsRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SendSmsResponse</returns>
-        public SendSmsResponse SendSms(SendSmsRequest sendSmsRequest, string appId = default(string), int operationIndex = 0)
+        public SendSmsResponse SendSms(SendSmsRequest sendSmsRequest, int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<SendSmsResponse> localVarResponse = SendSmsWithHttpInfo(sendSmsRequest, appId);
+            Dojah.Net.Client.ApiResponse<SendSmsResponse> localVarResponse = SendSmsWithHttpInfo(sendSmsRequest);
             return localVarResponse.Data;
         }
 
@@ -1078,10 +1045,9 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendSmsRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SendSmsResponse</returns>
-        public Dojah.Net.Client.ApiResponse<SendSmsResponse> SendSmsWithHttpInfo(SendSmsRequest sendSmsRequest, string appId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<SendSmsResponse> SendSmsWithHttpInfo(SendSmsRequest sendSmsRequest, int operationIndex = 0)
         {
             // verify the required parameter 'sendSmsRequest' is set
             if (sendSmsRequest == null)
@@ -1112,16 +1078,17 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
             localVarRequestOptions.Data = sendSmsRequest;
 
             localVarRequestOptions.Operation = "AuthenticationApi.SendSms";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<SendSmsResponse>("/api/v1/messaging/sms", localVarRequestOptions, this.Configuration);
@@ -1142,13 +1109,12 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendSmsRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SendSmsResponse</returns>
-        public async System.Threading.Tasks.Task<SendSmsResponse> SendSmsAsync(SendSmsRequest sendSmsRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SendSmsResponse> SendSmsAsync(SendSmsRequest sendSmsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<SendSmsResponse> localVarResponse = await SendSmsWithHttpInfoAsync(sendSmsRequest, appId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<SendSmsResponse> localVarResponse = await SendSmsWithHttpInfoAsync(sendSmsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1157,11 +1123,10 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendSmsRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SendSmsResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<SendSmsResponse>> SendSmsWithHttpInfoAsync(SendSmsRequest sendSmsRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<SendSmsResponse>> SendSmsWithHttpInfoAsync(SendSmsRequest sendSmsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'sendSmsRequest' is set
             if (sendSmsRequest == null)
@@ -1193,16 +1158,17 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
             localVarRequestOptions.Data = sendSmsRequest;
 
             localVarRequestOptions.Operation = "AuthenticationApi.SendSms";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<SendSmsResponse>("/api/v1/messaging/sms", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1223,14 +1189,13 @@ namespace Dojah.Net.Api
         /// Messaging - Validate OTP 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="referenceId"> (optional)</param>
         /// <param name="code"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AuthenticationValidateOtpResponse</returns>
-        public AuthenticationValidateOtpResponse ValidateOtp(string appId = default(string), string referenceId = default(string), int? code = default(int?), int operationIndex = 0)
+        public AuthenticationValidateOtpResponse ValidateOtp(string referenceId = default(string), int? code = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<AuthenticationValidateOtpResponse> localVarResponse = ValidateOtpWithHttpInfo(appId, referenceId, code);
+            Dojah.Net.Client.ApiResponse<AuthenticationValidateOtpResponse> localVarResponse = ValidateOtpWithHttpInfo(referenceId, code);
             return localVarResponse.Data;
         }
 
@@ -1238,12 +1203,11 @@ namespace Dojah.Net.Api
         /// Messaging - Validate OTP 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="referenceId"> (optional)</param>
         /// <param name="code"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AuthenticationValidateOtpResponse</returns>
-        public Dojah.Net.Client.ApiResponse<AuthenticationValidateOtpResponse> ValidateOtpWithHttpInfo(string appId = default(string), string referenceId = default(string), int? code = default(int?), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<AuthenticationValidateOtpResponse> ValidateOtpWithHttpInfo(string referenceId = default(string), int? code = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -1275,15 +1239,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "code", code, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "AuthenticationApi.ValidateOtp";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<AuthenticationValidateOtpResponse>("/api/v1/messaging/otp/validate", localVarRequestOptions, this.Configuration);
@@ -1303,15 +1268,14 @@ namespace Dojah.Net.Api
         /// Messaging - Validate OTP 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="referenceId"> (optional)</param>
         /// <param name="code"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AuthenticationValidateOtpResponse</returns>
-        public async System.Threading.Tasks.Task<AuthenticationValidateOtpResponse> ValidateOtpAsync(string appId = default(string), string referenceId = default(string), int? code = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AuthenticationValidateOtpResponse> ValidateOtpAsync(string referenceId = default(string), int? code = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<AuthenticationValidateOtpResponse> localVarResponse = await ValidateOtpWithHttpInfoAsync(appId, referenceId, code, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<AuthenticationValidateOtpResponse> localVarResponse = await ValidateOtpWithHttpInfoAsync(referenceId, code, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1319,13 +1283,12 @@ namespace Dojah.Net.Api
         /// Messaging - Validate OTP 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="referenceId"> (optional)</param>
         /// <param name="code"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AuthenticationValidateOtpResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<AuthenticationValidateOtpResponse>> ValidateOtpWithHttpInfoAsync(string appId = default(string), string referenceId = default(string), int? code = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<AuthenticationValidateOtpResponse>> ValidateOtpWithHttpInfoAsync(string referenceId = default(string), int? code = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -1358,15 +1321,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "code", code, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "AuthenticationApi.ValidateOtp";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<AuthenticationValidateOtpResponse>("/api/v1/messaging/otp/validate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

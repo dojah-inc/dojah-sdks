@@ -8,7 +8,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="sendairtime"></a>
 # **SendAirtime**
-> PurchaseAirtimeResponse SendAirtime (PurchaseAirtimeRequest purchaseAirtimeRequest, string appId = null)
+> PurchaseAirtimeResponse SendAirtime (PurchaseAirtimeRequest purchaseAirtimeRequest)
 
 Purchase - Send Airtime
 
@@ -17,7 +17,6 @@ Purchase - Send Airtime
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -27,20 +26,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new PurchaseApi(config);
             var purchaseAirtimeRequest = new PurchaseAirtimeRequest(); // PurchaseAirtimeRequest | 
-            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // Purchase - Send Airtime
-                PurchaseAirtimeResponse result = apiInstance.SendAirtime(purchaseAirtimeRequest, appId);
+                PurchaseAirtimeResponse result = client.Purchase.SendAirtime(purchaseAirtimeRequest);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -67,7 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Purchase - Send Airtime
-    ApiResponse<PurchaseAirtimeResponse> response = apiInstance.SendAirtimeWithHttpInfo(purchaseAirtimeRequest, appId);
+    ApiResponse<PurchaseAirtimeResponse> response = apiInstance.SendAirtimeWithHttpInfo(purchaseAirtimeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -85,7 +83,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **purchaseAirtimeRequest** | [**PurchaseAirtimeRequest**](PurchaseAirtimeRequest.md) |  |  |
-| **appId** | **string** |  | [optional]  |
 
 ### Return type
 
@@ -93,7 +90,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[noauthAuth](../README.md#noauthAuth)
+[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 

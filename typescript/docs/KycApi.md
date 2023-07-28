@@ -26,6 +26,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const checkLivenessResponse = await dojah.kyc.checkLiveness({
@@ -42,7 +43,6 @@ console.log(checkLivenessResponse);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **kycCheckLivenessRequest** | **KycCheckLivenessRequest**|  |
- **appId** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type
@@ -76,6 +76,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getAccountsResponse = await dojah.kyc.getAccounts({});
@@ -88,7 +89,6 @@ console.log(getAccountsResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **bvn** | [**string**] |  | (optional) defaults to undefined
 
 
@@ -123,6 +123,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getAddressVerificationResponse = await dojah.kyc.getAddressVerification(
@@ -137,7 +138,6 @@ console.log(getAddressVerificationResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **referenceId** | [**string**] |  | (optional) defaults to undefined
 
 
@@ -172,6 +172,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getBvnFromNubanResponse = await dojah.kyc.getBvnFromNuban({});
@@ -184,7 +185,6 @@ console.log(getBvnFromNubanResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **bankCode** | [**number**] |  | (optional) defaults to undefined
  **accountNumber** | [**number**] |  | (optional) defaults to undefined
 
@@ -220,6 +220,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getVinResponse = await dojah.kyc.getVin({});
@@ -232,7 +233,6 @@ console.log(getVinResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **vin** | [**string**] |  | (optional) defaults to undefined
 
 
@@ -267,6 +267,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const submitAddressResponse = await dojah.kyc.submitAddress({
@@ -291,7 +292,6 @@ console.log(submitAddressResponse);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **kycSubmitAddressRequest** | **KycSubmitAddressRequest**|  |
- **appId** | [**string**] |  | (optional) defaults to undefined
 
 
 ### Return type

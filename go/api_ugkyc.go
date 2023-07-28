@@ -25,15 +25,9 @@ type UGKYCApiService service
 type UGKYCApiGetVoterRequest struct {
 	ctx context.Context
 	ApiService *UGKYCApiService
-	appId *string
 	id *int32
 	firstName *string
 	lastName *string
-}
-
-func (r UGKYCApiGetVoterRequest) AppId(appId string) UGKYCApiGetVoterRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r UGKYCApiGetVoterRequest) Id(id int32) UGKYCApiGetVoterRequest {
@@ -115,8 +109,19 @@ func (a *UGKYCApiService) GetVoterExecute(r UGKYCApiGetVoterRequest) (map[string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

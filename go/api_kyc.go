@@ -26,16 +26,10 @@ type KYCApiCheckLivenessRequest struct {
 	ctx context.Context
 	ApiService *KYCApiService
 	kycCheckLivenessRequest *KycCheckLivenessRequest
-	appId *string
 }
 
 func (r KYCApiCheckLivenessRequest) KycCheckLivenessRequest(kycCheckLivenessRequest KycCheckLivenessRequest) KYCApiCheckLivenessRequest {
 	r.kycCheckLivenessRequest = &kycCheckLivenessRequest
-	return r
-}
-
-func (r KYCApiCheckLivenessRequest) AppId(appId string) KYCApiCheckLivenessRequest {
-	r.appId = &appId
 	return r
 }
 
@@ -97,11 +91,22 @@ func (a *KYCApiService) CheckLivenessExecute(r KYCApiCheckLivenessRequest) (map[
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
-	}
 	// body params
 	localVarPostBody = r.kycCheckLivenessRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -142,13 +147,7 @@ func (a *KYCApiService) CheckLivenessExecute(r KYCApiCheckLivenessRequest) (map[
 type KYCApiGetAccountsRequest struct {
 	ctx context.Context
 	ApiService *KYCApiService
-	appId *string
 	bvn *string
-}
-
-func (r KYCApiGetAccountsRequest) AppId(appId string) KYCApiGetAccountsRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r KYCApiGetAccountsRequest) Bvn(bvn string) KYCApiGetAccountsRequest {
@@ -214,8 +213,19 @@ func (a *KYCApiService) GetAccountsExecute(r KYCApiGetAccountsRequest) (map[stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -257,13 +267,7 @@ func (a *KYCApiService) GetAccountsExecute(r KYCApiGetAccountsRequest) (map[stri
 type KYCApiGetAddressVerificationRequest struct {
 	ctx context.Context
 	ApiService *KYCApiService
-	appId *string
 	referenceId *string
-}
-
-func (r KYCApiGetAddressVerificationRequest) AppId(appId string) KYCApiGetAddressVerificationRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r KYCApiGetAddressVerificationRequest) ReferenceId(referenceId string) KYCApiGetAddressVerificationRequest {
@@ -329,8 +333,19 @@ func (a *KYCApiService) GetAddressVerificationExecute(r KYCApiGetAddressVerifica
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -372,14 +387,8 @@ func (a *KYCApiService) GetAddressVerificationExecute(r KYCApiGetAddressVerifica
 type KYCApiGetBvnFromNubanRequest struct {
 	ctx context.Context
 	ApiService *KYCApiService
-	appId *string
 	bankCode *int32
 	accountNumber *int32
-}
-
-func (r KYCApiGetBvnFromNubanRequest) AppId(appId string) KYCApiGetBvnFromNubanRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r KYCApiGetBvnFromNubanRequest) BankCode(bankCode int32) KYCApiGetBvnFromNubanRequest {
@@ -453,8 +462,19 @@ func (a *KYCApiService) GetBvnFromNubanExecute(r KYCApiGetBvnFromNubanRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -496,13 +516,7 @@ func (a *KYCApiService) GetBvnFromNubanExecute(r KYCApiGetBvnFromNubanRequest) (
 type KYCApiGetVinRequest struct {
 	ctx context.Context
 	ApiService *KYCApiService
-	appId *string
 	vin *string
-}
-
-func (r KYCApiGetVinRequest) AppId(appId string) KYCApiGetVinRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r KYCApiGetVinRequest) Vin(vin string) KYCApiGetVinRequest {
@@ -568,8 +582,19 @@ func (a *KYCApiService) GetVinExecute(r KYCApiGetVinRequest) (*GetVinResponse, *
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -611,13 +636,7 @@ func (a *KYCApiService) GetVinExecute(r KYCApiGetVinRequest) (*GetVinResponse, *
 type KYCApiSubmitAddressRequest struct {
 	ctx context.Context
 	ApiService *KYCApiService
-	appId *string
 	kycSubmitAddressRequest *KycSubmitAddressRequest
-}
-
-func (r KYCApiSubmitAddressRequest) AppId(appId string) KYCApiSubmitAddressRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r KYCApiSubmitAddressRequest) KycSubmitAddressRequest(kycSubmitAddressRequest KycSubmitAddressRequest) KYCApiSubmitAddressRequest {
@@ -680,11 +699,22 @@ func (a *KYCApiService) SubmitAddressExecute(r KYCApiSubmitAddressRequest) (*Kyc
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
-	}
 	// body params
 	localVarPostBody = r.kycSubmitAddressRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

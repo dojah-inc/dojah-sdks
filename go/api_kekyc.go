@@ -25,13 +25,7 @@ type KEKYCApiService service
 type KEKYCApiGetNationalIdRequest struct {
 	ctx context.Context
 	ApiService *KEKYCApiService
-	appId *string
 	id *int32
-}
-
-func (r KEKYCApiGetNationalIdRequest) AppId(appId string) KEKYCApiGetNationalIdRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r KEKYCApiGetNationalIdRequest) Id(id int32) KEKYCApiGetNationalIdRequest {
@@ -97,8 +91,19 @@ func (a *KEKYCApiService) GetNationalIdExecute(r KEKYCApiGetNationalIdRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -140,12 +145,6 @@ func (a *KEKYCApiService) GetNationalIdExecute(r KEKYCApiGetNationalIdRequest) (
 type KEKYCApiGetPassportRequest struct {
 	ctx context.Context
 	ApiService *KEKYCApiService
-	appId *string
-}
-
-func (r KEKYCApiGetPassportRequest) AppId(appId string) KEKYCApiGetPassportRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r KEKYCApiGetPassportRequest) Execute() (map[string]interface{}, *http.Response, error) {
@@ -203,8 +202,19 @@ func (a *KEKYCApiService) GetPassportExecute(r KEKYCApiGetPassportRequest) (map[
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

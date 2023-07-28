@@ -24,6 +24,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getDriversLicenseResponse = await dojah.ghKyc.getDriversLicense({});
@@ -36,7 +37,6 @@ console.log(getDriversLicenseResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **id** | [**string**] |  | (optional) defaults to undefined
  **fullName** | [**string**] |  | (optional) defaults to undefined
  **dateOfBirth** | [**string**] |  | (optional) defaults to undefined
@@ -73,6 +73,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getPassportResponse = await dojah.ghKyc.getPassport({});
@@ -85,7 +86,6 @@ console.log(getPassportResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **id** | [**string**] |  | (optional) defaults to undefined
  **firstName** | [**string**] |  | (optional) defaults to undefined
  **lastName** | [**string**] |  | (optional) defaults to undefined
@@ -124,6 +124,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getSsnitResponse = await dojah.ghKyc.getSsnit({});
@@ -136,7 +137,6 @@ console.log(getSsnitResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **id** | [**string**] |  | (optional) defaults to undefined
  **fullName** | [**string**] |  | (optional) defaults to undefined
  **dateOfBirth** | [**string**] |  | (optional) defaults to undefined
@@ -173,6 +173,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getVoterResponse = await dojah.ghKyc.getVoter({});
@@ -185,7 +186,6 @@ console.log(getVoterResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **id** | [**number**] |  | (optional) defaults to undefined
  **fullName** | [**string**] |  | (optional) defaults to undefined
  **isNewId** | [**boolean**] |  | (optional) defaults to undefined

@@ -107,31 +107,6 @@ request_query_post_code = api_client.QueryParameter(
     schema=PostCodeSchema,
     explode=True,
 )
-# Header params
-AppIdSchema = schemas.StrSchema
-RequestRequiredHeaderParams = typing_extensions.TypedDict(
-    'RequestRequiredHeaderParams',
-    {
-    }
-)
-RequestOptionalHeaderParams = typing_extensions.TypedDict(
-    'RequestOptionalHeaderParams',
-    {
-        'AppId': typing.Union[AppIdSchema, str, ],
-    },
-    total=False
-)
-
-
-class RequestHeaderParams(RequestRequiredHeaderParams, RequestOptionalHeaderParams):
-    pass
-
-
-request_header_app_id = api_client.HeaderParameter(
-    name="AppId",
-    style=api_client.ParameterStyle.SIMPLE,
-    schema=AppIdSchema,
-)
 SchemaFor200ResponseBodyApplicationJson = schemas.DictSchema
 
 
@@ -162,7 +137,6 @@ class BaseApi(api_client.Api):
 
     def _ca_ekyc_mapped_args(
         self,
-        app_id: typing.Optional[str] = None,
         country: typing.Optional[str] = None,
         first_name: typing.Optional[str] = None,
         last_name: typing.Optional[str] = None,
@@ -173,7 +147,6 @@ class BaseApi(api_client.Api):
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
         _query_params = {}
-        _header_params = {}
         if country is not None:
             _query_params["country"] = country
         if first_name is not None:
@@ -188,16 +161,12 @@ class BaseApi(api_client.Api):
             _query_params["house_number"] = house_number
         if post_code is not None:
             _query_params["post_code"] = post_code
-        if app_id is not None:
-            _header_params["AppId"] = app_id
         args.query = _query_params
-        args.header = _header_params
         return args
 
     async def _aca_ekyc_oapg(
         self,
             query_params: typing.Optional[dict] = {},
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -214,7 +183,6 @@ class BaseApi(api_client.Api):
             class instances
         """
         self._verify_typed_dict_inputs_oapg(RequestQueryParams, query_params)
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         prefix_separator_iterator = None
@@ -237,14 +205,6 @@ class BaseApi(api_client.Api):
                 used_path += serialized_value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -254,6 +214,7 @@ class BaseApi(api_client.Api):
             resource_path=used_path,
             method=method,
             configuration=self.api_client.configuration,
+            auth_settings=_auth,
             headers=_headers,
         )
     
@@ -261,6 +222,7 @@ class BaseApi(api_client.Api):
             resource_path=used_path,
             method=method,
             headers=_headers,
+            auth_settings=_auth,
             prefix_separator_iterator=prefix_separator_iterator,
             timeout=timeout,
         )
@@ -322,7 +284,6 @@ class BaseApi(api_client.Api):
     def _ca_ekyc_oapg(
         self,
             query_params: typing.Optional[dict] = {},
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -338,7 +299,6 @@ class BaseApi(api_client.Api):
             class instances
         """
         self._verify_typed_dict_inputs_oapg(RequestQueryParams, query_params)
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         prefix_separator_iterator = None
@@ -361,14 +321,6 @@ class BaseApi(api_client.Api):
                 used_path += serialized_value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -378,6 +330,7 @@ class BaseApi(api_client.Api):
             resource_path=used_path,
             method=method,
             configuration=self.api_client.configuration,
+            auth_settings=_auth,
             headers=_headers,
         )
     
@@ -385,6 +338,7 @@ class BaseApi(api_client.Api):
             resource_path=used_path,
             method=method,
             headers=_headers,
+            auth_settings=_auth,
             prefix_separator_iterator=prefix_separator_iterator,
             timeout=timeout,
         )
@@ -418,7 +372,6 @@ class CaEkyc(BaseApi):
 
     async def aca_ekyc(
         self,
-        app_id: typing.Optional[str] = None,
         country: typing.Optional[str] = None,
         first_name: typing.Optional[str] = None,
         last_name: typing.Optional[str] = None,
@@ -432,7 +385,6 @@ class CaEkyc(BaseApi):
         AsyncGeneratorResponse,
     ]:
         args = self._ca_ekyc_mapped_args(
-            app_id=app_id,
             country=country,
             first_name=first_name,
             last_name=last_name,
@@ -443,12 +395,10 @@ class CaEkyc(BaseApi):
         )
         return await self._aca_ekyc_oapg(
             query_params=args.query,
-            header_params=args.header,
         )
     
     def ca_ekyc(
         self,
-        app_id: typing.Optional[str] = None,
         country: typing.Optional[str] = None,
         first_name: typing.Optional[str] = None,
         last_name: typing.Optional[str] = None,
@@ -461,7 +411,6 @@ class CaEkyc(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]:
         args = self._ca_ekyc_mapped_args(
-            app_id=app_id,
             country=country,
             first_name=first_name,
             last_name=last_name,
@@ -472,7 +421,6 @@ class CaEkyc(BaseApi):
         )
         return self._ca_ekyc_oapg(
             query_params=args.query,
-            header_params=args.header,
         )
 
 class ApiForget(BaseApi):
@@ -480,7 +428,6 @@ class ApiForget(BaseApi):
 
     async def aget(
         self,
-        app_id: typing.Optional[str] = None,
         country: typing.Optional[str] = None,
         first_name: typing.Optional[str] = None,
         last_name: typing.Optional[str] = None,
@@ -494,7 +441,6 @@ class ApiForget(BaseApi):
         AsyncGeneratorResponse,
     ]:
         args = self._ca_ekyc_mapped_args(
-            app_id=app_id,
             country=country,
             first_name=first_name,
             last_name=last_name,
@@ -505,12 +451,10 @@ class ApiForget(BaseApi):
         )
         return await self._aca_ekyc_oapg(
             query_params=args.query,
-            header_params=args.header,
         )
     
     def get(
         self,
-        app_id: typing.Optional[str] = None,
         country: typing.Optional[str] = None,
         first_name: typing.Optional[str] = None,
         last_name: typing.Optional[str] = None,
@@ -523,7 +467,6 @@ class ApiForget(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]:
         args = self._ca_ekyc_mapped_args(
-            app_id=app_id,
             country=country,
             first_name=first_name,
             last_name=last_name,
@@ -534,6 +477,5 @@ class ApiForget(BaseApi):
         )
         return self._ca_ekyc_oapg(
             query_params=args.query,
-            header_params=args.header,
         )
 

@@ -13,7 +13,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="validateBvn"></a>
 # **validateBvn**
-> Object validateBvn().appId(appId).bvn(bvn).firstName(firstName).dob(dob).execute();
+> Object validateBvn().bvn(bvn).firstName(firstName).dob(dob).execute();
 
 KYC - Validate BVN
 
@@ -37,8 +37,10 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     Integer bvn = 22250148240;
     String firstName = "FRANCIS";
     String dob = "1982-02-19";
@@ -46,7 +48,6 @@ public class Example {
       Object result = client
               .verifications
               .validateBvn()
-              .appId(appId)
               .bvn(bvn)
               .firstName(firstName)
               .dob(dob)
@@ -64,7 +65,6 @@ public class Example {
       ApiResponse<Object> response = client
               .verifications
               .validateBvn()
-              .appId(appId)
               .bvn(bvn)
               .firstName(firstName)
               .dob(dob)
@@ -90,7 +90,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **bvn** | **Integer**|  | [optional] |
 | **firstName** | **String**|  | [optional] |
 | **dob** | **String**|  | [optional] |
@@ -101,7 +100,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -115,7 +114,7 @@ public class Example {
 
 <a name="verifyAge"></a>
 # **verifyAge**
-> VerifyAgeResponse verifyAge().appId(appId).mode(mode).accountNumber(accountNumber).bankCode(bankCode).dob(dob).firstName(firstName).lastName(lastName).execute();
+> VerifyAgeResponse verifyAge().mode(mode).accountNumber(accountNumber).bankCode(bankCode).dob(dob).firstName(firstName).lastName(lastName).execute();
 
 KYC - Age Verification
 
@@ -139,8 +138,10 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String mode = "account_number";
     Integer accountNumber = 3046507407;
     Integer bankCode = 11;
@@ -151,7 +152,6 @@ public class Example {
       VerifyAgeResponse result = client
               .verifications
               .verifyAge()
-              .appId(appId)
               .mode(mode)
               .accountNumber(accountNumber)
               .bankCode(bankCode)
@@ -176,7 +176,6 @@ public class Example {
       ApiResponse<VerifyAgeResponse> response = client
               .verifications
               .verifyAge()
-              .appId(appId)
               .mode(mode)
               .accountNumber(accountNumber)
               .bankCode(bankCode)
@@ -205,7 +204,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **mode** | **String**|  | [optional] |
 | **accountNumber** | **Integer**|  | [optional] |
 | **bankCode** | **Integer**|  | [optional] |
@@ -219,7 +217,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -233,7 +231,7 @@ public class Example {
 
 <a name="verifySelfieBvn"></a>
 # **verifySelfieBvn**
-> VerifySelfieBvnResponse verifySelfieBvn(verifySelfieBvnRequest).appId(appId).execute();
+> VerifySelfieBvnResponse verifySelfieBvn(verifySelfieBvnRequest).execute();
 
 KYV - Selfie BVN Verificatoin
 
@@ -257,17 +255,18 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
     String bvn = "bvn_example";
     String selfieImage = "selfieImage_example";
-    String appId = "{{app_id}}";
     try {
       VerifySelfieBvnResponse result = client
               .verifications
               .verifySelfieBvn()
               .bvn(bvn)
               .selfieImage(selfieImage)
-              .appId(appId)
               .execute();
       System.out.println(result);
 
@@ -288,7 +287,6 @@ public class Example {
               .verifySelfieBvn()
               .bvn(bvn)
               .selfieImage(selfieImage)
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -312,7 +310,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **verifySelfieBvnRequest** | [**VerifySelfieBvnRequest**](VerifySelfieBvnRequest.md)|  | |
-| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -320,7 +317,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -334,7 +331,7 @@ public class Example {
 
 <a name="verifySelfieNin"></a>
 # **verifySelfieNin**
-> Object verifySelfieNin(verificationsVerifySelfieNinRequest).appId(appId).execute();
+> Object verifySelfieNin(verificationsVerifySelfieNinRequest).execute();
 
 KYC - Selfie NIN Verification
 
@@ -358,17 +355,18 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
     String nin = "nin_example";
     String selfieImage = "selfieImage_example";
-    String appId = "{{app_id}}";
     try {
       Object result = client
               .verifications
               .verifySelfieNin()
               .nin(nin)
               .selfieImage(selfieImage)
-              .appId(appId)
               .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling VerificationsApi#verifySelfieNin");
@@ -385,7 +383,6 @@ public class Example {
               .verifySelfieNin()
               .nin(nin)
               .selfieImage(selfieImage)
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -409,7 +406,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **verificationsVerifySelfieNinRequest** | [**VerificationsVerifySelfieNinRequest**](VerificationsVerifySelfieNinRequest.md)|  | |
-| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -417,7 +413,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -431,7 +427,7 @@ public class Example {
 
 <a name="verifySelfieVnin"></a>
 # **verifySelfieVnin**
-> Object verifySelfieVnin(verificationsVerifySelfieVninRequest).appId(appId).execute();
+> Object verifySelfieVnin(verificationsVerifySelfieVninRequest).execute();
 
 KYC - Selfie vNIN verification
 
@@ -442,6 +438,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.VerificationsApi;
 import java.util.List;
@@ -452,18 +449,19 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     String vnin = "vnin_example";
     String selfieImage = "selfieImage_example";
-    String appId = "{{app_id}}";
     try {
       Object result = client
               .verifications
               .verifySelfieVnin()
               .vnin(vnin)
               .selfieImage(selfieImage)
-              .appId(appId)
               .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling VerificationsApi#verifySelfieVnin");
@@ -480,7 +478,6 @@ public class Example {
               .verifySelfieVnin()
               .vnin(vnin)
               .selfieImage(selfieImage)
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -504,7 +501,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **verificationsVerifySelfieVninRequest** | [**VerificationsVerifySelfieVninRequest**](VerificationsVerifySelfieVninRequest.md)|  | |
-| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -512,7 +508,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

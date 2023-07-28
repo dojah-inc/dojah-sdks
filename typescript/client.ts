@@ -57,7 +57,7 @@ export class Dojah extends DojahCustom {
   readonly zafKyc: ZafKycApi;
   readonly zwKyc: ZwKycApi;
 
-  constructor(configurationParameters: ConfigurationParameters) {
+  constructor(configurationParameters: ConfigurationParameters = {}) {
     super(configurationParameters);
     const configuration = new Configuration(configurationParameters);
     this.aml = new AmlApi(configuration);

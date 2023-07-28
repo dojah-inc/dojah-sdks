@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## GetBanks
 
-> GetBanksResponse GetBanks(ctx).AppId(appId).Execute()
+> GetBanksResponse GetBanks(ctx).Execute()
 
 General - Get Banks
 
@@ -29,11 +29,10 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.GeneralApi.GetBanks(context.Background()).AppId(appId).Execute()
+    resp, r, err := apiClient.GeneralApi.GetBanks(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GeneralApi.GetBanks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -45,16 +44,12 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not need any parameter.
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetBanksRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
 
 ### Return type
 
@@ -62,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -76,7 +71,7 @@ Name | Type | Description  | Notes
 
 ## GetBin
 
-> GetBinResponse GetBin(ctx).AppId(appId).CardBin(cardBin).Execute()
+> GetBinResponse GetBin(ctx).CardBin(cardBin).Execute()
 
 General Resolve BIN
 
@@ -93,12 +88,11 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
     cardBin := int32(506118) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.GeneralApi.GetBin(context.Background()).AppId(appId).CardBin(cardBin).Execute()
+    resp, r, err := apiClient.GeneralApi.GetBin(context.Background()).CardBin(cardBin).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GeneralApi.GetBin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -119,7 +113,6 @@ Other parameters are passed through a pointer to a apiGetBinRequest struct via t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **cardBin** | **int32** |  | 
 
 ### Return type
@@ -128,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -142,7 +135,7 @@ Name | Type | Description  | Notes
 
 ## GetNuban
 
-> GeneralGetNubanResponse GetNuban(ctx).AppId(appId).BankCode(bankCode).AccountNumber(accountNumber).Execute()
+> GeneralGetNubanResponse GetNuban(ctx).BankCode(bankCode).AccountNumber(accountNumber).Execute()
 
 General Resolve NUBAN
 
@@ -159,13 +152,12 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
     bankCode := int32(58) // int32 |  (optional)
     accountNumber := int32(37466959) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.GeneralApi.GetNuban(context.Background()).AppId(appId).BankCode(bankCode).AccountNumber(accountNumber).Execute()
+    resp, r, err := apiClient.GeneralApi.GetNuban(context.Background()).BankCode(bankCode).AccountNumber(accountNumber).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GeneralApi.GetNuban``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -186,7 +178,6 @@ Other parameters are passed through a pointer to a apiGetNubanRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **bankCode** | **int32** |  | 
  **accountNumber** | **int32** |  | 
 
@@ -196,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

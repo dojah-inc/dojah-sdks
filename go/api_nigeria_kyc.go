@@ -25,13 +25,7 @@ type NigeriaKYCApiService service
 type NigeriaKYCApiGetBasicBvnRequest struct {
 	ctx context.Context
 	ApiService *NigeriaKYCApiService
-	appId *string
 	bvn *int32
-}
-
-func (r NigeriaKYCApiGetBasicBvnRequest) AppId(appId string) NigeriaKYCApiGetBasicBvnRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r NigeriaKYCApiGetBasicBvnRequest) Bvn(bvn int32) NigeriaKYCApiGetBasicBvnRequest {
@@ -97,8 +91,19 @@ func (a *NigeriaKYCApiService) GetBasicBvnExecute(r NigeriaKYCApiGetBasicBvnRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -140,13 +145,7 @@ func (a *NigeriaKYCApiService) GetBasicBvnExecute(r NigeriaKYCApiGetBasicBvnRequ
 type NigeriaKYCApiGetBasicBvn1Request struct {
 	ctx context.Context
 	ApiService *NigeriaKYCApiService
-	appId *string
 	bvn *int32
-}
-
-func (r NigeriaKYCApiGetBasicBvn1Request) AppId(appId string) NigeriaKYCApiGetBasicBvn1Request {
-	r.appId = &appId
-	return r
 }
 
 func (r NigeriaKYCApiGetBasicBvn1Request) Bvn(bvn int32) NigeriaKYCApiGetBasicBvn1Request {
@@ -212,8 +211,19 @@ func (a *NigeriaKYCApiService) GetBasicBvn1Execute(r NigeriaKYCApiGetBasicBvn1Re
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -255,13 +265,7 @@ func (a *NigeriaKYCApiService) GetBasicBvn1Execute(r NigeriaKYCApiGetBasicBvn1Re
 type NigeriaKYCApiGetBasicPhoneNumberRequest struct {
 	ctx context.Context
 	ApiService *NigeriaKYCApiService
-	appId *string
 	phoneNumber *int32
-}
-
-func (r NigeriaKYCApiGetBasicPhoneNumberRequest) AppId(appId string) NigeriaKYCApiGetBasicPhoneNumberRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r NigeriaKYCApiGetBasicPhoneNumberRequest) PhoneNumber(phoneNumber int32) NigeriaKYCApiGetBasicPhoneNumberRequest {
@@ -327,8 +331,19 @@ func (a *NigeriaKYCApiService) GetBasicPhoneNumberExecute(r NigeriaKYCApiGetBasi
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -370,13 +385,7 @@ func (a *NigeriaKYCApiService) GetBasicPhoneNumberExecute(r NigeriaKYCApiGetBasi
 type NigeriaKYCApiGetDriversLicenseRequest struct {
 	ctx context.Context
 	ApiService *NigeriaKYCApiService
-	appId *string
 	licenseNumber *string
-}
-
-func (r NigeriaKYCApiGetDriversLicenseRequest) AppId(appId string) NigeriaKYCApiGetDriversLicenseRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r NigeriaKYCApiGetDriversLicenseRequest) LicenseNumber(licenseNumber string) NigeriaKYCApiGetDriversLicenseRequest {
@@ -442,8 +451,19 @@ func (a *NigeriaKYCApiService) GetDriversLicenseExecute(r NigeriaKYCApiGetDriver
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -485,13 +505,7 @@ func (a *NigeriaKYCApiService) GetDriversLicenseExecute(r NigeriaKYCApiGetDriver
 type NigeriaKYCApiGetNinRequest struct {
 	ctx context.Context
 	ApiService *NigeriaKYCApiService
-	appId *string
 	nin *int32
-}
-
-func (r NigeriaKYCApiGetNinRequest) AppId(appId string) NigeriaKYCApiGetNinRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r NigeriaKYCApiGetNinRequest) Nin(nin int32) NigeriaKYCApiGetNinRequest {
@@ -557,8 +571,19 @@ func (a *NigeriaKYCApiService) GetNinExecute(r NigeriaKYCApiGetNinRequest) (*Nig
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -600,13 +625,7 @@ func (a *NigeriaKYCApiService) GetNinExecute(r NigeriaKYCApiGetNinRequest) (*Nig
 type NigeriaKYCApiGetNormalBvnRequest struct {
 	ctx context.Context
 	ApiService *NigeriaKYCApiService
-	appId *string
 	bvn *int32
-}
-
-func (r NigeriaKYCApiGetNormalBvnRequest) AppId(appId string) NigeriaKYCApiGetNormalBvnRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r NigeriaKYCApiGetNormalBvnRequest) Bvn(bvn int32) NigeriaKYCApiGetNormalBvnRequest {
@@ -672,8 +691,19 @@ func (a *NigeriaKYCApiService) GetNormalBvnExecute(r NigeriaKYCApiGetNormalBvnRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -715,14 +745,8 @@ func (a *NigeriaKYCApiService) GetNormalBvnExecute(r NigeriaKYCApiGetNormalBvnRe
 type NigeriaKYCApiGetNubanRequest struct {
 	ctx context.Context
 	ApiService *NigeriaKYCApiService
-	appId *string
 	bankCode *int32
 	accountNumber *int32
-}
-
-func (r NigeriaKYCApiGetNubanRequest) AppId(appId string) NigeriaKYCApiGetNubanRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r NigeriaKYCApiGetNubanRequest) BankCode(bankCode int32) NigeriaKYCApiGetNubanRequest {
@@ -796,8 +820,19 @@ func (a *NigeriaKYCApiService) GetNubanExecute(r NigeriaKYCApiGetNubanRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -968,13 +1003,7 @@ func (a *NigeriaKYCApiService) GetPassportExecute(r NigeriaKYCApiGetPassportRequ
 type NigeriaKYCApiGetPhoneNumberRequest struct {
 	ctx context.Context
 	ApiService *NigeriaKYCApiService
-	appId *string
 	phoneNumber *int32
-}
-
-func (r NigeriaKYCApiGetPhoneNumberRequest) AppId(appId string) NigeriaKYCApiGetPhoneNumberRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r NigeriaKYCApiGetPhoneNumberRequest) PhoneNumber(phoneNumber int32) NigeriaKYCApiGetPhoneNumberRequest {
@@ -1040,8 +1069,19 @@ func (a *NigeriaKYCApiService) GetPhoneNumberExecute(r NigeriaKYCApiGetPhoneNumb
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -1093,13 +1133,7 @@ func (a *NigeriaKYCApiService) GetPhoneNumberExecute(r NigeriaKYCApiGetPhoneNumb
 type NigeriaKYCApiGetPremiumBvnRequest struct {
 	ctx context.Context
 	ApiService *NigeriaKYCApiService
-	appId *string
 	bvn *int32
-}
-
-func (r NigeriaKYCApiGetPremiumBvnRequest) AppId(appId string) NigeriaKYCApiGetPremiumBvnRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r NigeriaKYCApiGetPremiumBvnRequest) Bvn(bvn int32) NigeriaKYCApiGetPremiumBvnRequest {
@@ -1165,8 +1199,19 @@ func (a *NigeriaKYCApiService) GetPremiumBvnExecute(r NigeriaKYCApiGetPremiumBvn
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -1208,13 +1253,7 @@ func (a *NigeriaKYCApiService) GetPremiumBvnExecute(r NigeriaKYCApiGetPremiumBvn
 type NigeriaKYCApiGetVninRequest struct {
 	ctx context.Context
 	ApiService *NigeriaKYCApiService
-	appId *string
 	vnin *string
-}
-
-func (r NigeriaKYCApiGetVninRequest) AppId(appId string) NigeriaKYCApiGetVninRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r NigeriaKYCApiGetVninRequest) Vnin(vnin string) NigeriaKYCApiGetVninRequest {
@@ -1280,8 +1319,19 @@ func (a *NigeriaKYCApiService) GetVninExecute(r NigeriaKYCApiGetVninRequest) (*G
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

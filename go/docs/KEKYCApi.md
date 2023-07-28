@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetNationalId
 
-> GetNationalIdResponse GetNationalId(ctx).AppId(appId).Id(id).Execute()
+> GetNationalIdResponse GetNationalId(ctx).Id(id).Execute()
 
 KYC - National ID
 
@@ -28,12 +28,11 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
     id := int32(24798402) // int32 |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.KEKYCApi.GetNationalId(context.Background()).AppId(appId).Id(id).Execute()
+    resp, r, err := apiClient.KEKYCApi.GetNationalId(context.Background()).Id(id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KEKYCApi.GetNationalId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -54,7 +53,6 @@ Other parameters are passed through a pointer to a apiGetNationalIdRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **id** | **int32** |  | 
 
 ### Return type
@@ -63,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -77,7 +75,7 @@ No authorization required
 
 ## GetPassport
 
-> map[string]interface{} GetPassport(ctx).AppId(appId).Execute()
+> map[string]interface{} GetPassport(ctx).Execute()
 
 KYC - Passport
 
@@ -94,11 +92,10 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.KEKYCApi.GetPassport(context.Background()).AppId(appId).Execute()
+    resp, r, err := apiClient.KEKYCApi.GetPassport(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KEKYCApi.GetPassport``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -110,16 +107,12 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not need any parameter.
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetPassportRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
 
 ### Return type
 
@@ -127,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

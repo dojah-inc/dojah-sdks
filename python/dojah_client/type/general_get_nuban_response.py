@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.general_get_nuban_response_entity import GeneralGetNubanResponseEntity
 
 class RequiredGeneralGetNubanResponse(TypedDict):
     pass
 
 class OptionalGeneralGetNubanResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: GeneralGetNubanResponseEntity
 
 class GeneralGetNubanResponse(RequiredGeneralGetNubanResponse, OptionalGeneralGetNubanResponse):
     pass

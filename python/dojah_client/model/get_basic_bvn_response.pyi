@@ -34,112 +34,16 @@ class GetBasicBvnResponse(
     class MetaOapg:
         
         class properties:
-            
-            
-            class entity(
-                schemas.DictSchema
-            ):
-            
-            
-                class MetaOapg:
-                    
-                    class properties:
-                        first_name = schemas.StrSchema
-                        last_name = schemas.StrSchema
-                        dob = schemas.StrSchema
-                        formatted_dob = schemas.StrSchema
-                        mobile = schemas.StrSchema
-                        bvn = schemas.StrSchema
-                        __annotations__ = {
-                            "first_name": first_name,
-                            "last_name": last_name,
-                            "dob": dob,
-                            "formatted_dob": formatted_dob,
-                            "mobile": mobile,
-                            "bvn": bvn,
-                        }
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["first_name"]) -> MetaOapg.properties.first_name: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["last_name"]) -> MetaOapg.properties.last_name: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["dob"]) -> MetaOapg.properties.dob: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["formatted_dob"]) -> MetaOapg.properties.formatted_dob: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["mobile"]) -> MetaOapg.properties.mobile: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["bvn"]) -> MetaOapg.properties.bvn: ...
-                
-                @typing.overload
-                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
-                
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["first_name", "last_name", "dob", "formatted_dob", "mobile", "bvn", ], str]):
-                    # dict_instance[name] accessor
-                    return super().__getitem__(name)
-                
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["first_name"]) -> typing.Union[MetaOapg.properties.first_name, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["last_name"]) -> typing.Union[MetaOapg.properties.last_name, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["dob"]) -> typing.Union[MetaOapg.properties.dob, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["formatted_dob"]) -> typing.Union[MetaOapg.properties.formatted_dob, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["mobile"]) -> typing.Union[MetaOapg.properties.mobile, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["bvn"]) -> typing.Union[MetaOapg.properties.bvn, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
-                
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["first_name", "last_name", "dob", "formatted_dob", "mobile", "bvn", ], str]):
-                    return super().get_item_oapg(name)
-                
-            
-                def __new__(
-                    cls,
-                    *args: typing.Union[dict, frozendict.frozendict, ],
-                    first_name: typing.Union[MetaOapg.properties.first_name, str, schemas.Unset] = schemas.unset,
-                    last_name: typing.Union[MetaOapg.properties.last_name, str, schemas.Unset] = schemas.unset,
-                    dob: typing.Union[MetaOapg.properties.dob, str, schemas.Unset] = schemas.unset,
-                    formatted_dob: typing.Union[MetaOapg.properties.formatted_dob, str, schemas.Unset] = schemas.unset,
-                    mobile: typing.Union[MetaOapg.properties.mobile, str, schemas.Unset] = schemas.unset,
-                    bvn: typing.Union[MetaOapg.properties.bvn, str, schemas.Unset] = schemas.unset,
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-                ) -> 'entity':
-                    return super().__new__(
-                        cls,
-                        *args,
-                        first_name=first_name,
-                        last_name=last_name,
-                        dob=dob,
-                        formatted_dob=formatted_dob,
-                        mobile=mobile,
-                        bvn=bvn,
-                        _configuration=_configuration,
-                        **kwargs,
-                    )
+        
+            @staticmethod
+            def entity() -> typing.Type['GetBasicBvnResponseEntity']:
+                return GetBasicBvnResponseEntity
             __annotations__ = {
                 "entity": entity,
             }
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["entity"]) -> MetaOapg.properties.entity: ...
+    def __getitem__(self, name: typing_extensions.Literal["entity"]) -> 'GetBasicBvnResponseEntity': ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
@@ -150,7 +54,7 @@ class GetBasicBvnResponse(
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["entity"]) -> typing.Union[MetaOapg.properties.entity, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["entity"]) -> typing.Union['GetBasicBvnResponseEntity', schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
@@ -162,7 +66,7 @@ class GetBasicBvnResponse(
     def __new__(
         cls,
         *args: typing.Union[dict, frozendict.frozendict, ],
-        entity: typing.Union[MetaOapg.properties.entity, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        entity: typing.Union['GetBasicBvnResponseEntity', schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'GetBasicBvnResponse':
@@ -173,3 +77,5 @@ class GetBasicBvnResponse(
             _configuration=_configuration,
             **kwargs,
         )
+
+from dojah_client.model.get_basic_bvn_response_entity import GetBasicBvnResponseEntity

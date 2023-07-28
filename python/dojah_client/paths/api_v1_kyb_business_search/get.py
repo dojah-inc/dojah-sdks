@@ -69,31 +69,9 @@ request_query_company = api_client.QueryParameter(
     schema=CompanySchema,
     explode=True,
 )
-# Header params
-AppIdSchema = schemas.StrSchema
-RequestRequiredHeaderParams = typing_extensions.TypedDict(
-    'RequestRequiredHeaderParams',
-    {
-    }
-)
-RequestOptionalHeaderParams = typing_extensions.TypedDict(
-    'RequestOptionalHeaderParams',
-    {
-        'AppId': typing.Union[AppIdSchema, str, ],
-    },
-    total=False
-)
-
-
-class RequestHeaderParams(RequestRequiredHeaderParams, RequestOptionalHeaderParams):
-    pass
-
-
-request_header_app_id = api_client.HeaderParameter(
-    name="AppId",
-    style=api_client.ParameterStyle.SIMPLE,
-    schema=AppIdSchema,
-)
+_auth = [
+    'appIdAuth',
+]
 SchemaFor200ResponseBodyApplicationJson = schemas.DictSchema
 
 
@@ -127,27 +105,21 @@ class BaseApi(api_client.Api):
 
     def _business_search_mapped_args(
         self,
-        app_id: typing.Optional[str] = None,
         country_code: typing.Optional[str] = None,
         company: typing.Optional[int] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
         _query_params = {}
-        _header_params = {}
         if country_code is not None:
             _query_params["country_code"] = country_code
         if company is not None:
             _query_params["company"] = company
-        if app_id is not None:
-            _header_params["AppId"] = app_id
         args.query = _query_params
-        args.header = _header_params
         return args
 
     async def _abusiness_search_oapg(
         self,
             query_params: typing.Optional[dict] = {},
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -164,7 +136,6 @@ class BaseApi(api_client.Api):
             class instances
         """
         self._verify_typed_dict_inputs_oapg(RequestQueryParams, query_params)
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         prefix_separator_iterator = None
@@ -182,14 +153,6 @@ class BaseApi(api_client.Api):
                 used_path += serialized_value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -199,6 +162,7 @@ class BaseApi(api_client.Api):
             resource_path=used_path,
             method=method,
             configuration=self.api_client.configuration,
+            auth_settings=_auth,
             headers=_headers,
         )
     
@@ -206,6 +170,7 @@ class BaseApi(api_client.Api):
             resource_path=used_path,
             method=method,
             headers=_headers,
+            auth_settings=_auth,
             prefix_separator_iterator=prefix_separator_iterator,
             timeout=timeout,
         )
@@ -267,7 +232,6 @@ class BaseApi(api_client.Api):
     def _business_search_oapg(
         self,
             query_params: typing.Optional[dict] = {},
-            header_params: typing.Optional[dict] = {},
         skip_deserialization: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -283,7 +247,6 @@ class BaseApi(api_client.Api):
             class instances
         """
         self._verify_typed_dict_inputs_oapg(RequestQueryParams, query_params)
-        self._verify_typed_dict_inputs_oapg(RequestHeaderParams, header_params)
         used_path = path.value
     
         prefix_separator_iterator = None
@@ -301,14 +264,6 @@ class BaseApi(api_client.Api):
                 used_path += serialized_value
     
         _headers = HTTPHeaderDict()
-        for parameter in (
-            request_header_app_id,
-        ):
-            parameter_data = header_params.get(parameter.name, schemas.unset)
-            if parameter_data is schemas.unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _headers.extend(serialized_data)
         # TODO add cookie handling
         if accept_content_types:
             for accept_content_type in accept_content_types:
@@ -318,6 +273,7 @@ class BaseApi(api_client.Api):
             resource_path=used_path,
             method=method,
             configuration=self.api_client.configuration,
+            auth_settings=_auth,
             headers=_headers,
         )
     
@@ -325,6 +281,7 @@ class BaseApi(api_client.Api):
             resource_path=used_path,
             method=method,
             headers=_headers,
+            auth_settings=_auth,
             prefix_separator_iterator=prefix_separator_iterator,
             timeout=timeout,
         )
@@ -358,7 +315,6 @@ class BusinessSearch(BaseApi):
 
     async def abusiness_search(
         self,
-        app_id: typing.Optional[str] = None,
         country_code: typing.Optional[str] = None,
         company: typing.Optional[int] = None,
     ) -> typing.Union[
@@ -367,18 +323,15 @@ class BusinessSearch(BaseApi):
         AsyncGeneratorResponse,
     ]:
         args = self._business_search_mapped_args(
-            app_id=app_id,
             country_code=country_code,
             company=company,
         )
         return await self._abusiness_search_oapg(
             query_params=args.query,
-            header_params=args.header,
         )
     
     def business_search(
         self,
-        app_id: typing.Optional[str] = None,
         country_code: typing.Optional[str] = None,
         company: typing.Optional[int] = None,
     ) -> typing.Union[
@@ -386,13 +339,11 @@ class BusinessSearch(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]:
         args = self._business_search_mapped_args(
-            app_id=app_id,
             country_code=country_code,
             company=company,
         )
         return self._business_search_oapg(
             query_params=args.query,
-            header_params=args.header,
         )
 
 class ApiForget(BaseApi):
@@ -400,7 +351,6 @@ class ApiForget(BaseApi):
 
     async def aget(
         self,
-        app_id: typing.Optional[str] = None,
         country_code: typing.Optional[str] = None,
         company: typing.Optional[int] = None,
     ) -> typing.Union[
@@ -409,18 +359,15 @@ class ApiForget(BaseApi):
         AsyncGeneratorResponse,
     ]:
         args = self._business_search_mapped_args(
-            app_id=app_id,
             country_code=country_code,
             company=company,
         )
         return await self._abusiness_search_oapg(
             query_params=args.query,
-            header_params=args.header,
         )
     
     def get(
         self,
-        app_id: typing.Optional[str] = None,
         country_code: typing.Optional[str] = None,
         company: typing.Optional[int] = None,
     ) -> typing.Union[
@@ -428,12 +375,10 @@ class ApiForget(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]:
         args = self._business_search_mapped_args(
-            app_id=app_id,
             country_code=country_code,
             company=company,
         )
         return self._business_search_oapg(
             query_params=args.query,
-            header_params=args.header,
         )
 

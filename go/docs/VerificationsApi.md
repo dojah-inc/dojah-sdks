@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## ValidateBvn
 
-> map[string]interface{} ValidateBvn(ctx).AppId(appId).Bvn(bvn).FirstName(firstName).Dob(dob).Execute()
+> map[string]interface{} ValidateBvn(ctx).Bvn(bvn).FirstName(firstName).Dob(dob).Execute()
 
 KYC - Validate BVN
 
@@ -31,14 +31,13 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
     bvn := int32(22250148240) // int32 |  (optional)
-    firstName := "FRANCIS" // string |  (optional)
-    dob := "1982-02-19" // string |  (optional)
+    firstName := ""FRANCIS"" // string |  (optional)
+    dob := ""1982-02-19"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.VerificationsApi.ValidateBvn(context.Background()).AppId(appId).Bvn(bvn).FirstName(firstName).Dob(dob).Execute()
+    resp, r, err := apiClient.VerificationsApi.ValidateBvn(context.Background()).Bvn(bvn).FirstName(firstName).Dob(dob).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VerificationsApi.ValidateBvn``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -59,7 +58,6 @@ Other parameters are passed through a pointer to a apiValidateBvnRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **bvn** | **int32** |  | 
  **firstName** | **string** |  | 
  **dob** | **string** |  | 
@@ -70,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -84,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## VerifyAge
 
-> VerifyAgeResponse VerifyAge(ctx).AppId(appId).Mode(mode).AccountNumber(accountNumber).BankCode(bankCode).Dob(dob).FirstName(firstName).LastName(lastName).Execute()
+> VerifyAgeResponse VerifyAge(ctx).Mode(mode).AccountNumber(accountNumber).BankCode(bankCode).Dob(dob).FirstName(firstName).LastName(lastName).Execute()
 
 KYC - Age Verification
 
@@ -101,17 +99,16 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
-    mode := "account_number" // string |  (optional)
+    mode := ""account_number"" // string |  (optional)
     accountNumber := int32(3046507407) // int32 |  (optional)
     bankCode := int32(11) // int32 |  (optional)
-    dob := "1993-06-10" // string |  (optional)
-    firstName := "Mosh" // string |  (optional)
-    lastName := "Saliu" // string |  (optional)
+    dob := ""1993-06-10"" // string |  (optional)
+    firstName := ""Mosh"" // string |  (optional)
+    lastName := ""Saliu"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.VerificationsApi.VerifyAge(context.Background()).AppId(appId).Mode(mode).AccountNumber(accountNumber).BankCode(bankCode).Dob(dob).FirstName(firstName).LastName(lastName).Execute()
+    resp, r, err := apiClient.VerificationsApi.VerifyAge(context.Background()).Mode(mode).AccountNumber(accountNumber).BankCode(bankCode).Dob(dob).FirstName(firstName).LastName(lastName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VerificationsApi.VerifyAge``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -132,7 +129,6 @@ Other parameters are passed through a pointer to a apiVerifyAgeRequest struct vi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **mode** | **string** |  | 
  **accountNumber** | **int32** |  | 
  **bankCode** | **int32** |  | 
@@ -146,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -160,7 +156,7 @@ Name | Type | Description  | Notes
 
 ## VerifySelfieBvn
 
-> VerifySelfieBvnResponse VerifySelfieBvn(ctx).VerifySelfieBvnRequest(verifySelfieBvnRequest).AppId(appId).Execute()
+> VerifySelfieBvnResponse VerifySelfieBvn(ctx).VerifySelfieBvnRequest(verifySelfieBvnRequest).Execute()
 
 KYV - Selfie BVN Verificatoin
 
@@ -178,11 +174,10 @@ import (
 
 func main() {
     verifySelfieBvnRequest := *dojah.NewVerifySelfieBvnRequest() // VerifySelfieBvnRequest | 
-    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.VerificationsApi.VerifySelfieBvn(context.Background()).VerifySelfieBvnRequest(verifySelfieBvnRequest).AppId(appId).Execute()
+    resp, r, err := apiClient.VerificationsApi.VerifySelfieBvn(context.Background()).VerifySelfieBvnRequest(verifySelfieBvnRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VerificationsApi.VerifySelfieBvn``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -204,7 +199,6 @@ Other parameters are passed through a pointer to a apiVerifySelfieBvnRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **verifySelfieBvnRequest** | [**VerifySelfieBvnRequest**](VerifySelfieBvnRequest.md) |  | 
- **appId** | **string** |  | 
 
 ### Return type
 
@@ -212,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -226,7 +220,7 @@ Name | Type | Description  | Notes
 
 ## VerifySelfieNin
 
-> map[string]interface{} VerifySelfieNin(ctx).VerificationsVerifySelfieNinRequest(verificationsVerifySelfieNinRequest).AppId(appId).Execute()
+> map[string]interface{} VerifySelfieNin(ctx).VerificationsVerifySelfieNinRequest(verificationsVerifySelfieNinRequest).Execute()
 
 KYC - Selfie NIN Verification
 
@@ -244,11 +238,10 @@ import (
 
 func main() {
     verificationsVerifySelfieNinRequest := *dojah.NewVerificationsVerifySelfieNinRequest() // VerificationsVerifySelfieNinRequest | 
-    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.VerificationsApi.VerifySelfieNin(context.Background()).VerificationsVerifySelfieNinRequest(verificationsVerifySelfieNinRequest).AppId(appId).Execute()
+    resp, r, err := apiClient.VerificationsApi.VerifySelfieNin(context.Background()).VerificationsVerifySelfieNinRequest(verificationsVerifySelfieNinRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VerificationsApi.VerifySelfieNin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -270,7 +263,6 @@ Other parameters are passed through a pointer to a apiVerifySelfieNinRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **verificationsVerifySelfieNinRequest** | [**VerificationsVerifySelfieNinRequest**](VerificationsVerifySelfieNinRequest.md) |  | 
- **appId** | **string** |  | 
 
 ### Return type
 
@@ -278,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -292,7 +284,7 @@ Name | Type | Description  | Notes
 
 ## VerifySelfieVnin
 
-> map[string]interface{} VerifySelfieVnin(ctx).VerificationsVerifySelfieVninRequest(verificationsVerifySelfieVninRequest).AppId(appId).Execute()
+> map[string]interface{} VerifySelfieVnin(ctx).VerificationsVerifySelfieVninRequest(verificationsVerifySelfieVninRequest).Execute()
 
 KYC - Selfie vNIN verification
 
@@ -310,11 +302,10 @@ import (
 
 func main() {
     verificationsVerifySelfieVninRequest := *dojah.NewVerificationsVerifySelfieVninRequest() // VerificationsVerifySelfieVninRequest | 
-    appId := "{{app_id}}" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.VerificationsApi.VerifySelfieVnin(context.Background()).VerificationsVerifySelfieVninRequest(verificationsVerifySelfieVninRequest).AppId(appId).Execute()
+    resp, r, err := apiClient.VerificationsApi.VerifySelfieVnin(context.Background()).VerificationsVerifySelfieVninRequest(verificationsVerifySelfieVninRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VerificationsApi.VerifySelfieVnin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -336,7 +327,6 @@ Other parameters are passed through a pointer to a apiVerifySelfieVninRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **verificationsVerifySelfieVninRequest** | [**VerificationsVerifySelfieVninRequest**](VerificationsVerifySelfieVninRequest.md) |  | 
- **appId** | **string** |  | 
 
 ### Return type
 
@@ -344,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

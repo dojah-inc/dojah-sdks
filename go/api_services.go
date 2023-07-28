@@ -25,12 +25,6 @@ type ServicesApiService service
 type ServicesApiGetWalletBalanceRequest struct {
 	ctx context.Context
 	ApiService *ServicesApiService
-	appId *string
-}
-
-func (r ServicesApiGetWalletBalanceRequest) AppId(appId string) ServicesApiGetWalletBalanceRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r ServicesApiGetWalletBalanceRequest) Execute() (*GetWalletBalanceResponse, *http.Response, error) {
@@ -88,8 +82,19 @@ func (a *ServicesApiService) GetWalletBalanceExecute(r ServicesApiGetWalletBalan
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

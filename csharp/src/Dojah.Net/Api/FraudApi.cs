@@ -30,11 +30,10 @@ namespace Dojah.Net.Api
         /// Email Reputation
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>FraudGetEmailReputationResponse</returns>
-        FraudGetEmailReputationResponse GetEmailReputation(string appId = default(string), string email = default(string), int operationIndex = 0);
+        FraudGetEmailReputationResponse GetEmailReputation(string email = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Email Reputation
@@ -43,20 +42,18 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FraudGetEmailReputationResponse</returns>
-        ApiResponse<FraudGetEmailReputationResponse> GetEmailReputationWithHttpInfo(string appId = default(string), string email = default(string), int operationIndex = 0);
+        ApiResponse<FraudGetEmailReputationResponse> GetEmailReputationWithHttpInfo(string email = default(string), int operationIndex = 0);
         /// <summary>
         /// IP Reputation
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="ipAddress"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>FraudGetIpReputationResponse</returns>
-        FraudGetIpReputationResponse GetIpReputation(string appId = default(string), string ipAddress = default(string), int operationIndex = 0);
+        FraudGetIpReputationResponse GetIpReputation(string ipAddress = default(string), int operationIndex = 0);
 
         /// <summary>
         /// IP Reputation
@@ -65,20 +62,18 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="ipAddress"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FraudGetIpReputationResponse</returns>
-        ApiResponse<FraudGetIpReputationResponse> GetIpReputationWithHttpInfo(string appId = default(string), string ipAddress = default(string), int operationIndex = 0);
+        ApiResponse<FraudGetIpReputationResponse> GetIpReputationWithHttpInfo(string ipAddress = default(string), int operationIndex = 0);
         /// <summary>
         /// Phone Screening
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>FraudScreenPhoneResponse</returns>
-        FraudScreenPhoneResponse ScreenPhone(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0);
+        FraudScreenPhoneResponse ScreenPhone(int? phoneNumber = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// Phone Screening
@@ -87,16 +82,14 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FraudScreenPhoneResponse</returns>
-        ApiResponse<FraudScreenPhoneResponse> ScreenPhoneWithHttpInfo(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0);
+        ApiResponse<FraudScreenPhoneResponse> ScreenPhoneWithHttpInfo(int? phoneNumber = default(int?), int operationIndex = 0);
         /// <summary>
         /// User Screening
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
@@ -105,7 +98,7 @@ namespace Dojah.Net.Api
         /// <param name="ipAddress"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>FraudScreenUserResponse</returns>
-        FraudScreenUserResponse ScreenUser(string appId = default(string), string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string email = default(string), string phone = default(string), string ipAddress = default(string), int operationIndex = 0);
+        FraudScreenUserResponse ScreenUser(string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string email = default(string), string phone = default(string), string ipAddress = default(string), int operationIndex = 0);
 
         /// <summary>
         /// User Screening
@@ -114,7 +107,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
@@ -123,7 +115,7 @@ namespace Dojah.Net.Api
         /// <param name="ipAddress"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FraudScreenUserResponse</returns>
-        ApiResponse<FraudScreenUserResponse> ScreenUserWithHttpInfo(string appId = default(string), string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string email = default(string), string phone = default(string), string ipAddress = default(string), int operationIndex = 0);
+        ApiResponse<FraudScreenUserResponse> ScreenUserWithHttpInfo(string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string email = default(string), string phone = default(string), string ipAddress = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -140,12 +132,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FraudGetEmailReputationResponse</returns>
-        System.Threading.Tasks.Task<FraudGetEmailReputationResponse> GetEmailReputationAsync(string appId = default(string), string email = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<FraudGetEmailReputationResponse> GetEmailReputationAsync(string email = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Email Reputation
@@ -154,12 +145,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FraudGetEmailReputationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FraudGetEmailReputationResponse>> GetEmailReputationWithHttpInfoAsync(string appId = default(string), string email = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<FraudGetEmailReputationResponse>> GetEmailReputationWithHttpInfoAsync(string email = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// IP Reputation
         /// </summary>
@@ -167,12 +157,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="ipAddress"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FraudGetIpReputationResponse</returns>
-        System.Threading.Tasks.Task<FraudGetIpReputationResponse> GetIpReputationAsync(string appId = default(string), string ipAddress = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<FraudGetIpReputationResponse> GetIpReputationAsync(string ipAddress = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// IP Reputation
@@ -181,12 +170,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="ipAddress"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FraudGetIpReputationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FraudGetIpReputationResponse>> GetIpReputationWithHttpInfoAsync(string appId = default(string), string ipAddress = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<FraudGetIpReputationResponse>> GetIpReputationWithHttpInfoAsync(string ipAddress = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Phone Screening
         /// </summary>
@@ -194,12 +182,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FraudScreenPhoneResponse</returns>
-        System.Threading.Tasks.Task<FraudScreenPhoneResponse> ScreenPhoneAsync(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<FraudScreenPhoneResponse> ScreenPhoneAsync(int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Phone Screening
@@ -208,12 +195,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FraudScreenPhoneResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FraudScreenPhoneResponse>> ScreenPhoneWithHttpInfoAsync(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<FraudScreenPhoneResponse>> ScreenPhoneWithHttpInfoAsync(int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// User Screening
         /// </summary>
@@ -221,7 +207,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
@@ -231,7 +216,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FraudScreenUserResponse</returns>
-        System.Threading.Tasks.Task<FraudScreenUserResponse> ScreenUserAsync(string appId = default(string), string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string email = default(string), string phone = default(string), string ipAddress = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<FraudScreenUserResponse> ScreenUserAsync(string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string email = default(string), string phone = default(string), string ipAddress = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// User Screening
@@ -240,7 +225,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
@@ -250,7 +234,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FraudScreenUserResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FraudScreenUserResponse>> ScreenUserWithHttpInfoAsync(string appId = default(string), string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string email = default(string), string phone = default(string), string ipAddress = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<FraudScreenUserResponse>> ScreenUserWithHttpInfoAsync(string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string email = default(string), string phone = default(string), string ipAddress = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -375,13 +359,12 @@ namespace Dojah.Net.Api
         /// Email Reputation 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>FraudGetEmailReputationResponse</returns>
-        public FraudGetEmailReputationResponse GetEmailReputation(string appId = default(string), string email = default(string), int operationIndex = 0)
+        public FraudGetEmailReputationResponse GetEmailReputation(string email = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<FraudGetEmailReputationResponse> localVarResponse = GetEmailReputationWithHttpInfo(appId, email);
+            Dojah.Net.Client.ApiResponse<FraudGetEmailReputationResponse> localVarResponse = GetEmailReputationWithHttpInfo(email);
             return localVarResponse.Data;
         }
 
@@ -389,11 +372,10 @@ namespace Dojah.Net.Api
         /// Email Reputation 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FraudGetEmailReputationResponse</returns>
-        public Dojah.Net.Client.ApiResponse<FraudGetEmailReputationResponse> GetEmailReputationWithHttpInfo(string appId = default(string), string email = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<FraudGetEmailReputationResponse> GetEmailReputationWithHttpInfo(string email = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -421,14 +403,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "email", email, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "FraudApi.GetEmailReputation";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
             // authentication (noauthAuth) required
 
             // make the HTTP request
@@ -449,14 +432,13 @@ namespace Dojah.Net.Api
         /// Email Reputation 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FraudGetEmailReputationResponse</returns>
-        public async System.Threading.Tasks.Task<FraudGetEmailReputationResponse> GetEmailReputationAsync(string appId = default(string), string email = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<FraudGetEmailReputationResponse> GetEmailReputationAsync(string email = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<FraudGetEmailReputationResponse> localVarResponse = await GetEmailReputationWithHttpInfoAsync(appId, email, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<FraudGetEmailReputationResponse> localVarResponse = await GetEmailReputationWithHttpInfoAsync(email, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -464,12 +446,11 @@ namespace Dojah.Net.Api
         /// Email Reputation 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FraudGetEmailReputationResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<FraudGetEmailReputationResponse>> GetEmailReputationWithHttpInfoAsync(string appId = default(string), string email = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<FraudGetEmailReputationResponse>> GetEmailReputationWithHttpInfoAsync(string email = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -498,14 +479,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "email", email, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "FraudApi.GetEmailReputation";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
             // authentication (noauthAuth) required
 
             // make the HTTP request
@@ -527,13 +509,12 @@ namespace Dojah.Net.Api
         /// IP Reputation 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="ipAddress"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>FraudGetIpReputationResponse</returns>
-        public FraudGetIpReputationResponse GetIpReputation(string appId = default(string), string ipAddress = default(string), int operationIndex = 0)
+        public FraudGetIpReputationResponse GetIpReputation(string ipAddress = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<FraudGetIpReputationResponse> localVarResponse = GetIpReputationWithHttpInfo(appId, ipAddress);
+            Dojah.Net.Client.ApiResponse<FraudGetIpReputationResponse> localVarResponse = GetIpReputationWithHttpInfo(ipAddress);
             return localVarResponse.Data;
         }
 
@@ -541,11 +522,10 @@ namespace Dojah.Net.Api
         /// IP Reputation 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="ipAddress"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FraudGetIpReputationResponse</returns>
-        public Dojah.Net.Client.ApiResponse<FraudGetIpReputationResponse> GetIpReputationWithHttpInfo(string appId = default(string), string ipAddress = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<FraudGetIpReputationResponse> GetIpReputationWithHttpInfo(string ipAddress = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -573,14 +553,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "ip_address", ipAddress, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "FraudApi.GetIpReputation";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<FraudGetIpReputationResponse>("/api/v1/fraud/ip", localVarRequestOptions, this.Configuration);
@@ -600,14 +581,13 @@ namespace Dojah.Net.Api
         /// IP Reputation 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="ipAddress"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FraudGetIpReputationResponse</returns>
-        public async System.Threading.Tasks.Task<FraudGetIpReputationResponse> GetIpReputationAsync(string appId = default(string), string ipAddress = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<FraudGetIpReputationResponse> GetIpReputationAsync(string ipAddress = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<FraudGetIpReputationResponse> localVarResponse = await GetIpReputationWithHttpInfoAsync(appId, ipAddress, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<FraudGetIpReputationResponse> localVarResponse = await GetIpReputationWithHttpInfoAsync(ipAddress, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -615,12 +595,11 @@ namespace Dojah.Net.Api
         /// IP Reputation 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="ipAddress"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FraudGetIpReputationResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<FraudGetIpReputationResponse>> GetIpReputationWithHttpInfoAsync(string appId = default(string), string ipAddress = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<FraudGetIpReputationResponse>> GetIpReputationWithHttpInfoAsync(string ipAddress = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -649,14 +628,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "ip_address", ipAddress, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "FraudApi.GetIpReputation";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<FraudGetIpReputationResponse>("/api/v1/fraud/ip", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -677,13 +657,12 @@ namespace Dojah.Net.Api
         /// Phone Screening 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>FraudScreenPhoneResponse</returns>
-        public FraudScreenPhoneResponse ScreenPhone(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0)
+        public FraudScreenPhoneResponse ScreenPhone(int? phoneNumber = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<FraudScreenPhoneResponse> localVarResponse = ScreenPhoneWithHttpInfo(appId, phoneNumber);
+            Dojah.Net.Client.ApiResponse<FraudScreenPhoneResponse> localVarResponse = ScreenPhoneWithHttpInfo(phoneNumber);
             return localVarResponse.Data;
         }
 
@@ -691,11 +670,10 @@ namespace Dojah.Net.Api
         /// Phone Screening 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FraudScreenPhoneResponse</returns>
-        public Dojah.Net.Client.ApiResponse<FraudScreenPhoneResponse> ScreenPhoneWithHttpInfo(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<FraudScreenPhoneResponse> ScreenPhoneWithHttpInfo(int? phoneNumber = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -723,14 +701,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "phone_number", phoneNumber, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "FraudApi.ScreenPhone";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<FraudScreenPhoneResponse>("/api/v1/fraud/phone", localVarRequestOptions, this.Configuration);
@@ -750,14 +729,13 @@ namespace Dojah.Net.Api
         /// Phone Screening 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FraudScreenPhoneResponse</returns>
-        public async System.Threading.Tasks.Task<FraudScreenPhoneResponse> ScreenPhoneAsync(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<FraudScreenPhoneResponse> ScreenPhoneAsync(int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<FraudScreenPhoneResponse> localVarResponse = await ScreenPhoneWithHttpInfoAsync(appId, phoneNumber, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<FraudScreenPhoneResponse> localVarResponse = await ScreenPhoneWithHttpInfoAsync(phoneNumber, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -765,12 +743,11 @@ namespace Dojah.Net.Api
         /// Phone Screening 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="phoneNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FraudScreenPhoneResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<FraudScreenPhoneResponse>> ScreenPhoneWithHttpInfoAsync(string appId = default(string), int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<FraudScreenPhoneResponse>> ScreenPhoneWithHttpInfoAsync(int? phoneNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -799,14 +776,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "phone_number", phoneNumber, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "FraudApi.ScreenPhone";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<FraudScreenPhoneResponse>("/api/v1/fraud/phone", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -827,7 +805,6 @@ namespace Dojah.Net.Api
         /// User Screening 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
@@ -836,9 +813,9 @@ namespace Dojah.Net.Api
         /// <param name="ipAddress"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>FraudScreenUserResponse</returns>
-        public FraudScreenUserResponse ScreenUser(string appId = default(string), string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string email = default(string), string phone = default(string), string ipAddress = default(string), int operationIndex = 0)
+        public FraudScreenUserResponse ScreenUser(string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string email = default(string), string phone = default(string), string ipAddress = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<FraudScreenUserResponse> localVarResponse = ScreenUserWithHttpInfo(appId, firstName, lastName, dateOfBirth, email, phone, ipAddress);
+            Dojah.Net.Client.ApiResponse<FraudScreenUserResponse> localVarResponse = ScreenUserWithHttpInfo(firstName, lastName, dateOfBirth, email, phone, ipAddress);
             return localVarResponse.Data;
         }
 
@@ -846,7 +823,6 @@ namespace Dojah.Net.Api
         /// User Screening 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
@@ -855,7 +831,7 @@ namespace Dojah.Net.Api
         /// <param name="ipAddress"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FraudScreenUserResponse</returns>
-        public Dojah.Net.Client.ApiResponse<FraudScreenUserResponse> ScreenUserWithHttpInfo(string appId = default(string), string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string email = default(string), string phone = default(string), string ipAddress = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<FraudScreenUserResponse> ScreenUserWithHttpInfo(string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string email = default(string), string phone = default(string), string ipAddress = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -903,14 +879,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "ip_address", ipAddress, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "FraudApi.ScreenUser";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<FraudScreenUserResponse>("/api/v1/fraud/user", localVarRequestOptions, this.Configuration);
@@ -930,7 +907,6 @@ namespace Dojah.Net.Api
         /// User Screening 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
@@ -940,9 +916,9 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FraudScreenUserResponse</returns>
-        public async System.Threading.Tasks.Task<FraudScreenUserResponse> ScreenUserAsync(string appId = default(string), string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string email = default(string), string phone = default(string), string ipAddress = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<FraudScreenUserResponse> ScreenUserAsync(string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string email = default(string), string phone = default(string), string ipAddress = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<FraudScreenUserResponse> localVarResponse = await ScreenUserWithHttpInfoAsync(appId, firstName, lastName, dateOfBirth, email, phone, ipAddress, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<FraudScreenUserResponse> localVarResponse = await ScreenUserWithHttpInfoAsync(firstName, lastName, dateOfBirth, email, phone, ipAddress, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -950,7 +926,6 @@ namespace Dojah.Net.Api
         /// User Screening 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
         /// <param name="dateOfBirth"> (optional)</param>
@@ -960,7 +935,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FraudScreenUserResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<FraudScreenUserResponse>> ScreenUserWithHttpInfoAsync(string appId = default(string), string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string email = default(string), string phone = default(string), string ipAddress = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<FraudScreenUserResponse>> ScreenUserWithHttpInfoAsync(string firstName = default(string), string lastName = default(string), string dateOfBirth = default(string), string email = default(string), string phone = default(string), string ipAddress = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -1009,14 +984,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "ip_address", ipAddress, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "FraudApi.ScreenUser";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<FraudScreenUserResponse>("/api/v1/fraud/user", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

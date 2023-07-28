@@ -59,7 +59,6 @@ namespace Dojah.Net.Test.Api
         public void CaEkycTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string country = null;
             //string firstName = null;
             //string lastName = null;
@@ -67,7 +66,7 @@ namespace Dojah.Net.Test.Api
             //string dateOfBirth = null;
             //int? houseNumber = null;
             //int? postCode = null;
-            //var response = instance.CaEkyc(appId, country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
+            //var response = instance.CaEkyc(country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
             //Assert.IsType<Object>(response);
         }
 
@@ -78,7 +77,6 @@ namespace Dojah.Net.Test.Api
         public void GetUsSsnTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string country = null;
             //string firstName = null;
             //string lastName = null;
@@ -86,7 +84,7 @@ namespace Dojah.Net.Test.Api
             //string dateOfBirth = null;
             //int? houseNumber = null;
             //int? postCode = null;
-            //var response = instance.GetUsSsn(appId, country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
+            //var response = instance.GetUsSsn(country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
             //Assert.IsType<Object>(response);
         }
 
@@ -97,7 +95,6 @@ namespace Dojah.Net.Test.Api
         public void UkTwoPlusTwoTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
             //string country = null;
             //string firstName = null;
             //string lastName = null;
@@ -105,7 +102,7 @@ namespace Dojah.Net.Test.Api
             //string dateOfBirth = null;
             //int? houseNumber = null;
             //int? postCode = null;
-            //var response = instance.UkTwoPlusTwo(appId, country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
+            //var response = instance.UkTwoPlusTwo(country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
             //Assert.IsType<Object>(response);
         }
     }

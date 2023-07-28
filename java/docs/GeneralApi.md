@@ -11,7 +11,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getBanks"></a>
 # **getBanks**
-> GetBanksResponse getBanks().appId(appId).execute();
+> GetBanksResponse getBanks().execute();
 
 General - Get Banks
 
@@ -35,13 +35,14 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     try {
       GetBanksResponse result = client
               .general
               .getBanks()
-              .appId(appId)
               .execute();
       System.out.println(result);
 
@@ -60,7 +61,6 @@ public class Example {
       ApiResponse<GetBanksResponse> response = client
               .general
               .getBanks()
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -80,10 +80,7 @@ public class Example {
 ```
 
 ### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -91,7 +88,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -105,7 +102,7 @@ public class Example {
 
 <a name="getBin"></a>
 # **getBin**
-> GetBinResponse getBin().appId(appId).cardBin(cardBin).execute();
+> GetBinResponse getBin().cardBin(cardBin).execute();
 
 General Resolve BIN
 
@@ -129,14 +126,15 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     Integer cardBin = 506118;
     try {
       GetBinResponse result = client
               .general
               .getBin()
-              .appId(appId)
               .cardBin(cardBin)
               .execute();
       System.out.println(result);
@@ -156,7 +154,6 @@ public class Example {
       ApiResponse<GetBinResponse> response = client
               .general
               .getBin()
-              .appId(appId)
               .cardBin(cardBin)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -180,7 +177,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **cardBin** | **Integer**|  | [optional] |
 
 ### Return type
@@ -189,7 +185,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -203,7 +199,7 @@ public class Example {
 
 <a name="getNuban"></a>
 # **getNuban**
-> GeneralGetNubanResponse getNuban().appId(appId).bankCode(bankCode).accountNumber(accountNumber).execute();
+> GeneralGetNubanResponse getNuban().bankCode(bankCode).accountNumber(accountNumber).execute();
 
 General Resolve NUBAN
 
@@ -227,15 +223,16 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     Integer bankCode = 58;
     Integer accountNumber = 37466959;
     try {
       GeneralGetNubanResponse result = client
               .general
               .getNuban()
-              .appId(appId)
               .bankCode(bankCode)
               .accountNumber(accountNumber)
               .execute();
@@ -256,7 +253,6 @@ public class Example {
       ApiResponse<GeneralGetNubanResponse> response = client
               .general
               .getNuban()
-              .appId(appId)
               .bankCode(bankCode)
               .accountNumber(accountNumber)
               .executeWithHttpInfo();
@@ -281,7 +277,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **bankCode** | **Integer**|  | [optional] |
 | **accountNumber** | **Integer**|  | [optional] |
 
@@ -291,7 +286,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

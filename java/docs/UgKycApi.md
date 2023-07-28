@@ -9,7 +9,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getVoter"></a>
 # **getVoter**
-> Object getVoter().appId(appId).id(id).firstName(firstName).lastName(lastName).execute();
+> Object getVoter().id(id).firstName(firstName).lastName(lastName).execute();
 
 Voters ID
 
@@ -20,6 +20,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.UgKycApi;
 import java.util.List;
@@ -30,9 +31,11 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     Integer id = 67335751;
     String firstName = "Happy";
     String lastName = "Christmas";
@@ -40,7 +43,6 @@ public class Example {
       Object result = client
               .ugKyc
               .getVoter()
-              .appId(appId)
               .id(id)
               .firstName(firstName)
               .lastName(lastName)
@@ -58,7 +60,6 @@ public class Example {
       ApiResponse<Object> response = client
               .ugKyc
               .getVoter()
-              .appId(appId)
               .id(id)
               .firstName(firstName)
               .lastName(lastName)
@@ -84,7 +85,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **id** | **Integer**|  | [optional] |
 | **firstName** | **String**|  | [optional] |
 | **lastName** | **String**|  | [optional] |
@@ -95,7 +95,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

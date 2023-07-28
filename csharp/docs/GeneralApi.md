@@ -10,7 +10,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getbanks"></a>
 # **GetBanks**
-> GetBanksResponse GetBanks (string appId = null)
+> GetBanksResponse GetBanks ()
 
 General - Get Banks
 
@@ -19,7 +19,6 @@ General - Get Banks
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -29,19 +28,18 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new GeneralApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // General - Get Banks
-                GetBanksResponse result = apiInstance.GetBanks(appId);
+                GetBanksResponse result = client.General.GetBanks();
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -68,7 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // General - Get Banks
-    ApiResponse<GetBanksResponse> response = apiInstance.GetBanksWithHttpInfo(appId);
+    ApiResponse<GetBanksResponse> response = apiInstance.GetBanksWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -82,18 +80,14 @@ catch (ApiException e)
 ```
 
 ### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
-
+This endpoint does not need any parameter.
 ### Return type
 
 [**GetBanksResponse**](GetBanksResponse.md)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -110,7 +104,7 @@ catch (ApiException e)
 
 <a name="getbin"></a>
 # **GetBin**
-> GetBinResponse GetBin (string appId = null, int? cardBin = null)
+> GetBinResponse GetBin (int? cardBin = null)
 
 General Resolve BIN
 
@@ -119,7 +113,6 @@ General Resolve BIN
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -129,20 +122,19 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new GeneralApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
             var cardBin = 506118;  // int? |  (optional) 
 
             try
             {
                 // General Resolve BIN
-                GetBinResponse result = apiInstance.GetBin(appId, cardBin);
+                GetBinResponse result = client.General.GetBin(cardBin);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -169,7 +161,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // General Resolve BIN
-    ApiResponse<GetBinResponse> response = apiInstance.GetBinWithHttpInfo(appId, cardBin);
+    ApiResponse<GetBinResponse> response = apiInstance.GetBinWithHttpInfo(cardBin);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -186,7 +178,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **cardBin** | **int?** |  | [optional]  |
 
 ### Return type
@@ -195,7 +186,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -212,7 +203,7 @@ catch (ApiException e)
 
 <a name="getnuban"></a>
 # **GetNuban**
-> GeneralGetNubanResponse GetNuban (string appId = null, int? bankCode = null, int? accountNumber = null)
+> GeneralGetNubanResponse GetNuban (int? bankCode = null, int? accountNumber = null)
 
 General Resolve NUBAN
 
@@ -221,7 +212,6 @@ General Resolve NUBAN
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -231,21 +221,20 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new GeneralApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
             var bankCode = 58;  // int? |  (optional) 
             var accountNumber = 37466959;  // int? |  (optional) 
 
             try
             {
                 // General Resolve NUBAN
-                GeneralGetNubanResponse result = apiInstance.GetNuban(appId, bankCode, accountNumber);
+                GeneralGetNubanResponse result = client.General.GetNuban(bankCode, accountNumber);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -272,7 +261,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // General Resolve NUBAN
-    ApiResponse<GeneralGetNubanResponse> response = apiInstance.GetNubanWithHttpInfo(appId, bankCode, accountNumber);
+    ApiResponse<GeneralGetNubanResponse> response = apiInstance.GetNubanWithHttpInfo(bankCode, accountNumber);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -289,7 +278,6 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
 | **bankCode** | **int?** |  | [optional]  |
 | **accountNumber** | **int?** |  | [optional]  |
 
@@ -299,7 +287,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

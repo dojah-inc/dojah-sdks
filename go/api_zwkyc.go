@@ -25,7 +25,6 @@ type ZWKYCApiService service
 type ZWKYCApiCheckCreditRequest struct {
 	ctx context.Context
 	ApiService *ZWKYCApiService
-	appId *string
 	idNumber *string
 	name *string
 	surname *string
@@ -33,11 +32,6 @@ type ZWKYCApiCheckCreditRequest struct {
 	dob *string
 	maritalStatus *string
 	mobileNumber *int32
-}
-
-func (r ZWKYCApiCheckCreditRequest) AppId(appId string) ZWKYCApiCheckCreditRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r ZWKYCApiCheckCreditRequest) IdNumber(idNumber string) ZWKYCApiCheckCreditRequest {
@@ -151,8 +145,19 @@ func (a *ZWKYCApiService) CheckCreditExecute(r ZWKYCApiCheckCreditRequest) (*ZwK
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -194,13 +199,7 @@ func (a *ZWKYCApiService) CheckCreditExecute(r ZWKYCApiCheckCreditRequest) (*ZwK
 type ZWKYCApiVerifyIdRequest struct {
 	ctx context.Context
 	ApiService *ZWKYCApiService
-	appId *string
 	id *string
-}
-
-func (r ZWKYCApiVerifyIdRequest) AppId(appId string) ZWKYCApiVerifyIdRequest {
-	r.appId = &appId
-	return r
 }
 
 func (r ZWKYCApiVerifyIdRequest) Id(id string) ZWKYCApiVerifyIdRequest {
@@ -266,8 +265,19 @@ func (a *ZWKYCApiService) VerifyIdExecute(r ZWKYCApiVerifyIdRequest) (*ZwKycVeri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.appId != nil {
-		localVarHeaderParams["AppId"] = parameterToString(*r.appId, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["appIdAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Appid"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

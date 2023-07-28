@@ -30,10 +30,9 @@ namespace Dojah.Net.Api
         /// Delete Webhook
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeleteWebhookResponse</returns>
-        DeleteWebhookResponse DeleteWebhook(string appId = default(string), int operationIndex = 0);
+        DeleteWebhookResponse DeleteWebhook(int operationIndex = 0);
 
         /// <summary>
         /// Delete Webhook
@@ -42,18 +41,16 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeleteWebhookResponse</returns>
-        ApiResponse<DeleteWebhookResponse> DeleteWebhookWithHttpInfo(string appId = default(string), int operationIndex = 0);
+        ApiResponse<DeleteWebhookResponse> DeleteWebhookWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Fetch All Webhooks
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetWebhooksResponse</returns>
-        GetWebhooksResponse GetWebhooks(string appId = default(string), int operationIndex = 0);
+        GetWebhooksResponse GetWebhooks(int operationIndex = 0);
 
         /// <summary>
         /// Fetch All Webhooks
@@ -62,19 +59,17 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetWebhooksResponse</returns>
-        ApiResponse<GetWebhooksResponse> GetWebhooksWithHttpInfo(string appId = default(string), int operationIndex = 0);
+        ApiResponse<GetWebhooksResponse> GetWebhooksWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Post Hook
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notifyWebhookRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>NotifyWebhookResponse</returns>
-        NotifyWebhookResponse NotifyWebhook(NotifyWebhookRequest notifyWebhookRequest, string appId = default(string), int operationIndex = 0);
+        NotifyWebhookResponse NotifyWebhook(NotifyWebhookRequest notifyWebhookRequest, int operationIndex = 0);
 
         /// <summary>
         /// Post Hook
@@ -84,19 +79,17 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notifyWebhookRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of NotifyWebhookResponse</returns>
-        ApiResponse<NotifyWebhookResponse> NotifyWebhookWithHttpInfo(NotifyWebhookRequest notifyWebhookRequest, string appId = default(string), int operationIndex = 0);
+        ApiResponse<NotifyWebhookResponse> NotifyWebhookWithHttpInfo(NotifyWebhookRequest notifyWebhookRequest, int operationIndex = 0);
         /// <summary>
         /// Subscribe to service
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscribeServiceRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscribeServiceResponse</returns>
-        SubscribeServiceResponse SubscribeService(SubscribeServiceRequest subscribeServiceRequest, string appId = default(string), int operationIndex = 0);
+        SubscribeServiceResponse SubscribeService(SubscribeServiceRequest subscribeServiceRequest, int operationIndex = 0);
 
         /// <summary>
         /// Subscribe to service
@@ -106,10 +99,9 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscribeServiceRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscribeServiceResponse</returns>
-        ApiResponse<SubscribeServiceResponse> SubscribeServiceWithHttpInfo(SubscribeServiceRequest subscribeServiceRequest, string appId = default(string), int operationIndex = 0);
+        ApiResponse<SubscribeServiceResponse> SubscribeServiceWithHttpInfo(SubscribeServiceRequest subscribeServiceRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -126,11 +118,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeleteWebhookResponse</returns>
-        System.Threading.Tasks.Task<DeleteWebhookResponse> DeleteWebhookAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DeleteWebhookResponse> DeleteWebhookAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Webhook
@@ -139,11 +130,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeleteWebhookResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeleteWebhookResponse>> DeleteWebhookWithHttpInfoAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DeleteWebhookResponse>> DeleteWebhookWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Fetch All Webhooks
         /// </summary>
@@ -151,11 +141,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetWebhooksResponse</returns>
-        System.Threading.Tasks.Task<GetWebhooksResponse> GetWebhooksAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetWebhooksResponse> GetWebhooksAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Fetch All Webhooks
@@ -164,11 +153,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetWebhooksResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetWebhooksResponse>> GetWebhooksWithHttpInfoAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetWebhooksResponse>> GetWebhooksWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Post Hook
         /// </summary>
@@ -177,11 +165,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notifyWebhookRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NotifyWebhookResponse</returns>
-        System.Threading.Tasks.Task<NotifyWebhookResponse> NotifyWebhookAsync(NotifyWebhookRequest notifyWebhookRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<NotifyWebhookResponse> NotifyWebhookAsync(NotifyWebhookRequest notifyWebhookRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Post Hook
@@ -191,11 +178,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notifyWebhookRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (NotifyWebhookResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<NotifyWebhookResponse>> NotifyWebhookWithHttpInfoAsync(NotifyWebhookRequest notifyWebhookRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<NotifyWebhookResponse>> NotifyWebhookWithHttpInfoAsync(NotifyWebhookRequest notifyWebhookRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Subscribe to service
         /// </summary>
@@ -204,11 +190,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscribeServiceRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscribeServiceResponse</returns>
-        System.Threading.Tasks.Task<SubscribeServiceResponse> SubscribeServiceAsync(SubscribeServiceRequest subscribeServiceRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SubscribeServiceResponse> SubscribeServiceAsync(SubscribeServiceRequest subscribeServiceRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Subscribe to service
@@ -218,11 +203,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscribeServiceRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscribeServiceResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubscribeServiceResponse>> SubscribeServiceWithHttpInfoAsync(SubscribeServiceRequest subscribeServiceRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SubscribeServiceResponse>> SubscribeServiceWithHttpInfoAsync(SubscribeServiceRequest subscribeServiceRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -347,12 +331,11 @@ namespace Dojah.Net.Api
         /// Delete Webhook 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeleteWebhookResponse</returns>
-        public DeleteWebhookResponse DeleteWebhook(string appId = default(string), int operationIndex = 0)
+        public DeleteWebhookResponse DeleteWebhook(int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<DeleteWebhookResponse> localVarResponse = DeleteWebhookWithHttpInfo(appId);
+            Dojah.Net.Client.ApiResponse<DeleteWebhookResponse> localVarResponse = DeleteWebhookWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -360,10 +343,9 @@ namespace Dojah.Net.Api
         /// Delete Webhook 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeleteWebhookResponse</returns>
-        public Dojah.Net.Client.ApiResponse<DeleteWebhookResponse> DeleteWebhookWithHttpInfo(string appId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<DeleteWebhookResponse> DeleteWebhookWithHttpInfo(int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -387,15 +369,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "WebHooksApi.DeleteWebhook";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<DeleteWebhookResponse>("/api/v1/webhook/delete", localVarRequestOptions, this.Configuration);
@@ -415,13 +398,12 @@ namespace Dojah.Net.Api
         /// Delete Webhook 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeleteWebhookResponse</returns>
-        public async System.Threading.Tasks.Task<DeleteWebhookResponse> DeleteWebhookAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DeleteWebhookResponse> DeleteWebhookAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<DeleteWebhookResponse> localVarResponse = await DeleteWebhookWithHttpInfoAsync(appId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<DeleteWebhookResponse> localVarResponse = await DeleteWebhookWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -429,11 +411,10 @@ namespace Dojah.Net.Api
         /// Delete Webhook 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeleteWebhookResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<DeleteWebhookResponse>> DeleteWebhookWithHttpInfoAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<DeleteWebhookResponse>> DeleteWebhookWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -458,15 +439,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "WebHooksApi.DeleteWebhook";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<DeleteWebhookResponse>("/api/v1/webhook/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -487,12 +469,11 @@ namespace Dojah.Net.Api
         /// Fetch All Webhooks 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetWebhooksResponse</returns>
-        public GetWebhooksResponse GetWebhooks(string appId = default(string), int operationIndex = 0)
+        public GetWebhooksResponse GetWebhooks(int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetWebhooksResponse> localVarResponse = GetWebhooksWithHttpInfo(appId);
+            Dojah.Net.Client.ApiResponse<GetWebhooksResponse> localVarResponse = GetWebhooksWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -500,10 +481,9 @@ namespace Dojah.Net.Api
         /// Fetch All Webhooks 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetWebhooksResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetWebhooksResponse> GetWebhooksWithHttpInfo(string appId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GetWebhooksResponse> GetWebhooksWithHttpInfo(int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -527,15 +507,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "WebHooksApi.GetWebhooks";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<GetWebhooksResponse>("/api/v1/webhook/fetch", localVarRequestOptions, this.Configuration);
@@ -555,13 +536,12 @@ namespace Dojah.Net.Api
         /// Fetch All Webhooks 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetWebhooksResponse</returns>
-        public async System.Threading.Tasks.Task<GetWebhooksResponse> GetWebhooksAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetWebhooksResponse> GetWebhooksAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetWebhooksResponse> localVarResponse = await GetWebhooksWithHttpInfoAsync(appId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetWebhooksResponse> localVarResponse = await GetWebhooksWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -569,11 +549,10 @@ namespace Dojah.Net.Api
         /// Fetch All Webhooks 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetWebhooksResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetWebhooksResponse>> GetWebhooksWithHttpInfoAsync(string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetWebhooksResponse>> GetWebhooksWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -598,15 +577,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "WebHooksApi.GetWebhooks";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<GetWebhooksResponse>("/api/v1/webhook/fetch", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -628,12 +608,11 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notifyWebhookRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>NotifyWebhookResponse</returns>
-        public NotifyWebhookResponse NotifyWebhook(NotifyWebhookRequest notifyWebhookRequest, string appId = default(string), int operationIndex = 0)
+        public NotifyWebhookResponse NotifyWebhook(NotifyWebhookRequest notifyWebhookRequest, int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<NotifyWebhookResponse> localVarResponse = NotifyWebhookWithHttpInfo(notifyWebhookRequest, appId);
+            Dojah.Net.Client.ApiResponse<NotifyWebhookResponse> localVarResponse = NotifyWebhookWithHttpInfo(notifyWebhookRequest);
             return localVarResponse.Data;
         }
 
@@ -642,10 +621,9 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notifyWebhookRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of NotifyWebhookResponse</returns>
-        public Dojah.Net.Client.ApiResponse<NotifyWebhookResponse> NotifyWebhookWithHttpInfo(NotifyWebhookRequest notifyWebhookRequest, string appId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<NotifyWebhookResponse> NotifyWebhookWithHttpInfo(NotifyWebhookRequest notifyWebhookRequest, int operationIndex = 0)
         {
             // verify the required parameter 'notifyWebhookRequest' is set
             if (notifyWebhookRequest == null)
@@ -676,15 +654,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
             localVarRequestOptions.Data = notifyWebhookRequest;
 
             localVarRequestOptions.Operation = "WebHooksApi.NotifyWebhook";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<NotifyWebhookResponse>("/api/v1/webhook/notify", localVarRequestOptions, this.Configuration);
@@ -705,13 +684,12 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notifyWebhookRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NotifyWebhookResponse</returns>
-        public async System.Threading.Tasks.Task<NotifyWebhookResponse> NotifyWebhookAsync(NotifyWebhookRequest notifyWebhookRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<NotifyWebhookResponse> NotifyWebhookAsync(NotifyWebhookRequest notifyWebhookRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<NotifyWebhookResponse> localVarResponse = await NotifyWebhookWithHttpInfoAsync(notifyWebhookRequest, appId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<NotifyWebhookResponse> localVarResponse = await NotifyWebhookWithHttpInfoAsync(notifyWebhookRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -720,11 +698,10 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notifyWebhookRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (NotifyWebhookResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<NotifyWebhookResponse>> NotifyWebhookWithHttpInfoAsync(NotifyWebhookRequest notifyWebhookRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<NotifyWebhookResponse>> NotifyWebhookWithHttpInfoAsync(NotifyWebhookRequest notifyWebhookRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'notifyWebhookRequest' is set
             if (notifyWebhookRequest == null)
@@ -756,15 +733,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
             localVarRequestOptions.Data = notifyWebhookRequest;
 
             localVarRequestOptions.Operation = "WebHooksApi.NotifyWebhook";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<NotifyWebhookResponse>("/api/v1/webhook/notify", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -786,12 +764,11 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscribeServiceRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SubscribeServiceResponse</returns>
-        public SubscribeServiceResponse SubscribeService(SubscribeServiceRequest subscribeServiceRequest, string appId = default(string), int operationIndex = 0)
+        public SubscribeServiceResponse SubscribeService(SubscribeServiceRequest subscribeServiceRequest, int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<SubscribeServiceResponse> localVarResponse = SubscribeServiceWithHttpInfo(subscribeServiceRequest, appId);
+            Dojah.Net.Client.ApiResponse<SubscribeServiceResponse> localVarResponse = SubscribeServiceWithHttpInfo(subscribeServiceRequest);
             return localVarResponse.Data;
         }
 
@@ -800,10 +777,9 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscribeServiceRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SubscribeServiceResponse</returns>
-        public Dojah.Net.Client.ApiResponse<SubscribeServiceResponse> SubscribeServiceWithHttpInfo(SubscribeServiceRequest subscribeServiceRequest, string appId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<SubscribeServiceResponse> SubscribeServiceWithHttpInfo(SubscribeServiceRequest subscribeServiceRequest, int operationIndex = 0)
         {
             // verify the required parameter 'subscribeServiceRequest' is set
             if (subscribeServiceRequest == null)
@@ -834,15 +810,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
             localVarRequestOptions.Data = subscribeServiceRequest;
 
             localVarRequestOptions.Operation = "WebHooksApi.SubscribeService";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
             // authentication (noauthAuth) required
 
             // make the HTTP request
@@ -864,13 +841,12 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscribeServiceRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SubscribeServiceResponse</returns>
-        public async System.Threading.Tasks.Task<SubscribeServiceResponse> SubscribeServiceAsync(SubscribeServiceRequest subscribeServiceRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SubscribeServiceResponse> SubscribeServiceAsync(SubscribeServiceRequest subscribeServiceRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<SubscribeServiceResponse> localVarResponse = await SubscribeServiceWithHttpInfoAsync(subscribeServiceRequest, appId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<SubscribeServiceResponse> localVarResponse = await SubscribeServiceWithHttpInfoAsync(subscribeServiceRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -879,11 +855,10 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscribeServiceRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SubscribeServiceResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<SubscribeServiceResponse>> SubscribeServiceWithHttpInfoAsync(SubscribeServiceRequest subscribeServiceRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<SubscribeServiceResponse>> SubscribeServiceWithHttpInfoAsync(SubscribeServiceRequest subscribeServiceRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'subscribeServiceRequest' is set
             if (subscribeServiceRequest == null)
@@ -915,15 +890,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
             localVarRequestOptions.Data = subscribeServiceRequest;
 
             localVarRequestOptions.Operation = "WebHooksApi.SubscribeService";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
             // authentication (noauthAuth) required
 
             // make the HTTP request

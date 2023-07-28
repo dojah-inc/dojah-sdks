@@ -135,8 +135,12 @@ conf = dojah_client.Configuration(
                 self.api_key = {'appIdAuth': api_key}
             else:
                 self.api_key = api_key
+        else:
+            raise ClientConfigurationError('API Key "appIdAuth" is required')
         if appid:
             self.api_key['appIdAuth'] = appid
+        elif api_key is None:
+            raise ClientConfigurationError('API Key "appIdAuth" is required')
         """dict to store API key(s)
         """
         self.api_key_prefix = {}

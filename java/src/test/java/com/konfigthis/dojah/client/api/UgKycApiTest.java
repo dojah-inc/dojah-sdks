@@ -47,12 +47,10 @@ public class UgKycApiTest {
      */
     @Test
     public void getVoterTest() throws ApiException {
-        String appId = null;
         Integer id = null;
         String firstName = null;
         String lastName = null;
         Object response = api.getVoter()
-                .appId(appId)
                 .id(id)
                 .firstName(firstName)
                 .lastName(lastName)

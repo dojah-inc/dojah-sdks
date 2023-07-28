@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.fraud_get_email_reputation_response_entity import FraudGetEmailReputationResponseEntity
 
 class RequiredFraudGetEmailReputationResponse(TypedDict):
     pass
 
 class OptionalFraudGetEmailReputationResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: FraudGetEmailReputationResponseEntity
 
 class FraudGetEmailReputationResponse(RequiredFraudGetEmailReputationResponse, OptionalFraudGetEmailReputationResponse):
     pass

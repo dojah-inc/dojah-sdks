@@ -52,12 +52,10 @@ public class VerificationsApiTest {
      */
     @Test
     public void validateBvnTest() throws ApiException {
-        String appId = null;
         Integer bvn = null;
         String firstName = null;
         String dob = null;
         Object response = api.validateBvn()
-                .appId(appId)
                 .bvn(bvn)
                 .firstName(firstName)
                 .dob(dob)
@@ -72,7 +70,6 @@ public class VerificationsApiTest {
      */
     @Test
     public void verifyAgeTest() throws ApiException {
-        String appId = null;
         String mode = null;
         Integer accountNumber = null;
         Integer bankCode = null;
@@ -80,7 +77,6 @@ public class VerificationsApiTest {
         String firstName = null;
         String lastName = null;
         VerifyAgeResponse response = api.verifyAge()
-                .appId(appId)
                 .mode(mode)
                 .accountNumber(accountNumber)
                 .bankCode(bankCode)
@@ -100,11 +96,9 @@ public class VerificationsApiTest {
     public void verifySelfieBvnTest() throws ApiException {
         String bvn = null;
         String selfieImage = null;
-        String appId = null;
         VerifySelfieBvnResponse response = api.verifySelfieBvn()
                 .bvn(bvn)
                 .selfieImage(selfieImage)
-                .appId(appId)
                 .execute();
         // TODO: test validations
     }
@@ -118,11 +112,9 @@ public class VerificationsApiTest {
     public void verifySelfieNinTest() throws ApiException {
         String nin = null;
         String selfieImage = null;
-        String appId = null;
         Object response = api.verifySelfieNin()
                 .nin(nin)
                 .selfieImage(selfieImage)
-                .appId(appId)
                 .execute();
         // TODO: test validations
     }
@@ -136,11 +128,9 @@ public class VerificationsApiTest {
     public void verifySelfieVninTest() throws ApiException {
         String vnin = null;
         String selfieImage = null;
-        String appId = null;
         Object response = api.verifySelfieVnin()
                 .vnin(vnin)
                 .selfieImage(selfieImage)
-                .appId(appId)
                 .execute();
         // TODO: test validations
     }

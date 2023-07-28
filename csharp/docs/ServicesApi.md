@@ -8,7 +8,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getwalletbalance"></a>
 # **GetWalletBalance**
-> GetWalletBalanceResponse GetWalletBalance (string appId = null)
+> GetWalletBalanceResponse GetWalletBalance ()
 
 Get Dojah Wallet Balance
 
@@ -17,7 +17,6 @@ Get Dojah Wallet Balance
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Dojah.Net.Api;
 using Dojah.Net.Client;
 using Dojah.Net.Model;
 
@@ -27,19 +26,18 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
 
+            Dojah client = new Dojah();
             // Configure custom BasePath if desired
-            // config.BasePath = "https://api.dojah.io";
+            client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: appIdAuth
+            client.SetApiKey("YOUR_API_KEY");
 
-
-            var apiInstance = new ServicesApi(config);
-            var appId = {{app_id}};  // string |  (optional) 
 
             try
             {
                 // Get Dojah Wallet Balance
-                GetWalletBalanceResponse result = apiInstance.GetWalletBalance(appId);
+                GetWalletBalanceResponse result = client.Services.GetWalletBalance();
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -66,7 +64,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get Dojah Wallet Balance
-    ApiResponse<GetWalletBalanceResponse> response = apiInstance.GetWalletBalanceWithHttpInfo(appId);
+    ApiResponse<GetWalletBalanceResponse> response = apiInstance.GetWalletBalanceWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -80,18 +78,14 @@ catch (ApiException e)
 ```
 
 ### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **appId** | **string** |  | [optional]  |
-
+This endpoint does not need any parameter.
 ### Return type
 
 [**GetWalletBalanceResponse**](GetWalletBalanceResponse.md)
 
 ### Authorization
 
-[noauthAuth](../README.md#noauthAuth)
+[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 

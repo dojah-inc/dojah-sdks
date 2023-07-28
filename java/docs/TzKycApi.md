@@ -9,7 +9,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getNin"></a>
 # **getNin**
-> Object getNin().appId(appId).firstName(firstName).lastName(lastName).dateOfBirth(dateOfBirth).mothersLastName(mothersLastName).mothersFirstName(mothersFirstName).execute();
+> Object getNin().firstName(firstName).lastName(lastName).dateOfBirth(dateOfBirth).mothersLastName(mothersLastName).mothersFirstName(mothersFirstName).execute();
 
 Lookup TZ NIN
 
@@ -20,6 +20,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.TzKycApi;
 import java.util.List;
@@ -30,9 +31,11 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String firstName = "khafsa";
     String lastName = "mohammed";
     String dateOfBirth = "1994-01-11";
@@ -42,7 +45,6 @@ public class Example {
       Object result = client
               .tzKyc
               .getNin()
-              .appId(appId)
               .firstName(firstName)
               .lastName(lastName)
               .dateOfBirth(dateOfBirth)
@@ -62,7 +64,6 @@ public class Example {
       ApiResponse<Object> response = client
               .tzKyc
               .getNin()
-              .appId(appId)
               .firstName(firstName)
               .lastName(lastName)
               .dateOfBirth(dateOfBirth)
@@ -90,7 +91,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **firstName** | **String**|  | [optional] |
 | **lastName** | **String**|  | [optional] |
 | **dateOfBirth** | **String**|  | [optional] |
@@ -103,7 +103,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

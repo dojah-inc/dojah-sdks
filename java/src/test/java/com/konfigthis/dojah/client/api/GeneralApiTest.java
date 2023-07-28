@@ -50,9 +50,7 @@ public class GeneralApiTest {
      */
     @Test
     public void getBanksTest() throws ApiException {
-        String appId = null;
         GetBanksResponse response = api.getBanks()
-                .appId(appId)
                 .execute();
         // TODO: test validations
     }
@@ -64,10 +62,8 @@ public class GeneralApiTest {
      */
     @Test
     public void getBinTest() throws ApiException {
-        String appId = null;
         Integer cardBin = null;
         GetBinResponse response = api.getBin()
-                .appId(appId)
                 .cardBin(cardBin)
                 .execute();
         // TODO: test validations
@@ -80,11 +76,9 @@ public class GeneralApiTest {
      */
     @Test
     public void getNubanTest() throws ApiException {
-        String appId = null;
         Integer bankCode = null;
         Integer accountNumber = null;
         GeneralGetNubanResponse response = api.getNuban()
-                .appId(appId)
                 .bankCode(bankCode)
                 .accountNumber(accountNumber)
                 .execute();

@@ -47,14 +47,12 @@ public class TzKycApiTest {
      */
     @Test
     public void getNinTest() throws ApiException {
-        String appId = null;
         String firstName = null;
         String lastName = null;
         String dateOfBirth = null;
         String mothersLastName = null;
         String mothersFirstName = null;
         Object response = api.getNin()
-                .appId(appId)
                 .firstName(firstName)
                 .lastName(lastName)
                 .dateOfBirth(dateOfBirth)

@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.get_full_bvn_response_entity import GetFullBvnResponseEntity
 
 class RequiredGetFullBvnResponse(TypedDict):
     pass
 
 class OptionalGetFullBvnResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: GetFullBvnResponseEntity
 
 class GetFullBvnResponse(RequiredGetFullBvnResponse, OptionalGetFullBvnResponse):
     pass

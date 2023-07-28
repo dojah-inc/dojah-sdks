@@ -29,7 +29,6 @@ namespace Dojah.Net.Api
         /// Canada Ekyc
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -39,7 +38,7 @@ namespace Dojah.Net.Api
         /// <param name="postCode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object CaEkyc(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0);
+        Object CaEkyc(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// Canada Ekyc
@@ -48,7 +47,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -58,12 +56,11 @@ namespace Dojah.Net.Api
         /// <param name="postCode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> CaEkycWithHttpInfo(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0);
+        ApiResponse<Object> CaEkycWithHttpInfo(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0);
         /// <summary>
         /// US SSN
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -73,7 +70,7 @@ namespace Dojah.Net.Api
         /// <param name="postCode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object GetUsSsn(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0);
+        Object GetUsSsn(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// US SSN
@@ -82,7 +79,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -92,12 +88,11 @@ namespace Dojah.Net.Api
         /// <param name="postCode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> GetUsSsnWithHttpInfo(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0);
+        ApiResponse<Object> GetUsSsnWithHttpInfo(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0);
         /// <summary>
         /// UK 2+2
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -107,7 +102,7 @@ namespace Dojah.Net.Api
         /// <param name="postCode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object UkTwoPlusTwo(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0);
+        Object UkTwoPlusTwo(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// UK 2+2
@@ -116,7 +111,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -126,7 +120,7 @@ namespace Dojah.Net.Api
         /// <param name="postCode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> UkTwoPlusTwoWithHttpInfo(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0);
+        ApiResponse<Object> UkTwoPlusTwoWithHttpInfo(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -143,7 +137,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -154,7 +147,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> CaEkycAsync(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> CaEkycAsync(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Canada Ekyc
@@ -163,7 +156,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -174,7 +166,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CaEkycWithHttpInfoAsync(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CaEkycWithHttpInfoAsync(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// US SSN
         /// </summary>
@@ -182,7 +174,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -193,7 +184,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> GetUsSsnAsync(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> GetUsSsnAsync(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// US SSN
@@ -202,7 +193,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -213,7 +203,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetUsSsnWithHttpInfoAsync(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetUsSsnWithHttpInfoAsync(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// UK 2+2
         /// </summary>
@@ -221,7 +211,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -232,7 +221,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> UkTwoPlusTwoAsync(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> UkTwoPlusTwoAsync(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// UK 2+2
@@ -241,7 +230,6 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -252,7 +240,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UkTwoPlusTwoWithHttpInfoAsync(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UkTwoPlusTwoWithHttpInfoAsync(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -377,7 +365,6 @@ namespace Dojah.Net.Api
         /// Canada Ekyc 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -387,9 +374,9 @@ namespace Dojah.Net.Api
         /// <param name="postCode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object CaEkyc(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0)
+        public Object CaEkyc(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = CaEkycWithHttpInfo(appId, country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = CaEkycWithHttpInfo(country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
             return localVarResponse.Data;
         }
 
@@ -397,7 +384,6 @@ namespace Dojah.Net.Api
         /// Canada Ekyc 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -407,7 +393,7 @@ namespace Dojah.Net.Api
         /// <param name="postCode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public Dojah.Net.Client.ApiResponse<Object> CaEkycWithHttpInfo(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<Object> CaEkycWithHttpInfo(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -459,14 +445,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "post_code", postCode, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "GlobalKYCApi.CaEkyc";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Object>("/api/v1/ca/kyc", localVarRequestOptions, this.Configuration);
@@ -486,7 +473,6 @@ namespace Dojah.Net.Api
         /// Canada Ekyc 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -497,9 +483,9 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> CaEkycAsync(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> CaEkycAsync(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await CaEkycWithHttpInfoAsync(appId, country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await CaEkycWithHttpInfoAsync(country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -507,7 +493,6 @@ namespace Dojah.Net.Api
         /// Canada Ekyc 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -518,7 +503,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> CaEkycWithHttpInfoAsync(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> CaEkycWithHttpInfoAsync(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -571,14 +556,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "post_code", postCode, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "GlobalKYCApi.CaEkyc";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/api/v1/ca/kyc", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -599,7 +585,6 @@ namespace Dojah.Net.Api
         /// US SSN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -609,9 +594,9 @@ namespace Dojah.Net.Api
         /// <param name="postCode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object GetUsSsn(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0)
+        public Object GetUsSsn(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = GetUsSsnWithHttpInfo(appId, country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = GetUsSsnWithHttpInfo(country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
             return localVarResponse.Data;
         }
 
@@ -619,7 +604,6 @@ namespace Dojah.Net.Api
         /// US SSN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -629,7 +613,7 @@ namespace Dojah.Net.Api
         /// <param name="postCode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public Dojah.Net.Client.ApiResponse<Object> GetUsSsnWithHttpInfo(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<Object> GetUsSsnWithHttpInfo(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -681,14 +665,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "post_code", postCode, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "GlobalKYCApi.GetUsSsn";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Object>("/api/v1/us/kyc", localVarRequestOptions, this.Configuration);
@@ -708,7 +693,6 @@ namespace Dojah.Net.Api
         /// US SSN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -719,9 +703,9 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> GetUsSsnAsync(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> GetUsSsnAsync(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await GetUsSsnWithHttpInfoAsync(appId, country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await GetUsSsnWithHttpInfoAsync(country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -729,7 +713,6 @@ namespace Dojah.Net.Api
         /// US SSN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -740,7 +723,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> GetUsSsnWithHttpInfoAsync(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> GetUsSsnWithHttpInfoAsync(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -793,14 +776,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "post_code", postCode, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "GlobalKYCApi.GetUsSsn";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/api/v1/us/kyc", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -821,7 +805,6 @@ namespace Dojah.Net.Api
         /// UK 2+2 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -831,9 +814,9 @@ namespace Dojah.Net.Api
         /// <param name="postCode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object UkTwoPlusTwo(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0)
+        public Object UkTwoPlusTwo(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = UkTwoPlusTwoWithHttpInfo(appId, country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = UkTwoPlusTwoWithHttpInfo(country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode);
             return localVarResponse.Data;
         }
 
@@ -841,7 +824,6 @@ namespace Dojah.Net.Api
         /// UK 2+2 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -851,7 +833,7 @@ namespace Dojah.Net.Api
         /// <param name="postCode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public Dojah.Net.Client.ApiResponse<Object> UkTwoPlusTwoWithHttpInfo(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<Object> UkTwoPlusTwoWithHttpInfo(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -903,14 +885,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "post_code", postCode, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "GlobalKYCApi.UkTwoPlusTwo";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Object>("/api/v1/uk/kyc", localVarRequestOptions, this.Configuration);
@@ -930,7 +913,6 @@ namespace Dojah.Net.Api
         /// UK 2+2 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -941,9 +923,9 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> UkTwoPlusTwoAsync(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> UkTwoPlusTwoAsync(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await UkTwoPlusTwoWithHttpInfoAsync(appId, country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await UkTwoPlusTwoWithHttpInfoAsync(country, firstName, lastName, streetName, dateOfBirth, houseNumber, postCode, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -951,7 +933,6 @@ namespace Dojah.Net.Api
         /// UK 2+2 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="country"> (optional)</param>
         /// <param name="firstName"> (optional)</param>
         /// <param name="lastName"> (optional)</param>
@@ -962,7 +943,7 @@ namespace Dojah.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> UkTwoPlusTwoWithHttpInfoAsync(string appId = default(string), string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> UkTwoPlusTwoWithHttpInfoAsync(string country = default(string), string firstName = default(string), string lastName = default(string), string streetName = default(string), string dateOfBirth = default(string), int? houseNumber = default(int?), int? postCode = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -1015,14 +996,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "post_code", postCode, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "GlobalKYCApi.UkTwoPlusTwo";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/api/v1/uk/kyc", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

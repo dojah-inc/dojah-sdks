@@ -14,12 +14,13 @@ import typing
 from enum import Enum
 from typing_extensions import TypedDict, Literal
 
+from dojah_client.type.get_vin_response_entity import GetVinResponseEntity
 
 class RequiredGetVinResponse(TypedDict):
     pass
 
 class OptionalGetVinResponse(TypedDict, total=False):
-    entity: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+    entity: GetVinResponseEntity
 
 class GetVinResponse(RequiredGetVinResponse, OptionalGetVinResponse):
     pass

@@ -9,7 +9,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getWalletBalance"></a>
 # **getWalletBalance**
-> GetWalletBalanceResponse getWalletBalance().appId(appId).execute();
+> GetWalletBalanceResponse getWalletBalance().execute();
 
 Get Dojah Wallet Balance
 
@@ -32,14 +32,15 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     try {
       GetWalletBalanceResponse result = client
               .services
               .getWalletBalance()
-              .appId(appId)
               .execute();
       System.out.println(result);
 
@@ -58,7 +59,6 @@ public class Example {
       ApiResponse<GetWalletBalanceResponse> response = client
               .services
               .getWalletBalance()
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -78,10 +78,7 @@ public class Example {
 ```
 
 ### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -89,7 +86,7 @@ public class Example {
 
 ### Authorization
 
-[noauthAuth](../README.md#noauthAuth)
+[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 

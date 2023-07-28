@@ -12,7 +12,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getEmailReputation"></a>
 # **getEmailReputation**
-> FraudGetEmailReputationResponse getEmailReputation().appId(appId).email(email).execute();
+> FraudGetEmailReputationResponse getEmailReputation().email(email).execute();
 
 Email Reputation
 
@@ -35,15 +35,16 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String email = "johndoe@gmail.com";
     try {
       FraudGetEmailReputationResponse result = client
               .fraud
               .getEmailReputation()
-              .appId(appId)
               .email(email)
               .execute();
       System.out.println(result);
@@ -63,7 +64,6 @@ public class Example {
       ApiResponse<FraudGetEmailReputationResponse> response = client
               .fraud
               .getEmailReputation()
-              .appId(appId)
               .email(email)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -87,7 +87,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **email** | **String**|  | [optional] |
 
 ### Return type
@@ -96,7 +95,7 @@ public class Example {
 
 ### Authorization
 
-[noauthAuth](../README.md#noauthAuth)
+[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
 
 ### HTTP request headers
 
@@ -110,7 +109,7 @@ public class Example {
 
 <a name="getIpReputation"></a>
 # **getIpReputation**
-> FraudGetIpReputationResponse getIpReputation().appId(appId).ipAddress(ipAddress).execute();
+> FraudGetIpReputationResponse getIpReputation().ipAddress(ipAddress).execute();
 
 IP Reputation
 
@@ -121,6 +120,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.FraudApi;
 import java.util.List;
@@ -131,15 +131,16 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String ipAddress = "102.215.56.170";
     try {
       FraudGetIpReputationResponse result = client
               .fraud
               .getIpReputation()
-              .appId(appId)
               .ipAddress(ipAddress)
               .execute();
       System.out.println(result);
@@ -159,7 +160,6 @@ public class Example {
       ApiResponse<FraudGetIpReputationResponse> response = client
               .fraud
               .getIpReputation()
-              .appId(appId)
               .ipAddress(ipAddress)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -183,7 +183,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **ipAddress** | **String**|  | [optional] |
 
 ### Return type
@@ -192,7 +191,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -206,7 +205,7 @@ No authorization required
 
 <a name="screenPhone"></a>
 # **screenPhone**
-> FraudScreenPhoneResponse screenPhone().appId(appId).phoneNumber(phoneNumber).execute();
+> FraudScreenPhoneResponse screenPhone().phoneNumber(phoneNumber).execute();
 
 Phone Screening
 
@@ -217,6 +216,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.FraudApi;
 import java.util.List;
@@ -227,15 +227,16 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     Integer phoneNumber = 2348068810228;
     try {
       FraudScreenPhoneResponse result = client
               .fraud
               .screenPhone()
-              .appId(appId)
               .phoneNumber(phoneNumber)
               .execute();
       System.out.println(result);
@@ -255,7 +256,6 @@ public class Example {
       ApiResponse<FraudScreenPhoneResponse> response = client
               .fraud
               .screenPhone()
-              .appId(appId)
               .phoneNumber(phoneNumber)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -279,7 +279,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **phoneNumber** | **Integer**|  | [optional] |
 
 ### Return type
@@ -288,7 +287,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -302,7 +301,7 @@ No authorization required
 
 <a name="screenUser"></a>
 # **screenUser**
-> FraudScreenUserResponse screenUser().appId(appId).firstName(firstName).lastName(lastName).dateOfBirth(dateOfBirth).email(email).phone(phone).ipAddress(ipAddress).execute();
+> FraudScreenUserResponse screenUser().firstName(firstName).lastName(lastName).dateOfBirth(dateOfBirth).email(email).phone(phone).ipAddress(ipAddress).execute();
 
 User Screening
 
@@ -313,6 +312,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.FraudApi;
 import java.util.List;
@@ -323,9 +323,11 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String firstName = "Robert";
     String lastName = "Morris";
     String dateOfBirth = "1986-11-12";
@@ -336,7 +338,6 @@ public class Example {
       FraudScreenUserResponse result = client
               .fraud
               .screenUser()
-              .appId(appId)
               .firstName(firstName)
               .lastName(lastName)
               .dateOfBirth(dateOfBirth)
@@ -361,7 +362,6 @@ public class Example {
       ApiResponse<FraudScreenUserResponse> response = client
               .fraud
               .screenUser()
-              .appId(appId)
               .firstName(firstName)
               .lastName(lastName)
               .dateOfBirth(dateOfBirth)
@@ -390,7 +390,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **firstName** | **String**|  | [optional] |
 | **lastName** | **String**|  | [optional] |
 | **dateOfBirth** | **String**|  | [optional] |
@@ -404,7 +403,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

@@ -31,6 +31,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getBasicBvnResponse = await dojah.nigeriaKyc.getBasicBvn({});
@@ -43,7 +44,6 @@ console.log(getBasicBvnResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **bvn** | [**number**] |  | (optional) defaults to undefined
 
 
@@ -78,6 +78,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getBasicBvn1Response = await dojah.nigeriaKyc.getBasicBvn1({});
@@ -90,7 +91,6 @@ console.log(getBasicBvn1Response);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **bvn** | [**number**] |  | (optional) defaults to undefined
 
 
@@ -125,6 +125,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getBasicPhoneNumberResponse = await dojah.nigeriaKyc.getBasicPhoneNumber(
@@ -139,7 +140,6 @@ console.log(getBasicPhoneNumberResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **phoneNumber** | [**number**] |  | (optional) defaults to undefined
 
 
@@ -174,6 +174,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getDriversLicenseResponse = await dojah.nigeriaKyc.getDriversLicense({});
@@ -186,7 +187,6 @@ console.log(getDriversLicenseResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **licenseNumber** | [**string**] |  | (optional) defaults to undefined
 
 
@@ -221,6 +221,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getNinResponse = await dojah.nigeriaKyc.getNin({});
@@ -233,7 +234,6 @@ console.log(getNinResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **nin** | [**number**] |  | (optional) defaults to undefined
 
 
@@ -268,6 +268,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getNormalBvnResponse = await dojah.nigeriaKyc.getNormalBvn({});
@@ -280,7 +281,6 @@ console.log(getNormalBvnResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **bvn** | [**number**] |  | (optional) defaults to undefined
 
 
@@ -315,6 +315,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getNubanResponse = await dojah.nigeriaKyc.getNuban({});
@@ -327,7 +328,6 @@ console.log(getNubanResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **bankCode** | [**number**] |  | (optional) defaults to undefined
  **accountNumber** | [**number**] |  | (optional) defaults to undefined
 
@@ -411,6 +411,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getPhoneNumberResponse = await dojah.nigeriaKyc.getPhoneNumber({});
@@ -423,7 +424,6 @@ console.log(getPhoneNumberResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **phoneNumber** | [**number**] |  | (optional) defaults to undefined
 
 
@@ -459,6 +459,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getPremiumBvnResponse = await dojah.nigeriaKyc.getPremiumBvn({});
@@ -471,7 +472,6 @@ console.log(getPremiumBvnResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **bvn** | [**number**] |  | (optional) defaults to undefined
 
 
@@ -506,6 +506,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getVninResponse = await dojah.nigeriaKyc.getVnin({});
@@ -518,7 +519,6 @@ console.log(getVninResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **vnin** | [**string**] |  | (optional) defaults to undefined
 
 

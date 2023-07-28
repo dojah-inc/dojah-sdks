@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetVoter
 
-> map[string]interface{} GetVoter(ctx).AppId(appId).Id(id).FirstName(firstName).LastName(lastName).Execute()
+> map[string]interface{} GetVoter(ctx).Id(id).FirstName(firstName).LastName(lastName).Execute()
 
 Voters ID
 
@@ -27,14 +27,13 @@ import (
 )
 
 func main() {
-    appId := "{{app_id}}" // string |  (optional)
     id := int32(67335751) // int32 |  (optional)
-    firstName := "Happy" // string |  (optional)
-    lastName := "Christmas" // string |  (optional)
+    firstName := ""Happy"" // string |  (optional)
+    lastName := ""Christmas"" // string |  (optional)
 
     configuration := dojah.NewConfiguration()
     apiClient := dojah.NewAPIClient(configuration)
-    resp, r, err := apiClient.UGKYCApi.GetVoter(context.Background()).AppId(appId).Id(id).FirstName(firstName).LastName(lastName).Execute()
+    resp, r, err := apiClient.UGKYCApi.GetVoter(context.Background()).Id(id).FirstName(firstName).LastName(lastName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UGKYCApi.GetVoter``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -55,7 +54,6 @@ Other parameters are passed through a pointer to a apiGetVoterRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **string** |  | 
  **id** | **int32** |  | 
  **firstName** | **string** |  | 
  **lastName** | **string** |  | 
@@ -66,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

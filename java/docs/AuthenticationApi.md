@@ -14,7 +14,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="getSenderId"></a>
 # **getSenderId**
-> GetSenderIdResponse getSenderId().appId(appId).execute();
+> GetSenderIdResponse getSenderId().execute();
 
 Messaging - Get Sender IDs
 
@@ -38,13 +38,14 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     try {
       GetSenderIdResponse result = client
               .authentication
               .getSenderId()
-              .appId(appId)
               .execute();
       System.out.println(result);
 
@@ -63,7 +64,6 @@ public class Example {
       ApiResponse<GetSenderIdResponse> response = client
               .authentication
               .getSenderId()
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -83,10 +83,7 @@ public class Example {
 ```
 
 ### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -94,7 +91,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -108,7 +105,7 @@ public class Example {
 
 <a name="getSmsStatus"></a>
 # **getSmsStatus**
-> GetSmsStatusResponse getSmsStatus().appId(appId).messageId(messageId).execute();
+> GetSmsStatusResponse getSmsStatus().messageId(messageId).execute();
 
 Messaging - Get SMS Status
 
@@ -132,14 +129,15 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String messageId = "54818c8a-4aed-4e5f-b846-8274fd4e0bbd";
     try {
       GetSmsStatusResponse result = client
               .authentication
               .getSmsStatus()
-              .appId(appId)
               .messageId(messageId)
               .execute();
       System.out.println(result);
@@ -159,7 +157,6 @@ public class Example {
       ApiResponse<GetSmsStatusResponse> response = client
               .authentication
               .getSmsStatus()
-              .appId(appId)
               .messageId(messageId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
@@ -183,7 +180,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **messageId** | **String**|  | [optional] |
 
 ### Return type
@@ -192,7 +188,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -206,7 +202,7 @@ public class Example {
 
 <a name="requestSenderId"></a>
 # **requestSenderId**
-> RequestSenderIdResponse requestSenderId(requestSenderIdRequest).appId(appId).execute();
+> RequestSenderIdResponse requestSenderId(requestSenderIdRequest).execute();
 
 Messaging - Request Sender ID
 
@@ -217,6 +213,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.AuthenticationApi;
 import java.util.List;
@@ -227,16 +224,17 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     String senderId = "senderId_example";
-    String appId = "{{app_id}}";
     try {
       RequestSenderIdResponse result = client
               .authentication
               .requestSenderId()
               .senderId(senderId)
-              .appId(appId)
               .execute();
       System.out.println(result);
 
@@ -256,7 +254,6 @@ public class Example {
               .authentication
               .requestSenderId()
               .senderId(senderId)
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -280,7 +277,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **requestSenderIdRequest** | [**RequestSenderIdRequest**](RequestSenderIdRequest.md)|  | |
-| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -288,7 +284,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -302,7 +298,7 @@ No authorization required
 
 <a name="sendOtp"></a>
 # **sendOtp**
-> AuthenticationSendOtpResponse sendOtp(authenticationSendOtpRequest).appId(appId).execute();
+> AuthenticationSendOtpResponse sendOtp(authenticationSendOtpRequest).execute();
 
 Messaging - Send OTP
 
@@ -326,13 +322,15 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
     String destination = "destination_example";
     Double length = 3.4D;
     String channel = "channel_example";
     String senderId = "senderId_example";
     Boolean priority = true;
-    String appId = "{{app_id}}";
     try {
       AuthenticationSendOtpResponse result = client
               .authentication
@@ -342,7 +340,6 @@ public class Example {
               .channel(channel)
               .senderId(senderId)
               .priority(priority)
-              .appId(appId)
               .execute();
       System.out.println(result);
 
@@ -366,7 +363,6 @@ public class Example {
               .channel(channel)
               .senderId(senderId)
               .priority(priority)
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -390,7 +386,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authenticationSendOtpRequest** | [**AuthenticationSendOtpRequest**](AuthenticationSendOtpRequest.md)|  | |
-| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -398,7 +393,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -412,7 +407,7 @@ public class Example {
 
 <a name="sendSms"></a>
 # **sendSms**
-> SendSmsResponse sendSms(sendSmsRequest).appId(appId).execute();
+> SendSmsResponse sendSms(sendSmsRequest).execute();
 
 Messaging - Send SMS
 
@@ -436,12 +431,14 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
     String destination = "destination_example";
     String message = "message_example";
     String channel = "channel_example";
     String senderId = "senderId_example";
-    String appId = "{{app_id}}";
     try {
       SendSmsResponse result = client
               .authentication
@@ -450,7 +447,6 @@ public class Example {
               .message(message)
               .channel(channel)
               .senderId(senderId)
-              .appId(appId)
               .execute();
       System.out.println(result);
 
@@ -473,7 +469,6 @@ public class Example {
               .message(message)
               .channel(channel)
               .senderId(senderId)
-              .appId(appId)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -497,7 +492,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **sendSmsRequest** | [**SendSmsRequest**](SendSmsRequest.md)|  | |
-| **appId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -505,7 +499,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -519,7 +513,7 @@ public class Example {
 
 <a name="validateOtp"></a>
 # **validateOtp**
-> AuthenticationValidateOtpResponse validateOtp().appId(appId).referenceId(referenceId).code(code).execute();
+> AuthenticationValidateOtpResponse validateOtp().referenceId(referenceId).code(code).execute();
 
 Messaging - Validate OTP
 
@@ -543,15 +537,16 @@ public class Example {
     configuration.host = "https://api.dojah.io";
     
 
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
+
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String referenceId = "a89e4b64-367f-414f-a189-1800bc364b05";
     Integer code = 81974;
     try {
       AuthenticationValidateOtpResponse result = client
               .authentication
               .validateOtp()
-              .appId(appId)
               .referenceId(referenceId)
               .code(code)
               .execute();
@@ -572,7 +567,6 @@ public class Example {
       ApiResponse<AuthenticationValidateOtpResponse> response = client
               .authentication
               .validateOtp()
-              .appId(appId)
               .referenceId(referenceId)
               .code(code)
               .executeWithHttpInfo();
@@ -597,7 +591,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **referenceId** | **String**|  | [optional] |
 | **code** | **Integer**|  | [optional] |
 
@@ -607,7 +600,7 @@ public class Example {
 
 ### Authorization
 
-[apikeyAuth](../README.md#apikeyAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

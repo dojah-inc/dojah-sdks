@@ -23,19 +23,17 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
-const getBanksResponse = await dojah.general.getBanks({});
+const getBanksResponse = await dojah.general.getBanks();
 
 console.log(getBanksResponse);
 ```
 
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -69,6 +67,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getBinResponse = await dojah.general.getBin({});
@@ -81,7 +80,6 @@ console.log(getBinResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **cardBin** | [**number**] |  | (optional) defaults to undefined
 
 
@@ -116,6 +114,7 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
+  apiKey: "API_KEY",
 });
 
 const getNubanResponse = await dojah.general.getNuban({});
@@ -128,7 +127,6 @@ console.log(getNubanResponse);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | [**string**] |  | (optional) defaults to undefined
  **bankCode** | [**number**] |  | (optional) defaults to undefined
  **accountNumber** | [**number**] |  | (optional) defaults to undefined
 

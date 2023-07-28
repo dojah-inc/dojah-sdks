@@ -11,7 +11,7 @@ All URIs are relative to *https://api.dojah.io*
 
 <a name="caEkyc"></a>
 # **caEkyc**
-> Object caEkyc().appId(appId).country(country).firstName(firstName).lastName(lastName).streetName(streetName).dateOfBirth(dateOfBirth).houseNumber(houseNumber).postCode(postCode).execute();
+> Object caEkyc().country(country).firstName(firstName).lastName(lastName).streetName(streetName).dateOfBirth(dateOfBirth).houseNumber(houseNumber).postCode(postCode).execute();
 
 Canada Ekyc
 
@@ -22,6 +22,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.GlobalKycApi;
 import java.util.List;
@@ -32,9 +33,11 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String country = "GBR";
     String firstName = "Tobi";
     String lastName = "Ololade";
@@ -46,7 +49,6 @@ public class Example {
       Object result = client
               .globalKyc
               .caEkyc()
-              .appId(appId)
               .country(country)
               .firstName(firstName)
               .lastName(lastName)
@@ -68,7 +70,6 @@ public class Example {
       ApiResponse<Object> response = client
               .globalKyc
               .caEkyc()
-              .appId(appId)
               .country(country)
               .firstName(firstName)
               .lastName(lastName)
@@ -98,7 +99,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **country** | **String**|  | [optional] |
 | **firstName** | **String**|  | [optional] |
 | **lastName** | **String**|  | [optional] |
@@ -113,7 +113,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -127,7 +127,7 @@ No authorization required
 
 <a name="getUsSsn"></a>
 # **getUsSsn**
-> Object getUsSsn().appId(appId).country(country).firstName(firstName).lastName(lastName).streetName(streetName).dateOfBirth(dateOfBirth).houseNumber(houseNumber).postCode(postCode).execute();
+> Object getUsSsn().country(country).firstName(firstName).lastName(lastName).streetName(streetName).dateOfBirth(dateOfBirth).houseNumber(houseNumber).postCode(postCode).execute();
 
 US SSN
 
@@ -138,6 +138,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.GlobalKycApi;
 import java.util.List;
@@ -148,9 +149,11 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String country = "GBR";
     String firstName = "Tobi";
     String lastName = "Ololade";
@@ -162,7 +165,6 @@ public class Example {
       Object result = client
               .globalKyc
               .getUsSsn()
-              .appId(appId)
               .country(country)
               .firstName(firstName)
               .lastName(lastName)
@@ -184,7 +186,6 @@ public class Example {
       ApiResponse<Object> response = client
               .globalKyc
               .getUsSsn()
-              .appId(appId)
               .country(country)
               .firstName(firstName)
               .lastName(lastName)
@@ -214,7 +215,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **country** | **String**|  | [optional] |
 | **firstName** | **String**|  | [optional] |
 | **lastName** | **String**|  | [optional] |
@@ -229,7 +229,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -243,7 +243,7 @@ No authorization required
 
 <a name="ukTwoPlusTwo"></a>
 # **ukTwoPlusTwo**
-> Object ukTwoPlusTwo().appId(appId).country(country).firstName(firstName).lastName(lastName).streetName(streetName).dateOfBirth(dateOfBirth).houseNumber(houseNumber).postCode(postCode).execute();
+> Object ukTwoPlusTwo().country(country).firstName(firstName).lastName(lastName).streetName(streetName).dateOfBirth(dateOfBirth).houseNumber(houseNumber).postCode(postCode).execute();
 
 UK 2+2
 
@@ -254,6 +254,7 @@ import com.konfigthis.dojah.client.ApiException;
 import com.konfigthis.dojah.client.ApiResponse;
 import com.konfigthis.dojah.client.Dojah;
 import com.konfigthis.dojah.client.Configuration;
+import com.konfigthis.dojah.client.auth.*;
 import com.konfigthis.dojah.client.model.*;
 import com.konfigthis.dojah.client.api.GlobalKycApi;
 import java.util.List;
@@ -264,9 +265,11 @@ public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
+    
+    // Configure API key authorization: appIdAuth
+    configuration.Appid  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
-    String appId = "{{app_id}}";
     String country = "GBR";
     String firstName = "Tobi";
     String lastName = "Ololade";
@@ -278,7 +281,6 @@ public class Example {
       Object result = client
               .globalKyc
               .ukTwoPlusTwo()
-              .appId(appId)
               .country(country)
               .firstName(firstName)
               .lastName(lastName)
@@ -300,7 +302,6 @@ public class Example {
       ApiResponse<Object> response = client
               .globalKyc
               .ukTwoPlusTwo()
-              .appId(appId)
               .country(country)
               .firstName(firstName)
               .lastName(lastName)
@@ -330,7 +331,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **appId** | **String**|  | [optional] |
 | **country** | **String**|  | [optional] |
 | **firstName** | **String**|  | [optional] |
 | **lastName** | **String**|  | [optional] |
@@ -345,7 +345,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

@@ -31,10 +31,9 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="kycCheckLivenessRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object CheckLiveness(KycCheckLivenessRequest kycCheckLivenessRequest, string appId = default(string), int operationIndex = 0);
+        Object CheckLiveness(KycCheckLivenessRequest kycCheckLivenessRequest, int operationIndex = 0);
 
         /// <summary>
         /// Liveness Check
@@ -44,19 +43,17 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="kycCheckLivenessRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> CheckLivenessWithHttpInfo(KycCheckLivenessRequest kycCheckLivenessRequest, string appId = default(string), int operationIndex = 0);
+        ApiResponse<Object> CheckLivenessWithHttpInfo(KycCheckLivenessRequest kycCheckLivenessRequest, int operationIndex = 0);
         /// <summary>
         /// KYC - Fetch Accounts 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object GetAccounts(string appId = default(string), string bvn = default(string), int operationIndex = 0);
+        Object GetAccounts(string bvn = default(string), int operationIndex = 0);
 
         /// <summary>
         /// KYC - Fetch Accounts 
@@ -65,20 +62,18 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> GetAccountsWithHttpInfo(string appId = default(string), string bvn = default(string), int operationIndex = 0);
+        ApiResponse<Object> GetAccountsWithHttpInfo(string bvn = default(string), int operationIndex = 0);
         /// <summary>
         /// Fetch Address Verification Data
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="referenceId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object GetAddressVerification(string appId = default(string), string referenceId = default(string), int operationIndex = 0);
+        Object GetAddressVerification(string referenceId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Fetch Address Verification Data
@@ -87,21 +82,19 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="referenceId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> GetAddressVerificationWithHttpInfo(string appId = default(string), string referenceId = default(string), int operationIndex = 0);
+        ApiResponse<Object> GetAddressVerificationWithHttpInfo(string referenceId = default(string), int operationIndex = 0);
         /// <summary>
         /// Lookup BVN from NUBAN
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object GetBvnFromNuban(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0);
+        Object GetBvnFromNuban(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// Lookup BVN from NUBAN
@@ -110,21 +103,19 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> GetBvnFromNubanWithHttpInfo(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0);
+        ApiResponse<Object> GetBvnFromNubanWithHttpInfo(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0);
         /// <summary>
         /// KYC - Get VIN
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="vin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetVinResponse</returns>
-        GetVinResponse GetVin(string appId = default(string), string vin = default(string), int operationIndex = 0);
+        GetVinResponse GetVin(string vin = default(string), int operationIndex = 0);
 
         /// <summary>
         /// KYC - Get VIN
@@ -133,20 +124,18 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="vin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetVinResponse</returns>
-        ApiResponse<GetVinResponse> GetVinWithHttpInfo(string appId = default(string), string vin = default(string), int operationIndex = 0);
+        ApiResponse<GetVinResponse> GetVinWithHttpInfo(string vin = default(string), int operationIndex = 0);
         /// <summary>
         /// Submit Address
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="kycSubmitAddressRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>KycSubmitAddressResponse</returns>
-        KycSubmitAddressResponse SubmitAddress(string appId = default(string), KycSubmitAddressRequest kycSubmitAddressRequest = default(KycSubmitAddressRequest), int operationIndex = 0);
+        KycSubmitAddressResponse SubmitAddress(KycSubmitAddressRequest kycSubmitAddressRequest = default(KycSubmitAddressRequest), int operationIndex = 0);
 
         /// <summary>
         /// Submit Address
@@ -155,11 +144,10 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="kycSubmitAddressRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of KycSubmitAddressResponse</returns>
-        ApiResponse<KycSubmitAddressResponse> SubmitAddressWithHttpInfo(string appId = default(string), KycSubmitAddressRequest kycSubmitAddressRequest = default(KycSubmitAddressRequest), int operationIndex = 0);
+        ApiResponse<KycSubmitAddressResponse> SubmitAddressWithHttpInfo(KycSubmitAddressRequest kycSubmitAddressRequest = default(KycSubmitAddressRequest), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -177,11 +165,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="kycCheckLivenessRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> CheckLivenessAsync(KycCheckLivenessRequest kycCheckLivenessRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> CheckLivenessAsync(KycCheckLivenessRequest kycCheckLivenessRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Liveness Check
@@ -191,11 +178,10 @@ namespace Dojah.Net.Api
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="kycCheckLivenessRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CheckLivenessWithHttpInfoAsync(KycCheckLivenessRequest kycCheckLivenessRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CheckLivenessWithHttpInfoAsync(KycCheckLivenessRequest kycCheckLivenessRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// KYC - Fetch Accounts 
         /// </summary>
@@ -203,12 +189,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> GetAccountsAsync(string appId = default(string), string bvn = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> GetAccountsAsync(string bvn = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Fetch Accounts 
@@ -217,12 +202,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetAccountsWithHttpInfoAsync(string appId = default(string), string bvn = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetAccountsWithHttpInfoAsync(string bvn = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Fetch Address Verification Data
         /// </summary>
@@ -230,12 +214,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="referenceId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> GetAddressVerificationAsync(string appId = default(string), string referenceId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> GetAddressVerificationAsync(string referenceId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Fetch Address Verification Data
@@ -244,12 +227,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="referenceId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetAddressVerificationWithHttpInfoAsync(string appId = default(string), string referenceId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetAddressVerificationWithHttpInfoAsync(string referenceId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Lookup BVN from NUBAN
         /// </summary>
@@ -257,13 +239,12 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> GetBvnFromNubanAsync(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> GetBvnFromNubanAsync(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Lookup BVN from NUBAN
@@ -272,13 +253,12 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetBvnFromNubanWithHttpInfoAsync(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetBvnFromNubanWithHttpInfoAsync(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// KYC - Get VIN
         /// </summary>
@@ -286,12 +266,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="vin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetVinResponse</returns>
-        System.Threading.Tasks.Task<GetVinResponse> GetVinAsync(string appId = default(string), string vin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetVinResponse> GetVinAsync(string vin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// KYC - Get VIN
@@ -300,12 +279,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="vin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetVinResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetVinResponse>> GetVinWithHttpInfoAsync(string appId = default(string), string vin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetVinResponse>> GetVinWithHttpInfoAsync(string vin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Submit Address
         /// </summary>
@@ -313,12 +291,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="kycSubmitAddressRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of KycSubmitAddressResponse</returns>
-        System.Threading.Tasks.Task<KycSubmitAddressResponse> SubmitAddressAsync(string appId = default(string), KycSubmitAddressRequest kycSubmitAddressRequest = default(KycSubmitAddressRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<KycSubmitAddressResponse> SubmitAddressAsync(KycSubmitAddressRequest kycSubmitAddressRequest = default(KycSubmitAddressRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Submit Address
@@ -327,12 +304,11 @@ namespace Dojah.Net.Api
         /// 
         /// </remarks>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="kycSubmitAddressRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (KycSubmitAddressResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<KycSubmitAddressResponse>> SubmitAddressWithHttpInfoAsync(string appId = default(string), KycSubmitAddressRequest kycSubmitAddressRequest = default(KycSubmitAddressRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<KycSubmitAddressResponse>> SubmitAddressWithHttpInfoAsync(KycSubmitAddressRequest kycSubmitAddressRequest = default(KycSubmitAddressRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -458,12 +434,11 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="kycCheckLivenessRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object CheckLiveness(KycCheckLivenessRequest kycCheckLivenessRequest, string appId = default(string), int operationIndex = 0)
+        public Object CheckLiveness(KycCheckLivenessRequest kycCheckLivenessRequest, int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = CheckLivenessWithHttpInfo(kycCheckLivenessRequest, appId);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = CheckLivenessWithHttpInfo(kycCheckLivenessRequest);
             return localVarResponse.Data;
         }
 
@@ -472,10 +447,9 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="kycCheckLivenessRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public Dojah.Net.Client.ApiResponse<Object> CheckLivenessWithHttpInfo(KycCheckLivenessRequest kycCheckLivenessRequest, string appId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<Object> CheckLivenessWithHttpInfo(KycCheckLivenessRequest kycCheckLivenessRequest, int operationIndex = 0)
         {
             // verify the required parameter 'kycCheckLivenessRequest' is set
             if (kycCheckLivenessRequest == null)
@@ -506,15 +480,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
             localVarRequestOptions.Data = kycCheckLivenessRequest;
 
             localVarRequestOptions.Operation = "KYCApi.CheckLiveness";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/api/v1/ml/liveness", localVarRequestOptions, this.Configuration);
@@ -535,13 +510,12 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="kycCheckLivenessRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> CheckLivenessAsync(KycCheckLivenessRequest kycCheckLivenessRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> CheckLivenessAsync(KycCheckLivenessRequest kycCheckLivenessRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await CheckLivenessWithHttpInfoAsync(kycCheckLivenessRequest, appId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await CheckLivenessWithHttpInfoAsync(kycCheckLivenessRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -550,11 +524,10 @@ namespace Dojah.Net.Api
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="kycCheckLivenessRequest"></param>
-        /// <param name="appId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> CheckLivenessWithHttpInfoAsync(KycCheckLivenessRequest kycCheckLivenessRequest, string appId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> CheckLivenessWithHttpInfoAsync(KycCheckLivenessRequest kycCheckLivenessRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'kycCheckLivenessRequest' is set
             if (kycCheckLivenessRequest == null)
@@ -586,15 +559,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
             localVarRequestOptions.Data = kycCheckLivenessRequest;
 
             localVarRequestOptions.Operation = "KYCApi.CheckLiveness";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v1/ml/liveness", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -615,13 +589,12 @@ namespace Dojah.Net.Api
         /// KYC - Fetch Accounts  
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object GetAccounts(string appId = default(string), string bvn = default(string), int operationIndex = 0)
+        public Object GetAccounts(string bvn = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = GetAccountsWithHttpInfo(appId, bvn);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = GetAccountsWithHttpInfo(bvn);
             return localVarResponse.Data;
         }
 
@@ -629,11 +602,10 @@ namespace Dojah.Net.Api
         /// KYC - Fetch Accounts  
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public Dojah.Net.Client.ApiResponse<Object> GetAccountsWithHttpInfo(string appId = default(string), string bvn = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<Object> GetAccountsWithHttpInfo(string bvn = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -661,14 +633,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "KYCApi.GetAccounts";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Object>("/api/v1/kyc/accounts", localVarRequestOptions, this.Configuration);
@@ -688,14 +661,13 @@ namespace Dojah.Net.Api
         /// KYC - Fetch Accounts  
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> GetAccountsAsync(string appId = default(string), string bvn = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> GetAccountsAsync(string bvn = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await GetAccountsWithHttpInfoAsync(appId, bvn, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await GetAccountsWithHttpInfoAsync(bvn, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -703,12 +675,11 @@ namespace Dojah.Net.Api
         /// KYC - Fetch Accounts  
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bvn"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> GetAccountsWithHttpInfoAsync(string appId = default(string), string bvn = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> GetAccountsWithHttpInfoAsync(string bvn = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -737,14 +708,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "bvn", bvn, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "KYCApi.GetAccounts";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/api/v1/kyc/accounts", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -765,13 +737,12 @@ namespace Dojah.Net.Api
         /// Fetch Address Verification Data 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="referenceId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object GetAddressVerification(string appId = default(string), string referenceId = default(string), int operationIndex = 0)
+        public Object GetAddressVerification(string referenceId = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = GetAddressVerificationWithHttpInfo(appId, referenceId);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = GetAddressVerificationWithHttpInfo(referenceId);
             return localVarResponse.Data;
         }
 
@@ -779,11 +750,10 @@ namespace Dojah.Net.Api
         /// Fetch Address Verification Data 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="referenceId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public Dojah.Net.Client.ApiResponse<Object> GetAddressVerificationWithHttpInfo(string appId = default(string), string referenceId = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<Object> GetAddressVerificationWithHttpInfo(string referenceId = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -811,14 +781,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "reference_id", referenceId, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "KYCApi.GetAddressVerification";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Object>("/api/v1/kyc/address", localVarRequestOptions, this.Configuration);
@@ -838,14 +809,13 @@ namespace Dojah.Net.Api
         /// Fetch Address Verification Data 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="referenceId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> GetAddressVerificationAsync(string appId = default(string), string referenceId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> GetAddressVerificationAsync(string referenceId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await GetAddressVerificationWithHttpInfoAsync(appId, referenceId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await GetAddressVerificationWithHttpInfoAsync(referenceId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -853,12 +823,11 @@ namespace Dojah.Net.Api
         /// Fetch Address Verification Data 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="referenceId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> GetAddressVerificationWithHttpInfoAsync(string appId = default(string), string referenceId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> GetAddressVerificationWithHttpInfoAsync(string referenceId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -887,14 +856,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "reference_id", referenceId, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "KYCApi.GetAddressVerification";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/api/v1/kyc/address", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -915,14 +885,13 @@ namespace Dojah.Net.Api
         /// Lookup BVN from NUBAN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object GetBvnFromNuban(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0)
+        public Object GetBvnFromNuban(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = GetBvnFromNubanWithHttpInfo(appId, bankCode, accountNumber);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = GetBvnFromNubanWithHttpInfo(bankCode, accountNumber);
             return localVarResponse.Data;
         }
 
@@ -930,12 +899,11 @@ namespace Dojah.Net.Api
         /// Lookup BVN from NUBAN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public Dojah.Net.Client.ApiResponse<Object> GetBvnFromNubanWithHttpInfo(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<Object> GetBvnFromNubanWithHttpInfo(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -967,15 +935,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_number", accountNumber, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "KYCApi.GetBvnFromNuban";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Object>("/api/v1/kyc/nuban/bvn", localVarRequestOptions, this.Configuration);
@@ -995,15 +964,14 @@ namespace Dojah.Net.Api
         /// Lookup BVN from NUBAN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> GetBvnFromNubanAsync(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> GetBvnFromNubanAsync(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await GetBvnFromNubanWithHttpInfoAsync(appId, bankCode, accountNumber, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<Object> localVarResponse = await GetBvnFromNubanWithHttpInfoAsync(bankCode, accountNumber, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1011,13 +979,12 @@ namespace Dojah.Net.Api
         /// Lookup BVN from NUBAN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="bankCode"> (optional)</param>
         /// <param name="accountNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> GetBvnFromNubanWithHttpInfoAsync(string appId = default(string), int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<Object>> GetBvnFromNubanWithHttpInfoAsync(int? bankCode = default(int?), int? accountNumber = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -1050,15 +1017,16 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "account_number", accountNumber, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "KYCApi.GetBvnFromNuban";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/api/v1/kyc/nuban/bvn", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1079,13 +1047,12 @@ namespace Dojah.Net.Api
         /// KYC - Get VIN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="vin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetVinResponse</returns>
-        public GetVinResponse GetVin(string appId = default(string), string vin = default(string), int operationIndex = 0)
+        public GetVinResponse GetVin(string vin = default(string), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<GetVinResponse> localVarResponse = GetVinWithHttpInfo(appId, vin);
+            Dojah.Net.Client.ApiResponse<GetVinResponse> localVarResponse = GetVinWithHttpInfo(vin);
             return localVarResponse.Data;
         }
 
@@ -1093,11 +1060,10 @@ namespace Dojah.Net.Api
         /// KYC - Get VIN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="vin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetVinResponse</returns>
-        public Dojah.Net.Client.ApiResponse<GetVinResponse> GetVinWithHttpInfo(string appId = default(string), string vin = default(string), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<GetVinResponse> GetVinWithHttpInfo(string vin = default(string), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -1125,14 +1091,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "vin", vin, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
 
             localVarRequestOptions.Operation = "KYCApi.GetVin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
             // authentication (noauthAuth) required
 
             // make the HTTP request
@@ -1153,14 +1120,13 @@ namespace Dojah.Net.Api
         /// KYC - Get VIN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="vin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetVinResponse</returns>
-        public async System.Threading.Tasks.Task<GetVinResponse> GetVinAsync(string appId = default(string), string vin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetVinResponse> GetVinAsync(string vin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<GetVinResponse> localVarResponse = await GetVinWithHttpInfoAsync(appId, vin, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<GetVinResponse> localVarResponse = await GetVinWithHttpInfoAsync(vin, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1168,12 +1134,11 @@ namespace Dojah.Net.Api
         /// KYC - Get VIN 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="vin"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetVinResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetVinResponse>> GetVinWithHttpInfoAsync(string appId = default(string), string vin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<GetVinResponse>> GetVinWithHttpInfoAsync(string vin = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -1202,14 +1167,15 @@ namespace Dojah.Net.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Dojah.Net.Client.ClientUtils.ParameterToMultiMap("", "vin", vin, ""));
             }
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
 
             localVarRequestOptions.Operation = "KYCApi.GetVin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
             // authentication (noauthAuth) required
 
             // make the HTTP request
@@ -1231,13 +1197,12 @@ namespace Dojah.Net.Api
         /// Submit Address 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="kycSubmitAddressRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>KycSubmitAddressResponse</returns>
-        public KycSubmitAddressResponse SubmitAddress(string appId = default(string), KycSubmitAddressRequest kycSubmitAddressRequest = default(KycSubmitAddressRequest), int operationIndex = 0)
+        public KycSubmitAddressResponse SubmitAddress(KycSubmitAddressRequest kycSubmitAddressRequest = default(KycSubmitAddressRequest), int operationIndex = 0)
         {
-            Dojah.Net.Client.ApiResponse<KycSubmitAddressResponse> localVarResponse = SubmitAddressWithHttpInfo(appId, kycSubmitAddressRequest);
+            Dojah.Net.Client.ApiResponse<KycSubmitAddressResponse> localVarResponse = SubmitAddressWithHttpInfo(kycSubmitAddressRequest);
             return localVarResponse.Data;
         }
 
@@ -1245,11 +1210,10 @@ namespace Dojah.Net.Api
         /// Submit Address 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="kycSubmitAddressRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of KycSubmitAddressResponse</returns>
-        public Dojah.Net.Client.ApiResponse<KycSubmitAddressResponse> SubmitAddressWithHttpInfo(string appId = default(string), KycSubmitAddressRequest kycSubmitAddressRequest = default(KycSubmitAddressRequest), int operationIndex = 0)
+        public Dojah.Net.Client.ApiResponse<KycSubmitAddressResponse> SubmitAddressWithHttpInfo(KycSubmitAddressRequest kycSubmitAddressRequest = default(KycSubmitAddressRequest), int operationIndex = 0)
         {
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
 
@@ -1274,15 +1238,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId)); // header parameter
-            }
             localVarRequestOptions.Data = kycSubmitAddressRequest;
 
             localVarRequestOptions.Operation = "KYCApi.SubmitAddress";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<KycSubmitAddressResponse>("/api/v1/kyc/address", localVarRequestOptions, this.Configuration);
@@ -1302,14 +1267,13 @@ namespace Dojah.Net.Api
         /// Submit Address 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="kycSubmitAddressRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of KycSubmitAddressResponse</returns>
-        public async System.Threading.Tasks.Task<KycSubmitAddressResponse> SubmitAddressAsync(string appId = default(string), KycSubmitAddressRequest kycSubmitAddressRequest = default(KycSubmitAddressRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<KycSubmitAddressResponse> SubmitAddressAsync(KycSubmitAddressRequest kycSubmitAddressRequest = default(KycSubmitAddressRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Dojah.Net.Client.ApiResponse<KycSubmitAddressResponse> localVarResponse = await SubmitAddressWithHttpInfoAsync(appId, kycSubmitAddressRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dojah.Net.Client.ApiResponse<KycSubmitAddressResponse> localVarResponse = await SubmitAddressWithHttpInfoAsync(kycSubmitAddressRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1317,12 +1281,11 @@ namespace Dojah.Net.Api
         /// Submit Address 
         /// </summary>
         /// <exception cref="Dojah.Net.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="appId"> (optional)</param>
         /// <param name="kycSubmitAddressRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (KycSubmitAddressResponse)</returns>
-        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<KycSubmitAddressResponse>> SubmitAddressWithHttpInfoAsync(string appId = default(string), KycSubmitAddressRequest kycSubmitAddressRequest = default(KycSubmitAddressRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dojah.Net.Client.ApiResponse<KycSubmitAddressResponse>> SubmitAddressWithHttpInfoAsync(KycSubmitAddressRequest kycSubmitAddressRequest = default(KycSubmitAddressRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Dojah.Net.Client.RequestOptions localVarRequestOptions = new Dojah.Net.Client.RequestOptions();
@@ -1348,15 +1311,16 @@ namespace Dojah.Net.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (appId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("AppId", Dojah.Net.Client.ClientUtils.ParameterToString(appId, dataFormat: "")); // header parameter
-            }
             localVarRequestOptions.Data = kycSubmitAddressRequest;
 
             localVarRequestOptions.Operation = "KYCApi.SubmitAddress";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<KycSubmitAddressResponse>("/api/v1/kyc/address", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

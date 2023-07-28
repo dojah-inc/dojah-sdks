@@ -61,8 +61,7 @@ namespace Dojah.Net.Test.Api
         public void DeleteWebhookTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
-            //var response = instance.DeleteWebhook(appId);
+            //var response = instance.DeleteWebhook();
             //Assert.IsType<DeleteWebhookResponse>(response);
         }
 
@@ -73,8 +72,7 @@ namespace Dojah.Net.Test.Api
         public void GetWebhooksTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
-            //var response = instance.GetWebhooks(appId);
+            //var response = instance.GetWebhooks();
             //Assert.IsType<GetWebhooksResponse>(response);
         }
 
@@ -86,8 +84,7 @@ namespace Dojah.Net.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //NotifyWebhookRequest notifyWebhookRequest = null;
-            //string appId = null;
-            //var response = instance.NotifyWebhook(notifyWebhookRequest, appId);
+            //var response = instance.NotifyWebhook(notifyWebhookRequest);
             //Assert.IsType<NotifyWebhookResponse>(response);
         }
 
@@ -99,8 +96,7 @@ namespace Dojah.Net.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //SubscribeServiceRequest subscribeServiceRequest = null;
-            //string appId = null;
-            //var response = instance.SubscribeService(subscribeServiceRequest, appId);
+            //var response = instance.SubscribeService(subscribeServiceRequest);
             //Assert.IsType<SubscribeServiceResponse>(response);
         }
     }

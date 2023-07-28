@@ -61,8 +61,7 @@ namespace Dojah.Net.Test.Api
         public void AnalyzeDocumentTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string appId = null;
-            //var response = instance.AnalyzeDocument(appId);
+            //var response = instance.AnalyzeDocument();
             //Assert.IsType<AnalyzeDocumentResponse>(response);
         }
     }
