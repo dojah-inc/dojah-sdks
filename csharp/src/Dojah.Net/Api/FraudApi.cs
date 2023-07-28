@@ -407,12 +407,16 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "FraudApi.GetEmailReputation";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (noauthAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<FraudGetEmailReputationResponse>("/api/v1/kyc/email", localVarRequestOptions, this.Configuration);
@@ -483,12 +487,16 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "FraudApi.GetEmailReputation";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (noauthAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<FraudGetEmailReputationResponse>("/api/v1/kyc/email", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -557,10 +565,15 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "FraudApi.GetIpReputation";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -632,10 +645,15 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "FraudApi.GetIpReputation";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -705,10 +723,15 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "FraudApi.ScreenPhone";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -780,10 +803,15 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "FraudApi.ScreenPhone";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -883,10 +911,15 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "FraudApi.ScreenUser";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -988,10 +1021,15 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "FraudApi.ScreenUser";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request

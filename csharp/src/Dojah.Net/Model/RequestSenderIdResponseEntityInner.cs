@@ -34,21 +34,15 @@ namespace Dojah.Net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestSenderIdResponseEntityInner" /> class.
         /// </summary>
-        /// <param name="senderId">senderId.</param>
         /// <param name="activated">activated.</param>
         /// <param name="createdAt">createdAt.</param>
-        public RequestSenderIdResponseEntityInner(string senderId = default(string), bool activated = default(bool), string createdAt = default(string))
+        /// <param name="senderId">senderId.</param>
+        public RequestSenderIdResponseEntityInner(bool activated = default(bool), string createdAt = default(string), string senderId = default(string))
         {
-            this.SenderId = senderId;
             this.Activated = activated;
             this.CreatedAt = createdAt;
+            this.SenderId = senderId;
         }
-
-        /// <summary>
-        /// Gets or Sets SenderId
-        /// </summary>
-        [DataMember(Name = "sender_id", EmitDefaultValue = false)]
-        public string SenderId { get; set; }
 
         /// <summary>
         /// Gets or Sets Activated
@@ -63,6 +57,12 @@ namespace Dojah.Net.Model
         public string CreatedAt { get; set; }
 
         /// <summary>
+        /// Gets or Sets SenderId
+        /// </summary>
+        [DataMember(Name = "sender_id", EmitDefaultValue = false)]
+        public string SenderId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -70,9 +70,9 @@ namespace Dojah.Net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class RequestSenderIdResponseEntityInner {\n");
-            sb.Append("  SenderId: ").Append(SenderId).Append("\n");
             sb.Append("  Activated: ").Append(Activated).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  SenderId: ").Append(SenderId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -109,11 +109,6 @@ namespace Dojah.Net.Model
             }
             return 
                 (
-                    this.SenderId == input.SenderId ||
-                    (this.SenderId != null &&
-                    this.SenderId.Equals(input.SenderId))
-                ) && 
-                (
                     this.Activated == input.Activated ||
                     this.Activated.Equals(input.Activated)
                 ) && 
@@ -121,6 +116,11 @@ namespace Dojah.Net.Model
                     this.CreatedAt == input.CreatedAt ||
                     (this.CreatedAt != null &&
                     this.CreatedAt.Equals(input.CreatedAt))
+                ) && 
+                (
+                    this.SenderId == input.SenderId ||
+                    (this.SenderId != null &&
+                    this.SenderId.Equals(input.SenderId))
                 );
         }
 
@@ -133,14 +133,14 @@ namespace Dojah.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SenderId != null)
-                {
-                    hashCode = (hashCode * 59) + this.SenderId.GetHashCode();
-                }
                 hashCode = (hashCode * 59) + this.Activated.GetHashCode();
                 if (this.CreatedAt != null)
                 {
                     hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
+                }
+                if (this.SenderId != null)
+                {
+                    hashCode = (hashCode * 59) + this.SenderId.GetHashCode();
                 }
                 return hashCode;
             }

@@ -57,20 +57,20 @@ namespace Dojah.Net.Test.Model
 
 
         /// <summary>
-        /// Test the property 'Value'
-        /// </summary>
-        [Fact]
-        public void ValueTest()
-        {
-            // TODO unit test for the property 'Value'
-        }
-        /// <summary>
         /// Test the property 'Status'
         /// </summary>
         [Fact]
         public void StatusTest()
         {
             // TODO unit test for the property 'Status'
+        }
+        /// <summary>
+        /// Test the property 'Value'
+        /// </summary>
+        [Fact]
+        public void ValueTest()
+        {
+            // TODO unit test for the property 'Value'
         }
 
     }

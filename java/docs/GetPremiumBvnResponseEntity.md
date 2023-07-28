@@ -31,8 +31,8 @@
 |**residentialAddress** | **String** |  |  [optional] |
 |**stateOfOrigin** | **String** |  |  [optional] |
 |**stateOfResidence** | **String** |  |  [optional] |
-|**watchListed** | **String** |  |  [optional] |
 |**status** | **Double** |  |  [optional] |
+|**watchListed** | **String** |  |  [optional] |
 
 
 

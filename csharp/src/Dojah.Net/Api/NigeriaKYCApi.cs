@@ -711,10 +711,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -787,10 +791,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -860,10 +868,15 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetBasicBvn1";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -935,10 +948,15 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetBasicBvn1";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -1009,10 +1027,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -1085,10 +1107,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -1159,10 +1185,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -1235,10 +1265,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -1309,10 +1343,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -1385,10 +1423,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -1459,10 +1501,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -1535,10 +1581,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -1615,10 +1665,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -1697,10 +1751,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -1776,10 +1834,15 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetPassport";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -1857,10 +1920,15 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetPassport";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -1930,12 +1998,16 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetPhoneNumber";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (noauthAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<GetPhoneNumberResponse>("/api/v1/kyc/phone_number", localVarRequestOptions, this.Configuration);
@@ -2006,12 +2078,16 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetPhoneNumber";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (noauthAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<GetPhoneNumberResponse>("/api/v1/kyc/phone_number", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2081,10 +2157,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -2157,10 +2237,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -2230,10 +2314,15 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetVnin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -2305,10 +2394,15 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "NigeriaKYCApi.GetVnin";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request

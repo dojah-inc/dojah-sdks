@@ -94,6 +94,20 @@ func (a *KEKYCApiService) GetNationalIdExecute(r KEKYCApiGetNationalIdRequest) (
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apikeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["appIdAuth"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -101,7 +115,7 @@ func (a *KEKYCApiService) GetNationalIdExecute(r KEKYCApiGetNationalIdRequest) (
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Appid"] = key
+				localVarHeaderParams["AppId"] = key
 			}
 		}
 	}
@@ -205,6 +219,20 @@ func (a *KEKYCApiService) GetPassportExecute(r KEKYCApiGetPassportRequest) (map[
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apikeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["appIdAuth"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -212,7 +240,7 @@ func (a *KEKYCApiService) GetPassportExecute(r KEKYCApiGetPassportRequest) (map[
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Appid"] = key
+				localVarHeaderParams["AppId"] = key
 			}
 		}
 	}

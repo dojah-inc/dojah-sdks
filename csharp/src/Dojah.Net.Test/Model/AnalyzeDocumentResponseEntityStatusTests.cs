@@ -57,28 +57,12 @@ namespace Dojah.Net.Test.Model
 
 
         /// <summary>
-        /// Test the property 'OverallStatus'
-        /// </summary>
-        [Fact]
-        public void OverallStatusTest()
-        {
-            // TODO unit test for the property 'OverallStatus'
-        }
-        /// <summary>
         /// Test the property 'DocumentImages'
         /// </summary>
         [Fact]
         public void DocumentImagesTest()
         {
             // TODO unit test for the property 'DocumentImages'
-        }
-        /// <summary>
-        /// Test the property 'Text'
-        /// </summary>
-        [Fact]
-        public void TextTest()
-        {
-            // TODO unit test for the property 'Text'
         }
         /// <summary>
         /// Test the property 'DocumentType'
@@ -95,6 +79,22 @@ namespace Dojah.Net.Test.Model
         public void ExpiryTest()
         {
             // TODO unit test for the property 'Expiry'
+        }
+        /// <summary>
+        /// Test the property 'OverallStatus'
+        /// </summary>
+        [Fact]
+        public void OverallStatusTest()
+        {
+            // TODO unit test for the property 'OverallStatus'
+        }
+        /// <summary>
+        /// Test the property 'Text'
+        /// </summary>
+        [Fact]
+        public void TextTest()
+        {
+            // TODO unit test for the property 'Text'
         }
 
     }

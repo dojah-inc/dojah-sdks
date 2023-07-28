@@ -19,15 +19,15 @@ class RequiredAnalyzeDocumentResponseEntityStatus(TypedDict):
     pass
 
 class OptionalAnalyzeDocumentResponseEntityStatus(TypedDict, total=False):
-    overall_status: typing.Union[int, float]
-
     document_images: str
-
-    text: str
 
     document_type: str
 
     expiry: str
+
+    overall_status: typing.Union[int, float]
+
+    text: str
 
 class AnalyzeDocumentResponseEntityStatus(RequiredAnalyzeDocumentResponseEntityStatus, OptionalAnalyzeDocumentResponseEntityStatus):
     pass

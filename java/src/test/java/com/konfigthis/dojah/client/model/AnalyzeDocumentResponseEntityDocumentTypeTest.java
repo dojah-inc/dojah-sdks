@@ -39,11 +39,11 @@ public class AnalyzeDocumentResponseEntityDocumentTypeTest {
     }
 
     /**
-     * Test the property 'documentName'
+     * Test the property 'documentCountryCode'
      */
     @Test
-    public void documentNameTest() {
-        // TODO: test documentName
+    public void documentCountryCodeTest() {
+        // TODO: test documentCountryCode
     }
 
     /**
@@ -55,11 +55,11 @@ public class AnalyzeDocumentResponseEntityDocumentTypeTest {
     }
 
     /**
-     * Test the property 'documentCountryCode'
+     * Test the property 'documentName'
      */
     @Test
-    public void documentCountryCodeTest() {
-        // TODO: test documentCountryCode
+    public void documentNameTest() {
+        // TODO: test documentName
     }
 
     /**

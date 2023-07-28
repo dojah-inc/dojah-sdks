@@ -16,15 +16,15 @@ import (
 
 // GetVninResponseEntity struct for GetVninResponseEntity
 type GetVninResponseEntity struct {
-	Vnin *string `json:"vnin,omitempty"`
+	DateOfBirth *string `json:"dateOfBirth,omitempty"`
 	Firstname *string `json:"firstname,omitempty"`
+	Gender *string `json:"gender,omitempty"`
 	Middlename *string `json:"middlename,omitempty"`
+	Mobile *string `json:"mobile,omitempty"`
+	Photo *string `json:"photo,omitempty"`
 	Surname *string `json:"surname,omitempty"`
 	UserId *string `json:"user_id,omitempty"`
-	Gender *string `json:"gender,omitempty"`
-	Mobile *string `json:"mobile,omitempty"`
-	DateOfBirth *string `json:"dateOfBirth,omitempty"`
-	Photo *string `json:"photo,omitempty"`
+	Vnin *string `json:"vnin,omitempty"`
 }
 
 // NewGetVninResponseEntity instantiates a new GetVninResponseEntity object
@@ -44,36 +44,36 @@ func NewGetVninResponseEntityWithDefaults() *GetVninResponseEntity {
 	return &this
 }
 
-// GetVnin returns the Vnin field value if set, zero value otherwise.
-func (o *GetVninResponseEntity) GetVnin() string {
-	if o == nil || isNil(o.Vnin) {
+// GetDateOfBirth returns the DateOfBirth field value if set, zero value otherwise.
+func (o *GetVninResponseEntity) GetDateOfBirth() string {
+	if o == nil || isNil(o.DateOfBirth) {
 		var ret string
 		return ret
 	}
-	return *o.Vnin
+	return *o.DateOfBirth
 }
 
-// GetVninOk returns a tuple with the Vnin field value if set, nil otherwise
+// GetDateOfBirthOk returns a tuple with the DateOfBirth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetVninResponseEntity) GetVninOk() (*string, bool) {
-	if o == nil || isNil(o.Vnin) {
+func (o *GetVninResponseEntity) GetDateOfBirthOk() (*string, bool) {
+	if o == nil || isNil(o.DateOfBirth) {
     return nil, false
 	}
-	return o.Vnin, true
+	return o.DateOfBirth, true
 }
 
-// HasVnin returns a boolean if a field has been set.
-func (o *GetVninResponseEntity) HasVnin() bool {
-	if o != nil && !isNil(o.Vnin) {
+// HasDateOfBirth returns a boolean if a field has been set.
+func (o *GetVninResponseEntity) HasDateOfBirth() bool {
+	if o != nil && !isNil(o.DateOfBirth) {
 		return true
 	}
 
 	return false
 }
 
-// SetVnin gets a reference to the given string and assigns it to the Vnin field.
-func (o *GetVninResponseEntity) SetVnin(v string) {
-	o.Vnin = &v
+// SetDateOfBirth gets a reference to the given string and assigns it to the DateOfBirth field.
+func (o *GetVninResponseEntity) SetDateOfBirth(v string) {
+	o.DateOfBirth = &v
 }
 
 // GetFirstname returns the Firstname field value if set, zero value otherwise.
@@ -108,6 +108,38 @@ func (o *GetVninResponseEntity) SetFirstname(v string) {
 	o.Firstname = &v
 }
 
+// GetGender returns the Gender field value if set, zero value otherwise.
+func (o *GetVninResponseEntity) GetGender() string {
+	if o == nil || isNil(o.Gender) {
+		var ret string
+		return ret
+	}
+	return *o.Gender
+}
+
+// GetGenderOk returns a tuple with the Gender field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetVninResponseEntity) GetGenderOk() (*string, bool) {
+	if o == nil || isNil(o.Gender) {
+    return nil, false
+	}
+	return o.Gender, true
+}
+
+// HasGender returns a boolean if a field has been set.
+func (o *GetVninResponseEntity) HasGender() bool {
+	if o != nil && !isNil(o.Gender) {
+		return true
+	}
+
+	return false
+}
+
+// SetGender gets a reference to the given string and assigns it to the Gender field.
+func (o *GetVninResponseEntity) SetGender(v string) {
+	o.Gender = &v
+}
+
 // GetMiddlename returns the Middlename field value if set, zero value otherwise.
 func (o *GetVninResponseEntity) GetMiddlename() string {
 	if o == nil || isNil(o.Middlename) {
@@ -138,6 +170,70 @@ func (o *GetVninResponseEntity) HasMiddlename() bool {
 // SetMiddlename gets a reference to the given string and assigns it to the Middlename field.
 func (o *GetVninResponseEntity) SetMiddlename(v string) {
 	o.Middlename = &v
+}
+
+// GetMobile returns the Mobile field value if set, zero value otherwise.
+func (o *GetVninResponseEntity) GetMobile() string {
+	if o == nil || isNil(o.Mobile) {
+		var ret string
+		return ret
+	}
+	return *o.Mobile
+}
+
+// GetMobileOk returns a tuple with the Mobile field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetVninResponseEntity) GetMobileOk() (*string, bool) {
+	if o == nil || isNil(o.Mobile) {
+    return nil, false
+	}
+	return o.Mobile, true
+}
+
+// HasMobile returns a boolean if a field has been set.
+func (o *GetVninResponseEntity) HasMobile() bool {
+	if o != nil && !isNil(o.Mobile) {
+		return true
+	}
+
+	return false
+}
+
+// SetMobile gets a reference to the given string and assigns it to the Mobile field.
+func (o *GetVninResponseEntity) SetMobile(v string) {
+	o.Mobile = &v
+}
+
+// GetPhoto returns the Photo field value if set, zero value otherwise.
+func (o *GetVninResponseEntity) GetPhoto() string {
+	if o == nil || isNil(o.Photo) {
+		var ret string
+		return ret
+	}
+	return *o.Photo
+}
+
+// GetPhotoOk returns a tuple with the Photo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetVninResponseEntity) GetPhotoOk() (*string, bool) {
+	if o == nil || isNil(o.Photo) {
+    return nil, false
+	}
+	return o.Photo, true
+}
+
+// HasPhoto returns a boolean if a field has been set.
+func (o *GetVninResponseEntity) HasPhoto() bool {
+	if o != nil && !isNil(o.Photo) {
+		return true
+	}
+
+	return false
+}
+
+// SetPhoto gets a reference to the given string and assigns it to the Photo field.
+func (o *GetVninResponseEntity) SetPhoto(v string) {
+	o.Photo = &v
 }
 
 // GetSurname returns the Surname field value if set, zero value otherwise.
@@ -204,144 +300,57 @@ func (o *GetVninResponseEntity) SetUserId(v string) {
 	o.UserId = &v
 }
 
-// GetGender returns the Gender field value if set, zero value otherwise.
-func (o *GetVninResponseEntity) GetGender() string {
-	if o == nil || isNil(o.Gender) {
+// GetVnin returns the Vnin field value if set, zero value otherwise.
+func (o *GetVninResponseEntity) GetVnin() string {
+	if o == nil || isNil(o.Vnin) {
 		var ret string
 		return ret
 	}
-	return *o.Gender
+	return *o.Vnin
 }
 
-// GetGenderOk returns a tuple with the Gender field value if set, nil otherwise
+// GetVninOk returns a tuple with the Vnin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetVninResponseEntity) GetGenderOk() (*string, bool) {
-	if o == nil || isNil(o.Gender) {
+func (o *GetVninResponseEntity) GetVninOk() (*string, bool) {
+	if o == nil || isNil(o.Vnin) {
     return nil, false
 	}
-	return o.Gender, true
+	return o.Vnin, true
 }
 
-// HasGender returns a boolean if a field has been set.
-func (o *GetVninResponseEntity) HasGender() bool {
-	if o != nil && !isNil(o.Gender) {
+// HasVnin returns a boolean if a field has been set.
+func (o *GetVninResponseEntity) HasVnin() bool {
+	if o != nil && !isNil(o.Vnin) {
 		return true
 	}
 
 	return false
 }
 
-// SetGender gets a reference to the given string and assigns it to the Gender field.
-func (o *GetVninResponseEntity) SetGender(v string) {
-	o.Gender = &v
-}
-
-// GetMobile returns the Mobile field value if set, zero value otherwise.
-func (o *GetVninResponseEntity) GetMobile() string {
-	if o == nil || isNil(o.Mobile) {
-		var ret string
-		return ret
-	}
-	return *o.Mobile
-}
-
-// GetMobileOk returns a tuple with the Mobile field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetVninResponseEntity) GetMobileOk() (*string, bool) {
-	if o == nil || isNil(o.Mobile) {
-    return nil, false
-	}
-	return o.Mobile, true
-}
-
-// HasMobile returns a boolean if a field has been set.
-func (o *GetVninResponseEntity) HasMobile() bool {
-	if o != nil && !isNil(o.Mobile) {
-		return true
-	}
-
-	return false
-}
-
-// SetMobile gets a reference to the given string and assigns it to the Mobile field.
-func (o *GetVninResponseEntity) SetMobile(v string) {
-	o.Mobile = &v
-}
-
-// GetDateOfBirth returns the DateOfBirth field value if set, zero value otherwise.
-func (o *GetVninResponseEntity) GetDateOfBirth() string {
-	if o == nil || isNil(o.DateOfBirth) {
-		var ret string
-		return ret
-	}
-	return *o.DateOfBirth
-}
-
-// GetDateOfBirthOk returns a tuple with the DateOfBirth field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetVninResponseEntity) GetDateOfBirthOk() (*string, bool) {
-	if o == nil || isNil(o.DateOfBirth) {
-    return nil, false
-	}
-	return o.DateOfBirth, true
-}
-
-// HasDateOfBirth returns a boolean if a field has been set.
-func (o *GetVninResponseEntity) HasDateOfBirth() bool {
-	if o != nil && !isNil(o.DateOfBirth) {
-		return true
-	}
-
-	return false
-}
-
-// SetDateOfBirth gets a reference to the given string and assigns it to the DateOfBirth field.
-func (o *GetVninResponseEntity) SetDateOfBirth(v string) {
-	o.DateOfBirth = &v
-}
-
-// GetPhoto returns the Photo field value if set, zero value otherwise.
-func (o *GetVninResponseEntity) GetPhoto() string {
-	if o == nil || isNil(o.Photo) {
-		var ret string
-		return ret
-	}
-	return *o.Photo
-}
-
-// GetPhotoOk returns a tuple with the Photo field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetVninResponseEntity) GetPhotoOk() (*string, bool) {
-	if o == nil || isNil(o.Photo) {
-    return nil, false
-	}
-	return o.Photo, true
-}
-
-// HasPhoto returns a boolean if a field has been set.
-func (o *GetVninResponseEntity) HasPhoto() bool {
-	if o != nil && !isNil(o.Photo) {
-		return true
-	}
-
-	return false
-}
-
-// SetPhoto gets a reference to the given string and assigns it to the Photo field.
-func (o *GetVninResponseEntity) SetPhoto(v string) {
-	o.Photo = &v
+// SetVnin gets a reference to the given string and assigns it to the Vnin field.
+func (o *GetVninResponseEntity) SetVnin(v string) {
+	o.Vnin = &v
 }
 
 func (o GetVninResponseEntity) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Vnin) {
-		toSerialize["vnin"] = o.Vnin
+	if !isNil(o.DateOfBirth) {
+		toSerialize["dateOfBirth"] = o.DateOfBirth
 	}
 	if !isNil(o.Firstname) {
 		toSerialize["firstname"] = o.Firstname
 	}
+	if !isNil(o.Gender) {
+		toSerialize["gender"] = o.Gender
+	}
 	if !isNil(o.Middlename) {
 		toSerialize["middlename"] = o.Middlename
+	}
+	if !isNil(o.Mobile) {
+		toSerialize["mobile"] = o.Mobile
+	}
+	if !isNil(o.Photo) {
+		toSerialize["photo"] = o.Photo
 	}
 	if !isNil(o.Surname) {
 		toSerialize["surname"] = o.Surname
@@ -349,17 +358,8 @@ func (o GetVninResponseEntity) MarshalJSON() ([]byte, error) {
 	if !isNil(o.UserId) {
 		toSerialize["user_id"] = o.UserId
 	}
-	if !isNil(o.Gender) {
-		toSerialize["gender"] = o.Gender
-	}
-	if !isNil(o.Mobile) {
-		toSerialize["mobile"] = o.Mobile
-	}
-	if !isNil(o.DateOfBirth) {
-		toSerialize["dateOfBirth"] = o.DateOfBirth
-	}
-	if !isNil(o.Photo) {
-		toSerialize["photo"] = o.Photo
+	if !isNil(o.Vnin) {
+		toSerialize["vnin"] = o.Vnin
 	}
 	return json.Marshal(toSerialize)
 }

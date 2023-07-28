@@ -34,61 +34,61 @@ class AnalyzeDocumentResponseEntityDocumentImages(
     class MetaOapg:
         
         class properties:
-            Portrait = schemas.StrSchema
-            Fingerprint = schemas.StrSchema
             document_front_side = schemas.StrSchema
+            Fingerprint = schemas.StrSchema
+            Portrait = schemas.StrSchema
             __annotations__ = {
-                "Portrait": Portrait,
-                "Fingerprint": Fingerprint,
                 "Document front side": document_front_side,
+                "Fingerprint": Fingerprint,
+                "Portrait": Portrait,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["Portrait"]) -> MetaOapg.properties.Portrait: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["Fingerprint"]) -> MetaOapg.properties.Fingerprint: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["Document front side"]) -> MetaOapg.properties.document_front_side: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["Fingerprint"]) -> MetaOapg.properties.Fingerprint: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["Portrait"]) -> MetaOapg.properties.Portrait: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["Portrait", "Fingerprint", "Document front side", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["Document front side", "Fingerprint", "Portrait", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["Portrait"]) -> typing.Union[MetaOapg.properties.Portrait, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["Document front side"]) -> typing.Union[MetaOapg.properties.document_front_side, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["Fingerprint"]) -> typing.Union[MetaOapg.properties.Fingerprint, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["Document front side"]) -> typing.Union[MetaOapg.properties.document_front_side, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["Portrait"]) -> typing.Union[MetaOapg.properties.Portrait, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["Portrait", "Fingerprint", "Document front side", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["Document front side", "Fingerprint", "Portrait", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *args: typing.Union[dict, frozendict.frozendict, ],
-        Portrait: typing.Union[MetaOapg.properties.Portrait, str, schemas.Unset] = schemas.unset,
         Fingerprint: typing.Union[MetaOapg.properties.Fingerprint, str, schemas.Unset] = schemas.unset,
+        Portrait: typing.Union[MetaOapg.properties.Portrait, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'AnalyzeDocumentResponseEntityDocumentImages':
         return super().__new__(
             cls,
             *args,
-            Portrait=Portrait,
             Fingerprint=Fingerprint,
+            Portrait=Portrait,
             _configuration=_configuration,
             **kwargs,
         )

@@ -34,35 +34,44 @@ class GetVninResponseEntity(
     class MetaOapg:
         
         class properties:
-            vnin = schemas.StrSchema
+            dateOfBirth = schemas.StrSchema
             firstname = schemas.StrSchema
+            gender = schemas.StrSchema
             middlename = schemas.StrSchema
+            mobile = schemas.StrSchema
+            photo = schemas.StrSchema
             surname = schemas.StrSchema
             user_id = schemas.StrSchema
-            gender = schemas.StrSchema
-            mobile = schemas.StrSchema
-            dateOfBirth = schemas.StrSchema
-            photo = schemas.StrSchema
+            vnin = schemas.StrSchema
             __annotations__ = {
-                "vnin": vnin,
+                "dateOfBirth": dateOfBirth,
                 "firstname": firstname,
+                "gender": gender,
                 "middlename": middlename,
+                "mobile": mobile,
+                "photo": photo,
                 "surname": surname,
                 "user_id": user_id,
-                "gender": gender,
-                "mobile": mobile,
-                "dateOfBirth": dateOfBirth,
-                "photo": photo,
+                "vnin": vnin,
             }
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["vnin"]) -> MetaOapg.properties.vnin: ...
+    def __getitem__(self, name: typing_extensions.Literal["dateOfBirth"]) -> MetaOapg.properties.dateOfBirth: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["firstname"]) -> MetaOapg.properties.firstname: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["gender"]) -> MetaOapg.properties.gender: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["middlename"]) -> MetaOapg.properties.middlename: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["mobile"]) -> MetaOapg.properties.mobile: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["photo"]) -> MetaOapg.properties.photo: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["surname"]) -> MetaOapg.properties.surname: ...
@@ -71,33 +80,33 @@ class GetVninResponseEntity(
     def __getitem__(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["gender"]) -> MetaOapg.properties.gender: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["mobile"]) -> MetaOapg.properties.mobile: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["dateOfBirth"]) -> MetaOapg.properties.dateOfBirth: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["photo"]) -> MetaOapg.properties.photo: ...
+    def __getitem__(self, name: typing_extensions.Literal["vnin"]) -> MetaOapg.properties.vnin: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["vnin", "firstname", "middlename", "surname", "user_id", "gender", "mobile", "dateOfBirth", "photo", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["dateOfBirth", "firstname", "gender", "middlename", "mobile", "photo", "surname", "user_id", "vnin", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["vnin"]) -> typing.Union[MetaOapg.properties.vnin, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["dateOfBirth"]) -> typing.Union[MetaOapg.properties.dateOfBirth, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["firstname"]) -> typing.Union[MetaOapg.properties.firstname, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["gender"]) -> typing.Union[MetaOapg.properties.gender, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["middlename"]) -> typing.Union[MetaOapg.properties.middlename, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["mobile"]) -> typing.Union[MetaOapg.properties.mobile, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["photo"]) -> typing.Union[MetaOapg.properties.photo, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["surname"]) -> typing.Union[MetaOapg.properties.surname, schemas.Unset]: ...
@@ -106,51 +115,42 @@ class GetVninResponseEntity(
     def get_item_oapg(self, name: typing_extensions.Literal["user_id"]) -> typing.Union[MetaOapg.properties.user_id, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["gender"]) -> typing.Union[MetaOapg.properties.gender, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["mobile"]) -> typing.Union[MetaOapg.properties.mobile, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["dateOfBirth"]) -> typing.Union[MetaOapg.properties.dateOfBirth, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["photo"]) -> typing.Union[MetaOapg.properties.photo, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["vnin"]) -> typing.Union[MetaOapg.properties.vnin, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["vnin", "firstname", "middlename", "surname", "user_id", "gender", "mobile", "dateOfBirth", "photo", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["dateOfBirth", "firstname", "gender", "middlename", "mobile", "photo", "surname", "user_id", "vnin", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *args: typing.Union[dict, frozendict.frozendict, ],
-        vnin: typing.Union[MetaOapg.properties.vnin, str, schemas.Unset] = schemas.unset,
+        dateOfBirth: typing.Union[MetaOapg.properties.dateOfBirth, str, schemas.Unset] = schemas.unset,
         firstname: typing.Union[MetaOapg.properties.firstname, str, schemas.Unset] = schemas.unset,
+        gender: typing.Union[MetaOapg.properties.gender, str, schemas.Unset] = schemas.unset,
         middlename: typing.Union[MetaOapg.properties.middlename, str, schemas.Unset] = schemas.unset,
+        mobile: typing.Union[MetaOapg.properties.mobile, str, schemas.Unset] = schemas.unset,
+        photo: typing.Union[MetaOapg.properties.photo, str, schemas.Unset] = schemas.unset,
         surname: typing.Union[MetaOapg.properties.surname, str, schemas.Unset] = schemas.unset,
         user_id: typing.Union[MetaOapg.properties.user_id, str, schemas.Unset] = schemas.unset,
-        gender: typing.Union[MetaOapg.properties.gender, str, schemas.Unset] = schemas.unset,
-        mobile: typing.Union[MetaOapg.properties.mobile, str, schemas.Unset] = schemas.unset,
-        dateOfBirth: typing.Union[MetaOapg.properties.dateOfBirth, str, schemas.Unset] = schemas.unset,
-        photo: typing.Union[MetaOapg.properties.photo, str, schemas.Unset] = schemas.unset,
+        vnin: typing.Union[MetaOapg.properties.vnin, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'GetVninResponseEntity':
         return super().__new__(
             cls,
             *args,
-            vnin=vnin,
+            dateOfBirth=dateOfBirth,
             firstname=firstname,
+            gender=gender,
             middlename=middlename,
+            mobile=mobile,
+            photo=photo,
             surname=surname,
             user_id=user_id,
-            gender=gender,
-            mobile=mobile,
-            dateOfBirth=dateOfBirth,
-            photo=photo,
+            vnin=vnin,
             _configuration=_configuration,
             **kwargs,
         )

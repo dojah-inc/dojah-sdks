@@ -21,21 +21,18 @@ in client-side browser code is not recommended as you would expose security cred
 ## Getting Started
 
 ```typescript
-import { Configuration, GHKYCApi } from "dojah-typescript-sdk";
-const configuration = new Configuration({
-  apiKey: (name) => {
-    if (name === "Authorization") return process.env.DOJAH_API_KEY;
-    if (name === "AppId") return process.env.DOJAH_APP_ID;
-    throw Error();
-  },
-  // Uncomment the below configuration to use sandbox environment
-  // basePath: "https://sandbox.dojah.io",
+import { Dojah } from "dojah-typescript-sdk";
+
+const dojah = new Dojah({
+  // Defining the base path is optional and defaults to https://api.dojah.io
+  // basePath: "https://api.dojah.io",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
-const api = new GHKYCApi(configuration);
-const request = api.getDriversLicense("V0000000", "John Doe", "1988-09-01");
-request.then((result) => {
-  console.log(result);
-});
+
+const getScreeningInfoResponse = await dojah.aml.getScreeningInfo({});
+
+console.log(getScreeningInfoResponse);
 ```
 
 ## Documentation for API Endpoints

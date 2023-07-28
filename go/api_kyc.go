@@ -96,6 +96,20 @@ func (a *KYCApiService) CheckLivenessExecute(r KYCApiCheckLivenessRequest) (map[
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apikeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["appIdAuth"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -103,7 +117,7 @@ func (a *KYCApiService) CheckLivenessExecute(r KYCApiCheckLivenessRequest) (map[
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Appid"] = key
+				localVarHeaderParams["AppId"] = key
 			}
 		}
 	}
@@ -216,6 +230,20 @@ func (a *KYCApiService) GetAccountsExecute(r KYCApiGetAccountsRequest) (map[stri
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apikeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["appIdAuth"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -223,7 +251,7 @@ func (a *KYCApiService) GetAccountsExecute(r KYCApiGetAccountsRequest) (map[stri
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Appid"] = key
+				localVarHeaderParams["AppId"] = key
 			}
 		}
 	}
@@ -336,6 +364,20 @@ func (a *KYCApiService) GetAddressVerificationExecute(r KYCApiGetAddressVerifica
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apikeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["appIdAuth"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -343,7 +385,7 @@ func (a *KYCApiService) GetAddressVerificationExecute(r KYCApiGetAddressVerifica
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Appid"] = key
+				localVarHeaderParams["AppId"] = key
 			}
 		}
 	}
@@ -465,6 +507,20 @@ func (a *KYCApiService) GetBvnFromNubanExecute(r KYCApiGetBvnFromNubanRequest) (
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apikeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["appIdAuth"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -472,7 +528,7 @@ func (a *KYCApiService) GetBvnFromNubanExecute(r KYCApiGetBvnFromNubanRequest) (
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Appid"] = key
+				localVarHeaderParams["AppId"] = key
 			}
 		}
 	}
@@ -585,6 +641,20 @@ func (a *KYCApiService) GetVinExecute(r KYCApiGetVinRequest) (*GetVinResponse, *
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apikeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["appIdAuth"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -592,7 +662,7 @@ func (a *KYCApiService) GetVinExecute(r KYCApiGetVinRequest) (*GetVinResponse, *
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Appid"] = key
+				localVarHeaderParams["AppId"] = key
 			}
 		}
 	}
@@ -704,6 +774,20 @@ func (a *KYCApiService) SubmitAddressExecute(r KYCApiSubmitAddressRequest) (*Kyc
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apikeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["appIdAuth"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -711,7 +795,7 @@ func (a *KYCApiService) SubmitAddressExecute(r KYCApiSubmitAddressRequest) (*Kyc
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Appid"] = key
+				localVarHeaderParams["AppId"] = key
 			}
 		}
 	}

@@ -224,7 +224,8 @@ paths:
                 $ref: '#/components/schemas/KybBusinessSearchResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: Business Search
       tags:
       - KYB
@@ -269,7 +270,8 @@ paths:
                 $ref: '#/components/schemas/KybBusinessDetailResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: Business Detail
       tags:
       - KYB
@@ -403,7 +405,8 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-gh-kyc-dl-get-responses-200-headers-Transfer-Encoding-schema
               style: simple
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: Driver's License
       tags:
       - GH KYC
@@ -555,7 +558,8 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-gh-kyc-passport-get-responses-200-headers-Transfer-Encoding-schema
               style: simple
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: Passport
       tags:
       - GH KYC
@@ -689,7 +693,8 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-gh-kyc-ssnit-get-responses-200-headers-Transfer-Encoding-schema
               style: simple
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: SSNIT
       tags:
       - GH KYC
@@ -734,7 +739,8 @@ paths:
                 $ref: '#/components/schemas/GhKycGetVoterResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: Voter ID Lookup
       tags:
       - GH KYC
@@ -779,7 +785,8 @@ paths:
                 $ref: '#/components/schemas/GetVoterResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: Voters ID
       tags:
       - UG KYC
@@ -806,7 +813,8 @@ paths:
                 $ref: '#/components/schemas/GetNationalIdResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - National ID
       tags:
       - KE KYC
@@ -824,7 +832,8 @@ paths:
                 $ref: '#/components/schemas/KeKycGetPassportResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - Passport
       tags:
       - KE KYC
@@ -887,7 +896,8 @@ paths:
                 $ref: '#/components/schemas/TzKycGetNinResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: Lookup TZ NIN
       tags:
       - TZ KYC
@@ -1035,7 +1045,8 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-zw-kyc-nin-get-responses-200-headers-Keep-Alive-schema
               style: simple
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: National ID Verification
       tags:
       - ZW KYC
@@ -1308,7 +1319,8 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-zw-kyc-fcb-get-responses-200-headers-alt-svc-schema
               style: simple
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: Credit Check
       tags:
       - ZW KYC
@@ -1389,7 +1401,8 @@ paths:
                 $ref: '#/components/schemas/GlobalKycUkTwoPlusTwoResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: UK 2+2
       tags:
       - Global KYC
@@ -1470,7 +1483,8 @@ paths:
                 $ref: '#/components/schemas/GlobalKycGetUsSsnResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: US SSN
       tags:
       - Global KYC
@@ -1551,7 +1565,8 @@ paths:
                 $ref: '#/components/schemas/GlobalKycCaEkycResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: Canada Ekyc
       tags:
       - Global KYC
@@ -1737,7 +1752,8 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-za-kyc-id-get-responses-200-headers-alt-svc-schema
               style: simple
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - Lookup ID
       tags:
       - ZAF KYC
@@ -1927,7 +1943,8 @@ paths:
                 $ref: '#/components/schemas/GetBasicBvnResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - Lookup BVN Basic 1
       tags:
       - Nigeria KYC
@@ -2108,7 +2125,8 @@ paths:
                 $ref: '#/components/schemas/GetVninResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: Lookup VNIN
       tags:
       - Nigeria KYC
@@ -2632,7 +2650,7 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-kyc-phone_number-get-responses-404-headers-alt-svc-schema
               style: simple
       security:
-      - noauthAuth: []
+      - apikeyAuth: []
         appIdAuth: []
       summary: KYC - Lookup Phone Number
       tags:
@@ -2746,7 +2764,8 @@ paths:
                 $ref: '#/components/schemas/GetKycPassportResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - Passport
       tags:
       - Nigeria KYC
@@ -2901,7 +2920,7 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-kyc-vin-get-responses-200-headers-alt-svc-schema
               style: simple
       security:
-      - noauthAuth: []
+      - apikeyAuth: []
         appIdAuth: []
       summary: KYC - Get VIN
       tags:
@@ -2966,7 +2985,8 @@ paths:
                 $ref: '#/components/schemas/KycGetAddressVerificationResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: Fetch Address Verification Data
       tags:
       - KYC
@@ -3156,7 +3176,8 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-kyc-address-post-responses-200-headers-alt-svc-schema
               style: simple
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: Submit Address
       tags:
       - KYC
@@ -3183,7 +3204,8 @@ paths:
                 $ref: '#/components/schemas/KycGetAccountsResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: 'KYC - Fetch Accounts '
       tags:
       - KYC
@@ -3207,7 +3229,8 @@ paths:
                 $ref: '#/components/schemas/KycCheckLivenessResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: Liveness Check
       tags:
       - KYC
@@ -3449,7 +3472,8 @@ paths:
                 $ref: '#/components/schemas/VerificationsVerifySelfieVninResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - Selfie vNIN verification
       tags:
       - Verifications
@@ -3467,7 +3491,8 @@ paths:
                 $ref: '#/components/schemas/AnalyzeDocumentResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: KYC - Document Analysis
       tags:
       - Document Analysis
@@ -3964,7 +3989,8 @@ paths:
                 $ref: '#/components/schemas/RequestSenderIdResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: Messaging - Request Sender ID
       tags:
       - Authentication
@@ -4108,7 +4134,8 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-aml-screening-platform-post-responses-200-headers-Keep-Alive-schema
               style: simple
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: AML Screening
       tags:
       - AML
@@ -4135,7 +4162,8 @@ paths:
                 $ref: '#/components/schemas/AmlGetScreeningInfoResponse'
           description: Successful response
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: Get AML Info
       tags:
       - AML
@@ -4338,7 +4366,8 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-fraud-ip-get-responses-200-headers-alt-svc-schema
               style: simple
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: IP Reputation
       tags:
       - Fraud
@@ -4569,7 +4598,7 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-kyc-email-get-responses-200-headers-alt-svc-schema
               style: simple
       security:
-      - noauthAuth: []
+      - apikeyAuth: []
         appIdAuth: []
       summary: Email Reputation
       tags:
@@ -4771,7 +4800,8 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-fraud-user-get-responses-200-headers-Transfer-Encoding-schema
               style: simple
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: User Screening
       tags:
       - Fraud
@@ -4919,7 +4949,8 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-fraud-phone-get-responses-200-headers-Keep-Alive-schema
               style: simple
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: Phone Screening
       tags:
       - Fraud
@@ -5077,7 +5108,7 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--v1-purchase-airtime-post-responses-200-headers-alt-svc-schema
               style: simple
       security:
-      - noauthAuth: []
+      - apikeyAuth: []
         appIdAuth: []
       summary: Purchase - Send Airtime
       tags:
@@ -5376,7 +5407,7 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-balance-get-responses-200-headers-Connection-schema
               style: simple
       security:
-      - noauthAuth: []
+      - apikeyAuth: []
         appIdAuth: []
       summary: Get Dojah Wallet Balance
       tags:
@@ -5455,7 +5486,7 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-webhook-subscribe-post-responses-200-headers-Connection-schema
               style: simple
       security:
-      - noauthAuth: []
+      - apikeyAuth: []
         appIdAuth: []
       summary: Subscribe to service
       tags:
@@ -5781,7 +5812,8 @@ paths:
                 x-konfig-generated-schema: konfig-generated-schema-paths--api-v1-webhook-notify-post-responses-200-headers-alt-svc-schema
               style: simple
       security:
-      - appIdAuth: []
+      - apikeyAuth: []
+        appIdAuth: []
       summary: Post Hook
       tags:
       - WebHooks
@@ -6522,8 +6554,8 @@ components:
       example:
         entity:
           bvn:
-            value: "23456789012"
             status: true
+            value: "23456789012"
           first_name:
             confidence_value: 100
             status: true
@@ -6534,8 +6566,8 @@ components:
       x-konfig-original-example:
         entity:
           bvn:
-            value: "23456789012"
             status: true
+            value: "23456789012"
           first_name:
             confidence_value: 100
             status: true
@@ -6543,24 +6575,24 @@ components:
     GetBasicBvnResponse:
       example:
         entity:
-          first_name: JOSHUA
-          last_name: OLADIPO
-          dob: 28-Jun-00
-          formatted_dob: 2000-06-28
-          mobile: "07085460116"
           bvn: "22468537919"
+          dob: 28-Jun-00
+          first_name: JOSHUA
+          formatted_dob: 2000-06-28
+          last_name: OLADIPO
+          mobile: "07085460116"
       properties:
         entity:
           $ref: '#/components/schemas/GetBasicBvnResponse_entity'
       type: object
       x-konfig-original-example:
         entity:
-          first_name: JOSHUA
-          last_name: OLADIPO
-          dob: 28-Jun-00
-          formatted_dob: 2000-06-28
-          mobile: "07085460116"
           bvn: "22468537919"
+          dob: 28-Jun-00
+          first_name: JOSHUA
+          formatted_dob: 2000-06-28
+          last_name: OLADIPO
+          mobile: "07085460116"
       x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetBasicBvnResponse
     GetFullBvnResponse:
       example:
@@ -7475,30 +7507,30 @@ components:
     GetVninResponse:
       example:
         entity:
-          vnin: AB012345678910YZ
+          dateOfBirth: 01-01-1982
           firstname: John
+          gender: M
           middlename: Doe
+          mobile: "08012345678"
+          photo: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
           surname: Alamutu
           user_id: WXABCD-1234
-          gender: M
-          mobile: "08012345678"
-          dateOfBirth: 01-01-1982
-          photo: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
+          vnin: AB012345678910YZ
       properties:
         entity:
           $ref: '#/components/schemas/GetVninResponse_entity'
       type: object
       x-konfig-original-example:
         entity:
-          vnin: AB012345678910YZ
+          dateOfBirth: 01-01-1982
           firstname: John
+          gender: M
           middlename: Doe
+          mobile: "08012345678"
+          photo: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
           surname: Alamutu
           user_id: WXABCD-1234
-          gender: M
-          mobile: "08012345678"
-          dateOfBirth: 01-01-1982
-          photo: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
+          vnin: AB012345678910YZ
       x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetVninResponse
     GetPremiumBvnResponse:
       example:
@@ -7527,8 +7559,8 @@ components:
           residential_address: "24, OSHODI SURULERE, ILORIN"
           state_of_origin: Osun State
           state_of_residence: Kwara State
-          watch_listed: false
           status: 200
+          watch_listed: false
       properties:
         entity:
           $ref: '#/components/schemas/GetPremiumBvnResponse_entity'
@@ -7559,8 +7591,8 @@ components:
           residential_address: "24, OSHODI SURULERE, ILORIN"
           state_of_origin: Osun State
           state_of_residence: Kwara State
-          watch_listed: false
           status: 200
+          watch_listed: false
       x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPremiumBvnResponse
     NigeriaKycGetBasicPhoneNumberResponse:
       example: {}
@@ -7572,34 +7604,34 @@ components:
       example:
         entity:
           title: Mr
-          msisdn: "09011111111"
-          firstName: John
-          middleName: Doe
-          lastName: Doe
-          maritalStatus: Married
-          gender: Male
           birthDate: 11-11-1972
           birthLga: Ikeja
           birthState: Lagos
           educationalLevel: Higher
           emplymentStatus: 25 ikeja
+          firstName: John
+          gender: Male
+          height: 5 9
+          lastName: Doe
+          lga: Ikeja
+          maritalStatus: Married
+          middleName: Doe
+          msisdn: "09011111111"
+          nin: "111111111111111"
           nspokenLang: English
           ospokenlang: Yoruba
+          picture: <base64 encoded image>
           profession: Tailor
           religion: Muslim
           residenceAddressLine1: 25 Agege motor ways
-          residenceTown: Oshogbo
           residenceLga: Ikeja
           residenceState: Lagos
           residenceStatus: Occupant
+          residenceTown: Oshogbo
           selfOriginLga: Lagos Island
           selfOriginPlace: Yaba
           selfOriginState: Muslim
           state: Lagos
-          lga: Ikeja
-          nin: "111111111111111"
-          height: 5 9
-          picture: <base64 encoded image>
           status: 200
       properties:
         entity:
@@ -7608,68 +7640,68 @@ components:
       x-konfig-original-example:
         entity:
           title: Mr
-          msisdn: "09011111111"
-          firstName: John
-          middleName: Doe
-          lastName: Doe
-          maritalStatus: Married
-          gender: Male
           birthDate: 11-11-1972
           birthLga: Ikeja
           birthState: Lagos
           educationalLevel: Higher
           emplymentStatus: 25 ikeja
+          firstName: John
+          gender: Male
+          height: 5 9
+          lastName: Doe
+          lga: Ikeja
+          maritalStatus: Married
+          middleName: Doe
+          msisdn: "09011111111"
+          nin: "111111111111111"
           nspokenLang: English
           ospokenlang: Yoruba
+          picture: <base64 encoded image>
           profession: Tailor
           religion: Muslim
           residenceAddressLine1: 25 Agege motor ways
-          residenceTown: Oshogbo
           residenceLga: Ikeja
           residenceState: Lagos
           residenceStatus: Occupant
+          residenceTown: Oshogbo
           selfOriginLga: Lagos Island
           selfOriginPlace: Yaba
           selfOriginState: Muslim
           state: Lagos
-          lga: Ikeja
-          nin: "111111111111111"
-          height: 5 9
-          picture: <base64 encoded image>
           status: 200
       x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse
     GetPhoneNumber404Response:
       example:
         entity:
           title: Mr
-          msisdn: "09011111111"
-          firstName: John
-          middleName: Doe
-          lastName: Doe
-          maritalStatus: Married
-          gender: Male
           birthDate: 11-11-1972
           birthLga: Ikeja
           birthState: Lagos
           educationalLevel: Higher
           emplymentStatus: 25 ikeja
+          firstName: John
+          gender: Male
+          height: 5 9
+          lastName: Doe
+          lga: Ikeja
+          maritalStatus: Married
+          middleName: Doe
+          msisdn: "09011111111"
+          nin: "111111111111111"
           nspokenLang: English
           ospokenlang: Yoruba
+          picture: <base64 encoded image>
           profession: Tailor
           religion: Muslim
           residenceAddressLine1: 25 Agege motor ways
-          residenceTown: Oshogbo
           residenceLga: Ikeja
           residenceState: Lagos
           residenceStatus: Occupant
+          residenceTown: Oshogbo
           selfOriginLga: Lagos Island
           selfOriginPlace: Yaba
           selfOriginState: Muslim
           state: Lagos
-          lga: Ikeja
-          nin: "111111111111111"
-          height: 5 9
-          picture: <base64 encoded image>
           status: 200
       properties:
         entity:
@@ -7678,57 +7710,57 @@ components:
       x-konfig-original-example:
         entity:
           title: Mr
-          msisdn: "09011111111"
-          firstName: John
-          middleName: Doe
-          lastName: Doe
-          maritalStatus: Married
-          gender: Male
           birthDate: 11-11-1972
           birthLga: Ikeja
           birthState: Lagos
           educationalLevel: Higher
           emplymentStatus: 25 ikeja
+          firstName: John
+          gender: Male
+          height: 5 9
+          lastName: Doe
+          lga: Ikeja
+          maritalStatus: Married
+          middleName: Doe
+          msisdn: "09011111111"
+          nin: "111111111111111"
           nspokenLang: English
           ospokenlang: Yoruba
+          picture: <base64 encoded image>
           profession: Tailor
           religion: Muslim
           residenceAddressLine1: 25 Agege motor ways
-          residenceTown: Oshogbo
           residenceLga: Ikeja
           residenceState: Lagos
           residenceStatus: Occupant
+          residenceTown: Oshogbo
           selfOriginLga: Lagos Island
           selfOriginPlace: Yaba
           selfOriginState: Muslim
           state: Lagos
-          lga: Ikeja
-          nin: "111111111111111"
-          height: 5 9
-          picture: <base64 encoded image>
           status: 200
       x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response
     GetKycDriversLicenseResponse:
       example:
         entity:
           personal_details:
-            firstname: TOBI
-            othername: OLALEKAN
-            surname: OLOLADE
-            mother_maiden_name: OGUNSOLA
-            gender: Male
             birth_date: 18/05/1992
             blood_group_id: B+
+            country: Nigeria
+            disability_reason: ""
             facial_mark: false
+            firstname: TOBI
+            gender: Male
             glasses: false
             height: "1.7"
-            universaltax_identity_number: ""
-            nin_number: ""
-            country: Nigeria
-            state: Edo
-            lga: Etsako East
             is_disability: false
-            disability_reason: ""
+            lga: Etsako East
+            mother_maiden_name: OGUNSOLA
+            nin_number: ""
+            othername: OLALEKAN
+            state: Edo
+            surname: OLOLADE
+            universaltax_identity_number: ""
       properties:
         entity:
           $ref: '#/components/schemas/GetKycDriversLicenseResponse_entity'
@@ -7736,55 +7768,55 @@ components:
       x-konfig-original-example:
         entity:
           personal_details:
-            firstname: TOBI
-            othername: OLALEKAN
-            surname: OLOLADE
-            mother_maiden_name: OGUNSOLA
-            gender: Male
             birth_date: 18/05/1992
             blood_group_id: B+
+            country: Nigeria
+            disability_reason: ""
             facial_mark: false
+            firstname: TOBI
+            gender: Male
             glasses: false
             height: "1.7"
-            universaltax_identity_number: ""
-            nin_number: ""
-            country: Nigeria
-            state: Edo
-            lga: Etsako East
             is_disability: false
-            disability_reason: ""
+            lga: Etsako East
+            mother_maiden_name: OGUNSOLA
+            nin_number: ""
+            othername: OLALEKAN
+            state: Edo
+            surname: OLOLADE
+            universaltax_identity_number: ""
       x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse
     GetKycPassportResponse:
       example:
         entity:
-          passport_number: A00123456
-          date_of_issue: 01/02/2000
-          expiry_date: 01/02/2000
-          document_type: Standard Passport
-          issue_place: LAGOS
-          surname: JOHN
-          first_name: DOE
-          other_names: MOSES
           date_of_birth: 10/06/1993
+          date_of_issue: 01/02/2000
+          document_type: Standard Passport
+          expiry_date: 01/02/2000
+          first_name: DOE
           gender: Undecided
+          issue_place: LAGOS
+          other_names: MOSES
+          passport_number: A00123456
           photo: /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBA
+          surname: JOHN
       properties:
         entity:
           $ref: '#/components/schemas/GetKycPassportResponse_entity'
       type: object
       x-konfig-original-example:
         entity:
-          passport_number: A00123456
-          date_of_issue: 01/02/2000
-          expiry_date: 01/02/2000
-          document_type: Standard Passport
-          issue_place: LAGOS
-          surname: JOHN
-          first_name: DOE
-          other_names: MOSES
           date_of_birth: 10/06/1993
+          date_of_issue: 01/02/2000
+          document_type: Standard Passport
+          expiry_date: 01/02/2000
+          first_name: DOE
           gender: Undecided
+          issue_place: LAGOS
+          other_names: MOSES
+          passport_number: A00123456
           photo: /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBA
+          surname: JOHN
       x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse
     GetVinResponse:
       example:
@@ -7904,31 +7936,31 @@ components:
       example:
         entity:
           bvn: "22156341123"
-          first_name: ADEYEMO
-          middle_name: ADELEKE
-          last_name: AKIN
           date_of_birth: 15-Apr-1985
-          phone_number1: "08134720263"
-          phone_number2: ""
-          gender: Male
+          email: adelek@yahoo.com
           enrollment_bank: "044"
           enrollment_branch: "BBA LAGOS,BANK PLAZA"
-          email: adelek@yahoo.com
+          first_name: ADEYEMO
+          gender: Male
+          image: base64 image
+          last_name: AKIN
+          level_of_account: Level 2 - Medium Level Accounts
           lga_of_origin: Obafemi Owode
           lga_of_residence: Ojo
           marital_status: Single
-          nin: "76221462632"
+          middle_name: ADELEKE
           name_on_card: ADEYEMO ADELEKE AKIN
-          residential_address: "1, OMOLOLA CLOSE CASSIDY BUS STOP OKOKOMAIKO."
-          state_of_origin: Ogun State
-          state_of_residence: Lagos State
-          watch_listed: false
-          level_of_account: Level 2 - Medium Level Accounts
+          nin: "76221462632"
+          phone_number1: "08134720263"
+          phone_number2: ""
           registration_date: ""
-          image: base64 image
+          residential_address: "1, OMOLOLA CLOSE CASSIDY BUS STOP OKOKOMAIKO."
           selfie_verification:
             confidence_value: 99.99803924560547
             match: true
+          state_of_origin: Ogun State
+          state_of_residence: Lagos State
+          watch_listed: false
       properties:
         entity:
           $ref: '#/components/schemas/VerifySelfieBvnResponse_entity'
@@ -7936,31 +7968,31 @@ components:
       x-konfig-original-example:
         entity:
           bvn: "22156341123"
-          first_name: ADEYEMO
-          middle_name: ADELEKE
-          last_name: AKIN
           date_of_birth: 15-Apr-1985
-          phone_number1: "08134720263"
-          phone_number2: ""
-          gender: Male
+          email: adelek@yahoo.com
           enrollment_bank: "044"
           enrollment_branch: "BBA LAGOS,BANK PLAZA"
-          email: adelek@yahoo.com
+          first_name: ADEYEMO
+          gender: Male
+          image: base64 image
+          last_name: AKIN
+          level_of_account: Level 2 - Medium Level Accounts
           lga_of_origin: Obafemi Owode
           lga_of_residence: Ojo
           marital_status: Single
-          nin: "76221462632"
+          middle_name: ADELEKE
           name_on_card: ADEYEMO ADELEKE AKIN
-          residential_address: "1, OMOLOLA CLOSE CASSIDY BUS STOP OKOKOMAIKO."
-          state_of_origin: Ogun State
-          state_of_residence: Lagos State
-          watch_listed: false
-          level_of_account: Level 2 - Medium Level Accounts
+          nin: "76221462632"
+          phone_number1: "08134720263"
+          phone_number2: ""
           registration_date: ""
-          image: base64 image
+          residential_address: "1, OMOLOLA CLOSE CASSIDY BUS STOP OKOKOMAIKO."
           selfie_verification:
             confidence_value: 99.99803924560547
             match: true
+          state_of_origin: Ogun State
+          state_of_residence: Lagos State
+          watch_listed: false
       x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse
     VerificationsVerifySelfieNinResponse:
       example: {}
@@ -8001,22 +8033,22 @@ components:
     AnalyzeDocumentResponse:
       example:
         entity:
-          status:
-            overall_status: 0
-            document_images: true
-            text: true
-            document_type: true
-            expiry: false
+          document_images:
+            Document front side: base64 image
+            Fingerprint: base64 image
+            Portrait: base64 image
           document_type:
-            document_name: United States - Permanent Resident Card (2010)
-            document_country_name: United States
             document_country_code: USA
+            document_country_name: United States
+            document_name: United States - Permanent Resident Card (2010)
             document_type_id: 173
             document_year: "2010"
-          document_images:
-            Portrait: base64 image
-            Fingerprint: base64 image
-            Document front side: base64 image
+          status:
+            document_images: true
+            document_type: true
+            expiry: false
+            overall_status: 0
+            text: true
           text_data:
           - field_name: Date of Expiry
             field_type: 3
@@ -8088,22 +8120,22 @@ components:
       type: object
       x-konfig-original-example:
         entity:
-          status:
-            overall_status: 0
-            document_images: true
-            text: true
-            document_type: true
-            expiry: false
+          document_images:
+            Document front side: base64 image
+            Fingerprint: base64 image
+            Portrait: base64 image
           document_type:
-            document_name: United States - Permanent Resident Card (2010)
-            document_country_name: United States
             document_country_code: USA
+            document_country_name: United States
+            document_name: United States - Permanent Resident Card (2010)
             document_type_id: 173
             document_year: "2010"
-          document_images:
-            Portrait: base64 image
-            Fingerprint: base64 image
-            Document front side: base64 image
+          status:
+            document_images: true
+            document_type: true
+            expiry: false
+            overall_status: 0
+            text: true
           text_data:
           - field_name: Date of Expiry
             field_type: 3
@@ -8271,9 +8303,9 @@ components:
     RequestSenderIdResponse:
       example:
         entity:
-        - sender_id: Dojah
-          activated: true
+        - activated: true
           createdAt: 2020-10-30T09:54:17.145Z
+          sender_id: Dojah
       properties:
         entity:
           items:
@@ -8282,9 +8314,9 @@ components:
       type: object
       x-konfig-original-example:
         entity:
-        - sender_id: Dojah
-          activated: true
+        - activated: true
           createdAt: 2020-10-30T09:54:17.145Z
+          sender_id: Dojah
       x-konfig-generated-schema: konfig-generated-schema-components-schemas-RequestSenderIdResponse
     MlVerifyPhotoIdWithSelfieResponse:
       example: {}
@@ -12637,8 +12669,8 @@ components:
       example:
         entity:
           bvn:
-            value: "23456789012"
             status: true
+            value: "23456789012"
           first_name:
             confidence_value: 100
             status: true
@@ -12647,12 +12679,12 @@ components:
           properties:
             bvn:
               properties:
-                value:
-                  example: "23456789012"
-                  type: string
                 status:
                   example: true
                   type: boolean
+                value:
+                  example: "23456789012"
+                  type: string
               type: object
             first_name:
               properties:
@@ -12666,13 +12698,13 @@ components:
           type: object
       type: object
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-ValidateBvnResponse-properties-entity-properties-bvn-properties-value:
-      example: "23456789012"
-      type: string
-      x-do-not-generate: true
     konfig-generated-schema-components-schemas-ValidateBvnResponse-properties-entity-properties-bvn-properties-status:
       example: true
       type: boolean
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-ValidateBvnResponse-properties-entity-properties-bvn-properties-value:
+      example: "23456789012"
+      type: string
       x-do-not-generate: true
     ? konfig-generated-schema-components-schemas-ValidateBvnResponse-properties-entity-properties-first_name-properties-confidence_value
     : example: 100
@@ -12685,58 +12717,58 @@ components:
     konfig-generated-schema-components-schemas-GetBasicBvnResponse:
       example:
         entity:
-          first_name: JOSHUA
-          last_name: OLADIPO
-          dob: 28-Jun-00
-          formatted_dob: 2000-06-28
-          mobile: "07085460116"
           bvn: "22468537919"
+          dob: 28-Jun-00
+          first_name: JOSHUA
+          formatted_dob: 2000-06-28
+          last_name: OLADIPO
+          mobile: "07085460116"
       properties:
         entity:
           properties:
-            first_name:
-              example: JOSHUA
-              type: string
-            last_name:
-              example: OLADIPO
+            bvn:
+              example: "22468537919"
               type: string
             dob:
               example: 28-Jun-00
               type: string
+            first_name:
+              example: JOSHUA
+              type: string
             formatted_dob:
               example: 2000-06-28
+              type: string
+            last_name:
+              example: OLADIPO
               type: string
             mobile:
               example: "07085460116"
               type: string
-            bvn:
-              example: "22468537919"
-              type: string
           type: object
       type: object
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-first_name:
-      example: JOSHUA
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-last_name:
-      example: OLADIPO
+    konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-bvn:
+      example: "22468537919"
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-dob:
       example: 28-Jun-00
       type: string
       x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-first_name:
+      example: JOSHUA
+      type: string
+      x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-formatted_dob:
       example: 2000-06-28
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-mobile:
-      example: "07085460116"
+    konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-last_name:
+      example: OLADIPO
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-bvn:
-      example: "22468537919"
+    konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-mobile:
+      example: "07085460116"
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetFullBvnResponse:
@@ -14424,26 +14456,35 @@ components:
     konfig-generated-schema-components-schemas-GetVninResponse:
       example:
         entity:
-          vnin: AB012345678910YZ
+          dateOfBirth: 01-01-1982
           firstname: John
+          gender: M
           middlename: Doe
+          mobile: "08012345678"
+          photo: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
           surname: Alamutu
           user_id: WXABCD-1234
-          gender: M
-          mobile: "08012345678"
-          dateOfBirth: 01-01-1982
-          photo: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
+          vnin: AB012345678910YZ
       properties:
         entity:
           properties:
-            vnin:
-              example: AB012345678910YZ
+            dateOfBirth:
+              example: 01-01-1982
               type: string
             firstname:
               example: John
               type: string
+            gender:
+              example: M
+              type: string
             middlename:
               example: Doe
+              type: string
+            mobile:
+              example: "08012345678"
+              type: string
+            photo:
+              example: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
               type: string
             surname:
               example: Alamutu
@@ -14451,31 +14492,34 @@ components:
             user_id:
               example: WXABCD-1234
               type: string
-            gender:
-              example: M
-              type: string
-            mobile:
-              example: "08012345678"
-              type: string
-            dateOfBirth:
-              example: 01-01-1982
-              type: string
-            photo:
-              example: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
+            vnin:
+              example: AB012345678910YZ
               type: string
           type: object
       type: object
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-vnin:
-      example: AB012345678910YZ
+    konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-dateOfBirth:
+      example: 01-01-1982
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-firstname:
       example: John
       type: string
       x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-gender:
+      example: M
+      type: string
+      x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-middlename:
       example: Doe
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-mobile:
+      example: "08012345678"
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-photo:
+      example: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-surname:
@@ -14486,20 +14530,8 @@ components:
       example: WXABCD-1234
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-gender:
-      example: M
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-mobile:
-      example: "08012345678"
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-dateOfBirth:
-      example: 01-01-1982
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-photo:
-      example: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
+    konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-vnin:
+      example: AB012345678910YZ
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPremiumBvnResponse:
@@ -14529,8 +14561,8 @@ components:
           residential_address: "24, OSHODI SURULERE, ILORIN"
           state_of_origin: Osun State
           state_of_residence: Kwara State
-          watch_listed: false
           status: 200
+          watch_listed: false
       properties:
         entity:
           properties:
@@ -14606,12 +14638,12 @@ components:
             state_of_residence:
               example: Kwara State
               type: string
-            watch_listed:
-              example: "false"
-              type: string
             status:
               example: 200
               type: number
+            watch_listed:
+              example: "false"
+              type: string
           type: object
       type: object
       x-do-not-generate: true
@@ -14711,13 +14743,13 @@ components:
       example: Kwara State
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPremiumBvnResponse-properties-entity-properties-watch_listed:
-      example: "false"
-      type: string
-      x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPremiumBvnResponse-properties-entity-properties-status:
       example: 200
       type: number
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPremiumBvnResponse-properties-entity-properties-watch_listed:
+      example: "false"
+      type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-NigeriaKycGetBasicPhoneNumberResponse:
       example: {}
@@ -14728,58 +14760,40 @@ components:
       example:
         entity:
           title: Mr
-          msisdn: "09011111111"
-          firstName: John
-          middleName: Doe
-          lastName: Doe
-          maritalStatus: Married
-          gender: Male
           birthDate: 11-11-1972
           birthLga: Ikeja
           birthState: Lagos
           educationalLevel: Higher
           emplymentStatus: 25 ikeja
+          firstName: John
+          gender: Male
+          height: 5 9
+          lastName: Doe
+          lga: Ikeja
+          maritalStatus: Married
+          middleName: Doe
+          msisdn: "09011111111"
+          nin: "111111111111111"
           nspokenLang: English
           ospokenlang: Yoruba
+          picture: <base64 encoded image>
           profession: Tailor
           religion: Muslim
           residenceAddressLine1: 25 Agege motor ways
-          residenceTown: Oshogbo
           residenceLga: Ikeja
           residenceState: Lagos
           residenceStatus: Occupant
+          residenceTown: Oshogbo
           selfOriginLga: Lagos Island
           selfOriginPlace: Yaba
           selfOriginState: Muslim
           state: Lagos
-          lga: Ikeja
-          nin: "111111111111111"
-          height: 5 9
-          picture: <base64 encoded image>
           status: 200
       properties:
         entity:
           properties:
             title:
               example: Mr
-              type: string
-            msisdn:
-              example: "09011111111"
-              type: string
-            firstName:
-              example: John
-              type: string
-            middleName:
-              example: Doe
-              type: string
-            lastName:
-              example: Doe
-              type: string
-            maritalStatus:
-              example: Married
-              type: string
-            gender:
-              example: Male
               type: string
             birthDate:
               example: 11-11-1972
@@ -14796,11 +14810,41 @@ components:
             emplymentStatus:
               example: 25 ikeja
               type: string
+            firstName:
+              example: John
+              type: string
+            gender:
+              example: Male
+              type: string
+            height:
+              example: 5 9
+              type: string
+            lastName:
+              example: Doe
+              type: string
+            lga:
+              example: Ikeja
+              type: string
+            maritalStatus:
+              example: Married
+              type: string
+            middleName:
+              example: Doe
+              type: string
+            msisdn:
+              example: "09011111111"
+              type: string
+            nin:
+              example: "111111111111111"
+              type: string
             nspokenLang:
               example: English
               type: string
             ospokenlang:
               example: Yoruba
+              type: string
+            picture:
+              example: <base64 encoded image>
               type: string
             profession:
               example: Tailor
@@ -14811,9 +14855,6 @@ components:
             residenceAddressLine1:
               example: 25 Agege motor ways
               type: string
-            residenceTown:
-              example: Oshogbo
-              type: string
             residenceLga:
               example: Ikeja
               type: string
@@ -14822,6 +14863,9 @@ components:
               type: string
             residenceStatus:
               example: Occupant
+              type: string
+            residenceTown:
+              example: Oshogbo
               type: string
             selfOriginLga:
               example: Lagos Island
@@ -14835,18 +14879,6 @@ components:
             state:
               example: Lagos
               type: string
-            lga:
-              example: Ikeja
-              type: string
-            nin:
-              example: "111111111111111"
-              type: string
-            height:
-              example: 5 9
-              type: string
-            picture:
-              example: <base64 encoded image>
-              type: string
             status:
               example: 200
               type: number
@@ -14855,30 +14887,6 @@ components:
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-title:
       example: Mr
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-msisdn:
-      example: "09011111111"
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-firstName:
-      example: John
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-middleName:
-      example: Doe
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-lastName:
-      example: Doe
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-maritalStatus:
-      example: Married
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-gender:
-      example: Male
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-birthDate:
@@ -14901,12 +14909,52 @@ components:
       example: 25 ikeja
       type: string
       x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-firstName:
+      example: John
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-gender:
+      example: Male
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-height:
+      example: 5 9
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-lastName:
+      example: Doe
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-lga:
+      example: Ikeja
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-maritalStatus:
+      example: Married
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-middleName:
+      example: Doe
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-msisdn:
+      example: "09011111111"
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-nin:
+      example: "111111111111111"
+      type: string
+      x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-nspokenLang:
       example: English
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-ospokenlang:
       example: Yoruba
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-picture:
+      example: <base64 encoded image>
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-profession:
@@ -14921,10 +14969,6 @@ components:
       example: 25 Agege motor ways
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-residenceTown:
-      example: Oshogbo
-      type: string
-      x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-residenceLga:
       example: Ikeja
       type: string
@@ -14935,6 +14979,10 @@ components:
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-residenceStatus:
       example: Occupant
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-residenceTown:
+      example: Oshogbo
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-selfOriginLga:
@@ -14953,22 +15001,6 @@ components:
       example: Lagos
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-lga:
-      example: Ikeja
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-nin:
-      example: "111111111111111"
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-height:
-      example: 5 9
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-picture:
-      example: <base64 encoded image>
-      type: string
-      x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-status:
       example: 200
       type: number
@@ -14977,58 +15009,40 @@ components:
       example:
         entity:
           title: Mr
-          msisdn: "09011111111"
-          firstName: John
-          middleName: Doe
-          lastName: Doe
-          maritalStatus: Married
-          gender: Male
           birthDate: 11-11-1972
           birthLga: Ikeja
           birthState: Lagos
           educationalLevel: Higher
           emplymentStatus: 25 ikeja
+          firstName: John
+          gender: Male
+          height: 5 9
+          lastName: Doe
+          lga: Ikeja
+          maritalStatus: Married
+          middleName: Doe
+          msisdn: "09011111111"
+          nin: "111111111111111"
           nspokenLang: English
           ospokenlang: Yoruba
+          picture: <base64 encoded image>
           profession: Tailor
           religion: Muslim
           residenceAddressLine1: 25 Agege motor ways
-          residenceTown: Oshogbo
           residenceLga: Ikeja
           residenceState: Lagos
           residenceStatus: Occupant
+          residenceTown: Oshogbo
           selfOriginLga: Lagos Island
           selfOriginPlace: Yaba
           selfOriginState: Muslim
           state: Lagos
-          lga: Ikeja
-          nin: "111111111111111"
-          height: 5 9
-          picture: <base64 encoded image>
           status: 200
       properties:
         entity:
           properties:
             title:
               example: Mr
-              type: string
-            msisdn:
-              example: "09011111111"
-              type: string
-            firstName:
-              example: John
-              type: string
-            middleName:
-              example: Doe
-              type: string
-            lastName:
-              example: Doe
-              type: string
-            maritalStatus:
-              example: Married
-              type: string
-            gender:
-              example: Male
               type: string
             birthDate:
               example: 11-11-1972
@@ -15045,11 +15059,41 @@ components:
             emplymentStatus:
               example: 25 ikeja
               type: string
+            firstName:
+              example: John
+              type: string
+            gender:
+              example: Male
+              type: string
+            height:
+              example: 5 9
+              type: string
+            lastName:
+              example: Doe
+              type: string
+            lga:
+              example: Ikeja
+              type: string
+            maritalStatus:
+              example: Married
+              type: string
+            middleName:
+              example: Doe
+              type: string
+            msisdn:
+              example: "09011111111"
+              type: string
+            nin:
+              example: "111111111111111"
+              type: string
             nspokenLang:
               example: English
               type: string
             ospokenlang:
               example: Yoruba
+              type: string
+            picture:
+              example: <base64 encoded image>
               type: string
             profession:
               example: Tailor
@@ -15060,9 +15104,6 @@ components:
             residenceAddressLine1:
               example: 25 Agege motor ways
               type: string
-            residenceTown:
-              example: Oshogbo
-              type: string
             residenceLga:
               example: Ikeja
               type: string
@@ -15071,6 +15112,9 @@ components:
               type: string
             residenceStatus:
               example: Occupant
+              type: string
+            residenceTown:
+              example: Oshogbo
               type: string
             selfOriginLga:
               example: Lagos Island
@@ -15084,18 +15128,6 @@ components:
             state:
               example: Lagos
               type: string
-            lga:
-              example: Ikeja
-              type: string
-            nin:
-              example: "111111111111111"
-              type: string
-            height:
-              example: 5 9
-              type: string
-            picture:
-              example: <base64 encoded image>
-              type: string
             status:
               example: 200
               type: number
@@ -15104,30 +15136,6 @@ components:
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-title:
       example: Mr
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-msisdn:
-      example: "09011111111"
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-firstName:
-      example: John
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-middleName:
-      example: Doe
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-lastName:
-      example: Doe
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-maritalStatus:
-      example: Married
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-gender:
-      example: Male
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-birthDate:
@@ -15150,12 +15158,52 @@ components:
       example: 25 ikeja
       type: string
       x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-firstName:
+      example: John
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-gender:
+      example: Male
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-height:
+      example: 5 9
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-lastName:
+      example: Doe
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-lga:
+      example: Ikeja
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-maritalStatus:
+      example: Married
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-middleName:
+      example: Doe
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-msisdn:
+      example: "09011111111"
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-nin:
+      example: "111111111111111"
+      type: string
+      x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-nspokenLang:
       example: English
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-ospokenlang:
       example: Yoruba
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-picture:
+      example: <base64 encoded image>
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-profession:
@@ -15170,10 +15218,6 @@ components:
       example: 25 Agege motor ways
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-residenceTown:
-      example: Oshogbo
-      type: string
-      x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-residenceLga:
       example: Ikeja
       type: string
@@ -15184,6 +15228,10 @@ components:
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-residenceStatus:
       example: Occupant
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-residenceTown:
+      example: Oshogbo
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-selfOriginLga:
@@ -15202,22 +15250,6 @@ components:
       example: Lagos
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-lga:
-      example: Ikeja
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-nin:
-      example: "111111111111111"
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-height:
-      example: 5 9
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-picture:
-      example: <base64 encoded image>
-      type: string
-      x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-status:
       example: 200
       type: number
@@ -15226,51 +15258,48 @@ components:
       example:
         entity:
           personal_details:
-            firstname: TOBI
-            othername: OLALEKAN
-            surname: OLOLADE
-            mother_maiden_name: OGUNSOLA
-            gender: Male
             birth_date: 18/05/1992
             blood_group_id: B+
+            country: Nigeria
+            disability_reason: ""
             facial_mark: false
+            firstname: TOBI
+            gender: Male
             glasses: false
             height: "1.7"
-            universaltax_identity_number: ""
-            nin_number: ""
-            country: Nigeria
-            state: Edo
-            lga: Etsako East
             is_disability: false
-            disability_reason: ""
+            lga: Etsako East
+            mother_maiden_name: OGUNSOLA
+            nin_number: ""
+            othername: OLALEKAN
+            state: Edo
+            surname: OLOLADE
+            universaltax_identity_number: ""
       properties:
         entity:
           properties:
             personal_details:
               properties:
-                firstname:
-                  example: TOBI
-                  type: string
-                othername:
-                  example: OLALEKAN
-                  type: string
-                surname:
-                  example: OLOLADE
-                  type: string
-                mother_maiden_name:
-                  example: OGUNSOLA
-                  type: string
-                gender:
-                  example: Male
-                  type: string
                 birth_date:
                   example: 18/05/1992
                   type: string
                 blood_group_id:
                   example: B+
                   type: string
+                country:
+                  example: Nigeria
+                  type: string
+                disability_reason:
+                  example: ""
+                  type: string
                 facial_mark:
                   example: "false"
+                  type: string
+                firstname:
+                  example: TOBI
+                  type: string
+                gender:
+                  example: Male
                   type: string
                 glasses:
                   example: "false"
@@ -15278,50 +15307,33 @@ components:
                 height:
                   example: "1.7"
                   type: string
-                universaltax_identity_number:
-                  example: ""
-                  type: string
-                nin_number:
-                  example: ""
-                  type: string
-                country:
-                  example: Nigeria
-                  type: string
-                state:
-                  example: Edo
+                is_disability:
+                  example: "false"
                   type: string
                 lga:
                   example: Etsako East
                   type: string
-                is_disability:
-                  example: "false"
+                mother_maiden_name:
+                  example: OGUNSOLA
                   type: string
-                disability_reason:
+                nin_number:
+                  example: ""
+                  type: string
+                othername:
+                  example: OLALEKAN
+                  type: string
+                state:
+                  example: Edo
+                  type: string
+                surname:
+                  example: OLOLADE
+                  type: string
+                universaltax_identity_number:
                   example: ""
                   type: string
               type: object
           type: object
       type: object
-      x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-firstname
-    : example: TOBI
-      type: string
-      x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-othername
-    : example: OLALEKAN
-      type: string
-      x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-surname
-    : example: OLOLADE
-      type: string
-      x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-mother_maiden_name
-    : example: OGUNSOLA
-      type: string
-      x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-gender
-    : example: Male
-      type: string
       x-do-not-generate: true
     ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-birth_date
     : example: 18/05/1992
@@ -15331,8 +15343,24 @@ components:
     : example: B+
       type: string
       x-do-not-generate: true
+    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-country
+    : example: Nigeria
+      type: string
+      x-do-not-generate: true
+    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-disability_reason
+    : example: ""
+      type: string
+      x-do-not-generate: true
     ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-facial_mark
     : example: "false"
+      type: string
+      x-do-not-generate: true
+    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-firstname
+    : example: TOBI
+      type: string
+      x-do-not-generate: true
+    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-gender
+    : example: Male
       type: string
       x-do-not-generate: true
     ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-glasses
@@ -15343,96 +15371,96 @@ components:
     : example: "1.7"
       type: string
       x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-universaltax_identity_number
-    : example: ""
-      type: string
-      x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-nin_number
-    : example: ""
-      type: string
-      x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-country
-    : example: Nigeria
-      type: string
-      x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-state
-    : example: Edo
+    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-is_disability
+    : example: "false"
       type: string
       x-do-not-generate: true
     ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-lga
     : example: Etsako East
       type: string
       x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-is_disability
-    : example: "false"
+    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-mother_maiden_name
+    : example: OGUNSOLA
       type: string
       x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-disability_reason
+    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-nin_number
+    : example: ""
+      type: string
+      x-do-not-generate: true
+    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-othername
+    : example: OLALEKAN
+      type: string
+      x-do-not-generate: true
+    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-state
+    : example: Edo
+      type: string
+      x-do-not-generate: true
+    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-surname
+    : example: OLOLADE
+      type: string
+      x-do-not-generate: true
+    ? konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-universaltax_identity_number
     : example: ""
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetKycPassportResponse:
       example:
         entity:
-          passport_number: A00123456
-          date_of_issue: 01/02/2000
-          expiry_date: 01/02/2000
-          document_type: Standard Passport
-          issue_place: LAGOS
-          surname: JOHN
-          first_name: DOE
-          other_names: MOSES
           date_of_birth: 10/06/1993
+          date_of_issue: 01/02/2000
+          document_type: Standard Passport
+          expiry_date: 01/02/2000
+          first_name: DOE
           gender: Undecided
+          issue_place: LAGOS
+          other_names: MOSES
+          passport_number: A00123456
           photo: /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBA
+          surname: JOHN
       properties:
         entity:
           properties:
-            passport_number:
-              example: A00123456
+            date_of_birth:
+              example: 10/06/1993
               type: string
             date_of_issue:
-              example: 01/02/2000
-              type: string
-            expiry_date:
               example: 01/02/2000
               type: string
             document_type:
               example: Standard Passport
               type: string
-            issue_place:
-              example: LAGOS
-              type: string
-            surname:
-              example: JOHN
+            expiry_date:
+              example: 01/02/2000
               type: string
             first_name:
               example: DOE
               type: string
+            gender:
+              example: Undecided
+              type: string
+            issue_place:
+              example: LAGOS
+              type: string
             other_names:
               example: MOSES
               type: string
-            date_of_birth:
-              example: 10/06/1993
-              type: string
-            gender:
-              example: Undecided
+            passport_number:
+              example: A00123456
               type: string
             photo:
               example: /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBA
               type: string
+            surname:
+              example: JOHN
+              type: string
           type: object
       type: object
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-passport_number:
-      example: A00123456
+    konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-date_of_birth:
+      example: 10/06/1993
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-date_of_issue:
-      example: 01/02/2000
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-expiry_date:
       example: 01/02/2000
       type: string
       x-do-not-generate: true
@@ -15440,32 +15468,36 @@ components:
       example: Standard Passport
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-issue_place:
-      example: LAGOS
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-surname:
-      example: JOHN
+    konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-expiry_date:
+      example: 01/02/2000
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-first_name:
       example: DOE
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-other_names:
-      example: MOSES
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-date_of_birth:
-      example: 10/06/1993
-      type: string
-      x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-gender:
       example: Undecided
       type: string
       x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-issue_place:
+      example: LAGOS
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-other_names:
+      example: MOSES
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-passport_number:
+      example: A00123456
+      type: string
+      x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-photo:
       example: /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBA
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-surname:
+      example: JOHN
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-GetVinResponse:
@@ -15773,57 +15805,42 @@ components:
       example:
         entity:
           bvn: "22156341123"
-          first_name: ADEYEMO
-          middle_name: ADELEKE
-          last_name: AKIN
           date_of_birth: 15-Apr-1985
-          phone_number1: "08134720263"
-          phone_number2: ""
-          gender: Male
+          email: adelek@yahoo.com
           enrollment_bank: "044"
           enrollment_branch: "BBA LAGOS,BANK PLAZA"
-          email: adelek@yahoo.com
+          first_name: ADEYEMO
+          gender: Male
+          image: base64 image
+          last_name: AKIN
+          level_of_account: Level 2 - Medium Level Accounts
           lga_of_origin: Obafemi Owode
           lga_of_residence: Ojo
           marital_status: Single
-          nin: "76221462632"
+          middle_name: ADELEKE
           name_on_card: ADEYEMO ADELEKE AKIN
-          residential_address: "1, OMOLOLA CLOSE CASSIDY BUS STOP OKOKOMAIKO."
-          state_of_origin: Ogun State
-          state_of_residence: Lagos State
-          watch_listed: false
-          level_of_account: Level 2 - Medium Level Accounts
+          nin: "76221462632"
+          phone_number1: "08134720263"
+          phone_number2: ""
           registration_date: ""
-          image: base64 image
+          residential_address: "1, OMOLOLA CLOSE CASSIDY BUS STOP OKOKOMAIKO."
           selfie_verification:
             confidence_value: 99.99803924560547
             match: true
+          state_of_origin: Ogun State
+          state_of_residence: Lagos State
+          watch_listed: false
       properties:
         entity:
           properties:
             bvn:
               example: "22156341123"
               type: string
-            first_name:
-              example: ADEYEMO
-              type: string
-            middle_name:
-              example: ADELEKE
-              type: string
-            last_name:
-              example: AKIN
-              type: string
             date_of_birth:
               example: 15-Apr-1985
               type: string
-            phone_number1:
-              example: "08134720263"
-              type: string
-            phone_number2:
-              example: ""
-              type: string
-            gender:
-              example: Male
+            email:
+              example: adelek@yahoo.com
               type: string
             enrollment_bank:
               example: "044"
@@ -15831,8 +15848,20 @@ components:
             enrollment_branch:
               example: "BBA LAGOS,BANK PLAZA"
               type: string
-            email:
-              example: adelek@yahoo.com
+            first_name:
+              example: ADEYEMO
+              type: string
+            gender:
+              example: Male
+              type: string
+            image:
+              example: base64 image
+              type: string
+            last_name:
+              example: AKIN
+              type: string
+            level_of_account:
+              example: Level 2 - Medium Level Accounts
               type: string
             lga_of_origin:
               example: Obafemi Owode
@@ -15843,32 +15872,26 @@ components:
             marital_status:
               example: Single
               type: string
-            nin:
-              example: "76221462632"
+            middle_name:
+              example: ADELEKE
               type: string
             name_on_card:
               example: ADEYEMO ADELEKE AKIN
               type: string
-            residential_address:
-              example: "1, OMOLOLA CLOSE CASSIDY BUS STOP OKOKOMAIKO."
+            nin:
+              example: "76221462632"
               type: string
-            state_of_origin:
-              example: Ogun State
+            phone_number1:
+              example: "08134720263"
               type: string
-            state_of_residence:
-              example: Lagos State
-              type: string
-            watch_listed:
-              example: "false"
-              type: string
-            level_of_account:
-              example: Level 2 - Medium Level Accounts
+            phone_number2:
+              example: ""
               type: string
             registration_date:
               example: ""
               type: string
-            image:
-              example: base64 image
+            residential_address:
+              example: "1, OMOLOLA CLOSE CASSIDY BUS STOP OKOKOMAIKO."
               type: string
             selfie_verification:
               properties:
@@ -15879,6 +15902,15 @@ components:
                   example: true
                   type: boolean
               type: object
+            state_of_origin:
+              example: Ogun State
+              type: string
+            state_of_residence:
+              example: Lagos State
+              type: string
+            watch_listed:
+              example: "false"
+              type: string
           type: object
       type: object
       x-do-not-generate: true
@@ -15886,32 +15918,12 @@ components:
       example: "22156341123"
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-first_name:
-      example: ADEYEMO
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-middle_name:
-      example: ADELEKE
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-last_name:
-      example: AKIN
-      type: string
-      x-do-not-generate: true
     konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-date_of_birth:
       example: 15-Apr-1985
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-phone_number1:
-      example: "08134720263"
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-phone_number2:
-      example: ""
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-gender:
-      example: Male
+    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-email:
+      example: adelek@yahoo.com
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-enrollment_bank:
@@ -15922,8 +15934,24 @@ components:
       example: "BBA LAGOS,BANK PLAZA"
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-email:
-      example: adelek@yahoo.com
+    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-first_name:
+      example: ADEYEMO
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-gender:
+      example: Male
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-image:
+      example: base64 image
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-last_name:
+      example: AKIN
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-level_of_account:
+      example: Level 2 - Medium Level Accounts
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-lga_of_origin:
@@ -15938,17 +15966,41 @@ components:
       example: Single
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-nin:
-      example: "76221462632"
+    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-middle_name:
+      example: ADELEKE
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-name_on_card:
       example: ADEYEMO ADELEKE AKIN
       type: string
       x-do-not-generate: true
+    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-nin:
+      example: "76221462632"
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-phone_number1:
+      example: "08134720263"
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-phone_number2:
+      example: ""
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-registration_date:
+      example: ""
+      type: string
+      x-do-not-generate: true
     konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-residential_address:
       example: "1, OMOLOLA CLOSE CASSIDY BUS STOP OKOKOMAIKO."
       type: string
+      x-do-not-generate: true
+    ? konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-selfie_verification-properties-confidence_value
+    : example: 99.99803924560547
+      type: number
+      x-do-not-generate: true
+    ? konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-selfie_verification-properties-match
+    : example: true
+      type: boolean
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-state_of_origin:
       example: Ogun State
@@ -15961,26 +16013,6 @@ components:
     konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-watch_listed:
       example: "false"
       type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-level_of_account:
-      example: Level 2 - Medium Level Accounts
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-registration_date:
-      example: ""
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-image:
-      example: base64 image
-      type: string
-      x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-selfie_verification-properties-confidence_value
-    : example: 99.99803924560547
-      type: number
-      x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-selfie_verification-properties-match
-    : example: true
-      type: boolean
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-VerificationsVerifySelfieNinResponse:
       example: {}
@@ -16041,22 +16073,22 @@ components:
     konfig-generated-schema-components-schemas-AnalyzeDocumentResponse:
       example:
         entity:
-          status:
-            overall_status: 0
-            document_images: true
-            text: true
-            document_type: true
-            expiry: false
+          document_images:
+            Document front side: base64 image
+            Fingerprint: base64 image
+            Portrait: base64 image
           document_type:
-            document_name: United States - Permanent Resident Card (2010)
-            document_country_name: United States
             document_country_code: USA
+            document_country_name: United States
+            document_name: United States - Permanent Resident Card (2010)
             document_type_id: 173
             document_year: "2010"
-          document_images:
-            Portrait: base64 image
-            Fingerprint: base64 image
-            Document front side: base64 image
+          status:
+            document_images: true
+            document_type: true
+            expiry: false
+            overall_status: 0
+            text: true
           text_data:
           - field_name: Date of Expiry
             field_type: 3
@@ -16125,34 +16157,28 @@ components:
       properties:
         entity:
           properties:
-            status:
+            document_images:
               properties:
-                overall_status:
-                  example: 0
-                  type: number
-                document_images:
-                  example: "true"
+                Document front side:
+                  example: base64 image
                   type: string
-                text:
-                  example: "true"
+                Fingerprint:
+                  example: base64 image
                   type: string
-                document_type:
-                  example: "true"
-                  type: string
-                expiry:
-                  example: "false"
+                Portrait:
+                  example: base64 image
                   type: string
               type: object
             document_type:
               properties:
-                document_name:
-                  example: United States - Permanent Resident Card (2010)
+                document_country_code:
+                  example: USA
                   type: string
                 document_country_name:
                   example: United States
                   type: string
-                document_country_code:
-                  example: USA
+                document_name:
+                  example: United States - Permanent Resident Card (2010)
                   type: string
                 document_type_id:
                   example: 173
@@ -16161,16 +16187,22 @@ components:
                   example: "2010"
                   type: string
               type: object
-            document_images:
+            status:
               properties:
-                Portrait:
-                  example: base64 image
+                document_images:
+                  example: "true"
                   type: string
-                Fingerprint:
-                  example: base64 image
+                document_type:
+                  example: "true"
                   type: string
-                Document front side:
-                  example: base64 image
+                expiry:
+                  example: "false"
+                  type: string
+                overall_status:
+                  example: 0
+                  type: number
+                text:
+                  example: "true"
                   type: string
               type: object
             text_data:
@@ -16193,36 +16225,29 @@ components:
           type: object
       type: object
       x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-overall_status
-    : example: 0
-      type: number
-      x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-document_images
-    : example: "true"
+    ? konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_images-properties-Document
+      front side
+    : example: base64 image
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-text:
-      example: "true"
+    ? konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_images-properties-Fingerprint
+    : example: base64 image
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-document_type:
-      example: "true"
+    ? konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_images-properties-Portrait
+    : example: base64 image
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-expiry:
-      example: "false"
-      type: string
-      x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_type-properties-document_name
-    : example: United States - Permanent Resident Card (2010)
+    ? konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_type-properties-document_country_code
+    : example: USA
       type: string
       x-do-not-generate: true
     ? konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_type-properties-document_country_name
     : example: United States
       type: string
       x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_type-properties-document_country_code
-    : example: USA
+    ? konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_type-properties-document_name
+    : example: United States - Permanent Resident Card (2010)
       type: string
       x-do-not-generate: true
     ? konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_type-properties-document_type_id
@@ -16233,17 +16258,24 @@ components:
     : example: "2010"
       type: string
       x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_images-properties-Portrait
-    : example: base64 image
+    ? konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-document_images
+    : example: "true"
       type: string
       x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_images-properties-Fingerprint
-    : example: base64 image
+    konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-document_type:
+      example: "true"
       type: string
       x-do-not-generate: true
-    ? konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_images-properties-Document
-      front side
-    : example: base64 image
+    konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-expiry:
+      example: "false"
+      type: string
+      x-do-not-generate: true
+    ? konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-overall_status
+    : example: 0
+      type: number
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-text:
+      example: "true"
       type: string
       x-do-not-generate: true
     ? konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-text_data-items-properties-field_name
@@ -16427,29 +16459,25 @@ components:
     konfig-generated-schema-components-schemas-RequestSenderIdResponse:
       example:
         entity:
-        - sender_id: Dojah
-          activated: true
+        - activated: true
           createdAt: 2020-10-30T09:54:17.145Z
+          sender_id: Dojah
       properties:
         entity:
           items:
             properties:
-              sender_id:
-                example: Dojah
-                type: string
               activated:
                 example: true
                 type: boolean
               createdAt:
                 example: 2020-10-30T09:54:17.145Z
                 type: string
+              sender_id:
+                example: Dojah
+                type: string
             type: object
           type: array
       type: object
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-RequestSenderIdResponse-properties-entity-items-properties-sender_id:
-      example: Dojah
-      type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-RequestSenderIdResponse-properties-entity-items-properties-activated:
       example: true
@@ -16457,6 +16485,10 @@ components:
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-RequestSenderIdResponse-properties-entity-items-properties-createdAt:
       example: 2020-10-30T09:54:17.145Z
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-RequestSenderIdResponse-properties-entity-items-properties-sender_id:
+      example: Dojah
       type: string
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-MlVerifyPhotoIdWithSelfieResponse:
@@ -19536,11 +19568,13 @@ components:
         date_of_death:
           nullable: true
           type: string
+          x-konfig-null-placeholder: true
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-ZwKycVerifyIdResponse-properties-entity-properties-date_of_death
           example: null
         birth_place:
           nullable: true
           type: string
+          x-konfig-null-placeholder: true
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-ZwKycVerifyIdResponse-properties-entity-properties-birth_place
           example: null
       type: object
@@ -19574,6 +19608,7 @@ components:
         id_number:
           nullable: true
           type: string
+          x-konfig-null-placeholder: true
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-ZwKycCheckCreditResponse-properties-entity-properties-id_number
           example: null
       type: object
@@ -19785,16 +19820,16 @@ components:
       type: object
     ValidateBvnResponse_entity_bvn:
       properties:
-        value:
-          example: "23456789012"
-          type: string
-          x-konfig-original-example: "23456789012"
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-ValidateBvnResponse-properties-entity-properties-bvn-properties-value
         status:
           example: true
           type: boolean
           x-konfig-original-example: true
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-ValidateBvnResponse-properties-entity-properties-bvn-properties-status
+        value:
+          example: "23456789012"
+          type: string
+          x-konfig-original-example: "23456789012"
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-ValidateBvnResponse-properties-entity-properties-bvn-properties-value
       type: object
     ValidateBvnResponse_entity_first_name:
       properties:
@@ -19818,36 +19853,36 @@ components:
       type: object
     GetBasicBvnResponse_entity:
       properties:
-        first_name:
-          example: JOSHUA
-          type: string
-          x-konfig-original-example: JOSHUA
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-first_name
-        last_name:
-          example: OLADIPO
-          type: string
-          x-konfig-original-example: OLADIPO
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-last_name
-        dob:
-          example: 28-Jun-00
-          type: string
-          x-konfig-original-example: 28-Jun-00
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-dob
-        formatted_dob:
-          example: 2000-06-28
-          type: string
-          x-konfig-original-example: 2000-06-28
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-formatted_dob
-        mobile:
-          example: "07085460116"
-          type: string
-          x-konfig-original-example: "07085460116"
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-mobile
         bvn:
           example: "22468537919"
           type: string
           x-konfig-original-example: "22468537919"
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-bvn
+        dob:
+          example: 28-Jun-00
+          type: string
+          x-konfig-original-example: 28-Jun-00
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-dob
+        first_name:
+          example: JOSHUA
+          type: string
+          x-konfig-original-example: JOSHUA
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-first_name
+        formatted_dob:
+          example: 2000-06-28
+          type: string
+          x-konfig-original-example: 2000-06-28
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-formatted_dob
+        last_name:
+          example: OLADIPO
+          type: string
+          x-konfig-original-example: OLADIPO
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-last_name
+        mobile:
+          example: "07085460116"
+          type: string
+          x-konfig-original-example: "07085460116"
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetBasicBvnResponse-properties-entity-properties-mobile
       type: object
     GetFullBvnResponse_entity:
       properties:
@@ -20022,6 +20057,7 @@ components:
         email:
           nullable: true
           type: string
+          x-konfig-null-placeholder: true
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-NigeriaKycGetNinResponse-properties-entity-properties-email
           example: null
         employment_status:
@@ -20047,6 +20083,7 @@ components:
         maiden_name:
           nullable: true
           type: string
+          x-konfig-null-placeholder: true
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-NigeriaKycGetNinResponse-properties-entity-properties-maiden_name
           example: null
         marital_status:
@@ -20943,21 +20980,36 @@ components:
       type: object
     GetVninResponse_entity:
       properties:
-        vnin:
-          example: AB012345678910YZ
+        dateOfBirth:
+          example: 01-01-1982
           type: string
-          x-konfig-original-example: AB012345678910YZ
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-vnin
+          x-konfig-original-example: 01-01-1982
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-dateOfBirth
         firstname:
           example: John
           type: string
           x-konfig-original-example: John
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-firstname
+        gender:
+          example: M
+          type: string
+          x-konfig-original-example: M
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-gender
         middlename:
           example: Doe
           type: string
           x-konfig-original-example: Doe
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-middlename
+        mobile:
+          example: "08012345678"
+          type: string
+          x-konfig-original-example: "08012345678"
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-mobile
+        photo:
+          example: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
+          type: string
+          x-konfig-original-example: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-photo
         surname:
           example: Alamutu
           type: string
@@ -20968,26 +21020,11 @@ components:
           type: string
           x-konfig-original-example: WXABCD-1234
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-user_id
-        gender:
-          example: M
+        vnin:
+          example: AB012345678910YZ
           type: string
-          x-konfig-original-example: M
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-gender
-        mobile:
-          example: "08012345678"
-          type: string
-          x-konfig-original-example: "08012345678"
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-mobile
-        dateOfBirth:
-          example: 01-01-1982
-          type: string
-          x-konfig-original-example: 01-01-1982
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-dateOfBirth
-        photo:
-          example: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
-          type: string
-          x-konfig-original-example: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgc...
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-photo
+          x-konfig-original-example: AB012345678910YZ
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetVninResponse-properties-entity-properties-vnin
       type: object
     GetPremiumBvnResponse_entity:
       properties:
@@ -21111,16 +21148,16 @@ components:
           type: string
           x-konfig-original-example: Kwara State
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPremiumBvnResponse-properties-entity-properties-state_of_residence
-        watch_listed:
-          example: "false"
-          type: string
-          x-konfig-original-example: false
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPremiumBvnResponse-properties-entity-properties-watch_listed
         status:
           example: 200
           type: number
           x-konfig-original-example: 200
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPremiumBvnResponse-properties-entity-properties-status
+        watch_listed:
+          example: "false"
+          type: string
+          x-konfig-original-example: false
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPremiumBvnResponse-properties-entity-properties-watch_listed
       type: object
     GetPhoneNumberResponse_entity:
       properties:
@@ -21129,36 +21166,6 @@ components:
           type: string
           x-konfig-original-example: Mr
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-title
-        msisdn:
-          example: "09011111111"
-          type: string
-          x-konfig-original-example: "09011111111"
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-msisdn
-        firstName:
-          example: John
-          type: string
-          x-konfig-original-example: John
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-firstName
-        middleName:
-          example: Doe
-          type: string
-          x-konfig-original-example: Doe
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-middleName
-        lastName:
-          example: Doe
-          type: string
-          x-konfig-original-example: Doe
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-lastName
-        maritalStatus:
-          example: Married
-          type: string
-          x-konfig-original-example: Married
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-maritalStatus
-        gender:
-          example: Male
-          type: string
-          x-konfig-original-example: Male
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-gender
         birthDate:
           example: 11-11-1972
           type: string
@@ -21184,6 +21191,51 @@ components:
           type: string
           x-konfig-original-example: 25 ikeja
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-emplymentStatus
+        firstName:
+          example: John
+          type: string
+          x-konfig-original-example: John
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-firstName
+        gender:
+          example: Male
+          type: string
+          x-konfig-original-example: Male
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-gender
+        height:
+          example: 5 9
+          type: string
+          x-konfig-original-example: 5 9
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-height
+        lastName:
+          example: Doe
+          type: string
+          x-konfig-original-example: Doe
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-lastName
+        lga:
+          example: Ikeja
+          type: string
+          x-konfig-original-example: Ikeja
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-lga
+        maritalStatus:
+          example: Married
+          type: string
+          x-konfig-original-example: Married
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-maritalStatus
+        middleName:
+          example: Doe
+          type: string
+          x-konfig-original-example: Doe
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-middleName
+        msisdn:
+          example: "09011111111"
+          type: string
+          x-konfig-original-example: "09011111111"
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-msisdn
+        nin:
+          example: "111111111111111"
+          type: string
+          x-konfig-original-example: "111111111111111"
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-nin
         nspokenLang:
           example: English
           type: string
@@ -21194,6 +21246,11 @@ components:
           type: string
           x-konfig-original-example: Yoruba
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-ospokenlang
+        picture:
+          example: <base64 encoded image>
+          type: string
+          x-konfig-original-example: <base64 encoded image>
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-picture
         profession:
           example: Tailor
           type: string
@@ -21209,11 +21266,6 @@ components:
           type: string
           x-konfig-original-example: 25 Agege motor ways
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-residenceAddressLine1
-        residenceTown:
-          example: Oshogbo
-          type: string
-          x-konfig-original-example: Oshogbo
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-residenceTown
         residenceLga:
           example: Ikeja
           type: string
@@ -21229,6 +21281,11 @@ components:
           type: string
           x-konfig-original-example: Occupant
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-residenceStatus
+        residenceTown:
+          example: Oshogbo
+          type: string
+          x-konfig-original-example: Oshogbo
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-residenceTown
         selfOriginLga:
           example: Lagos Island
           type: string
@@ -21249,26 +21306,6 @@ components:
           type: string
           x-konfig-original-example: Lagos
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-state
-        lga:
-          example: Ikeja
-          type: string
-          x-konfig-original-example: Ikeja
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-lga
-        nin:
-          example: "111111111111111"
-          type: string
-          x-konfig-original-example: "111111111111111"
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-nin
-        height:
-          example: 5 9
-          type: string
-          x-konfig-original-example: 5 9
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-height
-        picture:
-          example: <base64 encoded image>
-          type: string
-          x-konfig-original-example: <base64 encoded image>
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumberResponse-properties-entity-properties-picture
         status:
           example: 200
           type: number
@@ -21282,36 +21319,6 @@ components:
           type: string
           x-konfig-original-example: Mr
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-title
-        msisdn:
-          example: "09011111111"
-          type: string
-          x-konfig-original-example: "09011111111"
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-msisdn
-        firstName:
-          example: John
-          type: string
-          x-konfig-original-example: John
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-firstName
-        middleName:
-          example: Doe
-          type: string
-          x-konfig-original-example: Doe
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-middleName
-        lastName:
-          example: Doe
-          type: string
-          x-konfig-original-example: Doe
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-lastName
-        maritalStatus:
-          example: Married
-          type: string
-          x-konfig-original-example: Married
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-maritalStatus
-        gender:
-          example: Male
-          type: string
-          x-konfig-original-example: Male
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-gender
         birthDate:
           example: 11-11-1972
           type: string
@@ -21337,6 +21344,51 @@ components:
           type: string
           x-konfig-original-example: 25 ikeja
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-emplymentStatus
+        firstName:
+          example: John
+          type: string
+          x-konfig-original-example: John
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-firstName
+        gender:
+          example: Male
+          type: string
+          x-konfig-original-example: Male
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-gender
+        height:
+          example: 5 9
+          type: string
+          x-konfig-original-example: 5 9
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-height
+        lastName:
+          example: Doe
+          type: string
+          x-konfig-original-example: Doe
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-lastName
+        lga:
+          example: Ikeja
+          type: string
+          x-konfig-original-example: Ikeja
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-lga
+        maritalStatus:
+          example: Married
+          type: string
+          x-konfig-original-example: Married
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-maritalStatus
+        middleName:
+          example: Doe
+          type: string
+          x-konfig-original-example: Doe
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-middleName
+        msisdn:
+          example: "09011111111"
+          type: string
+          x-konfig-original-example: "09011111111"
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-msisdn
+        nin:
+          example: "111111111111111"
+          type: string
+          x-konfig-original-example: "111111111111111"
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-nin
         nspokenLang:
           example: English
           type: string
@@ -21347,6 +21399,11 @@ components:
           type: string
           x-konfig-original-example: Yoruba
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-ospokenlang
+        picture:
+          example: <base64 encoded image>
+          type: string
+          x-konfig-original-example: <base64 encoded image>
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-picture
         profession:
           example: Tailor
           type: string
@@ -21362,11 +21419,6 @@ components:
           type: string
           x-konfig-original-example: 25 Agege motor ways
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-residenceAddressLine1
-        residenceTown:
-          example: Oshogbo
-          type: string
-          x-konfig-original-example: Oshogbo
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-residenceTown
         residenceLga:
           example: Ikeja
           type: string
@@ -21382,6 +21434,11 @@ components:
           type: string
           x-konfig-original-example: Occupant
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-residenceStatus
+        residenceTown:
+          example: Oshogbo
+          type: string
+          x-konfig-original-example: Oshogbo
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-residenceTown
         selfOriginLga:
           example: Lagos Island
           type: string
@@ -21402,26 +21459,6 @@ components:
           type: string
           x-konfig-original-example: Lagos
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-state
-        lga:
-          example: Ikeja
-          type: string
-          x-konfig-original-example: Ikeja
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-lga
-        nin:
-          example: "111111111111111"
-          type: string
-          x-konfig-original-example: "111111111111111"
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-nin
-        height:
-          example: 5 9
-          type: string
-          x-konfig-original-example: 5 9
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-height
-        picture:
-          example: <base64 encoded image>
-          type: string
-          x-konfig-original-example: <base64 encoded image>
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetPhoneNumber404Response-properties-entity-properties-picture
         status:
           example: 200
           type: number
@@ -21430,31 +21467,6 @@ components:
       type: object
     GetKycDriversLicenseResponse_entity_personal_details:
       properties:
-        firstname:
-          example: TOBI
-          type: string
-          x-konfig-original-example: TOBI
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-firstname
-        othername:
-          example: OLALEKAN
-          type: string
-          x-konfig-original-example: OLALEKAN
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-othername
-        surname:
-          example: OLOLADE
-          type: string
-          x-konfig-original-example: OLOLADE
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-surname
-        mother_maiden_name:
-          example: OGUNSOLA
-          type: string
-          x-konfig-original-example: OGUNSOLA
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-mother_maiden_name
-        gender:
-          example: Male
-          type: string
-          x-konfig-original-example: Male
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-gender
         birth_date:
           example: 18/05/1992
           type: string
@@ -21465,11 +21477,31 @@ components:
           type: string
           x-konfig-original-example: B+
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-blood_group_id
+        country:
+          example: Nigeria
+          type: string
+          x-konfig-original-example: Nigeria
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-country
+        disability_reason:
+          example: ""
+          type: string
+          x-konfig-original-example: ""
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-disability_reason
         facial_mark:
           example: "false"
           type: string
           x-konfig-original-example: false
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-facial_mark
+        firstname:
+          example: TOBI
+          type: string
+          x-konfig-original-example: TOBI
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-firstname
+        gender:
+          example: Male
+          type: string
+          x-konfig-original-example: Male
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-gender
         glasses:
           example: "false"
           type: string
@@ -21480,41 +21512,46 @@ components:
           type: string
           x-konfig-original-example: "1.7"
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-height
-        universaltax_identity_number:
-          example: ""
-          type: string
-          x-konfig-original-example: ""
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-universaltax_identity_number
-        nin_number:
-          example: ""
-          type: string
-          x-konfig-original-example: ""
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-nin_number
-        country:
-          example: Nigeria
-          type: string
-          x-konfig-original-example: Nigeria
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-country
-        state:
-          example: Edo
-          type: string
-          x-konfig-original-example: Edo
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-state
-        lga:
-          example: Etsako East
-          type: string
-          x-konfig-original-example: Etsako East
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-lga
         is_disability:
           example: "false"
           type: string
           x-konfig-original-example: false
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-is_disability
-        disability_reason:
+        lga:
+          example: Etsako East
+          type: string
+          x-konfig-original-example: Etsako East
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-lga
+        mother_maiden_name:
+          example: OGUNSOLA
+          type: string
+          x-konfig-original-example: OGUNSOLA
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-mother_maiden_name
+        nin_number:
           example: ""
           type: string
           x-konfig-original-example: ""
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-disability_reason
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-nin_number
+        othername:
+          example: OLALEKAN
+          type: string
+          x-konfig-original-example: OLALEKAN
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-othername
+        state:
+          example: Edo
+          type: string
+          x-konfig-original-example: Edo
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-state
+        surname:
+          example: OLOLADE
+          type: string
+          x-konfig-original-example: OLOLADE
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-surname
+        universaltax_identity_number:
+          example: ""
+          type: string
+          x-konfig-original-example: ""
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycDriversLicenseResponse-properties-entity-properties-personal_details-properties-universaltax_identity_number
       type: object
     GetKycDriversLicenseResponse_entity:
       properties:
@@ -21523,61 +21560,61 @@ components:
       type: object
     GetKycPassportResponse_entity:
       properties:
-        passport_number:
-          example: A00123456
-          type: string
-          x-konfig-original-example: A00123456
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-passport_number
-        date_of_issue:
-          example: 01/02/2000
-          type: string
-          x-konfig-original-example: 01/02/2000
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-date_of_issue
-        expiry_date:
-          example: 01/02/2000
-          type: string
-          x-konfig-original-example: 01/02/2000
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-expiry_date
-        document_type:
-          example: Standard Passport
-          type: string
-          x-konfig-original-example: Standard Passport
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-document_type
-        issue_place:
-          example: LAGOS
-          type: string
-          x-konfig-original-example: LAGOS
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-issue_place
-        surname:
-          example: JOHN
-          type: string
-          x-konfig-original-example: JOHN
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-surname
-        first_name:
-          example: DOE
-          type: string
-          x-konfig-original-example: DOE
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-first_name
-        other_names:
-          example: MOSES
-          type: string
-          x-konfig-original-example: MOSES
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-other_names
         date_of_birth:
           example: 10/06/1993
           type: string
           x-konfig-original-example: 10/06/1993
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-date_of_birth
+        date_of_issue:
+          example: 01/02/2000
+          type: string
+          x-konfig-original-example: 01/02/2000
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-date_of_issue
+        document_type:
+          example: Standard Passport
+          type: string
+          x-konfig-original-example: Standard Passport
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-document_type
+        expiry_date:
+          example: 01/02/2000
+          type: string
+          x-konfig-original-example: 01/02/2000
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-expiry_date
+        first_name:
+          example: DOE
+          type: string
+          x-konfig-original-example: DOE
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-first_name
         gender:
           example: Undecided
           type: string
           x-konfig-original-example: Undecided
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-gender
+        issue_place:
+          example: LAGOS
+          type: string
+          x-konfig-original-example: LAGOS
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-issue_place
+        other_names:
+          example: MOSES
+          type: string
+          x-konfig-original-example: MOSES
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-other_names
+        passport_number:
+          example: A00123456
+          type: string
+          x-konfig-original-example: A00123456
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-passport_number
         photo:
           example: /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBA
           type: string
           x-konfig-original-example: /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBA
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-photo
+        surname:
+          example: JOHN
+          type: string
+          x-konfig-original-example: JOHN
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-GetKycPassportResponse-properties-entity-properties-surname
       type: object
     GetVinResponse_entity:
       properties:
@@ -21777,41 +21814,16 @@ components:
           type: string
           x-konfig-original-example: "22156341123"
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-bvn
-        first_name:
-          example: ADEYEMO
-          type: string
-          x-konfig-original-example: ADEYEMO
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-first_name
-        middle_name:
-          example: ADELEKE
-          type: string
-          x-konfig-original-example: ADELEKE
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-middle_name
-        last_name:
-          example: AKIN
-          type: string
-          x-konfig-original-example: AKIN
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-last_name
         date_of_birth:
           example: 15-Apr-1985
           type: string
           x-konfig-original-example: 15-Apr-1985
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-date_of_birth
-        phone_number1:
-          example: "08134720263"
+        email:
+          example: adelek@yahoo.com
           type: string
-          x-konfig-original-example: "08134720263"
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-phone_number1
-        phone_number2:
-          example: ""
-          type: string
-          x-konfig-original-example: ""
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-phone_number2
-        gender:
-          example: Male
-          type: string
-          x-konfig-original-example: Male
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-gender
+          x-konfig-original-example: adelek@yahoo.com
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-email
         enrollment_bank:
           example: "044"
           type: string
@@ -21822,11 +21834,31 @@ components:
           type: string
           x-konfig-original-example: "BBA LAGOS,BANK PLAZA"
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-enrollment_branch
-        email:
-          example: adelek@yahoo.com
+        first_name:
+          example: ADEYEMO
           type: string
-          x-konfig-original-example: adelek@yahoo.com
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-email
+          x-konfig-original-example: ADEYEMO
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-first_name
+        gender:
+          example: Male
+          type: string
+          x-konfig-original-example: Male
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-gender
+        image:
+          example: base64 image
+          type: string
+          x-konfig-original-example: base64 image
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-image
+        last_name:
+          example: AKIN
+          type: string
+          x-konfig-original-example: AKIN
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-last_name
+        level_of_account:
+          example: Level 2 - Medium Level Accounts
+          type: string
+          x-konfig-original-example: Level 2 - Medium Level Accounts
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-level_of_account
         lga_of_origin:
           example: Obafemi Owode
           type: string
@@ -21842,21 +21874,43 @@ components:
           type: string
           x-konfig-original-example: Single
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-marital_status
-        nin:
-          example: "76221462632"
+        middle_name:
+          example: ADELEKE
           type: string
-          x-konfig-original-example: "76221462632"
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-nin
+          x-konfig-original-example: ADELEKE
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-middle_name
         name_on_card:
           example: ADEYEMO ADELEKE AKIN
           type: string
           x-konfig-original-example: ADEYEMO ADELEKE AKIN
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-name_on_card
+        nin:
+          example: "76221462632"
+          type: string
+          x-konfig-original-example: "76221462632"
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-nin
+        phone_number1:
+          example: "08134720263"
+          type: string
+          x-konfig-original-example: "08134720263"
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-phone_number1
+        phone_number2:
+          example: ""
+          type: string
+          x-konfig-original-example: ""
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-phone_number2
+        registration_date:
+          example: ""
+          type: string
+          x-konfig-original-example: ""
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-registration_date
         residential_address:
           example: "1, OMOLOLA CLOSE CASSIDY BUS STOP OKOKOMAIKO."
           type: string
           x-konfig-original-example: "1, OMOLOLA CLOSE CASSIDY BUS STOP OKOKOMAIKO."
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-residential_address
+        selfie_verification:
+          $ref: '#/components/schemas/VerifySelfieBvnResponse_entity_selfie_verification'
         state_of_origin:
           example: Ogun State
           type: string
@@ -21872,23 +21926,6 @@ components:
           type: string
           x-konfig-original-example: false
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-watch_listed
-        level_of_account:
-          example: Level 2 - Medium Level Accounts
-          type: string
-          x-konfig-original-example: Level 2 - Medium Level Accounts
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-level_of_account
-        registration_date:
-          example: ""
-          type: string
-          x-konfig-original-example: ""
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-registration_date
-        image:
-          example: base64 image
-          type: string
-          x-konfig-original-example: base64 image
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifySelfieBvnResponse-properties-entity-properties-image
-        selfie_verification:
-          $ref: '#/components/schemas/VerifySelfieBvnResponse_entity_selfie_verification'
       type: object
     VerifyAgeResponse_entity:
       properties:
@@ -21913,51 +21950,42 @@ components:
           x-konfig-original-example: true
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-VerifyAgeResponse-properties-entity-properties-verification
       type: object
-    AnalyzeDocumentResponse_entity_status:
+    AnalyzeDocumentResponse_entity_document_images:
       properties:
-        overall_status:
-          example: 0
-          type: number
-          x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-overall_status
-        document_images:
-          example: "true"
+        Document front side:
+          example: base64 image
           type: string
-          x-konfig-original-example: true
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-document_images
-        text:
-          example: "true"
+          x-konfig-original-example: base64 image
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_images-properties-Document
+            front side
+        Fingerprint:
+          example: base64 image
           type: string
-          x-konfig-original-example: true
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-text
-        document_type:
-          example: "true"
+          x-konfig-original-example: base64 image
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_images-properties-Fingerprint
+        Portrait:
+          example: base64 image
           type: string
-          x-konfig-original-example: true
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-document_type
-        expiry:
-          example: "false"
-          type: string
-          x-konfig-original-example: false
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-expiry
+          x-konfig-original-example: base64 image
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_images-properties-Portrait
       type: object
     AnalyzeDocumentResponse_entity_document_type:
       properties:
-        document_name:
-          example: United States - Permanent Resident Card (2010)
-          type: string
-          x-konfig-original-example: United States - Permanent Resident Card (2010)
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_type-properties-document_name
-        document_country_name:
-          example: United States
-          type: string
-          x-konfig-original-example: United States
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_type-properties-document_country_name
         document_country_code:
           example: USA
           type: string
           x-konfig-original-example: USA
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_type-properties-document_country_code
+        document_country_name:
+          example: United States
+          type: string
+          x-konfig-original-example: United States
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_type-properties-document_country_name
+        document_name:
+          example: United States - Permanent Resident Card (2010)
+          type: string
+          x-konfig-original-example: United States - Permanent Resident Card (2010)
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_type-properties-document_name
         document_type_id:
           example: 173
           type: number
@@ -21969,24 +21997,33 @@ components:
           x-konfig-original-example: "2010"
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_type-properties-document_year
       type: object
-    AnalyzeDocumentResponse_entity_document_images:
+    AnalyzeDocumentResponse_entity_status:
       properties:
-        Portrait:
-          example: base64 image
+        document_images:
+          example: "true"
           type: string
-          x-konfig-original-example: base64 image
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_images-properties-Portrait
-        Fingerprint:
-          example: base64 image
+          x-konfig-original-example: true
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-document_images
+        document_type:
+          example: "true"
           type: string
-          x-konfig-original-example: base64 image
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_images-properties-Fingerprint
-        Document front side:
-          example: base64 image
+          x-konfig-original-example: true
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-document_type
+        expiry:
+          example: "false"
           type: string
-          x-konfig-original-example: base64 image
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-document_images-properties-Document
-            front side
+          x-konfig-original-example: false
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-expiry
+        overall_status:
+          example: 0
+          type: number
+          x-konfig-original-example: 0
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-overall_status
+        text:
+          example: "true"
+          type: string
+          x-konfig-original-example: true
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-AnalyzeDocumentResponse-properties-entity-properties-status-properties-text
       type: object
     AnalyzeDocumentResponse_entity_text_data_inner:
       properties:
@@ -22013,12 +22050,12 @@ components:
       type: object
     AnalyzeDocumentResponse_entity:
       properties:
-        status:
-          $ref: '#/components/schemas/AnalyzeDocumentResponse_entity_status'
-        document_type:
-          $ref: '#/components/schemas/AnalyzeDocumentResponse_entity_document_type'
         document_images:
           $ref: '#/components/schemas/AnalyzeDocumentResponse_entity_document_images'
+        document_type:
+          $ref: '#/components/schemas/AnalyzeDocumentResponse_entity_document_type'
+        status:
+          $ref: '#/components/schemas/AnalyzeDocumentResponse_entity_status'
         text_data:
           items:
             $ref: '#/components/schemas/AnalyzeDocumentResponse_entity_text_data_inner'
@@ -22106,11 +22143,6 @@ components:
       type: object
     RequestSenderIdResponse_entity_inner:
       properties:
-        sender_id:
-          example: Dojah
-          type: string
-          x-konfig-original-example: Dojah
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-RequestSenderIdResponse-properties-entity-items-properties-sender_id
         activated:
           example: true
           type: boolean
@@ -22121,6 +22153,11 @@ components:
           type: string
           x-konfig-original-example: 2020-10-30T09:54:17.145Z
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-RequestSenderIdResponse-properties-entity-items-properties-createdAt
+        sender_id:
+          example: Dojah
+          type: string
+          x-konfig-original-example: Dojah
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-RequestSenderIdResponse-properties-entity-items-properties-sender_id
       type: object
     AmlScreenAmlResponse_entity:
       properties:
@@ -22453,6 +22490,7 @@ components:
         registered_to:
           nullable: true
           type: string
+          x-konfig-null-placeholder: true
         disposable:
           example: false
           type: boolean
@@ -22514,6 +22552,7 @@ components:
         first_breach:
           nullable: true
           type: string
+          x-konfig-null-placeholder: true
         breaches:
           items:
             type: string
@@ -22910,6 +22949,7 @@ components:
         aml_screening_result:
           nullable: true
           type: string
+          x-konfig-null-placeholder: true
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-FraudScreenUserResponse-properties-entity-properties-aml_screening_result
           example: null
         ip_check_result:
@@ -23132,15 +23172,12 @@ components:
       type: object
   securitySchemes:
     apikeyAuth:
-      scheme: apikey
-      type: http
-      x-konfig-globally-required-security: false
-    noauthAuth:
-      scheme: noauth
-      type: http
-      x-konfig-globally-required-security: false
+      in: header
+      name: Authorization
+      type: apiKey
+      x-konfig-globally-required-security: true
     appIdAuth:
       in: header
-      name: Appid
+      name: AppId
       type: apiKey
       x-konfig-globally-required-security: true

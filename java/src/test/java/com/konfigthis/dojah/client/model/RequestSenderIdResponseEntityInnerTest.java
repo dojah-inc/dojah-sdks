@@ -39,14 +39,6 @@ public class RequestSenderIdResponseEntityInnerTest {
     }
 
     /**
-     * Test the property 'senderId'
-     */
-    @Test
-    public void senderIdTest() {
-        // TODO: test senderId
-    }
-
-    /**
      * Test the property 'activated'
      */
     @Test
@@ -60,6 +52,14 @@ public class RequestSenderIdResponseEntityInnerTest {
     @Test
     public void createdAtTest() {
         // TODO: test createdAt
+    }
+
+    /**
+     * Test the property 'senderId'
+     */
+    @Test
+    public void senderIdTest() {
+        // TODO: test senderId
     }
 
 }

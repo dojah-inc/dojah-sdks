@@ -16,9 +16,9 @@ import (
 
 // AnalyzeDocumentResponseEntity struct for AnalyzeDocumentResponseEntity
 type AnalyzeDocumentResponseEntity struct {
-	Status *AnalyzeDocumentResponseEntityStatus `json:"status,omitempty"`
-	DocumentType *AnalyzeDocumentResponseEntityDocumentType `json:"document_type,omitempty"`
 	DocumentImages *AnalyzeDocumentResponseEntityDocumentImages `json:"document_images,omitempty"`
+	DocumentType *AnalyzeDocumentResponseEntityDocumentType `json:"document_type,omitempty"`
+	Status *AnalyzeDocumentResponseEntityStatus `json:"status,omitempty"`
 	TextData []AnalyzeDocumentResponseEntityTextDataInner `json:"text_data,omitempty"`
 }
 
@@ -39,36 +39,36 @@ func NewAnalyzeDocumentResponseEntityWithDefaults() *AnalyzeDocumentResponseEnti
 	return &this
 }
 
-// GetStatus returns the Status field value if set, zero value otherwise.
-func (o *AnalyzeDocumentResponseEntity) GetStatus() AnalyzeDocumentResponseEntityStatus {
-	if o == nil || isNil(o.Status) {
-		var ret AnalyzeDocumentResponseEntityStatus
+// GetDocumentImages returns the DocumentImages field value if set, zero value otherwise.
+func (o *AnalyzeDocumentResponseEntity) GetDocumentImages() AnalyzeDocumentResponseEntityDocumentImages {
+	if o == nil || isNil(o.DocumentImages) {
+		var ret AnalyzeDocumentResponseEntityDocumentImages
 		return ret
 	}
-	return *o.Status
+	return *o.DocumentImages
 }
 
-// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// GetDocumentImagesOk returns a tuple with the DocumentImages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AnalyzeDocumentResponseEntity) GetStatusOk() (*AnalyzeDocumentResponseEntityStatus, bool) {
-	if o == nil || isNil(o.Status) {
+func (o *AnalyzeDocumentResponseEntity) GetDocumentImagesOk() (*AnalyzeDocumentResponseEntityDocumentImages, bool) {
+	if o == nil || isNil(o.DocumentImages) {
     return nil, false
 	}
-	return o.Status, true
+	return o.DocumentImages, true
 }
 
-// HasStatus returns a boolean if a field has been set.
-func (o *AnalyzeDocumentResponseEntity) HasStatus() bool {
-	if o != nil && !isNil(o.Status) {
+// HasDocumentImages returns a boolean if a field has been set.
+func (o *AnalyzeDocumentResponseEntity) HasDocumentImages() bool {
+	if o != nil && !isNil(o.DocumentImages) {
 		return true
 	}
 
 	return false
 }
 
-// SetStatus gets a reference to the given AnalyzeDocumentResponseEntityStatus and assigns it to the Status field.
-func (o *AnalyzeDocumentResponseEntity) SetStatus(v AnalyzeDocumentResponseEntityStatus) {
-	o.Status = &v
+// SetDocumentImages gets a reference to the given AnalyzeDocumentResponseEntityDocumentImages and assigns it to the DocumentImages field.
+func (o *AnalyzeDocumentResponseEntity) SetDocumentImages(v AnalyzeDocumentResponseEntityDocumentImages) {
+	o.DocumentImages = &v
 }
 
 // GetDocumentType returns the DocumentType field value if set, zero value otherwise.
@@ -103,36 +103,36 @@ func (o *AnalyzeDocumentResponseEntity) SetDocumentType(v AnalyzeDocumentRespons
 	o.DocumentType = &v
 }
 
-// GetDocumentImages returns the DocumentImages field value if set, zero value otherwise.
-func (o *AnalyzeDocumentResponseEntity) GetDocumentImages() AnalyzeDocumentResponseEntityDocumentImages {
-	if o == nil || isNil(o.DocumentImages) {
-		var ret AnalyzeDocumentResponseEntityDocumentImages
+// GetStatus returns the Status field value if set, zero value otherwise.
+func (o *AnalyzeDocumentResponseEntity) GetStatus() AnalyzeDocumentResponseEntityStatus {
+	if o == nil || isNil(o.Status) {
+		var ret AnalyzeDocumentResponseEntityStatus
 		return ret
 	}
-	return *o.DocumentImages
+	return *o.Status
 }
 
-// GetDocumentImagesOk returns a tuple with the DocumentImages field value if set, nil otherwise
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AnalyzeDocumentResponseEntity) GetDocumentImagesOk() (*AnalyzeDocumentResponseEntityDocumentImages, bool) {
-	if o == nil || isNil(o.DocumentImages) {
+func (o *AnalyzeDocumentResponseEntity) GetStatusOk() (*AnalyzeDocumentResponseEntityStatus, bool) {
+	if o == nil || isNil(o.Status) {
     return nil, false
 	}
-	return o.DocumentImages, true
+	return o.Status, true
 }
 
-// HasDocumentImages returns a boolean if a field has been set.
-func (o *AnalyzeDocumentResponseEntity) HasDocumentImages() bool {
-	if o != nil && !isNil(o.DocumentImages) {
+// HasStatus returns a boolean if a field has been set.
+func (o *AnalyzeDocumentResponseEntity) HasStatus() bool {
+	if o != nil && !isNil(o.Status) {
 		return true
 	}
 
 	return false
 }
 
-// SetDocumentImages gets a reference to the given AnalyzeDocumentResponseEntityDocumentImages and assigns it to the DocumentImages field.
-func (o *AnalyzeDocumentResponseEntity) SetDocumentImages(v AnalyzeDocumentResponseEntityDocumentImages) {
-	o.DocumentImages = &v
+// SetStatus gets a reference to the given AnalyzeDocumentResponseEntityStatus and assigns it to the Status field.
+func (o *AnalyzeDocumentResponseEntity) SetStatus(v AnalyzeDocumentResponseEntityStatus) {
+	o.Status = &v
 }
 
 // GetTextData returns the TextData field value if set, zero value otherwise.
@@ -169,14 +169,14 @@ func (o *AnalyzeDocumentResponseEntity) SetTextData(v []AnalyzeDocumentResponseE
 
 func (o AnalyzeDocumentResponseEntity) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Status) {
-		toSerialize["status"] = o.Status
+	if !isNil(o.DocumentImages) {
+		toSerialize["document_images"] = o.DocumentImages
 	}
 	if !isNil(o.DocumentType) {
 		toSerialize["document_type"] = o.DocumentType
 	}
-	if !isNil(o.DocumentImages) {
-		toSerialize["document_images"] = o.DocumentImages
+	if !isNil(o.Status) {
+		toSerialize["status"] = o.Status
 	}
 	if !isNil(o.TextData) {
 		toSerialize["text_data"] = o.TextData

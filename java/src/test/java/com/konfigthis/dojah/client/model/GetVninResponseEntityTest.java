@@ -39,11 +39,11 @@ public class GetVninResponseEntityTest {
     }
 
     /**
-     * Test the property 'vnin'
+     * Test the property 'dateOfBirth'
      */
     @Test
-    public void vninTest() {
-        // TODO: test vnin
+    public void dateOfBirthTest() {
+        // TODO: test dateOfBirth
     }
 
     /**
@@ -55,11 +55,35 @@ public class GetVninResponseEntityTest {
     }
 
     /**
+     * Test the property 'gender'
+     */
+    @Test
+    public void genderTest() {
+        // TODO: test gender
+    }
+
+    /**
      * Test the property 'middlename'
      */
     @Test
     public void middlenameTest() {
         // TODO: test middlename
+    }
+
+    /**
+     * Test the property 'mobile'
+     */
+    @Test
+    public void mobileTest() {
+        // TODO: test mobile
+    }
+
+    /**
+     * Test the property 'photo'
+     */
+    @Test
+    public void photoTest() {
+        // TODO: test photo
     }
 
     /**
@@ -79,35 +103,11 @@ public class GetVninResponseEntityTest {
     }
 
     /**
-     * Test the property 'gender'
+     * Test the property 'vnin'
      */
     @Test
-    public void genderTest() {
-        // TODO: test gender
-    }
-
-    /**
-     * Test the property 'mobile'
-     */
-    @Test
-    public void mobileTest() {
-        // TODO: test mobile
-    }
-
-    /**
-     * Test the property 'dateOfBirth'
-     */
-    @Test
-    public void dateOfBirthTest() {
-        // TODO: test dateOfBirth
-    }
-
-    /**
-     * Test the property 'photo'
-     */
-    @Test
-    public void photoTest() {
-        // TODO: test photo
+    public void vninTest() {
+        // TODO: test vnin
     }
 
 }

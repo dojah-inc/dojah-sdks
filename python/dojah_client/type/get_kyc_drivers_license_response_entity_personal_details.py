@@ -19,39 +19,39 @@ class RequiredGetKycDriversLicenseResponseEntityPersonalDetails(TypedDict):
     pass
 
 class OptionalGetKycDriversLicenseResponseEntityPersonalDetails(TypedDict, total=False):
-    firstname: str
-
-    othername: str
-
-    surname: str
-
-    mother_maiden_name: str
-
-    gender: str
-
     birth_date: str
 
     blood_group_id: str
 
+    country: str
+
+    disability_reason: str
+
     facial_mark: str
+
+    firstname: str
+
+    gender: str
 
     glasses: str
 
     height: str
 
-    universaltax_identity_number: str
-
-    nin_number: str
-
-    country: str
-
-    state: str
+    is_disability: str
 
     lga: str
 
-    is_disability: str
+    mother_maiden_name: str
 
-    disability_reason: str
+    nin_number: str
+
+    othername: str
+
+    state: str
+
+    surname: str
+
+    universaltax_identity_number: str
 
 class GetKycDriversLicenseResponseEntityPersonalDetails(RequiredGetKycDriversLicenseResponseEntityPersonalDetails, OptionalGetKycDriversLicenseResponseEntityPersonalDetails):
     pass

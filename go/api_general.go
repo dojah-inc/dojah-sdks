@@ -85,6 +85,20 @@ func (a *GeneralApiService) GetBanksExecute(r GeneralApiGetBanksRequest) (*GetBa
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apikeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["appIdAuth"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -92,7 +106,7 @@ func (a *GeneralApiService) GetBanksExecute(r GeneralApiGetBanksRequest) (*GetBa
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Appid"] = key
+				localVarHeaderParams["AppId"] = key
 			}
 		}
 	}
@@ -205,6 +219,20 @@ func (a *GeneralApiService) GetBinExecute(r GeneralApiGetBinRequest) (*GetBinRes
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apikeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["appIdAuth"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -212,7 +240,7 @@ func (a *GeneralApiService) GetBinExecute(r GeneralApiGetBinRequest) (*GetBinRes
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Appid"] = key
+				localVarHeaderParams["AppId"] = key
 			}
 		}
 	}
@@ -334,6 +362,20 @@ func (a *GeneralApiService) GetNubanExecute(r GeneralApiGetNubanRequest) (*Gener
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apikeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["appIdAuth"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -341,7 +383,7 @@ func (a *GeneralApiService) GetNubanExecute(r GeneralApiGetNubanRequest) (*Gener
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Appid"] = key
+				localVarHeaderParams["AppId"] = key
 			}
 		}
 	}

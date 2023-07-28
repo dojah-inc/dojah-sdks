@@ -40,8 +40,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var bvn = 22468537919;  // int? |  (optional) 
 
@@ -139,8 +141,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var bvn = 22621998885;  // int? |  (optional) 
 
@@ -199,7 +203,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -238,8 +242,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var phoneNumber = 9131377829;  // int? |  (optional) 
 
@@ -337,8 +343,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var licenseNumber = "FKJ49409AB13";  // string |  (optional) 
 
@@ -436,8 +444,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var nin = 55648152772;  // int? |  (optional) 
 
@@ -535,8 +545,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var bvn = 22342291445;  // int? |  (optional) 
 
@@ -634,8 +646,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var bankCode = 58;  // int? |  (optional) 
             var accountNumber = 11223344;  // int? |  (optional) 
@@ -735,8 +749,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var passportNumber = "B00671500";  // string |  (optional) 
             var surname = "adekanmi";  // string |  (optional) 
@@ -797,7 +813,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -836,8 +852,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var phoneNumber = 8034628633;  // int? |  (optional) 
 
@@ -896,7 +914,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -936,8 +954,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var bvn = 22200508254;  // int? |  (optional) 
 
@@ -1035,8 +1055,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var vnin = "LC829995256998RD";  // string |  (optional) 
 
@@ -1095,7 +1117,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

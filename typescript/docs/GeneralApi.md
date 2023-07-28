@@ -23,7 +23,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const getBanksResponse = await dojah.general.getBanks();
@@ -67,7 +68,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const getBinResponse = await dojah.general.getBin({});
@@ -114,7 +116,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const getNubanResponse = await dojah.general.getNuban({});

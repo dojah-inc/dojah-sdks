@@ -67,9 +67,9 @@ class OptionalGetPremiumBvnResponseEntity(TypedDict, total=False):
 
     state_of_residence: str
 
-    watch_listed: str
-
     status: typing.Union[int, float]
+
+    watch_listed: str
 
 class GetPremiumBvnResponseEntity(RequiredGetPremiumBvnResponseEntity, OptionalGetPremiumBvnResponseEntity):
     pass

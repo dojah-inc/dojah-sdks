@@ -34,23 +34,23 @@ namespace Dojah.Net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AnalyzeDocumentResponseEntity" /> class.
         /// </summary>
-        /// <param name="status">status.</param>
-        /// <param name="documentType">documentType.</param>
         /// <param name="documentImages">documentImages.</param>
+        /// <param name="documentType">documentType.</param>
+        /// <param name="status">status.</param>
         /// <param name="textData">textData.</param>
-        public AnalyzeDocumentResponseEntity(AnalyzeDocumentResponseEntityStatus status = default(AnalyzeDocumentResponseEntityStatus), AnalyzeDocumentResponseEntityDocumentType documentType = default(AnalyzeDocumentResponseEntityDocumentType), AnalyzeDocumentResponseEntityDocumentImages documentImages = default(AnalyzeDocumentResponseEntityDocumentImages), List<AnalyzeDocumentResponseEntityTextDataInner> textData = default(List<AnalyzeDocumentResponseEntityTextDataInner>))
+        public AnalyzeDocumentResponseEntity(AnalyzeDocumentResponseEntityDocumentImages documentImages = default(AnalyzeDocumentResponseEntityDocumentImages), AnalyzeDocumentResponseEntityDocumentType documentType = default(AnalyzeDocumentResponseEntityDocumentType), AnalyzeDocumentResponseEntityStatus status = default(AnalyzeDocumentResponseEntityStatus), List<AnalyzeDocumentResponseEntityTextDataInner> textData = default(List<AnalyzeDocumentResponseEntityTextDataInner>))
         {
-            this.Status = status;
-            this.DocumentType = documentType;
             this.DocumentImages = documentImages;
+            this.DocumentType = documentType;
+            this.Status = status;
             this.TextData = textData;
         }
 
         /// <summary>
-        /// Gets or Sets Status
+        /// Gets or Sets DocumentImages
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
-        public AnalyzeDocumentResponseEntityStatus Status { get; set; }
+        [DataMember(Name = "document_images", EmitDefaultValue = false)]
+        public AnalyzeDocumentResponseEntityDocumentImages DocumentImages { get; set; }
 
         /// <summary>
         /// Gets or Sets DocumentType
@@ -59,10 +59,10 @@ namespace Dojah.Net.Model
         public AnalyzeDocumentResponseEntityDocumentType DocumentType { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocumentImages
+        /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "document_images", EmitDefaultValue = false)]
-        public AnalyzeDocumentResponseEntityDocumentImages DocumentImages { get; set; }
+        [DataMember(Name = "status", EmitDefaultValue = false)]
+        public AnalyzeDocumentResponseEntityStatus Status { get; set; }
 
         /// <summary>
         /// Gets or Sets TextData
@@ -78,9 +78,9 @@ namespace Dojah.Net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AnalyzeDocumentResponseEntity {\n");
-            sb.Append("  Status: ").Append(Status).Append("\n");
-            sb.Append("  DocumentType: ").Append(DocumentType).Append("\n");
             sb.Append("  DocumentImages: ").Append(DocumentImages).Append("\n");
+            sb.Append("  DocumentType: ").Append(DocumentType).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  TextData: ").Append(TextData).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -118,9 +118,9 @@ namespace Dojah.Net.Model
             }
             return 
                 (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
+                    this.DocumentImages == input.DocumentImages ||
+                    (this.DocumentImages != null &&
+                    this.DocumentImages.Equals(input.DocumentImages))
                 ) && 
                 (
                     this.DocumentType == input.DocumentType ||
@@ -128,9 +128,9 @@ namespace Dojah.Net.Model
                     this.DocumentType.Equals(input.DocumentType))
                 ) && 
                 (
-                    this.DocumentImages == input.DocumentImages ||
-                    (this.DocumentImages != null &&
-                    this.DocumentImages.Equals(input.DocumentImages))
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
                 ) && 
                 (
                     this.TextData == input.TextData ||
@@ -149,17 +149,17 @@ namespace Dojah.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Status != null)
+                if (this.DocumentImages != null)
                 {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DocumentImages.GetHashCode();
                 }
                 if (this.DocumentType != null)
                 {
                     hashCode = (hashCode * 59) + this.DocumentType.GetHashCode();
                 }
-                if (this.DocumentImages != null)
+                if (this.Status != null)
                 {
-                    hashCode = (hashCode * 59) + this.DocumentImages.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 }
                 if (this.TextData != null)
                 {

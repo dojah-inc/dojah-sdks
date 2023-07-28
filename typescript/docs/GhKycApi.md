@@ -24,7 +24,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const getDriversLicenseResponse = await dojah.ghKyc.getDriversLicense({});
@@ -73,7 +74,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const getPassportResponse = await dojah.ghKyc.getPassport({});
@@ -124,7 +126,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const getSsnitResponse = await dojah.ghKyc.getSsnit({});
@@ -173,7 +176,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const getVoterResponse = await dojah.ghKyc.getVoter({});

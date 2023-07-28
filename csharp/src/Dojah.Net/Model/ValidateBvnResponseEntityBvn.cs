@@ -34,25 +34,25 @@ namespace Dojah.Net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ValidateBvnResponseEntityBvn" /> class.
         /// </summary>
-        /// <param name="value">value.</param>
         /// <param name="status">status.</param>
-        public ValidateBvnResponseEntityBvn(string value = default(string), bool status = default(bool))
+        /// <param name="value">value.</param>
+        public ValidateBvnResponseEntityBvn(bool status = default(bool), string value = default(string))
         {
-            this.Value = value;
             this.Status = status;
+            this.Value = value;
         }
-
-        /// <summary>
-        /// Gets or Sets Value
-        /// </summary>
-        [DataMember(Name = "value", EmitDefaultValue = false)]
-        public string Value { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
         [DataMember(Name = "status", EmitDefaultValue = true)]
         public bool Status { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Value
+        /// </summary>
+        [DataMember(Name = "value", EmitDefaultValue = false)]
+        public string Value { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,8 +62,8 @@ namespace Dojah.Net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ValidateBvnResponseEntityBvn {\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -100,13 +100,13 @@ namespace Dojah.Net.Model
             }
             return 
                 (
+                    this.Status == input.Status ||
+                    this.Status.Equals(input.Status)
+                ) && 
+                (
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    this.Status.Equals(input.Status)
                 );
         }
 
@@ -119,11 +119,11 @@ namespace Dojah.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 if (this.Value != null)
                 {
                     hashCode = (hashCode * 59) + this.Value.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 return hashCode;
             }
         }

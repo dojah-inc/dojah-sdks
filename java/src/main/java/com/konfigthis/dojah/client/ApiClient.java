@@ -107,21 +107,34 @@ public class ApiClient extends ApiClientCustom {
         }
 
         // Setup authentications (key: authentication name, value: authentication).
-        authentications.put("apikeyAuth", new HttpBearerAuth("apikey"));
-        authentications.put("appIdAuth", new ApiKeyAuth("header", "Appid"));
-        authentications.put("noauthAuth", new HttpBearerAuth("noauth"));
+        authentications.put("apikeyAuth", new ApiKeyAuth("header", "Authorization"));
+        authentications.put("appIdAuth", new ApiKeyAuth("header", "AppId"));
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
 
         if (configuration != null) {
-            if (configuration.Appid != null) {
-                this.setAppIdAuth(configuration.Appid);
+            if (configuration.Authorization != null) {
+                this.setApikeyAuth(configuration.Authorization);
+            }
+            if (configuration.AppId != null) {
+                this.setAppIdAuth(configuration.AppId);
             }
             setVerifyingSsl(configuration.verifyingSsl);
             setBasePath(configuration.host);
         }
     }
 
+    public String getApikeyAuth() {
+        return ((ApiKeyAuth) this.getAuthentication("apikeyAuth")).getApiKey();
+    }
+
+    public void setApikeyAuth(String apiKey) {
+        ((ApiKeyAuth) this.getAuthentication("apikeyAuth")).setApiKey(apiKey);
+    }
+
+    public void setApikeyAuthPrefix(String prefix) {
+        ((ApiKeyAuth) this.getAuthentication("apikeyAuth")).setApiKeyPrefix(prefix);
+    }
     public String getAppIdAuth() {
         return ((ApiKeyAuth) this.getAuthentication("appIdAuth")).getApiKey();
     }

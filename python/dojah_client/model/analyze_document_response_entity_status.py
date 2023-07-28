@@ -34,27 +34,21 @@ class AnalyzeDocumentResponseEntityStatus(
     class MetaOapg:
         
         class properties:
-            overall_status = schemas.NumberSchema
             document_images = schemas.StrSchema
-            text = schemas.StrSchema
             document_type = schemas.StrSchema
             expiry = schemas.StrSchema
+            overall_status = schemas.NumberSchema
+            text = schemas.StrSchema
             __annotations__ = {
-                "overall_status": overall_status,
                 "document_images": document_images,
-                "text": text,
                 "document_type": document_type,
                 "expiry": expiry,
+                "overall_status": overall_status,
+                "text": text,
             }
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["overall_status"]) -> MetaOapg.properties.overall_status: ...
-    
-    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["document_images"]) -> MetaOapg.properties.document_images: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["text"]) -> MetaOapg.properties.text: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["document_type"]) -> MetaOapg.properties.document_type: ...
@@ -63,21 +57,21 @@ class AnalyzeDocumentResponseEntityStatus(
     def __getitem__(self, name: typing_extensions.Literal["expiry"]) -> MetaOapg.properties.expiry: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["overall_status"]) -> MetaOapg.properties.overall_status: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["text"]) -> MetaOapg.properties.text: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["overall_status", "document_images", "text", "document_type", "expiry", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["document_images", "document_type", "expiry", "overall_status", "text", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["overall_status"]) -> typing.Union[MetaOapg.properties.overall_status, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["document_images"]) -> typing.Union[MetaOapg.properties.document_images, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["text"]) -> typing.Union[MetaOapg.properties.text, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["document_type"]) -> typing.Union[MetaOapg.properties.document_type, schemas.Unset]: ...
@@ -86,31 +80,37 @@ class AnalyzeDocumentResponseEntityStatus(
     def get_item_oapg(self, name: typing_extensions.Literal["expiry"]) -> typing.Union[MetaOapg.properties.expiry, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["overall_status"]) -> typing.Union[MetaOapg.properties.overall_status, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["text"]) -> typing.Union[MetaOapg.properties.text, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["overall_status", "document_images", "text", "document_type", "expiry", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["document_images", "document_type", "expiry", "overall_status", "text", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *args: typing.Union[dict, frozendict.frozendict, ],
-        overall_status: typing.Union[MetaOapg.properties.overall_status, decimal.Decimal, int, float, schemas.Unset] = schemas.unset,
         document_images: typing.Union[MetaOapg.properties.document_images, str, schemas.Unset] = schemas.unset,
-        text: typing.Union[MetaOapg.properties.text, str, schemas.Unset] = schemas.unset,
         document_type: typing.Union[MetaOapg.properties.document_type, str, schemas.Unset] = schemas.unset,
         expiry: typing.Union[MetaOapg.properties.expiry, str, schemas.Unset] = schemas.unset,
+        overall_status: typing.Union[MetaOapg.properties.overall_status, decimal.Decimal, int, float, schemas.Unset] = schemas.unset,
+        text: typing.Union[MetaOapg.properties.text, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'AnalyzeDocumentResponseEntityStatus':
         return super().__new__(
             cls,
             *args,
-            overall_status=overall_status,
             document_images=document_images,
-            text=text,
             document_type=document_type,
             expiry=expiry,
+            overall_status=overall_status,
+            text=text,
             _configuration=_configuration,
             **kwargs,
         )

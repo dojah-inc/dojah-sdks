@@ -19,11 +19,11 @@ class RequiredRequestSenderIdResponseEntityItem(TypedDict):
     pass
 
 class OptionalRequestSenderIdResponseEntityItem(TypedDict, total=False):
-    sender_id: str
-
     activated: bool
 
     createdAt: str
+
+    sender_id: str
 
 class RequestSenderIdResponseEntityItem(RequiredRequestSenderIdResponseEntityItem, OptionalRequestSenderIdResponseEntityItem):
     pass

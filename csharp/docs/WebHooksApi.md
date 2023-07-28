@@ -33,8 +33,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
 
             try
@@ -127,8 +129,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
 
             try
@@ -221,8 +225,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var notifyWebhookRequest = new NotifyWebhookRequest(); // NotifyWebhookRequest | 
 
@@ -281,7 +287,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -320,8 +326,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var subscribeServiceRequest = new SubscribeServiceRequest(); // SubscribeServiceRequest | 
 
@@ -380,7 +388,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

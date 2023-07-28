@@ -51,6 +51,7 @@ request_body_request_sender_id_request = api_client.RequestBody(
     required=True,
 )
 _auth = [
+    'apikeyAuth',
     'appIdAuth',
 ]
 SchemaFor200ResponseBodyApplicationJson = RequestSenderIdResponseSchema

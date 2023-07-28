@@ -40,8 +40,8 @@ type GetPremiumBvnResponseEntity struct {
 	ResidentialAddress *string `json:"residential_address,omitempty"`
 	StateOfOrigin *string `json:"state_of_origin,omitempty"`
 	StateOfResidence *string `json:"state_of_residence,omitempty"`
-	WatchListed *string `json:"watch_listed,omitempty"`
 	Status *float32 `json:"status,omitempty"`
+	WatchListed *string `json:"watch_listed,omitempty"`
 }
 
 // NewGetPremiumBvnResponseEntity instantiates a new GetPremiumBvnResponseEntity object
@@ -829,38 +829,6 @@ func (o *GetPremiumBvnResponseEntity) SetStateOfResidence(v string) {
 	o.StateOfResidence = &v
 }
 
-// GetWatchListed returns the WatchListed field value if set, zero value otherwise.
-func (o *GetPremiumBvnResponseEntity) GetWatchListed() string {
-	if o == nil || isNil(o.WatchListed) {
-		var ret string
-		return ret
-	}
-	return *o.WatchListed
-}
-
-// GetWatchListedOk returns a tuple with the WatchListed field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPremiumBvnResponseEntity) GetWatchListedOk() (*string, bool) {
-	if o == nil || isNil(o.WatchListed) {
-    return nil, false
-	}
-	return o.WatchListed, true
-}
-
-// HasWatchListed returns a boolean if a field has been set.
-func (o *GetPremiumBvnResponseEntity) HasWatchListed() bool {
-	if o != nil && !isNil(o.WatchListed) {
-		return true
-	}
-
-	return false
-}
-
-// SetWatchListed gets a reference to the given string and assigns it to the WatchListed field.
-func (o *GetPremiumBvnResponseEntity) SetWatchListed(v string) {
-	o.WatchListed = &v
-}
-
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *GetPremiumBvnResponseEntity) GetStatus() float32 {
 	if o == nil || isNil(o.Status) {
@@ -891,6 +859,38 @@ func (o *GetPremiumBvnResponseEntity) HasStatus() bool {
 // SetStatus gets a reference to the given float32 and assigns it to the Status field.
 func (o *GetPremiumBvnResponseEntity) SetStatus(v float32) {
 	o.Status = &v
+}
+
+// GetWatchListed returns the WatchListed field value if set, zero value otherwise.
+func (o *GetPremiumBvnResponseEntity) GetWatchListed() string {
+	if o == nil || isNil(o.WatchListed) {
+		var ret string
+		return ret
+	}
+	return *o.WatchListed
+}
+
+// GetWatchListedOk returns a tuple with the WatchListed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetPremiumBvnResponseEntity) GetWatchListedOk() (*string, bool) {
+	if o == nil || isNil(o.WatchListed) {
+    return nil, false
+	}
+	return o.WatchListed, true
+}
+
+// HasWatchListed returns a boolean if a field has been set.
+func (o *GetPremiumBvnResponseEntity) HasWatchListed() bool {
+	if o != nil && !isNil(o.WatchListed) {
+		return true
+	}
+
+	return false
+}
+
+// SetWatchListed gets a reference to the given string and assigns it to the WatchListed field.
+func (o *GetPremiumBvnResponseEntity) SetWatchListed(v string) {
+	o.WatchListed = &v
 }
 
 func (o GetPremiumBvnResponseEntity) MarshalJSON() ([]byte, error) {
@@ -967,11 +967,11 @@ func (o GetPremiumBvnResponseEntity) MarshalJSON() ([]byte, error) {
 	if !isNil(o.StateOfResidence) {
 		toSerialize["state_of_residence"] = o.StateOfResidence
 	}
-	if !isNil(o.WatchListed) {
-		toSerialize["watch_listed"] = o.WatchListed
-	}
 	if !isNil(o.Status) {
 		toSerialize["status"] = o.Status
+	}
+	if !isNil(o.WatchListed) {
+		toSerialize["watch_listed"] = o.WatchListed
 	}
 	return json.Marshal(toSerialize)
 }

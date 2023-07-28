@@ -208,9 +208,19 @@ namespace Dojah.Net.Client
         /// <summary>
         /// Setter for API Key
         /// </summary>
-        public Dojah SetApiKey(string apiKey)
+        public Dojah SetAuthorization(string apiKey)
         {
-            Configuration.ApiKey["Appid"] = apiKey;
+            Configuration.ApiKey["Authorization"] = apiKey;
+            init();
+            return this;
+        }
+
+        /// <summary>
+        /// Setter for API Key
+        /// </summary>
+        public Dojah SetAppId(string apiKey)
+        {
+            Configuration.ApiKey["AppId"] = apiKey;
             init();
             return this;
         }

@@ -38,8 +38,8 @@ from dojah_client.type.get_wallet_balance_response import GetWalletBalanceRespon
 from . import path
 
 _auth = [
+    'apikeyAuth',
     'appIdAuth',
-    'noauthAuth',
 ]
 XPoweredBySchema = schemas.StrSchema
 x_powered_by_parameter = api_client.HeaderParameter(

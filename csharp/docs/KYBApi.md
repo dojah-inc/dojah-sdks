@@ -33,8 +33,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var internationalNumber = "RC-1885308";  // string |  (optional) 
             var countryCode = "NG";  // string |  (optional) 
@@ -97,7 +99,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -136,8 +138,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var countryCode = "NG";  // string |  (optional) 
             var company = 1885308;  // int? |  (optional) 
@@ -198,7 +202,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -237,8 +241,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var rcNumber = 1432074;  // int? |  (optional) 
             var companyName = "ELTA SOLUTIONS LIMITED";  // string |  (optional) 
@@ -338,8 +344,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var tin = "24111697-0001";  // string |  (optional) 
 

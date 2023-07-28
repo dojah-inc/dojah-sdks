@@ -249,20 +249,20 @@ namespace Dojah.Net.Test.Model
             // TODO unit test for the property 'StateOfResidence'
         }
         /// <summary>
-        /// Test the property 'WatchListed'
-        /// </summary>
-        [Fact]
-        public void WatchListedTest()
-        {
-            // TODO unit test for the property 'WatchListed'
-        }
-        /// <summary>
         /// Test the property 'Status'
         /// </summary>
         [Fact]
         public void StatusTest()
         {
             // TODO unit test for the property 'Status'
+        }
+        /// <summary>
+        /// Test the property 'WatchListed'
+        /// </summary>
+        [Fact]
+        public void WatchListedTest()
+        {
+            // TODO unit test for the property 'WatchListed'
         }
 
     }

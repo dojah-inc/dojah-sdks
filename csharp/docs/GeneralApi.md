@@ -32,8 +32,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
 
             try
@@ -126,8 +128,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var cardBin = 506118;  // int? |  (optional) 
 
@@ -225,8 +229,10 @@ namespace Example
             Dojah client = new Dojah();
             // Configure custom BasePath if desired
             client.SetBasePath("https://api.dojah.io");
+            // Configure API key authorization: apikeyAuth
+            client.SetAuthorization("YOUR_API_KEY");
             // Configure API key authorization: appIdAuth
-            client.SetApiKey("YOUR_API_KEY");
+            client.SetAppId("YOUR_API_KEY");
 
             var bankCode = 58;  // int? |  (optional) 
             var accountNumber = 37466959;  // int? |  (optional) 

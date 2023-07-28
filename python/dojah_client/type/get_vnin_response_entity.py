@@ -19,23 +19,23 @@ class RequiredGetVninResponseEntity(TypedDict):
     pass
 
 class OptionalGetVninResponseEntity(TypedDict, total=False):
-    vnin: str
+    dateOfBirth: str
 
     firstname: str
 
+    gender: str
+
     middlename: str
+
+    mobile: str
+
+    photo: str
 
     surname: str
 
     user_id: str
 
-    gender: str
-
-    mobile: str
-
-    dateOfBirth: str
-
-    photo: str
+    vnin: str
 
 class GetVninResponseEntity(RequiredGetVninResponseEntity, OptionalGetVninResponseEntity):
     pass

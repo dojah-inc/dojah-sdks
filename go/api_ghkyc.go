@@ -112,6 +112,20 @@ func (a *GHKYCApiService) GetDriversLicenseExecute(r GHKYCApiGetDriversLicenseRe
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apikeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["appIdAuth"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -119,7 +133,7 @@ func (a *GHKYCApiService) GetDriversLicenseExecute(r GHKYCApiGetDriversLicenseRe
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Appid"] = key
+				localVarHeaderParams["AppId"] = key
 			}
 		}
 	}
@@ -268,6 +282,20 @@ func (a *GHKYCApiService) GetPassportExecute(r GHKYCApiGetPassportRequest) (*Get
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apikeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["appIdAuth"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -275,7 +303,7 @@ func (a *GHKYCApiService) GetPassportExecute(r GHKYCApiGetPassportRequest) (*Get
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Appid"] = key
+				localVarHeaderParams["AppId"] = key
 			}
 		}
 	}
@@ -406,6 +434,20 @@ func (a *GHKYCApiService) GetSsnitExecute(r GHKYCApiGetSsnitRequest) (*GetSsnitR
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apikeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["appIdAuth"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -413,7 +455,7 @@ func (a *GHKYCApiService) GetSsnitExecute(r GHKYCApiGetSsnitRequest) (*GetSsnitR
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Appid"] = key
+				localVarHeaderParams["AppId"] = key
 			}
 		}
 	}
@@ -544,6 +586,20 @@ func (a *GHKYCApiService) GetVoterExecute(r GHKYCApiGetVoterRequest) (map[string
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apikeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["appIdAuth"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -551,7 +607,7 @@ func (a *GHKYCApiService) GetVoterExecute(r GHKYCApiGetVoterRequest) (map[string
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Appid"] = key
+				localVarHeaderParams["AppId"] = key
 			}
 		}
 	}

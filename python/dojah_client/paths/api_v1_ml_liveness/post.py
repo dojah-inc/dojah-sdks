@@ -49,6 +49,7 @@ request_body_kyc_check_liveness_request = api_client.RequestBody(
     required=True,
 )
 _auth = [
+    'apikeyAuth',
     'appIdAuth',
 ]
 SchemaFor200ResponseBodyApplicationJson = schemas.DictSchema

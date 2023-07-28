@@ -47,8 +47,11 @@ public class GeneralApiGenerated {
     }
 
     public GeneralApiGenerated(ApiClient apiClient) throws IllegalArgumentException {
+        if (apiClient.getApikeyAuth() == null) {
+            throw new IllegalArgumentException("\"Authorization\" is required but no API key was provided. Please set \"Authorization\" with ApiClient#setApikeyAuth(String).");
+        }
         if (apiClient.getAppIdAuth() == null) {
-            throw new IllegalArgumentException("\"Appid\" is required but no API key was provided. Please set \"Appid\" with ApiClient#setAppIdAuth(String).");
+            throw new IllegalArgumentException("\"AppId\" is required but no API key was provided. Please set \"AppId\" with ApiClient#setAppIdAuth(String).");
         }
         this.localVarApiClient = apiClient;
     }

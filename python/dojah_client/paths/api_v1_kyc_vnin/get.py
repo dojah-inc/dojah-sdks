@@ -64,6 +64,7 @@ request_query_vnin = api_client.QueryParameter(
     explode=True,
 )
 _auth = [
+    'apikeyAuth',
     'appIdAuth',
 ]
 SchemaFor200ResponseBodyApplicationJson = GetVninResponseSchema

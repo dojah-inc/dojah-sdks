@@ -107,7 +107,8 @@ conf = dojah_client.Configuration(
                  api_key=None, api_key_prefix=None,
                  username=None, password=None,
                  discard_unknown_keys=False,
-                 appid=None,
+                 authorization=None,
+                 app_id=None,
                  disabled_client_side_validations="",
                  server_index=None, server_variables=None,
                  server_operation_index=None, server_operation_variables=None,
@@ -132,14 +133,16 @@ conf = dojah_client.Configuration(
         self.api_key = {}
         if api_key:
             if (isinstance(api_key, str)):
-                self.api_key = {'appIdAuth': api_key}
+                self.api_key = {'apikeyAuth': api_key}
             else:
                 self.api_key = api_key
+        if authorization:
+            self.api_key['apikeyAuth'] = authorization
         else:
-            raise ClientConfigurationError('API Key "appIdAuth" is required')
-        if appid:
-            self.api_key['appIdAuth'] = appid
-        elif api_key is None:
+            raise ClientConfigurationError('API Key "apikeyAuth" is required')
+        if app_id:
+            self.api_key['appIdAuth'] = app_id
+        else:
             raise ClientConfigurationError('API Key "appIdAuth" is required')
         """dict to store API key(s)
         """
@@ -396,11 +399,20 @@ conf = dojah_client.Configuration(
         :return: The Auth Settings information dict.
         """
         auth = {}
+        if 'apikeyAuth' in self.api_key:
+            auth['apikeyAuth'] = {
+                'type': 'api_key',
+                'in': 'header',
+                'key': 'Authorization',
+                'value': self.get_api_key_with_prefix(
+                    'apikeyAuth',
+                ),
+            }
         if 'appIdAuth' in self.api_key:
             auth['appIdAuth'] = {
                 'type': 'api_key',
                 'in': 'header',
-                'key': 'Appid',
+                'key': 'AppId',
                 'value': self.get_api_key_with_prefix(
                     'appIdAuth',
                 ),

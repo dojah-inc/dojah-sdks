@@ -21,8 +21,12 @@ dojah = Dojah(
     # Defining the host is optional and defaults to https://api.dojah.io
     # See configuration.py for a list of all supported configuration parameters.
     host="https://api.dojah.io",
+    # Configure API key authorization: apikeyAuth
+    authorization="YOUR_API_KEY",
+    # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    # api_key_prefix = {'apikeyAuth': 'Bearer'},
     # Configure API key authorization: appIdAuth
-    api_key="YOUR_API_KEY",
+    app_id="YOUR_API_KEY",
     # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     # api_key_prefix = {'appIdAuth': 'Bearer'},
 )
@@ -249,7 +253,7 @@ str,  | str,  |  |
 
 ### Authorization
 
-[appIdAuth](../../../README.md#appIdAuth)
+[apikeyAuth](../../../README.md#apikeyAuth), [appIdAuth](../../../README.md#appIdAuth)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 

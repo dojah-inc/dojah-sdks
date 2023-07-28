@@ -23,13 +23,7 @@ export interface GetBasicBvnResponseEntity {
      * @type {string}
      * @memberof GetBasicBvnResponseEntity
      */
-    'first_name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetBasicBvnResponseEntity
-     */
-    'last_name'?: string;
+    'bvn'?: string;
     /**
      * 
      * @type {string}
@@ -41,18 +35,24 @@ export interface GetBasicBvnResponseEntity {
      * @type {string}
      * @memberof GetBasicBvnResponseEntity
      */
+    'first_name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetBasicBvnResponseEntity
+     */
     'formatted_dob'?: string;
     /**
      * 
      * @type {string}
      * @memberof GetBasicBvnResponseEntity
      */
-    'mobile'?: string;
+    'last_name'?: string;
     /**
      * 
      * @type {string}
      * @memberof GetBasicBvnResponseEntity
      */
-    'bvn'?: string;
+    'mobile'?: string;
 }
 

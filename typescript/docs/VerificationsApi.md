@@ -25,7 +25,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const validateBvnResponse = await dojah.verifications.validateBvn({});
@@ -74,7 +75,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const verifyAgeResponse = await dojah.verifications.verifyAge({});
@@ -126,7 +128,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const verifySelfieBvnResponse = await dojah.verifications.verifySelfieBvn({
@@ -176,7 +179,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const verifySelfieNinResponse = await dojah.verifications.verifySelfieNin({
@@ -227,7 +231,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const verifySelfieVninResponse = await dojah.verifications.verifySelfieVnin({

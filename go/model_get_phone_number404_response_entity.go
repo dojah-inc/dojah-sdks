@@ -17,34 +17,34 @@ import (
 // GetPhoneNumber404ResponseEntity struct for GetPhoneNumber404ResponseEntity
 type GetPhoneNumber404ResponseEntity struct {
 	Title *string `json:"title,omitempty"`
-	Msisdn *string `json:"msisdn,omitempty"`
-	FirstName *string `json:"firstName,omitempty"`
-	MiddleName *string `json:"middleName,omitempty"`
-	LastName *string `json:"lastName,omitempty"`
-	MaritalStatus *string `json:"maritalStatus,omitempty"`
-	Gender *string `json:"gender,omitempty"`
 	BirthDate *string `json:"birthDate,omitempty"`
 	BirthLga *string `json:"birthLga,omitempty"`
 	BirthState *string `json:"birthState,omitempty"`
 	EducationalLevel *string `json:"educationalLevel,omitempty"`
 	EmplymentStatus *string `json:"emplymentStatus,omitempty"`
+	FirstName *string `json:"firstName,omitempty"`
+	Gender *string `json:"gender,omitempty"`
+	Height *string `json:"height,omitempty"`
+	LastName *string `json:"lastName,omitempty"`
+	Lga *string `json:"lga,omitempty"`
+	MaritalStatus *string `json:"maritalStatus,omitempty"`
+	MiddleName *string `json:"middleName,omitempty"`
+	Msisdn *string `json:"msisdn,omitempty"`
+	Nin *string `json:"nin,omitempty"`
 	NspokenLang *string `json:"nspokenLang,omitempty"`
 	Ospokenlang *string `json:"ospokenlang,omitempty"`
+	Picture *string `json:"picture,omitempty"`
 	Profession *string `json:"profession,omitempty"`
 	Religion *string `json:"religion,omitempty"`
 	ResidenceAddressLine1 *string `json:"residenceAddressLine1,omitempty"`
-	ResidenceTown *string `json:"residenceTown,omitempty"`
 	ResidenceLga *string `json:"residenceLga,omitempty"`
 	ResidenceState *string `json:"residenceState,omitempty"`
 	ResidenceStatus *string `json:"residenceStatus,omitempty"`
+	ResidenceTown *string `json:"residenceTown,omitempty"`
 	SelfOriginLga *string `json:"selfOriginLga,omitempty"`
 	SelfOriginPlace *string `json:"selfOriginPlace,omitempty"`
 	SelfOriginState *string `json:"selfOriginState,omitempty"`
 	State *string `json:"state,omitempty"`
-	Lga *string `json:"lga,omitempty"`
-	Nin *string `json:"nin,omitempty"`
-	Height *string `json:"height,omitempty"`
-	Picture *string `json:"picture,omitempty"`
 	Status *float32 `json:"status,omitempty"`
 }
 
@@ -95,198 +95,6 @@ func (o *GetPhoneNumber404ResponseEntity) HasTitle() bool {
 // SetTitle gets a reference to the given string and assigns it to the Title field.
 func (o *GetPhoneNumber404ResponseEntity) SetTitle(v string) {
 	o.Title = &v
-}
-
-// GetMsisdn returns the Msisdn field value if set, zero value otherwise.
-func (o *GetPhoneNumber404ResponseEntity) GetMsisdn() string {
-	if o == nil || isNil(o.Msisdn) {
-		var ret string
-		return ret
-	}
-	return *o.Msisdn
-}
-
-// GetMsisdnOk returns a tuple with the Msisdn field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPhoneNumber404ResponseEntity) GetMsisdnOk() (*string, bool) {
-	if o == nil || isNil(o.Msisdn) {
-    return nil, false
-	}
-	return o.Msisdn, true
-}
-
-// HasMsisdn returns a boolean if a field has been set.
-func (o *GetPhoneNumber404ResponseEntity) HasMsisdn() bool {
-	if o != nil && !isNil(o.Msisdn) {
-		return true
-	}
-
-	return false
-}
-
-// SetMsisdn gets a reference to the given string and assigns it to the Msisdn field.
-func (o *GetPhoneNumber404ResponseEntity) SetMsisdn(v string) {
-	o.Msisdn = &v
-}
-
-// GetFirstName returns the FirstName field value if set, zero value otherwise.
-func (o *GetPhoneNumber404ResponseEntity) GetFirstName() string {
-	if o == nil || isNil(o.FirstName) {
-		var ret string
-		return ret
-	}
-	return *o.FirstName
-}
-
-// GetFirstNameOk returns a tuple with the FirstName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPhoneNumber404ResponseEntity) GetFirstNameOk() (*string, bool) {
-	if o == nil || isNil(o.FirstName) {
-    return nil, false
-	}
-	return o.FirstName, true
-}
-
-// HasFirstName returns a boolean if a field has been set.
-func (o *GetPhoneNumber404ResponseEntity) HasFirstName() bool {
-	if o != nil && !isNil(o.FirstName) {
-		return true
-	}
-
-	return false
-}
-
-// SetFirstName gets a reference to the given string and assigns it to the FirstName field.
-func (o *GetPhoneNumber404ResponseEntity) SetFirstName(v string) {
-	o.FirstName = &v
-}
-
-// GetMiddleName returns the MiddleName field value if set, zero value otherwise.
-func (o *GetPhoneNumber404ResponseEntity) GetMiddleName() string {
-	if o == nil || isNil(o.MiddleName) {
-		var ret string
-		return ret
-	}
-	return *o.MiddleName
-}
-
-// GetMiddleNameOk returns a tuple with the MiddleName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPhoneNumber404ResponseEntity) GetMiddleNameOk() (*string, bool) {
-	if o == nil || isNil(o.MiddleName) {
-    return nil, false
-	}
-	return o.MiddleName, true
-}
-
-// HasMiddleName returns a boolean if a field has been set.
-func (o *GetPhoneNumber404ResponseEntity) HasMiddleName() bool {
-	if o != nil && !isNil(o.MiddleName) {
-		return true
-	}
-
-	return false
-}
-
-// SetMiddleName gets a reference to the given string and assigns it to the MiddleName field.
-func (o *GetPhoneNumber404ResponseEntity) SetMiddleName(v string) {
-	o.MiddleName = &v
-}
-
-// GetLastName returns the LastName field value if set, zero value otherwise.
-func (o *GetPhoneNumber404ResponseEntity) GetLastName() string {
-	if o == nil || isNil(o.LastName) {
-		var ret string
-		return ret
-	}
-	return *o.LastName
-}
-
-// GetLastNameOk returns a tuple with the LastName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPhoneNumber404ResponseEntity) GetLastNameOk() (*string, bool) {
-	if o == nil || isNil(o.LastName) {
-    return nil, false
-	}
-	return o.LastName, true
-}
-
-// HasLastName returns a boolean if a field has been set.
-func (o *GetPhoneNumber404ResponseEntity) HasLastName() bool {
-	if o != nil && !isNil(o.LastName) {
-		return true
-	}
-
-	return false
-}
-
-// SetLastName gets a reference to the given string and assigns it to the LastName field.
-func (o *GetPhoneNumber404ResponseEntity) SetLastName(v string) {
-	o.LastName = &v
-}
-
-// GetMaritalStatus returns the MaritalStatus field value if set, zero value otherwise.
-func (o *GetPhoneNumber404ResponseEntity) GetMaritalStatus() string {
-	if o == nil || isNil(o.MaritalStatus) {
-		var ret string
-		return ret
-	}
-	return *o.MaritalStatus
-}
-
-// GetMaritalStatusOk returns a tuple with the MaritalStatus field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPhoneNumber404ResponseEntity) GetMaritalStatusOk() (*string, bool) {
-	if o == nil || isNil(o.MaritalStatus) {
-    return nil, false
-	}
-	return o.MaritalStatus, true
-}
-
-// HasMaritalStatus returns a boolean if a field has been set.
-func (o *GetPhoneNumber404ResponseEntity) HasMaritalStatus() bool {
-	if o != nil && !isNil(o.MaritalStatus) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaritalStatus gets a reference to the given string and assigns it to the MaritalStatus field.
-func (o *GetPhoneNumber404ResponseEntity) SetMaritalStatus(v string) {
-	o.MaritalStatus = &v
-}
-
-// GetGender returns the Gender field value if set, zero value otherwise.
-func (o *GetPhoneNumber404ResponseEntity) GetGender() string {
-	if o == nil || isNil(o.Gender) {
-		var ret string
-		return ret
-	}
-	return *o.Gender
-}
-
-// GetGenderOk returns a tuple with the Gender field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPhoneNumber404ResponseEntity) GetGenderOk() (*string, bool) {
-	if o == nil || isNil(o.Gender) {
-    return nil, false
-	}
-	return o.Gender, true
-}
-
-// HasGender returns a boolean if a field has been set.
-func (o *GetPhoneNumber404ResponseEntity) HasGender() bool {
-	if o != nil && !isNil(o.Gender) {
-		return true
-	}
-
-	return false
-}
-
-// SetGender gets a reference to the given string and assigns it to the Gender field.
-func (o *GetPhoneNumber404ResponseEntity) SetGender(v string) {
-	o.Gender = &v
 }
 
 // GetBirthDate returns the BirthDate field value if set, zero value otherwise.
@@ -449,6 +257,294 @@ func (o *GetPhoneNumber404ResponseEntity) SetEmplymentStatus(v string) {
 	o.EmplymentStatus = &v
 }
 
+// GetFirstName returns the FirstName field value if set, zero value otherwise.
+func (o *GetPhoneNumber404ResponseEntity) GetFirstName() string {
+	if o == nil || isNil(o.FirstName) {
+		var ret string
+		return ret
+	}
+	return *o.FirstName
+}
+
+// GetFirstNameOk returns a tuple with the FirstName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetPhoneNumber404ResponseEntity) GetFirstNameOk() (*string, bool) {
+	if o == nil || isNil(o.FirstName) {
+    return nil, false
+	}
+	return o.FirstName, true
+}
+
+// HasFirstName returns a boolean if a field has been set.
+func (o *GetPhoneNumber404ResponseEntity) HasFirstName() bool {
+	if o != nil && !isNil(o.FirstName) {
+		return true
+	}
+
+	return false
+}
+
+// SetFirstName gets a reference to the given string and assigns it to the FirstName field.
+func (o *GetPhoneNumber404ResponseEntity) SetFirstName(v string) {
+	o.FirstName = &v
+}
+
+// GetGender returns the Gender field value if set, zero value otherwise.
+func (o *GetPhoneNumber404ResponseEntity) GetGender() string {
+	if o == nil || isNil(o.Gender) {
+		var ret string
+		return ret
+	}
+	return *o.Gender
+}
+
+// GetGenderOk returns a tuple with the Gender field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetPhoneNumber404ResponseEntity) GetGenderOk() (*string, bool) {
+	if o == nil || isNil(o.Gender) {
+    return nil, false
+	}
+	return o.Gender, true
+}
+
+// HasGender returns a boolean if a field has been set.
+func (o *GetPhoneNumber404ResponseEntity) HasGender() bool {
+	if o != nil && !isNil(o.Gender) {
+		return true
+	}
+
+	return false
+}
+
+// SetGender gets a reference to the given string and assigns it to the Gender field.
+func (o *GetPhoneNumber404ResponseEntity) SetGender(v string) {
+	o.Gender = &v
+}
+
+// GetHeight returns the Height field value if set, zero value otherwise.
+func (o *GetPhoneNumber404ResponseEntity) GetHeight() string {
+	if o == nil || isNil(o.Height) {
+		var ret string
+		return ret
+	}
+	return *o.Height
+}
+
+// GetHeightOk returns a tuple with the Height field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetPhoneNumber404ResponseEntity) GetHeightOk() (*string, bool) {
+	if o == nil || isNil(o.Height) {
+    return nil, false
+	}
+	return o.Height, true
+}
+
+// HasHeight returns a boolean if a field has been set.
+func (o *GetPhoneNumber404ResponseEntity) HasHeight() bool {
+	if o != nil && !isNil(o.Height) {
+		return true
+	}
+
+	return false
+}
+
+// SetHeight gets a reference to the given string and assigns it to the Height field.
+func (o *GetPhoneNumber404ResponseEntity) SetHeight(v string) {
+	o.Height = &v
+}
+
+// GetLastName returns the LastName field value if set, zero value otherwise.
+func (o *GetPhoneNumber404ResponseEntity) GetLastName() string {
+	if o == nil || isNil(o.LastName) {
+		var ret string
+		return ret
+	}
+	return *o.LastName
+}
+
+// GetLastNameOk returns a tuple with the LastName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetPhoneNumber404ResponseEntity) GetLastNameOk() (*string, bool) {
+	if o == nil || isNil(o.LastName) {
+    return nil, false
+	}
+	return o.LastName, true
+}
+
+// HasLastName returns a boolean if a field has been set.
+func (o *GetPhoneNumber404ResponseEntity) HasLastName() bool {
+	if o != nil && !isNil(o.LastName) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastName gets a reference to the given string and assigns it to the LastName field.
+func (o *GetPhoneNumber404ResponseEntity) SetLastName(v string) {
+	o.LastName = &v
+}
+
+// GetLga returns the Lga field value if set, zero value otherwise.
+func (o *GetPhoneNumber404ResponseEntity) GetLga() string {
+	if o == nil || isNil(o.Lga) {
+		var ret string
+		return ret
+	}
+	return *o.Lga
+}
+
+// GetLgaOk returns a tuple with the Lga field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetPhoneNumber404ResponseEntity) GetLgaOk() (*string, bool) {
+	if o == nil || isNil(o.Lga) {
+    return nil, false
+	}
+	return o.Lga, true
+}
+
+// HasLga returns a boolean if a field has been set.
+func (o *GetPhoneNumber404ResponseEntity) HasLga() bool {
+	if o != nil && !isNil(o.Lga) {
+		return true
+	}
+
+	return false
+}
+
+// SetLga gets a reference to the given string and assigns it to the Lga field.
+func (o *GetPhoneNumber404ResponseEntity) SetLga(v string) {
+	o.Lga = &v
+}
+
+// GetMaritalStatus returns the MaritalStatus field value if set, zero value otherwise.
+func (o *GetPhoneNumber404ResponseEntity) GetMaritalStatus() string {
+	if o == nil || isNil(o.MaritalStatus) {
+		var ret string
+		return ret
+	}
+	return *o.MaritalStatus
+}
+
+// GetMaritalStatusOk returns a tuple with the MaritalStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetPhoneNumber404ResponseEntity) GetMaritalStatusOk() (*string, bool) {
+	if o == nil || isNil(o.MaritalStatus) {
+    return nil, false
+	}
+	return o.MaritalStatus, true
+}
+
+// HasMaritalStatus returns a boolean if a field has been set.
+func (o *GetPhoneNumber404ResponseEntity) HasMaritalStatus() bool {
+	if o != nil && !isNil(o.MaritalStatus) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaritalStatus gets a reference to the given string and assigns it to the MaritalStatus field.
+func (o *GetPhoneNumber404ResponseEntity) SetMaritalStatus(v string) {
+	o.MaritalStatus = &v
+}
+
+// GetMiddleName returns the MiddleName field value if set, zero value otherwise.
+func (o *GetPhoneNumber404ResponseEntity) GetMiddleName() string {
+	if o == nil || isNil(o.MiddleName) {
+		var ret string
+		return ret
+	}
+	return *o.MiddleName
+}
+
+// GetMiddleNameOk returns a tuple with the MiddleName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetPhoneNumber404ResponseEntity) GetMiddleNameOk() (*string, bool) {
+	if o == nil || isNil(o.MiddleName) {
+    return nil, false
+	}
+	return o.MiddleName, true
+}
+
+// HasMiddleName returns a boolean if a field has been set.
+func (o *GetPhoneNumber404ResponseEntity) HasMiddleName() bool {
+	if o != nil && !isNil(o.MiddleName) {
+		return true
+	}
+
+	return false
+}
+
+// SetMiddleName gets a reference to the given string and assigns it to the MiddleName field.
+func (o *GetPhoneNumber404ResponseEntity) SetMiddleName(v string) {
+	o.MiddleName = &v
+}
+
+// GetMsisdn returns the Msisdn field value if set, zero value otherwise.
+func (o *GetPhoneNumber404ResponseEntity) GetMsisdn() string {
+	if o == nil || isNil(o.Msisdn) {
+		var ret string
+		return ret
+	}
+	return *o.Msisdn
+}
+
+// GetMsisdnOk returns a tuple with the Msisdn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetPhoneNumber404ResponseEntity) GetMsisdnOk() (*string, bool) {
+	if o == nil || isNil(o.Msisdn) {
+    return nil, false
+	}
+	return o.Msisdn, true
+}
+
+// HasMsisdn returns a boolean if a field has been set.
+func (o *GetPhoneNumber404ResponseEntity) HasMsisdn() bool {
+	if o != nil && !isNil(o.Msisdn) {
+		return true
+	}
+
+	return false
+}
+
+// SetMsisdn gets a reference to the given string and assigns it to the Msisdn field.
+func (o *GetPhoneNumber404ResponseEntity) SetMsisdn(v string) {
+	o.Msisdn = &v
+}
+
+// GetNin returns the Nin field value if set, zero value otherwise.
+func (o *GetPhoneNumber404ResponseEntity) GetNin() string {
+	if o == nil || isNil(o.Nin) {
+		var ret string
+		return ret
+	}
+	return *o.Nin
+}
+
+// GetNinOk returns a tuple with the Nin field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetPhoneNumber404ResponseEntity) GetNinOk() (*string, bool) {
+	if o == nil || isNil(o.Nin) {
+    return nil, false
+	}
+	return o.Nin, true
+}
+
+// HasNin returns a boolean if a field has been set.
+func (o *GetPhoneNumber404ResponseEntity) HasNin() bool {
+	if o != nil && !isNil(o.Nin) {
+		return true
+	}
+
+	return false
+}
+
+// SetNin gets a reference to the given string and assigns it to the Nin field.
+func (o *GetPhoneNumber404ResponseEntity) SetNin(v string) {
+	o.Nin = &v
+}
+
 // GetNspokenLang returns the NspokenLang field value if set, zero value otherwise.
 func (o *GetPhoneNumber404ResponseEntity) GetNspokenLang() string {
 	if o == nil || isNil(o.NspokenLang) {
@@ -511,6 +607,38 @@ func (o *GetPhoneNumber404ResponseEntity) HasOspokenlang() bool {
 // SetOspokenlang gets a reference to the given string and assigns it to the Ospokenlang field.
 func (o *GetPhoneNumber404ResponseEntity) SetOspokenlang(v string) {
 	o.Ospokenlang = &v
+}
+
+// GetPicture returns the Picture field value if set, zero value otherwise.
+func (o *GetPhoneNumber404ResponseEntity) GetPicture() string {
+	if o == nil || isNil(o.Picture) {
+		var ret string
+		return ret
+	}
+	return *o.Picture
+}
+
+// GetPictureOk returns a tuple with the Picture field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetPhoneNumber404ResponseEntity) GetPictureOk() (*string, bool) {
+	if o == nil || isNil(o.Picture) {
+    return nil, false
+	}
+	return o.Picture, true
+}
+
+// HasPicture returns a boolean if a field has been set.
+func (o *GetPhoneNumber404ResponseEntity) HasPicture() bool {
+	if o != nil && !isNil(o.Picture) {
+		return true
+	}
+
+	return false
+}
+
+// SetPicture gets a reference to the given string and assigns it to the Picture field.
+func (o *GetPhoneNumber404ResponseEntity) SetPicture(v string) {
+	o.Picture = &v
 }
 
 // GetProfession returns the Profession field value if set, zero value otherwise.
@@ -609,38 +737,6 @@ func (o *GetPhoneNumber404ResponseEntity) SetResidenceAddressLine1(v string) {
 	o.ResidenceAddressLine1 = &v
 }
 
-// GetResidenceTown returns the ResidenceTown field value if set, zero value otherwise.
-func (o *GetPhoneNumber404ResponseEntity) GetResidenceTown() string {
-	if o == nil || isNil(o.ResidenceTown) {
-		var ret string
-		return ret
-	}
-	return *o.ResidenceTown
-}
-
-// GetResidenceTownOk returns a tuple with the ResidenceTown field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPhoneNumber404ResponseEntity) GetResidenceTownOk() (*string, bool) {
-	if o == nil || isNil(o.ResidenceTown) {
-    return nil, false
-	}
-	return o.ResidenceTown, true
-}
-
-// HasResidenceTown returns a boolean if a field has been set.
-func (o *GetPhoneNumber404ResponseEntity) HasResidenceTown() bool {
-	if o != nil && !isNil(o.ResidenceTown) {
-		return true
-	}
-
-	return false
-}
-
-// SetResidenceTown gets a reference to the given string and assigns it to the ResidenceTown field.
-func (o *GetPhoneNumber404ResponseEntity) SetResidenceTown(v string) {
-	o.ResidenceTown = &v
-}
-
 // GetResidenceLga returns the ResidenceLga field value if set, zero value otherwise.
 func (o *GetPhoneNumber404ResponseEntity) GetResidenceLga() string {
 	if o == nil || isNil(o.ResidenceLga) {
@@ -735,6 +831,38 @@ func (o *GetPhoneNumber404ResponseEntity) HasResidenceStatus() bool {
 // SetResidenceStatus gets a reference to the given string and assigns it to the ResidenceStatus field.
 func (o *GetPhoneNumber404ResponseEntity) SetResidenceStatus(v string) {
 	o.ResidenceStatus = &v
+}
+
+// GetResidenceTown returns the ResidenceTown field value if set, zero value otherwise.
+func (o *GetPhoneNumber404ResponseEntity) GetResidenceTown() string {
+	if o == nil || isNil(o.ResidenceTown) {
+		var ret string
+		return ret
+	}
+	return *o.ResidenceTown
+}
+
+// GetResidenceTownOk returns a tuple with the ResidenceTown field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetPhoneNumber404ResponseEntity) GetResidenceTownOk() (*string, bool) {
+	if o == nil || isNil(o.ResidenceTown) {
+    return nil, false
+	}
+	return o.ResidenceTown, true
+}
+
+// HasResidenceTown returns a boolean if a field has been set.
+func (o *GetPhoneNumber404ResponseEntity) HasResidenceTown() bool {
+	if o != nil && !isNil(o.ResidenceTown) {
+		return true
+	}
+
+	return false
+}
+
+// SetResidenceTown gets a reference to the given string and assigns it to the ResidenceTown field.
+func (o *GetPhoneNumber404ResponseEntity) SetResidenceTown(v string) {
+	o.ResidenceTown = &v
 }
 
 // GetSelfOriginLga returns the SelfOriginLga field value if set, zero value otherwise.
@@ -865,134 +993,6 @@ func (o *GetPhoneNumber404ResponseEntity) SetState(v string) {
 	o.State = &v
 }
 
-// GetLga returns the Lga field value if set, zero value otherwise.
-func (o *GetPhoneNumber404ResponseEntity) GetLga() string {
-	if o == nil || isNil(o.Lga) {
-		var ret string
-		return ret
-	}
-	return *o.Lga
-}
-
-// GetLgaOk returns a tuple with the Lga field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPhoneNumber404ResponseEntity) GetLgaOk() (*string, bool) {
-	if o == nil || isNil(o.Lga) {
-    return nil, false
-	}
-	return o.Lga, true
-}
-
-// HasLga returns a boolean if a field has been set.
-func (o *GetPhoneNumber404ResponseEntity) HasLga() bool {
-	if o != nil && !isNil(o.Lga) {
-		return true
-	}
-
-	return false
-}
-
-// SetLga gets a reference to the given string and assigns it to the Lga field.
-func (o *GetPhoneNumber404ResponseEntity) SetLga(v string) {
-	o.Lga = &v
-}
-
-// GetNin returns the Nin field value if set, zero value otherwise.
-func (o *GetPhoneNumber404ResponseEntity) GetNin() string {
-	if o == nil || isNil(o.Nin) {
-		var ret string
-		return ret
-	}
-	return *o.Nin
-}
-
-// GetNinOk returns a tuple with the Nin field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPhoneNumber404ResponseEntity) GetNinOk() (*string, bool) {
-	if o == nil || isNil(o.Nin) {
-    return nil, false
-	}
-	return o.Nin, true
-}
-
-// HasNin returns a boolean if a field has been set.
-func (o *GetPhoneNumber404ResponseEntity) HasNin() bool {
-	if o != nil && !isNil(o.Nin) {
-		return true
-	}
-
-	return false
-}
-
-// SetNin gets a reference to the given string and assigns it to the Nin field.
-func (o *GetPhoneNumber404ResponseEntity) SetNin(v string) {
-	o.Nin = &v
-}
-
-// GetHeight returns the Height field value if set, zero value otherwise.
-func (o *GetPhoneNumber404ResponseEntity) GetHeight() string {
-	if o == nil || isNil(o.Height) {
-		var ret string
-		return ret
-	}
-	return *o.Height
-}
-
-// GetHeightOk returns a tuple with the Height field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPhoneNumber404ResponseEntity) GetHeightOk() (*string, bool) {
-	if o == nil || isNil(o.Height) {
-    return nil, false
-	}
-	return o.Height, true
-}
-
-// HasHeight returns a boolean if a field has been set.
-func (o *GetPhoneNumber404ResponseEntity) HasHeight() bool {
-	if o != nil && !isNil(o.Height) {
-		return true
-	}
-
-	return false
-}
-
-// SetHeight gets a reference to the given string and assigns it to the Height field.
-func (o *GetPhoneNumber404ResponseEntity) SetHeight(v string) {
-	o.Height = &v
-}
-
-// GetPicture returns the Picture field value if set, zero value otherwise.
-func (o *GetPhoneNumber404ResponseEntity) GetPicture() string {
-	if o == nil || isNil(o.Picture) {
-		var ret string
-		return ret
-	}
-	return *o.Picture
-}
-
-// GetPictureOk returns a tuple with the Picture field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetPhoneNumber404ResponseEntity) GetPictureOk() (*string, bool) {
-	if o == nil || isNil(o.Picture) {
-    return nil, false
-	}
-	return o.Picture, true
-}
-
-// HasPicture returns a boolean if a field has been set.
-func (o *GetPhoneNumber404ResponseEntity) HasPicture() bool {
-	if o != nil && !isNil(o.Picture) {
-		return true
-	}
-
-	return false
-}
-
-// SetPicture gets a reference to the given string and assigns it to the Picture field.
-func (o *GetPhoneNumber404ResponseEntity) SetPicture(v string) {
-	o.Picture = &v
-}
-
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *GetPhoneNumber404ResponseEntity) GetStatus() float32 {
 	if o == nil || isNil(o.Status) {
@@ -1030,24 +1030,6 @@ func (o GetPhoneNumber404ResponseEntity) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Title) {
 		toSerialize["title"] = o.Title
 	}
-	if !isNil(o.Msisdn) {
-		toSerialize["msisdn"] = o.Msisdn
-	}
-	if !isNil(o.FirstName) {
-		toSerialize["firstName"] = o.FirstName
-	}
-	if !isNil(o.MiddleName) {
-		toSerialize["middleName"] = o.MiddleName
-	}
-	if !isNil(o.LastName) {
-		toSerialize["lastName"] = o.LastName
-	}
-	if !isNil(o.MaritalStatus) {
-		toSerialize["maritalStatus"] = o.MaritalStatus
-	}
-	if !isNil(o.Gender) {
-		toSerialize["gender"] = o.Gender
-	}
 	if !isNil(o.BirthDate) {
 		toSerialize["birthDate"] = o.BirthDate
 	}
@@ -1063,11 +1045,41 @@ func (o GetPhoneNumber404ResponseEntity) MarshalJSON() ([]byte, error) {
 	if !isNil(o.EmplymentStatus) {
 		toSerialize["emplymentStatus"] = o.EmplymentStatus
 	}
+	if !isNil(o.FirstName) {
+		toSerialize["firstName"] = o.FirstName
+	}
+	if !isNil(o.Gender) {
+		toSerialize["gender"] = o.Gender
+	}
+	if !isNil(o.Height) {
+		toSerialize["height"] = o.Height
+	}
+	if !isNil(o.LastName) {
+		toSerialize["lastName"] = o.LastName
+	}
+	if !isNil(o.Lga) {
+		toSerialize["lga"] = o.Lga
+	}
+	if !isNil(o.MaritalStatus) {
+		toSerialize["maritalStatus"] = o.MaritalStatus
+	}
+	if !isNil(o.MiddleName) {
+		toSerialize["middleName"] = o.MiddleName
+	}
+	if !isNil(o.Msisdn) {
+		toSerialize["msisdn"] = o.Msisdn
+	}
+	if !isNil(o.Nin) {
+		toSerialize["nin"] = o.Nin
+	}
 	if !isNil(o.NspokenLang) {
 		toSerialize["nspokenLang"] = o.NspokenLang
 	}
 	if !isNil(o.Ospokenlang) {
 		toSerialize["ospokenlang"] = o.Ospokenlang
+	}
+	if !isNil(o.Picture) {
+		toSerialize["picture"] = o.Picture
 	}
 	if !isNil(o.Profession) {
 		toSerialize["profession"] = o.Profession
@@ -1078,9 +1090,6 @@ func (o GetPhoneNumber404ResponseEntity) MarshalJSON() ([]byte, error) {
 	if !isNil(o.ResidenceAddressLine1) {
 		toSerialize["residenceAddressLine1"] = o.ResidenceAddressLine1
 	}
-	if !isNil(o.ResidenceTown) {
-		toSerialize["residenceTown"] = o.ResidenceTown
-	}
 	if !isNil(o.ResidenceLga) {
 		toSerialize["residenceLga"] = o.ResidenceLga
 	}
@@ -1089,6 +1098,9 @@ func (o GetPhoneNumber404ResponseEntity) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.ResidenceStatus) {
 		toSerialize["residenceStatus"] = o.ResidenceStatus
+	}
+	if !isNil(o.ResidenceTown) {
+		toSerialize["residenceTown"] = o.ResidenceTown
 	}
 	if !isNil(o.SelfOriginLga) {
 		toSerialize["selfOriginLga"] = o.SelfOriginLga
@@ -1101,18 +1113,6 @@ func (o GetPhoneNumber404ResponseEntity) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.State) {
 		toSerialize["state"] = o.State
-	}
-	if !isNil(o.Lga) {
-		toSerialize["lga"] = o.Lga
-	}
-	if !isNil(o.Nin) {
-		toSerialize["nin"] = o.Nin
-	}
-	if !isNil(o.Height) {
-		toSerialize["height"] = o.Height
-	}
-	if !isNil(o.Picture) {
-		toSerialize["picture"] = o.Picture
 	}
 	if !isNil(o.Status) {
 		toSerialize["status"] = o.Status

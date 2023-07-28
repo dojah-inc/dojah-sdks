@@ -39,11 +39,11 @@ public class AnalyzeDocumentResponseEntityDocumentImagesTest {
     }
 
     /**
-     * Test the property 'portrait'
+     * Test the property 'documentFrontSide'
      */
     @Test
-    public void portraitTest() {
-        // TODO: test portrait
+    public void documentFrontSideTest() {
+        // TODO: test documentFrontSide
     }
 
     /**
@@ -55,11 +55,11 @@ public class AnalyzeDocumentResponseEntityDocumentImagesTest {
     }
 
     /**
-     * Test the property 'documentFrontSide'
+     * Test the property 'portrait'
      */
     @Test
-    public void documentFrontSideTest() {
-        // TODO: test documentFrontSide
+    public void portraitTest() {
+        // TODO: test portrait
     }
 
 }

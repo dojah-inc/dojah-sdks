@@ -56,8 +56,10 @@ export const ZwKycApiAxiosParamCreator = function (configuration?: Configuration
             const localVarHeaderParameter = configuration && !isBrowser() ? { "User-Agent": configuration.userAgent } : {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (idNumber !== undefined) {
                 localVarQueryParameter['id_number'] = idNumber;
             }
@@ -123,8 +125,10 @@ export const ZwKycApiAxiosParamCreator = function (configuration?: Configuration
             const localVarHeaderParameter = configuration && !isBrowser() ? { "User-Agent": configuration.userAgent } : {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (id !== undefined) {
                 localVarQueryParameter['id'] = id;
             }

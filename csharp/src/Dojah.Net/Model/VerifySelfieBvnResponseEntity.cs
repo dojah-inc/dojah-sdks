@@ -35,55 +35,55 @@ namespace Dojah.Net.Model
         /// Initializes a new instance of the <see cref="VerifySelfieBvnResponseEntity" /> class.
         /// </summary>
         /// <param name="bvn">bvn.</param>
-        /// <param name="firstName">firstName.</param>
-        /// <param name="middleName">middleName.</param>
-        /// <param name="lastName">lastName.</param>
         /// <param name="dateOfBirth">dateOfBirth.</param>
-        /// <param name="phoneNumber1">phoneNumber1.</param>
-        /// <param name="phoneNumber2">phoneNumber2.</param>
-        /// <param name="gender">gender.</param>
+        /// <param name="email">email.</param>
         /// <param name="enrollmentBank">enrollmentBank.</param>
         /// <param name="enrollmentBranch">enrollmentBranch.</param>
-        /// <param name="email">email.</param>
+        /// <param name="firstName">firstName.</param>
+        /// <param name="gender">gender.</param>
+        /// <param name="image">image.</param>
+        /// <param name="lastName">lastName.</param>
+        /// <param name="levelOfAccount">levelOfAccount.</param>
         /// <param name="lgaOfOrigin">lgaOfOrigin.</param>
         /// <param name="lgaOfResidence">lgaOfResidence.</param>
         /// <param name="maritalStatus">maritalStatus.</param>
-        /// <param name="nin">nin.</param>
+        /// <param name="middleName">middleName.</param>
         /// <param name="nameOnCard">nameOnCard.</param>
+        /// <param name="nin">nin.</param>
+        /// <param name="phoneNumber1">phoneNumber1.</param>
+        /// <param name="phoneNumber2">phoneNumber2.</param>
+        /// <param name="registrationDate">registrationDate.</param>
         /// <param name="residentialAddress">residentialAddress.</param>
+        /// <param name="selfieVerification">selfieVerification.</param>
         /// <param name="stateOfOrigin">stateOfOrigin.</param>
         /// <param name="stateOfResidence">stateOfResidence.</param>
         /// <param name="watchListed">watchListed.</param>
-        /// <param name="levelOfAccount">levelOfAccount.</param>
-        /// <param name="registrationDate">registrationDate.</param>
-        /// <param name="image">image.</param>
-        /// <param name="selfieVerification">selfieVerification.</param>
-        public VerifySelfieBvnResponseEntity(string bvn = default(string), string firstName = default(string), string middleName = default(string), string lastName = default(string), string dateOfBirth = default(string), string phoneNumber1 = default(string), string phoneNumber2 = default(string), string gender = default(string), string enrollmentBank = default(string), string enrollmentBranch = default(string), string email = default(string), string lgaOfOrigin = default(string), string lgaOfResidence = default(string), string maritalStatus = default(string), string nin = default(string), string nameOnCard = default(string), string residentialAddress = default(string), string stateOfOrigin = default(string), string stateOfResidence = default(string), string watchListed = default(string), string levelOfAccount = default(string), string registrationDate = default(string), string image = default(string), VerifySelfieBvnResponseEntitySelfieVerification selfieVerification = default(VerifySelfieBvnResponseEntitySelfieVerification))
+        public VerifySelfieBvnResponseEntity(string bvn = default(string), string dateOfBirth = default(string), string email = default(string), string enrollmentBank = default(string), string enrollmentBranch = default(string), string firstName = default(string), string gender = default(string), string image = default(string), string lastName = default(string), string levelOfAccount = default(string), string lgaOfOrigin = default(string), string lgaOfResidence = default(string), string maritalStatus = default(string), string middleName = default(string), string nameOnCard = default(string), string nin = default(string), string phoneNumber1 = default(string), string phoneNumber2 = default(string), string registrationDate = default(string), string residentialAddress = default(string), VerifySelfieBvnResponseEntitySelfieVerification selfieVerification = default(VerifySelfieBvnResponseEntitySelfieVerification), string stateOfOrigin = default(string), string stateOfResidence = default(string), string watchListed = default(string))
         {
             this.Bvn = bvn;
-            this.FirstName = firstName;
-            this.MiddleName = middleName;
-            this.LastName = lastName;
             this.DateOfBirth = dateOfBirth;
-            this.PhoneNumber1 = phoneNumber1;
-            this.PhoneNumber2 = phoneNumber2;
-            this.Gender = gender;
+            this.Email = email;
             this.EnrollmentBank = enrollmentBank;
             this.EnrollmentBranch = enrollmentBranch;
-            this.Email = email;
+            this.FirstName = firstName;
+            this.Gender = gender;
+            this.Image = image;
+            this.LastName = lastName;
+            this.LevelOfAccount = levelOfAccount;
             this.LgaOfOrigin = lgaOfOrigin;
             this.LgaOfResidence = lgaOfResidence;
             this.MaritalStatus = maritalStatus;
-            this.Nin = nin;
+            this.MiddleName = middleName;
             this.NameOnCard = nameOnCard;
+            this.Nin = nin;
+            this.PhoneNumber1 = phoneNumber1;
+            this.PhoneNumber2 = phoneNumber2;
+            this.RegistrationDate = registrationDate;
             this.ResidentialAddress = residentialAddress;
+            this.SelfieVerification = selfieVerification;
             this.StateOfOrigin = stateOfOrigin;
             this.StateOfResidence = stateOfResidence;
             this.WatchListed = watchListed;
-            this.LevelOfAccount = levelOfAccount;
-            this.RegistrationDate = registrationDate;
-            this.Image = image;
-            this.SelfieVerification = selfieVerification;
         }
 
         /// <summary>
@@ -93,46 +93,16 @@ namespace Dojah.Net.Model
         public string Bvn { get; set; }
 
         /// <summary>
-        /// Gets or Sets FirstName
-        /// </summary>
-        [DataMember(Name = "first_name", EmitDefaultValue = false)]
-        public string FirstName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets MiddleName
-        /// </summary>
-        [DataMember(Name = "middle_name", EmitDefaultValue = false)]
-        public string MiddleName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets LastName
-        /// </summary>
-        [DataMember(Name = "last_name", EmitDefaultValue = false)]
-        public string LastName { get; set; }
-
-        /// <summary>
         /// Gets or Sets DateOfBirth
         /// </summary>
         [DataMember(Name = "date_of_birth", EmitDefaultValue = false)]
         public string DateOfBirth { get; set; }
 
         /// <summary>
-        /// Gets or Sets PhoneNumber1
+        /// Gets or Sets Email
         /// </summary>
-        [DataMember(Name = "phone_number1", EmitDefaultValue = false)]
-        public string PhoneNumber1 { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PhoneNumber2
-        /// </summary>
-        [DataMember(Name = "phone_number2", EmitDefaultValue = false)]
-        public string PhoneNumber2 { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Gender
-        /// </summary>
-        [DataMember(Name = "gender", EmitDefaultValue = false)]
-        public string Gender { get; set; }
+        [DataMember(Name = "email", EmitDefaultValue = false)]
+        public string Email { get; set; }
 
         /// <summary>
         /// Gets or Sets EnrollmentBank
@@ -147,10 +117,34 @@ namespace Dojah.Net.Model
         public string EnrollmentBranch { get; set; }
 
         /// <summary>
-        /// Gets or Sets Email
+        /// Gets or Sets FirstName
         /// </summary>
-        [DataMember(Name = "email", EmitDefaultValue = false)]
-        public string Email { get; set; }
+        [DataMember(Name = "first_name", EmitDefaultValue = false)]
+        public string FirstName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Gender
+        /// </summary>
+        [DataMember(Name = "gender", EmitDefaultValue = false)]
+        public string Gender { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Image
+        /// </summary>
+        [DataMember(Name = "image", EmitDefaultValue = false)]
+        public string Image { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LastName
+        /// </summary>
+        [DataMember(Name = "last_name", EmitDefaultValue = false)]
+        public string LastName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LevelOfAccount
+        /// </summary>
+        [DataMember(Name = "level_of_account", EmitDefaultValue = false)]
+        public string LevelOfAccount { get; set; }
 
         /// <summary>
         /// Gets or Sets LgaOfOrigin
@@ -171,10 +165,10 @@ namespace Dojah.Net.Model
         public string MaritalStatus { get; set; }
 
         /// <summary>
-        /// Gets or Sets Nin
+        /// Gets or Sets MiddleName
         /// </summary>
-        [DataMember(Name = "nin", EmitDefaultValue = false)]
-        public string Nin { get; set; }
+        [DataMember(Name = "middle_name", EmitDefaultValue = false)]
+        public string MiddleName { get; set; }
 
         /// <summary>
         /// Gets or Sets NameOnCard
@@ -183,10 +177,40 @@ namespace Dojah.Net.Model
         public string NameOnCard { get; set; }
 
         /// <summary>
+        /// Gets or Sets Nin
+        /// </summary>
+        [DataMember(Name = "nin", EmitDefaultValue = false)]
+        public string Nin { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PhoneNumber1
+        /// </summary>
+        [DataMember(Name = "phone_number1", EmitDefaultValue = false)]
+        public string PhoneNumber1 { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PhoneNumber2
+        /// </summary>
+        [DataMember(Name = "phone_number2", EmitDefaultValue = false)]
+        public string PhoneNumber2 { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RegistrationDate
+        /// </summary>
+        [DataMember(Name = "registration_date", EmitDefaultValue = false)]
+        public string RegistrationDate { get; set; }
+
+        /// <summary>
         /// Gets or Sets ResidentialAddress
         /// </summary>
         [DataMember(Name = "residential_address", EmitDefaultValue = false)]
         public string ResidentialAddress { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SelfieVerification
+        /// </summary>
+        [DataMember(Name = "selfie_verification", EmitDefaultValue = false)]
+        public VerifySelfieBvnResponseEntitySelfieVerification SelfieVerification { get; set; }
 
         /// <summary>
         /// Gets or Sets StateOfOrigin
@@ -207,30 +231,6 @@ namespace Dojah.Net.Model
         public string WatchListed { get; set; }
 
         /// <summary>
-        /// Gets or Sets LevelOfAccount
-        /// </summary>
-        [DataMember(Name = "level_of_account", EmitDefaultValue = false)]
-        public string LevelOfAccount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets RegistrationDate
-        /// </summary>
-        [DataMember(Name = "registration_date", EmitDefaultValue = false)]
-        public string RegistrationDate { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Image
-        /// </summary>
-        [DataMember(Name = "image", EmitDefaultValue = false)]
-        public string Image { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SelfieVerification
-        /// </summary>
-        [DataMember(Name = "selfie_verification", EmitDefaultValue = false)]
-        public VerifySelfieBvnResponseEntitySelfieVerification SelfieVerification { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -239,29 +239,29 @@ namespace Dojah.Net.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class VerifySelfieBvnResponseEntity {\n");
             sb.Append("  Bvn: ").Append(Bvn).Append("\n");
-            sb.Append("  FirstName: ").Append(FirstName).Append("\n");
-            sb.Append("  MiddleName: ").Append(MiddleName).Append("\n");
-            sb.Append("  LastName: ").Append(LastName).Append("\n");
             sb.Append("  DateOfBirth: ").Append(DateOfBirth).Append("\n");
-            sb.Append("  PhoneNumber1: ").Append(PhoneNumber1).Append("\n");
-            sb.Append("  PhoneNumber2: ").Append(PhoneNumber2).Append("\n");
-            sb.Append("  Gender: ").Append(Gender).Append("\n");
+            sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  EnrollmentBank: ").Append(EnrollmentBank).Append("\n");
             sb.Append("  EnrollmentBranch: ").Append(EnrollmentBranch).Append("\n");
-            sb.Append("  Email: ").Append(Email).Append("\n");
+            sb.Append("  FirstName: ").Append(FirstName).Append("\n");
+            sb.Append("  Gender: ").Append(Gender).Append("\n");
+            sb.Append("  Image: ").Append(Image).Append("\n");
+            sb.Append("  LastName: ").Append(LastName).Append("\n");
+            sb.Append("  LevelOfAccount: ").Append(LevelOfAccount).Append("\n");
             sb.Append("  LgaOfOrigin: ").Append(LgaOfOrigin).Append("\n");
             sb.Append("  LgaOfResidence: ").Append(LgaOfResidence).Append("\n");
             sb.Append("  MaritalStatus: ").Append(MaritalStatus).Append("\n");
-            sb.Append("  Nin: ").Append(Nin).Append("\n");
+            sb.Append("  MiddleName: ").Append(MiddleName).Append("\n");
             sb.Append("  NameOnCard: ").Append(NameOnCard).Append("\n");
+            sb.Append("  Nin: ").Append(Nin).Append("\n");
+            sb.Append("  PhoneNumber1: ").Append(PhoneNumber1).Append("\n");
+            sb.Append("  PhoneNumber2: ").Append(PhoneNumber2).Append("\n");
+            sb.Append("  RegistrationDate: ").Append(RegistrationDate).Append("\n");
             sb.Append("  ResidentialAddress: ").Append(ResidentialAddress).Append("\n");
+            sb.Append("  SelfieVerification: ").Append(SelfieVerification).Append("\n");
             sb.Append("  StateOfOrigin: ").Append(StateOfOrigin).Append("\n");
             sb.Append("  StateOfResidence: ").Append(StateOfResidence).Append("\n");
             sb.Append("  WatchListed: ").Append(WatchListed).Append("\n");
-            sb.Append("  LevelOfAccount: ").Append(LevelOfAccount).Append("\n");
-            sb.Append("  RegistrationDate: ").Append(RegistrationDate).Append("\n");
-            sb.Append("  Image: ").Append(Image).Append("\n");
-            sb.Append("  SelfieVerification: ").Append(SelfieVerification).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -303,39 +303,14 @@ namespace Dojah.Net.Model
                     this.Bvn.Equals(input.Bvn))
                 ) && 
                 (
-                    this.FirstName == input.FirstName ||
-                    (this.FirstName != null &&
-                    this.FirstName.Equals(input.FirstName))
-                ) && 
-                (
-                    this.MiddleName == input.MiddleName ||
-                    (this.MiddleName != null &&
-                    this.MiddleName.Equals(input.MiddleName))
-                ) && 
-                (
-                    this.LastName == input.LastName ||
-                    (this.LastName != null &&
-                    this.LastName.Equals(input.LastName))
-                ) && 
-                (
                     this.DateOfBirth == input.DateOfBirth ||
                     (this.DateOfBirth != null &&
                     this.DateOfBirth.Equals(input.DateOfBirth))
                 ) && 
                 (
-                    this.PhoneNumber1 == input.PhoneNumber1 ||
-                    (this.PhoneNumber1 != null &&
-                    this.PhoneNumber1.Equals(input.PhoneNumber1))
-                ) && 
-                (
-                    this.PhoneNumber2 == input.PhoneNumber2 ||
-                    (this.PhoneNumber2 != null &&
-                    this.PhoneNumber2.Equals(input.PhoneNumber2))
-                ) && 
-                (
-                    this.Gender == input.Gender ||
-                    (this.Gender != null &&
-                    this.Gender.Equals(input.Gender))
+                    this.Email == input.Email ||
+                    (this.Email != null &&
+                    this.Email.Equals(input.Email))
                 ) && 
                 (
                     this.EnrollmentBank == input.EnrollmentBank ||
@@ -348,9 +323,29 @@ namespace Dojah.Net.Model
                     this.EnrollmentBranch.Equals(input.EnrollmentBranch))
                 ) && 
                 (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
+                    this.FirstName == input.FirstName ||
+                    (this.FirstName != null &&
+                    this.FirstName.Equals(input.FirstName))
+                ) && 
+                (
+                    this.Gender == input.Gender ||
+                    (this.Gender != null &&
+                    this.Gender.Equals(input.Gender))
+                ) && 
+                (
+                    this.Image == input.Image ||
+                    (this.Image != null &&
+                    this.Image.Equals(input.Image))
+                ) && 
+                (
+                    this.LastName == input.LastName ||
+                    (this.LastName != null &&
+                    this.LastName.Equals(input.LastName))
+                ) && 
+                (
+                    this.LevelOfAccount == input.LevelOfAccount ||
+                    (this.LevelOfAccount != null &&
+                    this.LevelOfAccount.Equals(input.LevelOfAccount))
                 ) && 
                 (
                     this.LgaOfOrigin == input.LgaOfOrigin ||
@@ -368,9 +363,9 @@ namespace Dojah.Net.Model
                     this.MaritalStatus.Equals(input.MaritalStatus))
                 ) && 
                 (
-                    this.Nin == input.Nin ||
-                    (this.Nin != null &&
-                    this.Nin.Equals(input.Nin))
+                    this.MiddleName == input.MiddleName ||
+                    (this.MiddleName != null &&
+                    this.MiddleName.Equals(input.MiddleName))
                 ) && 
                 (
                     this.NameOnCard == input.NameOnCard ||
@@ -378,9 +373,34 @@ namespace Dojah.Net.Model
                     this.NameOnCard.Equals(input.NameOnCard))
                 ) && 
                 (
+                    this.Nin == input.Nin ||
+                    (this.Nin != null &&
+                    this.Nin.Equals(input.Nin))
+                ) && 
+                (
+                    this.PhoneNumber1 == input.PhoneNumber1 ||
+                    (this.PhoneNumber1 != null &&
+                    this.PhoneNumber1.Equals(input.PhoneNumber1))
+                ) && 
+                (
+                    this.PhoneNumber2 == input.PhoneNumber2 ||
+                    (this.PhoneNumber2 != null &&
+                    this.PhoneNumber2.Equals(input.PhoneNumber2))
+                ) && 
+                (
+                    this.RegistrationDate == input.RegistrationDate ||
+                    (this.RegistrationDate != null &&
+                    this.RegistrationDate.Equals(input.RegistrationDate))
+                ) && 
+                (
                     this.ResidentialAddress == input.ResidentialAddress ||
                     (this.ResidentialAddress != null &&
                     this.ResidentialAddress.Equals(input.ResidentialAddress))
+                ) && 
+                (
+                    this.SelfieVerification == input.SelfieVerification ||
+                    (this.SelfieVerification != null &&
+                    this.SelfieVerification.Equals(input.SelfieVerification))
                 ) && 
                 (
                     this.StateOfOrigin == input.StateOfOrigin ||
@@ -396,26 +416,6 @@ namespace Dojah.Net.Model
                     this.WatchListed == input.WatchListed ||
                     (this.WatchListed != null &&
                     this.WatchListed.Equals(input.WatchListed))
-                ) && 
-                (
-                    this.LevelOfAccount == input.LevelOfAccount ||
-                    (this.LevelOfAccount != null &&
-                    this.LevelOfAccount.Equals(input.LevelOfAccount))
-                ) && 
-                (
-                    this.RegistrationDate == input.RegistrationDate ||
-                    (this.RegistrationDate != null &&
-                    this.RegistrationDate.Equals(input.RegistrationDate))
-                ) && 
-                (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
-                ) && 
-                (
-                    this.SelfieVerification == input.SelfieVerification ||
-                    (this.SelfieVerification != null &&
-                    this.SelfieVerification.Equals(input.SelfieVerification))
                 );
         }
 
@@ -432,33 +432,13 @@ namespace Dojah.Net.Model
                 {
                     hashCode = (hashCode * 59) + this.Bvn.GetHashCode();
                 }
-                if (this.FirstName != null)
-                {
-                    hashCode = (hashCode * 59) + this.FirstName.GetHashCode();
-                }
-                if (this.MiddleName != null)
-                {
-                    hashCode = (hashCode * 59) + this.MiddleName.GetHashCode();
-                }
-                if (this.LastName != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastName.GetHashCode();
-                }
                 if (this.DateOfBirth != null)
                 {
                     hashCode = (hashCode * 59) + this.DateOfBirth.GetHashCode();
                 }
-                if (this.PhoneNumber1 != null)
+                if (this.Email != null)
                 {
-                    hashCode = (hashCode * 59) + this.PhoneNumber1.GetHashCode();
-                }
-                if (this.PhoneNumber2 != null)
-                {
-                    hashCode = (hashCode * 59) + this.PhoneNumber2.GetHashCode();
-                }
-                if (this.Gender != null)
-                {
-                    hashCode = (hashCode * 59) + this.Gender.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Email.GetHashCode();
                 }
                 if (this.EnrollmentBank != null)
                 {
@@ -468,9 +448,25 @@ namespace Dojah.Net.Model
                 {
                     hashCode = (hashCode * 59) + this.EnrollmentBranch.GetHashCode();
                 }
-                if (this.Email != null)
+                if (this.FirstName != null)
                 {
-                    hashCode = (hashCode * 59) + this.Email.GetHashCode();
+                    hashCode = (hashCode * 59) + this.FirstName.GetHashCode();
+                }
+                if (this.Gender != null)
+                {
+                    hashCode = (hashCode * 59) + this.Gender.GetHashCode();
+                }
+                if (this.Image != null)
+                {
+                    hashCode = (hashCode * 59) + this.Image.GetHashCode();
+                }
+                if (this.LastName != null)
+                {
+                    hashCode = (hashCode * 59) + this.LastName.GetHashCode();
+                }
+                if (this.LevelOfAccount != null)
+                {
+                    hashCode = (hashCode * 59) + this.LevelOfAccount.GetHashCode();
                 }
                 if (this.LgaOfOrigin != null)
                 {
@@ -484,17 +480,37 @@ namespace Dojah.Net.Model
                 {
                     hashCode = (hashCode * 59) + this.MaritalStatus.GetHashCode();
                 }
-                if (this.Nin != null)
+                if (this.MiddleName != null)
                 {
-                    hashCode = (hashCode * 59) + this.Nin.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MiddleName.GetHashCode();
                 }
                 if (this.NameOnCard != null)
                 {
                     hashCode = (hashCode * 59) + this.NameOnCard.GetHashCode();
                 }
+                if (this.Nin != null)
+                {
+                    hashCode = (hashCode * 59) + this.Nin.GetHashCode();
+                }
+                if (this.PhoneNumber1 != null)
+                {
+                    hashCode = (hashCode * 59) + this.PhoneNumber1.GetHashCode();
+                }
+                if (this.PhoneNumber2 != null)
+                {
+                    hashCode = (hashCode * 59) + this.PhoneNumber2.GetHashCode();
+                }
+                if (this.RegistrationDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.RegistrationDate.GetHashCode();
+                }
                 if (this.ResidentialAddress != null)
                 {
                     hashCode = (hashCode * 59) + this.ResidentialAddress.GetHashCode();
+                }
+                if (this.SelfieVerification != null)
+                {
+                    hashCode = (hashCode * 59) + this.SelfieVerification.GetHashCode();
                 }
                 if (this.StateOfOrigin != null)
                 {
@@ -507,22 +523,6 @@ namespace Dojah.Net.Model
                 if (this.WatchListed != null)
                 {
                     hashCode = (hashCode * 59) + this.WatchListed.GetHashCode();
-                }
-                if (this.LevelOfAccount != null)
-                {
-                    hashCode = (hashCode * 59) + this.LevelOfAccount.GetHashCode();
-                }
-                if (this.RegistrationDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.RegistrationDate.GetHashCode();
-                }
-                if (this.Image != null)
-                {
-                    hashCode = (hashCode * 59) + this.Image.GetHashCode();
-                }
-                if (this.SelfieVerification != null)
-                {
-                    hashCode = (hashCode * 59) + this.SelfieVerification.GetHashCode();
                 }
                 return hashCode;
             }

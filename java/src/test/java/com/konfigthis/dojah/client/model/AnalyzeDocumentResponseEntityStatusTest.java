@@ -39,27 +39,11 @@ public class AnalyzeDocumentResponseEntityStatusTest {
     }
 
     /**
-     * Test the property 'overallStatus'
-     */
-    @Test
-    public void overallStatusTest() {
-        // TODO: test overallStatus
-    }
-
-    /**
      * Test the property 'documentImages'
      */
     @Test
     public void documentImagesTest() {
         // TODO: test documentImages
-    }
-
-    /**
-     * Test the property 'text'
-     */
-    @Test
-    public void textTest() {
-        // TODO: test text
     }
 
     /**
@@ -76,6 +60,22 @@ public class AnalyzeDocumentResponseEntityStatusTest {
     @Test
     public void expiryTest() {
         // TODO: test expiry
+    }
+
+    /**
+     * Test the property 'overallStatus'
+     */
+    @Test
+    public void overallStatusTest() {
+        // TODO: test overallStatus
+    }
+
+    /**
+     * Test the property 'text'
+     */
+    @Test
+    public void textTest() {
+        // TODO: test text
     }
 
 }

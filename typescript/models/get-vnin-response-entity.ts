@@ -23,7 +23,7 @@ export interface GetVninResponseEntity {
      * @type {string}
      * @memberof GetVninResponseEntity
      */
-    'vnin'?: string;
+    'dateOfBirth'?: string;
     /**
      * 
      * @type {string}
@@ -35,7 +35,25 @@ export interface GetVninResponseEntity {
      * @type {string}
      * @memberof GetVninResponseEntity
      */
+    'gender'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetVninResponseEntity
+     */
     'middlename'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetVninResponseEntity
+     */
+    'mobile'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetVninResponseEntity
+     */
+    'photo'?: string;
     /**
      * 
      * @type {string}
@@ -53,24 +71,6 @@ export interface GetVninResponseEntity {
      * @type {string}
      * @memberof GetVninResponseEntity
      */
-    'gender'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetVninResponseEntity
-     */
-    'mobile'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetVninResponseEntity
-     */
-    'dateOfBirth'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetVninResponseEntity
-     */
-    'photo'?: string;
+    'vnin'?: string;
 }
 

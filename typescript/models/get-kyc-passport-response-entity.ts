@@ -23,7 +23,7 @@ export interface GetKycPassportResponseEntity {
      * @type {string}
      * @memberof GetKycPassportResponseEntity
      */
-    'passport_number'?: string;
+    'date_of_birth'?: string;
     /**
      * 
      * @type {string}
@@ -35,25 +35,13 @@ export interface GetKycPassportResponseEntity {
      * @type {string}
      * @memberof GetKycPassportResponseEntity
      */
-    'expiry_date'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetKycPassportResponseEntity
-     */
     'document_type'?: string;
     /**
      * 
      * @type {string}
      * @memberof GetKycPassportResponseEntity
      */
-    'issue_place'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetKycPassportResponseEntity
-     */
-    'surname'?: string;
+    'expiry_date'?: string;
     /**
      * 
      * @type {string}
@@ -65,24 +53,36 @@ export interface GetKycPassportResponseEntity {
      * @type {string}
      * @memberof GetKycPassportResponseEntity
      */
-    'other_names'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetKycPassportResponseEntity
-     */
-    'date_of_birth'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetKycPassportResponseEntity
-     */
     'gender'?: string;
     /**
      * 
      * @type {string}
      * @memberof GetKycPassportResponseEntity
      */
+    'issue_place'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetKycPassportResponseEntity
+     */
+    'other_names'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetKycPassportResponseEntity
+     */
+    'passport_number'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetKycPassportResponseEntity
+     */
     'photo'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetKycPassportResponseEntity
+     */
+    'surname'?: string;
 }
 

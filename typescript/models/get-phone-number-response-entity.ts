@@ -29,42 +29,6 @@ export interface GetPhoneNumberResponseEntity {
      * @type {string}
      * @memberof GetPhoneNumberResponseEntity
      */
-    'msisdn'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetPhoneNumberResponseEntity
-     */
-    'firstName'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetPhoneNumberResponseEntity
-     */
-    'middleName'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetPhoneNumberResponseEntity
-     */
-    'lastName'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetPhoneNumberResponseEntity
-     */
-    'maritalStatus'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetPhoneNumberResponseEntity
-     */
-    'gender'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetPhoneNumberResponseEntity
-     */
     'birthDate'?: string;
     /**
      * 
@@ -95,6 +59,60 @@ export interface GetPhoneNumberResponseEntity {
      * @type {string}
      * @memberof GetPhoneNumberResponseEntity
      */
+    'firstName'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetPhoneNumberResponseEntity
+     */
+    'gender'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetPhoneNumberResponseEntity
+     */
+    'height'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetPhoneNumberResponseEntity
+     */
+    'lastName'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetPhoneNumberResponseEntity
+     */
+    'lga'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetPhoneNumberResponseEntity
+     */
+    'maritalStatus'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetPhoneNumberResponseEntity
+     */
+    'middleName'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetPhoneNumberResponseEntity
+     */
+    'msisdn'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetPhoneNumberResponseEntity
+     */
+    'nin'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetPhoneNumberResponseEntity
+     */
     'nspokenLang'?: string;
     /**
      * 
@@ -102,6 +120,12 @@ export interface GetPhoneNumberResponseEntity {
      * @memberof GetPhoneNumberResponseEntity
      */
     'ospokenlang'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetPhoneNumberResponseEntity
+     */
+    'picture'?: string;
     /**
      * 
      * @type {string}
@@ -125,12 +149,6 @@ export interface GetPhoneNumberResponseEntity {
      * @type {string}
      * @memberof GetPhoneNumberResponseEntity
      */
-    'residenceTown'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetPhoneNumberResponseEntity
-     */
     'residenceLga'?: string;
     /**
      * 
@@ -144,6 +162,12 @@ export interface GetPhoneNumberResponseEntity {
      * @memberof GetPhoneNumberResponseEntity
      */
     'residenceStatus'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetPhoneNumberResponseEntity
+     */
+    'residenceTown'?: string;
     /**
      * 
      * @type {string}
@@ -168,30 +192,6 @@ export interface GetPhoneNumberResponseEntity {
      * @memberof GetPhoneNumberResponseEntity
      */
     'state'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetPhoneNumberResponseEntity
-     */
-    'lga'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetPhoneNumberResponseEntity
-     */
-    'nin'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetPhoneNumberResponseEntity
-     */
-    'height'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetPhoneNumberResponseEntity
-     */
-    'picture'?: string;
     /**
      * 
      * @type {number}

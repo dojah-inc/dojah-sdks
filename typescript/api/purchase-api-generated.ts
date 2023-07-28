@@ -52,9 +52,10 @@ export const PurchaseApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = configuration && !isBrowser() ? { "User-Agent": configuration.userAgent } : {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
-            // authentication noauthAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';

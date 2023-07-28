@@ -62,6 +62,7 @@ request_query_profile_id = api_client.QueryParameter(
     explode=True,
 )
 _auth = [
+    'apikeyAuth',
     'appIdAuth',
 ]
 SchemaFor200ResponseBodyApplicationJson = schemas.DictSchema

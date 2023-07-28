@@ -16,17 +16,17 @@ import (
 
 // GetKycPassportResponseEntity struct for GetKycPassportResponseEntity
 type GetKycPassportResponseEntity struct {
-	PassportNumber *string `json:"passport_number,omitempty"`
-	DateOfIssue *string `json:"date_of_issue,omitempty"`
-	ExpiryDate *string `json:"expiry_date,omitempty"`
-	DocumentType *string `json:"document_type,omitempty"`
-	IssuePlace *string `json:"issue_place,omitempty"`
-	Surname *string `json:"surname,omitempty"`
-	FirstName *string `json:"first_name,omitempty"`
-	OtherNames *string `json:"other_names,omitempty"`
 	DateOfBirth *string `json:"date_of_birth,omitempty"`
+	DateOfIssue *string `json:"date_of_issue,omitempty"`
+	DocumentType *string `json:"document_type,omitempty"`
+	ExpiryDate *string `json:"expiry_date,omitempty"`
+	FirstName *string `json:"first_name,omitempty"`
 	Gender *string `json:"gender,omitempty"`
+	IssuePlace *string `json:"issue_place,omitempty"`
+	OtherNames *string `json:"other_names,omitempty"`
+	PassportNumber *string `json:"passport_number,omitempty"`
 	Photo *string `json:"photo,omitempty"`
+	Surname *string `json:"surname,omitempty"`
 }
 
 // NewGetKycPassportResponseEntity instantiates a new GetKycPassportResponseEntity object
@@ -44,262 +44,6 @@ func NewGetKycPassportResponseEntity() *GetKycPassportResponseEntity {
 func NewGetKycPassportResponseEntityWithDefaults() *GetKycPassportResponseEntity {
 	this := GetKycPassportResponseEntity{}
 	return &this
-}
-
-// GetPassportNumber returns the PassportNumber field value if set, zero value otherwise.
-func (o *GetKycPassportResponseEntity) GetPassportNumber() string {
-	if o == nil || isNil(o.PassportNumber) {
-		var ret string
-		return ret
-	}
-	return *o.PassportNumber
-}
-
-// GetPassportNumberOk returns a tuple with the PassportNumber field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetKycPassportResponseEntity) GetPassportNumberOk() (*string, bool) {
-	if o == nil || isNil(o.PassportNumber) {
-    return nil, false
-	}
-	return o.PassportNumber, true
-}
-
-// HasPassportNumber returns a boolean if a field has been set.
-func (o *GetKycPassportResponseEntity) HasPassportNumber() bool {
-	if o != nil && !isNil(o.PassportNumber) {
-		return true
-	}
-
-	return false
-}
-
-// SetPassportNumber gets a reference to the given string and assigns it to the PassportNumber field.
-func (o *GetKycPassportResponseEntity) SetPassportNumber(v string) {
-	o.PassportNumber = &v
-}
-
-// GetDateOfIssue returns the DateOfIssue field value if set, zero value otherwise.
-func (o *GetKycPassportResponseEntity) GetDateOfIssue() string {
-	if o == nil || isNil(o.DateOfIssue) {
-		var ret string
-		return ret
-	}
-	return *o.DateOfIssue
-}
-
-// GetDateOfIssueOk returns a tuple with the DateOfIssue field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetKycPassportResponseEntity) GetDateOfIssueOk() (*string, bool) {
-	if o == nil || isNil(o.DateOfIssue) {
-    return nil, false
-	}
-	return o.DateOfIssue, true
-}
-
-// HasDateOfIssue returns a boolean if a field has been set.
-func (o *GetKycPassportResponseEntity) HasDateOfIssue() bool {
-	if o != nil && !isNil(o.DateOfIssue) {
-		return true
-	}
-
-	return false
-}
-
-// SetDateOfIssue gets a reference to the given string and assigns it to the DateOfIssue field.
-func (o *GetKycPassportResponseEntity) SetDateOfIssue(v string) {
-	o.DateOfIssue = &v
-}
-
-// GetExpiryDate returns the ExpiryDate field value if set, zero value otherwise.
-func (o *GetKycPassportResponseEntity) GetExpiryDate() string {
-	if o == nil || isNil(o.ExpiryDate) {
-		var ret string
-		return ret
-	}
-	return *o.ExpiryDate
-}
-
-// GetExpiryDateOk returns a tuple with the ExpiryDate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetKycPassportResponseEntity) GetExpiryDateOk() (*string, bool) {
-	if o == nil || isNil(o.ExpiryDate) {
-    return nil, false
-	}
-	return o.ExpiryDate, true
-}
-
-// HasExpiryDate returns a boolean if a field has been set.
-func (o *GetKycPassportResponseEntity) HasExpiryDate() bool {
-	if o != nil && !isNil(o.ExpiryDate) {
-		return true
-	}
-
-	return false
-}
-
-// SetExpiryDate gets a reference to the given string and assigns it to the ExpiryDate field.
-func (o *GetKycPassportResponseEntity) SetExpiryDate(v string) {
-	o.ExpiryDate = &v
-}
-
-// GetDocumentType returns the DocumentType field value if set, zero value otherwise.
-func (o *GetKycPassportResponseEntity) GetDocumentType() string {
-	if o == nil || isNil(o.DocumentType) {
-		var ret string
-		return ret
-	}
-	return *o.DocumentType
-}
-
-// GetDocumentTypeOk returns a tuple with the DocumentType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetKycPassportResponseEntity) GetDocumentTypeOk() (*string, bool) {
-	if o == nil || isNil(o.DocumentType) {
-    return nil, false
-	}
-	return o.DocumentType, true
-}
-
-// HasDocumentType returns a boolean if a field has been set.
-func (o *GetKycPassportResponseEntity) HasDocumentType() bool {
-	if o != nil && !isNil(o.DocumentType) {
-		return true
-	}
-
-	return false
-}
-
-// SetDocumentType gets a reference to the given string and assigns it to the DocumentType field.
-func (o *GetKycPassportResponseEntity) SetDocumentType(v string) {
-	o.DocumentType = &v
-}
-
-// GetIssuePlace returns the IssuePlace field value if set, zero value otherwise.
-func (o *GetKycPassportResponseEntity) GetIssuePlace() string {
-	if o == nil || isNil(o.IssuePlace) {
-		var ret string
-		return ret
-	}
-	return *o.IssuePlace
-}
-
-// GetIssuePlaceOk returns a tuple with the IssuePlace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetKycPassportResponseEntity) GetIssuePlaceOk() (*string, bool) {
-	if o == nil || isNil(o.IssuePlace) {
-    return nil, false
-	}
-	return o.IssuePlace, true
-}
-
-// HasIssuePlace returns a boolean if a field has been set.
-func (o *GetKycPassportResponseEntity) HasIssuePlace() bool {
-	if o != nil && !isNil(o.IssuePlace) {
-		return true
-	}
-
-	return false
-}
-
-// SetIssuePlace gets a reference to the given string and assigns it to the IssuePlace field.
-func (o *GetKycPassportResponseEntity) SetIssuePlace(v string) {
-	o.IssuePlace = &v
-}
-
-// GetSurname returns the Surname field value if set, zero value otherwise.
-func (o *GetKycPassportResponseEntity) GetSurname() string {
-	if o == nil || isNil(o.Surname) {
-		var ret string
-		return ret
-	}
-	return *o.Surname
-}
-
-// GetSurnameOk returns a tuple with the Surname field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetKycPassportResponseEntity) GetSurnameOk() (*string, bool) {
-	if o == nil || isNil(o.Surname) {
-    return nil, false
-	}
-	return o.Surname, true
-}
-
-// HasSurname returns a boolean if a field has been set.
-func (o *GetKycPassportResponseEntity) HasSurname() bool {
-	if o != nil && !isNil(o.Surname) {
-		return true
-	}
-
-	return false
-}
-
-// SetSurname gets a reference to the given string and assigns it to the Surname field.
-func (o *GetKycPassportResponseEntity) SetSurname(v string) {
-	o.Surname = &v
-}
-
-// GetFirstName returns the FirstName field value if set, zero value otherwise.
-func (o *GetKycPassportResponseEntity) GetFirstName() string {
-	if o == nil || isNil(o.FirstName) {
-		var ret string
-		return ret
-	}
-	return *o.FirstName
-}
-
-// GetFirstNameOk returns a tuple with the FirstName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetKycPassportResponseEntity) GetFirstNameOk() (*string, bool) {
-	if o == nil || isNil(o.FirstName) {
-    return nil, false
-	}
-	return o.FirstName, true
-}
-
-// HasFirstName returns a boolean if a field has been set.
-func (o *GetKycPassportResponseEntity) HasFirstName() bool {
-	if o != nil && !isNil(o.FirstName) {
-		return true
-	}
-
-	return false
-}
-
-// SetFirstName gets a reference to the given string and assigns it to the FirstName field.
-func (o *GetKycPassportResponseEntity) SetFirstName(v string) {
-	o.FirstName = &v
-}
-
-// GetOtherNames returns the OtherNames field value if set, zero value otherwise.
-func (o *GetKycPassportResponseEntity) GetOtherNames() string {
-	if o == nil || isNil(o.OtherNames) {
-		var ret string
-		return ret
-	}
-	return *o.OtherNames
-}
-
-// GetOtherNamesOk returns a tuple with the OtherNames field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetKycPassportResponseEntity) GetOtherNamesOk() (*string, bool) {
-	if o == nil || isNil(o.OtherNames) {
-    return nil, false
-	}
-	return o.OtherNames, true
-}
-
-// HasOtherNames returns a boolean if a field has been set.
-func (o *GetKycPassportResponseEntity) HasOtherNames() bool {
-	if o != nil && !isNil(o.OtherNames) {
-		return true
-	}
-
-	return false
-}
-
-// SetOtherNames gets a reference to the given string and assigns it to the OtherNames field.
-func (o *GetKycPassportResponseEntity) SetOtherNames(v string) {
-	o.OtherNames = &v
 }
 
 // GetDateOfBirth returns the DateOfBirth field value if set, zero value otherwise.
@@ -334,6 +78,134 @@ func (o *GetKycPassportResponseEntity) SetDateOfBirth(v string) {
 	o.DateOfBirth = &v
 }
 
+// GetDateOfIssue returns the DateOfIssue field value if set, zero value otherwise.
+func (o *GetKycPassportResponseEntity) GetDateOfIssue() string {
+	if o == nil || isNil(o.DateOfIssue) {
+		var ret string
+		return ret
+	}
+	return *o.DateOfIssue
+}
+
+// GetDateOfIssueOk returns a tuple with the DateOfIssue field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetKycPassportResponseEntity) GetDateOfIssueOk() (*string, bool) {
+	if o == nil || isNil(o.DateOfIssue) {
+    return nil, false
+	}
+	return o.DateOfIssue, true
+}
+
+// HasDateOfIssue returns a boolean if a field has been set.
+func (o *GetKycPassportResponseEntity) HasDateOfIssue() bool {
+	if o != nil && !isNil(o.DateOfIssue) {
+		return true
+	}
+
+	return false
+}
+
+// SetDateOfIssue gets a reference to the given string and assigns it to the DateOfIssue field.
+func (o *GetKycPassportResponseEntity) SetDateOfIssue(v string) {
+	o.DateOfIssue = &v
+}
+
+// GetDocumentType returns the DocumentType field value if set, zero value otherwise.
+func (o *GetKycPassportResponseEntity) GetDocumentType() string {
+	if o == nil || isNil(o.DocumentType) {
+		var ret string
+		return ret
+	}
+	return *o.DocumentType
+}
+
+// GetDocumentTypeOk returns a tuple with the DocumentType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetKycPassportResponseEntity) GetDocumentTypeOk() (*string, bool) {
+	if o == nil || isNil(o.DocumentType) {
+    return nil, false
+	}
+	return o.DocumentType, true
+}
+
+// HasDocumentType returns a boolean if a field has been set.
+func (o *GetKycPassportResponseEntity) HasDocumentType() bool {
+	if o != nil && !isNil(o.DocumentType) {
+		return true
+	}
+
+	return false
+}
+
+// SetDocumentType gets a reference to the given string and assigns it to the DocumentType field.
+func (o *GetKycPassportResponseEntity) SetDocumentType(v string) {
+	o.DocumentType = &v
+}
+
+// GetExpiryDate returns the ExpiryDate field value if set, zero value otherwise.
+func (o *GetKycPassportResponseEntity) GetExpiryDate() string {
+	if o == nil || isNil(o.ExpiryDate) {
+		var ret string
+		return ret
+	}
+	return *o.ExpiryDate
+}
+
+// GetExpiryDateOk returns a tuple with the ExpiryDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetKycPassportResponseEntity) GetExpiryDateOk() (*string, bool) {
+	if o == nil || isNil(o.ExpiryDate) {
+    return nil, false
+	}
+	return o.ExpiryDate, true
+}
+
+// HasExpiryDate returns a boolean if a field has been set.
+func (o *GetKycPassportResponseEntity) HasExpiryDate() bool {
+	if o != nil && !isNil(o.ExpiryDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetExpiryDate gets a reference to the given string and assigns it to the ExpiryDate field.
+func (o *GetKycPassportResponseEntity) SetExpiryDate(v string) {
+	o.ExpiryDate = &v
+}
+
+// GetFirstName returns the FirstName field value if set, zero value otherwise.
+func (o *GetKycPassportResponseEntity) GetFirstName() string {
+	if o == nil || isNil(o.FirstName) {
+		var ret string
+		return ret
+	}
+	return *o.FirstName
+}
+
+// GetFirstNameOk returns a tuple with the FirstName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetKycPassportResponseEntity) GetFirstNameOk() (*string, bool) {
+	if o == nil || isNil(o.FirstName) {
+    return nil, false
+	}
+	return o.FirstName, true
+}
+
+// HasFirstName returns a boolean if a field has been set.
+func (o *GetKycPassportResponseEntity) HasFirstName() bool {
+	if o != nil && !isNil(o.FirstName) {
+		return true
+	}
+
+	return false
+}
+
+// SetFirstName gets a reference to the given string and assigns it to the FirstName field.
+func (o *GetKycPassportResponseEntity) SetFirstName(v string) {
+	o.FirstName = &v
+}
+
 // GetGender returns the Gender field value if set, zero value otherwise.
 func (o *GetKycPassportResponseEntity) GetGender() string {
 	if o == nil || isNil(o.Gender) {
@@ -364,6 +236,102 @@ func (o *GetKycPassportResponseEntity) HasGender() bool {
 // SetGender gets a reference to the given string and assigns it to the Gender field.
 func (o *GetKycPassportResponseEntity) SetGender(v string) {
 	o.Gender = &v
+}
+
+// GetIssuePlace returns the IssuePlace field value if set, zero value otherwise.
+func (o *GetKycPassportResponseEntity) GetIssuePlace() string {
+	if o == nil || isNil(o.IssuePlace) {
+		var ret string
+		return ret
+	}
+	return *o.IssuePlace
+}
+
+// GetIssuePlaceOk returns a tuple with the IssuePlace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetKycPassportResponseEntity) GetIssuePlaceOk() (*string, bool) {
+	if o == nil || isNil(o.IssuePlace) {
+    return nil, false
+	}
+	return o.IssuePlace, true
+}
+
+// HasIssuePlace returns a boolean if a field has been set.
+func (o *GetKycPassportResponseEntity) HasIssuePlace() bool {
+	if o != nil && !isNil(o.IssuePlace) {
+		return true
+	}
+
+	return false
+}
+
+// SetIssuePlace gets a reference to the given string and assigns it to the IssuePlace field.
+func (o *GetKycPassportResponseEntity) SetIssuePlace(v string) {
+	o.IssuePlace = &v
+}
+
+// GetOtherNames returns the OtherNames field value if set, zero value otherwise.
+func (o *GetKycPassportResponseEntity) GetOtherNames() string {
+	if o == nil || isNil(o.OtherNames) {
+		var ret string
+		return ret
+	}
+	return *o.OtherNames
+}
+
+// GetOtherNamesOk returns a tuple with the OtherNames field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetKycPassportResponseEntity) GetOtherNamesOk() (*string, bool) {
+	if o == nil || isNil(o.OtherNames) {
+    return nil, false
+	}
+	return o.OtherNames, true
+}
+
+// HasOtherNames returns a boolean if a field has been set.
+func (o *GetKycPassportResponseEntity) HasOtherNames() bool {
+	if o != nil && !isNil(o.OtherNames) {
+		return true
+	}
+
+	return false
+}
+
+// SetOtherNames gets a reference to the given string and assigns it to the OtherNames field.
+func (o *GetKycPassportResponseEntity) SetOtherNames(v string) {
+	o.OtherNames = &v
+}
+
+// GetPassportNumber returns the PassportNumber field value if set, zero value otherwise.
+func (o *GetKycPassportResponseEntity) GetPassportNumber() string {
+	if o == nil || isNil(o.PassportNumber) {
+		var ret string
+		return ret
+	}
+	return *o.PassportNumber
+}
+
+// GetPassportNumberOk returns a tuple with the PassportNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetKycPassportResponseEntity) GetPassportNumberOk() (*string, bool) {
+	if o == nil || isNil(o.PassportNumber) {
+    return nil, false
+	}
+	return o.PassportNumber, true
+}
+
+// HasPassportNumber returns a boolean if a field has been set.
+func (o *GetKycPassportResponseEntity) HasPassportNumber() bool {
+	if o != nil && !isNil(o.PassportNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetPassportNumber gets a reference to the given string and assigns it to the PassportNumber field.
+func (o *GetKycPassportResponseEntity) SetPassportNumber(v string) {
+	o.PassportNumber = &v
 }
 
 // GetPhoto returns the Photo field value if set, zero value otherwise.
@@ -398,40 +366,72 @@ func (o *GetKycPassportResponseEntity) SetPhoto(v string) {
 	o.Photo = &v
 }
 
+// GetSurname returns the Surname field value if set, zero value otherwise.
+func (o *GetKycPassportResponseEntity) GetSurname() string {
+	if o == nil || isNil(o.Surname) {
+		var ret string
+		return ret
+	}
+	return *o.Surname
+}
+
+// GetSurnameOk returns a tuple with the Surname field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetKycPassportResponseEntity) GetSurnameOk() (*string, bool) {
+	if o == nil || isNil(o.Surname) {
+    return nil, false
+	}
+	return o.Surname, true
+}
+
+// HasSurname returns a boolean if a field has been set.
+func (o *GetKycPassportResponseEntity) HasSurname() bool {
+	if o != nil && !isNil(o.Surname) {
+		return true
+	}
+
+	return false
+}
+
+// SetSurname gets a reference to the given string and assigns it to the Surname field.
+func (o *GetKycPassportResponseEntity) SetSurname(v string) {
+	o.Surname = &v
+}
+
 func (o GetKycPassportResponseEntity) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PassportNumber) {
-		toSerialize["passport_number"] = o.PassportNumber
+	if !isNil(o.DateOfBirth) {
+		toSerialize["date_of_birth"] = o.DateOfBirth
 	}
 	if !isNil(o.DateOfIssue) {
 		toSerialize["date_of_issue"] = o.DateOfIssue
 	}
-	if !isNil(o.ExpiryDate) {
-		toSerialize["expiry_date"] = o.ExpiryDate
-	}
 	if !isNil(o.DocumentType) {
 		toSerialize["document_type"] = o.DocumentType
 	}
-	if !isNil(o.IssuePlace) {
-		toSerialize["issue_place"] = o.IssuePlace
-	}
-	if !isNil(o.Surname) {
-		toSerialize["surname"] = o.Surname
+	if !isNil(o.ExpiryDate) {
+		toSerialize["expiry_date"] = o.ExpiryDate
 	}
 	if !isNil(o.FirstName) {
 		toSerialize["first_name"] = o.FirstName
 	}
-	if !isNil(o.OtherNames) {
-		toSerialize["other_names"] = o.OtherNames
-	}
-	if !isNil(o.DateOfBirth) {
-		toSerialize["date_of_birth"] = o.DateOfBirth
-	}
 	if !isNil(o.Gender) {
 		toSerialize["gender"] = o.Gender
 	}
+	if !isNil(o.IssuePlace) {
+		toSerialize["issue_place"] = o.IssuePlace
+	}
+	if !isNil(o.OtherNames) {
+		toSerialize["other_names"] = o.OtherNames
+	}
+	if !isNil(o.PassportNumber) {
+		toSerialize["passport_number"] = o.PassportNumber
+	}
 	if !isNil(o.Photo) {
 		toSerialize["photo"] = o.Photo
+	}
+	if !isNil(o.Surname) {
+		toSerialize["surname"] = o.Surname
 	}
 	return json.Marshal(toSerialize)
 }

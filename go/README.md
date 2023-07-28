@@ -287,11 +287,30 @@ Class | Method | HTTP request | Description
 
 ### apikeyAuth
 
+- **Type**: API key
+- **API key parameter name**: Authorization
+- **Location**: HTTP header
+
+Note, each API key must be added to a map of `map[string]APIKey` where the key is: "apikeyAuth" and passed in as the auth context for each request.
+
+Example
+
+```golang
+import dojah "github.com/dojah-inc/dojah-sdks/go"
+apiKey := os.Getenv("API_KEY")
+configuration := dojah.NewConfiguration()
+configuration.Context = context.WithValue(configuration.Context, dojah.ContextAPIKeys, map[string]newscatcherapi.APIKey{
+    "apikeyAuth": {Key: apiKey}
+})
+client := dojah.NewAPIClient(configuration)
+resp, httpRes, err := client.Service.Operation(args).Execute()
+```
+
 
 ### appIdAuth
 
 - **Type**: API key
-- **API key parameter name**: Appid
+- **API key parameter name**: AppId
 - **Location**: HTTP header
 
 Note, each API key must be added to a map of `map[string]APIKey` where the key is: "appIdAuth" and passed in as the auth context for each request.
@@ -308,9 +327,6 @@ configuration.Context = context.WithValue(configuration.Context, dojah.ContextAP
 client := dojah.NewAPIClient(configuration)
 resp, httpRes, err := client.Service.Operation(args).Execute()
 ```
-
-
-### noauthAuth
 
 
 ## Documentation for Utility Methods

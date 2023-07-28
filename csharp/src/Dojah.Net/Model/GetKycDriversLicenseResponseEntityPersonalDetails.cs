@@ -34,73 +34,43 @@ namespace Dojah.Net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetKycDriversLicenseResponseEntityPersonalDetails" /> class.
         /// </summary>
-        /// <param name="firstname">firstname.</param>
-        /// <param name="othername">othername.</param>
-        /// <param name="surname">surname.</param>
-        /// <param name="motherMaidenName">motherMaidenName.</param>
-        /// <param name="gender">gender.</param>
         /// <param name="birthDate">birthDate.</param>
         /// <param name="bloodGroupId">bloodGroupId.</param>
+        /// <param name="country">country.</param>
+        /// <param name="disabilityReason">disabilityReason.</param>
         /// <param name="facialMark">facialMark.</param>
+        /// <param name="firstname">firstname.</param>
+        /// <param name="gender">gender.</param>
         /// <param name="glasses">glasses.</param>
         /// <param name="height">height.</param>
-        /// <param name="universaltaxIdentityNumber">universaltaxIdentityNumber.</param>
-        /// <param name="ninNumber">ninNumber.</param>
-        /// <param name="country">country.</param>
-        /// <param name="state">state.</param>
-        /// <param name="lga">lga.</param>
         /// <param name="isDisability">isDisability.</param>
-        /// <param name="disabilityReason">disabilityReason.</param>
-        public GetKycDriversLicenseResponseEntityPersonalDetails(string firstname = default(string), string othername = default(string), string surname = default(string), string motherMaidenName = default(string), string gender = default(string), string birthDate = default(string), string bloodGroupId = default(string), string facialMark = default(string), string glasses = default(string), string height = default(string), string universaltaxIdentityNumber = default(string), string ninNumber = default(string), string country = default(string), string state = default(string), string lga = default(string), string isDisability = default(string), string disabilityReason = default(string))
+        /// <param name="lga">lga.</param>
+        /// <param name="motherMaidenName">motherMaidenName.</param>
+        /// <param name="ninNumber">ninNumber.</param>
+        /// <param name="othername">othername.</param>
+        /// <param name="state">state.</param>
+        /// <param name="surname">surname.</param>
+        /// <param name="universaltaxIdentityNumber">universaltaxIdentityNumber.</param>
+        public GetKycDriversLicenseResponseEntityPersonalDetails(string birthDate = default(string), string bloodGroupId = default(string), string country = default(string), string disabilityReason = default(string), string facialMark = default(string), string firstname = default(string), string gender = default(string), string glasses = default(string), string height = default(string), string isDisability = default(string), string lga = default(string), string motherMaidenName = default(string), string ninNumber = default(string), string othername = default(string), string state = default(string), string surname = default(string), string universaltaxIdentityNumber = default(string))
         {
-            this.Firstname = firstname;
-            this.Othername = othername;
-            this.Surname = surname;
-            this.MotherMaidenName = motherMaidenName;
-            this.Gender = gender;
             this.BirthDate = birthDate;
             this.BloodGroupId = bloodGroupId;
+            this.Country = country;
+            this.DisabilityReason = disabilityReason;
             this.FacialMark = facialMark;
+            this.Firstname = firstname;
+            this.Gender = gender;
             this.Glasses = glasses;
             this.Height = height;
-            this.UniversaltaxIdentityNumber = universaltaxIdentityNumber;
-            this.NinNumber = ninNumber;
-            this.Country = country;
-            this.State = state;
-            this.Lga = lga;
             this.IsDisability = isDisability;
-            this.DisabilityReason = disabilityReason;
+            this.Lga = lga;
+            this.MotherMaidenName = motherMaidenName;
+            this.NinNumber = ninNumber;
+            this.Othername = othername;
+            this.State = state;
+            this.Surname = surname;
+            this.UniversaltaxIdentityNumber = universaltaxIdentityNumber;
         }
-
-        /// <summary>
-        /// Gets or Sets Firstname
-        /// </summary>
-        [DataMember(Name = "firstname", EmitDefaultValue = false)]
-        public string Firstname { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Othername
-        /// </summary>
-        [DataMember(Name = "othername", EmitDefaultValue = false)]
-        public string Othername { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Surname
-        /// </summary>
-        [DataMember(Name = "surname", EmitDefaultValue = false)]
-        public string Surname { get; set; }
-
-        /// <summary>
-        /// Gets or Sets MotherMaidenName
-        /// </summary>
-        [DataMember(Name = "mother_maiden_name", EmitDefaultValue = false)]
-        public string MotherMaidenName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Gender
-        /// </summary>
-        [DataMember(Name = "gender", EmitDefaultValue = false)]
-        public string Gender { get; set; }
 
         /// <summary>
         /// Gets or Sets BirthDate
@@ -115,10 +85,34 @@ namespace Dojah.Net.Model
         public string BloodGroupId { get; set; }
 
         /// <summary>
+        /// Gets or Sets Country
+        /// </summary>
+        [DataMember(Name = "country", EmitDefaultValue = false)]
+        public string Country { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DisabilityReason
+        /// </summary>
+        [DataMember(Name = "disability_reason", EmitDefaultValue = false)]
+        public string DisabilityReason { get; set; }
+
+        /// <summary>
         /// Gets or Sets FacialMark
         /// </summary>
         [DataMember(Name = "facial_mark", EmitDefaultValue = false)]
         public string FacialMark { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Firstname
+        /// </summary>
+        [DataMember(Name = "firstname", EmitDefaultValue = false)]
+        public string Firstname { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Gender
+        /// </summary>
+        [DataMember(Name = "gender", EmitDefaultValue = false)]
+        public string Gender { get; set; }
 
         /// <summary>
         /// Gets or Sets Glasses
@@ -133,28 +127,10 @@ namespace Dojah.Net.Model
         public string Height { get; set; }
 
         /// <summary>
-        /// Gets or Sets UniversaltaxIdentityNumber
+        /// Gets or Sets IsDisability
         /// </summary>
-        [DataMember(Name = "universaltax_identity_number", EmitDefaultValue = false)]
-        public string UniversaltaxIdentityNumber { get; set; }
-
-        /// <summary>
-        /// Gets or Sets NinNumber
-        /// </summary>
-        [DataMember(Name = "nin_number", EmitDefaultValue = false)]
-        public string NinNumber { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Country
-        /// </summary>
-        [DataMember(Name = "country", EmitDefaultValue = false)]
-        public string Country { get; set; }
-
-        /// <summary>
-        /// Gets or Sets State
-        /// </summary>
-        [DataMember(Name = "state", EmitDefaultValue = false)]
-        public string State { get; set; }
+        [DataMember(Name = "is_disability", EmitDefaultValue = false)]
+        public string IsDisability { get; set; }
 
         /// <summary>
         /// Gets or Sets Lga
@@ -163,16 +139,40 @@ namespace Dojah.Net.Model
         public string Lga { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDisability
+        /// Gets or Sets MotherMaidenName
         /// </summary>
-        [DataMember(Name = "is_disability", EmitDefaultValue = false)]
-        public string IsDisability { get; set; }
+        [DataMember(Name = "mother_maiden_name", EmitDefaultValue = false)]
+        public string MotherMaidenName { get; set; }
 
         /// <summary>
-        /// Gets or Sets DisabilityReason
+        /// Gets or Sets NinNumber
         /// </summary>
-        [DataMember(Name = "disability_reason", EmitDefaultValue = false)]
-        public string DisabilityReason { get; set; }
+        [DataMember(Name = "nin_number", EmitDefaultValue = false)]
+        public string NinNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Othername
+        /// </summary>
+        [DataMember(Name = "othername", EmitDefaultValue = false)]
+        public string Othername { get; set; }
+
+        /// <summary>
+        /// Gets or Sets State
+        /// </summary>
+        [DataMember(Name = "state", EmitDefaultValue = false)]
+        public string State { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Surname
+        /// </summary>
+        [DataMember(Name = "surname", EmitDefaultValue = false)]
+        public string Surname { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UniversaltaxIdentityNumber
+        /// </summary>
+        [DataMember(Name = "universaltax_identity_number", EmitDefaultValue = false)]
+        public string UniversaltaxIdentityNumber { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -182,23 +182,23 @@ namespace Dojah.Net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class GetKycDriversLicenseResponseEntityPersonalDetails {\n");
-            sb.Append("  Firstname: ").Append(Firstname).Append("\n");
-            sb.Append("  Othername: ").Append(Othername).Append("\n");
-            sb.Append("  Surname: ").Append(Surname).Append("\n");
-            sb.Append("  MotherMaidenName: ").Append(MotherMaidenName).Append("\n");
-            sb.Append("  Gender: ").Append(Gender).Append("\n");
             sb.Append("  BirthDate: ").Append(BirthDate).Append("\n");
             sb.Append("  BloodGroupId: ").Append(BloodGroupId).Append("\n");
+            sb.Append("  Country: ").Append(Country).Append("\n");
+            sb.Append("  DisabilityReason: ").Append(DisabilityReason).Append("\n");
             sb.Append("  FacialMark: ").Append(FacialMark).Append("\n");
+            sb.Append("  Firstname: ").Append(Firstname).Append("\n");
+            sb.Append("  Gender: ").Append(Gender).Append("\n");
             sb.Append("  Glasses: ").Append(Glasses).Append("\n");
             sb.Append("  Height: ").Append(Height).Append("\n");
-            sb.Append("  UniversaltaxIdentityNumber: ").Append(UniversaltaxIdentityNumber).Append("\n");
-            sb.Append("  NinNumber: ").Append(NinNumber).Append("\n");
-            sb.Append("  Country: ").Append(Country).Append("\n");
-            sb.Append("  State: ").Append(State).Append("\n");
-            sb.Append("  Lga: ").Append(Lga).Append("\n");
             sb.Append("  IsDisability: ").Append(IsDisability).Append("\n");
-            sb.Append("  DisabilityReason: ").Append(DisabilityReason).Append("\n");
+            sb.Append("  Lga: ").Append(Lga).Append("\n");
+            sb.Append("  MotherMaidenName: ").Append(MotherMaidenName).Append("\n");
+            sb.Append("  NinNumber: ").Append(NinNumber).Append("\n");
+            sb.Append("  Othername: ").Append(Othername).Append("\n");
+            sb.Append("  State: ").Append(State).Append("\n");
+            sb.Append("  Surname: ").Append(Surname).Append("\n");
+            sb.Append("  UniversaltaxIdentityNumber: ").Append(UniversaltaxIdentityNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -235,31 +235,6 @@ namespace Dojah.Net.Model
             }
             return 
                 (
-                    this.Firstname == input.Firstname ||
-                    (this.Firstname != null &&
-                    this.Firstname.Equals(input.Firstname))
-                ) && 
-                (
-                    this.Othername == input.Othername ||
-                    (this.Othername != null &&
-                    this.Othername.Equals(input.Othername))
-                ) && 
-                (
-                    this.Surname == input.Surname ||
-                    (this.Surname != null &&
-                    this.Surname.Equals(input.Surname))
-                ) && 
-                (
-                    this.MotherMaidenName == input.MotherMaidenName ||
-                    (this.MotherMaidenName != null &&
-                    this.MotherMaidenName.Equals(input.MotherMaidenName))
-                ) && 
-                (
-                    this.Gender == input.Gender ||
-                    (this.Gender != null &&
-                    this.Gender.Equals(input.Gender))
-                ) && 
-                (
                     this.BirthDate == input.BirthDate ||
                     (this.BirthDate != null &&
                     this.BirthDate.Equals(input.BirthDate))
@@ -270,9 +245,29 @@ namespace Dojah.Net.Model
                     this.BloodGroupId.Equals(input.BloodGroupId))
                 ) && 
                 (
+                    this.Country == input.Country ||
+                    (this.Country != null &&
+                    this.Country.Equals(input.Country))
+                ) && 
+                (
+                    this.DisabilityReason == input.DisabilityReason ||
+                    (this.DisabilityReason != null &&
+                    this.DisabilityReason.Equals(input.DisabilityReason))
+                ) && 
+                (
                     this.FacialMark == input.FacialMark ||
                     (this.FacialMark != null &&
                     this.FacialMark.Equals(input.FacialMark))
+                ) && 
+                (
+                    this.Firstname == input.Firstname ||
+                    (this.Firstname != null &&
+                    this.Firstname.Equals(input.Firstname))
+                ) && 
+                (
+                    this.Gender == input.Gender ||
+                    (this.Gender != null &&
+                    this.Gender.Equals(input.Gender))
                 ) && 
                 (
                     this.Glasses == input.Glasses ||
@@ -285,24 +280,9 @@ namespace Dojah.Net.Model
                     this.Height.Equals(input.Height))
                 ) && 
                 (
-                    this.UniversaltaxIdentityNumber == input.UniversaltaxIdentityNumber ||
-                    (this.UniversaltaxIdentityNumber != null &&
-                    this.UniversaltaxIdentityNumber.Equals(input.UniversaltaxIdentityNumber))
-                ) && 
-                (
-                    this.NinNumber == input.NinNumber ||
-                    (this.NinNumber != null &&
-                    this.NinNumber.Equals(input.NinNumber))
-                ) && 
-                (
-                    this.Country == input.Country ||
-                    (this.Country != null &&
-                    this.Country.Equals(input.Country))
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
+                    this.IsDisability == input.IsDisability ||
+                    (this.IsDisability != null &&
+                    this.IsDisability.Equals(input.IsDisability))
                 ) && 
                 (
                     this.Lga == input.Lga ||
@@ -310,14 +290,34 @@ namespace Dojah.Net.Model
                     this.Lga.Equals(input.Lga))
                 ) && 
                 (
-                    this.IsDisability == input.IsDisability ||
-                    (this.IsDisability != null &&
-                    this.IsDisability.Equals(input.IsDisability))
+                    this.MotherMaidenName == input.MotherMaidenName ||
+                    (this.MotherMaidenName != null &&
+                    this.MotherMaidenName.Equals(input.MotherMaidenName))
                 ) && 
                 (
-                    this.DisabilityReason == input.DisabilityReason ||
-                    (this.DisabilityReason != null &&
-                    this.DisabilityReason.Equals(input.DisabilityReason))
+                    this.NinNumber == input.NinNumber ||
+                    (this.NinNumber != null &&
+                    this.NinNumber.Equals(input.NinNumber))
+                ) && 
+                (
+                    this.Othername == input.Othername ||
+                    (this.Othername != null &&
+                    this.Othername.Equals(input.Othername))
+                ) && 
+                (
+                    this.State == input.State ||
+                    (this.State != null &&
+                    this.State.Equals(input.State))
+                ) && 
+                (
+                    this.Surname == input.Surname ||
+                    (this.Surname != null &&
+                    this.Surname.Equals(input.Surname))
+                ) && 
+                (
+                    this.UniversaltaxIdentityNumber == input.UniversaltaxIdentityNumber ||
+                    (this.UniversaltaxIdentityNumber != null &&
+                    this.UniversaltaxIdentityNumber.Equals(input.UniversaltaxIdentityNumber))
                 );
         }
 
@@ -330,26 +330,6 @@ namespace Dojah.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Firstname != null)
-                {
-                    hashCode = (hashCode * 59) + this.Firstname.GetHashCode();
-                }
-                if (this.Othername != null)
-                {
-                    hashCode = (hashCode * 59) + this.Othername.GetHashCode();
-                }
-                if (this.Surname != null)
-                {
-                    hashCode = (hashCode * 59) + this.Surname.GetHashCode();
-                }
-                if (this.MotherMaidenName != null)
-                {
-                    hashCode = (hashCode * 59) + this.MotherMaidenName.GetHashCode();
-                }
-                if (this.Gender != null)
-                {
-                    hashCode = (hashCode * 59) + this.Gender.GetHashCode();
-                }
                 if (this.BirthDate != null)
                 {
                     hashCode = (hashCode * 59) + this.BirthDate.GetHashCode();
@@ -358,9 +338,25 @@ namespace Dojah.Net.Model
                 {
                     hashCode = (hashCode * 59) + this.BloodGroupId.GetHashCode();
                 }
+                if (this.Country != null)
+                {
+                    hashCode = (hashCode * 59) + this.Country.GetHashCode();
+                }
+                if (this.DisabilityReason != null)
+                {
+                    hashCode = (hashCode * 59) + this.DisabilityReason.GetHashCode();
+                }
                 if (this.FacialMark != null)
                 {
                     hashCode = (hashCode * 59) + this.FacialMark.GetHashCode();
+                }
+                if (this.Firstname != null)
+                {
+                    hashCode = (hashCode * 59) + this.Firstname.GetHashCode();
+                }
+                if (this.Gender != null)
+                {
+                    hashCode = (hashCode * 59) + this.Gender.GetHashCode();
                 }
                 if (this.Glasses != null)
                 {
@@ -370,33 +366,37 @@ namespace Dojah.Net.Model
                 {
                     hashCode = (hashCode * 59) + this.Height.GetHashCode();
                 }
-                if (this.UniversaltaxIdentityNumber != null)
+                if (this.IsDisability != null)
                 {
-                    hashCode = (hashCode * 59) + this.UniversaltaxIdentityNumber.GetHashCode();
-                }
-                if (this.NinNumber != null)
-                {
-                    hashCode = (hashCode * 59) + this.NinNumber.GetHashCode();
-                }
-                if (this.Country != null)
-                {
-                    hashCode = (hashCode * 59) + this.Country.GetHashCode();
-                }
-                if (this.State != null)
-                {
-                    hashCode = (hashCode * 59) + this.State.GetHashCode();
+                    hashCode = (hashCode * 59) + this.IsDisability.GetHashCode();
                 }
                 if (this.Lga != null)
                 {
                     hashCode = (hashCode * 59) + this.Lga.GetHashCode();
                 }
-                if (this.IsDisability != null)
+                if (this.MotherMaidenName != null)
                 {
-                    hashCode = (hashCode * 59) + this.IsDisability.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MotherMaidenName.GetHashCode();
                 }
-                if (this.DisabilityReason != null)
+                if (this.NinNumber != null)
                 {
-                    hashCode = (hashCode * 59) + this.DisabilityReason.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NinNumber.GetHashCode();
+                }
+                if (this.Othername != null)
+                {
+                    hashCode = (hashCode * 59) + this.Othername.GetHashCode();
+                }
+                if (this.State != null)
+                {
+                    hashCode = (hashCode * 59) + this.State.GetHashCode();
+                }
+                if (this.Surname != null)
+                {
+                    hashCode = (hashCode * 59) + this.Surname.GetHashCode();
+                }
+                if (this.UniversaltaxIdentityNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.UniversaltaxIdentityNumber.GetHashCode();
                 }
                 return hashCode;
             }

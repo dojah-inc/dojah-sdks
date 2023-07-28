@@ -64,6 +64,7 @@ request_query_phone_number = api_client.QueryParameter(
     explode=True,
 )
 _auth = [
+    'apikeyAuth',
     'appIdAuth',
 ]
 AccessControlAllowOriginSchema = schemas.StrSchema

@@ -39,19 +39,11 @@ public class GetBasicBvnResponseEntityTest {
     }
 
     /**
-     * Test the property 'firstName'
+     * Test the property 'bvn'
      */
     @Test
-    public void firstNameTest() {
-        // TODO: test firstName
-    }
-
-    /**
-     * Test the property 'lastName'
-     */
-    @Test
-    public void lastNameTest() {
-        // TODO: test lastName
+    public void bvnTest() {
+        // TODO: test bvn
     }
 
     /**
@@ -63,6 +55,14 @@ public class GetBasicBvnResponseEntityTest {
     }
 
     /**
+     * Test the property 'firstName'
+     */
+    @Test
+    public void firstNameTest() {
+        // TODO: test firstName
+    }
+
+    /**
      * Test the property 'formattedDob'
      */
     @Test
@@ -71,19 +71,19 @@ public class GetBasicBvnResponseEntityTest {
     }
 
     /**
+     * Test the property 'lastName'
+     */
+    @Test
+    public void lastNameTest() {
+        // TODO: test lastName
+    }
+
+    /**
      * Test the property 'mobile'
      */
     @Test
     public void mobileTest() {
         // TODO: test mobile
-    }
-
-    /**
-     * Test the property 'bvn'
-     */
-    @Test
-    public void bvnTest() {
-        // TODO: test bvn
     }
 
 }

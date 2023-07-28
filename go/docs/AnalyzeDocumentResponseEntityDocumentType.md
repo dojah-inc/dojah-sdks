@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DocumentName** | Pointer to **string** |  | [optional] 
-**DocumentCountryName** | Pointer to **string** |  | [optional] 
 **DocumentCountryCode** | Pointer to **string** |  | [optional] 
+**DocumentCountryName** | Pointer to **string** |  | [optional] 
+**DocumentName** | Pointer to **string** |  | [optional] 
 **DocumentTypeId** | Pointer to **float32** |  | [optional] 
 **DocumentYear** | Pointer to **string** |  | [optional] 
 
@@ -29,30 +29,30 @@ NewAnalyzeDocumentResponseEntityDocumentTypeWithDefaults instantiates a new Anal
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetDocumentName
+### GetDocumentCountryCode
 
-`func (o *AnalyzeDocumentResponseEntityDocumentType) GetDocumentName() string`
+`func (o *AnalyzeDocumentResponseEntityDocumentType) GetDocumentCountryCode() string`
 
-GetDocumentName returns the DocumentName field if non-nil, zero value otherwise.
+GetDocumentCountryCode returns the DocumentCountryCode field if non-nil, zero value otherwise.
 
-### GetDocumentNameOk
+### GetDocumentCountryCodeOk
 
-`func (o *AnalyzeDocumentResponseEntityDocumentType) GetDocumentNameOk() (*string, bool)`
+`func (o *AnalyzeDocumentResponseEntityDocumentType) GetDocumentCountryCodeOk() (*string, bool)`
 
-GetDocumentNameOk returns a tuple with the DocumentName field if it's non-nil, zero value otherwise
+GetDocumentCountryCodeOk returns a tuple with the DocumentCountryCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDocumentName
+### SetDocumentCountryCode
 
-`func (o *AnalyzeDocumentResponseEntityDocumentType) SetDocumentName(v string)`
+`func (o *AnalyzeDocumentResponseEntityDocumentType) SetDocumentCountryCode(v string)`
 
-SetDocumentName sets DocumentName field to given value.
+SetDocumentCountryCode sets DocumentCountryCode field to given value.
 
-### HasDocumentName
+### HasDocumentCountryCode
 
-`func (o *AnalyzeDocumentResponseEntityDocumentType) HasDocumentName() bool`
+`func (o *AnalyzeDocumentResponseEntityDocumentType) HasDocumentCountryCode() bool`
 
-HasDocumentName returns a boolean if a field has been set.
+HasDocumentCountryCode returns a boolean if a field has been set.
 
 ### GetDocumentCountryName
 
@@ -79,30 +79,30 @@ SetDocumentCountryName sets DocumentCountryName field to given value.
 
 HasDocumentCountryName returns a boolean if a field has been set.
 
-### GetDocumentCountryCode
+### GetDocumentName
 
-`func (o *AnalyzeDocumentResponseEntityDocumentType) GetDocumentCountryCode() string`
+`func (o *AnalyzeDocumentResponseEntityDocumentType) GetDocumentName() string`
 
-GetDocumentCountryCode returns the DocumentCountryCode field if non-nil, zero value otherwise.
+GetDocumentName returns the DocumentName field if non-nil, zero value otherwise.
 
-### GetDocumentCountryCodeOk
+### GetDocumentNameOk
 
-`func (o *AnalyzeDocumentResponseEntityDocumentType) GetDocumentCountryCodeOk() (*string, bool)`
+`func (o *AnalyzeDocumentResponseEntityDocumentType) GetDocumentNameOk() (*string, bool)`
 
-GetDocumentCountryCodeOk returns a tuple with the DocumentCountryCode field if it's non-nil, zero value otherwise
+GetDocumentNameOk returns a tuple with the DocumentName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDocumentCountryCode
+### SetDocumentName
 
-`func (o *AnalyzeDocumentResponseEntityDocumentType) SetDocumentCountryCode(v string)`
+`func (o *AnalyzeDocumentResponseEntityDocumentType) SetDocumentName(v string)`
 
-SetDocumentCountryCode sets DocumentCountryCode field to given value.
+SetDocumentName sets DocumentName field to given value.
 
-### HasDocumentCountryCode
+### HasDocumentName
 
-`func (o *AnalyzeDocumentResponseEntityDocumentType) HasDocumentCountryCode() bool`
+`func (o *AnalyzeDocumentResponseEntityDocumentType) HasDocumentName() bool`
 
-HasDocumentCountryCode returns a boolean if a field has been set.
+HasDocumentName returns a boolean if a field has been set.
 
 ### GetDocumentTypeId
 

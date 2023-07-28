@@ -45,11 +45,11 @@ public class AnalyzeDocumentResponseEntityTest {
     }
 
     /**
-     * Test the property 'status'
+     * Test the property 'documentImages'
      */
     @Test
-    public void statusTest() {
-        // TODO: test status
+    public void documentImagesTest() {
+        // TODO: test documentImages
     }
 
     /**
@@ -61,11 +61,11 @@ public class AnalyzeDocumentResponseEntityTest {
     }
 
     /**
-     * Test the property 'documentImages'
+     * Test the property 'status'
      */
     @Test
-    public void documentImagesTest() {
-        // TODO: test documentImages
+    public void statusTest() {
+        // TODO: test status
     }
 
     /**

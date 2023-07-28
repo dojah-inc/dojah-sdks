@@ -36,6 +36,7 @@ from dojah_client import schemas  # noqa: F401
 from . import path
 
 _auth = [
+    'apikeyAuth',
     'appIdAuth',
 ]
 SchemaFor200ResponseBodyApplicationJson = schemas.DictSchema

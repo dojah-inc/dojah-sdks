@@ -57,12 +57,12 @@ namespace Dojah.Net.Test.Model
 
 
         /// <summary>
-        /// Test the property 'PassportNumber'
+        /// Test the property 'DateOfBirth'
         /// </summary>
         [Fact]
-        public void PassportNumberTest()
+        public void DateOfBirthTest()
         {
-            // TODO unit test for the property 'PassportNumber'
+            // TODO unit test for the property 'DateOfBirth'
         }
         /// <summary>
         /// Test the property 'DateOfIssue'
@@ -73,14 +73,6 @@ namespace Dojah.Net.Test.Model
             // TODO unit test for the property 'DateOfIssue'
         }
         /// <summary>
-        /// Test the property 'ExpiryDate'
-        /// </summary>
-        [Fact]
-        public void ExpiryDateTest()
-        {
-            // TODO unit test for the property 'ExpiryDate'
-        }
-        /// <summary>
         /// Test the property 'DocumentType'
         /// </summary>
         [Fact]
@@ -89,20 +81,12 @@ namespace Dojah.Net.Test.Model
             // TODO unit test for the property 'DocumentType'
         }
         /// <summary>
-        /// Test the property 'IssuePlace'
+        /// Test the property 'ExpiryDate'
         /// </summary>
         [Fact]
-        public void IssuePlaceTest()
+        public void ExpiryDateTest()
         {
-            // TODO unit test for the property 'IssuePlace'
-        }
-        /// <summary>
-        /// Test the property 'Surname'
-        /// </summary>
-        [Fact]
-        public void SurnameTest()
-        {
-            // TODO unit test for the property 'Surname'
+            // TODO unit test for the property 'ExpiryDate'
         }
         /// <summary>
         /// Test the property 'FirstName'
@@ -113,22 +97,6 @@ namespace Dojah.Net.Test.Model
             // TODO unit test for the property 'FirstName'
         }
         /// <summary>
-        /// Test the property 'OtherNames'
-        /// </summary>
-        [Fact]
-        public void OtherNamesTest()
-        {
-            // TODO unit test for the property 'OtherNames'
-        }
-        /// <summary>
-        /// Test the property 'DateOfBirth'
-        /// </summary>
-        [Fact]
-        public void DateOfBirthTest()
-        {
-            // TODO unit test for the property 'DateOfBirth'
-        }
-        /// <summary>
         /// Test the property 'Gender'
         /// </summary>
         [Fact]
@@ -137,12 +105,44 @@ namespace Dojah.Net.Test.Model
             // TODO unit test for the property 'Gender'
         }
         /// <summary>
+        /// Test the property 'IssuePlace'
+        /// </summary>
+        [Fact]
+        public void IssuePlaceTest()
+        {
+            // TODO unit test for the property 'IssuePlace'
+        }
+        /// <summary>
+        /// Test the property 'OtherNames'
+        /// </summary>
+        [Fact]
+        public void OtherNamesTest()
+        {
+            // TODO unit test for the property 'OtherNames'
+        }
+        /// <summary>
+        /// Test the property 'PassportNumber'
+        /// </summary>
+        [Fact]
+        public void PassportNumberTest()
+        {
+            // TODO unit test for the property 'PassportNumber'
+        }
+        /// <summary>
         /// Test the property 'Photo'
         /// </summary>
         [Fact]
         public void PhotoTest()
         {
             // TODO unit test for the property 'Photo'
+        }
+        /// <summary>
+        /// Test the property 'Surname'
+        /// </summary>
+        [Fact]
+        public void SurnameTest()
+        {
+            // TODO unit test for the property 'Surname'
         }
 
     }

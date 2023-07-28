@@ -5,34 +5,34 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Title** | Pointer to **string** |  | [optional] 
-**Msisdn** | Pointer to **string** |  | [optional] 
-**FirstName** | Pointer to **string** |  | [optional] 
-**MiddleName** | Pointer to **string** |  | [optional] 
-**LastName** | Pointer to **string** |  | [optional] 
-**MaritalStatus** | Pointer to **string** |  | [optional] 
-**Gender** | Pointer to **string** |  | [optional] 
 **BirthDate** | Pointer to **string** |  | [optional] 
 **BirthLga** | Pointer to **string** |  | [optional] 
 **BirthState** | Pointer to **string** |  | [optional] 
 **EducationalLevel** | Pointer to **string** |  | [optional] 
 **EmplymentStatus** | Pointer to **string** |  | [optional] 
+**FirstName** | Pointer to **string** |  | [optional] 
+**Gender** | Pointer to **string** |  | [optional] 
+**Height** | Pointer to **string** |  | [optional] 
+**LastName** | Pointer to **string** |  | [optional] 
+**Lga** | Pointer to **string** |  | [optional] 
+**MaritalStatus** | Pointer to **string** |  | [optional] 
+**MiddleName** | Pointer to **string** |  | [optional] 
+**Msisdn** | Pointer to **string** |  | [optional] 
+**Nin** | Pointer to **string** |  | [optional] 
 **NspokenLang** | Pointer to **string** |  | [optional] 
 **Ospokenlang** | Pointer to **string** |  | [optional] 
+**Picture** | Pointer to **string** |  | [optional] 
 **Profession** | Pointer to **string** |  | [optional] 
 **Religion** | Pointer to **string** |  | [optional] 
 **ResidenceAddressLine1** | Pointer to **string** |  | [optional] 
-**ResidenceTown** | Pointer to **string** |  | [optional] 
 **ResidenceLga** | Pointer to **string** |  | [optional] 
 **ResidenceState** | Pointer to **string** |  | [optional] 
 **ResidenceStatus** | Pointer to **string** |  | [optional] 
+**ResidenceTown** | Pointer to **string** |  | [optional] 
 **SelfOriginLga** | Pointer to **string** |  | [optional] 
 **SelfOriginPlace** | Pointer to **string** |  | [optional] 
 **SelfOriginState** | Pointer to **string** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
-**Lga** | Pointer to **string** |  | [optional] 
-**Nin** | Pointer to **string** |  | [optional] 
-**Height** | Pointer to **string** |  | [optional] 
-**Picture** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **float32** |  | [optional] 
 
 ## Methods
@@ -78,156 +78,6 @@ SetTitle sets Title field to given value.
 `func (o *GetPhoneNumberResponseEntity) HasTitle() bool`
 
 HasTitle returns a boolean if a field has been set.
-
-### GetMsisdn
-
-`func (o *GetPhoneNumberResponseEntity) GetMsisdn() string`
-
-GetMsisdn returns the Msisdn field if non-nil, zero value otherwise.
-
-### GetMsisdnOk
-
-`func (o *GetPhoneNumberResponseEntity) GetMsisdnOk() (*string, bool)`
-
-GetMsisdnOk returns a tuple with the Msisdn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMsisdn
-
-`func (o *GetPhoneNumberResponseEntity) SetMsisdn(v string)`
-
-SetMsisdn sets Msisdn field to given value.
-
-### HasMsisdn
-
-`func (o *GetPhoneNumberResponseEntity) HasMsisdn() bool`
-
-HasMsisdn returns a boolean if a field has been set.
-
-### GetFirstName
-
-`func (o *GetPhoneNumberResponseEntity) GetFirstName() string`
-
-GetFirstName returns the FirstName field if non-nil, zero value otherwise.
-
-### GetFirstNameOk
-
-`func (o *GetPhoneNumberResponseEntity) GetFirstNameOk() (*string, bool)`
-
-GetFirstNameOk returns a tuple with the FirstName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFirstName
-
-`func (o *GetPhoneNumberResponseEntity) SetFirstName(v string)`
-
-SetFirstName sets FirstName field to given value.
-
-### HasFirstName
-
-`func (o *GetPhoneNumberResponseEntity) HasFirstName() bool`
-
-HasFirstName returns a boolean if a field has been set.
-
-### GetMiddleName
-
-`func (o *GetPhoneNumberResponseEntity) GetMiddleName() string`
-
-GetMiddleName returns the MiddleName field if non-nil, zero value otherwise.
-
-### GetMiddleNameOk
-
-`func (o *GetPhoneNumberResponseEntity) GetMiddleNameOk() (*string, bool)`
-
-GetMiddleNameOk returns a tuple with the MiddleName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMiddleName
-
-`func (o *GetPhoneNumberResponseEntity) SetMiddleName(v string)`
-
-SetMiddleName sets MiddleName field to given value.
-
-### HasMiddleName
-
-`func (o *GetPhoneNumberResponseEntity) HasMiddleName() bool`
-
-HasMiddleName returns a boolean if a field has been set.
-
-### GetLastName
-
-`func (o *GetPhoneNumberResponseEntity) GetLastName() string`
-
-GetLastName returns the LastName field if non-nil, zero value otherwise.
-
-### GetLastNameOk
-
-`func (o *GetPhoneNumberResponseEntity) GetLastNameOk() (*string, bool)`
-
-GetLastNameOk returns a tuple with the LastName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastName
-
-`func (o *GetPhoneNumberResponseEntity) SetLastName(v string)`
-
-SetLastName sets LastName field to given value.
-
-### HasLastName
-
-`func (o *GetPhoneNumberResponseEntity) HasLastName() bool`
-
-HasLastName returns a boolean if a field has been set.
-
-### GetMaritalStatus
-
-`func (o *GetPhoneNumberResponseEntity) GetMaritalStatus() string`
-
-GetMaritalStatus returns the MaritalStatus field if non-nil, zero value otherwise.
-
-### GetMaritalStatusOk
-
-`func (o *GetPhoneNumberResponseEntity) GetMaritalStatusOk() (*string, bool)`
-
-GetMaritalStatusOk returns a tuple with the MaritalStatus field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaritalStatus
-
-`func (o *GetPhoneNumberResponseEntity) SetMaritalStatus(v string)`
-
-SetMaritalStatus sets MaritalStatus field to given value.
-
-### HasMaritalStatus
-
-`func (o *GetPhoneNumberResponseEntity) HasMaritalStatus() bool`
-
-HasMaritalStatus returns a boolean if a field has been set.
-
-### GetGender
-
-`func (o *GetPhoneNumberResponseEntity) GetGender() string`
-
-GetGender returns the Gender field if non-nil, zero value otherwise.
-
-### GetGenderOk
-
-`func (o *GetPhoneNumberResponseEntity) GetGenderOk() (*string, bool)`
-
-GetGenderOk returns a tuple with the Gender field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGender
-
-`func (o *GetPhoneNumberResponseEntity) SetGender(v string)`
-
-SetGender sets Gender field to given value.
-
-### HasGender
-
-`func (o *GetPhoneNumberResponseEntity) HasGender() bool`
-
-HasGender returns a boolean if a field has been set.
 
 ### GetBirthDate
 
@@ -354,6 +204,231 @@ SetEmplymentStatus sets EmplymentStatus field to given value.
 
 HasEmplymentStatus returns a boolean if a field has been set.
 
+### GetFirstName
+
+`func (o *GetPhoneNumberResponseEntity) GetFirstName() string`
+
+GetFirstName returns the FirstName field if non-nil, zero value otherwise.
+
+### GetFirstNameOk
+
+`func (o *GetPhoneNumberResponseEntity) GetFirstNameOk() (*string, bool)`
+
+GetFirstNameOk returns a tuple with the FirstName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFirstName
+
+`func (o *GetPhoneNumberResponseEntity) SetFirstName(v string)`
+
+SetFirstName sets FirstName field to given value.
+
+### HasFirstName
+
+`func (o *GetPhoneNumberResponseEntity) HasFirstName() bool`
+
+HasFirstName returns a boolean if a field has been set.
+
+### GetGender
+
+`func (o *GetPhoneNumberResponseEntity) GetGender() string`
+
+GetGender returns the Gender field if non-nil, zero value otherwise.
+
+### GetGenderOk
+
+`func (o *GetPhoneNumberResponseEntity) GetGenderOk() (*string, bool)`
+
+GetGenderOk returns a tuple with the Gender field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGender
+
+`func (o *GetPhoneNumberResponseEntity) SetGender(v string)`
+
+SetGender sets Gender field to given value.
+
+### HasGender
+
+`func (o *GetPhoneNumberResponseEntity) HasGender() bool`
+
+HasGender returns a boolean if a field has been set.
+
+### GetHeight
+
+`func (o *GetPhoneNumberResponseEntity) GetHeight() string`
+
+GetHeight returns the Height field if non-nil, zero value otherwise.
+
+### GetHeightOk
+
+`func (o *GetPhoneNumberResponseEntity) GetHeightOk() (*string, bool)`
+
+GetHeightOk returns a tuple with the Height field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHeight
+
+`func (o *GetPhoneNumberResponseEntity) SetHeight(v string)`
+
+SetHeight sets Height field to given value.
+
+### HasHeight
+
+`func (o *GetPhoneNumberResponseEntity) HasHeight() bool`
+
+HasHeight returns a boolean if a field has been set.
+
+### GetLastName
+
+`func (o *GetPhoneNumberResponseEntity) GetLastName() string`
+
+GetLastName returns the LastName field if non-nil, zero value otherwise.
+
+### GetLastNameOk
+
+`func (o *GetPhoneNumberResponseEntity) GetLastNameOk() (*string, bool)`
+
+GetLastNameOk returns a tuple with the LastName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastName
+
+`func (o *GetPhoneNumberResponseEntity) SetLastName(v string)`
+
+SetLastName sets LastName field to given value.
+
+### HasLastName
+
+`func (o *GetPhoneNumberResponseEntity) HasLastName() bool`
+
+HasLastName returns a boolean if a field has been set.
+
+### GetLga
+
+`func (o *GetPhoneNumberResponseEntity) GetLga() string`
+
+GetLga returns the Lga field if non-nil, zero value otherwise.
+
+### GetLgaOk
+
+`func (o *GetPhoneNumberResponseEntity) GetLgaOk() (*string, bool)`
+
+GetLgaOk returns a tuple with the Lga field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLga
+
+`func (o *GetPhoneNumberResponseEntity) SetLga(v string)`
+
+SetLga sets Lga field to given value.
+
+### HasLga
+
+`func (o *GetPhoneNumberResponseEntity) HasLga() bool`
+
+HasLga returns a boolean if a field has been set.
+
+### GetMaritalStatus
+
+`func (o *GetPhoneNumberResponseEntity) GetMaritalStatus() string`
+
+GetMaritalStatus returns the MaritalStatus field if non-nil, zero value otherwise.
+
+### GetMaritalStatusOk
+
+`func (o *GetPhoneNumberResponseEntity) GetMaritalStatusOk() (*string, bool)`
+
+GetMaritalStatusOk returns a tuple with the MaritalStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaritalStatus
+
+`func (o *GetPhoneNumberResponseEntity) SetMaritalStatus(v string)`
+
+SetMaritalStatus sets MaritalStatus field to given value.
+
+### HasMaritalStatus
+
+`func (o *GetPhoneNumberResponseEntity) HasMaritalStatus() bool`
+
+HasMaritalStatus returns a boolean if a field has been set.
+
+### GetMiddleName
+
+`func (o *GetPhoneNumberResponseEntity) GetMiddleName() string`
+
+GetMiddleName returns the MiddleName field if non-nil, zero value otherwise.
+
+### GetMiddleNameOk
+
+`func (o *GetPhoneNumberResponseEntity) GetMiddleNameOk() (*string, bool)`
+
+GetMiddleNameOk returns a tuple with the MiddleName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMiddleName
+
+`func (o *GetPhoneNumberResponseEntity) SetMiddleName(v string)`
+
+SetMiddleName sets MiddleName field to given value.
+
+### HasMiddleName
+
+`func (o *GetPhoneNumberResponseEntity) HasMiddleName() bool`
+
+HasMiddleName returns a boolean if a field has been set.
+
+### GetMsisdn
+
+`func (o *GetPhoneNumberResponseEntity) GetMsisdn() string`
+
+GetMsisdn returns the Msisdn field if non-nil, zero value otherwise.
+
+### GetMsisdnOk
+
+`func (o *GetPhoneNumberResponseEntity) GetMsisdnOk() (*string, bool)`
+
+GetMsisdnOk returns a tuple with the Msisdn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMsisdn
+
+`func (o *GetPhoneNumberResponseEntity) SetMsisdn(v string)`
+
+SetMsisdn sets Msisdn field to given value.
+
+### HasMsisdn
+
+`func (o *GetPhoneNumberResponseEntity) HasMsisdn() bool`
+
+HasMsisdn returns a boolean if a field has been set.
+
+### GetNin
+
+`func (o *GetPhoneNumberResponseEntity) GetNin() string`
+
+GetNin returns the Nin field if non-nil, zero value otherwise.
+
+### GetNinOk
+
+`func (o *GetPhoneNumberResponseEntity) GetNinOk() (*string, bool)`
+
+GetNinOk returns a tuple with the Nin field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNin
+
+`func (o *GetPhoneNumberResponseEntity) SetNin(v string)`
+
+SetNin sets Nin field to given value.
+
+### HasNin
+
+`func (o *GetPhoneNumberResponseEntity) HasNin() bool`
+
+HasNin returns a boolean if a field has been set.
+
 ### GetNspokenLang
 
 `func (o *GetPhoneNumberResponseEntity) GetNspokenLang() string`
@@ -403,6 +478,31 @@ SetOspokenlang sets Ospokenlang field to given value.
 `func (o *GetPhoneNumberResponseEntity) HasOspokenlang() bool`
 
 HasOspokenlang returns a boolean if a field has been set.
+
+### GetPicture
+
+`func (o *GetPhoneNumberResponseEntity) GetPicture() string`
+
+GetPicture returns the Picture field if non-nil, zero value otherwise.
+
+### GetPictureOk
+
+`func (o *GetPhoneNumberResponseEntity) GetPictureOk() (*string, bool)`
+
+GetPictureOk returns a tuple with the Picture field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPicture
+
+`func (o *GetPhoneNumberResponseEntity) SetPicture(v string)`
+
+SetPicture sets Picture field to given value.
+
+### HasPicture
+
+`func (o *GetPhoneNumberResponseEntity) HasPicture() bool`
+
+HasPicture returns a boolean if a field has been set.
 
 ### GetProfession
 
@@ -479,31 +579,6 @@ SetResidenceAddressLine1 sets ResidenceAddressLine1 field to given value.
 
 HasResidenceAddressLine1 returns a boolean if a field has been set.
 
-### GetResidenceTown
-
-`func (o *GetPhoneNumberResponseEntity) GetResidenceTown() string`
-
-GetResidenceTown returns the ResidenceTown field if non-nil, zero value otherwise.
-
-### GetResidenceTownOk
-
-`func (o *GetPhoneNumberResponseEntity) GetResidenceTownOk() (*string, bool)`
-
-GetResidenceTownOk returns a tuple with the ResidenceTown field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResidenceTown
-
-`func (o *GetPhoneNumberResponseEntity) SetResidenceTown(v string)`
-
-SetResidenceTown sets ResidenceTown field to given value.
-
-### HasResidenceTown
-
-`func (o *GetPhoneNumberResponseEntity) HasResidenceTown() bool`
-
-HasResidenceTown returns a boolean if a field has been set.
-
 ### GetResidenceLga
 
 `func (o *GetPhoneNumberResponseEntity) GetResidenceLga() string`
@@ -578,6 +653,31 @@ SetResidenceStatus sets ResidenceStatus field to given value.
 `func (o *GetPhoneNumberResponseEntity) HasResidenceStatus() bool`
 
 HasResidenceStatus returns a boolean if a field has been set.
+
+### GetResidenceTown
+
+`func (o *GetPhoneNumberResponseEntity) GetResidenceTown() string`
+
+GetResidenceTown returns the ResidenceTown field if non-nil, zero value otherwise.
+
+### GetResidenceTownOk
+
+`func (o *GetPhoneNumberResponseEntity) GetResidenceTownOk() (*string, bool)`
+
+GetResidenceTownOk returns a tuple with the ResidenceTown field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResidenceTown
+
+`func (o *GetPhoneNumberResponseEntity) SetResidenceTown(v string)`
+
+SetResidenceTown sets ResidenceTown field to given value.
+
+### HasResidenceTown
+
+`func (o *GetPhoneNumberResponseEntity) HasResidenceTown() bool`
+
+HasResidenceTown returns a boolean if a field has been set.
 
 ### GetSelfOriginLga
 
@@ -678,106 +778,6 @@ SetState sets State field to given value.
 `func (o *GetPhoneNumberResponseEntity) HasState() bool`
 
 HasState returns a boolean if a field has been set.
-
-### GetLga
-
-`func (o *GetPhoneNumberResponseEntity) GetLga() string`
-
-GetLga returns the Lga field if non-nil, zero value otherwise.
-
-### GetLgaOk
-
-`func (o *GetPhoneNumberResponseEntity) GetLgaOk() (*string, bool)`
-
-GetLgaOk returns a tuple with the Lga field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLga
-
-`func (o *GetPhoneNumberResponseEntity) SetLga(v string)`
-
-SetLga sets Lga field to given value.
-
-### HasLga
-
-`func (o *GetPhoneNumberResponseEntity) HasLga() bool`
-
-HasLga returns a boolean if a field has been set.
-
-### GetNin
-
-`func (o *GetPhoneNumberResponseEntity) GetNin() string`
-
-GetNin returns the Nin field if non-nil, zero value otherwise.
-
-### GetNinOk
-
-`func (o *GetPhoneNumberResponseEntity) GetNinOk() (*string, bool)`
-
-GetNinOk returns a tuple with the Nin field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNin
-
-`func (o *GetPhoneNumberResponseEntity) SetNin(v string)`
-
-SetNin sets Nin field to given value.
-
-### HasNin
-
-`func (o *GetPhoneNumberResponseEntity) HasNin() bool`
-
-HasNin returns a boolean if a field has been set.
-
-### GetHeight
-
-`func (o *GetPhoneNumberResponseEntity) GetHeight() string`
-
-GetHeight returns the Height field if non-nil, zero value otherwise.
-
-### GetHeightOk
-
-`func (o *GetPhoneNumberResponseEntity) GetHeightOk() (*string, bool)`
-
-GetHeightOk returns a tuple with the Height field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHeight
-
-`func (o *GetPhoneNumberResponseEntity) SetHeight(v string)`
-
-SetHeight sets Height field to given value.
-
-### HasHeight
-
-`func (o *GetPhoneNumberResponseEntity) HasHeight() bool`
-
-HasHeight returns a boolean if a field has been set.
-
-### GetPicture
-
-`func (o *GetPhoneNumberResponseEntity) GetPicture() string`
-
-GetPicture returns the Picture field if non-nil, zero value otherwise.
-
-### GetPictureOk
-
-`func (o *GetPhoneNumberResponseEntity) GetPictureOk() (*string, bool)`
-
-GetPictureOk returns a tuple with the Picture field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPicture
-
-`func (o *GetPhoneNumberResponseEntity) SetPicture(v string)`
-
-SetPicture sets Picture field to given value.
-
-### HasPicture
-
-`func (o *GetPhoneNumberResponseEntity) HasPicture() bool`
-
-HasPicture returns a boolean if a field has been set.
 
 ### GetStatus
 

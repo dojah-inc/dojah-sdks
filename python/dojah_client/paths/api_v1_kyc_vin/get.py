@@ -64,8 +64,8 @@ request_query_vin = api_client.QueryParameter(
     explode=True,
 )
 _auth = [
+    'apikeyAuth',
     'appIdAuth',
-    'noauthAuth',
 ]
 DateSchema = schemas.StrSchema
 date_parameter = api_client.HeaderParameter(

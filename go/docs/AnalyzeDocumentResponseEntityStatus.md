@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OverallStatus** | Pointer to **float32** |  | [optional] 
 **DocumentImages** | Pointer to **string** |  | [optional] 
-**Text** | Pointer to **string** |  | [optional] 
 **DocumentType** | Pointer to **string** |  | [optional] 
 **Expiry** | Pointer to **string** |  | [optional] 
+**OverallStatus** | Pointer to **float32** |  | [optional] 
+**Text** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,31 +28,6 @@ will change when the set of required properties is changed
 NewAnalyzeDocumentResponseEntityStatusWithDefaults instantiates a new AnalyzeDocumentResponseEntityStatus object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetOverallStatus
-
-`func (o *AnalyzeDocumentResponseEntityStatus) GetOverallStatus() float32`
-
-GetOverallStatus returns the OverallStatus field if non-nil, zero value otherwise.
-
-### GetOverallStatusOk
-
-`func (o *AnalyzeDocumentResponseEntityStatus) GetOverallStatusOk() (*float32, bool)`
-
-GetOverallStatusOk returns a tuple with the OverallStatus field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOverallStatus
-
-`func (o *AnalyzeDocumentResponseEntityStatus) SetOverallStatus(v float32)`
-
-SetOverallStatus sets OverallStatus field to given value.
-
-### HasOverallStatus
-
-`func (o *AnalyzeDocumentResponseEntityStatus) HasOverallStatus() bool`
-
-HasOverallStatus returns a boolean if a field has been set.
 
 ### GetDocumentImages
 
@@ -78,31 +53,6 @@ SetDocumentImages sets DocumentImages field to given value.
 `func (o *AnalyzeDocumentResponseEntityStatus) HasDocumentImages() bool`
 
 HasDocumentImages returns a boolean if a field has been set.
-
-### GetText
-
-`func (o *AnalyzeDocumentResponseEntityStatus) GetText() string`
-
-GetText returns the Text field if non-nil, zero value otherwise.
-
-### GetTextOk
-
-`func (o *AnalyzeDocumentResponseEntityStatus) GetTextOk() (*string, bool)`
-
-GetTextOk returns a tuple with the Text field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetText
-
-`func (o *AnalyzeDocumentResponseEntityStatus) SetText(v string)`
-
-SetText sets Text field to given value.
-
-### HasText
-
-`func (o *AnalyzeDocumentResponseEntityStatus) HasText() bool`
-
-HasText returns a boolean if a field has been set.
 
 ### GetDocumentType
 
@@ -153,6 +103,56 @@ SetExpiry sets Expiry field to given value.
 `func (o *AnalyzeDocumentResponseEntityStatus) HasExpiry() bool`
 
 HasExpiry returns a boolean if a field has been set.
+
+### GetOverallStatus
+
+`func (o *AnalyzeDocumentResponseEntityStatus) GetOverallStatus() float32`
+
+GetOverallStatus returns the OverallStatus field if non-nil, zero value otherwise.
+
+### GetOverallStatusOk
+
+`func (o *AnalyzeDocumentResponseEntityStatus) GetOverallStatusOk() (*float32, bool)`
+
+GetOverallStatusOk returns a tuple with the OverallStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOverallStatus
+
+`func (o *AnalyzeDocumentResponseEntityStatus) SetOverallStatus(v float32)`
+
+SetOverallStatus sets OverallStatus field to given value.
+
+### HasOverallStatus
+
+`func (o *AnalyzeDocumentResponseEntityStatus) HasOverallStatus() bool`
+
+HasOverallStatus returns a boolean if a field has been set.
+
+### GetText
+
+`func (o *AnalyzeDocumentResponseEntityStatus) GetText() string`
+
+GetText returns the Text field if non-nil, zero value otherwise.
+
+### GetTextOk
+
+`func (o *AnalyzeDocumentResponseEntityStatus) GetTextOk() (*string, bool)`
+
+GetTextOk returns a tuple with the Text field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetText
+
+`func (o *AnalyzeDocumentResponseEntityStatus) SetText(v string)`
+
+SetText sets Text field to given value.
+
+### HasText
+
+`func (o *AnalyzeDocumentResponseEntityStatus) HasText() bool`
+
+HasText returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

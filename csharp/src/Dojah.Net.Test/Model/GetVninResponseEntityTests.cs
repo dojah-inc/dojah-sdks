@@ -57,12 +57,12 @@ namespace Dojah.Net.Test.Model
 
 
         /// <summary>
-        /// Test the property 'Vnin'
+        /// Test the property 'DateOfBirth'
         /// </summary>
         [Fact]
-        public void VninTest()
+        public void DateOfBirthTest()
         {
-            // TODO unit test for the property 'Vnin'
+            // TODO unit test for the property 'DateOfBirth'
         }
         /// <summary>
         /// Test the property 'Firstname'
@@ -73,12 +73,36 @@ namespace Dojah.Net.Test.Model
             // TODO unit test for the property 'Firstname'
         }
         /// <summary>
+        /// Test the property 'Gender'
+        /// </summary>
+        [Fact]
+        public void GenderTest()
+        {
+            // TODO unit test for the property 'Gender'
+        }
+        /// <summary>
         /// Test the property 'Middlename'
         /// </summary>
         [Fact]
         public void MiddlenameTest()
         {
             // TODO unit test for the property 'Middlename'
+        }
+        /// <summary>
+        /// Test the property 'Mobile'
+        /// </summary>
+        [Fact]
+        public void MobileTest()
+        {
+            // TODO unit test for the property 'Mobile'
+        }
+        /// <summary>
+        /// Test the property 'Photo'
+        /// </summary>
+        [Fact]
+        public void PhotoTest()
+        {
+            // TODO unit test for the property 'Photo'
         }
         /// <summary>
         /// Test the property 'Surname'
@@ -97,36 +121,12 @@ namespace Dojah.Net.Test.Model
             // TODO unit test for the property 'UserId'
         }
         /// <summary>
-        /// Test the property 'Gender'
+        /// Test the property 'Vnin'
         /// </summary>
         [Fact]
-        public void GenderTest()
+        public void VninTest()
         {
-            // TODO unit test for the property 'Gender'
-        }
-        /// <summary>
-        /// Test the property 'Mobile'
-        /// </summary>
-        [Fact]
-        public void MobileTest()
-        {
-            // TODO unit test for the property 'Mobile'
-        }
-        /// <summary>
-        /// Test the property 'DateOfBirth'
-        /// </summary>
-        [Fact]
-        public void DateOfBirthTest()
-        {
-            // TODO unit test for the property 'DateOfBirth'
-        }
-        /// <summary>
-        /// Test the property 'Photo'
-        /// </summary>
-        [Fact]
-        public void PhotoTest()
-        {
-            // TODO unit test for the property 'Photo'
+            // TODO unit test for the property 'Vnin'
         }
 
     }

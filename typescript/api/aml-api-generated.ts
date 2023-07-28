@@ -50,8 +50,10 @@ export const AmlApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarHeaderParameter = configuration && !isBrowser() ? { "User-Agent": configuration.userAgent } : {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (profileId !== undefined) {
                 localVarQueryParameter['profileId'] = profileId;
             }
@@ -95,8 +97,10 @@ export const AmlApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarHeaderParameter = configuration && !isBrowser() ? { "User-Agent": configuration.userAgent } : {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';

@@ -96,6 +96,7 @@ request_query_date_of_birth = api_client.QueryParameter(
     explode=True,
 )
 _auth = [
+    'apikeyAuth',
     'appIdAuth',
 ]
 AccessControlAllowOriginSchema = schemas.StrSchema

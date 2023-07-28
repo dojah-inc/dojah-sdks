@@ -69,8 +69,9 @@ export const NigeriaKycApiAxiosParamCreator = function (configuration?: Configur
             const localVarQueryParameter = {} as any;
 
             // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (bvn !== undefined) {
                 localVarQueryParameter['bvn'] = bvn;
             }
@@ -112,8 +113,10 @@ export const NigeriaKycApiAxiosParamCreator = function (configuration?: Configur
             const localVarHeaderParameter = configuration && !isBrowser() ? { "User-Agent": configuration.userAgent } : {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (bvn !== undefined) {
                 localVarQueryParameter['bvn'] = bvn;
             }
@@ -156,8 +159,9 @@ export const NigeriaKycApiAxiosParamCreator = function (configuration?: Configur
             const localVarQueryParameter = {} as any;
 
             // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (phoneNumber !== undefined) {
                 localVarQueryParameter['phone_number'] = phoneNumber;
             }
@@ -200,8 +204,9 @@ export const NigeriaKycApiAxiosParamCreator = function (configuration?: Configur
             const localVarQueryParameter = {} as any;
 
             // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (licenseNumber !== undefined) {
                 localVarQueryParameter['license_number'] = licenseNumber;
             }
@@ -244,8 +249,9 @@ export const NigeriaKycApiAxiosParamCreator = function (configuration?: Configur
             const localVarQueryParameter = {} as any;
 
             // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (nin !== undefined) {
                 localVarQueryParameter['nin'] = nin;
             }
@@ -288,8 +294,9 @@ export const NigeriaKycApiAxiosParamCreator = function (configuration?: Configur
             const localVarQueryParameter = {} as any;
 
             // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (bvn !== undefined) {
                 localVarQueryParameter['bvn'] = bvn;
             }
@@ -333,8 +340,9 @@ export const NigeriaKycApiAxiosParamCreator = function (configuration?: Configur
             const localVarQueryParameter = {} as any;
 
             // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (bankCode !== undefined) {
                 localVarQueryParameter['bank_code'] = bankCode;
             }
@@ -381,8 +389,10 @@ export const NigeriaKycApiAxiosParamCreator = function (configuration?: Configur
             const localVarHeaderParameter = configuration && !isBrowser() ? { "User-Agent": configuration.userAgent } : {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (passportNumber !== undefined) {
                 localVarQueryParameter['passport_number'] = passportNumber;
             }
@@ -428,9 +438,10 @@ export const NigeriaKycApiAxiosParamCreator = function (configuration?: Configur
             const localVarHeaderParameter = configuration && !isBrowser() ? { "User-Agent": configuration.userAgent } : {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
-            // authentication noauthAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (phoneNumber !== undefined) {
                 localVarQueryParameter['phone_number'] = phoneNumber;
             }
@@ -473,8 +484,9 @@ export const NigeriaKycApiAxiosParamCreator = function (configuration?: Configur
             const localVarQueryParameter = {} as any;
 
             // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (bvn !== undefined) {
                 localVarQueryParameter['bvn'] = bvn;
             }
@@ -516,8 +528,10 @@ export const NigeriaKycApiAxiosParamCreator = function (configuration?: Configur
             const localVarHeaderParameter = configuration && !isBrowser() ? { "User-Agent": configuration.userAgent } : {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (vnin !== undefined) {
                 localVarQueryParameter['vnin'] = vnin;
             }

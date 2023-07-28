@@ -52,8 +52,10 @@ export const KybApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarHeaderParameter = configuration && !isBrowser() ? { "User-Agent": configuration.userAgent } : {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (internationalNumber !== undefined) {
                 localVarQueryParameter['international_number'] = internationalNumber;
             }
@@ -104,8 +106,10 @@ export const KybApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarHeaderParameter = configuration && !isBrowser() ? { "User-Agent": configuration.userAgent } : {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (countryCode !== undefined) {
                 localVarQueryParameter['country_code'] = countryCode;
             }
@@ -153,8 +157,9 @@ export const KybApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarQueryParameter = {} as any;
 
             // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (rcNumber !== undefined) {
                 localVarQueryParameter['rc_number'] = rcNumber;
             }
@@ -201,8 +206,9 @@ export const KybApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarQueryParameter = {} as any;
 
             // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (tin !== undefined) {
                 localVarQueryParameter['tin'] = tin;
             }

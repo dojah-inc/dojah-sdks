@@ -34,37 +34,25 @@ namespace Dojah.Net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AnalyzeDocumentResponseEntityStatus" /> class.
         /// </summary>
-        /// <param name="overallStatus">overallStatus.</param>
         /// <param name="documentImages">documentImages.</param>
-        /// <param name="text">text.</param>
         /// <param name="documentType">documentType.</param>
         /// <param name="expiry">expiry.</param>
-        public AnalyzeDocumentResponseEntityStatus(decimal overallStatus = default(decimal), string documentImages = default(string), string text = default(string), string documentType = default(string), string expiry = default(string))
+        /// <param name="overallStatus">overallStatus.</param>
+        /// <param name="text">text.</param>
+        public AnalyzeDocumentResponseEntityStatus(string documentImages = default(string), string documentType = default(string), string expiry = default(string), decimal overallStatus = default(decimal), string text = default(string))
         {
-            this.OverallStatus = overallStatus;
             this.DocumentImages = documentImages;
-            this.Text = text;
             this.DocumentType = documentType;
             this.Expiry = expiry;
+            this.OverallStatus = overallStatus;
+            this.Text = text;
         }
-
-        /// <summary>
-        /// Gets or Sets OverallStatus
-        /// </summary>
-        [DataMember(Name = "overall_status", EmitDefaultValue = false)]
-        public decimal OverallStatus { get; set; }
 
         /// <summary>
         /// Gets or Sets DocumentImages
         /// </summary>
         [DataMember(Name = "document_images", EmitDefaultValue = false)]
         public string DocumentImages { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Text
-        /// </summary>
-        [DataMember(Name = "text", EmitDefaultValue = false)]
-        public string Text { get; set; }
 
         /// <summary>
         /// Gets or Sets DocumentType
@@ -79,6 +67,18 @@ namespace Dojah.Net.Model
         public string Expiry { get; set; }
 
         /// <summary>
+        /// Gets or Sets OverallStatus
+        /// </summary>
+        [DataMember(Name = "overall_status", EmitDefaultValue = false)]
+        public decimal OverallStatus { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Text
+        /// </summary>
+        [DataMember(Name = "text", EmitDefaultValue = false)]
+        public string Text { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -86,11 +86,11 @@ namespace Dojah.Net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AnalyzeDocumentResponseEntityStatus {\n");
-            sb.Append("  OverallStatus: ").Append(OverallStatus).Append("\n");
             sb.Append("  DocumentImages: ").Append(DocumentImages).Append("\n");
-            sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  DocumentType: ").Append(DocumentType).Append("\n");
             sb.Append("  Expiry: ").Append(Expiry).Append("\n");
+            sb.Append("  OverallStatus: ").Append(OverallStatus).Append("\n");
+            sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -127,18 +127,9 @@ namespace Dojah.Net.Model
             }
             return 
                 (
-                    this.OverallStatus == input.OverallStatus ||
-                    this.OverallStatus.Equals(input.OverallStatus)
-                ) && 
-                (
                     this.DocumentImages == input.DocumentImages ||
                     (this.DocumentImages != null &&
                     this.DocumentImages.Equals(input.DocumentImages))
-                ) && 
-                (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
                 ) && 
                 (
                     this.DocumentType == input.DocumentType ||
@@ -149,6 +140,15 @@ namespace Dojah.Net.Model
                     this.Expiry == input.Expiry ||
                     (this.Expiry != null &&
                     this.Expiry.Equals(input.Expiry))
+                ) && 
+                (
+                    this.OverallStatus == input.OverallStatus ||
+                    this.OverallStatus.Equals(input.OverallStatus)
+                ) && 
+                (
+                    this.Text == input.Text ||
+                    (this.Text != null &&
+                    this.Text.Equals(input.Text))
                 );
         }
 
@@ -161,14 +161,9 @@ namespace Dojah.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.OverallStatus.GetHashCode();
                 if (this.DocumentImages != null)
                 {
                     hashCode = (hashCode * 59) + this.DocumentImages.GetHashCode();
-                }
-                if (this.Text != null)
-                {
-                    hashCode = (hashCode * 59) + this.Text.GetHashCode();
                 }
                 if (this.DocumentType != null)
                 {
@@ -177,6 +172,11 @@ namespace Dojah.Net.Model
                 if (this.Expiry != null)
                 {
                     hashCode = (hashCode * 59) + this.Expiry.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.OverallStatus.GetHashCode();
+                if (this.Text != null)
+                {
+                    hashCode = (hashCode * 59) + this.Text.GetHashCode();
                 }
                 return hashCode;
             }

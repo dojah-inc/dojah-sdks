@@ -53,6 +53,7 @@ request_body_notify_webhook_request = api_client.RequestBody(
     required=True,
 )
 _auth = [
+    'apikeyAuth',
     'appIdAuth',
 ]
 DateSchema = schemas.StrSchema

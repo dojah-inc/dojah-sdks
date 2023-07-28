@@ -51,8 +51,8 @@ request_body_subscribe_service_request = api_client.RequestBody(
     required=True,
 )
 _auth = [
+    'apikeyAuth',
     'appIdAuth',
-    'noauthAuth',
 ]
 XPoweredBySchema = schemas.StrSchema
 x_powered_by_parameter = api_client.HeaderParameter(

@@ -59,8 +59,9 @@ export const VerificationsApiAxiosParamCreator = function (configuration?: Confi
             const localVarQueryParameter = {} as any;
 
             // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (bvn !== undefined) {
                 localVarQueryParameter['bvn'] = bvn;
             }
@@ -116,8 +117,9 @@ export const VerificationsApiAxiosParamCreator = function (configuration?: Confi
             const localVarQueryParameter = {} as any;
 
             // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
             if (mode !== undefined) {
                 localVarQueryParameter['mode'] = mode;
             }
@@ -182,8 +184,9 @@ export const VerificationsApiAxiosParamCreator = function (configuration?: Confi
             const localVarQueryParameter = {} as any;
 
             // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
@@ -228,8 +231,9 @@ export const VerificationsApiAxiosParamCreator = function (configuration?: Confi
             const localVarQueryParameter = {} as any;
 
             // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
@@ -273,8 +277,10 @@ export const VerificationsApiAxiosParamCreator = function (configuration?: Confi
             const localVarHeaderParameter = configuration && !isBrowser() ? { "User-Agent": configuration.userAgent } : {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication apikeyAuth required
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Authorization", configuration })
             // authentication appIdAuth required
-            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "Appid", configuration })
+            await setApiKeyToObject({ object: localVarHeaderParameter, keyParamName: "AppId", configuration })
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';

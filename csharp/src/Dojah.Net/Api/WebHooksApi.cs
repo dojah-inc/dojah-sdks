@@ -374,10 +374,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -444,10 +448,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -512,10 +520,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -582,10 +594,14 @@ namespace Dojah.Net.Api
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (apikeyAuth) required
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -659,10 +675,15 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "WebHooksApi.NotifyWebhook";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -738,10 +759,15 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "WebHooksApi.NotifyWebhook";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
             }
 
             // make the HTTP request
@@ -815,12 +841,16 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "WebHooksApi.SubscribeService";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (noauthAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<SubscribeServiceResponse>("/api/v1/webhook/subscribe", localVarRequestOptions, this.Configuration);
@@ -895,12 +925,16 @@ namespace Dojah.Net.Api
             localVarRequestOptions.Operation = "WebHooksApi.SubscribeService";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (appIdAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Appid")))
+            // authentication (apikeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Appid", this.Configuration.GetApiKeyWithPrefix("Appid"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (noauthAuth) required
+            // authentication (appIdAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("AppId")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("AppId", this.Configuration.GetApiKeyWithPrefix("AppId"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<SubscribeServiceResponse>("/api/v1/webhook/subscribe", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

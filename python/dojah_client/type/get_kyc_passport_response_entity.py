@@ -19,27 +19,27 @@ class RequiredGetKycPassportResponseEntity(TypedDict):
     pass
 
 class OptionalGetKycPassportResponseEntity(TypedDict, total=False):
-    passport_number: str
+    date_of_birth: str
 
     date_of_issue: str
 
-    expiry_date: str
-
     document_type: str
 
-    issue_place: str
-
-    surname: str
+    expiry_date: str
 
     first_name: str
 
-    other_names: str
-
-    date_of_birth: str
-
     gender: str
 
+    issue_place: str
+
+    other_names: str
+
+    passport_number: str
+
     photo: str
+
+    surname: str
 
 class GetKycPassportResponseEntity(RequiredGetKycPassportResponseEntity, OptionalGetKycPassportResponseEntity):
     pass

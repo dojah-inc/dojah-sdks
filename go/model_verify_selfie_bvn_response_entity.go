@@ -17,29 +17,29 @@ import (
 // VerifySelfieBvnResponseEntity struct for VerifySelfieBvnResponseEntity
 type VerifySelfieBvnResponseEntity struct {
 	Bvn *string `json:"bvn,omitempty"`
-	FirstName *string `json:"first_name,omitempty"`
-	MiddleName *string `json:"middle_name,omitempty"`
-	LastName *string `json:"last_name,omitempty"`
 	DateOfBirth *string `json:"date_of_birth,omitempty"`
-	PhoneNumber1 *string `json:"phone_number1,omitempty"`
-	PhoneNumber2 *string `json:"phone_number2,omitempty"`
-	Gender *string `json:"gender,omitempty"`
+	Email *string `json:"email,omitempty"`
 	EnrollmentBank *string `json:"enrollment_bank,omitempty"`
 	EnrollmentBranch *string `json:"enrollment_branch,omitempty"`
-	Email *string `json:"email,omitempty"`
+	FirstName *string `json:"first_name,omitempty"`
+	Gender *string `json:"gender,omitempty"`
+	Image *string `json:"image,omitempty"`
+	LastName *string `json:"last_name,omitempty"`
+	LevelOfAccount *string `json:"level_of_account,omitempty"`
 	LgaOfOrigin *string `json:"lga_of_origin,omitempty"`
 	LgaOfResidence *string `json:"lga_of_residence,omitempty"`
 	MaritalStatus *string `json:"marital_status,omitempty"`
-	Nin *string `json:"nin,omitempty"`
+	MiddleName *string `json:"middle_name,omitempty"`
 	NameOnCard *string `json:"name_on_card,omitempty"`
+	Nin *string `json:"nin,omitempty"`
+	PhoneNumber1 *string `json:"phone_number1,omitempty"`
+	PhoneNumber2 *string `json:"phone_number2,omitempty"`
+	RegistrationDate *string `json:"registration_date,omitempty"`
 	ResidentialAddress *string `json:"residential_address,omitempty"`
+	SelfieVerification *VerifySelfieBvnResponseEntitySelfieVerification `json:"selfie_verification,omitempty"`
 	StateOfOrigin *string `json:"state_of_origin,omitempty"`
 	StateOfResidence *string `json:"state_of_residence,omitempty"`
 	WatchListed *string `json:"watch_listed,omitempty"`
-	LevelOfAccount *string `json:"level_of_account,omitempty"`
-	RegistrationDate *string `json:"registration_date,omitempty"`
-	Image *string `json:"image,omitempty"`
-	SelfieVerification *VerifySelfieBvnResponseEntitySelfieVerification `json:"selfie_verification,omitempty"`
 }
 
 // NewVerifySelfieBvnResponseEntity instantiates a new VerifySelfieBvnResponseEntity object
@@ -91,102 +91,6 @@ func (o *VerifySelfieBvnResponseEntity) SetBvn(v string) {
 	o.Bvn = &v
 }
 
-// GetFirstName returns the FirstName field value if set, zero value otherwise.
-func (o *VerifySelfieBvnResponseEntity) GetFirstName() string {
-	if o == nil || isNil(o.FirstName) {
-		var ret string
-		return ret
-	}
-	return *o.FirstName
-}
-
-// GetFirstNameOk returns a tuple with the FirstName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VerifySelfieBvnResponseEntity) GetFirstNameOk() (*string, bool) {
-	if o == nil || isNil(o.FirstName) {
-    return nil, false
-	}
-	return o.FirstName, true
-}
-
-// HasFirstName returns a boolean if a field has been set.
-func (o *VerifySelfieBvnResponseEntity) HasFirstName() bool {
-	if o != nil && !isNil(o.FirstName) {
-		return true
-	}
-
-	return false
-}
-
-// SetFirstName gets a reference to the given string and assigns it to the FirstName field.
-func (o *VerifySelfieBvnResponseEntity) SetFirstName(v string) {
-	o.FirstName = &v
-}
-
-// GetMiddleName returns the MiddleName field value if set, zero value otherwise.
-func (o *VerifySelfieBvnResponseEntity) GetMiddleName() string {
-	if o == nil || isNil(o.MiddleName) {
-		var ret string
-		return ret
-	}
-	return *o.MiddleName
-}
-
-// GetMiddleNameOk returns a tuple with the MiddleName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VerifySelfieBvnResponseEntity) GetMiddleNameOk() (*string, bool) {
-	if o == nil || isNil(o.MiddleName) {
-    return nil, false
-	}
-	return o.MiddleName, true
-}
-
-// HasMiddleName returns a boolean if a field has been set.
-func (o *VerifySelfieBvnResponseEntity) HasMiddleName() bool {
-	if o != nil && !isNil(o.MiddleName) {
-		return true
-	}
-
-	return false
-}
-
-// SetMiddleName gets a reference to the given string and assigns it to the MiddleName field.
-func (o *VerifySelfieBvnResponseEntity) SetMiddleName(v string) {
-	o.MiddleName = &v
-}
-
-// GetLastName returns the LastName field value if set, zero value otherwise.
-func (o *VerifySelfieBvnResponseEntity) GetLastName() string {
-	if o == nil || isNil(o.LastName) {
-		var ret string
-		return ret
-	}
-	return *o.LastName
-}
-
-// GetLastNameOk returns a tuple with the LastName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VerifySelfieBvnResponseEntity) GetLastNameOk() (*string, bool) {
-	if o == nil || isNil(o.LastName) {
-    return nil, false
-	}
-	return o.LastName, true
-}
-
-// HasLastName returns a boolean if a field has been set.
-func (o *VerifySelfieBvnResponseEntity) HasLastName() bool {
-	if o != nil && !isNil(o.LastName) {
-		return true
-	}
-
-	return false
-}
-
-// SetLastName gets a reference to the given string and assigns it to the LastName field.
-func (o *VerifySelfieBvnResponseEntity) SetLastName(v string) {
-	o.LastName = &v
-}
-
 // GetDateOfBirth returns the DateOfBirth field value if set, zero value otherwise.
 func (o *VerifySelfieBvnResponseEntity) GetDateOfBirth() string {
 	if o == nil || isNil(o.DateOfBirth) {
@@ -219,100 +123,36 @@ func (o *VerifySelfieBvnResponseEntity) SetDateOfBirth(v string) {
 	o.DateOfBirth = &v
 }
 
-// GetPhoneNumber1 returns the PhoneNumber1 field value if set, zero value otherwise.
-func (o *VerifySelfieBvnResponseEntity) GetPhoneNumber1() string {
-	if o == nil || isNil(o.PhoneNumber1) {
+// GetEmail returns the Email field value if set, zero value otherwise.
+func (o *VerifySelfieBvnResponseEntity) GetEmail() string {
+	if o == nil || isNil(o.Email) {
 		var ret string
 		return ret
 	}
-	return *o.PhoneNumber1
+	return *o.Email
 }
 
-// GetPhoneNumber1Ok returns a tuple with the PhoneNumber1 field value if set, nil otherwise
+// GetEmailOk returns a tuple with the Email field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VerifySelfieBvnResponseEntity) GetPhoneNumber1Ok() (*string, bool) {
-	if o == nil || isNil(o.PhoneNumber1) {
+func (o *VerifySelfieBvnResponseEntity) GetEmailOk() (*string, bool) {
+	if o == nil || isNil(o.Email) {
     return nil, false
 	}
-	return o.PhoneNumber1, true
+	return o.Email, true
 }
 
-// HasPhoneNumber1 returns a boolean if a field has been set.
-func (o *VerifySelfieBvnResponseEntity) HasPhoneNumber1() bool {
-	if o != nil && !isNil(o.PhoneNumber1) {
+// HasEmail returns a boolean if a field has been set.
+func (o *VerifySelfieBvnResponseEntity) HasEmail() bool {
+	if o != nil && !isNil(o.Email) {
 		return true
 	}
 
 	return false
 }
 
-// SetPhoneNumber1 gets a reference to the given string and assigns it to the PhoneNumber1 field.
-func (o *VerifySelfieBvnResponseEntity) SetPhoneNumber1(v string) {
-	o.PhoneNumber1 = &v
-}
-
-// GetPhoneNumber2 returns the PhoneNumber2 field value if set, zero value otherwise.
-func (o *VerifySelfieBvnResponseEntity) GetPhoneNumber2() string {
-	if o == nil || isNil(o.PhoneNumber2) {
-		var ret string
-		return ret
-	}
-	return *o.PhoneNumber2
-}
-
-// GetPhoneNumber2Ok returns a tuple with the PhoneNumber2 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VerifySelfieBvnResponseEntity) GetPhoneNumber2Ok() (*string, bool) {
-	if o == nil || isNil(o.PhoneNumber2) {
-    return nil, false
-	}
-	return o.PhoneNumber2, true
-}
-
-// HasPhoneNumber2 returns a boolean if a field has been set.
-func (o *VerifySelfieBvnResponseEntity) HasPhoneNumber2() bool {
-	if o != nil && !isNil(o.PhoneNumber2) {
-		return true
-	}
-
-	return false
-}
-
-// SetPhoneNumber2 gets a reference to the given string and assigns it to the PhoneNumber2 field.
-func (o *VerifySelfieBvnResponseEntity) SetPhoneNumber2(v string) {
-	o.PhoneNumber2 = &v
-}
-
-// GetGender returns the Gender field value if set, zero value otherwise.
-func (o *VerifySelfieBvnResponseEntity) GetGender() string {
-	if o == nil || isNil(o.Gender) {
-		var ret string
-		return ret
-	}
-	return *o.Gender
-}
-
-// GetGenderOk returns a tuple with the Gender field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VerifySelfieBvnResponseEntity) GetGenderOk() (*string, bool) {
-	if o == nil || isNil(o.Gender) {
-    return nil, false
-	}
-	return o.Gender, true
-}
-
-// HasGender returns a boolean if a field has been set.
-func (o *VerifySelfieBvnResponseEntity) HasGender() bool {
-	if o != nil && !isNil(o.Gender) {
-		return true
-	}
-
-	return false
-}
-
-// SetGender gets a reference to the given string and assigns it to the Gender field.
-func (o *VerifySelfieBvnResponseEntity) SetGender(v string) {
-	o.Gender = &v
+// SetEmail gets a reference to the given string and assigns it to the Email field.
+func (o *VerifySelfieBvnResponseEntity) SetEmail(v string) {
+	o.Email = &v
 }
 
 // GetEnrollmentBank returns the EnrollmentBank field value if set, zero value otherwise.
@@ -379,36 +219,164 @@ func (o *VerifySelfieBvnResponseEntity) SetEnrollmentBranch(v string) {
 	o.EnrollmentBranch = &v
 }
 
-// GetEmail returns the Email field value if set, zero value otherwise.
-func (o *VerifySelfieBvnResponseEntity) GetEmail() string {
-	if o == nil || isNil(o.Email) {
+// GetFirstName returns the FirstName field value if set, zero value otherwise.
+func (o *VerifySelfieBvnResponseEntity) GetFirstName() string {
+	if o == nil || isNil(o.FirstName) {
 		var ret string
 		return ret
 	}
-	return *o.Email
+	return *o.FirstName
 }
 
-// GetEmailOk returns a tuple with the Email field value if set, nil otherwise
+// GetFirstNameOk returns a tuple with the FirstName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VerifySelfieBvnResponseEntity) GetEmailOk() (*string, bool) {
-	if o == nil || isNil(o.Email) {
+func (o *VerifySelfieBvnResponseEntity) GetFirstNameOk() (*string, bool) {
+	if o == nil || isNil(o.FirstName) {
     return nil, false
 	}
-	return o.Email, true
+	return o.FirstName, true
 }
 
-// HasEmail returns a boolean if a field has been set.
-func (o *VerifySelfieBvnResponseEntity) HasEmail() bool {
-	if o != nil && !isNil(o.Email) {
+// HasFirstName returns a boolean if a field has been set.
+func (o *VerifySelfieBvnResponseEntity) HasFirstName() bool {
+	if o != nil && !isNil(o.FirstName) {
 		return true
 	}
 
 	return false
 }
 
-// SetEmail gets a reference to the given string and assigns it to the Email field.
-func (o *VerifySelfieBvnResponseEntity) SetEmail(v string) {
-	o.Email = &v
+// SetFirstName gets a reference to the given string and assigns it to the FirstName field.
+func (o *VerifySelfieBvnResponseEntity) SetFirstName(v string) {
+	o.FirstName = &v
+}
+
+// GetGender returns the Gender field value if set, zero value otherwise.
+func (o *VerifySelfieBvnResponseEntity) GetGender() string {
+	if o == nil || isNil(o.Gender) {
+		var ret string
+		return ret
+	}
+	return *o.Gender
+}
+
+// GetGenderOk returns a tuple with the Gender field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VerifySelfieBvnResponseEntity) GetGenderOk() (*string, bool) {
+	if o == nil || isNil(o.Gender) {
+    return nil, false
+	}
+	return o.Gender, true
+}
+
+// HasGender returns a boolean if a field has been set.
+func (o *VerifySelfieBvnResponseEntity) HasGender() bool {
+	if o != nil && !isNil(o.Gender) {
+		return true
+	}
+
+	return false
+}
+
+// SetGender gets a reference to the given string and assigns it to the Gender field.
+func (o *VerifySelfieBvnResponseEntity) SetGender(v string) {
+	o.Gender = &v
+}
+
+// GetImage returns the Image field value if set, zero value otherwise.
+func (o *VerifySelfieBvnResponseEntity) GetImage() string {
+	if o == nil || isNil(o.Image) {
+		var ret string
+		return ret
+	}
+	return *o.Image
+}
+
+// GetImageOk returns a tuple with the Image field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VerifySelfieBvnResponseEntity) GetImageOk() (*string, bool) {
+	if o == nil || isNil(o.Image) {
+    return nil, false
+	}
+	return o.Image, true
+}
+
+// HasImage returns a boolean if a field has been set.
+func (o *VerifySelfieBvnResponseEntity) HasImage() bool {
+	if o != nil && !isNil(o.Image) {
+		return true
+	}
+
+	return false
+}
+
+// SetImage gets a reference to the given string and assigns it to the Image field.
+func (o *VerifySelfieBvnResponseEntity) SetImage(v string) {
+	o.Image = &v
+}
+
+// GetLastName returns the LastName field value if set, zero value otherwise.
+func (o *VerifySelfieBvnResponseEntity) GetLastName() string {
+	if o == nil || isNil(o.LastName) {
+		var ret string
+		return ret
+	}
+	return *o.LastName
+}
+
+// GetLastNameOk returns a tuple with the LastName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VerifySelfieBvnResponseEntity) GetLastNameOk() (*string, bool) {
+	if o == nil || isNil(o.LastName) {
+    return nil, false
+	}
+	return o.LastName, true
+}
+
+// HasLastName returns a boolean if a field has been set.
+func (o *VerifySelfieBvnResponseEntity) HasLastName() bool {
+	if o != nil && !isNil(o.LastName) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastName gets a reference to the given string and assigns it to the LastName field.
+func (o *VerifySelfieBvnResponseEntity) SetLastName(v string) {
+	o.LastName = &v
+}
+
+// GetLevelOfAccount returns the LevelOfAccount field value if set, zero value otherwise.
+func (o *VerifySelfieBvnResponseEntity) GetLevelOfAccount() string {
+	if o == nil || isNil(o.LevelOfAccount) {
+		var ret string
+		return ret
+	}
+	return *o.LevelOfAccount
+}
+
+// GetLevelOfAccountOk returns a tuple with the LevelOfAccount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VerifySelfieBvnResponseEntity) GetLevelOfAccountOk() (*string, bool) {
+	if o == nil || isNil(o.LevelOfAccount) {
+    return nil, false
+	}
+	return o.LevelOfAccount, true
+}
+
+// HasLevelOfAccount returns a boolean if a field has been set.
+func (o *VerifySelfieBvnResponseEntity) HasLevelOfAccount() bool {
+	if o != nil && !isNil(o.LevelOfAccount) {
+		return true
+	}
+
+	return false
+}
+
+// SetLevelOfAccount gets a reference to the given string and assigns it to the LevelOfAccount field.
+func (o *VerifySelfieBvnResponseEntity) SetLevelOfAccount(v string) {
+	o.LevelOfAccount = &v
 }
 
 // GetLgaOfOrigin returns the LgaOfOrigin field value if set, zero value otherwise.
@@ -507,36 +475,36 @@ func (o *VerifySelfieBvnResponseEntity) SetMaritalStatus(v string) {
 	o.MaritalStatus = &v
 }
 
-// GetNin returns the Nin field value if set, zero value otherwise.
-func (o *VerifySelfieBvnResponseEntity) GetNin() string {
-	if o == nil || isNil(o.Nin) {
+// GetMiddleName returns the MiddleName field value if set, zero value otherwise.
+func (o *VerifySelfieBvnResponseEntity) GetMiddleName() string {
+	if o == nil || isNil(o.MiddleName) {
 		var ret string
 		return ret
 	}
-	return *o.Nin
+	return *o.MiddleName
 }
 
-// GetNinOk returns a tuple with the Nin field value if set, nil otherwise
+// GetMiddleNameOk returns a tuple with the MiddleName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VerifySelfieBvnResponseEntity) GetNinOk() (*string, bool) {
-	if o == nil || isNil(o.Nin) {
+func (o *VerifySelfieBvnResponseEntity) GetMiddleNameOk() (*string, bool) {
+	if o == nil || isNil(o.MiddleName) {
     return nil, false
 	}
-	return o.Nin, true
+	return o.MiddleName, true
 }
 
-// HasNin returns a boolean if a field has been set.
-func (o *VerifySelfieBvnResponseEntity) HasNin() bool {
-	if o != nil && !isNil(o.Nin) {
+// HasMiddleName returns a boolean if a field has been set.
+func (o *VerifySelfieBvnResponseEntity) HasMiddleName() bool {
+	if o != nil && !isNil(o.MiddleName) {
 		return true
 	}
 
 	return false
 }
 
-// SetNin gets a reference to the given string and assigns it to the Nin field.
-func (o *VerifySelfieBvnResponseEntity) SetNin(v string) {
-	o.Nin = &v
+// SetMiddleName gets a reference to the given string and assigns it to the MiddleName field.
+func (o *VerifySelfieBvnResponseEntity) SetMiddleName(v string) {
+	o.MiddleName = &v
 }
 
 // GetNameOnCard returns the NameOnCard field value if set, zero value otherwise.
@@ -571,6 +539,134 @@ func (o *VerifySelfieBvnResponseEntity) SetNameOnCard(v string) {
 	o.NameOnCard = &v
 }
 
+// GetNin returns the Nin field value if set, zero value otherwise.
+func (o *VerifySelfieBvnResponseEntity) GetNin() string {
+	if o == nil || isNil(o.Nin) {
+		var ret string
+		return ret
+	}
+	return *o.Nin
+}
+
+// GetNinOk returns a tuple with the Nin field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VerifySelfieBvnResponseEntity) GetNinOk() (*string, bool) {
+	if o == nil || isNil(o.Nin) {
+    return nil, false
+	}
+	return o.Nin, true
+}
+
+// HasNin returns a boolean if a field has been set.
+func (o *VerifySelfieBvnResponseEntity) HasNin() bool {
+	if o != nil && !isNil(o.Nin) {
+		return true
+	}
+
+	return false
+}
+
+// SetNin gets a reference to the given string and assigns it to the Nin field.
+func (o *VerifySelfieBvnResponseEntity) SetNin(v string) {
+	o.Nin = &v
+}
+
+// GetPhoneNumber1 returns the PhoneNumber1 field value if set, zero value otherwise.
+func (o *VerifySelfieBvnResponseEntity) GetPhoneNumber1() string {
+	if o == nil || isNil(o.PhoneNumber1) {
+		var ret string
+		return ret
+	}
+	return *o.PhoneNumber1
+}
+
+// GetPhoneNumber1Ok returns a tuple with the PhoneNumber1 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VerifySelfieBvnResponseEntity) GetPhoneNumber1Ok() (*string, bool) {
+	if o == nil || isNil(o.PhoneNumber1) {
+    return nil, false
+	}
+	return o.PhoneNumber1, true
+}
+
+// HasPhoneNumber1 returns a boolean if a field has been set.
+func (o *VerifySelfieBvnResponseEntity) HasPhoneNumber1() bool {
+	if o != nil && !isNil(o.PhoneNumber1) {
+		return true
+	}
+
+	return false
+}
+
+// SetPhoneNumber1 gets a reference to the given string and assigns it to the PhoneNumber1 field.
+func (o *VerifySelfieBvnResponseEntity) SetPhoneNumber1(v string) {
+	o.PhoneNumber1 = &v
+}
+
+// GetPhoneNumber2 returns the PhoneNumber2 field value if set, zero value otherwise.
+func (o *VerifySelfieBvnResponseEntity) GetPhoneNumber2() string {
+	if o == nil || isNil(o.PhoneNumber2) {
+		var ret string
+		return ret
+	}
+	return *o.PhoneNumber2
+}
+
+// GetPhoneNumber2Ok returns a tuple with the PhoneNumber2 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VerifySelfieBvnResponseEntity) GetPhoneNumber2Ok() (*string, bool) {
+	if o == nil || isNil(o.PhoneNumber2) {
+    return nil, false
+	}
+	return o.PhoneNumber2, true
+}
+
+// HasPhoneNumber2 returns a boolean if a field has been set.
+func (o *VerifySelfieBvnResponseEntity) HasPhoneNumber2() bool {
+	if o != nil && !isNil(o.PhoneNumber2) {
+		return true
+	}
+
+	return false
+}
+
+// SetPhoneNumber2 gets a reference to the given string and assigns it to the PhoneNumber2 field.
+func (o *VerifySelfieBvnResponseEntity) SetPhoneNumber2(v string) {
+	o.PhoneNumber2 = &v
+}
+
+// GetRegistrationDate returns the RegistrationDate field value if set, zero value otherwise.
+func (o *VerifySelfieBvnResponseEntity) GetRegistrationDate() string {
+	if o == nil || isNil(o.RegistrationDate) {
+		var ret string
+		return ret
+	}
+	return *o.RegistrationDate
+}
+
+// GetRegistrationDateOk returns a tuple with the RegistrationDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VerifySelfieBvnResponseEntity) GetRegistrationDateOk() (*string, bool) {
+	if o == nil || isNil(o.RegistrationDate) {
+    return nil, false
+	}
+	return o.RegistrationDate, true
+}
+
+// HasRegistrationDate returns a boolean if a field has been set.
+func (o *VerifySelfieBvnResponseEntity) HasRegistrationDate() bool {
+	if o != nil && !isNil(o.RegistrationDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetRegistrationDate gets a reference to the given string and assigns it to the RegistrationDate field.
+func (o *VerifySelfieBvnResponseEntity) SetRegistrationDate(v string) {
+	o.RegistrationDate = &v
+}
+
 // GetResidentialAddress returns the ResidentialAddress field value if set, zero value otherwise.
 func (o *VerifySelfieBvnResponseEntity) GetResidentialAddress() string {
 	if o == nil || isNil(o.ResidentialAddress) {
@@ -601,6 +697,38 @@ func (o *VerifySelfieBvnResponseEntity) HasResidentialAddress() bool {
 // SetResidentialAddress gets a reference to the given string and assigns it to the ResidentialAddress field.
 func (o *VerifySelfieBvnResponseEntity) SetResidentialAddress(v string) {
 	o.ResidentialAddress = &v
+}
+
+// GetSelfieVerification returns the SelfieVerification field value if set, zero value otherwise.
+func (o *VerifySelfieBvnResponseEntity) GetSelfieVerification() VerifySelfieBvnResponseEntitySelfieVerification {
+	if o == nil || isNil(o.SelfieVerification) {
+		var ret VerifySelfieBvnResponseEntitySelfieVerification
+		return ret
+	}
+	return *o.SelfieVerification
+}
+
+// GetSelfieVerificationOk returns a tuple with the SelfieVerification field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VerifySelfieBvnResponseEntity) GetSelfieVerificationOk() (*VerifySelfieBvnResponseEntitySelfieVerification, bool) {
+	if o == nil || isNil(o.SelfieVerification) {
+    return nil, false
+	}
+	return o.SelfieVerification, true
+}
+
+// HasSelfieVerification returns a boolean if a field has been set.
+func (o *VerifySelfieBvnResponseEntity) HasSelfieVerification() bool {
+	if o != nil && !isNil(o.SelfieVerification) {
+		return true
+	}
+
+	return false
+}
+
+// SetSelfieVerification gets a reference to the given VerifySelfieBvnResponseEntitySelfieVerification and assigns it to the SelfieVerification field.
+func (o *VerifySelfieBvnResponseEntity) SetSelfieVerification(v VerifySelfieBvnResponseEntitySelfieVerification) {
+	o.SelfieVerification = &v
 }
 
 // GetStateOfOrigin returns the StateOfOrigin field value if set, zero value otherwise.
@@ -699,159 +827,16 @@ func (o *VerifySelfieBvnResponseEntity) SetWatchListed(v string) {
 	o.WatchListed = &v
 }
 
-// GetLevelOfAccount returns the LevelOfAccount field value if set, zero value otherwise.
-func (o *VerifySelfieBvnResponseEntity) GetLevelOfAccount() string {
-	if o == nil || isNil(o.LevelOfAccount) {
-		var ret string
-		return ret
-	}
-	return *o.LevelOfAccount
-}
-
-// GetLevelOfAccountOk returns a tuple with the LevelOfAccount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VerifySelfieBvnResponseEntity) GetLevelOfAccountOk() (*string, bool) {
-	if o == nil || isNil(o.LevelOfAccount) {
-    return nil, false
-	}
-	return o.LevelOfAccount, true
-}
-
-// HasLevelOfAccount returns a boolean if a field has been set.
-func (o *VerifySelfieBvnResponseEntity) HasLevelOfAccount() bool {
-	if o != nil && !isNil(o.LevelOfAccount) {
-		return true
-	}
-
-	return false
-}
-
-// SetLevelOfAccount gets a reference to the given string and assigns it to the LevelOfAccount field.
-func (o *VerifySelfieBvnResponseEntity) SetLevelOfAccount(v string) {
-	o.LevelOfAccount = &v
-}
-
-// GetRegistrationDate returns the RegistrationDate field value if set, zero value otherwise.
-func (o *VerifySelfieBvnResponseEntity) GetRegistrationDate() string {
-	if o == nil || isNil(o.RegistrationDate) {
-		var ret string
-		return ret
-	}
-	return *o.RegistrationDate
-}
-
-// GetRegistrationDateOk returns a tuple with the RegistrationDate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VerifySelfieBvnResponseEntity) GetRegistrationDateOk() (*string, bool) {
-	if o == nil || isNil(o.RegistrationDate) {
-    return nil, false
-	}
-	return o.RegistrationDate, true
-}
-
-// HasRegistrationDate returns a boolean if a field has been set.
-func (o *VerifySelfieBvnResponseEntity) HasRegistrationDate() bool {
-	if o != nil && !isNil(o.RegistrationDate) {
-		return true
-	}
-
-	return false
-}
-
-// SetRegistrationDate gets a reference to the given string and assigns it to the RegistrationDate field.
-func (o *VerifySelfieBvnResponseEntity) SetRegistrationDate(v string) {
-	o.RegistrationDate = &v
-}
-
-// GetImage returns the Image field value if set, zero value otherwise.
-func (o *VerifySelfieBvnResponseEntity) GetImage() string {
-	if o == nil || isNil(o.Image) {
-		var ret string
-		return ret
-	}
-	return *o.Image
-}
-
-// GetImageOk returns a tuple with the Image field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VerifySelfieBvnResponseEntity) GetImageOk() (*string, bool) {
-	if o == nil || isNil(o.Image) {
-    return nil, false
-	}
-	return o.Image, true
-}
-
-// HasImage returns a boolean if a field has been set.
-func (o *VerifySelfieBvnResponseEntity) HasImage() bool {
-	if o != nil && !isNil(o.Image) {
-		return true
-	}
-
-	return false
-}
-
-// SetImage gets a reference to the given string and assigns it to the Image field.
-func (o *VerifySelfieBvnResponseEntity) SetImage(v string) {
-	o.Image = &v
-}
-
-// GetSelfieVerification returns the SelfieVerification field value if set, zero value otherwise.
-func (o *VerifySelfieBvnResponseEntity) GetSelfieVerification() VerifySelfieBvnResponseEntitySelfieVerification {
-	if o == nil || isNil(o.SelfieVerification) {
-		var ret VerifySelfieBvnResponseEntitySelfieVerification
-		return ret
-	}
-	return *o.SelfieVerification
-}
-
-// GetSelfieVerificationOk returns a tuple with the SelfieVerification field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VerifySelfieBvnResponseEntity) GetSelfieVerificationOk() (*VerifySelfieBvnResponseEntitySelfieVerification, bool) {
-	if o == nil || isNil(o.SelfieVerification) {
-    return nil, false
-	}
-	return o.SelfieVerification, true
-}
-
-// HasSelfieVerification returns a boolean if a field has been set.
-func (o *VerifySelfieBvnResponseEntity) HasSelfieVerification() bool {
-	if o != nil && !isNil(o.SelfieVerification) {
-		return true
-	}
-
-	return false
-}
-
-// SetSelfieVerification gets a reference to the given VerifySelfieBvnResponseEntitySelfieVerification and assigns it to the SelfieVerification field.
-func (o *VerifySelfieBvnResponseEntity) SetSelfieVerification(v VerifySelfieBvnResponseEntitySelfieVerification) {
-	o.SelfieVerification = &v
-}
-
 func (o VerifySelfieBvnResponseEntity) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Bvn) {
 		toSerialize["bvn"] = o.Bvn
 	}
-	if !isNil(o.FirstName) {
-		toSerialize["first_name"] = o.FirstName
-	}
-	if !isNil(o.MiddleName) {
-		toSerialize["middle_name"] = o.MiddleName
-	}
-	if !isNil(o.LastName) {
-		toSerialize["last_name"] = o.LastName
-	}
 	if !isNil(o.DateOfBirth) {
 		toSerialize["date_of_birth"] = o.DateOfBirth
 	}
-	if !isNil(o.PhoneNumber1) {
-		toSerialize["phone_number1"] = o.PhoneNumber1
-	}
-	if !isNil(o.PhoneNumber2) {
-		toSerialize["phone_number2"] = o.PhoneNumber2
-	}
-	if !isNil(o.Gender) {
-		toSerialize["gender"] = o.Gender
+	if !isNil(o.Email) {
+		toSerialize["email"] = o.Email
 	}
 	if !isNil(o.EnrollmentBank) {
 		toSerialize["enrollment_bank"] = o.EnrollmentBank
@@ -859,8 +844,20 @@ func (o VerifySelfieBvnResponseEntity) MarshalJSON() ([]byte, error) {
 	if !isNil(o.EnrollmentBranch) {
 		toSerialize["enrollment_branch"] = o.EnrollmentBranch
 	}
-	if !isNil(o.Email) {
-		toSerialize["email"] = o.Email
+	if !isNil(o.FirstName) {
+		toSerialize["first_name"] = o.FirstName
+	}
+	if !isNil(o.Gender) {
+		toSerialize["gender"] = o.Gender
+	}
+	if !isNil(o.Image) {
+		toSerialize["image"] = o.Image
+	}
+	if !isNil(o.LastName) {
+		toSerialize["last_name"] = o.LastName
+	}
+	if !isNil(o.LevelOfAccount) {
+		toSerialize["level_of_account"] = o.LevelOfAccount
 	}
 	if !isNil(o.LgaOfOrigin) {
 		toSerialize["lga_of_origin"] = o.LgaOfOrigin
@@ -871,14 +868,29 @@ func (o VerifySelfieBvnResponseEntity) MarshalJSON() ([]byte, error) {
 	if !isNil(o.MaritalStatus) {
 		toSerialize["marital_status"] = o.MaritalStatus
 	}
-	if !isNil(o.Nin) {
-		toSerialize["nin"] = o.Nin
+	if !isNil(o.MiddleName) {
+		toSerialize["middle_name"] = o.MiddleName
 	}
 	if !isNil(o.NameOnCard) {
 		toSerialize["name_on_card"] = o.NameOnCard
 	}
+	if !isNil(o.Nin) {
+		toSerialize["nin"] = o.Nin
+	}
+	if !isNil(o.PhoneNumber1) {
+		toSerialize["phone_number1"] = o.PhoneNumber1
+	}
+	if !isNil(o.PhoneNumber2) {
+		toSerialize["phone_number2"] = o.PhoneNumber2
+	}
+	if !isNil(o.RegistrationDate) {
+		toSerialize["registration_date"] = o.RegistrationDate
+	}
 	if !isNil(o.ResidentialAddress) {
 		toSerialize["residential_address"] = o.ResidentialAddress
+	}
+	if !isNil(o.SelfieVerification) {
+		toSerialize["selfie_verification"] = o.SelfieVerification
 	}
 	if !isNil(o.StateOfOrigin) {
 		toSerialize["state_of_origin"] = o.StateOfOrigin
@@ -888,18 +900,6 @@ func (o VerifySelfieBvnResponseEntity) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.WatchListed) {
 		toSerialize["watch_listed"] = o.WatchListed
-	}
-	if !isNil(o.LevelOfAccount) {
-		toSerialize["level_of_account"] = o.LevelOfAccount
-	}
-	if !isNil(o.RegistrationDate) {
-		toSerialize["registration_date"] = o.RegistrationDate
-	}
-	if !isNil(o.Image) {
-		toSerialize["image"] = o.Image
-	}
-	if !isNil(o.SelfieVerification) {
-		toSerialize["selfie_verification"] = o.SelfieVerification
 	}
 	return json.Marshal(toSerialize)
 }

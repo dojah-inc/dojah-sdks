@@ -32,10 +32,10 @@ import { AnalyzeDocumentResponseEntityTextDataInner } from './analyze-document-r
 export interface AnalyzeDocumentResponseEntity {
     /**
      * 
-     * @type {AnalyzeDocumentResponseEntityStatus}
+     * @type {AnalyzeDocumentResponseEntityDocumentImages}
      * @memberof AnalyzeDocumentResponseEntity
      */
-    'status'?: AnalyzeDocumentResponseEntityStatus;
+    'document_images'?: AnalyzeDocumentResponseEntityDocumentImages;
     /**
      * 
      * @type {AnalyzeDocumentResponseEntityDocumentType}
@@ -44,10 +44,10 @@ export interface AnalyzeDocumentResponseEntity {
     'document_type'?: AnalyzeDocumentResponseEntityDocumentType;
     /**
      * 
-     * @type {AnalyzeDocumentResponseEntityDocumentImages}
+     * @type {AnalyzeDocumentResponseEntityStatus}
      * @memberof AnalyzeDocumentResponseEntity
      */
-    'document_images'?: AnalyzeDocumentResponseEntityDocumentImages;
+    'status'?: AnalyzeDocumentResponseEntityStatus;
     /**
      * 
      * @type {Array<AnalyzeDocumentResponseEntityTextDataInner>}

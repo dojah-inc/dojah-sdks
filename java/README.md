@@ -122,8 +122,11 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: apikeyAuth
+    configuration.Authorization  = "YOUR API KEY";
+
     // Configure API key authorization: appIdAuth
-    configuration.Appid  = "YOUR API KEY";
+    configuration.AppId  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     String profileId = "WC7117469";
@@ -374,17 +377,15 @@ Class | Method | HTTP request | Description
 Authentication schemes defined for the API:
 ### apikeyAuth
 
-- **Type**: HTTP basic authentication
+- **Type**: API key
+- **API key parameter name**: Authorization
+- **Location**: HTTP header
 
 ### appIdAuth
 
 - **Type**: API key
-- **API key parameter name**: Appid
+- **API key parameter name**: AppId
 - **Location**: HTTP header
-
-### noauthAuth
-
-- **Type**: HTTP basic authentication
 
 
 ## Recommendation

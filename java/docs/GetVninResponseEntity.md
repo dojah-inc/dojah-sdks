@@ -7,15 +7,15 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**vnin** | **String** |  |  [optional] |
+|**dateOfBirth** | **String** |  |  [optional] |
 |**firstname** | **String** |  |  [optional] |
+|**gender** | **String** |  |  [optional] |
 |**middlename** | **String** |  |  [optional] |
+|**mobile** | **String** |  |  [optional] |
+|**photo** | **String** |  |  [optional] |
 |**surname** | **String** |  |  [optional] |
 |**userId** | **String** |  |  [optional] |
-|**gender** | **String** |  |  [optional] |
-|**mobile** | **String** |  |  [optional] |
-|**dateOfBirth** | **String** |  |  [optional] |
-|**photo** | **String** |  |  [optional] |
+|**vnin** | **String** |  |  [optional] |
 
 
 

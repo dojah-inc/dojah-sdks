@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Vnin** | Pointer to **string** |  | [optional] 
+**DateOfBirth** | Pointer to **string** |  | [optional] 
 **Firstname** | Pointer to **string** |  | [optional] 
+**Gender** | Pointer to **string** |  | [optional] 
 **Middlename** | Pointer to **string** |  | [optional] 
+**Mobile** | Pointer to **string** |  | [optional] 
+**Photo** | Pointer to **string** |  | [optional] 
 **Surname** | Pointer to **string** |  | [optional] 
 **UserId** | Pointer to **string** |  | [optional] 
-**Gender** | Pointer to **string** |  | [optional] 
-**Mobile** | Pointer to **string** |  | [optional] 
-**DateOfBirth** | Pointer to **string** |  | [optional] 
-**Photo** | Pointer to **string** |  | [optional] 
+**Vnin** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -33,30 +33,30 @@ NewGetVninResponseEntityWithDefaults instantiates a new GetVninResponseEntity ob
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetVnin
+### GetDateOfBirth
 
-`func (o *GetVninResponseEntity) GetVnin() string`
+`func (o *GetVninResponseEntity) GetDateOfBirth() string`
 
-GetVnin returns the Vnin field if non-nil, zero value otherwise.
+GetDateOfBirth returns the DateOfBirth field if non-nil, zero value otherwise.
 
-### GetVninOk
+### GetDateOfBirthOk
 
-`func (o *GetVninResponseEntity) GetVninOk() (*string, bool)`
+`func (o *GetVninResponseEntity) GetDateOfBirthOk() (*string, bool)`
 
-GetVninOk returns a tuple with the Vnin field if it's non-nil, zero value otherwise
+GetDateOfBirthOk returns a tuple with the DateOfBirth field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVnin
+### SetDateOfBirth
 
-`func (o *GetVninResponseEntity) SetVnin(v string)`
+`func (o *GetVninResponseEntity) SetDateOfBirth(v string)`
 
-SetVnin sets Vnin field to given value.
+SetDateOfBirth sets DateOfBirth field to given value.
 
-### HasVnin
+### HasDateOfBirth
 
-`func (o *GetVninResponseEntity) HasVnin() bool`
+`func (o *GetVninResponseEntity) HasDateOfBirth() bool`
 
-HasVnin returns a boolean if a field has been set.
+HasDateOfBirth returns a boolean if a field has been set.
 
 ### GetFirstname
 
@@ -83,6 +83,31 @@ SetFirstname sets Firstname field to given value.
 
 HasFirstname returns a boolean if a field has been set.
 
+### GetGender
+
+`func (o *GetVninResponseEntity) GetGender() string`
+
+GetGender returns the Gender field if non-nil, zero value otherwise.
+
+### GetGenderOk
+
+`func (o *GetVninResponseEntity) GetGenderOk() (*string, bool)`
+
+GetGenderOk returns a tuple with the Gender field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGender
+
+`func (o *GetVninResponseEntity) SetGender(v string)`
+
+SetGender sets Gender field to given value.
+
+### HasGender
+
+`func (o *GetVninResponseEntity) HasGender() bool`
+
+HasGender returns a boolean if a field has been set.
+
 ### GetMiddlename
 
 `func (o *GetVninResponseEntity) GetMiddlename() string`
@@ -107,6 +132,56 @@ SetMiddlename sets Middlename field to given value.
 `func (o *GetVninResponseEntity) HasMiddlename() bool`
 
 HasMiddlename returns a boolean if a field has been set.
+
+### GetMobile
+
+`func (o *GetVninResponseEntity) GetMobile() string`
+
+GetMobile returns the Mobile field if non-nil, zero value otherwise.
+
+### GetMobileOk
+
+`func (o *GetVninResponseEntity) GetMobileOk() (*string, bool)`
+
+GetMobileOk returns a tuple with the Mobile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMobile
+
+`func (o *GetVninResponseEntity) SetMobile(v string)`
+
+SetMobile sets Mobile field to given value.
+
+### HasMobile
+
+`func (o *GetVninResponseEntity) HasMobile() bool`
+
+HasMobile returns a boolean if a field has been set.
+
+### GetPhoto
+
+`func (o *GetVninResponseEntity) GetPhoto() string`
+
+GetPhoto returns the Photo field if non-nil, zero value otherwise.
+
+### GetPhotoOk
+
+`func (o *GetVninResponseEntity) GetPhotoOk() (*string, bool)`
+
+GetPhotoOk returns a tuple with the Photo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPhoto
+
+`func (o *GetVninResponseEntity) SetPhoto(v string)`
+
+SetPhoto sets Photo field to given value.
+
+### HasPhoto
+
+`func (o *GetVninResponseEntity) HasPhoto() bool`
+
+HasPhoto returns a boolean if a field has been set.
 
 ### GetSurname
 
@@ -158,105 +233,30 @@ SetUserId sets UserId field to given value.
 
 HasUserId returns a boolean if a field has been set.
 
-### GetGender
+### GetVnin
 
-`func (o *GetVninResponseEntity) GetGender() string`
+`func (o *GetVninResponseEntity) GetVnin() string`
 
-GetGender returns the Gender field if non-nil, zero value otherwise.
+GetVnin returns the Vnin field if non-nil, zero value otherwise.
 
-### GetGenderOk
+### GetVninOk
 
-`func (o *GetVninResponseEntity) GetGenderOk() (*string, bool)`
+`func (o *GetVninResponseEntity) GetVninOk() (*string, bool)`
 
-GetGenderOk returns a tuple with the Gender field if it's non-nil, zero value otherwise
+GetVninOk returns a tuple with the Vnin field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetGender
+### SetVnin
 
-`func (o *GetVninResponseEntity) SetGender(v string)`
+`func (o *GetVninResponseEntity) SetVnin(v string)`
 
-SetGender sets Gender field to given value.
+SetVnin sets Vnin field to given value.
 
-### HasGender
+### HasVnin
 
-`func (o *GetVninResponseEntity) HasGender() bool`
+`func (o *GetVninResponseEntity) HasVnin() bool`
 
-HasGender returns a boolean if a field has been set.
-
-### GetMobile
-
-`func (o *GetVninResponseEntity) GetMobile() string`
-
-GetMobile returns the Mobile field if non-nil, zero value otherwise.
-
-### GetMobileOk
-
-`func (o *GetVninResponseEntity) GetMobileOk() (*string, bool)`
-
-GetMobileOk returns a tuple with the Mobile field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMobile
-
-`func (o *GetVninResponseEntity) SetMobile(v string)`
-
-SetMobile sets Mobile field to given value.
-
-### HasMobile
-
-`func (o *GetVninResponseEntity) HasMobile() bool`
-
-HasMobile returns a boolean if a field has been set.
-
-### GetDateOfBirth
-
-`func (o *GetVninResponseEntity) GetDateOfBirth() string`
-
-GetDateOfBirth returns the DateOfBirth field if non-nil, zero value otherwise.
-
-### GetDateOfBirthOk
-
-`func (o *GetVninResponseEntity) GetDateOfBirthOk() (*string, bool)`
-
-GetDateOfBirthOk returns a tuple with the DateOfBirth field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateOfBirth
-
-`func (o *GetVninResponseEntity) SetDateOfBirth(v string)`
-
-SetDateOfBirth sets DateOfBirth field to given value.
-
-### HasDateOfBirth
-
-`func (o *GetVninResponseEntity) HasDateOfBirth() bool`
-
-HasDateOfBirth returns a boolean if a field has been set.
-
-### GetPhoto
-
-`func (o *GetVninResponseEntity) GetPhoto() string`
-
-GetPhoto returns the Photo field if non-nil, zero value otherwise.
-
-### GetPhotoOk
-
-`func (o *GetVninResponseEntity) GetPhotoOk() (*string, bool)`
-
-GetPhotoOk returns a tuple with the Photo field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPhoto
-
-`func (o *GetVninResponseEntity) SetPhoto(v string)`
-
-SetPhoto sets Photo field to given value.
-
-### HasPhoto
-
-`func (o *GetVninResponseEntity) HasPhoto() bool`
-
-HasPhoto returns a boolean if a field has been set.
+HasVnin returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

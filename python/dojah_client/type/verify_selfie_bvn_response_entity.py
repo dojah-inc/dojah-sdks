@@ -22,25 +22,23 @@ class RequiredVerifySelfieBvnResponseEntity(TypedDict):
 class OptionalVerifySelfieBvnResponseEntity(TypedDict, total=False):
     bvn: str
 
-    first_name: str
-
-    middle_name: str
-
-    last_name: str
-
     date_of_birth: str
 
-    phone_number1: str
-
-    phone_number2: str
-
-    gender: str
+    email: str
 
     enrollment_bank: str
 
     enrollment_branch: str
 
-    email: str
+    first_name: str
+
+    gender: str
+
+    image: str
+
+    last_name: str
+
+    level_of_account: str
 
     lga_of_origin: str
 
@@ -48,25 +46,27 @@ class OptionalVerifySelfieBvnResponseEntity(TypedDict, total=False):
 
     marital_status: str
 
-    nin: str
+    middle_name: str
 
     name_on_card: str
 
+    nin: str
+
+    phone_number1: str
+
+    phone_number2: str
+
+    registration_date: str
+
     residential_address: str
+
+    selfie_verification: VerifySelfieBvnResponseEntitySelfieVerification
 
     state_of_origin: str
 
     state_of_residence: str
 
     watch_listed: str
-
-    level_of_account: str
-
-    registration_date: str
-
-    image: str
-
-    selfie_verification: VerifySelfieBvnResponseEntitySelfieVerification
 
 class VerifySelfieBvnResponseEntity(RequiredVerifySelfieBvnResponseEntity, OptionalVerifySelfieBvnResponseEntity):
     pass

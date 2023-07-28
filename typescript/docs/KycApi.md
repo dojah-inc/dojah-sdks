@@ -26,7 +26,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const checkLivenessResponse = await dojah.kyc.checkLiveness({
@@ -76,7 +77,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const getAccountsResponse = await dojah.kyc.getAccounts({});
@@ -123,7 +125,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const getAddressVerificationResponse = await dojah.kyc.getAddressVerification(
@@ -172,7 +175,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const getBvnFromNubanResponse = await dojah.kyc.getBvnFromNuban({});
@@ -220,7 +224,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const getVinResponse = await dojah.kyc.getVin({});
@@ -267,7 +272,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const submitAddressResponse = await dojah.kyc.submitAddress({

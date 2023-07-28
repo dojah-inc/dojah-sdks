@@ -16,9 +16,9 @@ import (
 
 // AnalyzeDocumentResponseEntityDocumentType struct for AnalyzeDocumentResponseEntityDocumentType
 type AnalyzeDocumentResponseEntityDocumentType struct {
-	DocumentName *string `json:"document_name,omitempty"`
-	DocumentCountryName *string `json:"document_country_name,omitempty"`
 	DocumentCountryCode *string `json:"document_country_code,omitempty"`
+	DocumentCountryName *string `json:"document_country_name,omitempty"`
+	DocumentName *string `json:"document_name,omitempty"`
 	DocumentTypeId *float32 `json:"document_type_id,omitempty"`
 	DocumentYear *string `json:"document_year,omitempty"`
 }
@@ -40,36 +40,36 @@ func NewAnalyzeDocumentResponseEntityDocumentTypeWithDefaults() *AnalyzeDocument
 	return &this
 }
 
-// GetDocumentName returns the DocumentName field value if set, zero value otherwise.
-func (o *AnalyzeDocumentResponseEntityDocumentType) GetDocumentName() string {
-	if o == nil || isNil(o.DocumentName) {
+// GetDocumentCountryCode returns the DocumentCountryCode field value if set, zero value otherwise.
+func (o *AnalyzeDocumentResponseEntityDocumentType) GetDocumentCountryCode() string {
+	if o == nil || isNil(o.DocumentCountryCode) {
 		var ret string
 		return ret
 	}
-	return *o.DocumentName
+	return *o.DocumentCountryCode
 }
 
-// GetDocumentNameOk returns a tuple with the DocumentName field value if set, nil otherwise
+// GetDocumentCountryCodeOk returns a tuple with the DocumentCountryCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AnalyzeDocumentResponseEntityDocumentType) GetDocumentNameOk() (*string, bool) {
-	if o == nil || isNil(o.DocumentName) {
+func (o *AnalyzeDocumentResponseEntityDocumentType) GetDocumentCountryCodeOk() (*string, bool) {
+	if o == nil || isNil(o.DocumentCountryCode) {
     return nil, false
 	}
-	return o.DocumentName, true
+	return o.DocumentCountryCode, true
 }
 
-// HasDocumentName returns a boolean if a field has been set.
-func (o *AnalyzeDocumentResponseEntityDocumentType) HasDocumentName() bool {
-	if o != nil && !isNil(o.DocumentName) {
+// HasDocumentCountryCode returns a boolean if a field has been set.
+func (o *AnalyzeDocumentResponseEntityDocumentType) HasDocumentCountryCode() bool {
+	if o != nil && !isNil(o.DocumentCountryCode) {
 		return true
 	}
 
 	return false
 }
 
-// SetDocumentName gets a reference to the given string and assigns it to the DocumentName field.
-func (o *AnalyzeDocumentResponseEntityDocumentType) SetDocumentName(v string) {
-	o.DocumentName = &v
+// SetDocumentCountryCode gets a reference to the given string and assigns it to the DocumentCountryCode field.
+func (o *AnalyzeDocumentResponseEntityDocumentType) SetDocumentCountryCode(v string) {
+	o.DocumentCountryCode = &v
 }
 
 // GetDocumentCountryName returns the DocumentCountryName field value if set, zero value otherwise.
@@ -104,36 +104,36 @@ func (o *AnalyzeDocumentResponseEntityDocumentType) SetDocumentCountryName(v str
 	o.DocumentCountryName = &v
 }
 
-// GetDocumentCountryCode returns the DocumentCountryCode field value if set, zero value otherwise.
-func (o *AnalyzeDocumentResponseEntityDocumentType) GetDocumentCountryCode() string {
-	if o == nil || isNil(o.DocumentCountryCode) {
+// GetDocumentName returns the DocumentName field value if set, zero value otherwise.
+func (o *AnalyzeDocumentResponseEntityDocumentType) GetDocumentName() string {
+	if o == nil || isNil(o.DocumentName) {
 		var ret string
 		return ret
 	}
-	return *o.DocumentCountryCode
+	return *o.DocumentName
 }
 
-// GetDocumentCountryCodeOk returns a tuple with the DocumentCountryCode field value if set, nil otherwise
+// GetDocumentNameOk returns a tuple with the DocumentName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AnalyzeDocumentResponseEntityDocumentType) GetDocumentCountryCodeOk() (*string, bool) {
-	if o == nil || isNil(o.DocumentCountryCode) {
+func (o *AnalyzeDocumentResponseEntityDocumentType) GetDocumentNameOk() (*string, bool) {
+	if o == nil || isNil(o.DocumentName) {
     return nil, false
 	}
-	return o.DocumentCountryCode, true
+	return o.DocumentName, true
 }
 
-// HasDocumentCountryCode returns a boolean if a field has been set.
-func (o *AnalyzeDocumentResponseEntityDocumentType) HasDocumentCountryCode() bool {
-	if o != nil && !isNil(o.DocumentCountryCode) {
+// HasDocumentName returns a boolean if a field has been set.
+func (o *AnalyzeDocumentResponseEntityDocumentType) HasDocumentName() bool {
+	if o != nil && !isNil(o.DocumentName) {
 		return true
 	}
 
 	return false
 }
 
-// SetDocumentCountryCode gets a reference to the given string and assigns it to the DocumentCountryCode field.
-func (o *AnalyzeDocumentResponseEntityDocumentType) SetDocumentCountryCode(v string) {
-	o.DocumentCountryCode = &v
+// SetDocumentName gets a reference to the given string and assigns it to the DocumentName field.
+func (o *AnalyzeDocumentResponseEntityDocumentType) SetDocumentName(v string) {
+	o.DocumentName = &v
 }
 
 // GetDocumentTypeId returns the DocumentTypeId field value if set, zero value otherwise.
@@ -202,14 +202,14 @@ func (o *AnalyzeDocumentResponseEntityDocumentType) SetDocumentYear(v string) {
 
 func (o AnalyzeDocumentResponseEntityDocumentType) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DocumentName) {
-		toSerialize["document_name"] = o.DocumentName
+	if !isNil(o.DocumentCountryCode) {
+		toSerialize["document_country_code"] = o.DocumentCountryCode
 	}
 	if !isNil(o.DocumentCountryName) {
 		toSerialize["document_country_name"] = o.DocumentCountryName
 	}
-	if !isNil(o.DocumentCountryCode) {
-		toSerialize["document_country_code"] = o.DocumentCountryCode
+	if !isNil(o.DocumentName) {
+		toSerialize["document_name"] = o.DocumentName
 	}
 	if !isNil(o.DocumentTypeId) {
 		toSerialize["document_type_id"] = o.DocumentTypeId

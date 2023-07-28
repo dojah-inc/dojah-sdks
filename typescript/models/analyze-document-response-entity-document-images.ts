@@ -23,7 +23,7 @@ export interface AnalyzeDocumentResponseEntityDocumentImages {
      * @type {string}
      * @memberof AnalyzeDocumentResponseEntityDocumentImages
      */
-    'Portrait'?: string;
+    'Document front side'?: string;
     /**
      * 
      * @type {string}
@@ -35,6 +35,6 @@ export interface AnalyzeDocumentResponseEntityDocumentImages {
      * @type {string}
      * @memberof AnalyzeDocumentResponseEntityDocumentImages
      */
-    'Document front side'?: string;
+    'Portrait'?: string;
 }
 

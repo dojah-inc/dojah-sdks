@@ -72,6 +72,7 @@ request_query_surname = api_client.QueryParameter(
     explode=True,
 )
 _auth = [
+    'apikeyAuth',
     'appIdAuth',
 ]
 SchemaFor200ResponseBodyApplicationJson = GetKycPassportResponseSchema

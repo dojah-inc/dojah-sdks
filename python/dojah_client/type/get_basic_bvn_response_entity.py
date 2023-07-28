@@ -19,17 +19,17 @@ class RequiredGetBasicBvnResponseEntity(TypedDict):
     pass
 
 class OptionalGetBasicBvnResponseEntity(TypedDict, total=False):
-    first_name: str
-
-    last_name: str
+    bvn: str
 
     dob: str
 
+    first_name: str
+
     formatted_dob: str
 
-    mobile: str
+    last_name: str
 
-    bvn: str
+    mobile: str
 
 class GetBasicBvnResponseEntity(RequiredGetBasicBvnResponseEntity, OptionalGetBasicBvnResponseEntity):
     pass

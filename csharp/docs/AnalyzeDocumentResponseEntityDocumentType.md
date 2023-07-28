@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DocumentName** | **string** |  | [optional] 
-**DocumentCountryName** | **string** |  | [optional] 
 **DocumentCountryCode** | **string** |  | [optional] 
+**DocumentCountryName** | **string** |  | [optional] 
+**DocumentName** | **string** |  | [optional] 
 **DocumentTypeId** | **decimal** |  | [optional] 
 **DocumentYear** | **string** |  | [optional] 
 

@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiGetWalletBalanceRequest st
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

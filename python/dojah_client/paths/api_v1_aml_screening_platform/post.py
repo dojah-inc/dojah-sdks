@@ -51,6 +51,7 @@ request_body_aml_screen_aml_request = api_client.RequestBody(
     required=True,
 )
 _auth = [
+    'apikeyAuth',
     'appIdAuth',
 ]
 AccessControlAllowOriginSchema = schemas.StrSchema

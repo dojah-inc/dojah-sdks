@@ -58,9 +58,9 @@ namespace Dojah.Net.Model
         /// <param name="residentialAddress">residentialAddress.</param>
         /// <param name="stateOfOrigin">stateOfOrigin.</param>
         /// <param name="stateOfResidence">stateOfResidence.</param>
-        /// <param name="watchListed">watchListed.</param>
         /// <param name="status">status.</param>
-        public GetPremiumBvnResponseEntity(string title = default(string), string bvn = default(string), string dateOfBirth = default(string), string email = default(string), string enrollmentBank = default(string), string enrollmentBranch = default(string), string firstName = default(string), string gender = default(string), string image = default(string), string lastName = default(string), string levelOfAccount = default(string), string lgaOfOrigin = default(string), string lgaOfResidence = default(string), string maritalStatus = default(string), string middleName = default(string), string nameOnCard = default(string), string nationality = default(string), string nin = default(string), string phoneNumber1 = default(string), string phoneNumber2 = default(string), string registrationDate = default(string), string residentialAddress = default(string), string stateOfOrigin = default(string), string stateOfResidence = default(string), string watchListed = default(string), decimal status = default(decimal))
+        /// <param name="watchListed">watchListed.</param>
+        public GetPremiumBvnResponseEntity(string title = default(string), string bvn = default(string), string dateOfBirth = default(string), string email = default(string), string enrollmentBank = default(string), string enrollmentBranch = default(string), string firstName = default(string), string gender = default(string), string image = default(string), string lastName = default(string), string levelOfAccount = default(string), string lgaOfOrigin = default(string), string lgaOfResidence = default(string), string maritalStatus = default(string), string middleName = default(string), string nameOnCard = default(string), string nationality = default(string), string nin = default(string), string phoneNumber1 = default(string), string phoneNumber2 = default(string), string registrationDate = default(string), string residentialAddress = default(string), string stateOfOrigin = default(string), string stateOfResidence = default(string), decimal status = default(decimal), string watchListed = default(string))
         {
             this.Title = title;
             this.Bvn = bvn;
@@ -86,8 +86,8 @@ namespace Dojah.Net.Model
             this.ResidentialAddress = residentialAddress;
             this.StateOfOrigin = stateOfOrigin;
             this.StateOfResidence = stateOfResidence;
-            this.WatchListed = watchListed;
             this.Status = status;
+            this.WatchListed = watchListed;
         }
 
         /// <summary>
@@ -235,16 +235,16 @@ namespace Dojah.Net.Model
         public string StateOfResidence { get; set; }
 
         /// <summary>
-        /// Gets or Sets WatchListed
-        /// </summary>
-        [DataMember(Name = "watch_listed", EmitDefaultValue = false)]
-        public string WatchListed { get; set; }
-
-        /// <summary>
         /// Gets or Sets Status
         /// </summary>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public decimal Status { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WatchListed
+        /// </summary>
+        [DataMember(Name = "watch_listed", EmitDefaultValue = false)]
+        public string WatchListed { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -278,8 +278,8 @@ namespace Dojah.Net.Model
             sb.Append("  ResidentialAddress: ").Append(ResidentialAddress).Append("\n");
             sb.Append("  StateOfOrigin: ").Append(StateOfOrigin).Append("\n");
             sb.Append("  StateOfResidence: ").Append(StateOfResidence).Append("\n");
-            sb.Append("  WatchListed: ").Append(WatchListed).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  WatchListed: ").Append(WatchListed).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -436,13 +436,13 @@ namespace Dojah.Net.Model
                     this.StateOfResidence.Equals(input.StateOfResidence))
                 ) && 
                 (
+                    this.Status == input.Status ||
+                    this.Status.Equals(input.Status)
+                ) && 
+                (
                     this.WatchListed == input.WatchListed ||
                     (this.WatchListed != null &&
                     this.WatchListed.Equals(input.WatchListed))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    this.Status.Equals(input.Status)
                 );
         }
 
@@ -551,11 +551,11 @@ namespace Dojah.Net.Model
                 {
                     hashCode = (hashCode * 59) + this.StateOfResidence.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 if (this.WatchListed != null)
                 {
                     hashCode = (hashCode * 59) + this.WatchListed.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 return hashCode;
             }
         }

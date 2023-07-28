@@ -19,11 +19,11 @@ class RequiredAnalyzeDocumentResponseEntityDocumentType(TypedDict):
     pass
 
 class OptionalAnalyzeDocumentResponseEntityDocumentType(TypedDict, total=False):
-    document_name: str
+    document_country_code: str
 
     document_country_name: str
 
-    document_country_code: str
+    document_name: str
 
     document_type_id: typing.Union[int, float]
 

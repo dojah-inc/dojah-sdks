@@ -16,23 +16,23 @@ import (
 
 // GetKycDriversLicenseResponseEntityPersonalDetails struct for GetKycDriversLicenseResponseEntityPersonalDetails
 type GetKycDriversLicenseResponseEntityPersonalDetails struct {
-	Firstname *string `json:"firstname,omitempty"`
-	Othername *string `json:"othername,omitempty"`
-	Surname *string `json:"surname,omitempty"`
-	MotherMaidenName *string `json:"mother_maiden_name,omitempty"`
-	Gender *string `json:"gender,omitempty"`
 	BirthDate *string `json:"birth_date,omitempty"`
 	BloodGroupId *string `json:"blood_group_id,omitempty"`
+	Country *string `json:"country,omitempty"`
+	DisabilityReason *string `json:"disability_reason,omitempty"`
 	FacialMark *string `json:"facial_mark,omitempty"`
+	Firstname *string `json:"firstname,omitempty"`
+	Gender *string `json:"gender,omitempty"`
 	Glasses *string `json:"glasses,omitempty"`
 	Height *string `json:"height,omitempty"`
-	UniversaltaxIdentityNumber *string `json:"universaltax_identity_number,omitempty"`
-	NinNumber *string `json:"nin_number,omitempty"`
-	Country *string `json:"country,omitempty"`
-	State *string `json:"state,omitempty"`
-	Lga *string `json:"lga,omitempty"`
 	IsDisability *string `json:"is_disability,omitempty"`
-	DisabilityReason *string `json:"disability_reason,omitempty"`
+	Lga *string `json:"lga,omitempty"`
+	MotherMaidenName *string `json:"mother_maiden_name,omitempty"`
+	NinNumber *string `json:"nin_number,omitempty"`
+	Othername *string `json:"othername,omitempty"`
+	State *string `json:"state,omitempty"`
+	Surname *string `json:"surname,omitempty"`
+	UniversaltaxIdentityNumber *string `json:"universaltax_identity_number,omitempty"`
 }
 
 // NewGetKycDriversLicenseResponseEntityPersonalDetails instantiates a new GetKycDriversLicenseResponseEntityPersonalDetails object
@@ -50,166 +50,6 @@ func NewGetKycDriversLicenseResponseEntityPersonalDetails() *GetKycDriversLicens
 func NewGetKycDriversLicenseResponseEntityPersonalDetailsWithDefaults() *GetKycDriversLicenseResponseEntityPersonalDetails {
 	this := GetKycDriversLicenseResponseEntityPersonalDetails{}
 	return &this
-}
-
-// GetFirstname returns the Firstname field value if set, zero value otherwise.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetFirstname() string {
-	if o == nil || isNil(o.Firstname) {
-		var ret string
-		return ret
-	}
-	return *o.Firstname
-}
-
-// GetFirstnameOk returns a tuple with the Firstname field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetFirstnameOk() (*string, bool) {
-	if o == nil || isNil(o.Firstname) {
-    return nil, false
-	}
-	return o.Firstname, true
-}
-
-// HasFirstname returns a boolean if a field has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasFirstname() bool {
-	if o != nil && !isNil(o.Firstname) {
-		return true
-	}
-
-	return false
-}
-
-// SetFirstname gets a reference to the given string and assigns it to the Firstname field.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetFirstname(v string) {
-	o.Firstname = &v
-}
-
-// GetOthername returns the Othername field value if set, zero value otherwise.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetOthername() string {
-	if o == nil || isNil(o.Othername) {
-		var ret string
-		return ret
-	}
-	return *o.Othername
-}
-
-// GetOthernameOk returns a tuple with the Othername field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetOthernameOk() (*string, bool) {
-	if o == nil || isNil(o.Othername) {
-    return nil, false
-	}
-	return o.Othername, true
-}
-
-// HasOthername returns a boolean if a field has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasOthername() bool {
-	if o != nil && !isNil(o.Othername) {
-		return true
-	}
-
-	return false
-}
-
-// SetOthername gets a reference to the given string and assigns it to the Othername field.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetOthername(v string) {
-	o.Othername = &v
-}
-
-// GetSurname returns the Surname field value if set, zero value otherwise.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetSurname() string {
-	if o == nil || isNil(o.Surname) {
-		var ret string
-		return ret
-	}
-	return *o.Surname
-}
-
-// GetSurnameOk returns a tuple with the Surname field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetSurnameOk() (*string, bool) {
-	if o == nil || isNil(o.Surname) {
-    return nil, false
-	}
-	return o.Surname, true
-}
-
-// HasSurname returns a boolean if a field has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasSurname() bool {
-	if o != nil && !isNil(o.Surname) {
-		return true
-	}
-
-	return false
-}
-
-// SetSurname gets a reference to the given string and assigns it to the Surname field.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetSurname(v string) {
-	o.Surname = &v
-}
-
-// GetMotherMaidenName returns the MotherMaidenName field value if set, zero value otherwise.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetMotherMaidenName() string {
-	if o == nil || isNil(o.MotherMaidenName) {
-		var ret string
-		return ret
-	}
-	return *o.MotherMaidenName
-}
-
-// GetMotherMaidenNameOk returns a tuple with the MotherMaidenName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetMotherMaidenNameOk() (*string, bool) {
-	if o == nil || isNil(o.MotherMaidenName) {
-    return nil, false
-	}
-	return o.MotherMaidenName, true
-}
-
-// HasMotherMaidenName returns a boolean if a field has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasMotherMaidenName() bool {
-	if o != nil && !isNil(o.MotherMaidenName) {
-		return true
-	}
-
-	return false
-}
-
-// SetMotherMaidenName gets a reference to the given string and assigns it to the MotherMaidenName field.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetMotherMaidenName(v string) {
-	o.MotherMaidenName = &v
-}
-
-// GetGender returns the Gender field value if set, zero value otherwise.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetGender() string {
-	if o == nil || isNil(o.Gender) {
-		var ret string
-		return ret
-	}
-	return *o.Gender
-}
-
-// GetGenderOk returns a tuple with the Gender field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetGenderOk() (*string, bool) {
-	if o == nil || isNil(o.Gender) {
-    return nil, false
-	}
-	return o.Gender, true
-}
-
-// HasGender returns a boolean if a field has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasGender() bool {
-	if o != nil && !isNil(o.Gender) {
-		return true
-	}
-
-	return false
-}
-
-// SetGender gets a reference to the given string and assigns it to the Gender field.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetGender(v string) {
-	o.Gender = &v
 }
 
 // GetBirthDate returns the BirthDate field value if set, zero value otherwise.
@@ -276,6 +116,70 @@ func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetBloodGroupId(v st
 	o.BloodGroupId = &v
 }
 
+// GetCountry returns the Country field value if set, zero value otherwise.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetCountry() string {
+	if o == nil || isNil(o.Country) {
+		var ret string
+		return ret
+	}
+	return *o.Country
+}
+
+// GetCountryOk returns a tuple with the Country field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetCountryOk() (*string, bool) {
+	if o == nil || isNil(o.Country) {
+    return nil, false
+	}
+	return o.Country, true
+}
+
+// HasCountry returns a boolean if a field has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasCountry() bool {
+	if o != nil && !isNil(o.Country) {
+		return true
+	}
+
+	return false
+}
+
+// SetCountry gets a reference to the given string and assigns it to the Country field.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetCountry(v string) {
+	o.Country = &v
+}
+
+// GetDisabilityReason returns the DisabilityReason field value if set, zero value otherwise.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetDisabilityReason() string {
+	if o == nil || isNil(o.DisabilityReason) {
+		var ret string
+		return ret
+	}
+	return *o.DisabilityReason
+}
+
+// GetDisabilityReasonOk returns a tuple with the DisabilityReason field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetDisabilityReasonOk() (*string, bool) {
+	if o == nil || isNil(o.DisabilityReason) {
+    return nil, false
+	}
+	return o.DisabilityReason, true
+}
+
+// HasDisabilityReason returns a boolean if a field has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasDisabilityReason() bool {
+	if o != nil && !isNil(o.DisabilityReason) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisabilityReason gets a reference to the given string and assigns it to the DisabilityReason field.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetDisabilityReason(v string) {
+	o.DisabilityReason = &v
+}
+
 // GetFacialMark returns the FacialMark field value if set, zero value otherwise.
 func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetFacialMark() string {
 	if o == nil || isNil(o.FacialMark) {
@@ -306,6 +210,70 @@ func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasFacialMark() bool
 // SetFacialMark gets a reference to the given string and assigns it to the FacialMark field.
 func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetFacialMark(v string) {
 	o.FacialMark = &v
+}
+
+// GetFirstname returns the Firstname field value if set, zero value otherwise.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetFirstname() string {
+	if o == nil || isNil(o.Firstname) {
+		var ret string
+		return ret
+	}
+	return *o.Firstname
+}
+
+// GetFirstnameOk returns a tuple with the Firstname field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetFirstnameOk() (*string, bool) {
+	if o == nil || isNil(o.Firstname) {
+    return nil, false
+	}
+	return o.Firstname, true
+}
+
+// HasFirstname returns a boolean if a field has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasFirstname() bool {
+	if o != nil && !isNil(o.Firstname) {
+		return true
+	}
+
+	return false
+}
+
+// SetFirstname gets a reference to the given string and assigns it to the Firstname field.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetFirstname(v string) {
+	o.Firstname = &v
+}
+
+// GetGender returns the Gender field value if set, zero value otherwise.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetGender() string {
+	if o == nil || isNil(o.Gender) {
+		var ret string
+		return ret
+	}
+	return *o.Gender
+}
+
+// GetGenderOk returns a tuple with the Gender field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetGenderOk() (*string, bool) {
+	if o == nil || isNil(o.Gender) {
+    return nil, false
+	}
+	return o.Gender, true
+}
+
+// HasGender returns a boolean if a field has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasGender() bool {
+	if o != nil && !isNil(o.Gender) {
+		return true
+	}
+
+	return false
+}
+
+// SetGender gets a reference to the given string and assigns it to the Gender field.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetGender(v string) {
+	o.Gender = &v
 }
 
 // GetGlasses returns the Glasses field value if set, zero value otherwise.
@@ -372,132 +340,36 @@ func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetHeight(v string) 
 	o.Height = &v
 }
 
-// GetUniversaltaxIdentityNumber returns the UniversaltaxIdentityNumber field value if set, zero value otherwise.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetUniversaltaxIdentityNumber() string {
-	if o == nil || isNil(o.UniversaltaxIdentityNumber) {
+// GetIsDisability returns the IsDisability field value if set, zero value otherwise.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetIsDisability() string {
+	if o == nil || isNil(o.IsDisability) {
 		var ret string
 		return ret
 	}
-	return *o.UniversaltaxIdentityNumber
+	return *o.IsDisability
 }
 
-// GetUniversaltaxIdentityNumberOk returns a tuple with the UniversaltaxIdentityNumber field value if set, nil otherwise
+// GetIsDisabilityOk returns a tuple with the IsDisability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetUniversaltaxIdentityNumberOk() (*string, bool) {
-	if o == nil || isNil(o.UniversaltaxIdentityNumber) {
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetIsDisabilityOk() (*string, bool) {
+	if o == nil || isNil(o.IsDisability) {
     return nil, false
 	}
-	return o.UniversaltaxIdentityNumber, true
+	return o.IsDisability, true
 }
 
-// HasUniversaltaxIdentityNumber returns a boolean if a field has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasUniversaltaxIdentityNumber() bool {
-	if o != nil && !isNil(o.UniversaltaxIdentityNumber) {
+// HasIsDisability returns a boolean if a field has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasIsDisability() bool {
+	if o != nil && !isNil(o.IsDisability) {
 		return true
 	}
 
 	return false
 }
 
-// SetUniversaltaxIdentityNumber gets a reference to the given string and assigns it to the UniversaltaxIdentityNumber field.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetUniversaltaxIdentityNumber(v string) {
-	o.UniversaltaxIdentityNumber = &v
-}
-
-// GetNinNumber returns the NinNumber field value if set, zero value otherwise.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetNinNumber() string {
-	if o == nil || isNil(o.NinNumber) {
-		var ret string
-		return ret
-	}
-	return *o.NinNumber
-}
-
-// GetNinNumberOk returns a tuple with the NinNumber field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetNinNumberOk() (*string, bool) {
-	if o == nil || isNil(o.NinNumber) {
-    return nil, false
-	}
-	return o.NinNumber, true
-}
-
-// HasNinNumber returns a boolean if a field has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasNinNumber() bool {
-	if o != nil && !isNil(o.NinNumber) {
-		return true
-	}
-
-	return false
-}
-
-// SetNinNumber gets a reference to the given string and assigns it to the NinNumber field.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetNinNumber(v string) {
-	o.NinNumber = &v
-}
-
-// GetCountry returns the Country field value if set, zero value otherwise.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetCountry() string {
-	if o == nil || isNil(o.Country) {
-		var ret string
-		return ret
-	}
-	return *o.Country
-}
-
-// GetCountryOk returns a tuple with the Country field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetCountryOk() (*string, bool) {
-	if o == nil || isNil(o.Country) {
-    return nil, false
-	}
-	return o.Country, true
-}
-
-// HasCountry returns a boolean if a field has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasCountry() bool {
-	if o != nil && !isNil(o.Country) {
-		return true
-	}
-
-	return false
-}
-
-// SetCountry gets a reference to the given string and assigns it to the Country field.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetCountry(v string) {
-	o.Country = &v
-}
-
-// GetState returns the State field value if set, zero value otherwise.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetState() string {
-	if o == nil || isNil(o.State) {
-		var ret string
-		return ret
-	}
-	return *o.State
-}
-
-// GetStateOk returns a tuple with the State field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetStateOk() (*string, bool) {
-	if o == nil || isNil(o.State) {
-    return nil, false
-	}
-	return o.State, true
-}
-
-// HasState returns a boolean if a field has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasState() bool {
-	if o != nil && !isNil(o.State) {
-		return true
-	}
-
-	return false
-}
-
-// SetState gets a reference to the given string and assigns it to the State field.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetState(v string) {
-	o.State = &v
+// SetIsDisability gets a reference to the given string and assigns it to the IsDisability field.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetIsDisability(v string) {
+	o.IsDisability = &v
 }
 
 // GetLga returns the Lga field value if set, zero value otherwise.
@@ -532,95 +404,220 @@ func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetLga(v string) {
 	o.Lga = &v
 }
 
-// GetIsDisability returns the IsDisability field value if set, zero value otherwise.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetIsDisability() string {
-	if o == nil || isNil(o.IsDisability) {
+// GetMotherMaidenName returns the MotherMaidenName field value if set, zero value otherwise.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetMotherMaidenName() string {
+	if o == nil || isNil(o.MotherMaidenName) {
 		var ret string
 		return ret
 	}
-	return *o.IsDisability
+	return *o.MotherMaidenName
 }
 
-// GetIsDisabilityOk returns a tuple with the IsDisability field value if set, nil otherwise
+// GetMotherMaidenNameOk returns a tuple with the MotherMaidenName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetIsDisabilityOk() (*string, bool) {
-	if o == nil || isNil(o.IsDisability) {
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetMotherMaidenNameOk() (*string, bool) {
+	if o == nil || isNil(o.MotherMaidenName) {
     return nil, false
 	}
-	return o.IsDisability, true
+	return o.MotherMaidenName, true
 }
 
-// HasIsDisability returns a boolean if a field has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasIsDisability() bool {
-	if o != nil && !isNil(o.IsDisability) {
+// HasMotherMaidenName returns a boolean if a field has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasMotherMaidenName() bool {
+	if o != nil && !isNil(o.MotherMaidenName) {
 		return true
 	}
 
 	return false
 }
 
-// SetIsDisability gets a reference to the given string and assigns it to the IsDisability field.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetIsDisability(v string) {
-	o.IsDisability = &v
+// SetMotherMaidenName gets a reference to the given string and assigns it to the MotherMaidenName field.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetMotherMaidenName(v string) {
+	o.MotherMaidenName = &v
 }
 
-// GetDisabilityReason returns the DisabilityReason field value if set, zero value otherwise.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetDisabilityReason() string {
-	if o == nil || isNil(o.DisabilityReason) {
+// GetNinNumber returns the NinNumber field value if set, zero value otherwise.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetNinNumber() string {
+	if o == nil || isNil(o.NinNumber) {
 		var ret string
 		return ret
 	}
-	return *o.DisabilityReason
+	return *o.NinNumber
 }
 
-// GetDisabilityReasonOk returns a tuple with the DisabilityReason field value if set, nil otherwise
+// GetNinNumberOk returns a tuple with the NinNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetDisabilityReasonOk() (*string, bool) {
-	if o == nil || isNil(o.DisabilityReason) {
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetNinNumberOk() (*string, bool) {
+	if o == nil || isNil(o.NinNumber) {
     return nil, false
 	}
-	return o.DisabilityReason, true
+	return o.NinNumber, true
 }
 
-// HasDisabilityReason returns a boolean if a field has been set.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasDisabilityReason() bool {
-	if o != nil && !isNil(o.DisabilityReason) {
+// HasNinNumber returns a boolean if a field has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasNinNumber() bool {
+	if o != nil && !isNil(o.NinNumber) {
 		return true
 	}
 
 	return false
 }
 
-// SetDisabilityReason gets a reference to the given string and assigns it to the DisabilityReason field.
-func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetDisabilityReason(v string) {
-	o.DisabilityReason = &v
+// SetNinNumber gets a reference to the given string and assigns it to the NinNumber field.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetNinNumber(v string) {
+	o.NinNumber = &v
+}
+
+// GetOthername returns the Othername field value if set, zero value otherwise.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetOthername() string {
+	if o == nil || isNil(o.Othername) {
+		var ret string
+		return ret
+	}
+	return *o.Othername
+}
+
+// GetOthernameOk returns a tuple with the Othername field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetOthernameOk() (*string, bool) {
+	if o == nil || isNil(o.Othername) {
+    return nil, false
+	}
+	return o.Othername, true
+}
+
+// HasOthername returns a boolean if a field has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasOthername() bool {
+	if o != nil && !isNil(o.Othername) {
+		return true
+	}
+
+	return false
+}
+
+// SetOthername gets a reference to the given string and assigns it to the Othername field.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetOthername(v string) {
+	o.Othername = &v
+}
+
+// GetState returns the State field value if set, zero value otherwise.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetState() string {
+	if o == nil || isNil(o.State) {
+		var ret string
+		return ret
+	}
+	return *o.State
+}
+
+// GetStateOk returns a tuple with the State field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetStateOk() (*string, bool) {
+	if o == nil || isNil(o.State) {
+    return nil, false
+	}
+	return o.State, true
+}
+
+// HasState returns a boolean if a field has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasState() bool {
+	if o != nil && !isNil(o.State) {
+		return true
+	}
+
+	return false
+}
+
+// SetState gets a reference to the given string and assigns it to the State field.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetState(v string) {
+	o.State = &v
+}
+
+// GetSurname returns the Surname field value if set, zero value otherwise.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetSurname() string {
+	if o == nil || isNil(o.Surname) {
+		var ret string
+		return ret
+	}
+	return *o.Surname
+}
+
+// GetSurnameOk returns a tuple with the Surname field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetSurnameOk() (*string, bool) {
+	if o == nil || isNil(o.Surname) {
+    return nil, false
+	}
+	return o.Surname, true
+}
+
+// HasSurname returns a boolean if a field has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasSurname() bool {
+	if o != nil && !isNil(o.Surname) {
+		return true
+	}
+
+	return false
+}
+
+// SetSurname gets a reference to the given string and assigns it to the Surname field.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetSurname(v string) {
+	o.Surname = &v
+}
+
+// GetUniversaltaxIdentityNumber returns the UniversaltaxIdentityNumber field value if set, zero value otherwise.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetUniversaltaxIdentityNumber() string {
+	if o == nil || isNil(o.UniversaltaxIdentityNumber) {
+		var ret string
+		return ret
+	}
+	return *o.UniversaltaxIdentityNumber
+}
+
+// GetUniversaltaxIdentityNumberOk returns a tuple with the UniversaltaxIdentityNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) GetUniversaltaxIdentityNumberOk() (*string, bool) {
+	if o == nil || isNil(o.UniversaltaxIdentityNumber) {
+    return nil, false
+	}
+	return o.UniversaltaxIdentityNumber, true
+}
+
+// HasUniversaltaxIdentityNumber returns a boolean if a field has been set.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) HasUniversaltaxIdentityNumber() bool {
+	if o != nil && !isNil(o.UniversaltaxIdentityNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetUniversaltaxIdentityNumber gets a reference to the given string and assigns it to the UniversaltaxIdentityNumber field.
+func (o *GetKycDriversLicenseResponseEntityPersonalDetails) SetUniversaltaxIdentityNumber(v string) {
+	o.UniversaltaxIdentityNumber = &v
 }
 
 func (o GetKycDriversLicenseResponseEntityPersonalDetails) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Firstname) {
-		toSerialize["firstname"] = o.Firstname
-	}
-	if !isNil(o.Othername) {
-		toSerialize["othername"] = o.Othername
-	}
-	if !isNil(o.Surname) {
-		toSerialize["surname"] = o.Surname
-	}
-	if !isNil(o.MotherMaidenName) {
-		toSerialize["mother_maiden_name"] = o.MotherMaidenName
-	}
-	if !isNil(o.Gender) {
-		toSerialize["gender"] = o.Gender
-	}
 	if !isNil(o.BirthDate) {
 		toSerialize["birth_date"] = o.BirthDate
 	}
 	if !isNil(o.BloodGroupId) {
 		toSerialize["blood_group_id"] = o.BloodGroupId
 	}
+	if !isNil(o.Country) {
+		toSerialize["country"] = o.Country
+	}
+	if !isNil(o.DisabilityReason) {
+		toSerialize["disability_reason"] = o.DisabilityReason
+	}
 	if !isNil(o.FacialMark) {
 		toSerialize["facial_mark"] = o.FacialMark
+	}
+	if !isNil(o.Firstname) {
+		toSerialize["firstname"] = o.Firstname
+	}
+	if !isNil(o.Gender) {
+		toSerialize["gender"] = o.Gender
 	}
 	if !isNil(o.Glasses) {
 		toSerialize["glasses"] = o.Glasses
@@ -628,26 +625,29 @@ func (o GetKycDriversLicenseResponseEntityPersonalDetails) MarshalJSON() ([]byte
 	if !isNil(o.Height) {
 		toSerialize["height"] = o.Height
 	}
-	if !isNil(o.UniversaltaxIdentityNumber) {
-		toSerialize["universaltax_identity_number"] = o.UniversaltaxIdentityNumber
-	}
-	if !isNil(o.NinNumber) {
-		toSerialize["nin_number"] = o.NinNumber
-	}
-	if !isNil(o.Country) {
-		toSerialize["country"] = o.Country
-	}
-	if !isNil(o.State) {
-		toSerialize["state"] = o.State
+	if !isNil(o.IsDisability) {
+		toSerialize["is_disability"] = o.IsDisability
 	}
 	if !isNil(o.Lga) {
 		toSerialize["lga"] = o.Lga
 	}
-	if !isNil(o.IsDisability) {
-		toSerialize["is_disability"] = o.IsDisability
+	if !isNil(o.MotherMaidenName) {
+		toSerialize["mother_maiden_name"] = o.MotherMaidenName
 	}
-	if !isNil(o.DisabilityReason) {
-		toSerialize["disability_reason"] = o.DisabilityReason
+	if !isNil(o.NinNumber) {
+		toSerialize["nin_number"] = o.NinNumber
+	}
+	if !isNil(o.Othername) {
+		toSerialize["othername"] = o.Othername
+	}
+	if !isNil(o.State) {
+		toSerialize["state"] = o.State
+	}
+	if !isNil(o.Surname) {
+		toSerialize["surname"] = o.Surname
+	}
+	if !isNil(o.UniversaltaxIdentityNumber) {
+		toSerialize["universaltax_identity_number"] = o.UniversaltaxIdentityNumber
 	}
 	return json.Marshal(toSerialize)
 }

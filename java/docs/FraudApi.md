@@ -35,9 +35,11 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
-    // Configure API key authorization: appIdAuth
-    configuration.Appid  = "YOUR API KEY";
+    // Configure API key authorization: apikeyAuth
+    configuration.Authorization  = "YOUR API KEY";
 
+    // Configure API key authorization: appIdAuth
+    configuration.AppId  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     String email = "johndoe@gmail.com";
@@ -95,7 +97,7 @@ public class Example {
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -132,8 +134,11 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: apikeyAuth
+    configuration.Authorization  = "YOUR API KEY";
+
     // Configure API key authorization: appIdAuth
-    configuration.Appid  = "YOUR API KEY";
+    configuration.AppId  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     String ipAddress = "102.215.56.170";
@@ -191,7 +196,7 @@ public class Example {
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -228,8 +233,11 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: apikeyAuth
+    configuration.Authorization  = "YOUR API KEY";
+
     // Configure API key authorization: appIdAuth
-    configuration.Appid  = "YOUR API KEY";
+    configuration.AppId  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     Integer phoneNumber = 2348068810228;
@@ -287,7 +295,7 @@ public class Example {
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -324,8 +332,11 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: apikeyAuth
+    configuration.Authorization  = "YOUR API KEY";
+
     // Configure API key authorization: appIdAuth
-    configuration.Appid  = "YOUR API KEY";
+    configuration.AppId  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     String firstName = "Robert";
@@ -403,7 +414,7 @@ public class Example {
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Status** | Pointer to [**AnalyzeDocumentResponseEntityStatus**](AnalyzeDocumentResponseEntityStatus.md) |  | [optional] 
-**DocumentType** | Pointer to [**AnalyzeDocumentResponseEntityDocumentType**](AnalyzeDocumentResponseEntityDocumentType.md) |  | [optional] 
 **DocumentImages** | Pointer to [**AnalyzeDocumentResponseEntityDocumentImages**](AnalyzeDocumentResponseEntityDocumentImages.md) |  | [optional] 
+**DocumentType** | Pointer to [**AnalyzeDocumentResponseEntityDocumentType**](AnalyzeDocumentResponseEntityDocumentType.md) |  | [optional] 
+**Status** | Pointer to [**AnalyzeDocumentResponseEntityStatus**](AnalyzeDocumentResponseEntityStatus.md) |  | [optional] 
 **TextData** | Pointer to [**[]AnalyzeDocumentResponseEntityTextDataInner**](AnalyzeDocumentResponseEntityTextDataInner.md) |  | [optional] 
 
 ## Methods
@@ -28,30 +28,30 @@ NewAnalyzeDocumentResponseEntityWithDefaults instantiates a new AnalyzeDocumentR
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetStatus
+### GetDocumentImages
 
-`func (o *AnalyzeDocumentResponseEntity) GetStatus() AnalyzeDocumentResponseEntityStatus`
+`func (o *AnalyzeDocumentResponseEntity) GetDocumentImages() AnalyzeDocumentResponseEntityDocumentImages`
 
-GetStatus returns the Status field if non-nil, zero value otherwise.
+GetDocumentImages returns the DocumentImages field if non-nil, zero value otherwise.
 
-### GetStatusOk
+### GetDocumentImagesOk
 
-`func (o *AnalyzeDocumentResponseEntity) GetStatusOk() (*AnalyzeDocumentResponseEntityStatus, bool)`
+`func (o *AnalyzeDocumentResponseEntity) GetDocumentImagesOk() (*AnalyzeDocumentResponseEntityDocumentImages, bool)`
 
-GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+GetDocumentImagesOk returns a tuple with the DocumentImages field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetStatus
+### SetDocumentImages
 
-`func (o *AnalyzeDocumentResponseEntity) SetStatus(v AnalyzeDocumentResponseEntityStatus)`
+`func (o *AnalyzeDocumentResponseEntity) SetDocumentImages(v AnalyzeDocumentResponseEntityDocumentImages)`
 
-SetStatus sets Status field to given value.
+SetDocumentImages sets DocumentImages field to given value.
 
-### HasStatus
+### HasDocumentImages
 
-`func (o *AnalyzeDocumentResponseEntity) HasStatus() bool`
+`func (o *AnalyzeDocumentResponseEntity) HasDocumentImages() bool`
 
-HasStatus returns a boolean if a field has been set.
+HasDocumentImages returns a boolean if a field has been set.
 
 ### GetDocumentType
 
@@ -78,30 +78,30 @@ SetDocumentType sets DocumentType field to given value.
 
 HasDocumentType returns a boolean if a field has been set.
 
-### GetDocumentImages
+### GetStatus
 
-`func (o *AnalyzeDocumentResponseEntity) GetDocumentImages() AnalyzeDocumentResponseEntityDocumentImages`
+`func (o *AnalyzeDocumentResponseEntity) GetStatus() AnalyzeDocumentResponseEntityStatus`
 
-GetDocumentImages returns the DocumentImages field if non-nil, zero value otherwise.
+GetStatus returns the Status field if non-nil, zero value otherwise.
 
-### GetDocumentImagesOk
+### GetStatusOk
 
-`func (o *AnalyzeDocumentResponseEntity) GetDocumentImagesOk() (*AnalyzeDocumentResponseEntityDocumentImages, bool)`
+`func (o *AnalyzeDocumentResponseEntity) GetStatusOk() (*AnalyzeDocumentResponseEntityStatus, bool)`
 
-GetDocumentImagesOk returns a tuple with the DocumentImages field if it's non-nil, zero value otherwise
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDocumentImages
+### SetStatus
 
-`func (o *AnalyzeDocumentResponseEntity) SetDocumentImages(v AnalyzeDocumentResponseEntityDocumentImages)`
+`func (o *AnalyzeDocumentResponseEntity) SetStatus(v AnalyzeDocumentResponseEntityStatus)`
 
-SetDocumentImages sets DocumentImages field to given value.
+SetStatus sets Status field to given value.
 
-### HasDocumentImages
+### HasStatus
 
-`func (o *AnalyzeDocumentResponseEntity) HasDocumentImages() bool`
+`func (o *AnalyzeDocumentResponseEntity) HasStatus() bool`
 
-HasDocumentImages returns a boolean if a field has been set.
+HasStatus returns a boolean if a field has been set.
 
 ### GetTextData
 

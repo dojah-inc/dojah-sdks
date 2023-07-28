@@ -23,11 +23,11 @@ class RequiredAnalyzeDocumentResponseEntity(TypedDict):
     pass
 
 class OptionalAnalyzeDocumentResponseEntity(TypedDict, total=False):
-    status: AnalyzeDocumentResponseEntityStatus
+    document_images: AnalyzeDocumentResponseEntityDocumentImages
 
     document_type: AnalyzeDocumentResponseEntityDocumentType
 
-    document_images: AnalyzeDocumentResponseEntityDocumentImages
+    status: AnalyzeDocumentResponseEntityStatus
 
     text_data: AnalyzeDocumentResponseEntityTextData
 

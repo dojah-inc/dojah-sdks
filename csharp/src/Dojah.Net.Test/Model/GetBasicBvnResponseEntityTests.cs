@@ -57,20 +57,12 @@ namespace Dojah.Net.Test.Model
 
 
         /// <summary>
-        /// Test the property 'FirstName'
+        /// Test the property 'Bvn'
         /// </summary>
         [Fact]
-        public void FirstNameTest()
+        public void BvnTest()
         {
-            // TODO unit test for the property 'FirstName'
-        }
-        /// <summary>
-        /// Test the property 'LastName'
-        /// </summary>
-        [Fact]
-        public void LastNameTest()
-        {
-            // TODO unit test for the property 'LastName'
+            // TODO unit test for the property 'Bvn'
         }
         /// <summary>
         /// Test the property 'Dob'
@@ -81,6 +73,14 @@ namespace Dojah.Net.Test.Model
             // TODO unit test for the property 'Dob'
         }
         /// <summary>
+        /// Test the property 'FirstName'
+        /// </summary>
+        [Fact]
+        public void FirstNameTest()
+        {
+            // TODO unit test for the property 'FirstName'
+        }
+        /// <summary>
         /// Test the property 'FormattedDob'
         /// </summary>
         [Fact]
@@ -89,20 +89,20 @@ namespace Dojah.Net.Test.Model
             // TODO unit test for the property 'FormattedDob'
         }
         /// <summary>
+        /// Test the property 'LastName'
+        /// </summary>
+        [Fact]
+        public void LastNameTest()
+        {
+            // TODO unit test for the property 'LastName'
+        }
+        /// <summary>
         /// Test the property 'Mobile'
         /// </summary>
         [Fact]
         public void MobileTest()
         {
             // TODO unit test for the property 'Mobile'
-        }
-        /// <summary>
-        /// Test the property 'Bvn'
-        /// </summary>
-        [Fact]
-        public void BvnTest()
-        {
-            // TODO unit test for the property 'Bvn'
         }
 
     }

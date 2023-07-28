@@ -34,25 +34,25 @@ namespace Dojah.Net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AnalyzeDocumentResponseEntityDocumentType" /> class.
         /// </summary>
-        /// <param name="documentName">documentName.</param>
-        /// <param name="documentCountryName">documentCountryName.</param>
         /// <param name="documentCountryCode">documentCountryCode.</param>
+        /// <param name="documentCountryName">documentCountryName.</param>
+        /// <param name="documentName">documentName.</param>
         /// <param name="documentTypeId">documentTypeId.</param>
         /// <param name="documentYear">documentYear.</param>
-        public AnalyzeDocumentResponseEntityDocumentType(string documentName = default(string), string documentCountryName = default(string), string documentCountryCode = default(string), decimal documentTypeId = default(decimal), string documentYear = default(string))
+        public AnalyzeDocumentResponseEntityDocumentType(string documentCountryCode = default(string), string documentCountryName = default(string), string documentName = default(string), decimal documentTypeId = default(decimal), string documentYear = default(string))
         {
-            this.DocumentName = documentName;
-            this.DocumentCountryName = documentCountryName;
             this.DocumentCountryCode = documentCountryCode;
+            this.DocumentCountryName = documentCountryName;
+            this.DocumentName = documentName;
             this.DocumentTypeId = documentTypeId;
             this.DocumentYear = documentYear;
         }
 
         /// <summary>
-        /// Gets or Sets DocumentName
+        /// Gets or Sets DocumentCountryCode
         /// </summary>
-        [DataMember(Name = "document_name", EmitDefaultValue = false)]
-        public string DocumentName { get; set; }
+        [DataMember(Name = "document_country_code", EmitDefaultValue = false)]
+        public string DocumentCountryCode { get; set; }
 
         /// <summary>
         /// Gets or Sets DocumentCountryName
@@ -61,10 +61,10 @@ namespace Dojah.Net.Model
         public string DocumentCountryName { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocumentCountryCode
+        /// Gets or Sets DocumentName
         /// </summary>
-        [DataMember(Name = "document_country_code", EmitDefaultValue = false)]
-        public string DocumentCountryCode { get; set; }
+        [DataMember(Name = "document_name", EmitDefaultValue = false)]
+        public string DocumentName { get; set; }
 
         /// <summary>
         /// Gets or Sets DocumentTypeId
@@ -86,9 +86,9 @@ namespace Dojah.Net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AnalyzeDocumentResponseEntityDocumentType {\n");
-            sb.Append("  DocumentName: ").Append(DocumentName).Append("\n");
-            sb.Append("  DocumentCountryName: ").Append(DocumentCountryName).Append("\n");
             sb.Append("  DocumentCountryCode: ").Append(DocumentCountryCode).Append("\n");
+            sb.Append("  DocumentCountryName: ").Append(DocumentCountryName).Append("\n");
+            sb.Append("  DocumentName: ").Append(DocumentName).Append("\n");
             sb.Append("  DocumentTypeId: ").Append(DocumentTypeId).Append("\n");
             sb.Append("  DocumentYear: ").Append(DocumentYear).Append("\n");
             sb.Append("}\n");
@@ -127,9 +127,9 @@ namespace Dojah.Net.Model
             }
             return 
                 (
-                    this.DocumentName == input.DocumentName ||
-                    (this.DocumentName != null &&
-                    this.DocumentName.Equals(input.DocumentName))
+                    this.DocumentCountryCode == input.DocumentCountryCode ||
+                    (this.DocumentCountryCode != null &&
+                    this.DocumentCountryCode.Equals(input.DocumentCountryCode))
                 ) && 
                 (
                     this.DocumentCountryName == input.DocumentCountryName ||
@@ -137,9 +137,9 @@ namespace Dojah.Net.Model
                     this.DocumentCountryName.Equals(input.DocumentCountryName))
                 ) && 
                 (
-                    this.DocumentCountryCode == input.DocumentCountryCode ||
-                    (this.DocumentCountryCode != null &&
-                    this.DocumentCountryCode.Equals(input.DocumentCountryCode))
+                    this.DocumentName == input.DocumentName ||
+                    (this.DocumentName != null &&
+                    this.DocumentName.Equals(input.DocumentName))
                 ) && 
                 (
                     this.DocumentTypeId == input.DocumentTypeId ||
@@ -161,17 +161,17 @@ namespace Dojah.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DocumentName != null)
+                if (this.DocumentCountryCode != null)
                 {
-                    hashCode = (hashCode * 59) + this.DocumentName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DocumentCountryCode.GetHashCode();
                 }
                 if (this.DocumentCountryName != null)
                 {
                     hashCode = (hashCode * 59) + this.DocumentCountryName.GetHashCode();
                 }
-                if (this.DocumentCountryCode != null)
+                if (this.DocumentName != null)
                 {
-                    hashCode = (hashCode * 59) + this.DocumentCountryCode.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DocumentName.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.DocumentTypeId.GetHashCode();
                 if (this.DocumentYear != null)

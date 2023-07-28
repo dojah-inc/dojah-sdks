@@ -34,33 +34,33 @@ namespace Dojah.Net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetVninResponseEntity" /> class.
         /// </summary>
-        /// <param name="vnin">vnin.</param>
+        /// <param name="dateOfBirth">dateOfBirth.</param>
         /// <param name="firstname">firstname.</param>
+        /// <param name="gender">gender.</param>
         /// <param name="middlename">middlename.</param>
+        /// <param name="mobile">mobile.</param>
+        /// <param name="photo">photo.</param>
         /// <param name="surname">surname.</param>
         /// <param name="userId">userId.</param>
-        /// <param name="gender">gender.</param>
-        /// <param name="mobile">mobile.</param>
-        /// <param name="dateOfBirth">dateOfBirth.</param>
-        /// <param name="photo">photo.</param>
-        public GetVninResponseEntity(string vnin = default(string), string firstname = default(string), string middlename = default(string), string surname = default(string), string userId = default(string), string gender = default(string), string mobile = default(string), string dateOfBirth = default(string), string photo = default(string))
+        /// <param name="vnin">vnin.</param>
+        public GetVninResponseEntity(string dateOfBirth = default(string), string firstname = default(string), string gender = default(string), string middlename = default(string), string mobile = default(string), string photo = default(string), string surname = default(string), string userId = default(string), string vnin = default(string))
         {
-            this.Vnin = vnin;
+            this.DateOfBirth = dateOfBirth;
             this.Firstname = firstname;
+            this.Gender = gender;
             this.Middlename = middlename;
+            this.Mobile = mobile;
+            this.Photo = photo;
             this.Surname = surname;
             this.UserId = userId;
-            this.Gender = gender;
-            this.Mobile = mobile;
-            this.DateOfBirth = dateOfBirth;
-            this.Photo = photo;
+            this.Vnin = vnin;
         }
 
         /// <summary>
-        /// Gets or Sets Vnin
+        /// Gets or Sets DateOfBirth
         /// </summary>
-        [DataMember(Name = "vnin", EmitDefaultValue = false)]
-        public string Vnin { get; set; }
+        [DataMember(Name = "dateOfBirth", EmitDefaultValue = false)]
+        public string DateOfBirth { get; set; }
 
         /// <summary>
         /// Gets or Sets Firstname
@@ -69,10 +69,28 @@ namespace Dojah.Net.Model
         public string Firstname { get; set; }
 
         /// <summary>
+        /// Gets or Sets Gender
+        /// </summary>
+        [DataMember(Name = "gender", EmitDefaultValue = false)]
+        public string Gender { get; set; }
+
+        /// <summary>
         /// Gets or Sets Middlename
         /// </summary>
         [DataMember(Name = "middlename", EmitDefaultValue = false)]
         public string Middlename { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Mobile
+        /// </summary>
+        [DataMember(Name = "mobile", EmitDefaultValue = false)]
+        public string Mobile { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Photo
+        /// </summary>
+        [DataMember(Name = "photo", EmitDefaultValue = false)]
+        public string Photo { get; set; }
 
         /// <summary>
         /// Gets or Sets Surname
@@ -87,28 +105,10 @@ namespace Dojah.Net.Model
         public string UserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Gender
+        /// Gets or Sets Vnin
         /// </summary>
-        [DataMember(Name = "gender", EmitDefaultValue = false)]
-        public string Gender { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Mobile
-        /// </summary>
-        [DataMember(Name = "mobile", EmitDefaultValue = false)]
-        public string Mobile { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DateOfBirth
-        /// </summary>
-        [DataMember(Name = "dateOfBirth", EmitDefaultValue = false)]
-        public string DateOfBirth { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Photo
-        /// </summary>
-        [DataMember(Name = "photo", EmitDefaultValue = false)]
-        public string Photo { get; set; }
+        [DataMember(Name = "vnin", EmitDefaultValue = false)]
+        public string Vnin { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -118,15 +118,15 @@ namespace Dojah.Net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class GetVninResponseEntity {\n");
-            sb.Append("  Vnin: ").Append(Vnin).Append("\n");
+            sb.Append("  DateOfBirth: ").Append(DateOfBirth).Append("\n");
             sb.Append("  Firstname: ").Append(Firstname).Append("\n");
+            sb.Append("  Gender: ").Append(Gender).Append("\n");
             sb.Append("  Middlename: ").Append(Middlename).Append("\n");
+            sb.Append("  Mobile: ").Append(Mobile).Append("\n");
+            sb.Append("  Photo: ").Append(Photo).Append("\n");
             sb.Append("  Surname: ").Append(Surname).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
-            sb.Append("  Gender: ").Append(Gender).Append("\n");
-            sb.Append("  Mobile: ").Append(Mobile).Append("\n");
-            sb.Append("  DateOfBirth: ").Append(DateOfBirth).Append("\n");
-            sb.Append("  Photo: ").Append(Photo).Append("\n");
+            sb.Append("  Vnin: ").Append(Vnin).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,9 +163,9 @@ namespace Dojah.Net.Model
             }
             return 
                 (
-                    this.Vnin == input.Vnin ||
-                    (this.Vnin != null &&
-                    this.Vnin.Equals(input.Vnin))
+                    this.DateOfBirth == input.DateOfBirth ||
+                    (this.DateOfBirth != null &&
+                    this.DateOfBirth.Equals(input.DateOfBirth))
                 ) && 
                 (
                     this.Firstname == input.Firstname ||
@@ -173,9 +173,24 @@ namespace Dojah.Net.Model
                     this.Firstname.Equals(input.Firstname))
                 ) && 
                 (
+                    this.Gender == input.Gender ||
+                    (this.Gender != null &&
+                    this.Gender.Equals(input.Gender))
+                ) && 
+                (
                     this.Middlename == input.Middlename ||
                     (this.Middlename != null &&
                     this.Middlename.Equals(input.Middlename))
+                ) && 
+                (
+                    this.Mobile == input.Mobile ||
+                    (this.Mobile != null &&
+                    this.Mobile.Equals(input.Mobile))
+                ) && 
+                (
+                    this.Photo == input.Photo ||
+                    (this.Photo != null &&
+                    this.Photo.Equals(input.Photo))
                 ) && 
                 (
                     this.Surname == input.Surname ||
@@ -188,24 +203,9 @@ namespace Dojah.Net.Model
                     this.UserId.Equals(input.UserId))
                 ) && 
                 (
-                    this.Gender == input.Gender ||
-                    (this.Gender != null &&
-                    this.Gender.Equals(input.Gender))
-                ) && 
-                (
-                    this.Mobile == input.Mobile ||
-                    (this.Mobile != null &&
-                    this.Mobile.Equals(input.Mobile))
-                ) && 
-                (
-                    this.DateOfBirth == input.DateOfBirth ||
-                    (this.DateOfBirth != null &&
-                    this.DateOfBirth.Equals(input.DateOfBirth))
-                ) && 
-                (
-                    this.Photo == input.Photo ||
-                    (this.Photo != null &&
-                    this.Photo.Equals(input.Photo))
+                    this.Vnin == input.Vnin ||
+                    (this.Vnin != null &&
+                    this.Vnin.Equals(input.Vnin))
                 );
         }
 
@@ -218,17 +218,29 @@ namespace Dojah.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Vnin != null)
+                if (this.DateOfBirth != null)
                 {
-                    hashCode = (hashCode * 59) + this.Vnin.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DateOfBirth.GetHashCode();
                 }
                 if (this.Firstname != null)
                 {
                     hashCode = (hashCode * 59) + this.Firstname.GetHashCode();
                 }
+                if (this.Gender != null)
+                {
+                    hashCode = (hashCode * 59) + this.Gender.GetHashCode();
+                }
                 if (this.Middlename != null)
                 {
                     hashCode = (hashCode * 59) + this.Middlename.GetHashCode();
+                }
+                if (this.Mobile != null)
+                {
+                    hashCode = (hashCode * 59) + this.Mobile.GetHashCode();
+                }
+                if (this.Photo != null)
+                {
+                    hashCode = (hashCode * 59) + this.Photo.GetHashCode();
                 }
                 if (this.Surname != null)
                 {
@@ -238,21 +250,9 @@ namespace Dojah.Net.Model
                 {
                     hashCode = (hashCode * 59) + this.UserId.GetHashCode();
                 }
-                if (this.Gender != null)
+                if (this.Vnin != null)
                 {
-                    hashCode = (hashCode * 59) + this.Gender.GetHashCode();
-                }
-                if (this.Mobile != null)
-                {
-                    hashCode = (hashCode * 59) + this.Mobile.GetHashCode();
-                }
-                if (this.DateOfBirth != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateOfBirth.GetHashCode();
-                }
-                if (this.Photo != null)
-                {
-                    hashCode = (hashCode * 59) + this.Photo.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Vnin.GetHashCode();
                 }
                 return hashCode;
             }

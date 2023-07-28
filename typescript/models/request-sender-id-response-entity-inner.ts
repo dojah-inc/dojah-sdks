@@ -20,12 +20,6 @@
 export interface RequestSenderIdResponseEntityInner {
     /**
      * 
-     * @type {string}
-     * @memberof RequestSenderIdResponseEntityInner
-     */
-    'sender_id'?: string;
-    /**
-     * 
      * @type {boolean}
      * @memberof RequestSenderIdResponseEntityInner
      */
@@ -36,5 +30,11 @@ export interface RequestSenderIdResponseEntityInner {
      * @memberof RequestSenderIdResponseEntityInner
      */
     'createdAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RequestSenderIdResponseEntityInner
+     */
+    'sender_id'?: string;
 }
 

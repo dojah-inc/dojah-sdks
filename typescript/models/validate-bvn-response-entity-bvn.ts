@@ -20,15 +20,15 @@
 export interface ValidateBvnResponseEntityBvn {
     /**
      * 
-     * @type {string}
-     * @memberof ValidateBvnResponseEntityBvn
-     */
-    'value'?: string;
-    /**
-     * 
      * @type {boolean}
      * @memberof ValidateBvnResponseEntityBvn
      */
     'status'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ValidateBvnResponseEntityBvn
+     */
+    'value'?: string;
 }
 

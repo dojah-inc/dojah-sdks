@@ -20,22 +20,10 @@
 export interface AnalyzeDocumentResponseEntityStatus {
     /**
      * 
-     * @type {number}
-     * @memberof AnalyzeDocumentResponseEntityStatus
-     */
-    'overall_status'?: number;
-    /**
-     * 
      * @type {string}
      * @memberof AnalyzeDocumentResponseEntityStatus
      */
     'document_images'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AnalyzeDocumentResponseEntityStatus
-     */
-    'text'?: string;
     /**
      * 
      * @type {string}
@@ -48,5 +36,17 @@ export interface AnalyzeDocumentResponseEntityStatus {
      * @memberof AnalyzeDocumentResponseEntityStatus
      */
     'expiry'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof AnalyzeDocumentResponseEntityStatus
+     */
+    'overall_status'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof AnalyzeDocumentResponseEntityStatus
+     */
+    'text'?: string;
 }
 

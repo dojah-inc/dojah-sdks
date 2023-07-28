@@ -32,43 +32,13 @@ export interface VerifySelfieBvnResponseEntity {
      * @type {string}
      * @memberof VerifySelfieBvnResponseEntity
      */
-    'first_name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof VerifySelfieBvnResponseEntity
-     */
-    'middle_name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof VerifySelfieBvnResponseEntity
-     */
-    'last_name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof VerifySelfieBvnResponseEntity
-     */
     'date_of_birth'?: string;
     /**
      * 
      * @type {string}
      * @memberof VerifySelfieBvnResponseEntity
      */
-    'phone_number1'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof VerifySelfieBvnResponseEntity
-     */
-    'phone_number2'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof VerifySelfieBvnResponseEntity
-     */
-    'gender'?: string;
+    'email'?: string;
     /**
      * 
      * @type {string}
@@ -86,7 +56,31 @@ export interface VerifySelfieBvnResponseEntity {
      * @type {string}
      * @memberof VerifySelfieBvnResponseEntity
      */
-    'email'?: string;
+    'first_name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifySelfieBvnResponseEntity
+     */
+    'gender'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifySelfieBvnResponseEntity
+     */
+    'image'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifySelfieBvnResponseEntity
+     */
+    'last_name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifySelfieBvnResponseEntity
+     */
+    'level_of_account'?: string;
     /**
      * 
      * @type {string}
@@ -110,7 +104,7 @@ export interface VerifySelfieBvnResponseEntity {
      * @type {string}
      * @memberof VerifySelfieBvnResponseEntity
      */
-    'nin'?: string;
+    'middle_name'?: string;
     /**
      * 
      * @type {string}
@@ -122,7 +116,37 @@ export interface VerifySelfieBvnResponseEntity {
      * @type {string}
      * @memberof VerifySelfieBvnResponseEntity
      */
+    'nin'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifySelfieBvnResponseEntity
+     */
+    'phone_number1'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifySelfieBvnResponseEntity
+     */
+    'phone_number2'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifySelfieBvnResponseEntity
+     */
+    'registration_date'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifySelfieBvnResponseEntity
+     */
     'residential_address'?: string;
+    /**
+     * 
+     * @type {VerifySelfieBvnResponseEntitySelfieVerification}
+     * @memberof VerifySelfieBvnResponseEntity
+     */
+    'selfie_verification'?: VerifySelfieBvnResponseEntitySelfieVerification;
     /**
      * 
      * @type {string}
@@ -141,29 +165,5 @@ export interface VerifySelfieBvnResponseEntity {
      * @memberof VerifySelfieBvnResponseEntity
      */
     'watch_listed'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof VerifySelfieBvnResponseEntity
-     */
-    'level_of_account'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof VerifySelfieBvnResponseEntity
-     */
-    'registration_date'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof VerifySelfieBvnResponseEntity
-     */
-    'image'?: string;
-    /**
-     * 
-     * @type {VerifySelfieBvnResponseEntitySelfieVerification}
-     * @memberof VerifySelfieBvnResponseEntity
-     */
-    'selfie_verification'?: VerifySelfieBvnResponseEntitySelfieVerification;
 }
 

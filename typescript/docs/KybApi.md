@@ -24,7 +24,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const businessDetailResponse = await dojah.kyb.businessDetail({});
@@ -73,7 +74,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const businessSearchResponse = await dojah.kyb.businessSearch({});
@@ -121,7 +123,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const getCacResponse = await dojah.kyb.getCac({});
@@ -169,7 +172,8 @@ import { Dojah } from "dojah-typescript-sdk";
 const dojah = new Dojah({
   // Defining the base path is optional and defaults to https://api.dojah.io
   // basePath: "https://api.dojah.io",
-  apiKey: "API_KEY",
+  authorization: "API_KEY",
+  appId: "API_KEY",
 });
 
 const getTinResponse = await dojah.kyb.getTin({});

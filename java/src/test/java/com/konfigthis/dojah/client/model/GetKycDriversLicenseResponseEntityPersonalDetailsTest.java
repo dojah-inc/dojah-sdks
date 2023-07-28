@@ -39,46 +39,6 @@ public class GetKycDriversLicenseResponseEntityPersonalDetailsTest {
     }
 
     /**
-     * Test the property 'firstname'
-     */
-    @Test
-    public void firstnameTest() {
-        // TODO: test firstname
-    }
-
-    /**
-     * Test the property 'othername'
-     */
-    @Test
-    public void othernameTest() {
-        // TODO: test othername
-    }
-
-    /**
-     * Test the property 'surname'
-     */
-    @Test
-    public void surnameTest() {
-        // TODO: test surname
-    }
-
-    /**
-     * Test the property 'motherMaidenName'
-     */
-    @Test
-    public void motherMaidenNameTest() {
-        // TODO: test motherMaidenName
-    }
-
-    /**
-     * Test the property 'gender'
-     */
-    @Test
-    public void genderTest() {
-        // TODO: test gender
-    }
-
-    /**
      * Test the property 'birthDate'
      */
     @Test
@@ -95,11 +55,43 @@ public class GetKycDriversLicenseResponseEntityPersonalDetailsTest {
     }
 
     /**
+     * Test the property 'country'
+     */
+    @Test
+    public void countryTest() {
+        // TODO: test country
+    }
+
+    /**
+     * Test the property 'disabilityReason'
+     */
+    @Test
+    public void disabilityReasonTest() {
+        // TODO: test disabilityReason
+    }
+
+    /**
      * Test the property 'facialMark'
      */
     @Test
     public void facialMarkTest() {
         // TODO: test facialMark
+    }
+
+    /**
+     * Test the property 'firstname'
+     */
+    @Test
+    public void firstnameTest() {
+        // TODO: test firstname
+    }
+
+    /**
+     * Test the property 'gender'
+     */
+    @Test
+    public void genderTest() {
+        // TODO: test gender
     }
 
     /**
@@ -119,35 +111,11 @@ public class GetKycDriversLicenseResponseEntityPersonalDetailsTest {
     }
 
     /**
-     * Test the property 'universaltaxIdentityNumber'
+     * Test the property 'isDisability'
      */
     @Test
-    public void universaltaxIdentityNumberTest() {
-        // TODO: test universaltaxIdentityNumber
-    }
-
-    /**
-     * Test the property 'ninNumber'
-     */
-    @Test
-    public void ninNumberTest() {
-        // TODO: test ninNumber
-    }
-
-    /**
-     * Test the property 'country'
-     */
-    @Test
-    public void countryTest() {
-        // TODO: test country
-    }
-
-    /**
-     * Test the property 'state'
-     */
-    @Test
-    public void stateTest() {
-        // TODO: test state
+    public void isDisabilityTest() {
+        // TODO: test isDisability
     }
 
     /**
@@ -159,19 +127,51 @@ public class GetKycDriversLicenseResponseEntityPersonalDetailsTest {
     }
 
     /**
-     * Test the property 'isDisability'
+     * Test the property 'motherMaidenName'
      */
     @Test
-    public void isDisabilityTest() {
-        // TODO: test isDisability
+    public void motherMaidenNameTest() {
+        // TODO: test motherMaidenName
     }
 
     /**
-     * Test the property 'disabilityReason'
+     * Test the property 'ninNumber'
      */
     @Test
-    public void disabilityReasonTest() {
-        // TODO: test disabilityReason
+    public void ninNumberTest() {
+        // TODO: test ninNumber
+    }
+
+    /**
+     * Test the property 'othername'
+     */
+    @Test
+    public void othernameTest() {
+        // TODO: test othername
+    }
+
+    /**
+     * Test the property 'state'
+     */
+    @Test
+    public void stateTest() {
+        // TODO: test state
+    }
+
+    /**
+     * Test the property 'surname'
+     */
+    @Test
+    public void surnameTest() {
+        // TODO: test surname
+    }
+
+    /**
+     * Test the property 'universaltaxIdentityNumber'
+     */
+    @Test
+    public void universaltaxIdentityNumberTest() {
+        // TODO: test universaltaxIdentityNumber
     }
 
 }

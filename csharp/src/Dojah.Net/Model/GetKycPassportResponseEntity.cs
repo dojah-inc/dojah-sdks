@@ -34,79 +34,31 @@ namespace Dojah.Net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetKycPassportResponseEntity" /> class.
         /// </summary>
-        /// <param name="passportNumber">passportNumber.</param>
-        /// <param name="dateOfIssue">dateOfIssue.</param>
-        /// <param name="expiryDate">expiryDate.</param>
-        /// <param name="documentType">documentType.</param>
-        /// <param name="issuePlace">issuePlace.</param>
-        /// <param name="surname">surname.</param>
-        /// <param name="firstName">firstName.</param>
-        /// <param name="otherNames">otherNames.</param>
         /// <param name="dateOfBirth">dateOfBirth.</param>
+        /// <param name="dateOfIssue">dateOfIssue.</param>
+        /// <param name="documentType">documentType.</param>
+        /// <param name="expiryDate">expiryDate.</param>
+        /// <param name="firstName">firstName.</param>
         /// <param name="gender">gender.</param>
+        /// <param name="issuePlace">issuePlace.</param>
+        /// <param name="otherNames">otherNames.</param>
+        /// <param name="passportNumber">passportNumber.</param>
         /// <param name="photo">photo.</param>
-        public GetKycPassportResponseEntity(string passportNumber = default(string), string dateOfIssue = default(string), string expiryDate = default(string), string documentType = default(string), string issuePlace = default(string), string surname = default(string), string firstName = default(string), string otherNames = default(string), string dateOfBirth = default(string), string gender = default(string), string photo = default(string))
+        /// <param name="surname">surname.</param>
+        public GetKycPassportResponseEntity(string dateOfBirth = default(string), string dateOfIssue = default(string), string documentType = default(string), string expiryDate = default(string), string firstName = default(string), string gender = default(string), string issuePlace = default(string), string otherNames = default(string), string passportNumber = default(string), string photo = default(string), string surname = default(string))
         {
-            this.PassportNumber = passportNumber;
-            this.DateOfIssue = dateOfIssue;
-            this.ExpiryDate = expiryDate;
-            this.DocumentType = documentType;
-            this.IssuePlace = issuePlace;
-            this.Surname = surname;
-            this.FirstName = firstName;
-            this.OtherNames = otherNames;
             this.DateOfBirth = dateOfBirth;
+            this.DateOfIssue = dateOfIssue;
+            this.DocumentType = documentType;
+            this.ExpiryDate = expiryDate;
+            this.FirstName = firstName;
             this.Gender = gender;
+            this.IssuePlace = issuePlace;
+            this.OtherNames = otherNames;
+            this.PassportNumber = passportNumber;
             this.Photo = photo;
+            this.Surname = surname;
         }
-
-        /// <summary>
-        /// Gets or Sets PassportNumber
-        /// </summary>
-        [DataMember(Name = "passport_number", EmitDefaultValue = false)]
-        public string PassportNumber { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DateOfIssue
-        /// </summary>
-        [DataMember(Name = "date_of_issue", EmitDefaultValue = false)]
-        public string DateOfIssue { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ExpiryDate
-        /// </summary>
-        [DataMember(Name = "expiry_date", EmitDefaultValue = false)]
-        public string ExpiryDate { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DocumentType
-        /// </summary>
-        [DataMember(Name = "document_type", EmitDefaultValue = false)]
-        public string DocumentType { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IssuePlace
-        /// </summary>
-        [DataMember(Name = "issue_place", EmitDefaultValue = false)]
-        public string IssuePlace { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Surname
-        /// </summary>
-        [DataMember(Name = "surname", EmitDefaultValue = false)]
-        public string Surname { get; set; }
-
-        /// <summary>
-        /// Gets or Sets FirstName
-        /// </summary>
-        [DataMember(Name = "first_name", EmitDefaultValue = false)]
-        public string FirstName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets OtherNames
-        /// </summary>
-        [DataMember(Name = "other_names", EmitDefaultValue = false)]
-        public string OtherNames { get; set; }
 
         /// <summary>
         /// Gets or Sets DateOfBirth
@@ -115,16 +67,64 @@ namespace Dojah.Net.Model
         public string DateOfBirth { get; set; }
 
         /// <summary>
+        /// Gets or Sets DateOfIssue
+        /// </summary>
+        [DataMember(Name = "date_of_issue", EmitDefaultValue = false)]
+        public string DateOfIssue { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DocumentType
+        /// </summary>
+        [DataMember(Name = "document_type", EmitDefaultValue = false)]
+        public string DocumentType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExpiryDate
+        /// </summary>
+        [DataMember(Name = "expiry_date", EmitDefaultValue = false)]
+        public string ExpiryDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets FirstName
+        /// </summary>
+        [DataMember(Name = "first_name", EmitDefaultValue = false)]
+        public string FirstName { get; set; }
+
+        /// <summary>
         /// Gets or Sets Gender
         /// </summary>
         [DataMember(Name = "gender", EmitDefaultValue = false)]
         public string Gender { get; set; }
 
         /// <summary>
+        /// Gets or Sets IssuePlace
+        /// </summary>
+        [DataMember(Name = "issue_place", EmitDefaultValue = false)]
+        public string IssuePlace { get; set; }
+
+        /// <summary>
+        /// Gets or Sets OtherNames
+        /// </summary>
+        [DataMember(Name = "other_names", EmitDefaultValue = false)]
+        public string OtherNames { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PassportNumber
+        /// </summary>
+        [DataMember(Name = "passport_number", EmitDefaultValue = false)]
+        public string PassportNumber { get; set; }
+
+        /// <summary>
         /// Gets or Sets Photo
         /// </summary>
         [DataMember(Name = "photo", EmitDefaultValue = false)]
         public string Photo { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Surname
+        /// </summary>
+        [DataMember(Name = "surname", EmitDefaultValue = false)]
+        public string Surname { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -134,17 +134,17 @@ namespace Dojah.Net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class GetKycPassportResponseEntity {\n");
-            sb.Append("  PassportNumber: ").Append(PassportNumber).Append("\n");
-            sb.Append("  DateOfIssue: ").Append(DateOfIssue).Append("\n");
-            sb.Append("  ExpiryDate: ").Append(ExpiryDate).Append("\n");
-            sb.Append("  DocumentType: ").Append(DocumentType).Append("\n");
-            sb.Append("  IssuePlace: ").Append(IssuePlace).Append("\n");
-            sb.Append("  Surname: ").Append(Surname).Append("\n");
-            sb.Append("  FirstName: ").Append(FirstName).Append("\n");
-            sb.Append("  OtherNames: ").Append(OtherNames).Append("\n");
             sb.Append("  DateOfBirth: ").Append(DateOfBirth).Append("\n");
+            sb.Append("  DateOfIssue: ").Append(DateOfIssue).Append("\n");
+            sb.Append("  DocumentType: ").Append(DocumentType).Append("\n");
+            sb.Append("  ExpiryDate: ").Append(ExpiryDate).Append("\n");
+            sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  Gender: ").Append(Gender).Append("\n");
+            sb.Append("  IssuePlace: ").Append(IssuePlace).Append("\n");
+            sb.Append("  OtherNames: ").Append(OtherNames).Append("\n");
+            sb.Append("  PassportNumber: ").Append(PassportNumber).Append("\n");
             sb.Append("  Photo: ").Append(Photo).Append("\n");
+            sb.Append("  Surname: ").Append(Surname).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -181,9 +181,9 @@ namespace Dojah.Net.Model
             }
             return 
                 (
-                    this.PassportNumber == input.PassportNumber ||
-                    (this.PassportNumber != null &&
-                    this.PassportNumber.Equals(input.PassportNumber))
+                    this.DateOfBirth == input.DateOfBirth ||
+                    (this.DateOfBirth != null &&
+                    this.DateOfBirth.Equals(input.DateOfBirth))
                 ) && 
                 (
                     this.DateOfIssue == input.DateOfIssue ||
@@ -191,24 +191,14 @@ namespace Dojah.Net.Model
                     this.DateOfIssue.Equals(input.DateOfIssue))
                 ) && 
                 (
-                    this.ExpiryDate == input.ExpiryDate ||
-                    (this.ExpiryDate != null &&
-                    this.ExpiryDate.Equals(input.ExpiryDate))
-                ) && 
-                (
                     this.DocumentType == input.DocumentType ||
                     (this.DocumentType != null &&
                     this.DocumentType.Equals(input.DocumentType))
                 ) && 
                 (
-                    this.IssuePlace == input.IssuePlace ||
-                    (this.IssuePlace != null &&
-                    this.IssuePlace.Equals(input.IssuePlace))
-                ) && 
-                (
-                    this.Surname == input.Surname ||
-                    (this.Surname != null &&
-                    this.Surname.Equals(input.Surname))
+                    this.ExpiryDate == input.ExpiryDate ||
+                    (this.ExpiryDate != null &&
+                    this.ExpiryDate.Equals(input.ExpiryDate))
                 ) && 
                 (
                     this.FirstName == input.FirstName ||
@@ -216,24 +206,34 @@ namespace Dojah.Net.Model
                     this.FirstName.Equals(input.FirstName))
                 ) && 
                 (
-                    this.OtherNames == input.OtherNames ||
-                    (this.OtherNames != null &&
-                    this.OtherNames.Equals(input.OtherNames))
-                ) && 
-                (
-                    this.DateOfBirth == input.DateOfBirth ||
-                    (this.DateOfBirth != null &&
-                    this.DateOfBirth.Equals(input.DateOfBirth))
-                ) && 
-                (
                     this.Gender == input.Gender ||
                     (this.Gender != null &&
                     this.Gender.Equals(input.Gender))
                 ) && 
                 (
+                    this.IssuePlace == input.IssuePlace ||
+                    (this.IssuePlace != null &&
+                    this.IssuePlace.Equals(input.IssuePlace))
+                ) && 
+                (
+                    this.OtherNames == input.OtherNames ||
+                    (this.OtherNames != null &&
+                    this.OtherNames.Equals(input.OtherNames))
+                ) && 
+                (
+                    this.PassportNumber == input.PassportNumber ||
+                    (this.PassportNumber != null &&
+                    this.PassportNumber.Equals(input.PassportNumber))
+                ) && 
+                (
                     this.Photo == input.Photo ||
                     (this.Photo != null &&
                     this.Photo.Equals(input.Photo))
+                ) && 
+                (
+                    this.Surname == input.Surname ||
+                    (this.Surname != null &&
+                    this.Surname.Equals(input.Surname))
                 );
         }
 
@@ -246,49 +246,49 @@ namespace Dojah.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.PassportNumber != null)
+                if (this.DateOfBirth != null)
                 {
-                    hashCode = (hashCode * 59) + this.PassportNumber.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DateOfBirth.GetHashCode();
                 }
                 if (this.DateOfIssue != null)
                 {
                     hashCode = (hashCode * 59) + this.DateOfIssue.GetHashCode();
                 }
-                if (this.ExpiryDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExpiryDate.GetHashCode();
-                }
                 if (this.DocumentType != null)
                 {
                     hashCode = (hashCode * 59) + this.DocumentType.GetHashCode();
                 }
-                if (this.IssuePlace != null)
+                if (this.ExpiryDate != null)
                 {
-                    hashCode = (hashCode * 59) + this.IssuePlace.GetHashCode();
-                }
-                if (this.Surname != null)
-                {
-                    hashCode = (hashCode * 59) + this.Surname.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ExpiryDate.GetHashCode();
                 }
                 if (this.FirstName != null)
                 {
                     hashCode = (hashCode * 59) + this.FirstName.GetHashCode();
                 }
-                if (this.OtherNames != null)
-                {
-                    hashCode = (hashCode * 59) + this.OtherNames.GetHashCode();
-                }
-                if (this.DateOfBirth != null)
-                {
-                    hashCode = (hashCode * 59) + this.DateOfBirth.GetHashCode();
-                }
                 if (this.Gender != null)
                 {
                     hashCode = (hashCode * 59) + this.Gender.GetHashCode();
                 }
+                if (this.IssuePlace != null)
+                {
+                    hashCode = (hashCode * 59) + this.IssuePlace.GetHashCode();
+                }
+                if (this.OtherNames != null)
+                {
+                    hashCode = (hashCode * 59) + this.OtherNames.GetHashCode();
+                }
+                if (this.PassportNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.PassportNumber.GetHashCode();
+                }
                 if (this.Photo != null)
                 {
                     hashCode = (hashCode * 59) + this.Photo.GetHashCode();
+                }
+                if (this.Surname != null)
+                {
+                    hashCode = (hashCode * 59) + this.Surname.GetHashCode();
                 }
                 return hashCode;
             }

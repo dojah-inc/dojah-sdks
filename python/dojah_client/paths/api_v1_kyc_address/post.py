@@ -50,6 +50,7 @@ request_body_kyc_submit_address_request = api_client.RequestBody(
     },
 )
 _auth = [
+    'apikeyAuth',
     'appIdAuth',
 ]
 DateSchema = schemas.StrSchema

@@ -66,8 +66,8 @@ request_query_phone_number = api_client.QueryParameter(
     explode=True,
 )
 _auth = [
+    'apikeyAuth',
     'appIdAuth',
-    'noauthAuth',
 ]
 DateSchema = schemas.StrSchema
 date_parameter = api_client.HeaderParameter(

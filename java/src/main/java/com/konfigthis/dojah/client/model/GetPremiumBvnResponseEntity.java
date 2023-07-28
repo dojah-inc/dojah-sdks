@@ -146,13 +146,13 @@ public class GetPremiumBvnResponseEntity {
   @SerializedName(SERIALIZED_NAME_STATE_OF_RESIDENCE)
   private String stateOfResidence;
 
-  public static final String SERIALIZED_NAME_WATCH_LISTED = "watch_listed";
-  @SerializedName(SERIALIZED_NAME_WATCH_LISTED)
-  private String watchListed;
-
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
   private Double status;
+
+  public static final String SERIALIZED_NAME_WATCH_LISTED = "watch_listed";
+  @SerializedName(SERIALIZED_NAME_WATCH_LISTED)
+  private String watchListed;
 
   public GetPremiumBvnResponseEntity() {
   }
@@ -901,37 +901,6 @@ public class GetPremiumBvnResponseEntity {
   }
 
 
-  public GetPremiumBvnResponseEntity watchListed(String watchListed) {
-
-    
-    
-    
-    
-    this.watchListed = watchListed;
-    return this;
-  }
-
-   /**
-   * Get watchListed
-   * @return watchListed
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "false", value = "")
-
-  public String getWatchListed() {
-    return watchListed;
-  }
-
-
-  public void setWatchListed(String watchListed) {
-
-    
-    
-    
-    this.watchListed = watchListed;
-  }
-
-
   public GetPremiumBvnResponseEntity status(Double status) {
 
     
@@ -970,6 +939,37 @@ public class GetPremiumBvnResponseEntity {
     
     
     this.status = status;
+  }
+
+
+  public GetPremiumBvnResponseEntity watchListed(String watchListed) {
+
+    
+    
+    
+    
+    this.watchListed = watchListed;
+    return this;
+  }
+
+   /**
+   * Get watchListed
+   * @return watchListed
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "false", value = "")
+
+  public String getWatchListed() {
+    return watchListed;
+  }
+
+
+  public void setWatchListed(String watchListed) {
+
+    
+    
+    
+    this.watchListed = watchListed;
   }
 
   /**
@@ -1051,14 +1051,14 @@ public class GetPremiumBvnResponseEntity {
         Objects.equals(this.residentialAddress, getPremiumBvnResponseEntity.residentialAddress) &&
         Objects.equals(this.stateOfOrigin, getPremiumBvnResponseEntity.stateOfOrigin) &&
         Objects.equals(this.stateOfResidence, getPremiumBvnResponseEntity.stateOfResidence) &&
-        Objects.equals(this.watchListed, getPremiumBvnResponseEntity.watchListed) &&
-        Objects.equals(this.status, getPremiumBvnResponseEntity.status)&&
+        Objects.equals(this.status, getPremiumBvnResponseEntity.status) &&
+        Objects.equals(this.watchListed, getPremiumBvnResponseEntity.watchListed)&&
         Objects.equals(this.additionalProperties, getPremiumBvnResponseEntity.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, bvn, dateOfBirth, email, enrollmentBank, enrollmentBranch, firstName, gender, image, lastName, levelOfAccount, lgaOfOrigin, lgaOfResidence, maritalStatus, middleName, nameOnCard, nationality, nin, phoneNumber1, phoneNumber2, registrationDate, residentialAddress, stateOfOrigin, stateOfResidence, watchListed, status, additionalProperties);
+    return Objects.hash(title, bvn, dateOfBirth, email, enrollmentBank, enrollmentBranch, firstName, gender, image, lastName, levelOfAccount, lgaOfOrigin, lgaOfResidence, maritalStatus, middleName, nameOnCard, nationality, nin, phoneNumber1, phoneNumber2, registrationDate, residentialAddress, stateOfOrigin, stateOfResidence, status, watchListed, additionalProperties);
   }
 
   @Override
@@ -1089,8 +1089,8 @@ public class GetPremiumBvnResponseEntity {
     sb.append("    residentialAddress: ").append(toIndentedString(residentialAddress)).append("\n");
     sb.append("    stateOfOrigin: ").append(toIndentedString(stateOfOrigin)).append("\n");
     sb.append("    stateOfResidence: ").append(toIndentedString(stateOfResidence)).append("\n");
-    sb.append("    watchListed: ").append(toIndentedString(watchListed)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    watchListed: ").append(toIndentedString(watchListed)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1138,8 +1138,8 @@ public class GetPremiumBvnResponseEntity {
     openapiFields.add("residential_address");
     openapiFields.add("state_of_origin");
     openapiFields.add("state_of_residence");
-    openapiFields.add("watch_listed");
     openapiFields.add("status");
+    openapiFields.add("watch_listed");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

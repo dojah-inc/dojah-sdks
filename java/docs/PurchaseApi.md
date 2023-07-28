@@ -32,9 +32,11 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
-    // Configure API key authorization: appIdAuth
-    configuration.Appid  = "YOUR API KEY";
+    // Configure API key authorization: apikeyAuth
+    configuration.Authorization  = "YOUR API KEY";
 
+    // Configure API key authorization: appIdAuth
+    configuration.AppId  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     String destination = "destination_example";
@@ -95,7 +97,7 @@ public class Example {
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

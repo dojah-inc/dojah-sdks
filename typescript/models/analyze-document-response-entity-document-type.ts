@@ -23,7 +23,7 @@ export interface AnalyzeDocumentResponseEntityDocumentType {
      * @type {string}
      * @memberof AnalyzeDocumentResponseEntityDocumentType
      */
-    'document_name'?: string;
+    'document_country_code'?: string;
     /**
      * 
      * @type {string}
@@ -35,7 +35,7 @@ export interface AnalyzeDocumentResponseEntityDocumentType {
      * @type {string}
      * @memberof AnalyzeDocumentResponseEntityDocumentType
      */
-    'document_country_code'?: string;
+    'document_name'?: string;
     /**
      * 
      * @type {number}

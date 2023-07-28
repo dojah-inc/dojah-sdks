@@ -15,7 +15,6 @@ generators:
   typescript:
     version: 4.0.0
     npmName: dojah-typescript-sdk
-    readmeSnippet: snippets/typescript.ts
     outputDirectory: typescript
     clientName: Dojah
     git:

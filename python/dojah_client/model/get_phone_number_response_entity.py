@@ -35,88 +35,70 @@ class GetPhoneNumberResponseEntity(
         
         class properties:
             title = schemas.StrSchema
-            msisdn = schemas.StrSchema
-            firstName = schemas.StrSchema
-            middleName = schemas.StrSchema
-            lastName = schemas.StrSchema
-            maritalStatus = schemas.StrSchema
-            gender = schemas.StrSchema
             birthDate = schemas.StrSchema
             birthLga = schemas.StrSchema
             birthState = schemas.StrSchema
             educationalLevel = schemas.StrSchema
             emplymentStatus = schemas.StrSchema
+            firstName = schemas.StrSchema
+            gender = schemas.StrSchema
+            height = schemas.StrSchema
+            lastName = schemas.StrSchema
+            lga = schemas.StrSchema
+            maritalStatus = schemas.StrSchema
+            middleName = schemas.StrSchema
+            msisdn = schemas.StrSchema
+            nin = schemas.StrSchema
             nspokenLang = schemas.StrSchema
             ospokenlang = schemas.StrSchema
+            picture = schemas.StrSchema
             profession = schemas.StrSchema
             religion = schemas.StrSchema
             residenceAddressLine1 = schemas.StrSchema
-            residenceTown = schemas.StrSchema
             residenceLga = schemas.StrSchema
             residenceState = schemas.StrSchema
             residenceStatus = schemas.StrSchema
+            residenceTown = schemas.StrSchema
             selfOriginLga = schemas.StrSchema
             selfOriginPlace = schemas.StrSchema
             selfOriginState = schemas.StrSchema
             state = schemas.StrSchema
-            lga = schemas.StrSchema
-            nin = schemas.StrSchema
-            height = schemas.StrSchema
-            picture = schemas.StrSchema
             status = schemas.NumberSchema
             __annotations__ = {
                 "title": title,
-                "msisdn": msisdn,
-                "firstName": firstName,
-                "middleName": middleName,
-                "lastName": lastName,
-                "maritalStatus": maritalStatus,
-                "gender": gender,
                 "birthDate": birthDate,
                 "birthLga": birthLga,
                 "birthState": birthState,
                 "educationalLevel": educationalLevel,
                 "emplymentStatus": emplymentStatus,
+                "firstName": firstName,
+                "gender": gender,
+                "height": height,
+                "lastName": lastName,
+                "lga": lga,
+                "maritalStatus": maritalStatus,
+                "middleName": middleName,
+                "msisdn": msisdn,
+                "nin": nin,
                 "nspokenLang": nspokenLang,
                 "ospokenlang": ospokenlang,
+                "picture": picture,
                 "profession": profession,
                 "religion": religion,
                 "residenceAddressLine1": residenceAddressLine1,
-                "residenceTown": residenceTown,
                 "residenceLga": residenceLga,
                 "residenceState": residenceState,
                 "residenceStatus": residenceStatus,
+                "residenceTown": residenceTown,
                 "selfOriginLga": selfOriginLga,
                 "selfOriginPlace": selfOriginPlace,
                 "selfOriginState": selfOriginState,
                 "state": state,
-                "lga": lga,
-                "nin": nin,
-                "height": height,
-                "picture": picture,
                 "status": status,
             }
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["title"]) -> MetaOapg.properties.title: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["msisdn"]) -> MetaOapg.properties.msisdn: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["firstName"]) -> MetaOapg.properties.firstName: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["middleName"]) -> MetaOapg.properties.middleName: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["lastName"]) -> MetaOapg.properties.lastName: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["maritalStatus"]) -> MetaOapg.properties.maritalStatus: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["gender"]) -> MetaOapg.properties.gender: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["birthDate"]) -> MetaOapg.properties.birthDate: ...
@@ -134,10 +116,40 @@ class GetPhoneNumberResponseEntity(
     def __getitem__(self, name: typing_extensions.Literal["emplymentStatus"]) -> MetaOapg.properties.emplymentStatus: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["firstName"]) -> MetaOapg.properties.firstName: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["gender"]) -> MetaOapg.properties.gender: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["height"]) -> MetaOapg.properties.height: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["lastName"]) -> MetaOapg.properties.lastName: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["lga"]) -> MetaOapg.properties.lga: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["maritalStatus"]) -> MetaOapg.properties.maritalStatus: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["middleName"]) -> MetaOapg.properties.middleName: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["msisdn"]) -> MetaOapg.properties.msisdn: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["nin"]) -> MetaOapg.properties.nin: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["nspokenLang"]) -> MetaOapg.properties.nspokenLang: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["ospokenlang"]) -> MetaOapg.properties.ospokenlang: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["picture"]) -> MetaOapg.properties.picture: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["profession"]) -> MetaOapg.properties.profession: ...
@@ -149,9 +161,6 @@ class GetPhoneNumberResponseEntity(
     def __getitem__(self, name: typing_extensions.Literal["residenceAddressLine1"]) -> MetaOapg.properties.residenceAddressLine1: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["residenceTown"]) -> MetaOapg.properties.residenceTown: ...
-    
-    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["residenceLga"]) -> MetaOapg.properties.residenceLga: ...
     
     @typing.overload
@@ -159,6 +168,9 @@ class GetPhoneNumberResponseEntity(
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["residenceStatus"]) -> MetaOapg.properties.residenceStatus: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["residenceTown"]) -> MetaOapg.properties.residenceTown: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["selfOriginLga"]) -> MetaOapg.properties.selfOriginLga: ...
@@ -173,48 +185,18 @@ class GetPhoneNumberResponseEntity(
     def __getitem__(self, name: typing_extensions.Literal["state"]) -> MetaOapg.properties.state: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["lga"]) -> MetaOapg.properties.lga: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["nin"]) -> MetaOapg.properties.nin: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["height"]) -> MetaOapg.properties.height: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["picture"]) -> MetaOapg.properties.picture: ...
-    
-    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["status"]) -> MetaOapg.properties.status: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["title", "msisdn", "firstName", "middleName", "lastName", "maritalStatus", "gender", "birthDate", "birthLga", "birthState", "educationalLevel", "emplymentStatus", "nspokenLang", "ospokenlang", "profession", "religion", "residenceAddressLine1", "residenceTown", "residenceLga", "residenceState", "residenceStatus", "selfOriginLga", "selfOriginPlace", "selfOriginState", "state", "lga", "nin", "height", "picture", "status", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["title", "birthDate", "birthLga", "birthState", "educationalLevel", "emplymentStatus", "firstName", "gender", "height", "lastName", "lga", "maritalStatus", "middleName", "msisdn", "nin", "nspokenLang", "ospokenlang", "picture", "profession", "religion", "residenceAddressLine1", "residenceLga", "residenceState", "residenceStatus", "residenceTown", "selfOriginLga", "selfOriginPlace", "selfOriginState", "state", "status", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["title"]) -> typing.Union[MetaOapg.properties.title, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["msisdn"]) -> typing.Union[MetaOapg.properties.msisdn, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["firstName"]) -> typing.Union[MetaOapg.properties.firstName, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["middleName"]) -> typing.Union[MetaOapg.properties.middleName, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["lastName"]) -> typing.Union[MetaOapg.properties.lastName, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["maritalStatus"]) -> typing.Union[MetaOapg.properties.maritalStatus, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["gender"]) -> typing.Union[MetaOapg.properties.gender, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["birthDate"]) -> typing.Union[MetaOapg.properties.birthDate, schemas.Unset]: ...
@@ -232,10 +214,40 @@ class GetPhoneNumberResponseEntity(
     def get_item_oapg(self, name: typing_extensions.Literal["emplymentStatus"]) -> typing.Union[MetaOapg.properties.emplymentStatus, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["firstName"]) -> typing.Union[MetaOapg.properties.firstName, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["gender"]) -> typing.Union[MetaOapg.properties.gender, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["height"]) -> typing.Union[MetaOapg.properties.height, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["lastName"]) -> typing.Union[MetaOapg.properties.lastName, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["lga"]) -> typing.Union[MetaOapg.properties.lga, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["maritalStatus"]) -> typing.Union[MetaOapg.properties.maritalStatus, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["middleName"]) -> typing.Union[MetaOapg.properties.middleName, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["msisdn"]) -> typing.Union[MetaOapg.properties.msisdn, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["nin"]) -> typing.Union[MetaOapg.properties.nin, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["nspokenLang"]) -> typing.Union[MetaOapg.properties.nspokenLang, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["ospokenlang"]) -> typing.Union[MetaOapg.properties.ospokenlang, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["picture"]) -> typing.Union[MetaOapg.properties.picture, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["profession"]) -> typing.Union[MetaOapg.properties.profession, schemas.Unset]: ...
@@ -247,9 +259,6 @@ class GetPhoneNumberResponseEntity(
     def get_item_oapg(self, name: typing_extensions.Literal["residenceAddressLine1"]) -> typing.Union[MetaOapg.properties.residenceAddressLine1, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["residenceTown"]) -> typing.Union[MetaOapg.properties.residenceTown, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["residenceLga"]) -> typing.Union[MetaOapg.properties.residenceLga, schemas.Unset]: ...
     
     @typing.overload
@@ -257,6 +266,9 @@ class GetPhoneNumberResponseEntity(
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["residenceStatus"]) -> typing.Union[MetaOapg.properties.residenceStatus, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["residenceTown"]) -> typing.Union[MetaOapg.properties.residenceTown, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["selfOriginLga"]) -> typing.Union[MetaOapg.properties.selfOriginLga, schemas.Unset]: ...
@@ -271,24 +283,12 @@ class GetPhoneNumberResponseEntity(
     def get_item_oapg(self, name: typing_extensions.Literal["state"]) -> typing.Union[MetaOapg.properties.state, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["lga"]) -> typing.Union[MetaOapg.properties.lga, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["nin"]) -> typing.Union[MetaOapg.properties.nin, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["height"]) -> typing.Union[MetaOapg.properties.height, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["picture"]) -> typing.Union[MetaOapg.properties.picture, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["status"]) -> typing.Union[MetaOapg.properties.status, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["title", "msisdn", "firstName", "middleName", "lastName", "maritalStatus", "gender", "birthDate", "birthLga", "birthState", "educationalLevel", "emplymentStatus", "nspokenLang", "ospokenlang", "profession", "religion", "residenceAddressLine1", "residenceTown", "residenceLga", "residenceState", "residenceStatus", "selfOriginLga", "selfOriginPlace", "selfOriginState", "state", "lga", "nin", "height", "picture", "status", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["title", "birthDate", "birthLga", "birthState", "educationalLevel", "emplymentStatus", "firstName", "gender", "height", "lastName", "lga", "maritalStatus", "middleName", "msisdn", "nin", "nspokenLang", "ospokenlang", "picture", "profession", "religion", "residenceAddressLine1", "residenceLga", "residenceState", "residenceStatus", "residenceTown", "selfOriginLga", "selfOriginPlace", "selfOriginState", "state", "status", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -296,34 +296,34 @@ class GetPhoneNumberResponseEntity(
         cls,
         *args: typing.Union[dict, frozendict.frozendict, ],
         title: typing.Union[MetaOapg.properties.title, str, schemas.Unset] = schemas.unset,
-        msisdn: typing.Union[MetaOapg.properties.msisdn, str, schemas.Unset] = schemas.unset,
-        firstName: typing.Union[MetaOapg.properties.firstName, str, schemas.Unset] = schemas.unset,
-        middleName: typing.Union[MetaOapg.properties.middleName, str, schemas.Unset] = schemas.unset,
-        lastName: typing.Union[MetaOapg.properties.lastName, str, schemas.Unset] = schemas.unset,
-        maritalStatus: typing.Union[MetaOapg.properties.maritalStatus, str, schemas.Unset] = schemas.unset,
-        gender: typing.Union[MetaOapg.properties.gender, str, schemas.Unset] = schemas.unset,
         birthDate: typing.Union[MetaOapg.properties.birthDate, str, schemas.Unset] = schemas.unset,
         birthLga: typing.Union[MetaOapg.properties.birthLga, str, schemas.Unset] = schemas.unset,
         birthState: typing.Union[MetaOapg.properties.birthState, str, schemas.Unset] = schemas.unset,
         educationalLevel: typing.Union[MetaOapg.properties.educationalLevel, str, schemas.Unset] = schemas.unset,
         emplymentStatus: typing.Union[MetaOapg.properties.emplymentStatus, str, schemas.Unset] = schemas.unset,
+        firstName: typing.Union[MetaOapg.properties.firstName, str, schemas.Unset] = schemas.unset,
+        gender: typing.Union[MetaOapg.properties.gender, str, schemas.Unset] = schemas.unset,
+        height: typing.Union[MetaOapg.properties.height, str, schemas.Unset] = schemas.unset,
+        lastName: typing.Union[MetaOapg.properties.lastName, str, schemas.Unset] = schemas.unset,
+        lga: typing.Union[MetaOapg.properties.lga, str, schemas.Unset] = schemas.unset,
+        maritalStatus: typing.Union[MetaOapg.properties.maritalStatus, str, schemas.Unset] = schemas.unset,
+        middleName: typing.Union[MetaOapg.properties.middleName, str, schemas.Unset] = schemas.unset,
+        msisdn: typing.Union[MetaOapg.properties.msisdn, str, schemas.Unset] = schemas.unset,
+        nin: typing.Union[MetaOapg.properties.nin, str, schemas.Unset] = schemas.unset,
         nspokenLang: typing.Union[MetaOapg.properties.nspokenLang, str, schemas.Unset] = schemas.unset,
         ospokenlang: typing.Union[MetaOapg.properties.ospokenlang, str, schemas.Unset] = schemas.unset,
+        picture: typing.Union[MetaOapg.properties.picture, str, schemas.Unset] = schemas.unset,
         profession: typing.Union[MetaOapg.properties.profession, str, schemas.Unset] = schemas.unset,
         religion: typing.Union[MetaOapg.properties.religion, str, schemas.Unset] = schemas.unset,
         residenceAddressLine1: typing.Union[MetaOapg.properties.residenceAddressLine1, str, schemas.Unset] = schemas.unset,
-        residenceTown: typing.Union[MetaOapg.properties.residenceTown, str, schemas.Unset] = schemas.unset,
         residenceLga: typing.Union[MetaOapg.properties.residenceLga, str, schemas.Unset] = schemas.unset,
         residenceState: typing.Union[MetaOapg.properties.residenceState, str, schemas.Unset] = schemas.unset,
         residenceStatus: typing.Union[MetaOapg.properties.residenceStatus, str, schemas.Unset] = schemas.unset,
+        residenceTown: typing.Union[MetaOapg.properties.residenceTown, str, schemas.Unset] = schemas.unset,
         selfOriginLga: typing.Union[MetaOapg.properties.selfOriginLga, str, schemas.Unset] = schemas.unset,
         selfOriginPlace: typing.Union[MetaOapg.properties.selfOriginPlace, str, schemas.Unset] = schemas.unset,
         selfOriginState: typing.Union[MetaOapg.properties.selfOriginState, str, schemas.Unset] = schemas.unset,
         state: typing.Union[MetaOapg.properties.state, str, schemas.Unset] = schemas.unset,
-        lga: typing.Union[MetaOapg.properties.lga, str, schemas.Unset] = schemas.unset,
-        nin: typing.Union[MetaOapg.properties.nin, str, schemas.Unset] = schemas.unset,
-        height: typing.Union[MetaOapg.properties.height, str, schemas.Unset] = schemas.unset,
-        picture: typing.Union[MetaOapg.properties.picture, str, schemas.Unset] = schemas.unset,
         status: typing.Union[MetaOapg.properties.status, decimal.Decimal, int, float, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
@@ -332,34 +332,34 @@ class GetPhoneNumberResponseEntity(
             cls,
             *args,
             title=title,
-            msisdn=msisdn,
-            firstName=firstName,
-            middleName=middleName,
-            lastName=lastName,
-            maritalStatus=maritalStatus,
-            gender=gender,
             birthDate=birthDate,
             birthLga=birthLga,
             birthState=birthState,
             educationalLevel=educationalLevel,
             emplymentStatus=emplymentStatus,
+            firstName=firstName,
+            gender=gender,
+            height=height,
+            lastName=lastName,
+            lga=lga,
+            maritalStatus=maritalStatus,
+            middleName=middleName,
+            msisdn=msisdn,
+            nin=nin,
             nspokenLang=nspokenLang,
             ospokenlang=ospokenlang,
+            picture=picture,
             profession=profession,
             religion=religion,
             residenceAddressLine1=residenceAddressLine1,
-            residenceTown=residenceTown,
             residenceLga=residenceLga,
             residenceState=residenceState,
             residenceStatus=residenceStatus,
+            residenceTown=residenceTown,
             selfOriginLga=selfOriginLga,
             selfOriginPlace=selfOriginPlace,
             selfOriginState=selfOriginState,
             state=state,
-            lga=lga,
-            nin=nin,
-            height=height,
-            picture=picture,
             status=status,
             _configuration=_configuration,
             **kwargs,

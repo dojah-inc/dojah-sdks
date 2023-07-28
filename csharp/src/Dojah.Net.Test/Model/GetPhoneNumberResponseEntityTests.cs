@@ -65,54 +65,6 @@ namespace Dojah.Net.Test.Model
             // TODO unit test for the property 'Title'
         }
         /// <summary>
-        /// Test the property 'Msisdn'
-        /// </summary>
-        [Fact]
-        public void MsisdnTest()
-        {
-            // TODO unit test for the property 'Msisdn'
-        }
-        /// <summary>
-        /// Test the property 'FirstName'
-        /// </summary>
-        [Fact]
-        public void FirstNameTest()
-        {
-            // TODO unit test for the property 'FirstName'
-        }
-        /// <summary>
-        /// Test the property 'MiddleName'
-        /// </summary>
-        [Fact]
-        public void MiddleNameTest()
-        {
-            // TODO unit test for the property 'MiddleName'
-        }
-        /// <summary>
-        /// Test the property 'LastName'
-        /// </summary>
-        [Fact]
-        public void LastNameTest()
-        {
-            // TODO unit test for the property 'LastName'
-        }
-        /// <summary>
-        /// Test the property 'MaritalStatus'
-        /// </summary>
-        [Fact]
-        public void MaritalStatusTest()
-        {
-            // TODO unit test for the property 'MaritalStatus'
-        }
-        /// <summary>
-        /// Test the property 'Gender'
-        /// </summary>
-        [Fact]
-        public void GenderTest()
-        {
-            // TODO unit test for the property 'Gender'
-        }
-        /// <summary>
         /// Test the property 'BirthDate'
         /// </summary>
         [Fact]
@@ -153,6 +105,78 @@ namespace Dojah.Net.Test.Model
             // TODO unit test for the property 'EmplymentStatus'
         }
         /// <summary>
+        /// Test the property 'FirstName'
+        /// </summary>
+        [Fact]
+        public void FirstNameTest()
+        {
+            // TODO unit test for the property 'FirstName'
+        }
+        /// <summary>
+        /// Test the property 'Gender'
+        /// </summary>
+        [Fact]
+        public void GenderTest()
+        {
+            // TODO unit test for the property 'Gender'
+        }
+        /// <summary>
+        /// Test the property 'Height'
+        /// </summary>
+        [Fact]
+        public void HeightTest()
+        {
+            // TODO unit test for the property 'Height'
+        }
+        /// <summary>
+        /// Test the property 'LastName'
+        /// </summary>
+        [Fact]
+        public void LastNameTest()
+        {
+            // TODO unit test for the property 'LastName'
+        }
+        /// <summary>
+        /// Test the property 'Lga'
+        /// </summary>
+        [Fact]
+        public void LgaTest()
+        {
+            // TODO unit test for the property 'Lga'
+        }
+        /// <summary>
+        /// Test the property 'MaritalStatus'
+        /// </summary>
+        [Fact]
+        public void MaritalStatusTest()
+        {
+            // TODO unit test for the property 'MaritalStatus'
+        }
+        /// <summary>
+        /// Test the property 'MiddleName'
+        /// </summary>
+        [Fact]
+        public void MiddleNameTest()
+        {
+            // TODO unit test for the property 'MiddleName'
+        }
+        /// <summary>
+        /// Test the property 'Msisdn'
+        /// </summary>
+        [Fact]
+        public void MsisdnTest()
+        {
+            // TODO unit test for the property 'Msisdn'
+        }
+        /// <summary>
+        /// Test the property 'Nin'
+        /// </summary>
+        [Fact]
+        public void NinTest()
+        {
+            // TODO unit test for the property 'Nin'
+        }
+        /// <summary>
         /// Test the property 'NspokenLang'
         /// </summary>
         [Fact]
@@ -167,6 +191,14 @@ namespace Dojah.Net.Test.Model
         public void OspokenlangTest()
         {
             // TODO unit test for the property 'Ospokenlang'
+        }
+        /// <summary>
+        /// Test the property 'Picture'
+        /// </summary>
+        [Fact]
+        public void PictureTest()
+        {
+            // TODO unit test for the property 'Picture'
         }
         /// <summary>
         /// Test the property 'Profession'
@@ -193,14 +225,6 @@ namespace Dojah.Net.Test.Model
             // TODO unit test for the property 'ResidenceAddressLine1'
         }
         /// <summary>
-        /// Test the property 'ResidenceTown'
-        /// </summary>
-        [Fact]
-        public void ResidenceTownTest()
-        {
-            // TODO unit test for the property 'ResidenceTown'
-        }
-        /// <summary>
         /// Test the property 'ResidenceLga'
         /// </summary>
         [Fact]
@@ -223,6 +247,14 @@ namespace Dojah.Net.Test.Model
         public void ResidenceStatusTest()
         {
             // TODO unit test for the property 'ResidenceStatus'
+        }
+        /// <summary>
+        /// Test the property 'ResidenceTown'
+        /// </summary>
+        [Fact]
+        public void ResidenceTownTest()
+        {
+            // TODO unit test for the property 'ResidenceTown'
         }
         /// <summary>
         /// Test the property 'SelfOriginLga'
@@ -255,38 +287,6 @@ namespace Dojah.Net.Test.Model
         public void StateTest()
         {
             // TODO unit test for the property 'State'
-        }
-        /// <summary>
-        /// Test the property 'Lga'
-        /// </summary>
-        [Fact]
-        public void LgaTest()
-        {
-            // TODO unit test for the property 'Lga'
-        }
-        /// <summary>
-        /// Test the property 'Nin'
-        /// </summary>
-        [Fact]
-        public void NinTest()
-        {
-            // TODO unit test for the property 'Nin'
-        }
-        /// <summary>
-        /// Test the property 'Height'
-        /// </summary>
-        [Fact]
-        public void HeightTest()
-        {
-            // TODO unit test for the property 'Height'
-        }
-        /// <summary>
-        /// Test the property 'Picture'
-        /// </summary>
-        [Fact]
-        public void PictureTest()
-        {
-            // TODO unit test for the property 'Picture'
         }
         /// <summary>
         /// Test the property 'Status'

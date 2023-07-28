@@ -34,33 +34,27 @@ namespace Dojah.Net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetBasicBvnResponseEntity" /> class.
         /// </summary>
-        /// <param name="firstName">firstName.</param>
-        /// <param name="lastName">lastName.</param>
-        /// <param name="dob">dob.</param>
-        /// <param name="formattedDob">formattedDob.</param>
-        /// <param name="mobile">mobile.</param>
         /// <param name="bvn">bvn.</param>
-        public GetBasicBvnResponseEntity(string firstName = default(string), string lastName = default(string), string dob = default(string), string formattedDob = default(string), string mobile = default(string), string bvn = default(string))
+        /// <param name="dob">dob.</param>
+        /// <param name="firstName">firstName.</param>
+        /// <param name="formattedDob">formattedDob.</param>
+        /// <param name="lastName">lastName.</param>
+        /// <param name="mobile">mobile.</param>
+        public GetBasicBvnResponseEntity(string bvn = default(string), string dob = default(string), string firstName = default(string), string formattedDob = default(string), string lastName = default(string), string mobile = default(string))
         {
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.Dob = dob;
-            this.FormattedDob = formattedDob;
-            this.Mobile = mobile;
             this.Bvn = bvn;
+            this.Dob = dob;
+            this.FirstName = firstName;
+            this.FormattedDob = formattedDob;
+            this.LastName = lastName;
+            this.Mobile = mobile;
         }
 
         /// <summary>
-        /// Gets or Sets FirstName
+        /// Gets or Sets Bvn
         /// </summary>
-        [DataMember(Name = "first_name", EmitDefaultValue = false)]
-        public string FirstName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets LastName
-        /// </summary>
-        [DataMember(Name = "last_name", EmitDefaultValue = false)]
-        public string LastName { get; set; }
+        [DataMember(Name = "bvn", EmitDefaultValue = false)]
+        public string Bvn { get; set; }
 
         /// <summary>
         /// Gets or Sets Dob
@@ -69,22 +63,28 @@ namespace Dojah.Net.Model
         public string Dob { get; set; }
 
         /// <summary>
+        /// Gets or Sets FirstName
+        /// </summary>
+        [DataMember(Name = "first_name", EmitDefaultValue = false)]
+        public string FirstName { get; set; }
+
+        /// <summary>
         /// Gets or Sets FormattedDob
         /// </summary>
         [DataMember(Name = "formatted_dob", EmitDefaultValue = false)]
         public string FormattedDob { get; set; }
 
         /// <summary>
+        /// Gets or Sets LastName
+        /// </summary>
+        [DataMember(Name = "last_name", EmitDefaultValue = false)]
+        public string LastName { get; set; }
+
+        /// <summary>
         /// Gets or Sets Mobile
         /// </summary>
         [DataMember(Name = "mobile", EmitDefaultValue = false)]
         public string Mobile { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Bvn
-        /// </summary>
-        [DataMember(Name = "bvn", EmitDefaultValue = false)]
-        public string Bvn { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -94,12 +94,12 @@ namespace Dojah.Net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class GetBasicBvnResponseEntity {\n");
-            sb.Append("  FirstName: ").Append(FirstName).Append("\n");
-            sb.Append("  LastName: ").Append(LastName).Append("\n");
-            sb.Append("  Dob: ").Append(Dob).Append("\n");
-            sb.Append("  FormattedDob: ").Append(FormattedDob).Append("\n");
-            sb.Append("  Mobile: ").Append(Mobile).Append("\n");
             sb.Append("  Bvn: ").Append(Bvn).Append("\n");
+            sb.Append("  Dob: ").Append(Dob).Append("\n");
+            sb.Append("  FirstName: ").Append(FirstName).Append("\n");
+            sb.Append("  FormattedDob: ").Append(FormattedDob).Append("\n");
+            sb.Append("  LastName: ").Append(LastName).Append("\n");
+            sb.Append("  Mobile: ").Append(Mobile).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -136,14 +136,9 @@ namespace Dojah.Net.Model
             }
             return 
                 (
-                    this.FirstName == input.FirstName ||
-                    (this.FirstName != null &&
-                    this.FirstName.Equals(input.FirstName))
-                ) && 
-                (
-                    this.LastName == input.LastName ||
-                    (this.LastName != null &&
-                    this.LastName.Equals(input.LastName))
+                    this.Bvn == input.Bvn ||
+                    (this.Bvn != null &&
+                    this.Bvn.Equals(input.Bvn))
                 ) && 
                 (
                     this.Dob == input.Dob ||
@@ -151,19 +146,24 @@ namespace Dojah.Net.Model
                     this.Dob.Equals(input.Dob))
                 ) && 
                 (
+                    this.FirstName == input.FirstName ||
+                    (this.FirstName != null &&
+                    this.FirstName.Equals(input.FirstName))
+                ) && 
+                (
                     this.FormattedDob == input.FormattedDob ||
                     (this.FormattedDob != null &&
                     this.FormattedDob.Equals(input.FormattedDob))
                 ) && 
                 (
+                    this.LastName == input.LastName ||
+                    (this.LastName != null &&
+                    this.LastName.Equals(input.LastName))
+                ) && 
+                (
                     this.Mobile == input.Mobile ||
                     (this.Mobile != null &&
                     this.Mobile.Equals(input.Mobile))
-                ) && 
-                (
-                    this.Bvn == input.Bvn ||
-                    (this.Bvn != null &&
-                    this.Bvn.Equals(input.Bvn))
                 );
         }
 
@@ -176,29 +176,29 @@ namespace Dojah.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.FirstName != null)
+                if (this.Bvn != null)
                 {
-                    hashCode = (hashCode * 59) + this.FirstName.GetHashCode();
-                }
-                if (this.LastName != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Bvn.GetHashCode();
                 }
                 if (this.Dob != null)
                 {
                     hashCode = (hashCode * 59) + this.Dob.GetHashCode();
                 }
+                if (this.FirstName != null)
+                {
+                    hashCode = (hashCode * 59) + this.FirstName.GetHashCode();
+                }
                 if (this.FormattedDob != null)
                 {
                     hashCode = (hashCode * 59) + this.FormattedDob.GetHashCode();
                 }
+                if (this.LastName != null)
+                {
+                    hashCode = (hashCode * 59) + this.LastName.GetHashCode();
+                }
                 if (this.Mobile != null)
                 {
                     hashCode = (hashCode * 59) + this.Mobile.GetHashCode();
-                }
-                if (this.Bvn != null)
-                {
-                    hashCode = (hashCode * 59) + this.Bvn.GetHashCode();
                 }
                 return hashCode;
             }

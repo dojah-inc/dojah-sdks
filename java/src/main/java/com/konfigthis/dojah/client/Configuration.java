@@ -17,7 +17,8 @@ public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
     public boolean verifyingSsl = true;
     public String host = "https://api.dojah.io";
-    public String Appid;
+    public String Authorization;
+    public String AppId;
 
     /**
      * Get the default API client, which would be used when creating API

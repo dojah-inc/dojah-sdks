@@ -57,12 +57,12 @@ namespace Dojah.Net.Test.Model
 
 
         /// <summary>
-        /// Test the property 'DocumentName'
+        /// Test the property 'DocumentCountryCode'
         /// </summary>
         [Fact]
-        public void DocumentNameTest()
+        public void DocumentCountryCodeTest()
         {
-            // TODO unit test for the property 'DocumentName'
+            // TODO unit test for the property 'DocumentCountryCode'
         }
         /// <summary>
         /// Test the property 'DocumentCountryName'
@@ -73,12 +73,12 @@ namespace Dojah.Net.Test.Model
             // TODO unit test for the property 'DocumentCountryName'
         }
         /// <summary>
-        /// Test the property 'DocumentCountryCode'
+        /// Test the property 'DocumentName'
         /// </summary>
         [Fact]
-        public void DocumentCountryCodeTest()
+        public void DocumentNameTest()
         {
-            // TODO unit test for the property 'DocumentCountryCode'
+            // TODO unit test for the property 'DocumentName'
         }
         /// <summary>
         /// Test the property 'DocumentTypeId'

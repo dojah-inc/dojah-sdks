@@ -54,30 +54,6 @@ public class GetPhoneNumberResponseEntity {
   @SerializedName(SERIALIZED_NAME_TITLE)
   private String title;
 
-  public static final String SERIALIZED_NAME_MSISDN = "msisdn";
-  @SerializedName(SERIALIZED_NAME_MSISDN)
-  private String msisdn;
-
-  public static final String SERIALIZED_NAME_FIRST_NAME = "firstName";
-  @SerializedName(SERIALIZED_NAME_FIRST_NAME)
-  private String firstName;
-
-  public static final String SERIALIZED_NAME_MIDDLE_NAME = "middleName";
-  @SerializedName(SERIALIZED_NAME_MIDDLE_NAME)
-  private String middleName;
-
-  public static final String SERIALIZED_NAME_LAST_NAME = "lastName";
-  @SerializedName(SERIALIZED_NAME_LAST_NAME)
-  private String lastName;
-
-  public static final String SERIALIZED_NAME_MARITAL_STATUS = "maritalStatus";
-  @SerializedName(SERIALIZED_NAME_MARITAL_STATUS)
-  private String maritalStatus;
-
-  public static final String SERIALIZED_NAME_GENDER = "gender";
-  @SerializedName(SERIALIZED_NAME_GENDER)
-  private String gender;
-
   public static final String SERIALIZED_NAME_BIRTH_DATE = "birthDate";
   @SerializedName(SERIALIZED_NAME_BIRTH_DATE)
   private String birthDate;
@@ -98,6 +74,42 @@ public class GetPhoneNumberResponseEntity {
   @SerializedName(SERIALIZED_NAME_EMPLYMENT_STATUS)
   private String emplymentStatus;
 
+  public static final String SERIALIZED_NAME_FIRST_NAME = "firstName";
+  @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  private String firstName;
+
+  public static final String SERIALIZED_NAME_GENDER = "gender";
+  @SerializedName(SERIALIZED_NAME_GENDER)
+  private String gender;
+
+  public static final String SERIALIZED_NAME_HEIGHT = "height";
+  @SerializedName(SERIALIZED_NAME_HEIGHT)
+  private String height;
+
+  public static final String SERIALIZED_NAME_LAST_NAME = "lastName";
+  @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  private String lastName;
+
+  public static final String SERIALIZED_NAME_LGA = "lga";
+  @SerializedName(SERIALIZED_NAME_LGA)
+  private String lga;
+
+  public static final String SERIALIZED_NAME_MARITAL_STATUS = "maritalStatus";
+  @SerializedName(SERIALIZED_NAME_MARITAL_STATUS)
+  private String maritalStatus;
+
+  public static final String SERIALIZED_NAME_MIDDLE_NAME = "middleName";
+  @SerializedName(SERIALIZED_NAME_MIDDLE_NAME)
+  private String middleName;
+
+  public static final String SERIALIZED_NAME_MSISDN = "msisdn";
+  @SerializedName(SERIALIZED_NAME_MSISDN)
+  private String msisdn;
+
+  public static final String SERIALIZED_NAME_NIN = "nin";
+  @SerializedName(SERIALIZED_NAME_NIN)
+  private String nin;
+
   public static final String SERIALIZED_NAME_NSPOKEN_LANG = "nspokenLang";
   @SerializedName(SERIALIZED_NAME_NSPOKEN_LANG)
   private String nspokenLang;
@@ -105,6 +117,10 @@ public class GetPhoneNumberResponseEntity {
   public static final String SERIALIZED_NAME_OSPOKENLANG = "ospokenlang";
   @SerializedName(SERIALIZED_NAME_OSPOKENLANG)
   private String ospokenlang;
+
+  public static final String SERIALIZED_NAME_PICTURE = "picture";
+  @SerializedName(SERIALIZED_NAME_PICTURE)
+  private String picture;
 
   public static final String SERIALIZED_NAME_PROFESSION = "profession";
   @SerializedName(SERIALIZED_NAME_PROFESSION)
@@ -118,10 +134,6 @@ public class GetPhoneNumberResponseEntity {
   @SerializedName(SERIALIZED_NAME_RESIDENCE_ADDRESS_LINE1)
   private String residenceAddressLine1;
 
-  public static final String SERIALIZED_NAME_RESIDENCE_TOWN = "residenceTown";
-  @SerializedName(SERIALIZED_NAME_RESIDENCE_TOWN)
-  private String residenceTown;
-
   public static final String SERIALIZED_NAME_RESIDENCE_LGA = "residenceLga";
   @SerializedName(SERIALIZED_NAME_RESIDENCE_LGA)
   private String residenceLga;
@@ -133,6 +145,10 @@ public class GetPhoneNumberResponseEntity {
   public static final String SERIALIZED_NAME_RESIDENCE_STATUS = "residenceStatus";
   @SerializedName(SERIALIZED_NAME_RESIDENCE_STATUS)
   private String residenceStatus;
+
+  public static final String SERIALIZED_NAME_RESIDENCE_TOWN = "residenceTown";
+  @SerializedName(SERIALIZED_NAME_RESIDENCE_TOWN)
+  private String residenceTown;
 
   public static final String SERIALIZED_NAME_SELF_ORIGIN_LGA = "selfOriginLga";
   @SerializedName(SERIALIZED_NAME_SELF_ORIGIN_LGA)
@@ -149,22 +165,6 @@ public class GetPhoneNumberResponseEntity {
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
   private String state;
-
-  public static final String SERIALIZED_NAME_LGA = "lga";
-  @SerializedName(SERIALIZED_NAME_LGA)
-  private String lga;
-
-  public static final String SERIALIZED_NAME_NIN = "nin";
-  @SerializedName(SERIALIZED_NAME_NIN)
-  private String nin;
-
-  public static final String SERIALIZED_NAME_HEIGHT = "height";
-  @SerializedName(SERIALIZED_NAME_HEIGHT)
-  private String height;
-
-  public static final String SERIALIZED_NAME_PICTURE = "picture";
-  @SerializedName(SERIALIZED_NAME_PICTURE)
-  private String picture;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -201,192 +201,6 @@ public class GetPhoneNumberResponseEntity {
     
     
     this.title = title;
-  }
-
-
-  public GetPhoneNumberResponseEntity msisdn(String msisdn) {
-
-    
-    
-    
-    
-    this.msisdn = msisdn;
-    return this;
-  }
-
-   /**
-   * Get msisdn
-   * @return msisdn
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "09011111111", value = "")
-
-  public String getMsisdn() {
-    return msisdn;
-  }
-
-
-  public void setMsisdn(String msisdn) {
-
-    
-    
-    
-    this.msisdn = msisdn;
-  }
-
-
-  public GetPhoneNumberResponseEntity firstName(String firstName) {
-
-    
-    
-    
-    
-    this.firstName = firstName;
-    return this;
-  }
-
-   /**
-   * Get firstName
-   * @return firstName
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "John", value = "")
-
-  public String getFirstName() {
-    return firstName;
-  }
-
-
-  public void setFirstName(String firstName) {
-
-    
-    
-    
-    this.firstName = firstName;
-  }
-
-
-  public GetPhoneNumberResponseEntity middleName(String middleName) {
-
-    
-    
-    
-    
-    this.middleName = middleName;
-    return this;
-  }
-
-   /**
-   * Get middleName
-   * @return middleName
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "Doe", value = "")
-
-  public String getMiddleName() {
-    return middleName;
-  }
-
-
-  public void setMiddleName(String middleName) {
-
-    
-    
-    
-    this.middleName = middleName;
-  }
-
-
-  public GetPhoneNumberResponseEntity lastName(String lastName) {
-
-    
-    
-    
-    
-    this.lastName = lastName;
-    return this;
-  }
-
-   /**
-   * Get lastName
-   * @return lastName
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "Doe", value = "")
-
-  public String getLastName() {
-    return lastName;
-  }
-
-
-  public void setLastName(String lastName) {
-
-    
-    
-    
-    this.lastName = lastName;
-  }
-
-
-  public GetPhoneNumberResponseEntity maritalStatus(String maritalStatus) {
-
-    
-    
-    
-    
-    this.maritalStatus = maritalStatus;
-    return this;
-  }
-
-   /**
-   * Get maritalStatus
-   * @return maritalStatus
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "Married", value = "")
-
-  public String getMaritalStatus() {
-    return maritalStatus;
-  }
-
-
-  public void setMaritalStatus(String maritalStatus) {
-
-    
-    
-    
-    this.maritalStatus = maritalStatus;
-  }
-
-
-  public GetPhoneNumberResponseEntity gender(String gender) {
-
-    
-    
-    
-    
-    this.gender = gender;
-    return this;
-  }
-
-   /**
-   * Get gender
-   * @return gender
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "Male", value = "")
-
-  public String getGender() {
-    return gender;
-  }
-
-
-  public void setGender(String gender) {
-
-    
-    
-    
-    this.gender = gender;
   }
 
 
@@ -545,6 +359,285 @@ public class GetPhoneNumberResponseEntity {
   }
 
 
+  public GetPhoneNumberResponseEntity firstName(String firstName) {
+
+    
+    
+    
+    
+    this.firstName = firstName;
+    return this;
+  }
+
+   /**
+   * Get firstName
+   * @return firstName
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "John", value = "")
+
+  public String getFirstName() {
+    return firstName;
+  }
+
+
+  public void setFirstName(String firstName) {
+
+    
+    
+    
+    this.firstName = firstName;
+  }
+
+
+  public GetPhoneNumberResponseEntity gender(String gender) {
+
+    
+    
+    
+    
+    this.gender = gender;
+    return this;
+  }
+
+   /**
+   * Get gender
+   * @return gender
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "Male", value = "")
+
+  public String getGender() {
+    return gender;
+  }
+
+
+  public void setGender(String gender) {
+
+    
+    
+    
+    this.gender = gender;
+  }
+
+
+  public GetPhoneNumberResponseEntity height(String height) {
+
+    
+    
+    
+    
+    this.height = height;
+    return this;
+  }
+
+   /**
+   * Get height
+   * @return height
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "5 9", value = "")
+
+  public String getHeight() {
+    return height;
+  }
+
+
+  public void setHeight(String height) {
+
+    
+    
+    
+    this.height = height;
+  }
+
+
+  public GetPhoneNumberResponseEntity lastName(String lastName) {
+
+    
+    
+    
+    
+    this.lastName = lastName;
+    return this;
+  }
+
+   /**
+   * Get lastName
+   * @return lastName
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "Doe", value = "")
+
+  public String getLastName() {
+    return lastName;
+  }
+
+
+  public void setLastName(String lastName) {
+
+    
+    
+    
+    this.lastName = lastName;
+  }
+
+
+  public GetPhoneNumberResponseEntity lga(String lga) {
+
+    
+    
+    
+    
+    this.lga = lga;
+    return this;
+  }
+
+   /**
+   * Get lga
+   * @return lga
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "Ikeja", value = "")
+
+  public String getLga() {
+    return lga;
+  }
+
+
+  public void setLga(String lga) {
+
+    
+    
+    
+    this.lga = lga;
+  }
+
+
+  public GetPhoneNumberResponseEntity maritalStatus(String maritalStatus) {
+
+    
+    
+    
+    
+    this.maritalStatus = maritalStatus;
+    return this;
+  }
+
+   /**
+   * Get maritalStatus
+   * @return maritalStatus
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "Married", value = "")
+
+  public String getMaritalStatus() {
+    return maritalStatus;
+  }
+
+
+  public void setMaritalStatus(String maritalStatus) {
+
+    
+    
+    
+    this.maritalStatus = maritalStatus;
+  }
+
+
+  public GetPhoneNumberResponseEntity middleName(String middleName) {
+
+    
+    
+    
+    
+    this.middleName = middleName;
+    return this;
+  }
+
+   /**
+   * Get middleName
+   * @return middleName
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "Doe", value = "")
+
+  public String getMiddleName() {
+    return middleName;
+  }
+
+
+  public void setMiddleName(String middleName) {
+
+    
+    
+    
+    this.middleName = middleName;
+  }
+
+
+  public GetPhoneNumberResponseEntity msisdn(String msisdn) {
+
+    
+    
+    
+    
+    this.msisdn = msisdn;
+    return this;
+  }
+
+   /**
+   * Get msisdn
+   * @return msisdn
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "09011111111", value = "")
+
+  public String getMsisdn() {
+    return msisdn;
+  }
+
+
+  public void setMsisdn(String msisdn) {
+
+    
+    
+    
+    this.msisdn = msisdn;
+  }
+
+
+  public GetPhoneNumberResponseEntity nin(String nin) {
+
+    
+    
+    
+    
+    this.nin = nin;
+    return this;
+  }
+
+   /**
+   * Get nin
+   * @return nin
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "111111111111111", value = "")
+
+  public String getNin() {
+    return nin;
+  }
+
+
+  public void setNin(String nin) {
+
+    
+    
+    
+    this.nin = nin;
+  }
+
+
   public GetPhoneNumberResponseEntity nspokenLang(String nspokenLang) {
 
     
@@ -604,6 +697,37 @@ public class GetPhoneNumberResponseEntity {
     
     
     this.ospokenlang = ospokenlang;
+  }
+
+
+  public GetPhoneNumberResponseEntity picture(String picture) {
+
+    
+    
+    
+    
+    this.picture = picture;
+    return this;
+  }
+
+   /**
+   * Get picture
+   * @return picture
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "<base64 encoded image>", value = "")
+
+  public String getPicture() {
+    return picture;
+  }
+
+
+  public void setPicture(String picture) {
+
+    
+    
+    
+    this.picture = picture;
   }
 
 
@@ -700,37 +824,6 @@ public class GetPhoneNumberResponseEntity {
   }
 
 
-  public GetPhoneNumberResponseEntity residenceTown(String residenceTown) {
-
-    
-    
-    
-    
-    this.residenceTown = residenceTown;
-    return this;
-  }
-
-   /**
-   * Get residenceTown
-   * @return residenceTown
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "Oshogbo", value = "")
-
-  public String getResidenceTown() {
-    return residenceTown;
-  }
-
-
-  public void setResidenceTown(String residenceTown) {
-
-    
-    
-    
-    this.residenceTown = residenceTown;
-  }
-
-
   public GetPhoneNumberResponseEntity residenceLga(String residenceLga) {
 
     
@@ -821,6 +914,37 @@ public class GetPhoneNumberResponseEntity {
     
     
     this.residenceStatus = residenceStatus;
+  }
+
+
+  public GetPhoneNumberResponseEntity residenceTown(String residenceTown) {
+
+    
+    
+    
+    
+    this.residenceTown = residenceTown;
+    return this;
+  }
+
+   /**
+   * Get residenceTown
+   * @return residenceTown
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "Oshogbo", value = "")
+
+  public String getResidenceTown() {
+    return residenceTown;
+  }
+
+
+  public void setResidenceTown(String residenceTown) {
+
+    
+    
+    
+    this.residenceTown = residenceTown;
   }
 
 
@@ -948,130 +1072,6 @@ public class GetPhoneNumberResponseEntity {
   }
 
 
-  public GetPhoneNumberResponseEntity lga(String lga) {
-
-    
-    
-    
-    
-    this.lga = lga;
-    return this;
-  }
-
-   /**
-   * Get lga
-   * @return lga
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "Ikeja", value = "")
-
-  public String getLga() {
-    return lga;
-  }
-
-
-  public void setLga(String lga) {
-
-    
-    
-    
-    this.lga = lga;
-  }
-
-
-  public GetPhoneNumberResponseEntity nin(String nin) {
-
-    
-    
-    
-    
-    this.nin = nin;
-    return this;
-  }
-
-   /**
-   * Get nin
-   * @return nin
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "111111111111111", value = "")
-
-  public String getNin() {
-    return nin;
-  }
-
-
-  public void setNin(String nin) {
-
-    
-    
-    
-    this.nin = nin;
-  }
-
-
-  public GetPhoneNumberResponseEntity height(String height) {
-
-    
-    
-    
-    
-    this.height = height;
-    return this;
-  }
-
-   /**
-   * Get height
-   * @return height
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "5 9", value = "")
-
-  public String getHeight() {
-    return height;
-  }
-
-
-  public void setHeight(String height) {
-
-    
-    
-    
-    this.height = height;
-  }
-
-
-  public GetPhoneNumberResponseEntity picture(String picture) {
-
-    
-    
-    
-    
-    this.picture = picture;
-    return this;
-  }
-
-   /**
-   * Get picture
-   * @return picture
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "<base64 encoded image>", value = "")
-
-  public String getPicture() {
-    return picture;
-  }
-
-
-  public void setPicture(String picture) {
-
-    
-    
-    
-    this.picture = picture;
-  }
-
-
   public GetPhoneNumberResponseEntity status(Double status) {
 
     
@@ -1168,41 +1168,41 @@ public class GetPhoneNumberResponseEntity {
     }
     GetPhoneNumberResponseEntity getPhoneNumberResponseEntity = (GetPhoneNumberResponseEntity) o;
     return Objects.equals(this.title, getPhoneNumberResponseEntity.title) &&
-        Objects.equals(this.msisdn, getPhoneNumberResponseEntity.msisdn) &&
-        Objects.equals(this.firstName, getPhoneNumberResponseEntity.firstName) &&
-        Objects.equals(this.middleName, getPhoneNumberResponseEntity.middleName) &&
-        Objects.equals(this.lastName, getPhoneNumberResponseEntity.lastName) &&
-        Objects.equals(this.maritalStatus, getPhoneNumberResponseEntity.maritalStatus) &&
-        Objects.equals(this.gender, getPhoneNumberResponseEntity.gender) &&
         Objects.equals(this.birthDate, getPhoneNumberResponseEntity.birthDate) &&
         Objects.equals(this.birthLga, getPhoneNumberResponseEntity.birthLga) &&
         Objects.equals(this.birthState, getPhoneNumberResponseEntity.birthState) &&
         Objects.equals(this.educationalLevel, getPhoneNumberResponseEntity.educationalLevel) &&
         Objects.equals(this.emplymentStatus, getPhoneNumberResponseEntity.emplymentStatus) &&
+        Objects.equals(this.firstName, getPhoneNumberResponseEntity.firstName) &&
+        Objects.equals(this.gender, getPhoneNumberResponseEntity.gender) &&
+        Objects.equals(this.height, getPhoneNumberResponseEntity.height) &&
+        Objects.equals(this.lastName, getPhoneNumberResponseEntity.lastName) &&
+        Objects.equals(this.lga, getPhoneNumberResponseEntity.lga) &&
+        Objects.equals(this.maritalStatus, getPhoneNumberResponseEntity.maritalStatus) &&
+        Objects.equals(this.middleName, getPhoneNumberResponseEntity.middleName) &&
+        Objects.equals(this.msisdn, getPhoneNumberResponseEntity.msisdn) &&
+        Objects.equals(this.nin, getPhoneNumberResponseEntity.nin) &&
         Objects.equals(this.nspokenLang, getPhoneNumberResponseEntity.nspokenLang) &&
         Objects.equals(this.ospokenlang, getPhoneNumberResponseEntity.ospokenlang) &&
+        Objects.equals(this.picture, getPhoneNumberResponseEntity.picture) &&
         Objects.equals(this.profession, getPhoneNumberResponseEntity.profession) &&
         Objects.equals(this.religion, getPhoneNumberResponseEntity.religion) &&
         Objects.equals(this.residenceAddressLine1, getPhoneNumberResponseEntity.residenceAddressLine1) &&
-        Objects.equals(this.residenceTown, getPhoneNumberResponseEntity.residenceTown) &&
         Objects.equals(this.residenceLga, getPhoneNumberResponseEntity.residenceLga) &&
         Objects.equals(this.residenceState, getPhoneNumberResponseEntity.residenceState) &&
         Objects.equals(this.residenceStatus, getPhoneNumberResponseEntity.residenceStatus) &&
+        Objects.equals(this.residenceTown, getPhoneNumberResponseEntity.residenceTown) &&
         Objects.equals(this.selfOriginLga, getPhoneNumberResponseEntity.selfOriginLga) &&
         Objects.equals(this.selfOriginPlace, getPhoneNumberResponseEntity.selfOriginPlace) &&
         Objects.equals(this.selfOriginState, getPhoneNumberResponseEntity.selfOriginState) &&
         Objects.equals(this.state, getPhoneNumberResponseEntity.state) &&
-        Objects.equals(this.lga, getPhoneNumberResponseEntity.lga) &&
-        Objects.equals(this.nin, getPhoneNumberResponseEntity.nin) &&
-        Objects.equals(this.height, getPhoneNumberResponseEntity.height) &&
-        Objects.equals(this.picture, getPhoneNumberResponseEntity.picture) &&
         Objects.equals(this.status, getPhoneNumberResponseEntity.status)&&
         Objects.equals(this.additionalProperties, getPhoneNumberResponseEntity.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, msisdn, firstName, middleName, lastName, maritalStatus, gender, birthDate, birthLga, birthState, educationalLevel, emplymentStatus, nspokenLang, ospokenlang, profession, religion, residenceAddressLine1, residenceTown, residenceLga, residenceState, residenceStatus, selfOriginLga, selfOriginPlace, selfOriginState, state, lga, nin, height, picture, status, additionalProperties);
+    return Objects.hash(title, birthDate, birthLga, birthState, educationalLevel, emplymentStatus, firstName, gender, height, lastName, lga, maritalStatus, middleName, msisdn, nin, nspokenLang, ospokenlang, picture, profession, religion, residenceAddressLine1, residenceLga, residenceState, residenceStatus, residenceTown, selfOriginLga, selfOriginPlace, selfOriginState, state, status, additionalProperties);
   }
 
   @Override
@@ -1210,34 +1210,34 @@ public class GetPhoneNumberResponseEntity {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetPhoneNumberResponseEntity {\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
-    sb.append("    msisdn: ").append(toIndentedString(msisdn)).append("\n");
-    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
-    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
-    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
-    sb.append("    maritalStatus: ").append(toIndentedString(maritalStatus)).append("\n");
-    sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
     sb.append("    birthDate: ").append(toIndentedString(birthDate)).append("\n");
     sb.append("    birthLga: ").append(toIndentedString(birthLga)).append("\n");
     sb.append("    birthState: ").append(toIndentedString(birthState)).append("\n");
     sb.append("    educationalLevel: ").append(toIndentedString(educationalLevel)).append("\n");
     sb.append("    emplymentStatus: ").append(toIndentedString(emplymentStatus)).append("\n");
+    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
+    sb.append("    height: ").append(toIndentedString(height)).append("\n");
+    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    sb.append("    lga: ").append(toIndentedString(lga)).append("\n");
+    sb.append("    maritalStatus: ").append(toIndentedString(maritalStatus)).append("\n");
+    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
+    sb.append("    msisdn: ").append(toIndentedString(msisdn)).append("\n");
+    sb.append("    nin: ").append(toIndentedString(nin)).append("\n");
     sb.append("    nspokenLang: ").append(toIndentedString(nspokenLang)).append("\n");
     sb.append("    ospokenlang: ").append(toIndentedString(ospokenlang)).append("\n");
+    sb.append("    picture: ").append(toIndentedString(picture)).append("\n");
     sb.append("    profession: ").append(toIndentedString(profession)).append("\n");
     sb.append("    religion: ").append(toIndentedString(religion)).append("\n");
     sb.append("    residenceAddressLine1: ").append(toIndentedString(residenceAddressLine1)).append("\n");
-    sb.append("    residenceTown: ").append(toIndentedString(residenceTown)).append("\n");
     sb.append("    residenceLga: ").append(toIndentedString(residenceLga)).append("\n");
     sb.append("    residenceState: ").append(toIndentedString(residenceState)).append("\n");
     sb.append("    residenceStatus: ").append(toIndentedString(residenceStatus)).append("\n");
+    sb.append("    residenceTown: ").append(toIndentedString(residenceTown)).append("\n");
     sb.append("    selfOriginLga: ").append(toIndentedString(selfOriginLga)).append("\n");
     sb.append("    selfOriginPlace: ").append(toIndentedString(selfOriginPlace)).append("\n");
     sb.append("    selfOriginState: ").append(toIndentedString(selfOriginState)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    lga: ").append(toIndentedString(lga)).append("\n");
-    sb.append("    nin: ").append(toIndentedString(nin)).append("\n");
-    sb.append("    height: ").append(toIndentedString(height)).append("\n");
-    sb.append("    picture: ").append(toIndentedString(picture)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -1263,34 +1263,34 @@ public class GetPhoneNumberResponseEntity {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("title");
-    openapiFields.add("msisdn");
-    openapiFields.add("firstName");
-    openapiFields.add("middleName");
-    openapiFields.add("lastName");
-    openapiFields.add("maritalStatus");
-    openapiFields.add("gender");
     openapiFields.add("birthDate");
     openapiFields.add("birthLga");
     openapiFields.add("birthState");
     openapiFields.add("educationalLevel");
     openapiFields.add("emplymentStatus");
+    openapiFields.add("firstName");
+    openapiFields.add("gender");
+    openapiFields.add("height");
+    openapiFields.add("lastName");
+    openapiFields.add("lga");
+    openapiFields.add("maritalStatus");
+    openapiFields.add("middleName");
+    openapiFields.add("msisdn");
+    openapiFields.add("nin");
     openapiFields.add("nspokenLang");
     openapiFields.add("ospokenlang");
+    openapiFields.add("picture");
     openapiFields.add("profession");
     openapiFields.add("religion");
     openapiFields.add("residenceAddressLine1");
-    openapiFields.add("residenceTown");
     openapiFields.add("residenceLga");
     openapiFields.add("residenceState");
     openapiFields.add("residenceStatus");
+    openapiFields.add("residenceTown");
     openapiFields.add("selfOriginLga");
     openapiFields.add("selfOriginPlace");
     openapiFields.add("selfOriginState");
     openapiFields.add("state");
-    openapiFields.add("lga");
-    openapiFields.add("nin");
-    openapiFields.add("height");
-    openapiFields.add("picture");
     openapiFields.add("status");
 
     // a set of required properties/fields (JSON key names)
@@ -1312,24 +1312,6 @@ public class GetPhoneNumberResponseEntity {
       if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }
-      if ((jsonObj.get("msisdn") != null && !jsonObj.get("msisdn").isJsonNull()) && !jsonObj.get("msisdn").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `msisdn` to be a primitive type in the JSON string but got `%s`", jsonObj.get("msisdn").toString()));
-      }
-      if ((jsonObj.get("firstName") != null && !jsonObj.get("firstName").isJsonNull()) && !jsonObj.get("firstName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `firstName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("firstName").toString()));
-      }
-      if ((jsonObj.get("middleName") != null && !jsonObj.get("middleName").isJsonNull()) && !jsonObj.get("middleName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `middleName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("middleName").toString()));
-      }
-      if ((jsonObj.get("lastName") != null && !jsonObj.get("lastName").isJsonNull()) && !jsonObj.get("lastName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lastName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastName").toString()));
-      }
-      if ((jsonObj.get("maritalStatus") != null && !jsonObj.get("maritalStatus").isJsonNull()) && !jsonObj.get("maritalStatus").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `maritalStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maritalStatus").toString()));
-      }
-      if ((jsonObj.get("gender") != null && !jsonObj.get("gender").isJsonNull()) && !jsonObj.get("gender").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `gender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gender").toString()));
-      }
       if ((jsonObj.get("birthDate") != null && !jsonObj.get("birthDate").isJsonNull()) && !jsonObj.get("birthDate").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `birthDate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("birthDate").toString()));
       }
@@ -1345,11 +1327,41 @@ public class GetPhoneNumberResponseEntity {
       if ((jsonObj.get("emplymentStatus") != null && !jsonObj.get("emplymentStatus").isJsonNull()) && !jsonObj.get("emplymentStatus").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `emplymentStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("emplymentStatus").toString()));
       }
+      if ((jsonObj.get("firstName") != null && !jsonObj.get("firstName").isJsonNull()) && !jsonObj.get("firstName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `firstName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("firstName").toString()));
+      }
+      if ((jsonObj.get("gender") != null && !jsonObj.get("gender").isJsonNull()) && !jsonObj.get("gender").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gender").toString()));
+      }
+      if ((jsonObj.get("height") != null && !jsonObj.get("height").isJsonNull()) && !jsonObj.get("height").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `height` to be a primitive type in the JSON string but got `%s`", jsonObj.get("height").toString()));
+      }
+      if ((jsonObj.get("lastName") != null && !jsonObj.get("lastName").isJsonNull()) && !jsonObj.get("lastName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `lastName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastName").toString()));
+      }
+      if ((jsonObj.get("lga") != null && !jsonObj.get("lga").isJsonNull()) && !jsonObj.get("lga").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `lga` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lga").toString()));
+      }
+      if ((jsonObj.get("maritalStatus") != null && !jsonObj.get("maritalStatus").isJsonNull()) && !jsonObj.get("maritalStatus").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `maritalStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maritalStatus").toString()));
+      }
+      if ((jsonObj.get("middleName") != null && !jsonObj.get("middleName").isJsonNull()) && !jsonObj.get("middleName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `middleName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("middleName").toString()));
+      }
+      if ((jsonObj.get("msisdn") != null && !jsonObj.get("msisdn").isJsonNull()) && !jsonObj.get("msisdn").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `msisdn` to be a primitive type in the JSON string but got `%s`", jsonObj.get("msisdn").toString()));
+      }
+      if ((jsonObj.get("nin") != null && !jsonObj.get("nin").isJsonNull()) && !jsonObj.get("nin").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `nin` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nin").toString()));
+      }
       if ((jsonObj.get("nspokenLang") != null && !jsonObj.get("nspokenLang").isJsonNull()) && !jsonObj.get("nspokenLang").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `nspokenLang` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nspokenLang").toString()));
       }
       if ((jsonObj.get("ospokenlang") != null && !jsonObj.get("ospokenlang").isJsonNull()) && !jsonObj.get("ospokenlang").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `ospokenlang` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ospokenlang").toString()));
+      }
+      if ((jsonObj.get("picture") != null && !jsonObj.get("picture").isJsonNull()) && !jsonObj.get("picture").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `picture` to be a primitive type in the JSON string but got `%s`", jsonObj.get("picture").toString()));
       }
       if ((jsonObj.get("profession") != null && !jsonObj.get("profession").isJsonNull()) && !jsonObj.get("profession").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `profession` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profession").toString()));
@@ -1360,9 +1372,6 @@ public class GetPhoneNumberResponseEntity {
       if ((jsonObj.get("residenceAddressLine1") != null && !jsonObj.get("residenceAddressLine1").isJsonNull()) && !jsonObj.get("residenceAddressLine1").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `residenceAddressLine1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("residenceAddressLine1").toString()));
       }
-      if ((jsonObj.get("residenceTown") != null && !jsonObj.get("residenceTown").isJsonNull()) && !jsonObj.get("residenceTown").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `residenceTown` to be a primitive type in the JSON string but got `%s`", jsonObj.get("residenceTown").toString()));
-      }
       if ((jsonObj.get("residenceLga") != null && !jsonObj.get("residenceLga").isJsonNull()) && !jsonObj.get("residenceLga").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `residenceLga` to be a primitive type in the JSON string but got `%s`", jsonObj.get("residenceLga").toString()));
       }
@@ -1371,6 +1380,9 @@ public class GetPhoneNumberResponseEntity {
       }
       if ((jsonObj.get("residenceStatus") != null && !jsonObj.get("residenceStatus").isJsonNull()) && !jsonObj.get("residenceStatus").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `residenceStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("residenceStatus").toString()));
+      }
+      if ((jsonObj.get("residenceTown") != null && !jsonObj.get("residenceTown").isJsonNull()) && !jsonObj.get("residenceTown").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `residenceTown` to be a primitive type in the JSON string but got `%s`", jsonObj.get("residenceTown").toString()));
       }
       if ((jsonObj.get("selfOriginLga") != null && !jsonObj.get("selfOriginLga").isJsonNull()) && !jsonObj.get("selfOriginLga").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `selfOriginLga` to be a primitive type in the JSON string but got `%s`", jsonObj.get("selfOriginLga").toString()));
@@ -1383,18 +1395,6 @@ public class GetPhoneNumberResponseEntity {
       }
       if ((jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) && !jsonObj.get("state").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
-      }
-      if ((jsonObj.get("lga") != null && !jsonObj.get("lga").isJsonNull()) && !jsonObj.get("lga").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lga` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lga").toString()));
-      }
-      if ((jsonObj.get("nin") != null && !jsonObj.get("nin").isJsonNull()) && !jsonObj.get("nin").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nin` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nin").toString()));
-      }
-      if ((jsonObj.get("height") != null && !jsonObj.get("height").isJsonNull()) && !jsonObj.get("height").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `height` to be a primitive type in the JSON string but got `%s`", jsonObj.get("height").toString()));
-      }
-      if ((jsonObj.get("picture") != null && !jsonObj.get("picture").isJsonNull()) && !jsonObj.get("picture").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `picture` to be a primitive type in the JSON string but got `%s`", jsonObj.get("picture").toString()));
       }
   }
 

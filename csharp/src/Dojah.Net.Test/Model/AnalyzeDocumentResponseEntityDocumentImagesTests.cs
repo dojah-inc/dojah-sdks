@@ -57,12 +57,12 @@ namespace Dojah.Net.Test.Model
 
 
         /// <summary>
-        /// Test the property 'Portrait'
+        /// Test the property 'DocumentFrontSide'
         /// </summary>
         [Fact]
-        public void PortraitTest()
+        public void DocumentFrontSideTest()
         {
-            // TODO unit test for the property 'Portrait'
+            // TODO unit test for the property 'DocumentFrontSide'
         }
         /// <summary>
         /// Test the property 'Fingerprint'
@@ -73,12 +73,12 @@ namespace Dojah.Net.Test.Model
             // TODO unit test for the property 'Fingerprint'
         }
         /// <summary>
-        /// Test the property 'DocumentFrontSide'
+        /// Test the property 'Portrait'
         /// </summary>
         [Fact]
-        public void DocumentFrontSideTest()
+        public void PortraitTest()
         {
-            // TODO unit test for the property 'DocumentFrontSide'
+            // TODO unit test for the property 'Portrait'
         }
 
     }

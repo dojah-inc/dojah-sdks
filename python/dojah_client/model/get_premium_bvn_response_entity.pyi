@@ -58,8 +58,8 @@ class GetPremiumBvnResponseEntity(
             residential_address = schemas.StrSchema
             state_of_origin = schemas.StrSchema
             state_of_residence = schemas.StrSchema
-            watch_listed = schemas.StrSchema
             status = schemas.NumberSchema
+            watch_listed = schemas.StrSchema
             __annotations__ = {
                 "title": title,
                 "bvn": bvn,
@@ -85,8 +85,8 @@ class GetPremiumBvnResponseEntity(
                 "residential_address": residential_address,
                 "state_of_origin": state_of_origin,
                 "state_of_residence": state_of_residence,
-                "watch_listed": watch_listed,
                 "status": status,
+                "watch_listed": watch_listed,
             }
     
     @typing.overload
@@ -162,15 +162,15 @@ class GetPremiumBvnResponseEntity(
     def __getitem__(self, name: typing_extensions.Literal["state_of_residence"]) -> MetaOapg.properties.state_of_residence: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["watch_listed"]) -> MetaOapg.properties.watch_listed: ...
+    def __getitem__(self, name: typing_extensions.Literal["status"]) -> MetaOapg.properties.status: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["status"]) -> MetaOapg.properties.status: ...
+    def __getitem__(self, name: typing_extensions.Literal["watch_listed"]) -> MetaOapg.properties.watch_listed: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["title", "bvn", "date_of_birth", "email", "enrollment_bank", "enrollment_branch", "first_name", "gender", "image", "last_name", "level_of_account", "lga_of_origin", "lga_of_residence", "marital_status", "middle_name", "name_on_card", "nationality", "nin", "phone_number1", "phone_number2", "registration_date", "residential_address", "state_of_origin", "state_of_residence", "watch_listed", "status", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["title", "bvn", "date_of_birth", "email", "enrollment_bank", "enrollment_branch", "first_name", "gender", "image", "last_name", "level_of_account", "lga_of_origin", "lga_of_residence", "marital_status", "middle_name", "name_on_card", "nationality", "nin", "phone_number1", "phone_number2", "registration_date", "residential_address", "state_of_origin", "state_of_residence", "status", "watch_listed", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -248,15 +248,15 @@ class GetPremiumBvnResponseEntity(
     def get_item_oapg(self, name: typing_extensions.Literal["state_of_residence"]) -> typing.Union[MetaOapg.properties.state_of_residence, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["watch_listed"]) -> typing.Union[MetaOapg.properties.watch_listed, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["status"]) -> typing.Union[MetaOapg.properties.status, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["status"]) -> typing.Union[MetaOapg.properties.status, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["watch_listed"]) -> typing.Union[MetaOapg.properties.watch_listed, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["title", "bvn", "date_of_birth", "email", "enrollment_bank", "enrollment_branch", "first_name", "gender", "image", "last_name", "level_of_account", "lga_of_origin", "lga_of_residence", "marital_status", "middle_name", "name_on_card", "nationality", "nin", "phone_number1", "phone_number2", "registration_date", "residential_address", "state_of_origin", "state_of_residence", "watch_listed", "status", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["title", "bvn", "date_of_birth", "email", "enrollment_bank", "enrollment_branch", "first_name", "gender", "image", "last_name", "level_of_account", "lga_of_origin", "lga_of_residence", "marital_status", "middle_name", "name_on_card", "nationality", "nin", "phone_number1", "phone_number2", "registration_date", "residential_address", "state_of_origin", "state_of_residence", "status", "watch_listed", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -287,8 +287,8 @@ class GetPremiumBvnResponseEntity(
         residential_address: typing.Union[MetaOapg.properties.residential_address, str, schemas.Unset] = schemas.unset,
         state_of_origin: typing.Union[MetaOapg.properties.state_of_origin, str, schemas.Unset] = schemas.unset,
         state_of_residence: typing.Union[MetaOapg.properties.state_of_residence, str, schemas.Unset] = schemas.unset,
-        watch_listed: typing.Union[MetaOapg.properties.watch_listed, str, schemas.Unset] = schemas.unset,
         status: typing.Union[MetaOapg.properties.status, decimal.Decimal, int, float, schemas.Unset] = schemas.unset,
+        watch_listed: typing.Union[MetaOapg.properties.watch_listed, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'GetPremiumBvnResponseEntity':
@@ -319,8 +319,8 @@ class GetPremiumBvnResponseEntity(
             residential_address=residential_address,
             state_of_origin=state_of_origin,
             state_of_residence=state_of_residence,
-            watch_listed=watch_listed,
             status=status,
+            watch_listed=watch_listed,
             _configuration=_configuration,
             **kwargs,
         )

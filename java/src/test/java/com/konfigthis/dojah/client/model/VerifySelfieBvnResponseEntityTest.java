@@ -48,30 +48,6 @@ public class VerifySelfieBvnResponseEntityTest {
     }
 
     /**
-     * Test the property 'firstName'
-     */
-    @Test
-    public void firstNameTest() {
-        // TODO: test firstName
-    }
-
-    /**
-     * Test the property 'middleName'
-     */
-    @Test
-    public void middleNameTest() {
-        // TODO: test middleName
-    }
-
-    /**
-     * Test the property 'lastName'
-     */
-    @Test
-    public void lastNameTest() {
-        // TODO: test lastName
-    }
-
-    /**
      * Test the property 'dateOfBirth'
      */
     @Test
@@ -80,27 +56,11 @@ public class VerifySelfieBvnResponseEntityTest {
     }
 
     /**
-     * Test the property 'phoneNumber1'
+     * Test the property 'email'
      */
     @Test
-    public void phoneNumber1Test() {
-        // TODO: test phoneNumber1
-    }
-
-    /**
-     * Test the property 'phoneNumber2'
-     */
-    @Test
-    public void phoneNumber2Test() {
-        // TODO: test phoneNumber2
-    }
-
-    /**
-     * Test the property 'gender'
-     */
-    @Test
-    public void genderTest() {
-        // TODO: test gender
+    public void emailTest() {
+        // TODO: test email
     }
 
     /**
@@ -120,11 +80,43 @@ public class VerifySelfieBvnResponseEntityTest {
     }
 
     /**
-     * Test the property 'email'
+     * Test the property 'firstName'
      */
     @Test
-    public void emailTest() {
-        // TODO: test email
+    public void firstNameTest() {
+        // TODO: test firstName
+    }
+
+    /**
+     * Test the property 'gender'
+     */
+    @Test
+    public void genderTest() {
+        // TODO: test gender
+    }
+
+    /**
+     * Test the property 'image'
+     */
+    @Test
+    public void imageTest() {
+        // TODO: test image
+    }
+
+    /**
+     * Test the property 'lastName'
+     */
+    @Test
+    public void lastNameTest() {
+        // TODO: test lastName
+    }
+
+    /**
+     * Test the property 'levelOfAccount'
+     */
+    @Test
+    public void levelOfAccountTest() {
+        // TODO: test levelOfAccount
     }
 
     /**
@@ -152,11 +144,11 @@ public class VerifySelfieBvnResponseEntityTest {
     }
 
     /**
-     * Test the property 'nin'
+     * Test the property 'middleName'
      */
     @Test
-    public void ninTest() {
-        // TODO: test nin
+    public void middleNameTest() {
+        // TODO: test middleName
     }
 
     /**
@@ -168,11 +160,51 @@ public class VerifySelfieBvnResponseEntityTest {
     }
 
     /**
+     * Test the property 'nin'
+     */
+    @Test
+    public void ninTest() {
+        // TODO: test nin
+    }
+
+    /**
+     * Test the property 'phoneNumber1'
+     */
+    @Test
+    public void phoneNumber1Test() {
+        // TODO: test phoneNumber1
+    }
+
+    /**
+     * Test the property 'phoneNumber2'
+     */
+    @Test
+    public void phoneNumber2Test() {
+        // TODO: test phoneNumber2
+    }
+
+    /**
+     * Test the property 'registrationDate'
+     */
+    @Test
+    public void registrationDateTest() {
+        // TODO: test registrationDate
+    }
+
+    /**
      * Test the property 'residentialAddress'
      */
     @Test
     public void residentialAddressTest() {
         // TODO: test residentialAddress
+    }
+
+    /**
+     * Test the property 'selfieVerification'
+     */
+    @Test
+    public void selfieVerificationTest() {
+        // TODO: test selfieVerification
     }
 
     /**
@@ -197,38 +229,6 @@ public class VerifySelfieBvnResponseEntityTest {
     @Test
     public void watchListedTest() {
         // TODO: test watchListed
-    }
-
-    /**
-     * Test the property 'levelOfAccount'
-     */
-    @Test
-    public void levelOfAccountTest() {
-        // TODO: test levelOfAccount
-    }
-
-    /**
-     * Test the property 'registrationDate'
-     */
-    @Test
-    public void registrationDateTest() {
-        // TODO: test registrationDate
-    }
-
-    /**
-     * Test the property 'image'
-     */
-    @Test
-    public void imageTest() {
-        // TODO: test image
-    }
-
-    /**
-     * Test the property 'selfieVerification'
-     */
-    @Test
-    public void selfieVerificationTest() {
-        // TODO: test selfieVerification
     }
 
 }

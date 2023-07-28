@@ -55,33 +55,13 @@ public class VerifySelfieBvnResponseEntity {
   @SerializedName(SERIALIZED_NAME_BVN)
   private String bvn;
 
-  public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
-  @SerializedName(SERIALIZED_NAME_FIRST_NAME)
-  private String firstName;
-
-  public static final String SERIALIZED_NAME_MIDDLE_NAME = "middle_name";
-  @SerializedName(SERIALIZED_NAME_MIDDLE_NAME)
-  private String middleName;
-
-  public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
-  @SerializedName(SERIALIZED_NAME_LAST_NAME)
-  private String lastName;
-
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
   private String dateOfBirth;
 
-  public static final String SERIALIZED_NAME_PHONE_NUMBER1 = "phone_number1";
-  @SerializedName(SERIALIZED_NAME_PHONE_NUMBER1)
-  private String phoneNumber1;
-
-  public static final String SERIALIZED_NAME_PHONE_NUMBER2 = "phone_number2";
-  @SerializedName(SERIALIZED_NAME_PHONE_NUMBER2)
-  private String phoneNumber2;
-
-  public static final String SERIALIZED_NAME_GENDER = "gender";
-  @SerializedName(SERIALIZED_NAME_GENDER)
-  private String gender;
+  public static final String SERIALIZED_NAME_EMAIL = "email";
+  @SerializedName(SERIALIZED_NAME_EMAIL)
+  private String email;
 
   public static final String SERIALIZED_NAME_ENROLLMENT_BANK = "enrollment_bank";
   @SerializedName(SERIALIZED_NAME_ENROLLMENT_BANK)
@@ -91,9 +71,25 @@ public class VerifySelfieBvnResponseEntity {
   @SerializedName(SERIALIZED_NAME_ENROLLMENT_BRANCH)
   private String enrollmentBranch;
 
-  public static final String SERIALIZED_NAME_EMAIL = "email";
-  @SerializedName(SERIALIZED_NAME_EMAIL)
-  private String email;
+  public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
+  @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  private String firstName;
+
+  public static final String SERIALIZED_NAME_GENDER = "gender";
+  @SerializedName(SERIALIZED_NAME_GENDER)
+  private String gender;
+
+  public static final String SERIALIZED_NAME_IMAGE = "image";
+  @SerializedName(SERIALIZED_NAME_IMAGE)
+  private String image;
+
+  public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
+  @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  private String lastName;
+
+  public static final String SERIALIZED_NAME_LEVEL_OF_ACCOUNT = "level_of_account";
+  @SerializedName(SERIALIZED_NAME_LEVEL_OF_ACCOUNT)
+  private String levelOfAccount;
 
   public static final String SERIALIZED_NAME_LGA_OF_ORIGIN = "lga_of_origin";
   @SerializedName(SERIALIZED_NAME_LGA_OF_ORIGIN)
@@ -107,17 +103,37 @@ public class VerifySelfieBvnResponseEntity {
   @SerializedName(SERIALIZED_NAME_MARITAL_STATUS)
   private String maritalStatus;
 
-  public static final String SERIALIZED_NAME_NIN = "nin";
-  @SerializedName(SERIALIZED_NAME_NIN)
-  private String nin;
+  public static final String SERIALIZED_NAME_MIDDLE_NAME = "middle_name";
+  @SerializedName(SERIALIZED_NAME_MIDDLE_NAME)
+  private String middleName;
 
   public static final String SERIALIZED_NAME_NAME_ON_CARD = "name_on_card";
   @SerializedName(SERIALIZED_NAME_NAME_ON_CARD)
   private String nameOnCard;
 
+  public static final String SERIALIZED_NAME_NIN = "nin";
+  @SerializedName(SERIALIZED_NAME_NIN)
+  private String nin;
+
+  public static final String SERIALIZED_NAME_PHONE_NUMBER1 = "phone_number1";
+  @SerializedName(SERIALIZED_NAME_PHONE_NUMBER1)
+  private String phoneNumber1;
+
+  public static final String SERIALIZED_NAME_PHONE_NUMBER2 = "phone_number2";
+  @SerializedName(SERIALIZED_NAME_PHONE_NUMBER2)
+  private String phoneNumber2;
+
+  public static final String SERIALIZED_NAME_REGISTRATION_DATE = "registration_date";
+  @SerializedName(SERIALIZED_NAME_REGISTRATION_DATE)
+  private String registrationDate;
+
   public static final String SERIALIZED_NAME_RESIDENTIAL_ADDRESS = "residential_address";
   @SerializedName(SERIALIZED_NAME_RESIDENTIAL_ADDRESS)
   private String residentialAddress;
+
+  public static final String SERIALIZED_NAME_SELFIE_VERIFICATION = "selfie_verification";
+  @SerializedName(SERIALIZED_NAME_SELFIE_VERIFICATION)
+  private VerifySelfieBvnResponseEntitySelfieVerification selfieVerification;
 
   public static final String SERIALIZED_NAME_STATE_OF_ORIGIN = "state_of_origin";
   @SerializedName(SERIALIZED_NAME_STATE_OF_ORIGIN)
@@ -130,22 +146,6 @@ public class VerifySelfieBvnResponseEntity {
   public static final String SERIALIZED_NAME_WATCH_LISTED = "watch_listed";
   @SerializedName(SERIALIZED_NAME_WATCH_LISTED)
   private String watchListed;
-
-  public static final String SERIALIZED_NAME_LEVEL_OF_ACCOUNT = "level_of_account";
-  @SerializedName(SERIALIZED_NAME_LEVEL_OF_ACCOUNT)
-  private String levelOfAccount;
-
-  public static final String SERIALIZED_NAME_REGISTRATION_DATE = "registration_date";
-  @SerializedName(SERIALIZED_NAME_REGISTRATION_DATE)
-  private String registrationDate;
-
-  public static final String SERIALIZED_NAME_IMAGE = "image";
-  @SerializedName(SERIALIZED_NAME_IMAGE)
-  private String image;
-
-  public static final String SERIALIZED_NAME_SELFIE_VERIFICATION = "selfie_verification";
-  @SerializedName(SERIALIZED_NAME_SELFIE_VERIFICATION)
-  private VerifySelfieBvnResponseEntitySelfieVerification selfieVerification;
 
   public VerifySelfieBvnResponseEntity() {
   }
@@ -181,99 +181,6 @@ public class VerifySelfieBvnResponseEntity {
   }
 
 
-  public VerifySelfieBvnResponseEntity firstName(String firstName) {
-
-    
-    
-    
-    
-    this.firstName = firstName;
-    return this;
-  }
-
-   /**
-   * Get firstName
-   * @return firstName
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "ADEYEMO", value = "")
-
-  public String getFirstName() {
-    return firstName;
-  }
-
-
-  public void setFirstName(String firstName) {
-
-    
-    
-    
-    this.firstName = firstName;
-  }
-
-
-  public VerifySelfieBvnResponseEntity middleName(String middleName) {
-
-    
-    
-    
-    
-    this.middleName = middleName;
-    return this;
-  }
-
-   /**
-   * Get middleName
-   * @return middleName
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "ADELEKE", value = "")
-
-  public String getMiddleName() {
-    return middleName;
-  }
-
-
-  public void setMiddleName(String middleName) {
-
-    
-    
-    
-    this.middleName = middleName;
-  }
-
-
-  public VerifySelfieBvnResponseEntity lastName(String lastName) {
-
-    
-    
-    
-    
-    this.lastName = lastName;
-    return this;
-  }
-
-   /**
-   * Get lastName
-   * @return lastName
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "AKIN", value = "")
-
-  public String getLastName() {
-    return lastName;
-  }
-
-
-  public void setLastName(String lastName) {
-
-    
-    
-    
-    this.lastName = lastName;
-  }
-
-
   public VerifySelfieBvnResponseEntity dateOfBirth(String dateOfBirth) {
 
     
@@ -305,96 +212,34 @@ public class VerifySelfieBvnResponseEntity {
   }
 
 
-  public VerifySelfieBvnResponseEntity phoneNumber1(String phoneNumber1) {
+  public VerifySelfieBvnResponseEntity email(String email) {
 
     
     
     
     
-    this.phoneNumber1 = phoneNumber1;
+    this.email = email;
     return this;
   }
 
    /**
-   * Get phoneNumber1
-   * @return phoneNumber1
+   * Get email
+   * @return email
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "08134720263", value = "")
+  @ApiModelProperty(example = "adelek@yahoo.com", value = "")
 
-  public String getPhoneNumber1() {
-    return phoneNumber1;
+  public String getEmail() {
+    return email;
   }
 
 
-  public void setPhoneNumber1(String phoneNumber1) {
+  public void setEmail(String email) {
 
     
     
     
-    this.phoneNumber1 = phoneNumber1;
-  }
-
-
-  public VerifySelfieBvnResponseEntity phoneNumber2(String phoneNumber2) {
-
-    
-    
-    
-    
-    this.phoneNumber2 = phoneNumber2;
-    return this;
-  }
-
-   /**
-   * Get phoneNumber2
-   * @return phoneNumber2
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "", value = "")
-
-  public String getPhoneNumber2() {
-    return phoneNumber2;
-  }
-
-
-  public void setPhoneNumber2(String phoneNumber2) {
-
-    
-    
-    
-    this.phoneNumber2 = phoneNumber2;
-  }
-
-
-  public VerifySelfieBvnResponseEntity gender(String gender) {
-
-    
-    
-    
-    
-    this.gender = gender;
-    return this;
-  }
-
-   /**
-   * Get gender
-   * @return gender
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "Male", value = "")
-
-  public String getGender() {
-    return gender;
-  }
-
-
-  public void setGender(String gender) {
-
-    
-    
-    
-    this.gender = gender;
+    this.email = email;
   }
 
 
@@ -460,34 +305,158 @@ public class VerifySelfieBvnResponseEntity {
   }
 
 
-  public VerifySelfieBvnResponseEntity email(String email) {
+  public VerifySelfieBvnResponseEntity firstName(String firstName) {
 
     
     
     
     
-    this.email = email;
+    this.firstName = firstName;
     return this;
   }
 
    /**
-   * Get email
-   * @return email
+   * Get firstName
+   * @return firstName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "adelek@yahoo.com", value = "")
+  @ApiModelProperty(example = "ADEYEMO", value = "")
 
-  public String getEmail() {
-    return email;
+  public String getFirstName() {
+    return firstName;
   }
 
 
-  public void setEmail(String email) {
+  public void setFirstName(String firstName) {
 
     
     
     
-    this.email = email;
+    this.firstName = firstName;
+  }
+
+
+  public VerifySelfieBvnResponseEntity gender(String gender) {
+
+    
+    
+    
+    
+    this.gender = gender;
+    return this;
+  }
+
+   /**
+   * Get gender
+   * @return gender
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "Male", value = "")
+
+  public String getGender() {
+    return gender;
+  }
+
+
+  public void setGender(String gender) {
+
+    
+    
+    
+    this.gender = gender;
+  }
+
+
+  public VerifySelfieBvnResponseEntity image(String image) {
+
+    
+    
+    
+    
+    this.image = image;
+    return this;
+  }
+
+   /**
+   * Get image
+   * @return image
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "base64 image", value = "")
+
+  public String getImage() {
+    return image;
+  }
+
+
+  public void setImage(String image) {
+
+    
+    
+    
+    this.image = image;
+  }
+
+
+  public VerifySelfieBvnResponseEntity lastName(String lastName) {
+
+    
+    
+    
+    
+    this.lastName = lastName;
+    return this;
+  }
+
+   /**
+   * Get lastName
+   * @return lastName
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "AKIN", value = "")
+
+  public String getLastName() {
+    return lastName;
+  }
+
+
+  public void setLastName(String lastName) {
+
+    
+    
+    
+    this.lastName = lastName;
+  }
+
+
+  public VerifySelfieBvnResponseEntity levelOfAccount(String levelOfAccount) {
+
+    
+    
+    
+    
+    this.levelOfAccount = levelOfAccount;
+    return this;
+  }
+
+   /**
+   * Get levelOfAccount
+   * @return levelOfAccount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "Level 2 - Medium Level Accounts", value = "")
+
+  public String getLevelOfAccount() {
+    return levelOfAccount;
+  }
+
+
+  public void setLevelOfAccount(String levelOfAccount) {
+
+    
+    
+    
+    this.levelOfAccount = levelOfAccount;
   }
 
 
@@ -584,34 +553,34 @@ public class VerifySelfieBvnResponseEntity {
   }
 
 
-  public VerifySelfieBvnResponseEntity nin(String nin) {
+  public VerifySelfieBvnResponseEntity middleName(String middleName) {
 
     
     
     
     
-    this.nin = nin;
+    this.middleName = middleName;
     return this;
   }
 
    /**
-   * Get nin
-   * @return nin
+   * Get middleName
+   * @return middleName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "76221462632", value = "")
+  @ApiModelProperty(example = "ADELEKE", value = "")
 
-  public String getNin() {
-    return nin;
+  public String getMiddleName() {
+    return middleName;
   }
 
 
-  public void setNin(String nin) {
+  public void setMiddleName(String middleName) {
 
     
     
     
-    this.nin = nin;
+    this.middleName = middleName;
   }
 
 
@@ -646,6 +615,130 @@ public class VerifySelfieBvnResponseEntity {
   }
 
 
+  public VerifySelfieBvnResponseEntity nin(String nin) {
+
+    
+    
+    
+    
+    this.nin = nin;
+    return this;
+  }
+
+   /**
+   * Get nin
+   * @return nin
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "76221462632", value = "")
+
+  public String getNin() {
+    return nin;
+  }
+
+
+  public void setNin(String nin) {
+
+    
+    
+    
+    this.nin = nin;
+  }
+
+
+  public VerifySelfieBvnResponseEntity phoneNumber1(String phoneNumber1) {
+
+    
+    
+    
+    
+    this.phoneNumber1 = phoneNumber1;
+    return this;
+  }
+
+   /**
+   * Get phoneNumber1
+   * @return phoneNumber1
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "08134720263", value = "")
+
+  public String getPhoneNumber1() {
+    return phoneNumber1;
+  }
+
+
+  public void setPhoneNumber1(String phoneNumber1) {
+
+    
+    
+    
+    this.phoneNumber1 = phoneNumber1;
+  }
+
+
+  public VerifySelfieBvnResponseEntity phoneNumber2(String phoneNumber2) {
+
+    
+    
+    
+    
+    this.phoneNumber2 = phoneNumber2;
+    return this;
+  }
+
+   /**
+   * Get phoneNumber2
+   * @return phoneNumber2
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "", value = "")
+
+  public String getPhoneNumber2() {
+    return phoneNumber2;
+  }
+
+
+  public void setPhoneNumber2(String phoneNumber2) {
+
+    
+    
+    
+    this.phoneNumber2 = phoneNumber2;
+  }
+
+
+  public VerifySelfieBvnResponseEntity registrationDate(String registrationDate) {
+
+    
+    
+    
+    
+    this.registrationDate = registrationDate;
+    return this;
+  }
+
+   /**
+   * Get registrationDate
+   * @return registrationDate
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "", value = "")
+
+  public String getRegistrationDate() {
+    return registrationDate;
+  }
+
+
+  public void setRegistrationDate(String registrationDate) {
+
+    
+    
+    
+    this.registrationDate = registrationDate;
+  }
+
+
   public VerifySelfieBvnResponseEntity residentialAddress(String residentialAddress) {
 
     
@@ -674,6 +767,37 @@ public class VerifySelfieBvnResponseEntity {
     
     
     this.residentialAddress = residentialAddress;
+  }
+
+
+  public VerifySelfieBvnResponseEntity selfieVerification(VerifySelfieBvnResponseEntitySelfieVerification selfieVerification) {
+
+    
+    
+    
+    
+    this.selfieVerification = selfieVerification;
+    return this;
+  }
+
+   /**
+   * Get selfieVerification
+   * @return selfieVerification
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public VerifySelfieBvnResponseEntitySelfieVerification getSelfieVerification() {
+    return selfieVerification;
+  }
+
+
+  public void setSelfieVerification(VerifySelfieBvnResponseEntitySelfieVerification selfieVerification) {
+
+    
+    
+    
+    this.selfieVerification = selfieVerification;
   }
 
 
@@ -769,130 +893,6 @@ public class VerifySelfieBvnResponseEntity {
     this.watchListed = watchListed;
   }
 
-
-  public VerifySelfieBvnResponseEntity levelOfAccount(String levelOfAccount) {
-
-    
-    
-    
-    
-    this.levelOfAccount = levelOfAccount;
-    return this;
-  }
-
-   /**
-   * Get levelOfAccount
-   * @return levelOfAccount
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "Level 2 - Medium Level Accounts", value = "")
-
-  public String getLevelOfAccount() {
-    return levelOfAccount;
-  }
-
-
-  public void setLevelOfAccount(String levelOfAccount) {
-
-    
-    
-    
-    this.levelOfAccount = levelOfAccount;
-  }
-
-
-  public VerifySelfieBvnResponseEntity registrationDate(String registrationDate) {
-
-    
-    
-    
-    
-    this.registrationDate = registrationDate;
-    return this;
-  }
-
-   /**
-   * Get registrationDate
-   * @return registrationDate
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "", value = "")
-
-  public String getRegistrationDate() {
-    return registrationDate;
-  }
-
-
-  public void setRegistrationDate(String registrationDate) {
-
-    
-    
-    
-    this.registrationDate = registrationDate;
-  }
-
-
-  public VerifySelfieBvnResponseEntity image(String image) {
-
-    
-    
-    
-    
-    this.image = image;
-    return this;
-  }
-
-   /**
-   * Get image
-   * @return image
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "base64 image", value = "")
-
-  public String getImage() {
-    return image;
-  }
-
-
-  public void setImage(String image) {
-
-    
-    
-    
-    this.image = image;
-  }
-
-
-  public VerifySelfieBvnResponseEntity selfieVerification(VerifySelfieBvnResponseEntitySelfieVerification selfieVerification) {
-
-    
-    
-    
-    
-    this.selfieVerification = selfieVerification;
-    return this;
-  }
-
-   /**
-   * Get selfieVerification
-   * @return selfieVerification
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public VerifySelfieBvnResponseEntitySelfieVerification getSelfieVerification() {
-    return selfieVerification;
-  }
-
-
-  public void setSelfieVerification(VerifySelfieBvnResponseEntitySelfieVerification selfieVerification) {
-
-    
-    
-    
-    this.selfieVerification = selfieVerification;
-  }
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -949,35 +949,35 @@ public class VerifySelfieBvnResponseEntity {
     }
     VerifySelfieBvnResponseEntity verifySelfieBvnResponseEntity = (VerifySelfieBvnResponseEntity) o;
     return Objects.equals(this.bvn, verifySelfieBvnResponseEntity.bvn) &&
-        Objects.equals(this.firstName, verifySelfieBvnResponseEntity.firstName) &&
-        Objects.equals(this.middleName, verifySelfieBvnResponseEntity.middleName) &&
-        Objects.equals(this.lastName, verifySelfieBvnResponseEntity.lastName) &&
         Objects.equals(this.dateOfBirth, verifySelfieBvnResponseEntity.dateOfBirth) &&
-        Objects.equals(this.phoneNumber1, verifySelfieBvnResponseEntity.phoneNumber1) &&
-        Objects.equals(this.phoneNumber2, verifySelfieBvnResponseEntity.phoneNumber2) &&
-        Objects.equals(this.gender, verifySelfieBvnResponseEntity.gender) &&
+        Objects.equals(this.email, verifySelfieBvnResponseEntity.email) &&
         Objects.equals(this.enrollmentBank, verifySelfieBvnResponseEntity.enrollmentBank) &&
         Objects.equals(this.enrollmentBranch, verifySelfieBvnResponseEntity.enrollmentBranch) &&
-        Objects.equals(this.email, verifySelfieBvnResponseEntity.email) &&
+        Objects.equals(this.firstName, verifySelfieBvnResponseEntity.firstName) &&
+        Objects.equals(this.gender, verifySelfieBvnResponseEntity.gender) &&
+        Objects.equals(this.image, verifySelfieBvnResponseEntity.image) &&
+        Objects.equals(this.lastName, verifySelfieBvnResponseEntity.lastName) &&
+        Objects.equals(this.levelOfAccount, verifySelfieBvnResponseEntity.levelOfAccount) &&
         Objects.equals(this.lgaOfOrigin, verifySelfieBvnResponseEntity.lgaOfOrigin) &&
         Objects.equals(this.lgaOfResidence, verifySelfieBvnResponseEntity.lgaOfResidence) &&
         Objects.equals(this.maritalStatus, verifySelfieBvnResponseEntity.maritalStatus) &&
-        Objects.equals(this.nin, verifySelfieBvnResponseEntity.nin) &&
+        Objects.equals(this.middleName, verifySelfieBvnResponseEntity.middleName) &&
         Objects.equals(this.nameOnCard, verifySelfieBvnResponseEntity.nameOnCard) &&
+        Objects.equals(this.nin, verifySelfieBvnResponseEntity.nin) &&
+        Objects.equals(this.phoneNumber1, verifySelfieBvnResponseEntity.phoneNumber1) &&
+        Objects.equals(this.phoneNumber2, verifySelfieBvnResponseEntity.phoneNumber2) &&
+        Objects.equals(this.registrationDate, verifySelfieBvnResponseEntity.registrationDate) &&
         Objects.equals(this.residentialAddress, verifySelfieBvnResponseEntity.residentialAddress) &&
+        Objects.equals(this.selfieVerification, verifySelfieBvnResponseEntity.selfieVerification) &&
         Objects.equals(this.stateOfOrigin, verifySelfieBvnResponseEntity.stateOfOrigin) &&
         Objects.equals(this.stateOfResidence, verifySelfieBvnResponseEntity.stateOfResidence) &&
-        Objects.equals(this.watchListed, verifySelfieBvnResponseEntity.watchListed) &&
-        Objects.equals(this.levelOfAccount, verifySelfieBvnResponseEntity.levelOfAccount) &&
-        Objects.equals(this.registrationDate, verifySelfieBvnResponseEntity.registrationDate) &&
-        Objects.equals(this.image, verifySelfieBvnResponseEntity.image) &&
-        Objects.equals(this.selfieVerification, verifySelfieBvnResponseEntity.selfieVerification)&&
+        Objects.equals(this.watchListed, verifySelfieBvnResponseEntity.watchListed)&&
         Objects.equals(this.additionalProperties, verifySelfieBvnResponseEntity.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bvn, firstName, middleName, lastName, dateOfBirth, phoneNumber1, phoneNumber2, gender, enrollmentBank, enrollmentBranch, email, lgaOfOrigin, lgaOfResidence, maritalStatus, nin, nameOnCard, residentialAddress, stateOfOrigin, stateOfResidence, watchListed, levelOfAccount, registrationDate, image, selfieVerification, additionalProperties);
+    return Objects.hash(bvn, dateOfBirth, email, enrollmentBank, enrollmentBranch, firstName, gender, image, lastName, levelOfAccount, lgaOfOrigin, lgaOfResidence, maritalStatus, middleName, nameOnCard, nin, phoneNumber1, phoneNumber2, registrationDate, residentialAddress, selfieVerification, stateOfOrigin, stateOfResidence, watchListed, additionalProperties);
   }
 
   @Override
@@ -985,29 +985,29 @@ public class VerifySelfieBvnResponseEntity {
     StringBuilder sb = new StringBuilder();
     sb.append("class VerifySelfieBvnResponseEntity {\n");
     sb.append("    bvn: ").append(toIndentedString(bvn)).append("\n");
-    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
-    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
-    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
-    sb.append("    phoneNumber1: ").append(toIndentedString(phoneNumber1)).append("\n");
-    sb.append("    phoneNumber2: ").append(toIndentedString(phoneNumber2)).append("\n");
-    sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    enrollmentBank: ").append(toIndentedString(enrollmentBank)).append("\n");
     sb.append("    enrollmentBranch: ").append(toIndentedString(enrollmentBranch)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
+    sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    sb.append("    levelOfAccount: ").append(toIndentedString(levelOfAccount)).append("\n");
     sb.append("    lgaOfOrigin: ").append(toIndentedString(lgaOfOrigin)).append("\n");
     sb.append("    lgaOfResidence: ").append(toIndentedString(lgaOfResidence)).append("\n");
     sb.append("    maritalStatus: ").append(toIndentedString(maritalStatus)).append("\n");
-    sb.append("    nin: ").append(toIndentedString(nin)).append("\n");
+    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
     sb.append("    nameOnCard: ").append(toIndentedString(nameOnCard)).append("\n");
+    sb.append("    nin: ").append(toIndentedString(nin)).append("\n");
+    sb.append("    phoneNumber1: ").append(toIndentedString(phoneNumber1)).append("\n");
+    sb.append("    phoneNumber2: ").append(toIndentedString(phoneNumber2)).append("\n");
+    sb.append("    registrationDate: ").append(toIndentedString(registrationDate)).append("\n");
     sb.append("    residentialAddress: ").append(toIndentedString(residentialAddress)).append("\n");
+    sb.append("    selfieVerification: ").append(toIndentedString(selfieVerification)).append("\n");
     sb.append("    stateOfOrigin: ").append(toIndentedString(stateOfOrigin)).append("\n");
     sb.append("    stateOfResidence: ").append(toIndentedString(stateOfResidence)).append("\n");
     sb.append("    watchListed: ").append(toIndentedString(watchListed)).append("\n");
-    sb.append("    levelOfAccount: ").append(toIndentedString(levelOfAccount)).append("\n");
-    sb.append("    registrationDate: ").append(toIndentedString(registrationDate)).append("\n");
-    sb.append("    image: ").append(toIndentedString(image)).append("\n");
-    sb.append("    selfieVerification: ").append(toIndentedString(selfieVerification)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1032,29 +1032,29 @@ public class VerifySelfieBvnResponseEntity {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("bvn");
-    openapiFields.add("first_name");
-    openapiFields.add("middle_name");
-    openapiFields.add("last_name");
     openapiFields.add("date_of_birth");
-    openapiFields.add("phone_number1");
-    openapiFields.add("phone_number2");
-    openapiFields.add("gender");
+    openapiFields.add("email");
     openapiFields.add("enrollment_bank");
     openapiFields.add("enrollment_branch");
-    openapiFields.add("email");
+    openapiFields.add("first_name");
+    openapiFields.add("gender");
+    openapiFields.add("image");
+    openapiFields.add("last_name");
+    openapiFields.add("level_of_account");
     openapiFields.add("lga_of_origin");
     openapiFields.add("lga_of_residence");
     openapiFields.add("marital_status");
-    openapiFields.add("nin");
+    openapiFields.add("middle_name");
     openapiFields.add("name_on_card");
+    openapiFields.add("nin");
+    openapiFields.add("phone_number1");
+    openapiFields.add("phone_number2");
+    openapiFields.add("registration_date");
     openapiFields.add("residential_address");
+    openapiFields.add("selfie_verification");
     openapiFields.add("state_of_origin");
     openapiFields.add("state_of_residence");
     openapiFields.add("watch_listed");
-    openapiFields.add("level_of_account");
-    openapiFields.add("registration_date");
-    openapiFields.add("image");
-    openapiFields.add("selfie_verification");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -1075,26 +1075,11 @@ public class VerifySelfieBvnResponseEntity {
       if ((jsonObj.get("bvn") != null && !jsonObj.get("bvn").isJsonNull()) && !jsonObj.get("bvn").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `bvn` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bvn").toString()));
       }
-      if ((jsonObj.get("first_name") != null && !jsonObj.get("first_name").isJsonNull()) && !jsonObj.get("first_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `first_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("first_name").toString()));
-      }
-      if ((jsonObj.get("middle_name") != null && !jsonObj.get("middle_name").isJsonNull()) && !jsonObj.get("middle_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `middle_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("middle_name").toString()));
-      }
-      if ((jsonObj.get("last_name") != null && !jsonObj.get("last_name").isJsonNull()) && !jsonObj.get("last_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `last_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_name").toString()));
-      }
       if ((jsonObj.get("date_of_birth") != null && !jsonObj.get("date_of_birth").isJsonNull()) && !jsonObj.get("date_of_birth").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `date_of_birth` to be a primitive type in the JSON string but got `%s`", jsonObj.get("date_of_birth").toString()));
       }
-      if ((jsonObj.get("phone_number1") != null && !jsonObj.get("phone_number1").isJsonNull()) && !jsonObj.get("phone_number1").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `phone_number1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phone_number1").toString()));
-      }
-      if ((jsonObj.get("phone_number2") != null && !jsonObj.get("phone_number2").isJsonNull()) && !jsonObj.get("phone_number2").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `phone_number2` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phone_number2").toString()));
-      }
-      if ((jsonObj.get("gender") != null && !jsonObj.get("gender").isJsonNull()) && !jsonObj.get("gender").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `gender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gender").toString()));
+      if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
       if ((jsonObj.get("enrollment_bank") != null && !jsonObj.get("enrollment_bank").isJsonNull()) && !jsonObj.get("enrollment_bank").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `enrollment_bank` to be a primitive type in the JSON string but got `%s`", jsonObj.get("enrollment_bank").toString()));
@@ -1102,8 +1087,20 @@ public class VerifySelfieBvnResponseEntity {
       if ((jsonObj.get("enrollment_branch") != null && !jsonObj.get("enrollment_branch").isJsonNull()) && !jsonObj.get("enrollment_branch").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `enrollment_branch` to be a primitive type in the JSON string but got `%s`", jsonObj.get("enrollment_branch").toString()));
       }
-      if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
+      if ((jsonObj.get("first_name") != null && !jsonObj.get("first_name").isJsonNull()) && !jsonObj.get("first_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `first_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("first_name").toString()));
+      }
+      if ((jsonObj.get("gender") != null && !jsonObj.get("gender").isJsonNull()) && !jsonObj.get("gender").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gender").toString()));
+      }
+      if ((jsonObj.get("image") != null && !jsonObj.get("image").isJsonNull()) && !jsonObj.get("image").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `image` to be a primitive type in the JSON string but got `%s`", jsonObj.get("image").toString()));
+      }
+      if ((jsonObj.get("last_name") != null && !jsonObj.get("last_name").isJsonNull()) && !jsonObj.get("last_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `last_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_name").toString()));
+      }
+      if ((jsonObj.get("level_of_account") != null && !jsonObj.get("level_of_account").isJsonNull()) && !jsonObj.get("level_of_account").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `level_of_account` to be a primitive type in the JSON string but got `%s`", jsonObj.get("level_of_account").toString()));
       }
       if ((jsonObj.get("lga_of_origin") != null && !jsonObj.get("lga_of_origin").isJsonNull()) && !jsonObj.get("lga_of_origin").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `lga_of_origin` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lga_of_origin").toString()));
@@ -1114,14 +1111,30 @@ public class VerifySelfieBvnResponseEntity {
       if ((jsonObj.get("marital_status") != null && !jsonObj.get("marital_status").isJsonNull()) && !jsonObj.get("marital_status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `marital_status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("marital_status").toString()));
       }
-      if ((jsonObj.get("nin") != null && !jsonObj.get("nin").isJsonNull()) && !jsonObj.get("nin").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nin` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nin").toString()));
+      if ((jsonObj.get("middle_name") != null && !jsonObj.get("middle_name").isJsonNull()) && !jsonObj.get("middle_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `middle_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("middle_name").toString()));
       }
       if ((jsonObj.get("name_on_card") != null && !jsonObj.get("name_on_card").isJsonNull()) && !jsonObj.get("name_on_card").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name_on_card` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name_on_card").toString()));
       }
+      if ((jsonObj.get("nin") != null && !jsonObj.get("nin").isJsonNull()) && !jsonObj.get("nin").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `nin` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nin").toString()));
+      }
+      if ((jsonObj.get("phone_number1") != null && !jsonObj.get("phone_number1").isJsonNull()) && !jsonObj.get("phone_number1").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `phone_number1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phone_number1").toString()));
+      }
+      if ((jsonObj.get("phone_number2") != null && !jsonObj.get("phone_number2").isJsonNull()) && !jsonObj.get("phone_number2").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `phone_number2` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phone_number2").toString()));
+      }
+      if ((jsonObj.get("registration_date") != null && !jsonObj.get("registration_date").isJsonNull()) && !jsonObj.get("registration_date").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `registration_date` to be a primitive type in the JSON string but got `%s`", jsonObj.get("registration_date").toString()));
+      }
       if ((jsonObj.get("residential_address") != null && !jsonObj.get("residential_address").isJsonNull()) && !jsonObj.get("residential_address").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `residential_address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("residential_address").toString()));
+      }
+      // validate the optional field `selfie_verification`
+      if (jsonObj.get("selfie_verification") != null && !jsonObj.get("selfie_verification").isJsonNull()) {
+        VerifySelfieBvnResponseEntitySelfieVerification.validateJsonObject(jsonObj.getAsJsonObject("selfie_verification"));
       }
       if ((jsonObj.get("state_of_origin") != null && !jsonObj.get("state_of_origin").isJsonNull()) && !jsonObj.get("state_of_origin").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `state_of_origin` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state_of_origin").toString()));
@@ -1131,19 +1144,6 @@ public class VerifySelfieBvnResponseEntity {
       }
       if ((jsonObj.get("watch_listed") != null && !jsonObj.get("watch_listed").isJsonNull()) && !jsonObj.get("watch_listed").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `watch_listed` to be a primitive type in the JSON string but got `%s`", jsonObj.get("watch_listed").toString()));
-      }
-      if ((jsonObj.get("level_of_account") != null && !jsonObj.get("level_of_account").isJsonNull()) && !jsonObj.get("level_of_account").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `level_of_account` to be a primitive type in the JSON string but got `%s`", jsonObj.get("level_of_account").toString()));
-      }
-      if ((jsonObj.get("registration_date") != null && !jsonObj.get("registration_date").isJsonNull()) && !jsonObj.get("registration_date").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `registration_date` to be a primitive type in the JSON string but got `%s`", jsonObj.get("registration_date").toString()));
-      }
-      if ((jsonObj.get("image") != null && !jsonObj.get("image").isJsonNull()) && !jsonObj.get("image").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `image` to be a primitive type in the JSON string but got `%s`", jsonObj.get("image").toString()));
-      }
-      // validate the optional field `selfie_verification`
-      if (jsonObj.get("selfie_verification") != null && !jsonObj.get("selfie_verification").isJsonNull()) {
-        VerifySelfieBvnResponseEntitySelfieVerification.validateJsonObject(jsonObj.getAsJsonObject("selfie_verification"));
       }
   }
 

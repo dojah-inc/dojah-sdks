@@ -21,18 +21,6 @@ class RequiredGetPhoneNumber404ResponseEntity(TypedDict):
 class OptionalGetPhoneNumber404ResponseEntity(TypedDict, total=False):
     title: str
 
-    msisdn: str
-
-    firstName: str
-
-    middleName: str
-
-    lastName: str
-
-    maritalStatus: str
-
-    gender: str
-
     birthDate: str
 
     birthLga: str
@@ -43,9 +31,29 @@ class OptionalGetPhoneNumber404ResponseEntity(TypedDict, total=False):
 
     emplymentStatus: str
 
+    firstName: str
+
+    gender: str
+
+    height: str
+
+    lastName: str
+
+    lga: str
+
+    maritalStatus: str
+
+    middleName: str
+
+    msisdn: str
+
+    nin: str
+
     nspokenLang: str
 
     ospokenlang: str
+
+    picture: str
 
     profession: str
 
@@ -53,13 +61,13 @@ class OptionalGetPhoneNumber404ResponseEntity(TypedDict, total=False):
 
     residenceAddressLine1: str
 
-    residenceTown: str
-
     residenceLga: str
 
     residenceState: str
 
     residenceStatus: str
+
+    residenceTown: str
 
     selfOriginLga: str
 
@@ -68,14 +76,6 @@ class OptionalGetPhoneNumber404ResponseEntity(TypedDict, total=False):
     selfOriginState: str
 
     state: str
-
-    lga: str
-
-    nin: str
-
-    height: str
-
-    picture: str
 
     status: typing.Union[int, float]
 

@@ -28,8 +28,8 @@ Name | Type | Description | Notes
 **ResidentialAddress** | **string** |  | [optional] 
 **StateOfOrigin** | **string** |  | [optional] 
 **StateOfResidence** | **string** |  | [optional] 
-**WatchListed** | **string** |  | [optional] 
 **Status** | **decimal** |  | [optional] 
+**WatchListed** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

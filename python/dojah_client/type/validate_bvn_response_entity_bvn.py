@@ -19,9 +19,9 @@ class RequiredValidateBvnResponseEntityBvn(TypedDict):
     pass
 
 class OptionalValidateBvnResponseEntityBvn(TypedDict, total=False):
-    value: str
-
     status: bool
+
+    value: str
 
 class ValidateBvnResponseEntityBvn(RequiredValidateBvnResponseEntityBvn, OptionalValidateBvnResponseEntityBvn):
     pass

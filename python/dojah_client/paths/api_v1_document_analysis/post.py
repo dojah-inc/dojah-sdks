@@ -38,6 +38,7 @@ from dojah_client.type.analyze_document_response import AnalyzeDocumentResponse
 from . import path
 
 _auth = [
+    'apikeyAuth',
     'appIdAuth',
 ]
 SchemaFor200ResponseBodyApplicationJson = AnalyzeDocumentResponseSchema

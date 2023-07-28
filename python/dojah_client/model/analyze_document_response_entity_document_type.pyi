@@ -34,27 +34,27 @@ class AnalyzeDocumentResponseEntityDocumentType(
     class MetaOapg:
         
         class properties:
-            document_name = schemas.StrSchema
-            document_country_name = schemas.StrSchema
             document_country_code = schemas.StrSchema
+            document_country_name = schemas.StrSchema
+            document_name = schemas.StrSchema
             document_type_id = schemas.NumberSchema
             document_year = schemas.StrSchema
             __annotations__ = {
-                "document_name": document_name,
-                "document_country_name": document_country_name,
                 "document_country_code": document_country_code,
+                "document_country_name": document_country_name,
+                "document_name": document_name,
                 "document_type_id": document_type_id,
                 "document_year": document_year,
             }
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["document_name"]) -> MetaOapg.properties.document_name: ...
+    def __getitem__(self, name: typing_extensions.Literal["document_country_code"]) -> MetaOapg.properties.document_country_code: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["document_country_name"]) -> MetaOapg.properties.document_country_name: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["document_country_code"]) -> MetaOapg.properties.document_country_code: ...
+    def __getitem__(self, name: typing_extensions.Literal["document_name"]) -> MetaOapg.properties.document_name: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["document_type_id"]) -> MetaOapg.properties.document_type_id: ...
@@ -65,19 +65,19 @@ class AnalyzeDocumentResponseEntityDocumentType(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["document_name", "document_country_name", "document_country_code", "document_type_id", "document_year", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["document_country_code", "document_country_name", "document_name", "document_type_id", "document_year", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["document_name"]) -> typing.Union[MetaOapg.properties.document_name, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["document_country_code"]) -> typing.Union[MetaOapg.properties.document_country_code, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["document_country_name"]) -> typing.Union[MetaOapg.properties.document_country_name, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["document_country_code"]) -> typing.Union[MetaOapg.properties.document_country_code, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["document_name"]) -> typing.Union[MetaOapg.properties.document_name, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["document_type_id"]) -> typing.Union[MetaOapg.properties.document_type_id, schemas.Unset]: ...
@@ -88,16 +88,16 @@ class AnalyzeDocumentResponseEntityDocumentType(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["document_name", "document_country_name", "document_country_code", "document_type_id", "document_year", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["document_country_code", "document_country_name", "document_name", "document_type_id", "document_year", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *args: typing.Union[dict, frozendict.frozendict, ],
-        document_name: typing.Union[MetaOapg.properties.document_name, str, schemas.Unset] = schemas.unset,
-        document_country_name: typing.Union[MetaOapg.properties.document_country_name, str, schemas.Unset] = schemas.unset,
         document_country_code: typing.Union[MetaOapg.properties.document_country_code, str, schemas.Unset] = schemas.unset,
+        document_country_name: typing.Union[MetaOapg.properties.document_country_name, str, schemas.Unset] = schemas.unset,
+        document_name: typing.Union[MetaOapg.properties.document_name, str, schemas.Unset] = schemas.unset,
         document_type_id: typing.Union[MetaOapg.properties.document_type_id, decimal.Decimal, int, float, schemas.Unset] = schemas.unset,
         document_year: typing.Union[MetaOapg.properties.document_year, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
@@ -106,9 +106,9 @@ class AnalyzeDocumentResponseEntityDocumentType(
         return super().__new__(
             cls,
             *args,
-            document_name=document_name,
-            document_country_name=document_country_name,
             document_country_code=document_country_code,
+            document_country_name=document_country_name,
+            document_name=document_name,
             document_type_id=document_type_id,
             document_year=document_year,
             _configuration=_configuration,

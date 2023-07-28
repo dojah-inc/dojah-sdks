@@ -16,9 +16,9 @@ import (
 
 // RequestSenderIdResponseEntityInner struct for RequestSenderIdResponseEntityInner
 type RequestSenderIdResponseEntityInner struct {
-	SenderId *string `json:"sender_id,omitempty"`
 	Activated *bool `json:"activated,omitempty"`
 	CreatedAt *string `json:"createdAt,omitempty"`
+	SenderId *string `json:"sender_id,omitempty"`
 }
 
 // NewRequestSenderIdResponseEntityInner instantiates a new RequestSenderIdResponseEntityInner object
@@ -36,38 +36,6 @@ func NewRequestSenderIdResponseEntityInner() *RequestSenderIdResponseEntityInner
 func NewRequestSenderIdResponseEntityInnerWithDefaults() *RequestSenderIdResponseEntityInner {
 	this := RequestSenderIdResponseEntityInner{}
 	return &this
-}
-
-// GetSenderId returns the SenderId field value if set, zero value otherwise.
-func (o *RequestSenderIdResponseEntityInner) GetSenderId() string {
-	if o == nil || isNil(o.SenderId) {
-		var ret string
-		return ret
-	}
-	return *o.SenderId
-}
-
-// GetSenderIdOk returns a tuple with the SenderId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RequestSenderIdResponseEntityInner) GetSenderIdOk() (*string, bool) {
-	if o == nil || isNil(o.SenderId) {
-    return nil, false
-	}
-	return o.SenderId, true
-}
-
-// HasSenderId returns a boolean if a field has been set.
-func (o *RequestSenderIdResponseEntityInner) HasSenderId() bool {
-	if o != nil && !isNil(o.SenderId) {
-		return true
-	}
-
-	return false
-}
-
-// SetSenderId gets a reference to the given string and assigns it to the SenderId field.
-func (o *RequestSenderIdResponseEntityInner) SetSenderId(v string) {
-	o.SenderId = &v
 }
 
 // GetActivated returns the Activated field value if set, zero value otherwise.
@@ -134,16 +102,48 @@ func (o *RequestSenderIdResponseEntityInner) SetCreatedAt(v string) {
 	o.CreatedAt = &v
 }
 
+// GetSenderId returns the SenderId field value if set, zero value otherwise.
+func (o *RequestSenderIdResponseEntityInner) GetSenderId() string {
+	if o == nil || isNil(o.SenderId) {
+		var ret string
+		return ret
+	}
+	return *o.SenderId
+}
+
+// GetSenderIdOk returns a tuple with the SenderId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RequestSenderIdResponseEntityInner) GetSenderIdOk() (*string, bool) {
+	if o == nil || isNil(o.SenderId) {
+    return nil, false
+	}
+	return o.SenderId, true
+}
+
+// HasSenderId returns a boolean if a field has been set.
+func (o *RequestSenderIdResponseEntityInner) HasSenderId() bool {
+	if o != nil && !isNil(o.SenderId) {
+		return true
+	}
+
+	return false
+}
+
+// SetSenderId gets a reference to the given string and assigns it to the SenderId field.
+func (o *RequestSenderIdResponseEntityInner) SetSenderId(v string) {
+	o.SenderId = &v
+}
+
 func (o RequestSenderIdResponseEntityInner) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SenderId) {
-		toSerialize["sender_id"] = o.SenderId
-	}
 	if !isNil(o.Activated) {
 		toSerialize["activated"] = o.Activated
 	}
 	if !isNil(o.CreatedAt) {
 		toSerialize["createdAt"] = o.CreatedAt
+	}
+	if !isNil(o.SenderId) {
+		toSerialize["sender_id"] = o.SenderId
 	}
 	return json.Marshal(toSerialize)
 }

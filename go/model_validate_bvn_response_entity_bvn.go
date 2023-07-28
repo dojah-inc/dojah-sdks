@@ -16,8 +16,8 @@ import (
 
 // ValidateBvnResponseEntityBvn struct for ValidateBvnResponseEntityBvn
 type ValidateBvnResponseEntityBvn struct {
-	Value *string `json:"value,omitempty"`
 	Status *bool `json:"status,omitempty"`
+	Value *string `json:"value,omitempty"`
 }
 
 // NewValidateBvnResponseEntityBvn instantiates a new ValidateBvnResponseEntityBvn object
@@ -35,38 +35,6 @@ func NewValidateBvnResponseEntityBvn() *ValidateBvnResponseEntityBvn {
 func NewValidateBvnResponseEntityBvnWithDefaults() *ValidateBvnResponseEntityBvn {
 	this := ValidateBvnResponseEntityBvn{}
 	return &this
-}
-
-// GetValue returns the Value field value if set, zero value otherwise.
-func (o *ValidateBvnResponseEntityBvn) GetValue() string {
-	if o == nil || isNil(o.Value) {
-		var ret string
-		return ret
-	}
-	return *o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ValidateBvnResponseEntityBvn) GetValueOk() (*string, bool) {
-	if o == nil || isNil(o.Value) {
-    return nil, false
-	}
-	return o.Value, true
-}
-
-// HasValue returns a boolean if a field has been set.
-func (o *ValidateBvnResponseEntityBvn) HasValue() bool {
-	if o != nil && !isNil(o.Value) {
-		return true
-	}
-
-	return false
-}
-
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *ValidateBvnResponseEntityBvn) SetValue(v string) {
-	o.Value = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -101,13 +69,45 @@ func (o *ValidateBvnResponseEntityBvn) SetStatus(v bool) {
 	o.Status = &v
 }
 
+// GetValue returns the Value field value if set, zero value otherwise.
+func (o *ValidateBvnResponseEntityBvn) GetValue() string {
+	if o == nil || isNil(o.Value) {
+		var ret string
+		return ret
+	}
+	return *o.Value
+}
+
+// GetValueOk returns a tuple with the Value field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ValidateBvnResponseEntityBvn) GetValueOk() (*string, bool) {
+	if o == nil || isNil(o.Value) {
+    return nil, false
+	}
+	return o.Value, true
+}
+
+// HasValue returns a boolean if a field has been set.
+func (o *ValidateBvnResponseEntityBvn) HasValue() bool {
+	if o != nil && !isNil(o.Value) {
+		return true
+	}
+
+	return false
+}
+
+// SetValue gets a reference to the given string and assigns it to the Value field.
+func (o *ValidateBvnResponseEntityBvn) SetValue(v string) {
+	o.Value = &v
+}
+
 func (o ValidateBvnResponseEntityBvn) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Value) {
-		toSerialize["value"] = o.Value
-	}
 	if !isNil(o.Status) {
 		toSerialize["status"] = o.Status
+	}
+	if !isNil(o.Value) {
+		toSerialize["value"] = o.Value
 	}
 	return json.Marshal(toSerialize)
 }

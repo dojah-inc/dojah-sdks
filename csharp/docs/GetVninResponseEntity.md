@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Vnin** | **string** |  | [optional] 
+**DateOfBirth** | **string** |  | [optional] 
 **Firstname** | **string** |  | [optional] 
+**Gender** | **string** |  | [optional] 
 **Middlename** | **string** |  | [optional] 
+**Mobile** | **string** |  | [optional] 
+**Photo** | **string** |  | [optional] 
 **Surname** | **string** |  | [optional] 
 **UserId** | **string** |  | [optional] 
-**Gender** | **string** |  | [optional] 
-**Mobile** | **string** |  | [optional] 
-**DateOfBirth** | **string** |  | [optional] 
-**Photo** | **string** |  | [optional] 
+**Vnin** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

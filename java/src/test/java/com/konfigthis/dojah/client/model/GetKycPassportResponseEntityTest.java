@@ -39,11 +39,11 @@ public class GetKycPassportResponseEntityTest {
     }
 
     /**
-     * Test the property 'passportNumber'
+     * Test the property 'dateOfBirth'
      */
     @Test
-    public void passportNumberTest() {
-        // TODO: test passportNumber
+    public void dateOfBirthTest() {
+        // TODO: test dateOfBirth
     }
 
     /**
@@ -55,14 +55,6 @@ public class GetKycPassportResponseEntityTest {
     }
 
     /**
-     * Test the property 'expiryDate'
-     */
-    @Test
-    public void expiryDateTest() {
-        // TODO: test expiryDate
-    }
-
-    /**
      * Test the property 'documentType'
      */
     @Test
@@ -71,19 +63,11 @@ public class GetKycPassportResponseEntityTest {
     }
 
     /**
-     * Test the property 'issuePlace'
+     * Test the property 'expiryDate'
      */
     @Test
-    public void issuePlaceTest() {
-        // TODO: test issuePlace
-    }
-
-    /**
-     * Test the property 'surname'
-     */
-    @Test
-    public void surnameTest() {
-        // TODO: test surname
+    public void expiryDateTest() {
+        // TODO: test expiryDate
     }
 
     /**
@@ -95,22 +79,6 @@ public class GetKycPassportResponseEntityTest {
     }
 
     /**
-     * Test the property 'otherNames'
-     */
-    @Test
-    public void otherNamesTest() {
-        // TODO: test otherNames
-    }
-
-    /**
-     * Test the property 'dateOfBirth'
-     */
-    @Test
-    public void dateOfBirthTest() {
-        // TODO: test dateOfBirth
-    }
-
-    /**
      * Test the property 'gender'
      */
     @Test
@@ -119,11 +87,43 @@ public class GetKycPassportResponseEntityTest {
     }
 
     /**
+     * Test the property 'issuePlace'
+     */
+    @Test
+    public void issuePlaceTest() {
+        // TODO: test issuePlace
+    }
+
+    /**
+     * Test the property 'otherNames'
+     */
+    @Test
+    public void otherNamesTest() {
+        // TODO: test otherNames
+    }
+
+    /**
+     * Test the property 'passportNumber'
+     */
+    @Test
+    public void passportNumberTest() {
+        // TODO: test passportNumber
+    }
+
+    /**
      * Test the property 'photo'
      */
     @Test
     public void photoTest() {
         // TODO: test photo
+    }
+
+    /**
+     * Test the property 'surname'
+     */
+    @Test
+    public void surnameTest() {
+        // TODO: test surname
     }
 
 }

@@ -23,36 +23,6 @@ export interface GetKycDriversLicenseResponseEntityPersonalDetails {
      * @type {string}
      * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
      */
-    'firstname'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
-     */
-    'othername'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
-     */
-    'surname'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
-     */
-    'mother_maiden_name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
-     */
-    'gender'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
-     */
     'birth_date'?: string;
     /**
      * 
@@ -65,7 +35,31 @@ export interface GetKycDriversLicenseResponseEntityPersonalDetails {
      * @type {string}
      * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
      */
+    'country'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
+     */
+    'disability_reason'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
+     */
     'facial_mark'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
+     */
+    'firstname'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
+     */
+    'gender'?: string;
     /**
      * 
      * @type {string}
@@ -83,25 +77,7 @@ export interface GetKycDriversLicenseResponseEntityPersonalDetails {
      * @type {string}
      * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
      */
-    'universaltax_identity_number'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
-     */
-    'nin_number'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
-     */
-    'country'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
-     */
-    'state'?: string;
+    'is_disability'?: string;
     /**
      * 
      * @type {string}
@@ -113,12 +89,36 @@ export interface GetKycDriversLicenseResponseEntityPersonalDetails {
      * @type {string}
      * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
      */
-    'is_disability'?: string;
+    'mother_maiden_name'?: string;
     /**
      * 
      * @type {string}
      * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
      */
-    'disability_reason'?: string;
+    'nin_number'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
+     */
+    'othername'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
+     */
+    'state'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
+     */
+    'surname'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetKycDriversLicenseResponseEntityPersonalDetails
+     */
+    'universaltax_identity_number'?: string;
 }
 

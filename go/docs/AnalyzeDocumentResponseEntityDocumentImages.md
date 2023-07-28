@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Portrait** | Pointer to **string** |  | [optional] 
-**Fingerprint** | Pointer to **string** |  | [optional] 
 **DocumentFrontSide** | Pointer to **string** |  | [optional] 
+**Fingerprint** | Pointer to **string** |  | [optional] 
+**Portrait** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewAnalyzeDocumentResponseEntityDocumentImagesWithDefaults instantiates a new An
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetPortrait
+### GetDocumentFrontSide
 
-`func (o *AnalyzeDocumentResponseEntityDocumentImages) GetPortrait() string`
+`func (o *AnalyzeDocumentResponseEntityDocumentImages) GetDocumentFrontSide() string`
 
-GetPortrait returns the Portrait field if non-nil, zero value otherwise.
+GetDocumentFrontSide returns the DocumentFrontSide field if non-nil, zero value otherwise.
 
-### GetPortraitOk
+### GetDocumentFrontSideOk
 
-`func (o *AnalyzeDocumentResponseEntityDocumentImages) GetPortraitOk() (*string, bool)`
+`func (o *AnalyzeDocumentResponseEntityDocumentImages) GetDocumentFrontSideOk() (*string, bool)`
 
-GetPortraitOk returns a tuple with the Portrait field if it's non-nil, zero value otherwise
+GetDocumentFrontSideOk returns a tuple with the DocumentFrontSide field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPortrait
+### SetDocumentFrontSide
 
-`func (o *AnalyzeDocumentResponseEntityDocumentImages) SetPortrait(v string)`
+`func (o *AnalyzeDocumentResponseEntityDocumentImages) SetDocumentFrontSide(v string)`
 
-SetPortrait sets Portrait field to given value.
+SetDocumentFrontSide sets DocumentFrontSide field to given value.
 
-### HasPortrait
+### HasDocumentFrontSide
 
-`func (o *AnalyzeDocumentResponseEntityDocumentImages) HasPortrait() bool`
+`func (o *AnalyzeDocumentResponseEntityDocumentImages) HasDocumentFrontSide() bool`
 
-HasPortrait returns a boolean if a field has been set.
+HasDocumentFrontSide returns a boolean if a field has been set.
 
 ### GetFingerprint
 
@@ -77,30 +77,30 @@ SetFingerprint sets Fingerprint field to given value.
 
 HasFingerprint returns a boolean if a field has been set.
 
-### GetDocumentFrontSide
+### GetPortrait
 
-`func (o *AnalyzeDocumentResponseEntityDocumentImages) GetDocumentFrontSide() string`
+`func (o *AnalyzeDocumentResponseEntityDocumentImages) GetPortrait() string`
 
-GetDocumentFrontSide returns the DocumentFrontSide field if non-nil, zero value otherwise.
+GetPortrait returns the Portrait field if non-nil, zero value otherwise.
 
-### GetDocumentFrontSideOk
+### GetPortraitOk
 
-`func (o *AnalyzeDocumentResponseEntityDocumentImages) GetDocumentFrontSideOk() (*string, bool)`
+`func (o *AnalyzeDocumentResponseEntityDocumentImages) GetPortraitOk() (*string, bool)`
 
-GetDocumentFrontSideOk returns a tuple with the DocumentFrontSide field if it's non-nil, zero value otherwise
+GetPortraitOk returns a tuple with the Portrait field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDocumentFrontSide
+### SetPortrait
 
-`func (o *AnalyzeDocumentResponseEntityDocumentImages) SetDocumentFrontSide(v string)`
+`func (o *AnalyzeDocumentResponseEntityDocumentImages) SetPortrait(v string)`
 
-SetDocumentFrontSide sets DocumentFrontSide field to given value.
+SetPortrait sets Portrait field to given value.
 
-### HasDocumentFrontSide
+### HasPortrait
 
-`func (o *AnalyzeDocumentResponseEntityDocumentImages) HasDocumentFrontSide() bool`
+`func (o *AnalyzeDocumentResponseEntityDocumentImages) HasPortrait() bool`
 
-HasDocumentFrontSide returns a boolean if a field has been set.
+HasPortrait returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

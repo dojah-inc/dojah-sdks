@@ -16,9 +16,9 @@ import (
 
 // AnalyzeDocumentResponseEntityDocumentImages struct for AnalyzeDocumentResponseEntityDocumentImages
 type AnalyzeDocumentResponseEntityDocumentImages struct {
-	Portrait *string `json:"Portrait,omitempty"`
-	Fingerprint *string `json:"Fingerprint,omitempty"`
 	DocumentFrontSide *string `json:"Document front side,omitempty"`
+	Fingerprint *string `json:"Fingerprint,omitempty"`
+	Portrait *string `json:"Portrait,omitempty"`
 }
 
 // NewAnalyzeDocumentResponseEntityDocumentImages instantiates a new AnalyzeDocumentResponseEntityDocumentImages object
@@ -36,70 +36,6 @@ func NewAnalyzeDocumentResponseEntityDocumentImages() *AnalyzeDocumentResponseEn
 func NewAnalyzeDocumentResponseEntityDocumentImagesWithDefaults() *AnalyzeDocumentResponseEntityDocumentImages {
 	this := AnalyzeDocumentResponseEntityDocumentImages{}
 	return &this
-}
-
-// GetPortrait returns the Portrait field value if set, zero value otherwise.
-func (o *AnalyzeDocumentResponseEntityDocumentImages) GetPortrait() string {
-	if o == nil || isNil(o.Portrait) {
-		var ret string
-		return ret
-	}
-	return *o.Portrait
-}
-
-// GetPortraitOk returns a tuple with the Portrait field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AnalyzeDocumentResponseEntityDocumentImages) GetPortraitOk() (*string, bool) {
-	if o == nil || isNil(o.Portrait) {
-    return nil, false
-	}
-	return o.Portrait, true
-}
-
-// HasPortrait returns a boolean if a field has been set.
-func (o *AnalyzeDocumentResponseEntityDocumentImages) HasPortrait() bool {
-	if o != nil && !isNil(o.Portrait) {
-		return true
-	}
-
-	return false
-}
-
-// SetPortrait gets a reference to the given string and assigns it to the Portrait field.
-func (o *AnalyzeDocumentResponseEntityDocumentImages) SetPortrait(v string) {
-	o.Portrait = &v
-}
-
-// GetFingerprint returns the Fingerprint field value if set, zero value otherwise.
-func (o *AnalyzeDocumentResponseEntityDocumentImages) GetFingerprint() string {
-	if o == nil || isNil(o.Fingerprint) {
-		var ret string
-		return ret
-	}
-	return *o.Fingerprint
-}
-
-// GetFingerprintOk returns a tuple with the Fingerprint field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AnalyzeDocumentResponseEntityDocumentImages) GetFingerprintOk() (*string, bool) {
-	if o == nil || isNil(o.Fingerprint) {
-    return nil, false
-	}
-	return o.Fingerprint, true
-}
-
-// HasFingerprint returns a boolean if a field has been set.
-func (o *AnalyzeDocumentResponseEntityDocumentImages) HasFingerprint() bool {
-	if o != nil && !isNil(o.Fingerprint) {
-		return true
-	}
-
-	return false
-}
-
-// SetFingerprint gets a reference to the given string and assigns it to the Fingerprint field.
-func (o *AnalyzeDocumentResponseEntityDocumentImages) SetFingerprint(v string) {
-	o.Fingerprint = &v
 }
 
 // GetDocumentFrontSide returns the DocumentFrontSide field value if set, zero value otherwise.
@@ -134,16 +70,80 @@ func (o *AnalyzeDocumentResponseEntityDocumentImages) SetDocumentFrontSide(v str
 	o.DocumentFrontSide = &v
 }
 
+// GetFingerprint returns the Fingerprint field value if set, zero value otherwise.
+func (o *AnalyzeDocumentResponseEntityDocumentImages) GetFingerprint() string {
+	if o == nil || isNil(o.Fingerprint) {
+		var ret string
+		return ret
+	}
+	return *o.Fingerprint
+}
+
+// GetFingerprintOk returns a tuple with the Fingerprint field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AnalyzeDocumentResponseEntityDocumentImages) GetFingerprintOk() (*string, bool) {
+	if o == nil || isNil(o.Fingerprint) {
+    return nil, false
+	}
+	return o.Fingerprint, true
+}
+
+// HasFingerprint returns a boolean if a field has been set.
+func (o *AnalyzeDocumentResponseEntityDocumentImages) HasFingerprint() bool {
+	if o != nil && !isNil(o.Fingerprint) {
+		return true
+	}
+
+	return false
+}
+
+// SetFingerprint gets a reference to the given string and assigns it to the Fingerprint field.
+func (o *AnalyzeDocumentResponseEntityDocumentImages) SetFingerprint(v string) {
+	o.Fingerprint = &v
+}
+
+// GetPortrait returns the Portrait field value if set, zero value otherwise.
+func (o *AnalyzeDocumentResponseEntityDocumentImages) GetPortrait() string {
+	if o == nil || isNil(o.Portrait) {
+		var ret string
+		return ret
+	}
+	return *o.Portrait
+}
+
+// GetPortraitOk returns a tuple with the Portrait field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AnalyzeDocumentResponseEntityDocumentImages) GetPortraitOk() (*string, bool) {
+	if o == nil || isNil(o.Portrait) {
+    return nil, false
+	}
+	return o.Portrait, true
+}
+
+// HasPortrait returns a boolean if a field has been set.
+func (o *AnalyzeDocumentResponseEntityDocumentImages) HasPortrait() bool {
+	if o != nil && !isNil(o.Portrait) {
+		return true
+	}
+
+	return false
+}
+
+// SetPortrait gets a reference to the given string and assigns it to the Portrait field.
+func (o *AnalyzeDocumentResponseEntityDocumentImages) SetPortrait(v string) {
+	o.Portrait = &v
+}
+
 func (o AnalyzeDocumentResponseEntityDocumentImages) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Portrait) {
-		toSerialize["Portrait"] = o.Portrait
+	if !isNil(o.DocumentFrontSide) {
+		toSerialize["Document front side"] = o.DocumentFrontSide
 	}
 	if !isNil(o.Fingerprint) {
 		toSerialize["Fingerprint"] = o.Fingerprint
 	}
-	if !isNil(o.DocumentFrontSide) {
-		toSerialize["Document front side"] = o.DocumentFrontSide
+	if !isNil(o.Portrait) {
+		toSerialize["Portrait"] = o.Portrait
 	}
 	return json.Marshal(toSerialize)
 }

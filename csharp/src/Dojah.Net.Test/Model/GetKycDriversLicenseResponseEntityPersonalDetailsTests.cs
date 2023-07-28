@@ -57,46 +57,6 @@ namespace Dojah.Net.Test.Model
 
 
         /// <summary>
-        /// Test the property 'Firstname'
-        /// </summary>
-        [Fact]
-        public void FirstnameTest()
-        {
-            // TODO unit test for the property 'Firstname'
-        }
-        /// <summary>
-        /// Test the property 'Othername'
-        /// </summary>
-        [Fact]
-        public void OthernameTest()
-        {
-            // TODO unit test for the property 'Othername'
-        }
-        /// <summary>
-        /// Test the property 'Surname'
-        /// </summary>
-        [Fact]
-        public void SurnameTest()
-        {
-            // TODO unit test for the property 'Surname'
-        }
-        /// <summary>
-        /// Test the property 'MotherMaidenName'
-        /// </summary>
-        [Fact]
-        public void MotherMaidenNameTest()
-        {
-            // TODO unit test for the property 'MotherMaidenName'
-        }
-        /// <summary>
-        /// Test the property 'Gender'
-        /// </summary>
-        [Fact]
-        public void GenderTest()
-        {
-            // TODO unit test for the property 'Gender'
-        }
-        /// <summary>
         /// Test the property 'BirthDate'
         /// </summary>
         [Fact]
@@ -113,12 +73,44 @@ namespace Dojah.Net.Test.Model
             // TODO unit test for the property 'BloodGroupId'
         }
         /// <summary>
+        /// Test the property 'Country'
+        /// </summary>
+        [Fact]
+        public void CountryTest()
+        {
+            // TODO unit test for the property 'Country'
+        }
+        /// <summary>
+        /// Test the property 'DisabilityReason'
+        /// </summary>
+        [Fact]
+        public void DisabilityReasonTest()
+        {
+            // TODO unit test for the property 'DisabilityReason'
+        }
+        /// <summary>
         /// Test the property 'FacialMark'
         /// </summary>
         [Fact]
         public void FacialMarkTest()
         {
             // TODO unit test for the property 'FacialMark'
+        }
+        /// <summary>
+        /// Test the property 'Firstname'
+        /// </summary>
+        [Fact]
+        public void FirstnameTest()
+        {
+            // TODO unit test for the property 'Firstname'
+        }
+        /// <summary>
+        /// Test the property 'Gender'
+        /// </summary>
+        [Fact]
+        public void GenderTest()
+        {
+            // TODO unit test for the property 'Gender'
         }
         /// <summary>
         /// Test the property 'Glasses'
@@ -137,36 +129,12 @@ namespace Dojah.Net.Test.Model
             // TODO unit test for the property 'Height'
         }
         /// <summary>
-        /// Test the property 'UniversaltaxIdentityNumber'
+        /// Test the property 'IsDisability'
         /// </summary>
         [Fact]
-        public void UniversaltaxIdentityNumberTest()
+        public void IsDisabilityTest()
         {
-            // TODO unit test for the property 'UniversaltaxIdentityNumber'
-        }
-        /// <summary>
-        /// Test the property 'NinNumber'
-        /// </summary>
-        [Fact]
-        public void NinNumberTest()
-        {
-            // TODO unit test for the property 'NinNumber'
-        }
-        /// <summary>
-        /// Test the property 'Country'
-        /// </summary>
-        [Fact]
-        public void CountryTest()
-        {
-            // TODO unit test for the property 'Country'
-        }
-        /// <summary>
-        /// Test the property 'State'
-        /// </summary>
-        [Fact]
-        public void StateTest()
-        {
-            // TODO unit test for the property 'State'
+            // TODO unit test for the property 'IsDisability'
         }
         /// <summary>
         /// Test the property 'Lga'
@@ -177,20 +145,52 @@ namespace Dojah.Net.Test.Model
             // TODO unit test for the property 'Lga'
         }
         /// <summary>
-        /// Test the property 'IsDisability'
+        /// Test the property 'MotherMaidenName'
         /// </summary>
         [Fact]
-        public void IsDisabilityTest()
+        public void MotherMaidenNameTest()
         {
-            // TODO unit test for the property 'IsDisability'
+            // TODO unit test for the property 'MotherMaidenName'
         }
         /// <summary>
-        /// Test the property 'DisabilityReason'
+        /// Test the property 'NinNumber'
         /// </summary>
         [Fact]
-        public void DisabilityReasonTest()
+        public void NinNumberTest()
         {
-            // TODO unit test for the property 'DisabilityReason'
+            // TODO unit test for the property 'NinNumber'
+        }
+        /// <summary>
+        /// Test the property 'Othername'
+        /// </summary>
+        [Fact]
+        public void OthernameTest()
+        {
+            // TODO unit test for the property 'Othername'
+        }
+        /// <summary>
+        /// Test the property 'State'
+        /// </summary>
+        [Fact]
+        public void StateTest()
+        {
+            // TODO unit test for the property 'State'
+        }
+        /// <summary>
+        /// Test the property 'Surname'
+        /// </summary>
+        [Fact]
+        public void SurnameTest()
+        {
+            // TODO unit test for the property 'Surname'
+        }
+        /// <summary>
+        /// Test the property 'UniversaltaxIdentityNumber'
+        /// </summary>
+        [Fact]
+        public void UniversaltaxIdentityNumberTest()
+        {
+            // TODO unit test for the property 'UniversaltaxIdentityNumber'
         }
 
     }

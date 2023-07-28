@@ -231,19 +231,19 @@ public class GetPremiumBvnResponseEntityTest {
     }
 
     /**
-     * Test the property 'watchListed'
-     */
-    @Test
-    public void watchListedTest() {
-        // TODO: test watchListed
-    }
-
-    /**
      * Test the property 'status'
      */
     @Test
     public void statusTest() {
         // TODO: test status
+    }
+
+    /**
+     * Test the property 'watchListed'
+     */
+    @Test
+    public void watchListedTest() {
+        // TODO: test watchListed
     }
 
 }

@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiAnalyzeDocumentRequest str
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

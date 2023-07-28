@@ -19,11 +19,11 @@ RequiredAnalyzeDocumentResponseEntityDocumentImages = TypedDict("RequiredAnalyze
     })
 
 OptionalAnalyzeDocumentResponseEntityDocumentImages = TypedDict("OptionalAnalyzeDocumentResponseEntityDocumentImages", {
-    "Portrait": str,
+    "Document front side": str,
 
     "Fingerprint": str,
 
-    "Document front side": str,
+    "Portrait": str,
     }, total=False)
 
 class AnalyzeDocumentResponseEntityDocumentImages(RequiredAnalyzeDocumentResponseEntityDocumentImages, OptionalAnalyzeDocumentResponseEntityDocumentImages):

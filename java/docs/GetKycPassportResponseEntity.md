@@ -7,17 +7,17 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**passportNumber** | **String** |  |  [optional] |
-|**dateOfIssue** | **String** |  |  [optional] |
-|**expiryDate** | **String** |  |  [optional] |
-|**documentType** | **String** |  |  [optional] |
-|**issuePlace** | **String** |  |  [optional] |
-|**surname** | **String** |  |  [optional] |
-|**firstName** | **String** |  |  [optional] |
-|**otherNames** | **String** |  |  [optional] |
 |**dateOfBirth** | **String** |  |  [optional] |
+|**dateOfIssue** | **String** |  |  [optional] |
+|**documentType** | **String** |  |  [optional] |
+|**expiryDate** | **String** |  |  [optional] |
+|**firstName** | **String** |  |  [optional] |
 |**gender** | **String** |  |  [optional] |
+|**issuePlace** | **String** |  |  [optional] |
+|**otherNames** | **String** |  |  [optional] |
+|**passportNumber** | **String** |  |  [optional] |
 |**photo** | **String** |  |  [optional] |
+|**surname** | **String** |  |  [optional] |
 
 
 

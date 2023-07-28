@@ -34,17 +34,14 @@ class RequestSenderIdResponseEntityItem(
     class MetaOapg:
         
         class properties:
-            sender_id = schemas.StrSchema
             activated = schemas.BoolSchema
             createdAt = schemas.StrSchema
+            sender_id = schemas.StrSchema
             __annotations__ = {
-                "sender_id": sender_id,
                 "activated": activated,
                 "createdAt": createdAt,
+                "sender_id": sender_id,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["sender_id"]) -> MetaOapg.properties.sender_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["activated"]) -> MetaOapg.properties.activated: ...
@@ -53,15 +50,15 @@ class RequestSenderIdResponseEntityItem(
     def __getitem__(self, name: typing_extensions.Literal["createdAt"]) -> MetaOapg.properties.createdAt: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["sender_id"]) -> MetaOapg.properties.sender_id: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["sender_id", "activated", "createdAt", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["activated", "createdAt", "sender_id", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["sender_id"]) -> typing.Union[MetaOapg.properties.sender_id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["activated"]) -> typing.Union[MetaOapg.properties.activated, schemas.Unset]: ...
@@ -70,27 +67,30 @@ class RequestSenderIdResponseEntityItem(
     def get_item_oapg(self, name: typing_extensions.Literal["createdAt"]) -> typing.Union[MetaOapg.properties.createdAt, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["sender_id"]) -> typing.Union[MetaOapg.properties.sender_id, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["sender_id", "activated", "createdAt", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["activated", "createdAt", "sender_id", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *args: typing.Union[dict, frozendict.frozendict, ],
-        sender_id: typing.Union[MetaOapg.properties.sender_id, str, schemas.Unset] = schemas.unset,
         activated: typing.Union[MetaOapg.properties.activated, bool, schemas.Unset] = schemas.unset,
         createdAt: typing.Union[MetaOapg.properties.createdAt, str, schemas.Unset] = schemas.unset,
+        sender_id: typing.Union[MetaOapg.properties.sender_id, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'RequestSenderIdResponseEntityItem':
         return super().__new__(
             cls,
             *args,
-            sender_id=sender_id,
             activated=activated,
             createdAt=createdAt,
+            sender_id=sender_id,
             _configuration=_configuration,
             **kwargs,
         )

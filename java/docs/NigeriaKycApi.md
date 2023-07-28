@@ -42,9 +42,11 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: apikeyAuth
+    configuration.Authorization  = "YOUR API KEY";
 
     // Configure API key authorization: appIdAuth
-    configuration.Appid  = "YOUR API KEY";
+    configuration.AppId  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     Integer bvn = 22468537919;
@@ -139,8 +141,11 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: apikeyAuth
+    configuration.Authorization  = "YOUR API KEY";
+
     // Configure API key authorization: appIdAuth
-    configuration.Appid  = "YOUR API KEY";
+    configuration.AppId  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     Integer bvn = 22621998885;
@@ -198,7 +203,7 @@ public class Example {
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -235,9 +240,11 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: apikeyAuth
+    configuration.Authorization  = "YOUR API KEY";
 
     // Configure API key authorization: appIdAuth
-    configuration.Appid  = "YOUR API KEY";
+    configuration.AppId  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     Integer phoneNumber = 9131377829;
@@ -328,9 +335,11 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: apikeyAuth
+    configuration.Authorization  = "YOUR API KEY";
 
     // Configure API key authorization: appIdAuth
-    configuration.Appid  = "YOUR API KEY";
+    configuration.AppId  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     String licenseNumber = "FKJ49409AB13";
@@ -425,9 +434,11 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: apikeyAuth
+    configuration.Authorization  = "YOUR API KEY";
 
     // Configure API key authorization: appIdAuth
-    configuration.Appid  = "YOUR API KEY";
+    configuration.AppId  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     Integer nin = 55648152772;
@@ -522,9 +533,11 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: apikeyAuth
+    configuration.Authorization  = "YOUR API KEY";
 
     // Configure API key authorization: appIdAuth
-    configuration.Appid  = "YOUR API KEY";
+    configuration.AppId  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     Integer bvn = 22342291445;
@@ -619,9 +632,11 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: apikeyAuth
+    configuration.Authorization  = "YOUR API KEY";
 
     // Configure API key authorization: appIdAuth
-    configuration.Appid  = "YOUR API KEY";
+    configuration.AppId  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     Integer bankCode = 58;
@@ -720,8 +735,11 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: apikeyAuth
+    configuration.Authorization  = "YOUR API KEY";
+
     // Configure API key authorization: appIdAuth
-    configuration.Appid  = "YOUR API KEY";
+    configuration.AppId  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     String passportNumber = "B00671500";
@@ -783,7 +801,7 @@ public class Example {
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -820,9 +838,11 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
-    // Configure API key authorization: appIdAuth
-    configuration.Appid  = "YOUR API KEY";
+    // Configure API key authorization: apikeyAuth
+    configuration.Authorization  = "YOUR API KEY";
 
+    // Configure API key authorization: appIdAuth
+    configuration.AppId  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     Integer phoneNumber = 8034628633;
@@ -880,7 +900,7 @@ public class Example {
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth), [noauthAuth](../README.md#noauthAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 
@@ -917,9 +937,11 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: apikeyAuth
+    configuration.Authorization  = "YOUR API KEY";
 
     // Configure API key authorization: appIdAuth
-    configuration.Appid  = "YOUR API KEY";
+    configuration.AppId  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     Integer bvn = 22200508254;
@@ -1014,8 +1036,11 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://api.dojah.io";
     
+    // Configure API key authorization: apikeyAuth
+    configuration.Authorization  = "YOUR API KEY";
+
     // Configure API key authorization: appIdAuth
-    configuration.Appid  = "YOUR API KEY";
+    configuration.AppId  = "YOUR API KEY";
 
     Dojah client = new Dojah(configuration);
     String vnin = "LC829995256998RD";
@@ -1073,7 +1098,7 @@ public class Example {
 
 ### Authorization
 
-[appIdAuth](../README.md#appIdAuth)
+[apikeyAuth](../README.md#apikeyAuth), [appIdAuth](../README.md#appIdAuth)
 
 ### HTTP request headers
 

@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FirstName** | Pointer to **string** |  | [optional] 
-**LastName** | Pointer to **string** |  | [optional] 
-**Dob** | Pointer to **string** |  | [optional] 
-**FormattedDob** | Pointer to **string** |  | [optional] 
-**Mobile** | Pointer to **string** |  | [optional] 
 **Bvn** | Pointer to **string** |  | [optional] 
+**Dob** | Pointer to **string** |  | [optional] 
+**FirstName** | Pointer to **string** |  | [optional] 
+**FormattedDob** | Pointer to **string** |  | [optional] 
+**LastName** | Pointer to **string** |  | [optional] 
+**Mobile** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -30,55 +30,30 @@ NewGetBasicBvnResponseEntityWithDefaults instantiates a new GetBasicBvnResponseE
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetFirstName
+### GetBvn
 
-`func (o *GetBasicBvnResponseEntity) GetFirstName() string`
+`func (o *GetBasicBvnResponseEntity) GetBvn() string`
 
-GetFirstName returns the FirstName field if non-nil, zero value otherwise.
+GetBvn returns the Bvn field if non-nil, zero value otherwise.
 
-### GetFirstNameOk
+### GetBvnOk
 
-`func (o *GetBasicBvnResponseEntity) GetFirstNameOk() (*string, bool)`
+`func (o *GetBasicBvnResponseEntity) GetBvnOk() (*string, bool)`
 
-GetFirstNameOk returns a tuple with the FirstName field if it's non-nil, zero value otherwise
+GetBvnOk returns a tuple with the Bvn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFirstName
+### SetBvn
 
-`func (o *GetBasicBvnResponseEntity) SetFirstName(v string)`
+`func (o *GetBasicBvnResponseEntity) SetBvn(v string)`
 
-SetFirstName sets FirstName field to given value.
+SetBvn sets Bvn field to given value.
 
-### HasFirstName
+### HasBvn
 
-`func (o *GetBasicBvnResponseEntity) HasFirstName() bool`
+`func (o *GetBasicBvnResponseEntity) HasBvn() bool`
 
-HasFirstName returns a boolean if a field has been set.
-
-### GetLastName
-
-`func (o *GetBasicBvnResponseEntity) GetLastName() string`
-
-GetLastName returns the LastName field if non-nil, zero value otherwise.
-
-### GetLastNameOk
-
-`func (o *GetBasicBvnResponseEntity) GetLastNameOk() (*string, bool)`
-
-GetLastNameOk returns a tuple with the LastName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastName
-
-`func (o *GetBasicBvnResponseEntity) SetLastName(v string)`
-
-SetLastName sets LastName field to given value.
-
-### HasLastName
-
-`func (o *GetBasicBvnResponseEntity) HasLastName() bool`
-
-HasLastName returns a boolean if a field has been set.
+HasBvn returns a boolean if a field has been set.
 
 ### GetDob
 
@@ -105,6 +80,31 @@ SetDob sets Dob field to given value.
 
 HasDob returns a boolean if a field has been set.
 
+### GetFirstName
+
+`func (o *GetBasicBvnResponseEntity) GetFirstName() string`
+
+GetFirstName returns the FirstName field if non-nil, zero value otherwise.
+
+### GetFirstNameOk
+
+`func (o *GetBasicBvnResponseEntity) GetFirstNameOk() (*string, bool)`
+
+GetFirstNameOk returns a tuple with the FirstName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFirstName
+
+`func (o *GetBasicBvnResponseEntity) SetFirstName(v string)`
+
+SetFirstName sets FirstName field to given value.
+
+### HasFirstName
+
+`func (o *GetBasicBvnResponseEntity) HasFirstName() bool`
+
+HasFirstName returns a boolean if a field has been set.
+
 ### GetFormattedDob
 
 `func (o *GetBasicBvnResponseEntity) GetFormattedDob() string`
@@ -130,6 +130,31 @@ SetFormattedDob sets FormattedDob field to given value.
 
 HasFormattedDob returns a boolean if a field has been set.
 
+### GetLastName
+
+`func (o *GetBasicBvnResponseEntity) GetLastName() string`
+
+GetLastName returns the LastName field if non-nil, zero value otherwise.
+
+### GetLastNameOk
+
+`func (o *GetBasicBvnResponseEntity) GetLastNameOk() (*string, bool)`
+
+GetLastNameOk returns a tuple with the LastName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastName
+
+`func (o *GetBasicBvnResponseEntity) SetLastName(v string)`
+
+SetLastName sets LastName field to given value.
+
+### HasLastName
+
+`func (o *GetBasicBvnResponseEntity) HasLastName() bool`
+
+HasLastName returns a boolean if a field has been set.
+
 ### GetMobile
 
 `func (o *GetBasicBvnResponseEntity) GetMobile() string`
@@ -154,31 +179,6 @@ SetMobile sets Mobile field to given value.
 `func (o *GetBasicBvnResponseEntity) HasMobile() bool`
 
 HasMobile returns a boolean if a field has been set.
-
-### GetBvn
-
-`func (o *GetBasicBvnResponseEntity) GetBvn() string`
-
-GetBvn returns the Bvn field if non-nil, zero value otherwise.
-
-### GetBvnOk
-
-`func (o *GetBasicBvnResponseEntity) GetBvnOk() (*string, bool)`
-
-GetBvnOk returns a tuple with the Bvn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBvn
-
-`func (o *GetBasicBvnResponseEntity) SetBvn(v string)`
-
-SetBvn sets Bvn field to given value.
-
-### HasBvn
-
-`func (o *GetBasicBvnResponseEntity) HasBvn() bool`
-
-HasBvn returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

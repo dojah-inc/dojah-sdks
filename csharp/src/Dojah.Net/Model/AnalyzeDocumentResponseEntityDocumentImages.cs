@@ -34,21 +34,21 @@ namespace Dojah.Net.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AnalyzeDocumentResponseEntityDocumentImages" /> class.
         /// </summary>
-        /// <param name="portrait">portrait.</param>
-        /// <param name="fingerprint">fingerprint.</param>
         /// <param name="documentFrontSide">documentFrontSide.</param>
-        public AnalyzeDocumentResponseEntityDocumentImages(string portrait = default(string), string fingerprint = default(string), string documentFrontSide = default(string))
+        /// <param name="fingerprint">fingerprint.</param>
+        /// <param name="portrait">portrait.</param>
+        public AnalyzeDocumentResponseEntityDocumentImages(string documentFrontSide = default(string), string fingerprint = default(string), string portrait = default(string))
         {
-            this.Portrait = portrait;
-            this.Fingerprint = fingerprint;
             this.DocumentFrontSide = documentFrontSide;
+            this.Fingerprint = fingerprint;
+            this.Portrait = portrait;
         }
 
         /// <summary>
-        /// Gets or Sets Portrait
+        /// Gets or Sets DocumentFrontSide
         /// </summary>
-        [DataMember(Name = "Portrait", EmitDefaultValue = false)]
-        public string Portrait { get; set; }
+        [DataMember(Name = "Document front side", EmitDefaultValue = false)]
+        public string DocumentFrontSide { get; set; }
 
         /// <summary>
         /// Gets or Sets Fingerprint
@@ -57,10 +57,10 @@ namespace Dojah.Net.Model
         public string Fingerprint { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocumentFrontSide
+        /// Gets or Sets Portrait
         /// </summary>
-        [DataMember(Name = "Document front side", EmitDefaultValue = false)]
-        public string DocumentFrontSide { get; set; }
+        [DataMember(Name = "Portrait", EmitDefaultValue = false)]
+        public string Portrait { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,9 +70,9 @@ namespace Dojah.Net.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AnalyzeDocumentResponseEntityDocumentImages {\n");
-            sb.Append("  Portrait: ").Append(Portrait).Append("\n");
-            sb.Append("  Fingerprint: ").Append(Fingerprint).Append("\n");
             sb.Append("  DocumentFrontSide: ").Append(DocumentFrontSide).Append("\n");
+            sb.Append("  Fingerprint: ").Append(Fingerprint).Append("\n");
+            sb.Append("  Portrait: ").Append(Portrait).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -109,9 +109,9 @@ namespace Dojah.Net.Model
             }
             return 
                 (
-                    this.Portrait == input.Portrait ||
-                    (this.Portrait != null &&
-                    this.Portrait.Equals(input.Portrait))
+                    this.DocumentFrontSide == input.DocumentFrontSide ||
+                    (this.DocumentFrontSide != null &&
+                    this.DocumentFrontSide.Equals(input.DocumentFrontSide))
                 ) && 
                 (
                     this.Fingerprint == input.Fingerprint ||
@@ -119,9 +119,9 @@ namespace Dojah.Net.Model
                     this.Fingerprint.Equals(input.Fingerprint))
                 ) && 
                 (
-                    this.DocumentFrontSide == input.DocumentFrontSide ||
-                    (this.DocumentFrontSide != null &&
-                    this.DocumentFrontSide.Equals(input.DocumentFrontSide))
+                    this.Portrait == input.Portrait ||
+                    (this.Portrait != null &&
+                    this.Portrait.Equals(input.Portrait))
                 );
         }
 
@@ -134,17 +134,17 @@ namespace Dojah.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Portrait != null)
+                if (this.DocumentFrontSide != null)
                 {
-                    hashCode = (hashCode * 59) + this.Portrait.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DocumentFrontSide.GetHashCode();
                 }
                 if (this.Fingerprint != null)
                 {
                     hashCode = (hashCode * 59) + this.Fingerprint.GetHashCode();
                 }
-                if (this.DocumentFrontSide != null)
+                if (this.Portrait != null)
                 {
-                    hashCode = (hashCode * 59) + this.DocumentFrontSide.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Portrait.GetHashCode();
                 }
                 return hashCode;
             }

@@ -57,14 +57,6 @@ namespace Dojah.Net.Test.Model
 
 
         /// <summary>
-        /// Test the property 'SenderId'
-        /// </summary>
-        [Fact]
-        public void SenderIdTest()
-        {
-            // TODO unit test for the property 'SenderId'
-        }
-        /// <summary>
         /// Test the property 'Activated'
         /// </summary>
         [Fact]
@@ -79,6 +71,14 @@ namespace Dojah.Net.Test.Model
         public void CreatedAtTest()
         {
             // TODO unit test for the property 'CreatedAt'
+        }
+        /// <summary>
+        /// Test the property 'SenderId'
+        /// </summary>
+        [Fact]
+        public void SenderIdTest()
+        {
+            // TODO unit test for the property 'SenderId'
         }
 
     }

@@ -10,6 +10,8 @@ Testing TZKYCApiService
 package dojah
 
 import (
+    "os"
+    "context"
     "github.com/stretchr/testify/assert"
     "github.com/stretchr/testify/require"
     "testing"
@@ -20,6 +22,10 @@ func Test_dojah_TZKYCApiService(t *testing.T) {
 
     configuration := dojah.NewConfiguration()
     
+    apiKey := os.Getenv("API_KEY")
+    configuration.Context = context.WithValue(configuration.Context, dojah.ContextAPIKeys, map[string]dojah.APIKey{
+        "apikeyAuth": {Key: apiKey},
+    })
     
     apiClient := dojah.NewAPIClient(configuration)
 

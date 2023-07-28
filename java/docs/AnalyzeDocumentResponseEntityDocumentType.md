@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**documentName** | **String** |  |  [optional] |
-|**documentCountryName** | **String** |  |  [optional] |
 |**documentCountryCode** | **String** |  |  [optional] |
+|**documentCountryName** | **String** |  |  [optional] |
+|**documentName** | **String** |  |  [optional] |
 |**documentTypeId** | **Double** |  |  [optional] |
 |**documentYear** | **String** |  |  [optional] |
 

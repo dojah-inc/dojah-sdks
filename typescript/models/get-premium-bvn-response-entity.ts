@@ -164,15 +164,15 @@ export interface GetPremiumBvnResponseEntity {
     'state_of_residence'?: string;
     /**
      * 
-     * @type {string}
-     * @memberof GetPremiumBvnResponseEntity
-     */
-    'watch_listed'?: string;
-    /**
-     * 
      * @type {number}
      * @memberof GetPremiumBvnResponseEntity
      */
     'status'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetPremiumBvnResponseEntity
+     */
+    'watch_listed'?: string;
 }
 

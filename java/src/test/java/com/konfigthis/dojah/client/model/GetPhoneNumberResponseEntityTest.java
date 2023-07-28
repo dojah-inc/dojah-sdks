@@ -47,54 +47,6 @@ public class GetPhoneNumberResponseEntityTest {
     }
 
     /**
-     * Test the property 'msisdn'
-     */
-    @Test
-    public void msisdnTest() {
-        // TODO: test msisdn
-    }
-
-    /**
-     * Test the property 'firstName'
-     */
-    @Test
-    public void firstNameTest() {
-        // TODO: test firstName
-    }
-
-    /**
-     * Test the property 'middleName'
-     */
-    @Test
-    public void middleNameTest() {
-        // TODO: test middleName
-    }
-
-    /**
-     * Test the property 'lastName'
-     */
-    @Test
-    public void lastNameTest() {
-        // TODO: test lastName
-    }
-
-    /**
-     * Test the property 'maritalStatus'
-     */
-    @Test
-    public void maritalStatusTest() {
-        // TODO: test maritalStatus
-    }
-
-    /**
-     * Test the property 'gender'
-     */
-    @Test
-    public void genderTest() {
-        // TODO: test gender
-    }
-
-    /**
      * Test the property 'birthDate'
      */
     @Test
@@ -135,6 +87,78 @@ public class GetPhoneNumberResponseEntityTest {
     }
 
     /**
+     * Test the property 'firstName'
+     */
+    @Test
+    public void firstNameTest() {
+        // TODO: test firstName
+    }
+
+    /**
+     * Test the property 'gender'
+     */
+    @Test
+    public void genderTest() {
+        // TODO: test gender
+    }
+
+    /**
+     * Test the property 'height'
+     */
+    @Test
+    public void heightTest() {
+        // TODO: test height
+    }
+
+    /**
+     * Test the property 'lastName'
+     */
+    @Test
+    public void lastNameTest() {
+        // TODO: test lastName
+    }
+
+    /**
+     * Test the property 'lga'
+     */
+    @Test
+    public void lgaTest() {
+        // TODO: test lga
+    }
+
+    /**
+     * Test the property 'maritalStatus'
+     */
+    @Test
+    public void maritalStatusTest() {
+        // TODO: test maritalStatus
+    }
+
+    /**
+     * Test the property 'middleName'
+     */
+    @Test
+    public void middleNameTest() {
+        // TODO: test middleName
+    }
+
+    /**
+     * Test the property 'msisdn'
+     */
+    @Test
+    public void msisdnTest() {
+        // TODO: test msisdn
+    }
+
+    /**
+     * Test the property 'nin'
+     */
+    @Test
+    public void ninTest() {
+        // TODO: test nin
+    }
+
+    /**
      * Test the property 'nspokenLang'
      */
     @Test
@@ -148,6 +172,14 @@ public class GetPhoneNumberResponseEntityTest {
     @Test
     public void ospokenlangTest() {
         // TODO: test ospokenlang
+    }
+
+    /**
+     * Test the property 'picture'
+     */
+    @Test
+    public void pictureTest() {
+        // TODO: test picture
     }
 
     /**
@@ -175,14 +207,6 @@ public class GetPhoneNumberResponseEntityTest {
     }
 
     /**
-     * Test the property 'residenceTown'
-     */
-    @Test
-    public void residenceTownTest() {
-        // TODO: test residenceTown
-    }
-
-    /**
      * Test the property 'residenceLga'
      */
     @Test
@@ -204,6 +228,14 @@ public class GetPhoneNumberResponseEntityTest {
     @Test
     public void residenceStatusTest() {
         // TODO: test residenceStatus
+    }
+
+    /**
+     * Test the property 'residenceTown'
+     */
+    @Test
+    public void residenceTownTest() {
+        // TODO: test residenceTown
     }
 
     /**
@@ -236,38 +268,6 @@ public class GetPhoneNumberResponseEntityTest {
     @Test
     public void stateTest() {
         // TODO: test state
-    }
-
-    /**
-     * Test the property 'lga'
-     */
-    @Test
-    public void lgaTest() {
-        // TODO: test lga
-    }
-
-    /**
-     * Test the property 'nin'
-     */
-    @Test
-    public void ninTest() {
-        // TODO: test nin
-    }
-
-    /**
-     * Test the property 'height'
-     */
-    @Test
-    public void heightTest() {
-        // TODO: test height
-    }
-
-    /**
-     * Test the property 'picture'
-     */
-    @Test
-    public void pictureTest() {
-        // TODO: test picture
     }
 
     /**

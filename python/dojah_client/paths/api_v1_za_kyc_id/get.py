@@ -64,6 +64,7 @@ request_query_id_number = api_client.QueryParameter(
     explode=True,
 )
 _auth = [
+    'apikeyAuth',
     'appIdAuth',
 ]
 DateSchema = schemas.StrSchema
